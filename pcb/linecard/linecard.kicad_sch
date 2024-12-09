@@ -1,0 +1,149 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "a55ad1ec-4cad-4d06-8b73-31c98dcc1d79")
+	(paper "A3")
+	(title_block
+		(title "LATENTRED Line Card")
+		(date "2024-12-08")
+		(rev "0.1")
+		(company "Antikernel Labs")
+		(comment 1 "Andrew D. Zonenberg")
+	)
+	(lib_symbols)
+	(text "JTAG is 3.3V tolerant, but runs at 2.5V levels"
+		(exclude_from_sim no)
+		(at 34.29 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5033e57a-a0d9-4100-afc1-43e7062d514b")
+	)
+	(sheet
+		(at 16.51 16.51)
+		(size 26.67 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "469d62e1-ca98-4f55-b49b-af1151f42c56")
+		(property "Sheetname" "Power Supply"
+			(at 16.51 15.7984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "psu.kicad_sch"
+			(at 16.51 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" output
+			(at 43.18 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5a31120a-1a41-4ed0-b9cd-f1747c3f52f3")
+		)
+		(pin "I2C_SDA" bidirectional
+			(at 16.51 17.78 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a8e67e73-7592-4afa-92b1-81534df09dc2")
+		)
+		(pin "I2C_SCL" bidirectional
+			(at 16.51 20.32 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4d6c0b5b-9276-4bcf-8716-5eb83af8231d")
+		)
+		(pin "2V5" output
+			(at 43.18 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "d4e64abe-3e88-46b6-8de3-e2c48b14dc15")
+		)
+		(pin "MGMT_MDC" bidirectional
+			(at 16.51 25.4 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f9d99b99-8b8f-4baa-8250-fb0bb20b4e96")
+		)
+		(pin "MGMT_MDIO" bidirectional
+			(at 16.51 27.94 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f9b12079-85fb-4dd0-b9bd-3f3e2bbe26cd")
+		)
+		(pin "1V0_2" output
+			(at 43.18 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8724e895-5831-4a49-bc73-c41c23aa81f5")
+		)
+		(pin "1V0" output
+			(at 43.18 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "609c155f-f69d-4d5a-836d-5dabc01e37fb")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
