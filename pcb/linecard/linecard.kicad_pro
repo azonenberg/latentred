@@ -285,6 +285,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -389,6 +390,18 @@
     [
       "469d62e1-ca98-4f55-b49b-af1151f42c56",
       "Power Supply"
+    ],
+    [
+      "d79fe51b-ed38-4b65-bbb0-158f58e4ee54",
+      "PHY 0 Power"
+    ],
+    [
+      "51c28a30-f923-4afc-abce-15dfcaf7ef81",
+      "PHY 0 Backend"
+    ],
+    [
+      "42bef5ad-5f31-43ee-9c57-ff313f1d9658",
+      "PHY 0 MDI"
     ]
   ],
   "text_variables": {}

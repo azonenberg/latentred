@@ -6,26 +6,331 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-08")
+		(date "2024-12-09")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)
 	(lib_symbols)
-	(text "JTAG is 3.3V tolerant, but runs at 2.5V levels"
-		(exclude_from_sim no)
-		(at 34.29 55.88 0)
+	(wire
+		(pts
+			(xy 67.31 17.78) (xy 68.58 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bfff91c-de83-4cd5-adae-090469ab7300")
+	)
+	(wire
+		(pts
+			(xy 67.31 22.86) (xy 82.55 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bfae169-24ea-4764-825a-9fabba409d43")
+	)
+	(wire
+		(pts
+			(xy 67.31 20.32) (xy 82.55 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a33baf55-d1e6-4517-a938-5de32719fa5b")
+	)
+	(wire
+		(pts
+			(xy 67.31 27.94) (xy 82.55 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c169a60b-2823-435b-92e0-f7edceb933b2")
+	)
+	(wire
+		(pts
+			(xy 67.31 25.4) (xy 82.55 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2737f5f-6a7f-4ede-a348-d99b181d1dfb")
+	)
+	(label "1V0"
+		(at 68.58 25.4 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify left bottom)
 		)
-		(uuid "5033e57a-a0d9-4100-afc1-43e7062d514b")
+		(uuid "061f094c-73b2-4d36-81aa-d9bac60178dd")
+	)
+	(label "PHY0_PWRDN"
+		(at 40.64 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0729e4fc-a683-401d-bd01-8584655f39dd")
+	)
+	(label "1V0_2"
+		(at 68.58 22.86 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0c5eed72-ca68-48b5-9bec-020d801798b5")
+	)
+	(label "I2C_SDA"
+		(at 40.64 17.78 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "171ba78f-1842-4f31-b3ad-74a771e93bbc")
+	)
+	(label "GND"
+		(at 82.55 59.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1a4ef58d-d28b-4ef5-aa1b-ac740d884eb6")
+	)
+	(label "MDC"
+		(at 40.64 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1e9db846-8f99-4159-865c-3941637dd801")
+	)
+	(label "MDC"
+		(at 82.55 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3291044f-0393-460c-b674-39ab03c9485b")
+	)
+	(label "GND"
+		(at 82.55 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3b51c6db-2826-4ff5-8eb1-8e1dfa4c7728")
+	)
+	(label "PHY0_PWRDN"
+		(at 82.55 41.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "596b6026-1d8d-4a95-9fd8-18cef9292506")
+	)
+	(label "3V3"
+		(at 68.58 17.78 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "73876417-de8e-4da0-8f6a-0afa53f0c6a7")
+	)
+	(label "2V5"
+		(at 68.58 20.32 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8524d2c2-dc42-460e-af5a-51c376675727")
+	)
+	(label "PHY0_RST_N"
+		(at 82.55 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "87bd6f84-5859-4f35-ad60-91e9105e6838")
+	)
+	(label "GND"
+		(at 68.58 27.94 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a7ec3ee9-f698-4292-95e6-018c86b30d44")
+	)
+	(label "I2C_SCL"
+		(at 40.64 20.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b3d40d3b-35e6-48c2-8243-6faf6a9ac241")
+	)
+	(label "PHY0_RST_N"
+		(at 40.64 31.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bfba8670-f483-440f-916d-19be57895d52")
+	)
+	(label "2V5"
+		(at 82.55 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6ab9aab-b216-4dc3-a68a-6fe193052fbc")
+	)
+	(label "MDIO"
+		(at 82.55 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fc31cf3d-cdef-43b4-86df-9f49d3884d00")
+	)
+	(label "MDIO"
+		(at 40.64 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fc8fa237-d12d-4451-b6ea-2ac9b9faa5b8")
 	)
 	(sheet
-		(at 16.51 16.51)
-		(size 26.67 12.7)
+		(at 82.55 67.31)
+		(size 16.51 7.62)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "42bef5ad-5f31-43ee-9c57-ff313f1d9658")
+		(property "Sheetname" "PHY 0 MDI"
+			(at 82.55 66.5984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy0_mdi.kicad_sch"
+			(at 82.55 75.5146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "3V3" input
+			(at 82.55 68.58 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0f5f55b6-f101-4f0d-a5a5-c87b2827a311")
+		)
+		(pin "CHGND" input
+			(at 82.55 71.12 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "fd9ca456-4619-42d5-9b3a-25c30ef96db2")
+		)
+		(pin "GND" input
+			(at 82.55 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d1635727-f2de-40f4-b85a-0a229a84392c")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 40.64 16.51)
+		(size 26.67 26.67)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -36,7 +341,7 @@
 		)
 		(uuid "469d62e1-ca98-4f55-b49b-af1151f42c56")
 		(property "Sheetname" "Power Supply"
-			(at 16.51 15.7984 0)
+			(at 40.64 15.7984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45,7 +350,7 @@
 			)
 		)
 		(property "Sheetfile" "psu.kicad_sch"
-			(at 16.51 29.7946 0)
+			(at 40.64 43.7646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54,7 +359,7 @@
 			)
 		)
 		(pin "GND" output
-			(at 43.18 25.4 0)
+			(at 67.31 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -64,7 +369,7 @@
 			(uuid "5a31120a-1a41-4ed0-b9cd-f1747c3f52f3")
 		)
 		(pin "I2C_SDA" bidirectional
-			(at 16.51 17.78 180)
+			(at 40.64 17.78 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -74,7 +379,7 @@
 			(uuid "a8e67e73-7592-4afa-92b1-81534df09dc2")
 		)
 		(pin "I2C_SCL" bidirectional
-			(at 16.51 20.32 180)
+			(at 40.64 20.32 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -84,7 +389,7 @@
 			(uuid "4d6c0b5b-9276-4bcf-8716-5eb83af8231d")
 		)
 		(pin "2V5" output
-			(at 43.18 17.78 0)
+			(at 67.31 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -94,7 +399,7 @@
 			(uuid "d4e64abe-3e88-46b6-8de3-e2c48b14dc15")
 		)
 		(pin "MGMT_MDC" bidirectional
-			(at 16.51 25.4 180)
+			(at 40.64 25.4 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -104,7 +409,7 @@
 			(uuid "f9d99b99-8b8f-4baa-8250-fb0bb20b4e96")
 		)
 		(pin "MGMT_MDIO" bidirectional
-			(at 16.51 27.94 180)
+			(at 40.64 27.94 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -114,7 +419,7 @@
 			(uuid "f9b12079-85fb-4dd0-b9bd-3f3e2bbe26cd")
 		)
 		(pin "1V0_2" output
-			(at 43.18 20.32 0)
+			(at 67.31 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124,7 +429,7 @@
 			(uuid "8724e895-5831-4a49-bc73-c41c23aa81f5")
 		)
 		(pin "1V0" output
-			(at 43.18 22.86 0)
+			(at 67.31 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -133,10 +438,246 @@
 			)
 			(uuid "609c155f-f69d-4d5a-836d-5dabc01e37fb")
 		)
+		(pin "PHY1_RST" output
+			(at 40.64 39.37 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cb3a0899-e8c5-4861-abea-eed476358656")
+		)
+		(pin "PHY0_RST" output
+			(at 40.64 31.75 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2a7e8b60-06c2-4ddd-8640-b56a9ce4bc51")
+		)
+		(pin "PHY1_PWRDN" input
+			(at 40.64 41.91 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b909df6f-6c26-4fa6-a09b-cb8e8e4b9f14")
+		)
+		(pin "PHY0_PWRDN" input
+			(at 40.64 34.29 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "98854161-7559-46f8-a67e-e1722674fb6c")
+		)
+		(pin "3V3" output
+			(at 67.31 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "116db61e-a4a0-4e8f-82c2-ae68c9544b68")
+		)
 		(instances
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 82.55 38.1)
+		(size 16.51 22.86)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "51c28a30-f923-4afc-abce-15dfcaf7ef81")
+		(property "Sheetname" "PHY 0 Backend"
+			(at 82.55 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy0.kicad_sch"
+			(at 82.55 61.5446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PHYAD" input
+			(at 82.55 39.37 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b9f187f1-37a5-4d67-9b90-530448adde98")
+		)
+		(pin "2V5" input
+			(at 82.55 57.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5a869a49-afa3-42f2-b1b9-b1d8c1c60adb")
+		)
+		(pin "GND" input
+			(at 82.55 59.69 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2288ec46-2218-49e3-9e5d-5ef054889897")
+		)
+		(pin "RST_N" input
+			(at 82.55 44.45 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d7865cea-7c24-46db-b69f-b1331f8f3df8")
+		)
+		(pin "MDC" input
+			(at 82.55 49.53 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "96dd6a44-576b-41b4-9d0a-020bdfc1e32f")
+		)
+		(pin "PWRDN" input
+			(at 82.55 41.91 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0c59e54c-386d-47d7-98ca-91ab302696c4")
+		)
+		(pin "MDIO" bidirectional
+			(at 82.55 52.07 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "46dee62b-6353-4380-b975-36276d97ebd2")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 82.55 19.05)
+		(size 16.51 10.16)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d79fe51b-ed38-4b65-bbb0-158f58e4ee54")
+		(property "Sheetname" "PHY 0 Power"
+			(at 82.55 18.3384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy0_pwr.kicad_sch"
+			(at 82.55 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" input
+			(at 82.55 27.94 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7ea20fad-d0ac-4208-bb93-195f6c105d4a")
+		)
+		(pin "1V0" input
+			(at 82.55 25.4 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f1cc4b94-070e-4a5a-9846-9ae932809c9d")
+		)
+		(pin "1V0_2" input
+			(at 82.55 22.86 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f0b07354-0eca-44a7-a642-984d66339a10")
+		)
+		(pin "2V5" input
+			(at 82.55 20.32 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c4daa7ab-1282-46fc-b163-1d362705ce5c")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "3")
 				)
 			)
 		)
