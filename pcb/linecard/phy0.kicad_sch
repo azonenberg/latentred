@@ -11679,6 +11679,70 @@
 				)
 			)
 		)
+		(symbol "special-azonenberg:MECHANICAL"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MECHANICAL"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MECHANICAL_0_1"
+				(rectangle
+					(start 0 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
 		(symbol "xilinx-azonenberg:XILINX_JTAG"
 			(pin_names
 				(offset 1.016)
@@ -12685,6 +12749,16 @@
 		)
 		(uuid "5f367be0-5631-452a-9220-c7c64c116e8c")
 	)
+	(polyline
+		(pts
+			(xy 214.63 254) (xy 214.63 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "601080cf-80fc-4d57-8c80-c32bebad2cd9")
+	)
 	(wire
 		(pts
 			(xy 85.09 260.35) (xy 85.09 262.89)
@@ -12954,6 +13028,16 @@
 			(type default)
 		)
 		(uuid "ae60d5c3-fb21-45dd-be26-3fa57cd74532")
+	)
+	(polyline
+		(pts
+			(xy 214.63 240.03) (xy 124.46 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b001273a-cef8-4211-952f-0cda806ab7b2")
 	)
 	(wire
 		(pts
@@ -13278,6 +13362,17 @@
 		)
 		(uuid "46d362d9-20a6-4adc-93bf-3bb207086694")
 	)
+	(text "Heatsink\nElectrically isolated, nonconductive mounting pins"
+		(exclude_from_sim no)
+		(at 125.73 251.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "63f273f7-e1c6-4d40-91ea-72af0a9ae1bb")
+	)
 	(text "QSGMII SERDES"
 		(exclude_from_sim no)
 		(at 15.24 72.39 0)
@@ -13322,9 +13417,9 @@
 		)
 		(uuid "b4f81c39-57c9-4bfa-975d-8a2482e7aed2")
 	)
-	(text "Flyover connection to FPGA"
+	(text "Data plane connection (1/2)\nto switch engine board"
 		(exclude_from_sim no)
-		(at 118.11 63.5 0)
+		(at 118.11 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -20779,6 +20874,69 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/51c28a30-f923-4afc-abce-15dfcaf7ef81"
 					(reference "C460")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 138.43 245.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9fc2f443-b124-4774-a750-266d1b4b1e85")
+		(property "Reference" "M12"
+			(at 141.605 244.2753 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "960-27-12-D-AB-0"
+			(at 141.605 246.8122 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:HEATSINK_WAKEFIELDVETTE_960-27-12-D-AB-0"
+			(at 138.43 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 138.43 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/51c28a30-f923-4afc-abce-15dfcaf7ef81"
+					(reference "M12")
 					(unit 1)
 				)
 			)

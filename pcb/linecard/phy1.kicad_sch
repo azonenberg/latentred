@@ -11679,6 +11679,70 @@
 				)
 			)
 		)
+		(symbol "special-azonenberg:MECHANICAL"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MECHANICAL"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MECHANICAL_0_1"
+				(rectangle
+					(start 0 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
 		(symbol "xilinx-azonenberg:XILINX_JTAG"
 			(pin_names
 				(offset 1.016)
@@ -12985,6 +13049,16 @@
 		)
 		(uuid "b5c599d5-e591-448f-bf3d-054291f5a58d")
 	)
+	(polyline
+		(pts
+			(xy 214.63 241.3) (xy 124.46 241.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7ade6dd-e4fe-4dd4-8790-33bc01d06d68")
+	)
 	(wire
 		(pts
 			(xy 193.04 39.37) (xy 193.04 40.64)
@@ -13044,6 +13118,16 @@
 			(type default)
 		)
 		(uuid "c42e6cde-00ec-4041-948b-61ac78065ad1")
+	)
+	(polyline
+		(pts
+			(xy 214.63 241.3) (xy 214.63 255.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8aa69b8-c950-47a0-bc2f-76a1e7064fb5")
 	)
 	(wire
 		(pts
@@ -13245,6 +13329,17 @@
 		)
 		(uuid "fea13f9b-37f6-425d-9940-083fed9ea24d")
 	)
+	(text "Data plane connection (2/2)\nto switch engine board"
+		(exclude_from_sim no)
+		(at 118.11 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0b4982c7-d549-4b50-8e03-f1531cb4d04a")
+	)
 	(text "QSGMII SERDES"
 		(exclude_from_sim no)
 		(at 15.24 73.66 0)
@@ -13311,17 +13406,6 @@
 		)
 		(uuid "6e521cc5-7b2a-4f79-b2f9-9e1085d8ce9e")
 	)
-	(text "Flyover connection to FPGA"
-		(exclude_from_sim no)
-		(at 118.11 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7cda965c-16af-48b8-afba-ea990dbb28f4")
-	)
 	(text "VSC8512 Hardware Design Checklist\nSection 8.2 page 23"
 		(exclude_from_sim no)
 		(at 29.21 26.67 0)
@@ -13332,6 +13416,17 @@
 			(justify left bottom)
 		)
 		(uuid "94ac9000-f608-4a3f-910d-7306639febf7")
+	)
+	(text "Heatsink\nElectrically isolated, nonconductive mounting pins"
+		(exclude_from_sim no)
+		(at 125.73 252.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "96824fb6-b988-4c5e-be4d-795f0556c037")
 	)
 	(text "VSC8512 HW design checklist\nFigure 8-2"
 		(exclude_from_sim no)
@@ -20027,6 +20122,69 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/8f3187c1-80c7-4c27-89ce-e62a99a47325"
 					(reference "R95")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 138.43 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4ec6a651-f8bd-43b6-8cbe-af1479a30e85")
+		(property "Reference" "M13"
+			(at 141.605 245.5453 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "960-27-12-D-AB-0"
+			(at 141.605 248.0822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:HEATSINK_WAKEFIELDVETTE_960-27-12-D-AB-0"
+			(at 138.43 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 138.43 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/8f3187c1-80c7-4c27-89ce-e62a99a47325"
+					(reference "M13")
 					(unit 1)
 				)
 			)

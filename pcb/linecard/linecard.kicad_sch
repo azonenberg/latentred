@@ -11,7 +11,230 @@
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)
-	(lib_symbols)
+	(lib_symbols
+		(symbol "conn:CONN_01X01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CONN_01X01"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Connector, single row, 01x01, pin header"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin_Header_Straight_1X* Pin_Header_Angled_1X* Socket_Strip_Straight_1X* Socket_Strip_Angled_1X*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_01X01_0_1"
+				(rectangle
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_01X01_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "P1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "special-azonenberg:MECHANICAL"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MECHANICAL"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MECHANICAL_0_1"
+				(rectangle
+					(start 0 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 21.59 217.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "217ae708-1ce4-4426-9b0a-c3dbf545dce4")
+	)
+	(junction
+		(at 20.32 265.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "66a8671d-c9c7-43a5-9b76-832db1d9f69a")
+	)
+	(junction
+		(at 48.26 217.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f55d60e-fd51-47f5-a4fc-6118c70b8693")
+	)
+	(junction
+		(at 20.32 270.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c257f4d0-2fb8-468c-adfe-031988a12b4c")
+	)
+	(junction
+		(at 48.26 210.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d189ed48-6e32-4117-a8ab-181f96693cb6")
+	)
+	(junction
+		(at 21.59 210.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0a243d3-bae8-45ed-979a-88966ad44e9b")
+	)
+	(polyline
+		(pts
+			(xy 74.93 229.87) (xy 74.93 255.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00f90297-18ca-485d-b904-e05ed983c8d5")
+	)
 	(wire
 		(pts
 			(xy 67.31 17.78) (xy 68.58 17.78)
@@ -34,6 +257,76 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 265.43) (xy 20.32 270.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "232c5f15-e295-4580-b2cd-348621061927")
+	)
+	(wire
+		(pts
+			(xy 21.59 204.47) (xy 21.59 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e36921b-67fd-4600-a821-7e20f7ed2209")
+	)
+	(polyline
+		(pts
+			(xy 12.7 199.39) (xy 74.93 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b92fef4-abad-4d67-84dc-3369455254b2")
+	)
+	(wire
+		(pts
+			(xy 48.26 210.82) (xy 48.26 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cb310f7-6642-478b-a677-a2df26fd2d5c")
+	)
+	(wire
+		(pts
+			(xy 48.26 204.47) (xy 48.26 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "476c25c0-fb89-4ede-847d-9cbddedc166f")
+	)
+	(polyline
+		(pts
+			(xy 74.93 255.27) (xy 74.93 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "493b4cde-5bc4-47f6-9d34-13bd9aa38911")
+	)
+	(polyline
+		(pts
+			(xy 74.93 229.87) (xy 74.93 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5458216b-3c9d-4f89-a956-0e27535b3673")
+	)
+	(wire
+		(pts
 			(xy 67.31 20.32) (xy 82.55 20.32)
 		)
 		(stroke
@@ -41,6 +334,36 @@
 			(type default)
 		)
 		(uuid "a33baf55-d1e6-4517-a938-5de32719fa5b")
+	)
+	(wire
+		(pts
+			(xy 48.26 217.17) (xy 48.26 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9405bb5-2f1e-474b-9cac-5fa6231ea498")
+	)
+	(wire
+		(pts
+			(xy 21.59 210.82) (xy 21.59 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8115b2d-7a16-4973-a61d-9dc850c0eaf4")
+	)
+	(polyline
+		(pts
+			(xy 12.7 229.87) (xy 74.93 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b943fe58-4bef-4819-8407-c746d9c26f66")
 	)
 	(wire
 		(pts
@@ -54,6 +377,36 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 260.35) (xy 20.32 265.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce822223-3fc3-458e-b940-fa062398e394")
+	)
+	(polyline
+		(pts
+			(xy 12.7 255.27) (xy 74.93 255.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4815a0b-5045-4321-9364-e386236c1cfa")
+	)
+	(wire
+		(pts
+			(xy 21.59 217.17) (xy 21.59 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d562a4d6-8b63-4fc7-89b7-0af1ec29c724")
+	)
+	(wire
+		(pts
 			(xy 67.31 25.4) (xy 82.55 25.4)
 		)
 		(stroke
@@ -61,6 +414,71 @@
 			(type default)
 		)
 		(uuid "e2737f5f-6a7f-4ede-a348-d99b181d1dfb")
+	)
+	(wire
+		(pts
+			(xy 20.32 270.51) (xy 20.32 275.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f79bd8a9-a51f-4a00-ac2a-7451a569de64")
+	)
+	(text "Silkscreen logos"
+		(exclude_from_sim no)
+		(at 12.7 254 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "260a5d0c-1edd-4875-adf7-02c73ab40939")
+	)
+	(text "Debug ground points (may add more at layout time)"
+		(exclude_from_sim no)
+		(at 13.97 284.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6861f761-04f6-4971-92c1-3952c7e9625d")
+	)
+	(text "MDIO addr: 0-11"
+		(exclude_from_sim no)
+		(at 82.55 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7b071e78-3286-457f-9df1-801fb2978705")
+	)
+	(text "Mounting holes"
+		(exclude_from_sim no)
+		(at 12.7 228.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "89a511f9-d449-4034-b160-44eb584f68b5")
+	)
+	(text "MDIO addr: 12-23"
+		(exclude_from_sim no)
+		(at 123.19 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b243979f-ae1f-4229-9698-c92742d74c14")
 	)
 	(label "1V0"
 		(at 68.58 25.4 0)
@@ -74,7 +492,7 @@
 		(uuid "061f094c-73b2-4d36-81aa-d9bac60178dd")
 	)
 	(label "PHY0_PWRDN"
-		(at 40.64 34.29 180)
+		(at 40.64 26.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -117,17 +535,6 @@
 		)
 		(uuid "16436958-14b1-435a-aaf4-5ad1aa8018cd")
 	)
-	(label "I2C_SDA"
-		(at 40.64 17.78 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "171ba78f-1842-4f31-b3ad-74a771e93bbc")
-	)
 	(label "GND"
 		(at 123.19 76.2 180)
 		(fields_autoplaced yes)
@@ -151,7 +558,7 @@
 		(uuid "1a4ef58d-d28b-4ef5-aa1b-ac740d884eb6")
 	)
 	(label "MDC"
-		(at 40.64 25.4 180)
+		(at 40.64 17.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -194,6 +601,17 @@
 		)
 		(uuid "2ca4fc52-59fa-4f91-aeac-63c61316d7e6")
 	)
+	(label "GND"
+		(at 48.26 204.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2df579f7-3c33-44f0-bb63-a0bd98e7c92a")
+	)
 	(label "2V5"
 		(at 123.19 39.37 180)
 		(fields_autoplaced yes)
@@ -228,7 +646,7 @@
 		(uuid "3291044f-0393-460c-b674-39ab03c9485b")
 	)
 	(label "PHY1_PWRDN"
-		(at 40.64 41.91 180)
+		(at 40.64 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -360,6 +778,17 @@
 		(uuid "8867ea46-5275-4271-accb-f33b9931166b")
 	)
 	(label "GND"
+		(at 20.32 260.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "92c12fbd-c43d-44f9-9375-1fe10a6aee69")
+	)
+	(label "GND"
 		(at 123.19 62.23 180)
 		(fields_autoplaced yes)
 		(effects
@@ -371,7 +800,7 @@
 		(uuid "94ba3ea3-2528-4965-ac2f-ff1ba531dd81")
 	)
 	(label "PHY1_RST_N"
-		(at 40.64 39.37 180)
+		(at 40.64 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -392,19 +821,8 @@
 		)
 		(uuid "a7ec3ee9-f698-4292-95e6-018c86b30d44")
 	)
-	(label "I2C_SCL"
-		(at 40.64 20.32 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b3d40d3b-35e6-48c2-8243-6faf6a9ac241")
-	)
 	(label "PHY0_RST_N"
-		(at 40.64 31.75 180)
+		(at 40.64 24.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -447,6 +865,17 @@
 		)
 		(uuid "eab3e3e4-d88f-4840-a4b7-1fccb2fe2230")
 	)
+	(label "GND"
+		(at 21.59 204.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "eac10a9f-dd17-4e5b-9711-074d66154441")
+	)
 	(label "3V3"
 		(at 123.19 71.12 180)
 		(fields_autoplaced yes)
@@ -481,7 +910,7 @@
 		(uuid "fc31cf3d-cdef-43b4-86df-9f49d3884d00")
 	)
 	(label "MDIO"
-		(at 40.64 27.94 180)
+		(at 40.64 20.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -490,6 +919,1002 @@
 			(justify right bottom)
 		)
 		(uuid "fc8fa237-d12d-4451-b6ea-2ac9b9faa5b8")
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 53.34 217.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "099c305a-a039-4463-b8db-12560e196dc7")
+		(property "Reference" "M10"
+			(at 55.245 216.3353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 55.245 218.8722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 53.34 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc86b603-1e3e-4e32-bc68-69214ccb6d5f")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 26.67 204.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09f0d0c9-c16a-42e8-822f-eabb9208d494")
+		(property "Reference" "M4"
+			(at 28.575 203.6353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 28.575 206.1722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 26.67 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 26.67 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e3fcc5d6-6662-45b2-839b-8a1186f9d4bd")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 15.24 241.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e9131d6-143a-450d-bc6c-f49c78502169")
+		(property "Reference" "M2"
+			(at 18.415 240.4653 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "OSHW"
+			(at 18.415 243.0022 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "w_logo:Logo_silk_OSHW_6x6mm"
+			(at 15.24 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 15.24 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 15.24 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 53.34 204.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "232e0c12-96ec-4e98-8fd3-8b14ac7628cf")
+		(property "Reference" "M8"
+			(at 55.245 203.6353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 55.245 206.1722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 53.34 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "54398d7c-7eef-4642-b0da-b3f6f984620c")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 53.34 223.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3f12b146-4987-4c59-b0bc-be2bc2d4f8eb")
+		(property "Reference" "M11"
+			(at 55.245 222.6853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 55.245 225.2222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 53.34 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "104bea4f-36d8-43d3-9e7d-4bc3f94f4d4f")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 26.67 210.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3f99454b-1233-4533-967a-950c31ffeeb4")
+		(property "Reference" "M5"
+			(at 28.575 209.9853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 28.575 212.5222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 26.67 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 26.67 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1c5cd7bc-ddae-4b1e-a2ef-991eec00d18c")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6465c2ba-7d56-4e74-b932-e06ebed7f695")
+		(property "Reference" "TP1"
+			(at 27.305 259.5153 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GROUNDCLIP"
+			(at 27.305 262.0522 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
+			(at 25.4 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "86f1b693-93b7-4601-a960-2b0ac5d8f7d6")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 26.67 217.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6caaec54-73c0-4ff5-9e7b-e2c8de9eac4d")
+		(property "Reference" "M6"
+			(at 28.575 216.3353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 28.575 218.8722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 26.67 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 26.67 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3995681f-c59e-4f18-a034-5a6046642ede")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 53.34 210.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "772324b6-0ffa-4d03-a8ea-26cdf7c01896")
+		(property "Reference" "M9"
+			(at 55.245 209.9853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 55.245 212.5222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 53.34 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47b7ee0d-a06c-41c1-8ef9-fa18f2db60c1")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 15.24 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "842976b2-50cb-44ce-b62b-f4cdd07e3de2")
+		(property "Reference" "M3"
+			(at 18.415 248.0853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "WEEE"
+			(at 18.415 250.6222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "w_logo:Logo_silk_WEEE_3.4x5mm"
+			(at 15.24 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 15.24 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 15.24 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 15.24 233.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "902db20f-80d5-4288-adb9-8645e5339dce")
+		(property "Reference" "M1"
+			(at 18.415 232.8453 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LONGTHING"
+			(at 18.415 235.3822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:LONGTHING-1200DPI"
+			(at 15.24 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 15.24 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 15.24 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 275.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab884aae-a3bf-43fc-a013-4665eb34cd4f")
+		(property "Reference" "TP21"
+			(at 27.305 274.7553 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GROUNDCLIP"
+			(at 27.305 277.2922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
+			(at 25.4 275.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 275.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 275.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47cdfaa6-602b-46eb-b26f-3a973146f191")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "TP21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 270.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b08fa1f0-9d86-41c2-a2c2-92f38c4dfcfe")
+		(property "Reference" "TP4"
+			(at 27.305 269.6753 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GROUNDCLIP"
+			(at 27.305 272.2122 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
+			(at 25.4 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6852b308-2fa4-4174-990d-d903c8eff198")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 26.67 223.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ee743a83-1d26-4d08-ae36-60729d5c9f90")
+		(property "Reference" "M7"
+			(at 28.575 222.6853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 28.575 225.2222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 26.67 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 26.67 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 26.67 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0b41325b-394b-4435-847d-bdfce501d878")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "M7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 265.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fde60be1-a62d-4477-9c4f-c192c423d20c")
+		(property "Reference" "TP2"
+			(at 27.305 264.5953 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GROUNDCLIP"
+			(at 27.305 267.1322 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
+			(at 25.4 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "671a2366-4bef-4ddc-9cea-cc5b4267f537")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(sheet
 		(at 82.55 69.85)
@@ -561,7 +1986,7 @@
 	)
 	(sheet
 		(at 40.64 16.51)
-		(size 26.67 26.67)
+		(size 26.67 19.05)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -581,7 +2006,7 @@
 			)
 		)
 		(property "Sheetfile" "psu.kicad_sch"
-			(at 40.64 43.7646 0)
+			(at 40.64 36.1446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -599,26 +2024,6 @@
 			)
 			(uuid "5a31120a-1a41-4ed0-b9cd-f1747c3f52f3")
 		)
-		(pin "I2C_SDA" bidirectional
-			(at 40.64 17.78 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "a8e67e73-7592-4afa-92b1-81534df09dc2")
-		)
-		(pin "I2C_SCL" bidirectional
-			(at 40.64 20.32 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "4d6c0b5b-9276-4bcf-8716-5eb83af8231d")
-		)
 		(pin "2V5" output
 			(at 67.31 20.32 0)
 			(effects
@@ -630,7 +2035,7 @@
 			(uuid "d4e64abe-3e88-46b6-8de3-e2c48b14dc15")
 		)
 		(pin "MGMT_MDC" bidirectional
-			(at 40.64 25.4 180)
+			(at 40.64 17.78 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -640,7 +2045,7 @@
 			(uuid "f9d99b99-8b8f-4baa-8250-fb0bb20b4e96")
 		)
 		(pin "MGMT_MDIO" bidirectional
-			(at 40.64 27.94 180)
+			(at 40.64 20.32 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -670,7 +2075,7 @@
 			(uuid "609c155f-f69d-4d5a-836d-5dabc01e37fb")
 		)
 		(pin "PHY1_RST" output
-			(at 40.64 39.37 180)
+			(at 40.64 31.75 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -680,7 +2085,7 @@
 			(uuid "cb3a0899-e8c5-4861-abea-eed476358656")
 		)
 		(pin "PHY0_RST" output
-			(at 40.64 31.75 180)
+			(at 40.64 24.13 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -690,7 +2095,7 @@
 			(uuid "2a7e8b60-06c2-4ddd-8640-b56a9ce4bc51")
 		)
 		(pin "PHY1_PWRDN" input
-			(at 40.64 41.91 180)
+			(at 40.64 34.29 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -700,7 +2105,7 @@
 			(uuid "b909df6f-6c26-4fa6-a09b-cb8e8e4b9f14")
 		)
 		(pin "PHY0_PWRDN" input
-			(at 40.64 34.29 180)
+			(at 40.64 26.67 180)
 			(effects
 				(font
 					(size 1.27 1.27)
