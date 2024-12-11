@@ -213,7 +213,7 @@
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
-      "lib_symbol_issues": "warning",
+      "lib_symbol_issues": "ignore",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -402,6 +402,18 @@
     [
       "42bef5ad-5f31-43ee-9c57-ff313f1d9658",
       "PHY 0 MDI"
+    ],
+    [
+      "47616f19-18cb-418f-83a3-80863050871d",
+      "PHY 1 Power"
+    ],
+    [
+      "8f3187c1-80c7-4c27-89ce-e62a99a47325",
+      "PHY 1 Backend"
+    ],
+    [
+      "9cc3ae45-99ef-439e-bf2c-69f873d53a1b",
+      "PHY 1 MDI"
     ]
   ],
   "text_variables": {}

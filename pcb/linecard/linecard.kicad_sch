@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-09")
+		(date "2024-12-10")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -95,6 +95,28 @@
 		)
 		(uuid "0c5eed72-ca68-48b5-9bec-020d801798b5")
 	)
+	(label "3V3"
+		(at 123.19 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0f2da596-8f5e-46f4-a925-12942f11170f")
+	)
+	(label "PHY1_RST_N"
+		(at 123.19 44.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "16436958-14b1-435a-aaf4-5ad1aa8018cd")
+	)
 	(label "I2C_SDA"
 		(at 40.64 17.78 180)
 		(fields_autoplaced yes)
@@ -107,7 +129,18 @@
 		(uuid "171ba78f-1842-4f31-b3ad-74a771e93bbc")
 	)
 	(label "GND"
-		(at 82.55 59.69 180)
+		(at 123.19 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1745b6b3-5a34-4810-bbc5-38db1a316ae4")
+	)
+	(label "GND"
+		(at 82.55 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -128,6 +161,61 @@
 		)
 		(uuid "1e9db846-8f99-4159-865c-3941637dd801")
 	)
+	(label "2V5"
+		(at 123.19 59.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "220e62ce-7ee8-4eee-99f7-42863a115208")
+	)
+	(label "2V5"
+		(at 123.19 20.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "28619ef9-7c8f-4cc8-862e-d7835d97af6b")
+	)
+	(label "GND"
+		(at 123.19 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2ca4fc52-59fa-4f91-aeac-63c61316d7e6")
+	)
+	(label "2V5"
+		(at 123.19 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2f073170-0d96-409e-bfa9-c588ecaffd62")
+	)
+	(label "1V0"
+		(at 123.19 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "307ebfb0-a5b8-49d4-ae24-83fc8b212734")
+	)
 	(label "MDC"
 		(at 82.55 49.53 180)
 		(fields_autoplaced yes)
@@ -138,6 +226,17 @@
 			(justify right bottom)
 		)
 		(uuid "3291044f-0393-460c-b674-39ab03c9485b")
+	)
+	(label "PHY1_PWRDN"
+		(at 40.64 41.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "36c59e38-973d-4965-a257-03570224f9d1")
 	)
 	(label "GND"
 		(at 82.55 39.37 180)
@@ -150,6 +249,17 @@
 		)
 		(uuid "3b51c6db-2826-4ff5-8eb1-8e1dfa4c7728")
 	)
+	(label "MDC"
+		(at 123.19 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4ad4c9f3-b477-4aa9-81eb-82a168d41a74")
+	)
 	(label "PHY0_PWRDN"
 		(at 82.55 41.91 180)
 		(fields_autoplaced yes)
@@ -161,6 +271,17 @@
 		)
 		(uuid "596b6026-1d8d-4a95-9fd8-18cef9292506")
 	)
+	(label "GND"
+		(at 82.55 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "61a0579e-83b1-4e5c-bd77-d92343039864")
+	)
 	(label "3V3"
 		(at 68.58 17.78 0)
 		(fields_autoplaced yes)
@@ -171,6 +292,39 @@
 			(justify left bottom)
 		)
 		(uuid "73876417-de8e-4da0-8f6a-0afa53f0c6a7")
+	)
+	(label "GND"
+		(at 123.19 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "785ebbd4-d217-4a33-92c8-97a7dd32a129")
+	)
+	(label "PHY1_PWRDN"
+		(at 123.19 41.91 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82850e21-2854-48fd-8a75-f932d5f9699b")
+	)
+	(label "GND"
+		(at 82.55 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "82f967d0-4eb5-413a-8f0c-ceaa082ff1cc")
 	)
 	(label "2V5"
 		(at 68.58 20.32 0)
@@ -193,6 +347,39 @@
 			(justify right bottom)
 		)
 		(uuid "87bd6f84-5859-4f35-ad60-91e9105e6838")
+	)
+	(label "3V3"
+		(at 82.55 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8867ea46-5275-4271-accb-f33b9931166b")
+	)
+	(label "GND"
+		(at 123.19 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "94ba3ea3-2528-4965-ac2f-ff1ba531dd81")
+	)
+	(label "PHY1_RST_N"
+		(at 40.64 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a4a65bd0-cd0a-466d-954f-5c2a98c14902")
 	)
 	(label "GND"
 		(at 68.58 27.94 0)
@@ -227,8 +414,52 @@
 		)
 		(uuid "bfba8670-f483-440f-916d-19be57895d52")
 	)
-	(label "2V5"
+	(label "MDIO"
+		(at 123.19 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c76d9081-58e3-4705-8b6a-c1e68c5bf625")
+	)
+	(label "3V3"
 		(at 82.55 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cb6a92d3-b4ad-44ff-9613-436ab6aa42a9")
+	)
+	(label "1V0_2"
+		(at 123.19 22.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "eab3e3e4-d88f-4840-a4b7-1fccb2fe2230")
+	)
+	(label "3V3"
+		(at 123.19 71.12 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "edb0d3ba-82ac-4c0b-b37b-98d8b2d4cbf0")
+	)
+	(label "2V5"
+		(at 82.55 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -261,7 +492,7 @@
 		(uuid "fc8fa237-d12d-4451-b6ea-2ac9b9faa5b8")
 	)
 	(sheet
-		(at 82.55 67.31)
+		(at 82.55 69.85)
 		(size 16.51 7.62)
 		(fields_autoplaced yes)
 		(stroke
@@ -273,7 +504,7 @@
 		)
 		(uuid "42bef5ad-5f31-43ee-9c57-ff313f1d9658")
 		(property "Sheetname" "PHY 0 MDI"
-			(at 82.55 66.5984 0)
+			(at 82.55 69.1384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -282,7 +513,7 @@
 			)
 		)
 		(property "Sheetfile" "phy0_mdi.kicad_sch"
-			(at 82.55 75.5146 0)
+			(at 82.55 78.0546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -291,7 +522,7 @@
 			)
 		)
 		(pin "3V3" input
-			(at 82.55 68.58 180)
+			(at 82.55 71.12 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -301,7 +532,7 @@
 			(uuid "0f5f55b6-f101-4f0d-a5a5-c87b2827a311")
 		)
 		(pin "CHGND" input
-			(at 82.55 71.12 180)
+			(at 82.55 73.66 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -311,7 +542,7 @@
 			(uuid "fd9ca456-4619-42d5-9b3a-25c30ef96db2")
 		)
 		(pin "GND" input
-			(at 82.55 73.66 180)
+			(at 82.55 76.2 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -497,8 +728,86 @@
 		)
 	)
 	(sheet
+		(at 123.19 19.05)
+		(size 17.78 10.16)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "47616f19-18cb-418f-83a3-80863050871d")
+		(property "Sheetname" "PHY 1 Power"
+			(at 123.19 18.3384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy1_pwr.kicad_sch"
+			(at 123.19 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1V0" input
+			(at 123.19 25.4 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f9ec0da3-21f2-409e-8eeb-c0c1876a287f")
+		)
+		(pin "GND" input
+			(at 123.19 27.94 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0b54ea3e-766d-43c5-87d1-799cf6ba1829")
+		)
+		(pin "1V0_2" input
+			(at 123.19 22.86 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "344ff2f9-0ea8-449e-b9f9-69353ea44115")
+		)
+		(pin "2V5" input
+			(at 123.19 20.32 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1c05125b-4990-43ac-91ef-6e1e7ef3b436")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 82.55 38.1)
-		(size 16.51 22.86)
+		(size 16.51 25.4)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -518,7 +827,7 @@
 			)
 		)
 		(property "Sheetfile" "phy0.kicad_sch"
-			(at 82.55 61.5446 0)
+			(at 82.55 64.0846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -537,7 +846,7 @@
 			(uuid "b9f187f1-37a5-4d67-9b90-530448adde98")
 		)
 		(pin "2V5" input
-			(at 82.55 57.15 180)
+			(at 82.55 59.69 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -547,7 +856,7 @@
 			(uuid "5a869a49-afa3-42f2-b1b9-b1d8c1c60adb")
 		)
 		(pin "GND" input
-			(at 82.55 59.69 180)
+			(at 82.55 62.23 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -596,10 +905,206 @@
 			)
 			(uuid "46dee62b-6353-4380-b975-36276d97ebd2")
 		)
+		(pin "3V3" input
+			(at 82.55 57.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "46f36588-5c32-4bc0-9a1d-0b257c3ffdd6")
+		)
 		(instances
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 123.19 38.1)
+		(size 17.78 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8f3187c1-80c7-4c27-89ce-e62a99a47325")
+		(property "Sheetname" "PHY 1 Backend"
+			(at 123.19 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy1.kicad_sch"
+			(at 123.19 64.0846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RST_N" input
+			(at 123.19 44.45 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d91eae6d-3e1d-46f1-896a-b9322ce8f2b2")
+		)
+		(pin "PWRDN" input
+			(at 123.19 41.91 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bb4df5f4-2107-44f4-9efc-17fd9e0f0395")
+		)
+		(pin "MDIO" bidirectional
+			(at 123.19 52.07 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6726c3f0-0a50-4411-b36e-a4fc45e397e4")
+		)
+		(pin "MDC" input
+			(at 123.19 49.53 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7b8d1f86-9a0d-488a-ad14-7d3223523f71")
+		)
+		(pin "GND" input
+			(at 123.19 62.23 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f431f5c3-7832-491c-819f-430f431ae407")
+		)
+		(pin "2V5" input
+			(at 123.19 59.69 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "eeb50ccd-4402-4244-be68-23c852172a52")
+		)
+		(pin "PHYAD" input
+			(at 123.19 39.37 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "dd5c24f1-8e4a-463e-ad34-1b6468fa3b5e")
+		)
+		(pin "3V3" input
+			(at 123.19 57.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "fa48cedb-18dc-495f-ad1d-4beec40a407a")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 123.19 69.85)
+		(size 17.78 7.62)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "9cc3ae45-99ef-439e-bf2c-69f873d53a1b")
+		(property "Sheetname" "PHY 1 MDI"
+			(at 123.19 69.1384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "phy1_mdi.kicad_sch"
+			(at 123.19 78.0546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CHGND" input
+			(at 123.19 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d1eac32f-ebc9-4933-991e-a379f5862523")
+		)
+		(pin "3V3" input
+			(at 123.19 71.12 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "76c162ac-f9e1-4286-8adb-daa5e8dbd32a")
+		)
+		(pin "GND" input
+			(at 123.19 76.2 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "9570f7cd-be53-48e7-add5-c7519891d3e4")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
+					(page "8")
 				)
 			)
 		)
