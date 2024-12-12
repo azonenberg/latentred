@@ -1,6 +1,8 @@
 # 24-port non-PoE 10/100/1000baseT QSGMII line card
 
-Input: 12V at 1.25A max, fused at 2A. Expect ~15W max power consumption, less under typical operation
+Input: 12V at 1.25A max, fused at 3A to be conservative.
+
+Expect ~15W max power consumption, less under typical operation
 
 ## Power
 
@@ -13,3 +15,13 @@ Input: 12V at 1.25A max, fused at 2A. Expect ~15W max power consumption, less un
 * VDD_IO (2.5V): 60 mA per PHY, 120 mA total
 * VDD_VS (1.0V): 90 mA per PHY, 180 mA total
 * Plus a 3.3V standby rail for the management MCU
+
+## I2C address map
+
+* 0x80: INA230 on 3V3
+* 0x82: INA230 on 2V5
+* 0x84: INA230 on 1V0
+* 0x86: INA230 on 1V0_2
+* 0x90: AT30TS74 near PHY 0
+* 0x92: AT30ST74 near PHY 1
+* 0x94: AT30TS74 near power supply

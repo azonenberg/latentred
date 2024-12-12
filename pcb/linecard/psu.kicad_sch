@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-10")
+		(date "2024-12-11")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -5283,7 +5283,7 @@
 		(uuid "5dd6ec59-2d6d-40ca-8f05-b33c3000afb9")
 	)
 	(no_connect
-		(at 242.57 120.65)
+		(at 251.46 120.65)
 		(uuid "63065257-9a22-4c8e-ac3f-b2754ca1656a")
 	)
 	(no_connect
@@ -5295,7 +5295,7 @@
 		(uuid "774879c9-98ec-44da-a9e6-fef8ffe6fe7f")
 	)
 	(no_connect
-		(at 242.57 128.27)
+		(at 251.46 128.27)
 		(uuid "85d8e16c-fb75-4cd4-a9ab-ffe663fb6cd3")
 	)
 	(no_connect
@@ -5994,6 +5994,16 @@
 		)
 		(uuid "4a41cb0d-bd3f-4080-b3f6-990c1ac993ee")
 	)
+	(wire
+		(pts
+			(xy 238.76 125.73) (xy 251.46 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4db766a2-9d94-4129-8756-eed13beaec11")
+	)
 	(polyline
 		(pts
 			(xy 91.44 43.18) (xy 176.53 43.18)
@@ -6073,6 +6083,16 @@
 			(type default)
 		)
 		(uuid "534155fe-9eea-4458-b5fe-24140b107265")
+	)
+	(polyline
+		(pts
+			(xy 127 267.97) (xy 127 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54204b20-328c-4cd9-9e78-eb5922cf1bef")
 	)
 	(polyline
 		(pts
@@ -6613,6 +6633,16 @@
 			(type default)
 		)
 		(uuid "a05a9347-0a78-4a52-9f6a-6af364d04c09")
+	)
+	(wire
+		(pts
+			(xy 246.38 123.19) (xy 251.46 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0adb256-e88b-499c-b4e5-1cc8213e37aa")
 	)
 	(polyline
 		(pts
@@ -7597,6 +7627,17 @@
 		)
 		(uuid "a8b7c492-5276-49d9-a620-45b9c3fc7fe5")
 	)
+	(text "NOTE: MDIO/MDC is LVCMOS25\nAll other signals LVCMOS33"
+		(exclude_from_sim no)
+		(at 30.48 243.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aac98d78-3bc5-4804-ab47-7269088a9b33")
+	)
 	(text "3V3 shunt monitor\nAddress = 0x80"
 		(exclude_from_sim no)
 		(at 302.26 134.62 0)
@@ -7607,6 +7648,17 @@
 			(justify left)
 		)
 		(uuid "ac414ae5-428c-477b-a5c9-f578e43220fe")
+	)
+	(text "MDIO bus test point"
+		(exclude_from_sim no)
+		(at 63.5 281.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ace15acd-d63d-4b43-a62f-5780f48d9399")
 	)
 	(text "1V0 shunt monitor\nAddress = 0x84"
 		(exclude_from_sim no)
@@ -7673,6 +7725,17 @@
 			(justify left bottom)
 		)
 		(uuid "cc5a38a8-27e4-43a1-a48f-d9bf89be13cb")
+	)
+	(text "With 5 milliohm shunt, 5 mV/A\n2.5 uV/LSB shunt resolution gives 500 uA, should be fine"
+		(exclude_from_sim no)
+		(at 88.9 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d170eaba-01d0-41d9-88ae-da64ff6c637f")
 	)
 	(text "Rail test points"
 		(exclude_from_sim no)
@@ -8093,7 +8156,7 @@
 		(uuid "2cbacaf2-01a2-472e-a4e5-ff3bbdecdcbd")
 	)
 	(label "I2C_SDA"
-		(at 242.57 130.81 180)
+		(at 251.46 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8467,7 +8530,7 @@
 		(uuid "524f5475-ec22-4aae-b8b0-47f08d833212")
 	)
 	(label "FAULT_LED"
-		(at 242.57 135.89 180)
+		(at 251.46 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8621,7 +8684,7 @@
 		(uuid "603545ec-4653-4c9d-918f-a99fa2e4ab68")
 	)
 	(label "JTAG_TRST_N"
-		(at 242.57 125.73 180)
+		(at 238.76 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8786,7 +8849,7 @@
 		(uuid "74df4573-ca15-4b6f-8f53-df860be02d97")
 	)
 	(label "SOFT_PWR"
-		(at 242.57 143.51 180)
+		(at 251.46 143.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8938,6 +9001,17 @@
 			(justify right bottom)
 		)
 		(uuid "87fc12dd-7efd-46cd-ac09-954860cff4eb")
+	)
+	(label "GND"
+		(at 77.47 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8834a10e-cd51-4e60-be0b-d2ee2b5d3539")
 	)
 	(label "GND"
 		(at 186.69 29.21 180)
@@ -9126,6 +9200,17 @@
 		)
 		(uuid "987b3e70-5698-4090-9d3e-0f0eb9202d42")
 	)
+	(label "MGMT_MDC"
+		(at 85.09 274.32 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "994b198d-7847-4127-b2cc-34816aa23ea2")
+	)
 	(label "RST_N"
 		(at 231.14 209.55 180)
 		(fields_autoplaced yes)
@@ -9215,7 +9300,7 @@
 		(uuid "a38e7e89-e430-495f-bee0-b0758294815d")
 	)
 	(label "JTAG_TDO"
-		(at 242.57 123.19 180)
+		(at 238.76 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9292,7 +9377,7 @@
 		(uuid "af48dbf3-9298-492c-99a7-8879bc394b5a")
 	)
 	(label "TEMP_ALERT"
-		(at 242.57 118.11 180)
+		(at 251.46 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9655,7 +9740,7 @@
 		(uuid "d3dcb5a1-64f3-440a-ae0e-f8abcc038521")
 	)
 	(label "2V5_PGOOD"
-		(at 242.57 115.57 180)
+		(at 251.46 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9765,7 +9850,7 @@
 		(uuid "de57ab11-6faf-4182-bc72-30205a290264")
 	)
 	(label "INA_ALERT"
-		(at 242.57 153.67 180)
+		(at 251.46 153.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9776,7 +9861,7 @@
 		(uuid "de5f1cfe-046b-4389-b63d-112d8b032187")
 	)
 	(label "SOFT_RST"
-		(at 242.57 146.05 180)
+		(at 251.46 146.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9929,8 +10014,19 @@
 		)
 		(uuid "f210d0f6-555a-4a43-8082-170d4b8a2679")
 	)
+	(label "MGMT_MDIO"
+		(at 85.09 271.78 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f2ceda63-066f-48dd-9c29-f526de1aa8bc")
+	)
 	(label "SYSOK_LED"
-		(at 242.57 140.97 180)
+		(at 251.46 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9995,6 +10091,17 @@
 		)
 		(uuid "fad19229-2da8-4fce-b217-b0fd38da7c11")
 	)
+	(label "GND"
+		(at 85.09 276.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fb60eb7e-7bec-4e49-8c7c-b0839394c47f")
+	)
 	(label "1V0_SHUNT_P"
 		(at 139.7 116.84 180)
 		(fields_autoplaced yes)
@@ -10007,7 +10114,7 @@
 		(uuid "fb9484bb-c373-4ae0-8c00-75fcd6f12103")
 	)
 	(label "I2C_SCL"
-		(at 242.57 133.35 180)
+		(at 251.46 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10051,7 +10158,7 @@
 		(uuid "ff589317-1616-4798-9d0f-4d050c198550")
 	)
 	(label "PWRGOOD_LED"
-		(at 242.57 138.43 180)
+		(at 251.46 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10099,7 +10206,7 @@
 	)
 	(hierarchical_label "PHY1_RST"
 		(shape output)
-		(at 242.57 151.13 180)
+		(at 251.46 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10111,7 +10218,7 @@
 	)
 	(hierarchical_label "PHY0_RST"
 		(shape output)
-		(at 242.57 148.59 180)
+		(at 251.46 148.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10258,6 +10365,79 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X03")
+		(at 90.17 274.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "02c8953d-c1ee-4975-90d7-45994e40b4e8")
+		(property "Reference" "TP22"
+			(at 92.075 273.1078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CONN_01X03"
+			(at 92.075 275.5321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+			(at 90.17 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x03, pin header"
+			(at 90.17 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "50c3a4cd-37e1-4006-b172-425d11b55a4e")
+		)
+		(pin "2"
+			(uuid "0ecc5d46-feab-482e-9754-847ec25fed78")
+		)
+		(pin "3"
+			(uuid "e3b3bf96-15a9-4d01-a107-e2c963b19790")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "TP22")
 					(unit 1)
 				)
 			)
@@ -10697,6 +10877,78 @@
 		)
 	)
 	(symbol
+		(lib_id "passive-azonenberg:R-4TERM")
+		(at 147.32 118.11 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "069bfa93-ce0c-4c4b-aaa7-b7c09487e7d5")
+		(property "Reference" "R7"
+			(at 147.32 122.9528 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LVK25R005FER"
+			(at 147.32 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:OHMITE_LVK25"
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95219b85-06cb-46f9-aab8-18d735da2562")
+		)
+		(pin "2"
+			(uuid "f7879ec4-91ba-4adf-a06f-5b99352cc041")
+		)
+		(pin "3"
+			(uuid "3a233edc-0a8e-45dd-a190-8068cfb57823")
+		)
+		(pin "4"
+			(uuid "e1f35a98-a70a-4368-b674-a863bd0958c8")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "conn:CONN_01X03")
 		(at 240.03 168.91 0)
 		(unit 1)
@@ -10854,7 +11106,7 @@
 				)
 			)
 		)
-		(property "Value" "GREEN"
+		(property "Value" "RED"
 			(at 162.8902 35.4908 0)
 			(effects
 				(font
@@ -11136,7 +11388,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
 			(at 52.705 26.67 0)
 			(effects
 				(font
@@ -11178,152 +11430,6 @@
 		)
 	)
 	(symbol
-		(lib_id "passive-azonenberg:R-4TERM")
-		(at 309.88 52.07 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1f6ddb51-845c-493b-8649-75f8351af60d")
-		(property "Reference" "R16"
-			(at 309.88 46.7825 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R-4TERM"
-			(at 309.88 49.2068 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 309.88 52.07 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 309.88 52.07 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" "Resistance"
-			(at 309.88 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "9e3c903a-4ffb-470d-9434-d39403585554")
-		)
-		(pin "1"
-			(uuid "91127aa1-b3ec-4709-a64c-5840e93e54d4")
-		)
-		(pin "3"
-			(uuid "b4406241-5836-4c80-adb3-5da1bf6eff75")
-		)
-		(pin "4"
-			(uuid "4a3c8397-7e96-441c-a4a9-96a2d5ba8530")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "passive-azonenberg:R-4TERM")
-		(at 147.32 118.11 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2033fe95-127c-4741-b759-e7069f11f58a")
-		(property "Reference" "R7"
-			(at 147.32 112.8225 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R-4TERM"
-			(at 147.32 115.2468 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 118.11 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 118.11 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" "Resistance"
-			(at 147.32 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4cbf4171-0783-495d-9f90-0192f1920dbc")
-		)
-		(pin "1"
-			(uuid "7b14aa4c-4b20-4955-95d9-c75c5b17f305")
-		)
-		(pin "3"
-			(uuid "05c582a1-80b1-4b16-8343-fd1f6d20a004")
-		)
-		(pin "4"
-			(uuid "7dfd099b-84f8-4ac8-8e65-ee9b4d9b4114")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "conn:CONN_01X10")
 		(at 26.67 262.89 0)
 		(mirror y)
@@ -11350,7 +11456,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:CONN_MOLEX_PICOBLADE_10POS_0532611071"
 			(at 26.67 262.89 0)
 			(effects
 				(font
@@ -11485,7 +11591,7 @@
 	)
 	(symbol
 		(lib_id "st-azonenberg:STM32L431-QFN48")
-		(at 246.38 154.94 0)
+		(at 255.27 154.94 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11493,7 +11599,7 @@
 		(dnp no)
 		(uuid "214c3c1e-2e0a-4659-8205-1f9bb52e6fa0")
 		(property "Reference" "U5"
-			(at 246.126 156.464 0)
+			(at 255.016 156.464 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11502,7 +11608,7 @@
 			)
 		)
 		(property "Value" "STM32L431-QFN48"
-			(at 246.126 158.8883 0)
+			(at 255.016 158.8883 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11511,7 +11617,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:QFN_48_0.5MM_7x7MM"
-			(at 246.38 132.08 0)
+			(at 255.27 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11520,7 +11626,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 246.38 132.08 0)
+			(at 255.27 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11529,7 +11635,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 246.38 132.08 0)
+			(at 255.27 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12090,7 +12196,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:EIA_1206_CAP_NOSILK"
 			(at 69.85 26.67 0)
 			(effects
 				(font
@@ -13059,79 +13165,6 @@
 		)
 	)
 	(symbol
-		(lib_id "passive-azonenberg:R-4TERM")
-		(at 147.32 184.15 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4d8c7b25-479e-4052-8408-2ebd3dbb5dc7")
-		(property "Reference" "R12"
-			(at 147.32 178.8625 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R-4TERM"
-			(at 147.32 181.2868 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 184.15 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 184.15 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" "Resistance"
-			(at 147.32 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "95f6257a-80fd-44ff-b7eb-99d8d82b4b6b")
-		)
-		(pin "1"
-			(uuid "6d686d3f-f096-4484-993f-fa35cf0f2240")
-		)
-		(pin "3"
-			(uuid "6a466d10-87c4-496e-a621-fa7c9adb27ab")
-		)
-		(pin "4"
-			(uuid "403c1dda-6dfc-4ef6-9d85-981c5ec745e4")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
-					(reference "R12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "device:R")
 		(at 254 63.5 90)
 		(unit 1)
@@ -13611,7 +13644,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:DFN_8_0.5MM_2x3MM_TALL"
 			(at 158.75 261.62 0)
 			(effects
 				(font
@@ -14985,6 +15018,76 @@
 	)
 	(symbol
 		(lib_id "device:C")
+		(at 77.47 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70998441-d3f3-4301-8c44-861b351c4a4d")
+		(property "Reference" "C488"
+			(at 80.391 29.2678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DNP"
+			(at 80.391 31.6921 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:CAP_AL_10MM_SMT"
+			(at 78.4352 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 77.47 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1ec1411-5daf-4351-a0da-227ebb98eb61")
+		)
+		(pin "2"
+			(uuid "d5a12cc1-cc1b-4d6a-a8df-f2ff65b46aab")
+		)
+		(instances
+			(project ""
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "C488")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
 		(at 209.55 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15520,7 +15623,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:CONN_MOLEX_MINIFITJR_4POS_0039291048"
 			(at 35.56 38.1 0)
 			(effects
 				(font
@@ -15633,6 +15736,73 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:R")
+		(at 242.57 123.19 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "856e5d33-612a-4cfe-a2d7-ee06fa97aa0d")
+		(property "Reference" "R99"
+			(at 247.65 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "33"
+			(at 242.57 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 242.57 124.968 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 242.57 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fda0fcc9-32d8-4d2f-9e5e-710749951466")
+		)
+		(pin "2"
+			(uuid "72e0aa00-5501-4138-bcdd-ab41f7331c87")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "R99")
 					(unit 1)
 				)
 			)
@@ -15928,7 +16098,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:DFN_8_0.5MM_2x3MM_TALL"
 			(at 93.98 261.62 0)
 			(effects
 				(font
@@ -16303,6 +16473,78 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "passive-azonenberg:R-4TERM")
+		(at 147.32 52.07 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9af9ecd0-127e-4595-af20-b9fc2bd20a55")
+		(property "Reference" "R3"
+			(at 147.32 56.9128 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LVK25R005FER"
+			(at 147.32 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:OHMITE_LVK25"
+			(at 147.32 52.07 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 52.07 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "43ada5a7-33c3-4528-b488-5e497bbc228f")
+		)
+		(pin "2"
+			(uuid "c8f8bf27-75c9-4454-b1bd-c26b2f6dbae7")
+		)
+		(pin "3"
+			(uuid "ebc2dab0-65f8-4b40-a043-1c06745642fe")
+		)
+		(pin "4"
+			(uuid "71ca9f01-749d-43d2-9af8-b7332cdc6cb3")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -17161,7 +17403,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:DFN_8_0.5MM_2x3MM_TALL"
 			(at 223.52 261.62 0)
 			(effects
 				(font
@@ -17292,79 +17534,6 @@
 		)
 	)
 	(symbol
-		(lib_id "passive-azonenberg:R-4TERM")
-		(at 147.32 52.07 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c55df993-8bff-4555-8174-deddca735ce7")
-		(property "Reference" "R3"
-			(at 147.32 46.7825 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R-4TERM"
-			(at 147.32 49.2068 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 52.07 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 52.07 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" "Resistance"
-			(at 147.32 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "eaff029f-a4aa-43e1-a240-9ccf42c15632")
-		)
-		(pin "1"
-			(uuid "32041fe4-cf0f-4d4b-a91a-bcfd6e39bd94")
-		)
-		(pin "3"
-			(uuid "c1ba4ddb-4aed-44fa-96ed-05da1df6a171")
-		)
-		(pin "4"
-			(uuid "44bddc6f-4047-4cb9-9356-14e3cb739c14")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "device:C")
 		(at 123.19 57.15 0)
 		(unit 1)
@@ -17451,7 +17620,7 @@
 				)
 			)
 		)
-		(property "Value" "33K"
+		(property "Value" "4.7K"
 			(at 151.13 39.624 90)
 			(effects
 				(font
@@ -17902,6 +18071,78 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "passive-azonenberg:R-4TERM")
+		(at 309.88 52.07 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dbb57ab5-7057-4591-9d18-d06466bff92f")
+		(property "Reference" "R16"
+			(at 309.88 56.9128 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LVK25R005FER"
+			(at 309.88 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:OHMITE_LVK25"
+			(at 309.88 52.07 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 309.88 52.07 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 309.88 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52a7f0c0-f7d4-4939-bc9f-fcfcfca73952")
+		)
+		(pin "2"
+			(uuid "ec1ba05c-dbbc-417a-9d25-4e3a485506dc")
+		)
+		(pin "3"
+			(uuid "82ade1e1-c98e-496f-aeec-99b22e839b2d")
+		)
+		(pin "4"
+			(uuid "a3539199-4c09-4163-8b5c-e8c9aa1f7a87")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -18450,6 +18691,78 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "passive-azonenberg:R-4TERM")
+		(at 147.32 184.15 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f5278c23-3139-4fe2-9d4c-eb9b349ae81d")
+		(property "Reference" "R12"
+			(at 147.32 188.9928 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LVK25R005FER"
+			(at 147.32 180.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:OHMITE_LVK25"
+			(at 147.32 184.15 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 184.15 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 147.32 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d0a79505-7fb4-44b4-8a8f-e4c43479d57a")
+		)
+		(pin "2"
+			(uuid "f3f005e9-f6c4-4e66-a7e7-21e42b834d94")
+		)
+		(pin "3"
+			(uuid "07521b20-c9a7-4f3b-b621-9016aee932dc")
+		)
+		(pin "4"
+			(uuid "f3ccfb93-9a52-483e-bac1-f82c1959bb9e")
+		)
+		(instances
+			(project "linecard"
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
+					(reference "R12")
 					(unit 1)
 				)
 			)

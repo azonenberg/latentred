@@ -6,12 +6,124 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-10")
+		(date "2024-12-11")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)
 	(lib_symbols
+		(symbol "conn:CONN_01X01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CONN_01X01"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Connector, single row, 01x01, pin header"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin_Header_Straight_1X* Pin_Header_Angled_1X* Socket_Strip_Straight_1X* Socket_Strip_Angled_1X*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_01X01_0_1"
+				(rectangle
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_01X01_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "P1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "conn:CONN_COAXIAL"
 			(pin_names
 				(offset 1.016) hide)
@@ -11199,7 +11311,7 @@
 			)
 			(symbol "CONN_LATENTRED_LINECARD_HS_DEVICE_1_1"
 				(rectangle
-					(start 0 43.18)
+					(start 0 45.72)
 					(end 20.32 0)
 					(stroke
 						(width 0)
@@ -11544,6 +11656,24 @@
 						)
 					)
 					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 44.45 0)
+					(length 2.54)
+					(name "SHLD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -12104,6 +12234,12 @@
 		(uuid "93861616-a479-467a-a941-8bbc229637e6")
 	)
 	(junction
+		(at 193.04 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ce40e80-ed8b-4b45-a6de-daadb06f7b7f")
+	)
+	(junction
 		(at 218.44 22.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12272,10 +12408,6 @@
 	(no_connect
 		(at 43.18 124.46)
 		(uuid "ac9ae67b-db29-4bd2-9ebd-67b1e868d06d")
-	)
-	(no_connect
-		(at 85.09 189.23)
-		(uuid "b528f65d-30d4-4625-84af-12051fb7ccf7")
 	)
 	(no_connect
 		(at 193.04 58.42)
@@ -12578,6 +12710,16 @@
 			(type default)
 		)
 		(uuid "37117657-7c71-4ccd-bcd4-bc5222e0e7c8")
+	)
+	(wire
+		(pts
+			(xy 193.04 17.78) (xy 193.04 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b905cf2-3036-4a4a-95e6-ce1390b9afda")
 	)
 	(wire
 		(pts
@@ -13038,6 +13180,16 @@
 			(type default)
 		)
 		(uuid "b001273a-cef8-4211-952f-0cda806ab7b2")
+	)
+	(wire
+		(pts
+			(xy 72.39 189.23) (xy 85.09 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8c6f2a7-3743-4738-b8b9-4b278441f813")
 	)
 	(wire
 		(pts
@@ -13825,7 +13977,7 @@
 		(uuid "9ca48eba-64bc-45e4-a058-22268983e9b4")
 	)
 	(label "GND"
-		(at 193.04 20.32 180)
+		(at 193.04 17.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18280,6 +18432,71 @@
 		)
 	)
 	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 67.31 189.23 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "45f1b19e-c1a2-4f4e-987a-64fe3773c6ff")
+		(property "Reference" "TP23"
+			(at 67.31 183.9425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TESTPOINT"
+			(at 67.31 186.3668 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 67.31 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 67.31 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x01, pin header"
+			(at 67.31 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ddbfc5c5-6655-41a8-82a8-77e3554d8db0")
+		)
+		(instances
+			(project ""
+				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/51c28a30-f923-4afc-abce-15dfcaf7ef81"
+					(reference "TP23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "device:C")
 		(at 231.14 54.61 90)
 		(unit 1)
@@ -18691,25 +18908,24 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7343c240-065f-403d-8a61-13b932c235e4")
 		(property "Reference" "J10"
-			(at 205.74 16.5185 0)
+			(at 205.74 13.335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "~"
-			(at 205.74 18.1999 0)
+		(property "Value" "ARF6-08-S-D-A-K-TR"
+			(at 205.74 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:CONN_SAMTEC_ARF6-08-S-D-A-K-TR"
 			(at 195.58 62.23 0)
 			(effects
 				(font
@@ -18813,6 +19029,9 @@
 		)
 		(pin "4"
 			(uuid "cc7d1cf0-40cb-47b9-9e78-206ee444a056")
+		)
+		(pin "27"
+			(uuid "da607103-6a74-4e88-9a08-c026ba6b74be")
 		)
 		(instances
 			(project ""
@@ -20695,7 +20914,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "1K"
 			(at 67.31 173.99 90)
 			(effects
 				(font
