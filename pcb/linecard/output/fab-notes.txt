@@ -16,12 +16,12 @@ Impedances
     Control to within 10%.
 
     Layer 1 microstrip (ref to layer 2 ground).
-    Layer 10 microstrip (ref to layer 9 ground).
+    Layer 6 microstrip (ref to layer 5 ground).
         130 μm trace = 50 ohm
 
-    Layer 3 stripline (ref to layer 2/4 ground).
-    Layer 8 stripline (ref to layer 7/9 ground).
-        100 μm trace = 50 ohm
+    Layer 1 differential stripline (ref to layer 2 ground)
+    Layer 6 differential stripline (ref to layer 5 ground).
+        100 μm trace / 100 μm space = 100 ohm
 
 Suggested stackup
     1    35 μm (1 oz) copper          Signal

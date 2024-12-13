@@ -21844,7 +21844,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
 			(at 67.31 189.23 0)
 			(effects
 				(font

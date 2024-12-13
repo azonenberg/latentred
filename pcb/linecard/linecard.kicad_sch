@@ -1509,7 +1509,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
 			(at 86.36 97.028 90)
 			(effects
 				(font
@@ -1710,7 +1710,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
 			(at 86.36 102.108 90)
 			(effects
 				(font

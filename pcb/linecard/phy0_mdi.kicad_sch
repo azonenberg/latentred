@@ -37272,7 +37272,7 @@
 		(uuid "0083d2dc-111d-4bc3-8c10-d7e25de95a27")
 	)
 	(label "PHY3_D1_N"
-		(at 102.87 195.58 180)
+		(at 102.87 190.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37404,7 +37404,7 @@
 		(uuid "05d31f9f-6190-4522-8fc1-8fb89c044342")
 	)
 	(label "PHY1_D0_P"
-		(at 102.87 82.55 180)
+		(at 102.87 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37448,7 +37448,7 @@
 		(uuid "08d15e68-8f91-4b22-b2b7-4b30ece8af12")
 	)
 	(label "PHY1_D1_P"
-		(at 102.87 87.63 180)
+		(at 102.87 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37547,7 +37547,7 @@
 		(uuid "0ddb82a9-6d0b-4d88-bfa5-99b39dfd1df9")
 	)
 	(label "PHY1_M1_N"
-		(at 123.19 85.09 0)
+		(at 123.19 105.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37569,7 +37569,7 @@
 		(uuid "0eb5f6aa-dc94-4d07-ba15-523fc8f80bc2")
 	)
 	(label "PHY1_D2_N"
-		(at 102.87 102.87 180)
+		(at 102.87 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37580,7 +37580,7 @@
 		(uuid "0f0d112b-74d1-48ae-afd9-2f481466fb17")
 	)
 	(label "PHY2_D1_N"
-		(at 102.87 139.7 180)
+		(at 102.87 157.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37624,7 +37624,7 @@
 		(uuid "10c9ecc9-bce6-4a1d-af0a-4fad8c94b149")
 	)
 	(label "PHY2_M3_P"
-		(at 123.19 165.1 0)
+		(at 123.19 134.62 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37646,7 +37646,7 @@
 		(uuid "10ed1ddd-9e36-4fd6-a6e1-620e7c6ca5a2")
 	)
 	(label "PHY1_M1_P"
-		(at 123.19 87.63 0)
+		(at 123.19 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37734,7 +37734,7 @@
 		(uuid "16540832-c7af-49d5-92da-cef74a29acd7")
 	)
 	(label "PHY1_M3_N"
-		(at 123.19 107.95 0)
+		(at 123.19 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37822,7 +37822,7 @@
 		(uuid "1b4bfc18-afa6-49aa-9833-aefac58d3154")
 	)
 	(label "PHY2_M0_N"
-		(at 123.19 134.62 0)
+		(at 123.19 139.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37833,7 +37833,7 @@
 		(uuid "1b6d9d7e-31b6-4579-8be3-d6b4ae71a2e6")
 	)
 	(label "PHY0_M1_N"
-		(at 123.19 29.21 0)
+		(at 123.19 31.75 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37866,7 +37866,7 @@
 		(uuid "1d9bd1a5-dd04-4f14-a9c4-144960056f03")
 	)
 	(label "PHY3_M1_N"
-		(at 123.19 195.58 0)
+		(at 123.19 190.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37888,7 +37888,7 @@
 		(uuid "1e52f134-8669-4561-842c-0e7687e6f9f1")
 	)
 	(label "PHY2_M1_P"
-		(at 123.19 142.24 0)
+		(at 123.19 160.02 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37943,7 +37943,7 @@
 		(uuid "20635d43-e746-4b08-a0f1-f9cca92456f5")
 	)
 	(label "PHY2_M1_N"
-		(at 123.19 139.7 0)
+		(at 123.19 157.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38097,7 +38097,7 @@
 		(uuid "27ca5968-a201-4c9d-a853-bfeae78f01ec")
 	)
 	(label "PHY3_M0_N"
-		(at 123.19 190.5 0)
+		(at 123.19 218.44 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38207,7 +38207,7 @@
 		(uuid "2ab95e7a-f2aa-44d9-8a15-fca28d54e3e5")
 	)
 	(label "PHY3_D0_P"
-		(at 102.87 193.04 180)
+		(at 102.87 220.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38471,7 +38471,7 @@
 		(uuid "3941a9cc-4c6a-43f1-9d3c-78c77168ac06")
 	)
 	(label "PHY3_D3_P"
-		(at 102.87 220.98 180)
+		(at 102.87 213.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38647,7 +38647,7 @@
 		(uuid "429f87a6-79e6-497c-b3d3-1b9e97460ce9")
 	)
 	(label "PHY2_D1_P"
-		(at 102.87 142.24 180)
+		(at 102.87 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38790,7 +38790,7 @@
 		(uuid "4862d502-c203-40c7-bd4c-e7e775b3c6f1")
 	)
 	(label "PHY2_M0_P"
-		(at 123.19 137.16 0)
+		(at 123.19 142.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39010,7 +39010,7 @@
 		(uuid "5499d135-7b85-4476-9cf0-13e627dee347")
 	)
 	(label "PHY3_D2_N"
-		(at 102.87 213.36 180)
+		(at 102.87 198.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39087,7 +39087,7 @@
 		(uuid "57c9e603-6825-462a-823a-3da6399434a6")
 	)
 	(label "PHY2_M2_P"
-		(at 123.19 160.02 0)
+		(at 123.19 162.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39208,7 +39208,7 @@
 		(uuid "5d7bed79-299a-492b-a777-d8fda4d45ea4")
 	)
 	(label "PHY2_D3_P"
-		(at 102.87 165.1 180)
+		(at 102.87 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39219,7 +39219,7 @@
 		(uuid "5ea511f1-447f-481a-a532-8661a0624867")
 	)
 	(label "PHY1_M0_P"
-		(at 123.19 82.55 0)
+		(at 123.19 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39384,7 +39384,7 @@
 		(uuid "66486f24-9a9d-4082-b900-10ec325b43c3")
 	)
 	(label "PHY3_M1_P"
-		(at 123.19 198.12 0)
+		(at 123.19 193.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39527,7 +39527,7 @@
 		(uuid "6dae903c-8314-4c1b-8be0-fc771f03e01c")
 	)
 	(label "PHY3_M3_N"
-		(at 123.19 218.44 0)
+		(at 123.19 215.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39626,7 +39626,7 @@
 		(uuid "701e636c-d20b-4402-b3e8-054193566c4a")
 	)
 	(label "PHY0_M2_N"
-		(at 123.19 46.99 0)
+		(at 123.19 49.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39681,7 +39681,7 @@
 		(uuid "720a3e78-2764-4018-b989-e87cc78cb44e")
 	)
 	(label "PHY2_D0_N"
-		(at 102.87 134.62 180)
+		(at 102.87 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40231,7 +40231,7 @@
 		(uuid "8e8dd4d3-b122-4a33-a882-ade9c07c18bd")
 	)
 	(label "PHY3_M2_P"
-		(at 123.19 215.9 0)
+		(at 123.19 195.58 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40253,7 +40253,7 @@
 		(uuid "8f3f0507-e653-4be5-a662-5d1fff785065")
 	)
 	(label "PHY2_M3_N"
-		(at 123.19 162.56 0)
+		(at 123.19 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40297,7 +40297,7 @@
 		(uuid "905cfcbf-b579-4a76-9f33-2ea01b648b7e")
 	)
 	(label "PHY1_M2_N"
-		(at 123.19 102.87 0)
+		(at 123.19 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40385,7 +40385,7 @@
 		(uuid "93c96eb3-0b73-43a5-829c-d3a0738abfac")
 	)
 	(label "PHY3_D1_P"
-		(at 102.87 198.12 180)
+		(at 102.87 193.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40484,7 +40484,7 @@
 		(uuid "98d83716-f418-4a13-aab2-f669ae02a74c")
 	)
 	(label "PHY1_D2_P"
-		(at 102.87 105.41 180)
+		(at 102.87 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40528,7 +40528,7 @@
 		(uuid "9a15a437-b29c-4344-802d-1ef5cbf810ba")
 	)
 	(label "PHY2_D2_P"
-		(at 102.87 160.02 180)
+		(at 102.87 162.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40550,7 +40550,7 @@
 		(uuid "9a739dd5-414b-499c-b2ca-0f4256b5046d")
 	)
 	(label "PHY2_D2_N"
-		(at 102.87 157.48 180)
+		(at 102.87 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40605,7 +40605,7 @@
 		(uuid "9d098102-e586-420d-b3dd-bc02cfca6927")
 	)
 	(label "PHY0_D1_N"
-		(at 102.87 29.21 180)
+		(at 102.87 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40627,7 +40627,7 @@
 		(uuid "9e3212d4-42a0-499d-b9a6-8a40e07fe115")
 	)
 	(label "PHY1_D3_P"
-		(at 102.87 110.49 180)
+		(at 102.87 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40693,7 +40693,7 @@
 		(uuid "a0fb00d8-ab11-41a0-8909-1bdd7229cf51")
 	)
 	(label "PHY0_D1_P"
-		(at 102.87 31.75 180)
+		(at 102.87 29.21 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40737,7 +40737,7 @@
 		(uuid "a21b553e-6d0e-43c1-ac1c-62f017f87e36")
 	)
 	(label "PHY1_D3_N"
-		(at 102.87 107.95 180)
+		(at 102.87 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40748,7 +40748,7 @@
 		(uuid "a2e8e577-ca58-4298-9791-411ee1097e93")
 	)
 	(label "PHY2_D3_N"
-		(at 102.87 162.56 180)
+		(at 102.87 137.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40935,7 +40935,7 @@
 		(uuid "ab7bb1fd-cb76-4f18-935b-567e6af53efb")
 	)
 	(label "PHY1_M0_N"
-		(at 123.19 80.01 0)
+		(at 123.19 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -40979,7 +40979,7 @@
 		(uuid "ace6669f-6632-4e37-826c-9adf297e2c68")
 	)
 	(label "PHY3_M3_P"
-		(at 123.19 220.98 0)
+		(at 123.19 213.36 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41122,7 +41122,7 @@
 		(uuid "b560a7b5-0354-4d30-ab21-93645acee64e")
 	)
 	(label "PHY1_M3_P"
-		(at 123.19 110.49 0)
+		(at 123.19 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41232,7 +41232,7 @@
 		(uuid "bb08eceb-45b0-44e9-afa7-3ad4d561e898")
 	)
 	(label "PHY3_M2_N"
-		(at 123.19 213.36 0)
+		(at 123.19 198.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41243,7 +41243,7 @@
 		(uuid "bb2ae011-b515-4c62-853e-bd284cba3cb5")
 	)
 	(label "PHY3_D3_N"
-		(at 102.87 218.44 180)
+		(at 102.87 215.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41628,7 +41628,7 @@
 		(uuid "cebefbec-5faa-4d78-a61d-399884d07458")
 	)
 	(label "PHY1_D0_N"
-		(at 102.87 80.01 180)
+		(at 102.87 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41683,7 +41683,7 @@
 		(uuid "d24b0cf2-b051-4460-a898-6549d1a62c1b")
 	)
 	(label "PHY3_D0_N"
-		(at 102.87 190.5 180)
+		(at 102.87 218.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42024,7 +42024,7 @@
 		(uuid "e060b9ee-729f-46f6-b6fa-a5ca639648e1")
 	)
 	(label "PHY3_D2_P"
-		(at 102.87 215.9 180)
+		(at 102.87 195.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42112,7 +42112,7 @@
 		(uuid "e3883e58-0531-4875-8ec6-c1781df2b9a7")
 	)
 	(label "PHY1_D1_N"
-		(at 102.87 85.09 180)
+		(at 102.87 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42145,7 +42145,7 @@
 		(uuid "e5bba67a-a4f3-4b6c-89c6-96c2152c8175")
 	)
 	(label "PHY2_D0_P"
-		(at 102.87 137.16 180)
+		(at 102.87 142.24 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42156,7 +42156,7 @@
 		(uuid "e5e41320-4505-453e-8a73-d4e721e07dfc")
 	)
 	(label "PHY0_D2_P"
-		(at 102.87 49.53 180)
+		(at 102.87 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42189,7 +42189,7 @@
 		(uuid "e952c1f3-cefc-4bc6-ad34-0b25f31d4eff")
 	)
 	(label "PHY0_M2_P"
-		(at 123.19 49.53 0)
+		(at 123.19 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42277,7 +42277,7 @@
 		(uuid "ec9dc40e-bb5a-455e-9513-dc00f8aeb0a0")
 	)
 	(label "PHY0_D2_N"
-		(at 102.87 46.99 180)
+		(at 102.87 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42310,7 +42310,7 @@
 		(uuid "eda326de-0c85-433b-a640-2b8426a16fc0")
 	)
 	(label "PHY3_M0_P"
-		(at 123.19 193.04 0)
+		(at 123.19 220.98 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42321,7 +42321,7 @@
 		(uuid "ee7d409c-5d2e-4759-aba7-f0c489614357")
 	)
 	(label "PHY0_M1_P"
-		(at 123.19 31.75 0)
+		(at 123.19 29.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42706,7 +42706,7 @@
 		(uuid "fd1640d7-7fb0-47d1-af13-caba0228b623")
 	)
 	(label "PHY1_M2_P"
-		(at 123.19 105.41 0)
+		(at 123.19 82.55 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42750,7 +42750,7 @@
 		(uuid "fea3fe21-ca56-4822-b2be-0fe6f1aa6138")
 	)
 	(label "PHY2_M2_N"
-		(at 123.19 157.48 0)
+		(at 123.19 165.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
