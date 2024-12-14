@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-13")
+		(date "2024-12-14")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -10398,7 +10398,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3_REFLOW"
 			(at 90.17 274.32 0)
 			(effects
 				(font
@@ -10976,7 +10976,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3_REFLOW"
 			(at 240.03 168.91 0)
 			(effects
 				(font
@@ -15552,7 +15552,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3_REFLOW"
 			(at 279.4 168.91 0)
 			(effects
 				(font

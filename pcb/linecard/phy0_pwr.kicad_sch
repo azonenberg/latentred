@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-13")
+		(date "2024-12-14")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -21569,7 +21569,7 @@
 		)
 		(uuid "4ba74f28-c1d5-419f-8836-0308a3642b47")
 	)
-	(label "1V0"
+	(label "1V0_2"
 		(at 191.77 227.33 180)
 		(fields_autoplaced yes)
 		(effects
@@ -21811,7 +21811,7 @@
 		)
 		(uuid "c684dafe-6f58-4021-8faa-dc6489b796cf")
 	)
-	(label "1V0"
+	(label "1V0_2"
 		(at 232.41 198.12 180)
 		(fields_autoplaced yes)
 		(effects
@@ -36035,7 +36035,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:EIA_1206_CAP_NOSILK"
+		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 			(at 257.5052 205.74 0)
 			(effects
 				(font

@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-13")
+		(date "2024-12-14")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -21536,7 +21536,7 @@
 		)
 		(uuid "363de91f-d795-4e43-b282-8ff870272ca2")
 	)
-	(label "1V0"
+	(label "1V0_2"
 		(at 232.41 198.12 180)
 		(fields_autoplaced yes)
 		(effects
@@ -21569,7 +21569,7 @@
 		)
 		(uuid "3ddfa8b5-053f-4374-95a0-4b3e13c11125")
 	)
-	(label "1V0"
+	(label "1V0_2"
 		(at 191.77 227.33 180)
 		(fields_autoplaced yes)
 		(effects
