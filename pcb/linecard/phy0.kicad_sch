@@ -13492,6 +13492,17 @@
 		)
 		(uuid "007ad7b7-f2f9-4b87-822f-a2a8afa1b28b")
 	)
+	(text "Swap for routing:\n* RX2\n* TX0\n* TX1\n* TX2"
+		(exclude_from_sim no)
+		(at 280.67 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2de3ebf3-828e-4e3d-aa5f-63343e419718")
+	)
 	(text "VSC8512 HW design checklist\nFigure 8-2"
 		(exclude_from_sim no)
 		(at 39.37 196.85 0)
@@ -13602,8 +13613,19 @@
 		)
 		(uuid "f57fd2d7-7811-4134-8892-d2704dc52624")
 	)
+	(label "R1_P"
+		(at 218.44 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "001eb5b2-4b7e-4d4f-b91a-ebad402ad9f6")
+	)
 	(label "QSGMII_1_TX_AC_N"
-		(at 138.43 46.99 180)
+		(at 138.43 41.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13690,6 +13712,17 @@
 		)
 		(uuid "1fc7ccb2-c31c-47d5-8391-79116b7b02f3")
 	)
+	(label "T2_N"
+		(at 193.04 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "26a49fc8-610d-4305-9e94-4bd1ba862d31")
+	)
 	(label "QSGMII_1_RX_AC_N"
 		(at 91.44 55.88 0)
 		(fields_autoplaced yes)
@@ -13735,7 +13768,7 @@
 		(uuid "34f4083b-b073-431d-8d0f-3b20be4601a3")
 	)
 	(label "QSGMII_0_TX_AC_P"
-		(at 173.99 34.29 180)
+		(at 173.99 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13768,7 +13801,7 @@
 		(uuid "379a24be-ec0a-475d-8b29-e37119d28827")
 	)
 	(label "QSGMII_2_RX_AC_P"
-		(at 241.3 49.53 0)
+		(at 241.3 54.61 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13800,6 +13833,17 @@
 		)
 		(uuid "3df8521c-c4a1-4b59-b8a3-677448300c1d")
 	)
+	(label "R0_N"
+		(at 218.44 39.37 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f01b320-620a-4a6e-805a-cd5592d06e6a")
+	)
 	(label "QSGMII_0_RX_AC_N"
 		(at 91.44 48.26 0)
 		(fields_autoplaced yes)
@@ -13810,6 +13854,17 @@
 			(justify left bottom)
 		)
 		(uuid "415a4758-6547-4d32-a045-5b18e483293b")
+	)
+	(label "T0_N"
+		(at 193.04 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "42d64232-a9b5-4f2e-8296-f7269fdc2210")
 	)
 	(label "GND"
 		(at 39.37 214.63 180)
@@ -13822,8 +13877,19 @@
 		)
 		(uuid "477f8941-21c8-4498-9833-45cfcdfcd38b")
 	)
+	(label "R2_P"
+		(at 218.44 49.53 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4a7693fb-f798-463c-ab0a-c08ffa24ce0f")
+	)
 	(label "QSGMII_2_RX_AC_N"
-		(at 241.3 54.61 0)
+		(at 241.3 49.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13866,6 +13932,17 @@
 		)
 		(uuid "58b349d5-20da-4dec-ad88-08b97fc892b0")
 	)
+	(label "T1_N"
+		(at 193.04 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5a67f2eb-031d-4758-a7ea-f886ce319b3a")
+	)
 	(label "2V5"
 		(at 39.37 162.56 0)
 		(fields_autoplaced yes)
@@ -13900,7 +13977,7 @@
 		(uuid "6093eac3-d3c6-4b6d-bad5-a5d410ad4dd0")
 	)
 	(label "QSGMII_0_TX_AC_N"
-		(at 173.99 39.37 180)
+		(at 173.99 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13920,6 +13997,17 @@
 			(justify right bottom)
 		)
 		(uuid "70a874be-9b69-49c9-8a4d-5f83860f0491")
+	)
+	(label "T2_P"
+		(at 193.04 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "73b1242a-be8d-4657-94d8-e5de76d77974")
 	)
 	(label "JTAG_TCK"
 		(at 85.09 163.83 180)
@@ -13955,7 +14043,7 @@
 		(uuid "8d54d9a6-a39e-445f-842e-55e78790ec72")
 	)
 	(label "QSGMII_2_TX_AC_P"
-		(at 173.99 49.53 180)
+		(at 173.99 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14031,6 +14119,17 @@
 		)
 		(uuid "a1d17aad-d1ca-4cf2-adff-bcd82e7f99cc")
 	)
+	(label "T0_P"
+		(at 193.04 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a2381365-4ccf-4e10-bc1a-e085ec1e0586")
+	)
 	(label "REFCLK_AC_P"
 		(at 198.12 276.86 0)
 		(fields_autoplaced yes)
@@ -14064,8 +14163,41 @@
 		)
 		(uuid "aa79d3cb-411b-480e-bcf3-44670ce5f02b")
 	)
+	(label "R2_N"
+		(at 218.44 54.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b0d21c3f-2945-4d96-b85e-3e8dea840d6d")
+	)
+	(label "R1_N"
+		(at 218.44 45.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b22bda88-1ab9-4c87-aa79-336208916ff9")
+	)
+	(label "T1_P"
+		(at 193.04 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bab5bec5-5910-49bc-948e-0b264f714177")
+	)
 	(label "QSGMII_2_TX_AC_N"
-		(at 173.99 54.61 180)
+		(at 173.99 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14085,6 +14217,17 @@
 			(justify left bottom)
 		)
 		(uuid "c3a8e9c8-b9ac-4c7e-868d-ce7ad6a37d57")
+	)
+	(label "R0_P"
+		(at 218.44 34.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d28af82b-f466-419c-acd9-9274f5306bbd")
 	)
 	(label "JTAG_TDO"
 		(at 85.09 168.91 180)
@@ -14186,7 +14329,7 @@
 		(uuid "e48dd296-ccec-4dcf-a17e-78bd56bacb78")
 	)
 	(label "QSGMII_1_TX_AC_P"
-		(at 138.43 41.91 180)
+		(at 138.43 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14397,7 +14540,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 182.88 39.37 90)
+		(at 182.88 34.29 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -14405,7 +14548,7 @@
 		(dnp no)
 		(uuid "0889dd3c-eda4-4c73-8c43-2e5d6154fe3a")
 		(property "Reference" "C462"
-			(at 177.8 38.1 90)
+			(at 177.8 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14413,7 +14556,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 187.96 38.1 90)
+			(at 187.96 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14421,7 +14564,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 186.69 38.4048 0)
+			(at 186.69 33.3248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14430,7 +14573,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 39.37 0)
+			(at 182.88 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14439,7 +14582,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 39.37 0)
+			(at 182.88 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18173,7 +18316,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 147.32 46.99 90)
+		(at 147.32 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18181,7 +18324,7 @@
 		(dnp no)
 		(uuid "253ffb82-2b0e-4b7d-b938-6051399ea72c")
 		(property "Reference" "C466"
-			(at 142.24 45.72 90)
+			(at 142.24 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18189,7 +18332,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 152.4 45.72 90)
+			(at 152.4 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18197,7 +18340,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 151.13 46.0248 0)
+			(at 151.13 40.9448 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18206,7 +18349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 46.99 0)
+			(at 147.32 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18215,7 +18358,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 46.99 0)
+			(at 147.32 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18509,7 +18652,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 231.14 54.61 90)
+		(at 231.14 49.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18517,7 +18660,7 @@
 		(dnp no)
 		(uuid "4778de74-c84d-42a0-87b5-9681f77de824")
 		(property "Reference" "C458"
-			(at 226.06 53.34 90)
+			(at 226.06 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18525,7 +18668,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 236.22 53.34 90)
+			(at 236.22 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18533,7 +18676,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 234.95 53.6448 0)
+			(at 234.95 48.5648 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18542,7 +18685,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 54.61 0)
+			(at 231.14 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18551,7 +18694,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 54.61 0)
+			(at 231.14 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18576,7 +18719,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 182.88 49.53 90)
+		(at 182.88 54.61 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18584,7 +18727,7 @@
 		(dnp no)
 		(uuid "57ef55a9-438b-47f9-8f5c-b89c083f922c")
 		(property "Reference" "C463"
-			(at 177.8 48.26 90)
+			(at 177.8 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18592,7 +18735,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 187.96 48.26 90)
+			(at 187.96 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18600,7 +18743,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 186.69 48.5648 0)
+			(at 186.69 53.6448 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18609,7 +18752,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 49.53 0)
+			(at 182.88 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18618,7 +18761,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 49.53 0)
+			(at 182.88 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20977,7 +21120,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 182.88 54.61 90)
+		(at 182.88 49.53 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20985,7 +21128,7 @@
 		(dnp no)
 		(uuid "8ff7c3c2-52fb-4cac-a1ea-ba375536471a")
 		(property "Reference" "C464"
-			(at 177.8 53.34 90)
+			(at 177.8 48.26 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20993,7 +21136,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 187.96 53.34 90)
+			(at 187.96 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21001,7 +21144,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 186.69 53.6448 0)
+			(at 186.69 48.5648 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21010,7 +21153,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 54.61 0)
+			(at 182.88 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21019,7 +21162,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 54.61 0)
+			(at 182.88 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21174,7 +21317,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 231.14 49.53 90)
+		(at 231.14 54.61 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21182,7 +21325,7 @@
 		(dnp no)
 		(uuid "a3f6202f-33e6-4828-a793-98b3f690d024")
 		(property "Reference" "C457"
-			(at 226.06 48.26 90)
+			(at 226.06 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21190,7 +21333,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 236.22 48.26 90)
+			(at 236.22 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21198,7 +21341,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 234.95 48.5648 0)
+			(at 234.95 53.6448 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21207,7 +21350,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 49.53 0)
+			(at 231.14 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21216,7 +21359,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 49.53 0)
+			(at 231.14 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21308,7 +21451,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 147.32 41.91 90)
+		(at 147.32 46.99 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21316,7 +21459,7 @@
 		(dnp no)
 		(uuid "ae233374-668f-454e-bd28-fdd08b5da176")
 		(property "Reference" "C465"
-			(at 142.24 40.64 90)
+			(at 142.24 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21324,7 +21467,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 152.4 40.64 90)
+			(at 152.4 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21332,7 +21475,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 151.13 40.9448 0)
+			(at 151.13 46.0248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21341,7 +21484,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 41.91 0)
+			(at 147.32 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21350,7 +21493,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 41.91 0)
+			(at 147.32 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23472,7 +23615,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 182.88 34.29 90)
+		(at 182.88 39.37 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23480,7 +23623,7 @@
 		(dnp no)
 		(uuid "d7a03355-63da-4d80-91c4-ca6d4802448a")
 		(property "Reference" "C461"
-			(at 177.8 33.02 90)
+			(at 177.8 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23488,7 +23631,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 187.96 33.02 90)
+			(at 187.96 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23496,7 +23639,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 186.69 33.3248 0)
+			(at 186.69 38.4048 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23505,7 +23648,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 34.29 0)
+			(at 182.88 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23514,7 +23657,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 182.88 34.29 0)
+			(at 182.88 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
