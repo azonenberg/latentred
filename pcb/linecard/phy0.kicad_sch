@@ -13569,6 +13569,17 @@
 		)
 		(uuid "b4f81c39-57c9-4bfa-975d-8a2482e7aed2")
 	)
+	(text "Invert polarity\nNo need to correct\nJust a freq ref"
+		(exclude_from_sim no)
+		(at 173.99 280.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b6d6cee6-3143-4f82-9240-1c2fc0e4cd31")
+	)
 	(text "Data plane connection (1/2)\nto switch engine board"
 		(exclude_from_sim no)
 		(at 118.11 62.23 0)
@@ -13823,7 +13834,7 @@
 		(uuid "4c682f4d-aba5-44e2-a8f3-8ea2e8c2783c")
 	)
 	(label "REFCLK_AC_N"
-		(at 198.12 276.86 0)
+		(at 198.12 266.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14021,7 +14032,7 @@
 		(uuid "a1d17aad-d1ca-4cf2-adff-bcd82e7f99cc")
 	)
 	(label "REFCLK_AC_P"
-		(at 198.12 266.7 0)
+		(at 198.12 276.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
