@@ -1911,7 +1911,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:LONGTHING-1200DPI"
+		(property "Footprint" "azonenberg_pcb:LONGTHING-600DPI"
 			(at 15.24 233.68 0)
 			(effects
 				(font
