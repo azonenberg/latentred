@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-14")
+		(date "2024-12-15")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -14175,7 +14175,7 @@
 		(uuid "0955df8f-b640-412e-8bb2-3e71d1cdd6dc")
 	)
 	(label "PHY3_D0_P"
-		(at 102.87 191.77 180)
+		(at 102.87 189.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14197,7 +14197,7 @@
 		(uuid "0a6b83a5-c2df-4810-bd3b-d16439ea9868")
 	)
 	(label "PHY4_D1_P"
-		(at 208.28 30.48 180)
+		(at 208.28 27.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14219,7 +14219,7 @@
 		(uuid "0ae32544-eff9-47f7-a584-bbb077689736")
 	)
 	(label "PHY0_M1_N"
-		(at 123.19 27.94 0)
+		(at 123.19 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14230,7 +14230,7 @@
 		(uuid "0af4f000-98e5-4ac9-b264-691e34d471ec")
 	)
 	(label "PHY3_D0_N"
-		(at 102.87 189.23 180)
+		(at 102.87 191.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14626,7 +14626,7 @@
 		(uuid "1b81ffa0-fa61-4fee-966b-0277f800d544")
 	)
 	(label "PHY0_M1_P"
-		(at 123.19 30.48 0)
+		(at 123.19 27.94 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14659,7 +14659,7 @@
 		(uuid "1d0ea8e1-ab4c-4d6d-b330-9e76d1481fcd")
 	)
 	(label "PHY2_M0_N"
-		(at 123.19 133.35 0)
+		(at 123.19 135.89 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14747,7 +14747,7 @@
 		(uuid "23e05fa0-73cf-40d8-98e1-c2695655a11f")
 	)
 	(label "PHY4_M1_N"
-		(at 228.6 27.94 0)
+		(at 228.6 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14813,7 +14813,7 @@
 		(uuid "2743f537-411c-40e9-b4d1-34fe031e837d")
 	)
 	(label "PHY3_D1_P"
-		(at 102.87 196.85 180)
+		(at 102.87 194.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14923,7 +14923,7 @@
 		(uuid "2e52e5f6-aea0-459e-95df-45d0c584923a")
 	)
 	(label "PHY4_M0_N"
-		(at 228.6 22.86 0)
+		(at 228.6 25.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14989,7 +14989,7 @@
 		(uuid "31ac2b75-22d6-42cd-95c5-82db85715eae")
 	)
 	(label "PHY4_M0_P"
-		(at 228.6 25.4 0)
+		(at 228.6 22.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15198,7 +15198,7 @@
 		(uuid "3b42fca4-c75a-4e6e-a540-4f76eb1aa50c")
 	)
 	(label "PHY0_D1_P"
-		(at 102.87 30.48 180)
+		(at 102.87 27.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15308,7 +15308,7 @@
 		(uuid "4056e4cb-7e19-47ee-a4d0-ee5dd785e8c7")
 	)
 	(label "PHY4_D0_N"
-		(at 208.28 22.86 180)
+		(at 208.28 25.4 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15429,7 +15429,7 @@
 		(uuid "43453ba7-4b3e-4d82-9215-104322138749")
 	)
 	(label "PHY2_D0_N"
-		(at 102.87 133.35 180)
+		(at 102.87 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15781,7 +15781,7 @@
 		(uuid "5144c484-fc56-44e0-a951-7068f13cf550")
 	)
 	(label "PHY2_D1_N"
-		(at 102.87 138.43 180)
+		(at 102.87 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15847,7 +15847,7 @@
 		(uuid "540b0be0-12c5-4699-803f-0783549567f7")
 	)
 	(label "PHY3_M1_N"
-		(at 123.19 194.31 0)
+		(at 123.19 196.85 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16386,7 +16386,7 @@
 		(uuid "6ce4acce-d307-4ddd-8361-a208bbacbbd7")
 	)
 	(label "PHY2_D1_P"
-		(at 102.87 140.97 180)
+		(at 102.87 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16474,7 +16474,7 @@
 		(uuid "71cb895a-dad6-4a65-8b1e-8feb57116d4c")
 	)
 	(label "PHY4_D1_N"
-		(at 208.28 27.94 180)
+		(at 208.28 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17035,7 +17035,7 @@
 		(uuid "9029bd1f-5746-4582-befd-ae02bb5320cd")
 	)
 	(label "PHY3_M1_P"
-		(at 123.19 196.85 0)
+		(at 123.19 194.31 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17255,7 +17255,7 @@
 		(uuid "95fc8558-8f8c-469b-be4c-c758646d2740")
 	)
 	(label "PHY2_D0_P"
-		(at 102.87 135.89 180)
+		(at 102.87 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17365,7 +17365,7 @@
 		(uuid "9aee4541-ebc5-4924-bbfe-d3192adea983")
 	)
 	(label "PHY3_M0_P"
-		(at 123.19 191.77 0)
+		(at 123.19 189.23 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17607,7 +17607,7 @@
 		(uuid "a6892825-2540-4799-bad5-67db14da9287")
 	)
 	(label "PHY4_M1_P"
-		(at 228.6 30.48 0)
+		(at 228.6 27.94 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17739,7 +17739,7 @@
 		(uuid "aeab0f31-a9d6-41a7-9d8f-45bc3e73b3a4")
 	)
 	(label "PHY0_M0_P"
-		(at 123.19 25.4 0)
+		(at 123.19 22.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17783,7 +17783,7 @@
 		(uuid "b06e8f1d-af28-4e82-a814-fa259a50994b")
 	)
 	(label "PHY2_M1_P"
-		(at 123.19 140.97 0)
+		(at 123.19 138.43 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17871,7 +17871,7 @@
 		(uuid "b3845512-c849-4ade-b90d-241b5459a683")
 	)
 	(label "PHY2_M0_P"
-		(at 123.19 135.89 0)
+		(at 123.19 133.35 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18146,7 +18146,7 @@
 		(uuid "c078de91-d6a3-4071-a6a6-09e2dffc6f70")
 	)
 	(label "PHY0_D1_N"
-		(at 102.87 27.94 180)
+		(at 102.87 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18333,7 +18333,7 @@
 		(uuid "c6a9e5d4-b396-4687-91f7-8cd9438f6a45")
 	)
 	(label "PHY2_M1_N"
-		(at 123.19 138.43 0)
+		(at 123.19 140.97 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18344,7 +18344,7 @@
 		(uuid "c6b520b8-e651-4d87-b9f1-886fabcbce89")
 	)
 	(label "PHY0_D0_P"
-		(at 102.87 25.4 180)
+		(at 102.87 22.86 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18432,7 +18432,7 @@
 		(uuid "c903b740-c9b9-42c2-a72a-f4338973ff92")
 	)
 	(label "PHY3_M0_N"
-		(at 123.19 189.23 0)
+		(at 123.19 191.77 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18586,7 +18586,7 @@
 		(uuid "d1bd1f6d-2298-44cf-be35-277b5011eddc")
 	)
 	(label "PHY0_D0_N"
-		(at 102.87 22.86 180)
+		(at 102.87 25.4 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18883,7 +18883,7 @@
 		(uuid "e0f2712d-0a0d-4a23-ae47-a39f7b152c68")
 	)
 	(label "PHY4_D0_P"
-		(at 208.28 25.4 180)
+		(at 208.28 22.86 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19169,7 +19169,7 @@
 		(uuid "ef2b7d71-3e9c-4845-a77f-846ce895e66b")
 	)
 	(label "PHY3_D1_N"
-		(at 102.87 194.31 180)
+		(at 102.87 196.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19213,7 +19213,7 @@
 		(uuid "f0eb968f-2f75-4ba1-b0cb-8440787bffc7")
 	)
 	(label "PHY0_M0_N"
-		(at 123.19 22.86 0)
+		(at 123.19 25.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
