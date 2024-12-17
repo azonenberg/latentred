@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-15")
+		(date "2024-12-17")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -5723,16 +5723,6 @@
 			(type default)
 		)
 		(uuid "2f6de1d7-6229-45a5-b159-ffab36d1e6ff")
-	)
-	(wire
-		(pts
-			(xy 87.63 200.66) (xy 101.6 200.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ff4618e-1611-4a40-b5a9-f6d003093f1b")
 	)
 	(polyline
 		(pts
@@ -14446,73 +14436,6 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
 					(reference "R18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "conn:CONN_01X01")
-		(at 106.68 200.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "64eee8ca-ed3e-495d-ad18-09c438b61058")
-		(property "Reference" "TP3"
-			(at 108.585 199.8253 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CONN_01X01"
-			(at 108.585 202.3622 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
-			(at 106.68 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Connector, single row, 01x01, pin header"
-			(at 106.68 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ab4c6701-4609-475d-be9c-af1e65ad5d96")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79/469d62e1-ca98-4f55-b49b-af1151f42c56"
-					(reference "TP3")
 					(unit 1)
 				)
 			)
