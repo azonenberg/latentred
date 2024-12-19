@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-17")
+		(date "2024-12-18")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -5279,6 +5279,10 @@
 		(uuid "4843e1f7-cd87-4d75-9fcf-1913446f2e25")
 	)
 	(no_connect
+		(at 251.46 115.57)
+		(uuid "4ec0f95b-7ea7-4a97-9e04-a8ba74987d26")
+	)
+	(no_connect
 		(at 364.49 87.63)
 		(uuid "5dd6ec59-2d6d-40ca-8f05-b33c3000afb9")
 	)
@@ -5289,10 +5293,6 @@
 	(no_connect
 		(at 195.58 181.61)
 		(uuid "6a4f4cb8-101b-4901-9cea-d9e62b5d758f")
-	)
-	(no_connect
-		(at 200.66 135.89)
-		(uuid "774879c9-98ec-44da-a9e6-fef8ffe6fe7f")
 	)
 	(no_connect
 		(at 251.46 128.27)
@@ -7981,7 +7981,7 @@
 		(uuid "10ba0475-e00b-4510-8798-08fe8000582f")
 	)
 	(label "1V0_2_PGOOD"
-		(at 200.66 143.51 180)
+		(at 200.66 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8553,7 +8553,7 @@
 		(uuid "53b0113c-441e-4f69-882a-0b01e535b510")
 	)
 	(label "1V0_EN"
-		(at 200.66 115.57 180)
+		(at 251.46 148.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8883,7 +8883,7 @@
 		(uuid "7bec15db-bdff-46e1-b63f-765b1bab4529")
 	)
 	(label "1V0_PGOOD"
-		(at 200.66 146.05 180)
+		(at 251.46 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9081,7 +9081,7 @@
 		(uuid "8b055b09-dc45-4bf0-bd96-3980c6ccd15a")
 	)
 	(label "1V0_2_EN"
-		(at 200.66 118.11 180)
+		(at 251.46 153.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9224,7 +9224,7 @@
 		(uuid "9ab7bb3d-2b62-4688-a253-75e759ead8fa")
 	)
 	(label "3V3_PGOOD"
-		(at 200.66 123.19 180)
+		(at 251.46 146.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9730,7 +9730,7 @@
 		(uuid "d3dcb5a1-64f3-440a-ae0e-f8abcc038521")
 	)
 	(label "2V5_PGOOD"
-		(at 251.46 115.57 180)
+		(at 200.66 146.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9840,7 +9840,7 @@
 		(uuid "de57ab11-6faf-4182-bc72-30205a290264")
 	)
 	(label "INA_ALERT"
-		(at 251.46 153.67 180)
+		(at 200.66 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9851,7 +9851,7 @@
 		(uuid "de5f1cfe-046b-4389-b63d-112d8b032187")
 	)
 	(label "SOFT_RST"
-		(at 251.46 146.05 180)
+		(at 200.66 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10027,7 +10027,7 @@
 		(uuid "f30919e7-5e06-468e-9ab1-149ce0960635")
 	)
 	(label "2V5_EN"
-		(at 200.66 120.65 180)
+		(at 200.66 143.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10196,7 +10196,7 @@
 	)
 	(hierarchical_label "PHY1_RST"
 		(shape output)
-		(at 251.46 151.13 180)
+		(at 200.66 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10208,7 +10208,7 @@
 	)
 	(hierarchical_label "PHY0_RST"
 		(shape output)
-		(at 251.46 148.59 180)
+		(at 200.66 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
