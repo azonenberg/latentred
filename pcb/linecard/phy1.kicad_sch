@@ -14274,7 +14274,7 @@
 		(uuid "c8109a6c-c802-4337-9eda-c78d9819b637")
 	)
 	(label "REFCLK_AC_N"
-		(at 198.12 276.86 0)
+		(at 198.12 266.7 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14340,7 +14340,7 @@
 		(uuid "e5ec7aba-e677-4f9b-bdc7-f70a836538bb")
 	)
 	(label "REFCLK_AC_P"
-		(at 198.12 266.7 0)
+		(at 198.12 276.86 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20621,7 +20621,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 194.31 276.86 90)
+		(at 194.31 266.7 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20630,7 +20630,7 @@
 		(fields_autoplaced yes)
 		(uuid "72b87965-0da2-4876-b387-dba2f285bfce")
 		(property "Reference" "C478"
-			(at 194.31 271.0012 90)
+			(at 194.31 260.8412 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20638,7 +20638,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 194.31 273.5381 90)
+			(at 194.31 263.3781 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20646,7 +20646,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 198.12 275.8948 0)
+			(at 198.12 265.7348 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20655,7 +20655,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 276.86 0)
+			(at 194.31 266.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20664,7 +20664,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 194.31 276.86 0)
+			(at 194.31 266.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21625,7 +21625,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 194.31 266.7 90)
+		(at 194.31 276.86 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21634,7 +21634,7 @@
 		(fields_autoplaced yes)
 		(uuid "b13b2fef-0c4d-4867-a5fb-191cca9dceb3")
 		(property "Reference" "C477"
-			(at 194.31 260.8412 90)
+			(at 194.31 271.0012 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21642,7 +21642,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 194.31 263.3781 90)
+			(at 194.31 273.5381 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21650,7 +21650,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 198.12 265.7348 0)
+			(at 198.12 275.8948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21659,7 +21659,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 266.7 0)
+			(at 194.31 276.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21668,7 +21668,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 194.31 266.7 0)
+			(at 194.31 276.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)

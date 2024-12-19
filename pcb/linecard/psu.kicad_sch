@@ -5271,16 +5271,16 @@
 		(uuid "fa0f68e1-97d6-4eac-9992-8887c576d527")
 	)
 	(no_connect
+		(at 195.58 170.18)
+		(uuid "19c69853-908f-4cfc-843b-3242f6c0556c")
+	)
+	(no_connect
+		(at 195.58 167.64)
+		(uuid "3741e02f-0684-4985-9b64-c9495e5eb8fa")
+	)
+	(no_connect
 		(at 364.49 82.55)
 		(uuid "46d58a48-43bc-4fbc-a7f4-4ec13e5c0946")
-	)
-	(no_connect
-		(at 195.58 179.07)
-		(uuid "4843e1f7-cd87-4d75-9fcf-1913446f2e25")
-	)
-	(no_connect
-		(at 251.46 115.57)
-		(uuid "4ec0f95b-7ea7-4a97-9e04-a8ba74987d26")
 	)
 	(no_connect
 		(at 364.49 87.63)
@@ -5289,10 +5289,6 @@
 	(no_connect
 		(at 251.46 120.65)
 		(uuid "63065257-9a22-4c8e-ac3f-b2754ca1656a")
-	)
-	(no_connect
-		(at 195.58 181.61)
-		(uuid "6a4f4cb8-101b-4901-9cea-d9e62b5d758f")
 	)
 	(no_connect
 		(at 251.46 128.27)
@@ -5305,6 +5301,10 @@
 	(no_connect
 		(at 364.49 85.09)
 		(uuid "af4f09db-a8dc-444b-80d2-6b5b6ab61ca2")
+	)
+	(no_connect
+		(at 251.46 140.97)
+		(uuid "bb0b1384-e08a-4c92-9453-df601709052e")
 	)
 	(no_connect
 		(at 364.49 90.17)
@@ -8520,7 +8520,7 @@
 		(uuid "524f5475-ec22-4aae-b8b0-47f08d833212")
 	)
 	(label "FAULT_LED"
-		(at 251.46 135.89 180)
+		(at 200.66 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9367,7 +9367,7 @@
 		(uuid "af48dbf3-9298-492c-99a7-8879bc394b5a")
 	)
 	(label "TEMP_ALERT"
-		(at 251.46 118.11 180)
+		(at 251.46 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9840,7 +9840,7 @@
 		(uuid "de57ab11-6faf-4182-bc72-30205a290264")
 	)
 	(label "INA_ALERT"
-		(at 200.66 118.11 180)
+		(at 195.58 181.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10016,7 +10016,7 @@
 		(uuid "f2ceda63-066f-48dd-9c29-f526de1aa8bc")
 	)
 	(label "SYSOK_LED"
-		(at 251.46 140.97 180)
+		(at 200.66 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10148,7 +10148,7 @@
 		(uuid "ff589317-1616-4798-9d0f-4d050c198550")
 	)
 	(label "PWRGOOD_LED"
-		(at 251.46 138.43 180)
+		(at 200.66 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10184,7 +10184,7 @@
 	)
 	(hierarchical_label "PHY1_PWRDN"
 		(shape input)
-		(at 195.58 170.18 180)
+		(at 251.46 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10196,7 +10196,7 @@
 	)
 	(hierarchical_label "PHY1_RST"
 		(shape output)
-		(at 200.66 120.65 180)
+		(at 251.46 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10208,7 +10208,7 @@
 	)
 	(hierarchical_label "PHY0_RST"
 		(shape output)
-		(at 200.66 115.57 180)
+		(at 251.46 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10244,7 +10244,7 @@
 	)
 	(hierarchical_label "PHY0_PWRDN"
 		(shape input)
-		(at 195.58 167.64 180)
+		(at 195.58 179.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
