@@ -317,22 +317,10 @@
 		(uuid "217ae708-1ce4-4426-9b0a-c3dbf545dce4")
 	)
 	(junction
-		(at 20.32 265.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "66a8671d-c9c7-43a5-9b76-832db1d9f69a")
-	)
-	(junction
 		(at 48.26 217.17)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8f55d60e-fd51-47f5-a4fc-6118c70b8693")
-	)
-	(junction
-		(at 20.32 270.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c257f4d0-2fb8-468c-adfe-031988a12b4c")
 	)
 	(junction
 		(at 48.26 210.82)
@@ -375,16 +363,6 @@
 			(type default)
 		)
 		(uuid "1bfae169-24ea-4764-825a-9fabba409d43")
-	)
-	(wire
-		(pts
-			(xy 20.32 265.43) (xy 20.32 270.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "232c5f15-e295-4580-b2cd-348621061927")
 	)
 	(wire
 		(pts
@@ -535,16 +513,6 @@
 			(type default)
 		)
 		(uuid "e2737f5f-6a7f-4ede-a348-d99b181d1dfb")
-	)
-	(wire
-		(pts
-			(xy 20.32 270.51) (xy 20.32 275.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f79bd8a9-a51f-4a00-ac2a-7451a569de64")
 	)
 	(text "Silkscreen logos"
 		(exclude_from_sim no)
@@ -1942,140 +1910,6 @@
 			(project "linecard"
 				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
 					(reference "M1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "conn:CONN_01X01")
-		(at 25.4 275.59 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ab884aae-a3bf-43fc-a013-4665eb34cd4f")
-		(property "Reference" "TP21"
-			(at 27.305 274.7553 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GROUNDCLIP"
-			(at 27.305 277.2922 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
-			(at 25.4 275.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 275.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 25.4 275.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "47cdfaa6-602b-46eb-b26f-3a973146f191")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
-					(reference "TP21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "conn:CONN_01X01")
-		(at 25.4 270.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b08fa1f0-9d86-41c2-a2c2-92f38c4dfcfe")
-		(property "Reference" "TP4"
-			(at 27.305 269.6753 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GROUNDCLIP"
-			(at 27.305 272.2122 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
-			(at 25.4 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 25.4 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6852b308-2fa4-4174-990d-d903c8eff198")
-		)
-		(instances
-			(project "linecard"
-				(path "/a55ad1ec-4cad-4d06-8b73-31c98dcc1d79"
-					(reference "TP4")
 					(unit 1)
 				)
 			)

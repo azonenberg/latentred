@@ -29,7 +29,7 @@ Suggested stackup
     2    35 μm (1 oz) copper          Ground
         100 μm S1000-2 core
     3    35 μm (1 oz) copper          Power
-        Cores and prepregs as needed for 1.6mm finished thickness
+        Cores and prepregs as needed for 1.6mm finished thickness (1.038mm total)
     4    35 μm (1 oz) copper          Power
         100 μm S1000-2 core
     5    35 μm (1 oz) copper          Ground
