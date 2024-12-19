@@ -5303,8 +5303,8 @@
 		(uuid "af4f09db-a8dc-444b-80d2-6b5b6ab61ca2")
 	)
 	(no_connect
-		(at 251.46 140.97)
-		(uuid "bb0b1384-e08a-4c92-9453-df601709052e")
+		(at 200.66 123.19)
+		(uuid "c010fd5f-9d77-4b93-9564-f1337e25ac4c")
 	)
 	(no_connect
 		(at 364.49 90.17)
@@ -8839,7 +8839,7 @@
 		(uuid "74df4573-ca15-4b6f-8f53-df860be02d97")
 	)
 	(label "SOFT_PWR"
-		(at 251.46 143.51 180)
+		(at 251.46 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9851,7 +9851,7 @@
 		(uuid "de5f1cfe-046b-4389-b63d-112d8b032187")
 	)
 	(label "SOFT_RST"
-		(at 200.66 123.19 180)
+		(at 251.46 143.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
