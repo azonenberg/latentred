@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-19")
+		(date "2024-12-21")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -5291,10 +5291,6 @@
 		(uuid "63065257-9a22-4c8e-ac3f-b2754ca1656a")
 	)
 	(no_connect
-		(at 251.46 128.27)
-		(uuid "85d8e16c-fb75-4cd4-a9ab-ffe663fb6cd3")
-	)
-	(no_connect
 		(at 364.49 80.01)
 		(uuid "953f74c8-5a5e-49be-a924-c6f6e47f5e82")
 	)
@@ -5305,6 +5301,10 @@
 	(no_connect
 		(at 200.66 123.19)
 		(uuid "c010fd5f-9d77-4b93-9564-f1337e25ac4c")
+	)
+	(no_connect
+		(at 251.46 135.89)
+		(uuid "cbb341a5-cd4c-4779-9a85-9125675aa45f")
 	)
 	(no_connect
 		(at 364.49 90.17)
@@ -9367,7 +9367,7 @@
 		(uuid "af48dbf3-9298-492c-99a7-8879bc394b5a")
 	)
 	(label "TEMP_ALERT"
-		(at 251.46 135.89 180)
+		(at 251.46 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
