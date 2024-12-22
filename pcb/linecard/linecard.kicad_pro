@@ -58,9 +58,9 @@
           "width": 0.0
         },
         {
-          "gap": 0.1,
+          "gap": 0.11,
           "via_gap": 0.15,
-          "width": 0.1
+          "width": 0.09
         }
       ],
       "drc_exclusions": [],
@@ -184,7 +184,7 @@
       ],
       "track_widths": [
         0.0,
-        0.1,
+        0.09,
         0.13,
         0.25,
         0.5
@@ -473,9 +473,9 @@
       {
         "bus_width": 12,
         "clearance": 0.1,
-        "diff_pair_gap": 0.1,
+        "diff_pair_gap": 0.11,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1,
+        "diff_pair_width": 0.09,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
