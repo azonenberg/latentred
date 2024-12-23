@@ -2,11 +2,11 @@ FTYP SONPROJ 19 ! Sonnet Project File
 VER 18.56
 HEADER
 LIC antikernel2.1.65565
-DAT 12/22/2024 07:58:10
+DAT 12/22/2024 20:50:18
 BUILT_BY_CREATED xgeom 18.52 11/18/2021 20:28:07
 BUILT_BY_SAVED sonnet 18.56
-MDATE 12/22/2024 07:58:10
-HDATE 12/22/2024 07:58:10
+MDATE 12/22/2024 20:50:18
+HDATE 12/22/2024 20:50:18
 ANN Created by dxfgeo, Sonnet Software Inc.
 END HEADER
 DIM
@@ -37,11 +37,11 @@ MET "Copper_0.5oz_thick_down" 5 TMM 58000000 0.5 0.017 2 CDVY TDWN
 BOX 8 10 5 2000 1000 20 0
       5 1 1 0 0 0 0 "Air"
       0.04 3.5 1 0.025 0 0 0 "Soldermask"
-      0.076 4.49 1 0.016 0 0 0 "Shengyi_S1000-2M"
-      0.1 4.49 1 0.016 0 0 0 "Shengyi_S1000-2M"
-      1.038 4.49 1 0.016 0 0 0 "Shengyi_S1000-2M"
-      0.1 4.49 1 0.016 0 0 0 "Shengyi_S1000-2M"
-      0.076 4.49 1 0.016 0 0 0 "Shengyi_S1000-2M"
+      0.076 4.07 1 0.02 0 0 0 "Shengyi_S1000-2M"
+      0.1 4.24 1 0.019 0 0 0 "Shengyi_S1000-2M"
+      1.038 4.58 1 0.016 0 0 0 "Shengyi_S1000-2M"
+      0.1 4.24 1 0.019 0 0 0 "Shengyi_S1000-2M"
+      0.076 4.07 1 0.02 0 0 0 "Shengyi_S1000-2M"
       0.04 3.5 1 0.025 0 0 0 "Soldermask"
       5 1 1 0 0 0 0 "Air"
 TECHLAY METAL F.Cu_thick L1D0 -2 -65534 CAD F.Cu_thick drawing 
@@ -74,6 +74,10 @@ TECHLAY METAL In3.Cu_thin L4D0 -8 -65534 CAD In5.Cu drawing
 4 0 3 N 1172 1 1 100 100 0 0 0 Y
 END
 END
+TECHLAY METAL In3.Cu <UNSPECIFIED> -6 -65534 CAD In3.Cu drawing 
+4 0 0 N 1195 1 1 100 100 0 0 0 Y
+END
+END
 TECHLAY METAL In4.Cu L5D0 -10 -65534 CAD In6.Cu drawing 
 5 0 0 N 1175 1 1 100 100 0 0 0 Y
 END
@@ -95,6 +99,8 @@ VALVAR CORE_DF NONE "table1(\"../../../sata-sniffer/sims/core_df.csv\",FREQ)" "V
 VALVAR PREPREG_DF NONE "table1(\"../../../sata-sniffer/sims/prepreg_df.csv\",FREQ)" "Variable set in material file"
 VALVAR PREPREG_ER NONE "table1(\"../../../sata-sniffer/sims/prepreg_er.csv\",FREQ)" "Variable set in material file"
 VALVAR WIDTH LNG 0.1 "Dim. Param."
+VALVAR WIDTH2 LNG "WIDTH" "Dim. Param."
+VALVAR SPACE LNG 0.15 "Dim. Param."
 LORGN 0 5 U 
 NUM 1141
 1 65 1 N 1 1 1 100 100 0 0 0 Y
@@ -72429,5 +72435,6 @@ END GEO
 VARSWP
 ENABLED Y
 FREQ Y AY ABS_ENTRY 0.01 8.0 -1 300 
+VAR WIDTH N 0.1 0.1 UNDEF
 END
 END VARSWP
