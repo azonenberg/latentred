@@ -3,3 +3,4 @@
 *.lck
 *.kicad_prl
 *cache
+output
