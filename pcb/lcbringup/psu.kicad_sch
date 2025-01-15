@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-10")
+		(date "2025-01-14")
 		(rev "0.1")
 		(company "Antikernel Labs")
 	)
@@ -693,6 +693,159 @@
 				)
 			)
 		)
+		(symbol "power-azonenberg:CONN_IBC_MGMT_HOST"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CONN_IBC_MGMT_HOST"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_IBC_MGMT_HOST_0_1"
+				(rectangle
+					(start 0 12.7)
+					(end -13.97 0)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "CONN_IBC_MGMT_HOST_1_1"
+				(pin power_in line
+					(at 3.81 11.43 180)
+					(length 3.81)
+					(name "3V3_SB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 3.81 8.89 180)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 3.81 6.35 180)
+					(length 3.81)
+					(name "I2C_SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 3.81 3.81 180)
+					(length 3.81)
+					(name "I2C_SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 3.81 1.27 180)
+					(length 3.81)
+					(name "12V0_OUT_EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power-azonenberg:FUSE_PWROUT_2"
 			(pin_names
 				(offset 0.254)
@@ -1114,6 +1267,12 @@
 		(uuid "6611b4ff-43b7-4de3-81b3-b3d7d9541f8b")
 	)
 	(junction
+		(at 73.66 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ceddda9-9971-426b-9f43-c7250cfc40b8")
+	)
+	(junction
 		(at 82.55 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1328,6 +1487,16 @@
 			(type default)
 		)
 		(uuid "37ad7b08-8665-4a37-b01a-79265ae40f48")
+	)
+	(wire
+		(pts
+			(xy 73.66 35.56) (xy 97.79 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a25373d-4d60-49a0-929b-8917b228356e")
 	)
 	(wire
 		(pts
@@ -2065,6 +2234,17 @@
 		)
 		(uuid "01cd3878-2023-4d93-b7e3-4e34b249d5f7")
 	)
+	(label "GND"
+		(at 97.79 27.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "044354e1-0efb-403b-9bc5-c04a5a7d9c21")
+	)
 	(label "12V0"
 		(at 50.8 204.47 180)
 		(fields_autoplaced yes)
@@ -2285,6 +2465,17 @@
 		)
 		(uuid "73a90b44-a2b8-43b9-a680-ae8323e2bc12")
 	)
+	(label "3V3_SB"
+		(at 97.79 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9886183f-9245-4df2-ad17-aff1a3db1531")
+	)
 	(label "12V0"
 		(at 35.56 152.4 180)
 		(fields_autoplaced yes)
@@ -2362,6 +2553,17 @@
 		)
 		(uuid "bdc9fa4f-9152-4991-9dcb-7ce193b2545a")
 	)
+	(label "SUPER_I2C_SDA"
+		(at 97.79 30.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c52d8540-bbee-41eb-b13d-fb7ae0b160e4")
+	)
 	(label "12V0"
 		(at 35.56 114.3 180)
 		(fields_autoplaced yes)
@@ -2394,6 +2596,17 @@
 			(justify right bottom)
 		)
 		(uuid "e3b21e3e-1e30-44d2-b47f-e4cdd628a982")
+	)
+	(label "SUPER_I2C_SCL"
+		(at 97.79 33.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e3d9af7a-65bc-4f2d-9968-a722abfe5a34")
 	)
 	(label "3V3_SB"
 		(at 73.66 27.94 0)
@@ -2578,6 +2791,86 @@
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
 					(reference "C91")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power-azonenberg:CONN_IBC_MGMT_HOST")
+		(at 101.6 36.83 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07b47487-359d-468d-8888-2710ba30ccf4")
+		(property "Reference" "J23"
+			(at 116.2812 29.2678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CONN_IBC_MGMT_HOST"
+			(at 116.2812 31.6921 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:CONN_MOLEX_PICOBLADE_5POS_0532610571"
+			(at 101.6 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 101.6 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d752fdd5-05af-4951-9d8f-d9cc91be8624")
+		)
+		(pin "3"
+			(uuid "cfcdcbf8-6c89-4772-a229-35ef809957f0")
+		)
+		(pin "4"
+			(uuid "7c35d84a-5685-43be-9013-fa7bc94bf44f")
+		)
+		(pin "5"
+			(uuid "2bb129b5-c858-49de-a0a4-73e1eef82462")
+		)
+		(pin "2"
+			(uuid "f04b8051-a017-4234-8fbc-ceac78313a85")
+		)
+		(instances
+			(project ""
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "J23")
 					(unit 1)
 				)
 			)
