@@ -1,4 +1,4 @@
-Part number:        latentred-linecard v0.1
+Part number:        latentred-bringup v0.1
 
 General fabrication notes
 
@@ -40,7 +40,7 @@ Suggested stackup
 
 File naming
     linecard-Edge_Cuts.gbr   Board outline
-    linecard.drl             Through-board plated holes
+    lcbringup.drl            Through-board plated holes
     linecard-F_SilkS.gbr     Front silkscreen
     linecard-F.Fab.gbr       Shows requested location of date code and UL marking
     linecard-F_Mask.gbr      Front solder mask
@@ -52,4 +52,4 @@ File naming
     linecard-B_Cu.gbr        Layer 6 copper
     linecard-B_Mask.gbr      Back solder mask
     linecard-B_SilkS.gbr     Back silkscreen
-    linecard.d356            Electrical test netlist
+    lcbringup.d356           Electrical test netlist
