@@ -4088,7 +4088,7 @@
 		)
 		(uuid "720809d4-5237-4beb-88e3-9b623005850e")
 	)
-	(text "Address = 0x22"
+	(text "Address = 0x44"
 		(exclude_from_sim no)
 		(at 35.56 261.62 0)
 		(effects
@@ -4099,7 +4099,7 @@
 		)
 		(uuid "a0dfaf8b-f063-4682-8042-ec4e9a43218c")
 	)
-	(text "POWER I2C ADDRESS MAP\n* 0x22: PDU IO expander for rail enables and PGOOD\n* 0x42: IBC MCU\n* 0x80: 12V0_LC1 INA230\n* 0x82: 12V0_LC2 INA230\n* 0x84: 12V0_LOGIC INA230\n* 0x90: IBC AT30TS74\n* 0x92: PDU AT30TS74"
+	(text "POWER I2C ADDRESS MAP\n* 0x42: IBC MCU\n* 0x44: PDU IO expander for rail enables and PGOOD\n* 0x80: 12V0_LC1 INA230\n* 0x82: 12V0_LC2 INA230\n* 0x84: 12V0_LOGIC INA230\n* 0x90: IBC AT30TS74\n* 0x92: PDU AT30TS74"
 		(exclude_from_sim no)
 		(at 223.52 133.35 0)
 		(effects
