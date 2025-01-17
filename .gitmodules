@@ -1,0 +1,18 @@
+[submodule "staticnet"]
+	path = staticnet
+	url = ../staticnet.git
+[submodule "common-embedded-platform"]
+	path = common-embedded-platform
+	url = ../common-embedded-platform.git
+[submodule "embedded-utils"]
+	path = embedded-utils
+	url = ../embedded-utils.git
+[submodule "microkvs"]
+	path = microkvs
+	url = ../microkvs.git
+[submodule "stm32-cpp"]
+	path = stm32-cpp
+	url = ../stm32-cpp.git
+[submodule "embedded-cli"]
+	path = embedded-cli
+	url = ../embedded-cli.git
