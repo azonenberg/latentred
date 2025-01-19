@@ -16,3 +16,6 @@
 [submodule "embedded-cli"]
 	path = embedded-cli
 	url = ../embedded-cli.git
+[submodule "etl"]
+	path = etl
+	url = https://github.com/ETLCPP/etl
