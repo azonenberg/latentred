@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-14")
+		(date "2025-01-19")
 		(rev "0.1")
 		(company "Antikernel Labs")
 	)
@@ -885,17 +885,6 @@
 		(uuid "fe93dcd3-5862-49b3-9902-fe12d8727067")
 	)
 	(label "GND"
-		(at 111.76 26.67 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "086b6eba-4ac8-4a9c-b7ba-c455b1ef8773")
-	)
-	(label "GND"
 		(at 60.96 88.9 0)
 		(fields_autoplaced yes)
 		(effects
@@ -1301,6 +1290,18 @@
 			(justify right bottom)
 		)
 		(uuid "fcc696d4-aa85-4b31-aa76-489114a40652")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 111.76 26.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "64580310-5129-44e7-a8ea-3f41414f7387")
 	)
 	(symbol
 		(lib_id "conn:CONN_COAXIAL")

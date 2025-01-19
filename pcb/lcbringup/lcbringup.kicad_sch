@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-14")
+		(date "2025-01-19")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "LATENTPINK Line Card Bringup Glue")
@@ -341,6 +341,17 @@
 			(justify right bottom)
 		)
 		(uuid "47591a1f-6e51-4881-9cef-76e0874db9c6")
+	)
+	(label "GND"
+		(at 25.4 149.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "562310b0-0a00-41f1-aca3-5611e713db4a")
 	)
 	(label "1V8"
 		(at 142.24 97.79 0)
@@ -1097,6 +1108,16 @@
 				)
 				(justify left top)
 			)
+		)
+		(pin "GND" input
+			(at 25.4 149.86 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0d03efcb-d463-41fd-b3ca-a2b5dba1a81d")
 		)
 		(instances
 			(project "lcbringup"
