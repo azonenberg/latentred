@@ -1255,6 +1255,12 @@
 		(uuid "5380a08b-55c9-4035-bf8e-db287c044efb")
 	)
 	(junction
+		(at 82.55 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5bbf15cc-1af0-465f-b1d7-4199559981bd")
+	)
+	(junction
 		(at 50.8 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1271,6 +1277,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6ceddda9-9971-426b-9f43-c7250cfc40b8")
+	)
+	(junction
+		(at 69.85 232.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "74f96c20-1208-4b47-b24e-ba15f5d2db18")
 	)
 	(junction
 		(at 82.55 87.63)
@@ -1297,6 +1309,18 @@
 		(uuid "8e159172-2c99-4ddd-87ec-f3cfd1229707")
 	)
 	(junction
+		(at 50.8 237.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "90768f84-5e5f-4e6e-89f4-33a3304991da")
+	)
+	(junction
+		(at 99.06 232.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "97c78f61-6bee-4579-9871-ef5b497aa161")
+	)
+	(junction
 		(at 69.85 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1321,6 +1345,12 @@
 		(uuid "a27a3c91-8cfa-44e5-947c-61cac3103962")
 	)
 	(junction
+		(at 82.55 232.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc53ecab-00ea-4c22-9ab0-de28e84b9e20")
+	)
+	(junction
 		(at 69.85 194.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1337,6 +1367,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d47fe89b-b184-4263-bce5-7cb3bcc4f4bb")
+	)
+	(junction
+		(at 82.55 240.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da67d643-4c34-49f4-9f80-a08c5b9c9096")
 	)
 	(junction
 		(at 99.06 194.31)
@@ -1362,6 +1398,12 @@
 		(color 0 0 0 0)
 		(uuid "f379f874-3d0b-4fa6-8865-c4e9916c84ff")
 	)
+	(junction
+		(at 99.06 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fbd95e38-0d22-4d12-94a1-0fb4ba951cf9")
+	)
 	(no_connect
 		(at 50.8 207.01)
 		(uuid "5ab321a6-b719-4a7f-af13-c47ad3b39446")
@@ -1377,6 +1419,10 @@
 	(no_connect
 		(at 50.8 92.71)
 		(uuid "9edb6d5d-3e19-44b0-8988-c18b494ea8f1")
+	)
+	(no_connect
+		(at 50.8 245.11)
+		(uuid "e53983fb-1d08-43c1-b1a3-e8a3a4e7b9cf")
 	)
 	(wire
 		(pts
@@ -1430,6 +1476,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 240.03) (xy 82.55 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1909b482-290d-4667-ace7-0351feb827db")
+	)
+	(wire
+		(pts
 			(xy 111.76 201.93) (xy 111.76 209.55)
 		)
 		(stroke
@@ -1437,6 +1493,26 @@
 			(type default)
 		)
 		(uuid "1dba2eef-b15a-4476-8713-c5d184a7149e")
+	)
+	(wire
+		(pts
+			(xy 35.56 232.41) (xy 35.56 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f711acd-9949-46e9-9d11-98276c4d3f50")
+	)
+	(wire
+		(pts
+			(xy 69.85 229.87) (xy 69.85 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "213a2584-9797-4ecf-9bba-3ce0bd5ac241")
 	)
 	(wire
 		(pts
@@ -1457,6 +1533,16 @@
 			(type default)
 		)
 		(uuid "274deb14-6c97-4e42-821b-f25f1512b367")
+	)
+	(wire
+		(pts
+			(xy 69.85 237.49) (xy 69.85 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e933171-d64a-4021-b2bb-f7750bdf056b")
 	)
 	(wire
 		(pts
@@ -1540,6 +1626,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 247.65) (xy 99.06 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41251d72-e52f-4cff-8ce5-f250aaadae4a")
+	)
+	(wire
+		(pts
 			(xy 69.85 167.64) (xy 69.85 173.99)
 		)
 		(stroke
@@ -1580,6 +1676,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 237.49) (xy 50.8 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "496f6d8f-d40e-4a70-9955-99092f842d94")
+	)
+	(wire
+		(pts
 			(xy 50.8 85.09) (xy 50.8 87.63)
 		)
 		(stroke
@@ -1590,6 +1696,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 259.08) (xy 76.2 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f0362fb-807d-4b6d-b71a-f44cbdaf5adc")
+	)
+	(wire
+		(pts
 			(xy 69.85 152.4) (xy 69.85 154.94)
 		)
 		(stroke
@@ -1597,6 +1713,26 @@
 			(type default)
 		)
 		(uuid "529930da-b437-47be-8e43-70e24c284c36")
+	)
+	(wire
+		(pts
+			(xy 69.85 245.11) (xy 69.85 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52f1d56a-d4eb-4f4a-841c-704e9d1aacf4")
+	)
+	(wire
+		(pts
+			(xy 80.01 247.65) (xy 82.55 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5394dffd-a83a-4e73-8f1d-01e9fd3fe0b0")
 	)
 	(wire
 		(pts
@@ -1620,6 +1756,16 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 232.41) (xy 111.76 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "565dda82-97ea-48e4-a670-d0d23c6b952e")
+	)
+	(wire
+		(pts
 			(xy 111.76 170.18) (xy 99.06 170.18)
 		)
 		(stroke
@@ -1627,6 +1773,16 @@
 			(type default)
 		)
 		(uuid "5877efc7-bff8-4a28-b937-99176b6d1744")
+	)
+	(wire
+		(pts
+			(xy 35.56 229.87) (xy 50.8 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58a3d2a0-92cd-4eb7-9404-e2d22ef64623")
 	)
 	(wire
 		(pts
@@ -1657,6 +1813,16 @@
 			(type default)
 		)
 		(uuid "5fc2f650-107b-4dc6-951a-abf0f1161330")
+	)
+	(wire
+		(pts
+			(xy 99.06 247.65) (xy 99.06 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "686eeb8a-91af-48da-a8e8-53b5b7aa1777")
 	)
 	(wire
 		(pts
@@ -1770,6 +1936,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 234.95) (xy 50.8 237.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8940aaeb-08fb-4e61-8998-820d62459263")
+	)
+	(wire
+		(pts
 			(xy 80.01 95.25) (xy 82.55 95.25)
 		)
 		(stroke
@@ -1840,6 +2016,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 232.41) (xy 82.55 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a16b4848-ecbe-436a-84ba-063c95cb7bc8")
+	)
+	(wire
+		(pts
 			(xy 69.85 143.51) (xy 76.2 143.51)
 		)
 		(stroke
@@ -1907,6 +2093,16 @@
 			(type default)
 		)
 		(uuid "b6e7c44f-cf02-416a-8e4d-62d8791228b2")
+	)
+	(wire
+		(pts
+			(xy 111.76 247.65) (xy 99.06 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7242f30-8746-4ed0-a5ad-fbbbbf8596d5")
 	)
 	(wire
 		(pts
@@ -2010,6 +2206,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 240.03) (xy 35.56 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d50eede1-5bee-4990-bbbb-ac0b78f0dc5b")
+	)
+	(wire
+		(pts
 			(xy 50.8 199.39) (xy 50.8 201.93)
 		)
 		(stroke
@@ -2087,6 +2293,26 @@
 			(type default)
 		)
 		(uuid "e760f9a5-5643-408d-b8fd-7514fdc5965f")
+	)
+	(wire
+		(pts
+			(xy 82.55 232.41) (xy 99.06 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9825d52-aa47-4eae-89e3-c3b9084c2be1")
+	)
+	(wire
+		(pts
+			(xy 111.76 240.03) (xy 111.76 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e982dbf1-673a-488a-a55a-c04e011234fb")
 	)
 	(wire
 		(pts
@@ -2179,9 +2405,20 @@
 		)
 		(uuid "430e4ac7-f8fd-4bcd-ad09-879a0945e866")
 	)
+	(text "Vout = 0.6 * (1 + RfbT / RfbB)\n2.5 = 0.6 * (1 + Rtop / Rbot)\n4.16 = 1 + Rtop/Rbot\n3.16 = Rtop/Rbot\n\n294.0K / 93.1K"
+		(exclude_from_sim no)
+		(at 89.916 255.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4da141e5-06ac-40a2-97fc-e6532aa0049e")
+	)
 	(text "No sequencing or anything, just turn everything on immediately\nGood enough"
 		(exclude_from_sim no)
-		(at 55.88 246.38 0)
+		(at 53.34 276.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2244,6 +2481,17 @@
 			(justify right bottom)
 		)
 		(uuid "044354e1-0efb-403b-9bc5-c04a5a7d9c21")
+	)
+	(label "12V0"
+		(at 50.8 242.57 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1824237d-1160-4aa6-9bc8-c443ef4a8b9a")
 	)
 	(label "12V0"
 		(at 50.8 204.47 180)
@@ -2311,6 +2559,17 @@
 		)
 		(uuid "3de161e3-8380-48d7-9438-52b299d6b138")
 	)
+	(label "2V5_PGOOD"
+		(at 69.85 251.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4001b508-3cf2-4630-b3bb-e82ba91e8447")
+	)
 	(label "GND"
 		(at 35.56 124.46 180)
 		(fields_autoplaced yes)
@@ -2332,6 +2591,28 @@
 			(justify right bottom)
 		)
 		(uuid "4a52e956-371c-4648-b5f0-228c64b83531")
+	)
+	(label "GND"
+		(at 35.56 240.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4d5ae764-700e-4776-98a6-dc9c1089aa06")
+	)
+	(label "3V3"
+		(at 76.2 259.08 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5080ecab-837e-41cd-8810-19181aee6203")
 	)
 	(label "3V3"
 		(at 76.2 220.98 0)
@@ -2410,17 +2691,6 @@
 		)
 		(uuid "6a79187e-4f21-4ba8-b16e-efb3c0526ceb")
 	)
-	(label "GND"
-		(at 81.28 55.88 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6aaed929-cbb5-4ff8-8140-d235b3600e71")
-	)
 	(label "12V0"
 		(at 81.28 48.26 0)
 		(fields_autoplaced yes)
@@ -2454,6 +2724,17 @@
 		)
 		(uuid "7270a193-4998-4a63-808a-fc114a5eb060")
 	)
+	(label "GND"
+		(at 80.01 247.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7327ca4e-648a-4e55-8f71-5605598d33e9")
+	)
 	(label "12V0_EN"
 		(at 49.53 35.56 0)
 		(fields_autoplaced yes)
@@ -2464,6 +2745,17 @@
 			(justify left bottom)
 		)
 		(uuid "73a90b44-a2b8-43b9-a680-ae8323e2bc12")
+	)
+	(label "12V0"
+		(at 35.56 229.87 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "79b478ca-abdd-4696-b910-0f9c15db1d09")
 	)
 	(label "3V3_SB"
 		(at 97.79 25.4 180)
@@ -2552,6 +2844,17 @@
 			(justify right bottom)
 		)
 		(uuid "bdc9fa4f-9152-4991-9dcb-7ce193b2545a")
+	)
+	(label "2V5_FB"
+		(at 71.12 240.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c2e096c7-e8f3-4508-b418-f49698e43b74")
 	)
 	(label "SUPER_I2C_SDA"
 		(at 97.79 30.48 180)
@@ -2714,6 +3017,18 @@
 		)
 		(uuid "d7482ae1-a7d5-408a-a655-23c4cb9c2335")
 	)
+	(hierarchical_label "2V5"
+		(shape output)
+		(at 111.76 232.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dc7213b6-ed52-45c8-b430-33191b4af4fe")
+	)
 	(hierarchical_label "GND"
 		(shape output)
 		(at 43.18 55.88 0)
@@ -2791,6 +3106,76 @@
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
 					(reference "C91")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 35.56 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07740162-920d-4671-bc3c-c6d840531a95")
+		(property "Reference" "C93"
+			(at 38.481 235.0078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22 uF"
+			(at 38.481 237.4321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
+			(at 36.5252 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 35.56 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "021e8c81-476c-4d71-994c-b47e7dbdb694")
+		)
+		(pin "1"
+			(uuid "ebc872a0-2f04-4be3-a9f7-f29dce76a7dc")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "C93")
 					(unit 1)
 				)
 			)
@@ -3599,6 +3984,76 @@
 		)
 	)
 	(symbol
+		(lib_id "device:R")
+		(at 69.85 255.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41922480-e4f2-4563-a3b1-c3d37661d838")
+		(property "Reference" "R12"
+			(at 71.628 254.0578 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 71.628 256.4821 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 68.072 255.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 69.85 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "922bc89e-4dbb-4b67-9533-6eb879d0e511")
+		)
+		(pin "2"
+			(uuid "5c0a89dd-c2d7-49a0-ac08-8b7193ff8e21")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "device:C")
 		(at 111.76 198.12 0)
 		(unit 1)
@@ -3733,6 +4188,94 @@
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
 					(reference "R39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power-azonenberg:MUN12AD03-SE")
+		(at 53.34 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4dac8786-4cd5-4c18-8480-8dd70b85ddab")
+		(property "Reference" "U6"
+			(at 60.452 225.806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MUN12AD03-SE"
+			(at 60.452 227.4874 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MODULE_CYNTEC_MUN12AD03-SE"
+			(at 53.34 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.34 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "bfd4fcf3-d23e-427d-a626-e1b20261a589")
+		)
+		(pin "4"
+			(uuid "c6926343-7e93-4db5-aec3-17a34b7d4f9a")
+		)
+		(pin "7"
+			(uuid "05bc50d9-e3ca-428e-90e1-025a1ac1eda2")
+		)
+		(pin "1"
+			(uuid "5ed128e2-9034-4430-a094-1040b2b72c69")
+		)
+		(pin "3"
+			(uuid "c36f738e-35bb-4b66-aec0-d95ebdce0027")
+		)
+		(pin "2"
+			(uuid "5a6da8ad-76e1-498f-a7ed-893a1d26dbb3")
+		)
+		(pin "5"
+			(uuid "332bcbd2-ee23-45a1-a728-d56867952b08")
+		)
+		(pin "6"
+			(uuid "b7297b59-6938-4c45-a973-fb181fae9469")
+		)
+		(pin "PAD"
+			(uuid "4978865e-6e6e-4a65-a414-66d2a87aa72d")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -3891,6 +4434,76 @@
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
 					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 111.76 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a1847a4-2b02-45bd-bd9e-413bd260cae8")
+		(property "Reference" "C95"
+			(at 114.681 235.0078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22 uF"
+			(at 114.681 237.4321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
+			(at 112.7252 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 111.76 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e7715a57-e2d1-4757-a2b2-5d4b1d31cc2b")
+		)
+		(pin "1"
+			(uuid "ad2ed2c8-a0b0-4086-8279-853b0861045a")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "C95")
 					(unit 1)
 				)
 			)
@@ -4388,6 +5001,76 @@
 	)
 	(symbol
 		(lib_id "device:R")
+		(at 82.55 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87e5101f-d48e-4532-812a-dbdd3d83c12a")
+		(property "Reference" "R13"
+			(at 84.328 235.0078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "294K"
+			(at 84.328 237.4321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 80.772 236.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 82.55 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e2bd7fb-e5e5-4ceb-bd3f-f63f3c356cb5")
+		)
+		(pin "2"
+			(uuid "76c38275-775d-4db3-92f0-b6ccdd26b909")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:R")
 		(at 82.55 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4822,6 +5505,76 @@
 		)
 	)
 	(symbol
+		(lib_id "device:C")
+		(at 99.06 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9fb8cbb-bb3d-4257-9f16-f93dfeda6b5c")
+		(property "Reference" "C94"
+			(at 101.981 235.0078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22 uF"
+			(at 101.981 237.4321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
+			(at 100.0252 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 99.06 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "95050504-34e1-4648-bae9-cd0b0a4ab51e")
+		)
+		(pin "1"
+			(uuid "63331dbc-e08b-4bad-b3ad-d785de3a485c")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
+					(reference "C94")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "passive-azonenberg:INDUCTOR_PWROUT")
 		(at 73.66 48.26 270)
 		(unit 1)
@@ -4959,17 +5712,17 @@
 		)
 	)
 	(symbol
-		(lib_id "device:C")
-		(at 81.28 52.07 0)
+		(lib_id "device:R")
+		(at 82.55 243.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d22c5942-362b-4786-ad04-0d533bc00fa4")
-		(property "Reference" "C88"
-			(at 84.201 50.8578 0)
+		(uuid "e0526326-24bd-481d-81da-3af197512b3b")
+		(property "Reference" "R14"
+			(at 84.328 242.6278 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4977,8 +5730,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DNP"
-			(at 84.201 53.2821 0)
+		(property "Value" "93.1K"
+			(at 84.328 245.0521 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4986,8 +5739,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CAP_AL_10MM_SMT"
-			(at 82.2452 55.88 0)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 80.772 243.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4996,7 +5749,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 52.07 0)
+			(at 82.55 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5004,8 +5757,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 81.28 52.07 0)
+		(property "Description" "Resistor"
+			(at 82.55 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5014,15 +5767,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "29398295-78ef-4cf1-ae66-0f53c5cde867")
+			(uuid "f2ca1a7f-8111-4ab9-9977-fc81da9d9c90")
 		)
 		(pin "2"
-			(uuid "5b6fd505-278e-4fbc-947f-18e8d2e7c0b6")
+			(uuid "49c50010-289b-4ba4-8e0e-2fdd0b71577e")
 		)
 		(instances
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291/22a76215-e9a1-44fc-852c-4dca56c582e3"
-					(reference "C88")
+					(reference "R14")
 					(unit 1)
 				)
 			)
