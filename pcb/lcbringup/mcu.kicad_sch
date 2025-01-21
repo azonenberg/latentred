@@ -25143,7 +25143,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3_REFLOW"
 			(at 58.42 186.69 0)
 			(effects
 				(font
@@ -31157,7 +31157,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3"
+		(property "Footprint" "azonenberg_pcb:CONN_HEADER_2.54MM_1x3_REFLOW"
 			(at 58.42 196.85 0)
 			(effects
 				(font
