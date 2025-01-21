@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-19")
+		(date "2025-01-20")
 		(rev "0.1")
 		(company "Antikernel Labs")
 	)
@@ -5455,7 +5455,7 @@
 				)
 			)
 		)
-		(property "Value" "3A"
+		(property "Value" "1A"
 			(at 54.61 46.0318 0)
 			(effects
 				(font

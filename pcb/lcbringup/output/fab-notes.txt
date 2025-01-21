@@ -9,34 +9,27 @@ General fabrication notes
     * Pad finish is ENIG.
     * Finished board thickness is 1.6 mm.
     * Place UL mark and date code in the area marked on the "F. Fab" gerber layer.
-    * Vias to be filled with nonconductive epoxy and plated over.
 
 Impedances
 
     Control to within 10%.
 
     Layer 1 microstrip (ref to layer 2 ground).
-    Layer 6 microstrip (ref to layer 5 ground).
+    Layer 4 microstrip (ref to layer 3 ground).
         130 μm trace = 50 ohm
 
     Layer 1 differential stripline (ref to layer 2 ground)
-    Layer 6 differential stripline (ref to layer 5 ground).
+    Layer 4 differential stripline (ref to layer 3 ground).
         90 μm trace / 110 μm space = 100 ohm
-
-TODO: 4 vs 6 layer
 
 Suggested stackup
     1    35 μm (1 oz) copper          Signal
          95 μm S1000-2M 3313 prepreg
     2    35 μm (1 oz) copper          Ground
-        100 μm S1000-2M 3313 core
-    3    35 μm (1 oz) copper          Power
-        Cores and prepregs as needed for 1.6mm finished thickness (1.038mm total)
-    4    35 μm (1 oz) copper          Power
-        100 μm S1000-2M 3313 core
-    5    35 μm (1 oz) copper          Ground
+        Cores and prepregs as needed for 1.6mm finished thickness
+    3    35 μm (1 oz) copper          Ground
          95 μm S1000-2M 3313 prepreg
-    6    35 μm (1 oz) copper          Signal
+    4    35 μm (1 oz) copper          Signal
 
 File naming
     linecard-Edge_Cuts.gbr   Board outline
@@ -47,9 +40,7 @@ File naming
     linecard-F_Cu.gbr        Layer 1 copper
     linecard-In1_Cu.gbr      Layer 2 copper
     linecard-In2_Cu.gbr      Layer 3 copper
-    linecard-In3_Cu.gbr      Layer 4 copper
-    linecard-In4_Cu.gbr      Layer 5 copper
-    linecard-B_Cu.gbr        Layer 6 copper
+    linecard-B_Cu.gbr        Layer 4 copper
     linecard-B_Mask.gbr      Back solder mask
     linecard-B_SilkS.gbr     Back silkscreen
     lcbringup.d356           Electrical test netlist

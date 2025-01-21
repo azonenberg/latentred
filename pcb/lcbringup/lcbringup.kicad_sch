@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-19")
+		(date "2025-01-20")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "LATENTPINK Line Card Bringup Glue")
@@ -516,6 +516,17 @@
 		)
 		(uuid "86872b53-6d0c-449d-9524-7afe2b60d0ee")
 	)
+	(label "GND"
+		(at 26.67 236.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8946b847-d7e8-4095-ac3b-3675e86b93e3")
+	)
 	(label "1V8"
 		(at 25.4 73.66 180)
 		(fields_autoplaced yes)
@@ -663,6 +674,73 @@
 			(project "lcbringup"
 				(path "/b833694e-84ba-499b-b91b-2564c6d12291"
 					(reference "M5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 31.75 236.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34cf3907-fa4a-4a10-b47a-9ce7f123244a")
+		(property "Reference" "TP5"
+			(at 33.655 235.3853 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GROUNDCLIP"
+			(at 33.655 237.9222 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
+			(at 31.75 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 31.75 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5df5b92d-21fb-42f2-934e-9b9f15ffd98d")
+		)
+		(instances
+			(project "lcbringup"
+				(path "/b833694e-84ba-499b-b91b-2564c6d12291"
+					(reference "TP5")
 					(unit 1)
 				)
 			)

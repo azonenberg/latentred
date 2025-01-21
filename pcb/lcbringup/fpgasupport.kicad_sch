@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Andrew D. Zonenberg")
-		(date "2025-01-19")
+		(date "2025-01-20")
 		(rev "0.1")
 		(company "Antikernel Labs")
 	)
@@ -13889,16 +13889,6 @@
 			(justify left)
 		)
 		(uuid "2111eacf-c0de-46ec-ab57-ea1bc65d3893")
-	)
-	(text "FIXME FIXME NEED LVCMOS25 FOR MDIO"
-		(exclude_from_sim no)
-		(at 179.07 193.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7ce7ea99-8745-488e-9bf2-348a1ede77bf")
 	)
 	(text "VCCINT"
 		(exclude_from_sim no)
