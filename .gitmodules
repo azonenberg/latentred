@@ -19,3 +19,6 @@
 [submodule "etl"]
 	path = etl
 	url = https://github.com/ETLCPP/etl
+[submodule "antikernel-ipcores"]
+	path = antikernel-ipcores
+	url = ../antikernel-ipcores.git
