@@ -40,6 +40,7 @@
 
 #include <APB_Curve25519.h>
 #include <APB_DeviceInfo_7series.h>
+#include <APB_DeviceInfo_UltraScale.h>
 #include <APB_GPIO.h>
 #include <APB_SerialLED.h>
 #include <APB_SPIHostInterface.h>
@@ -87,8 +88,10 @@ void RegisterProtocolHandlers(IPv4Protocol& ipv4);
 
 extern volatile APB_XADC FXADC;
 extern volatile APB_GPIO FPGA_GPIOA;
+extern volatile APB_GPIO FPGA_GPIOB;
 extern volatile APB_MDIO FMDIO;
 extern volatile APB_DeviceInfo_7series FDEVINFO;
+extern volatile APB_DeviceInfo_UltraScale FKDEVINFO;
 
 //extern volatile APB_Curve25519 FCURVE25519;
 

@@ -117,6 +117,6 @@
 #define HAVE_TCP_V4_CHECKSUM_OFFLOAD
 
 ///@brief If set, we can do 64-bit burst transactions on the FMC to transmit
-#define HAVE_APB64_TX
+//#define HAVE_APB64_TX
 
 #endif

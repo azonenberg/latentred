@@ -4,6 +4,8 @@ add_executable(main
 	#DumptruckSSHTransportServer.cpp
 	#DumptruckTCPProtocol.cpp
 	#DumptruckUDPProtocol.cpp
+	LatentRedPhyPollTask.cpp
+	PortState.cpp
 
 	globals.cpp
 	Init.cpp

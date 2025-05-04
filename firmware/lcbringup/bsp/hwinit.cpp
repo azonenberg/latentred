@@ -42,18 +42,23 @@
 #include <fpga/FPGAFirmwareUpdater.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Memory mapped SFRs on the FPGA
+// Memory mapped SFRs on the Artix
 
 volatile APB_GPIO FPGA_GPIOA __attribute__((section(".fgpioa")));
 volatile APB_DeviceInfo_7series FDEVINFO __attribute__((section(".fdevinfo")));
 volatile APB_MDIO FMDIO __attribute__((section(".fmdio")));
 volatile APB_XADC FXADC __attribute__((section(".fxadc")));
 
-/*
-volatile APB_Curve25519 FCURVE25519 __attribute__((section(".fcurve25519")));
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Memory mapped SFRs on the Kintex
+
+volatile APB_GPIO FPGA_GPIOB __attribute__((section(".fgpiob")));
+volatile APB_DeviceInfo_UltraScale FKDEVINFO __attribute__((section(".fkdevinfo")));
+
+//volatile APB_Curve25519 FCURVE25519 __attribute__((section(".fcurve25519")));
 volatile APB_EthernetTxBuffer_10G FETHTX __attribute__((section(".fethtx")));
 volatile APB_EthernetRxBuffer FETHRX __attribute__((section(".fethrx")));
-*/
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Common peripherals used by application and bootloader
 
@@ -133,10 +138,10 @@ void BSP_Init()
 		2,		//PLL2
 		25,		//input is 25 MHz from the HSE
 		2,		//25/2 = 12.5 MHz at the PFD
-		24,		//12.5 * 24 = 300 MHz at the VCO
+		22,		//12.5 * 22 = 275 MHz at the VCO
 		32,		//div P (not used for now)
 		32,		//div Q (not used for now)
-		1,		//div R (300 MHz FMC kernel clock = 150 MHz FMC clock)
+		1,		//div R (275 MHz FMC kernel clock = 137.5 MHz FMC clock)
 		RCCHelper::CLOCK_SOURCE_HSE
 	);
 
@@ -147,7 +152,7 @@ void BSP_Init()
 	InitI2C();
 	InitMacEEPROM();
 	//InitManagementPHY();
-	//InitIP();
+	InitIP();
 	InitITM();
 
 	App_Init();

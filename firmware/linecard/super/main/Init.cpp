@@ -70,23 +70,23 @@ etl::vector g_powerSequence
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Reset descriptors
 
-GPIOPin g_phy0PowerDown(&GPIOC, 13, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0);
-ActiveLowResetDescriptorWithDelay g_phy0pdDescriptor(g_phy0PowerDown, "PHY0 PD", g_logTimer, 50);
+GPIOPin g_phy0PowerDown(&GPIOC, 13, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0, true);
+ActiveHighResetDescriptorWithDelay g_phy0pdDescriptor(g_phy0PowerDown, "PHY0 PD", g_logTimer, 50);
 
-GPIOPin g_phy0Reset(&GPIOB, 9, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0);
+GPIOPin g_phy0Reset(&GPIOB, 9, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0, true);
 ActiveLowResetDescriptorWithDelay g_phy0ResetDescriptor(g_phy0Reset, "PHY0 RST", g_logTimer, 50);
 
-GPIOPin g_phy1PowerDown(&GPIOB, 0, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0);
-ActiveLowResetDescriptorWithDelay g_phy1pdDescriptor(g_phy1PowerDown, "PHY1 PD", g_logTimer, 50);
+GPIOPin g_phy1PowerDown(&GPIOB, 0, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0, true);
+ActiveHighResetDescriptorWithDelay g_phy1pdDescriptor(g_phy1PowerDown, "PHY1 PD", g_logTimer, 50);
 
-GPIOPin g_phy1Reset(&GPIOB, 1, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0);
+GPIOPin g_phy1Reset(&GPIOB, 1, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW, 0, true);
 ActiveLowResetDescriptorWithDelay g_phy1ResetDescriptor(g_phy1Reset, "PHY1 RST", g_logTimer, 2500);
 
 etl::vector g_resetSequence
 {
 	//First release power down
 	(ResetDescriptor*)&g_phy0pdDescriptor,	//need to cast at least one entry to base class
-										//for proper template deduction
+											//for proper template deduction
 	&g_phy1pdDescriptor,
 
 	//then release resets

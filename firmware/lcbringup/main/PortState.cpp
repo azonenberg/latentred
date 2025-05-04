@@ -27,80 +27,58 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-/**
-	@file
-	@brief Declaration of LatentRedCLISessionContext
- */
-#ifndef LatentRedCLISessionContext_h
-#define LatentRedCLISessionContext_h
+#include "latentred.h"
+#include "PortState.h"
 
-#include <embedded-cli/CLIOutputStream.h>
-#include <embedded-cli/CLISessionContext.h>
-#include <staticnet/cli/SSHOutputStream.h>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LineCardState
 
-class LatentRedCLISessionContext : public CLISessionContext
+LineCardState::LineCardState(volatile APB_MDIO* mdio, int index)
+	: m_mdio(mdio)
+	, m_pollTask(mdio, index, *this)
 {
-public:
-	LatentRedCLISessionContext();
-
-	void Initialize(int sessid, TCPTableEntry* socket, SSHTransportServer* server, const char* username)
+	//Add the polling task iff we've got it (skip this part on lcbringup for missing line cards)
+	if(mdio)
 	{
-		m_sshstream.Initialize(sessid, socket, server);
-		Initialize(&m_sshstream, username);
+		g_tasks.push_back(&m_pollTask);
+		g_timerTasks.push_back(&m_pollTask);
 	}
 
-	//Generic init for non-SSH streams
-	void Initialize(CLIOutputStream* stream, const char* username)
+	//Name our ports
+	for(int i=0; i<24; i++)
 	{
-		m_stream = stream;
-		LoadHostname();
-		CLISessionContext::Initialize(m_stream, username);
+		StringBuffer sbuf(m_state[i].m_ifname, sizeof(m_state[i].m_ifname));
+		sbuf.Clear();
+		sbuf.Printf("g%d/%d", index, i);
 	}
+}
 
-	SSHOutputStream* GetSSHStream()
-	{ return &m_sshstream; }
+void LineCardState::LoadFromKVS()
+{
+}
 
-	virtual void PrintPrompt();
+void LineCardState::SaveToKVS()
+{
+}
 
-protected:
 
-	void LoadHostname();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PortState
 
-	virtual void OnExecute();
-	void OnExecuteRoot();
+PortState::PortState()
+	: m_lineCardState { LineCardState( &FMDIO, 0), LineCardState(nullptr, 1) }
+{
 
-	void OnCommit();
-	//void OnDFU();
-	/*
-	void OnIPCommand();
-	void OnIPAddress(const char* addr);
-	void OnIPGateway(const char* gw);
+}
 
-	void OnNoCommand();
-	void OnNoSSHCommand();
+void PortState::LoadFromKVS()
+{
+	for(int i=0; i<2; i++)
+		m_lineCardState[i].LoadFromKVS();
+}
 
-	void OnNtpServer(const char* addr);
-	*/
-	void OnReload();
-	void OnRollback();
-
-	void OnShowCommand();
-	void OnShowFlash();
-	void OnShowHardware();
-	void PrintLineCardInfo(uint32_t ncard, I2C& i2c);
-	void PrintPowerRail(I2C& i2c, uint8_t addr, const char* name);
-	uint16_t GetVoltage(I2C& i2c, uint8_t addr);
-	uint16_t GetCurrent(I2C& i2c, uint8_t addr);
-	void OnShowInterfaceStatus();
-	/*
-	void OnShowVersion();
-	void OnSSHCommand();*/
-
-	SSHOutputStream m_sshstream;
-	CLIOutputStream* m_stream;
-
-	///@brief Hostname (only used for display)
-	char m_hostname[33];
-};
-
-#endif
+void PortState::SaveToKVS()
+{
+	for(int i=0; i<2; i++)
+		m_lineCardState[i].SaveToKVS();
+}

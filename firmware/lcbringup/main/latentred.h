@@ -45,12 +45,11 @@
 extern Iperf3Server* g_iperfServer;
 extern DumptruckUDPProtocol* g_udp;
 extern DumptruckTCPProtocol* g_tcp;
-
+*/
 void InitLEDs();
 void InitSensors();
 
-extern DumptruckSSHTransportServer* g_sshd;
-*/
+//extern DumptruckSSHTransportServer* g_sshd;
 
 enum mdioreg_t_ext
 {
@@ -60,6 +59,7 @@ enum mdioreg_t_ext
 	//VSC8512 main/standard page
 	REG_VSC8512_EXT_CTRL_STAT	= 0x14,
 	REG_VSC8512_EXT_PHY_CTRL_2	= 0x18,
+	REG_VSC8512_AUX_CTRL_STAT	= 0x1c,
 
 	//VSC8512 extended page 2
 	VSC_PAGE_CU_PMD_TX			= 0x10,
@@ -87,5 +87,13 @@ enum vsc_page_t
 };
 
 uint16_t GetVSC8512Temperature(MDIODevice& mdev);
+
+extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo);
+extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo);
+extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo, CharacterDevice* stream);
+extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo, CharacterDevice* stream);
+
+#include "PortState.h"
+extern PortState* g_portState;
 
 #endif

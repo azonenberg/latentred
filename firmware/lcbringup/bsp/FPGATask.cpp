@@ -27,17 +27,16 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
+#include <core/platform.h>
 #include "hwinit.h"
 #include "FPGATask.h"
 
 void FPGATask::Iteration()
 {
-	/*
 	if(m_irq)
 	{
 		auto frame = g_ethIface.GetRxFrame();
 		if(frame != nullptr)
 			g_ethProtocol->OnRxFrame(frame);
 	}
-	*/
 }

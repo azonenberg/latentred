@@ -27,80 +27,85 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
+#ifndef PortState_h
+#define PortState_h
+
+#include <tcpip/CommonTCPIP.h>
+#include <embedded-utils/CooperativeMutex.h>
+#include "LatentRedPhyPollTask.h"
+
 /**
-	@file
-	@brief Declaration of LatentRedCLISessionContext
+	@brief Status of a single interface
  */
-#ifndef LatentRedCLISessionContext_h
-#define LatentRedCLISessionContext_h
-
-#include <embedded-cli/CLIOutputStream.h>
-#include <embedded-cli/CLISessionContext.h>
-#include <staticnet/cli/SSHOutputStream.h>
-
-class LatentRedCLISessionContext : public CLISessionContext
+class InterfaceState
 {
 public:
-	LatentRedCLISessionContext();
-
-	void Initialize(int sessid, TCPTableEntry* socket, SSHTransportServer* server, const char* username)
+	InterfaceState()
+		: m_linkUp(false)
+		, m_fullDuplex(true)
+		, m_speed(LINK_SPEED_10M)
+		, m_autoneg(true)
 	{
-		m_sshstream.Initialize(sessid, socket, server);
-		Initialize(&m_sshstream, username);
+		memset(m_ifname, 0, sizeof(m_ifname));
+		memset(m_friendlyName, 0, sizeof(m_friendlyName));
 	}
 
-	//Generic init for non-SSH streams
-	void Initialize(CLIOutputStream* stream, const char* username)
-	{
-		m_stream = stream;
-		LoadHostname();
-		CLISessionContext::Initialize(m_stream, username);
-	}
+	///@brief Link up/down state
+	bool m_linkUp;
 
-	SSHOutputStream* GetSSHStream()
-	{ return &m_sshstream; }
+	///@brief Duplex state
+	bool m_fullDuplex;
 
-	virtual void PrintPrompt();
+	///@brief Speed
+	linkspeed_t m_speed;
 
-protected:
+	///@brief Autonegotiation enable
+	bool m_autoneg;
 
-	void LoadHostname();
+	///@brief Name of the interface (e.g. Gigabit0/23)
+	char m_ifname[16];
 
-	virtual void OnExecute();
-	void OnExecuteRoot();
+	///@brief Friendly name of the interface (user chosen)
+	char m_friendlyName[32];
+};
 
-	void OnCommit();
-	//void OnDFU();
-	/*
-	void OnIPCommand();
-	void OnIPAddress(const char* addr);
-	void OnIPGateway(const char* gw);
+/**
+	@brief Status of a single line card
+ */
+class LineCardState
+{
+public:
+	LineCardState(volatile APB_MDIO* mdio, int index);
 
-	void OnNoCommand();
-	void OnNoSSHCommand();
+	InterfaceState m_state[24];
 
-	void OnNtpServer(const char* addr);
-	*/
-	void OnReload();
-	void OnRollback();
+	///@brief Mutex for arbitrating access to MDIO interface
+	CooperativeMutex m_mutex;
 
-	void OnShowCommand();
-	void OnShowFlash();
-	void OnShowHardware();
-	void PrintLineCardInfo(uint32_t ncard, I2C& i2c);
-	void PrintPowerRail(I2C& i2c, uint8_t addr, const char* name);
-	uint16_t GetVoltage(I2C& i2c, uint8_t addr);
-	uint16_t GetCurrent(I2C& i2c, uint8_t addr);
-	void OnShowInterfaceStatus();
-	/*
-	void OnShowVersion();
-	void OnSSHCommand();*/
+	///@brief MDIO interface
+	volatile APB_MDIO* m_mdio;
 
-	SSHOutputStream m_sshstream;
-	CLIOutputStream* m_stream;
+	///@brief Polling task
+	LatentRedPhyPollTask m_pollTask;
 
-	///@brief Hostname (only used for display)
-	char m_hostname[33];
+	void LoadFromKVS();
+	void SaveToKVS();
+};
+
+/**
+	@brief Top level container for status of all Ethernet ports
+ */
+class PortState
+{
+public:
+	PortState();
+
+	LineCardState m_lineCardState[2];
+	InterfaceState m_mgmtState;
+	InterfaceState m_uplinkState[2];
+
+	void LoadFromKVS();
+	void SaveToKVS();
 };
 
 #endif

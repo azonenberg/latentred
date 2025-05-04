@@ -29,6 +29,7 @@
 
 #include "latentred.h"
 #include <peripheral/ITMStream.h>
+#include "PortState.h"
 
 ///@brief The SSH server
 //DumptruckSSHTransportServer* g_sshd = nullptr;
@@ -43,6 +44,9 @@ ITMStream g_itmStream(0);
 
 ///@brief TCP stack
 //DumptruckTCPProtocol* g_tcp = nullptr;
+
+///@brief State of each switch port
+PortState* g_portState = nullptr;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Task tables

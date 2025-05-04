@@ -27,80 +27,57 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-/**
-	@file
-	@brief Declaration of LatentRedCLISessionContext
- */
-#ifndef LatentRedCLISessionContext_h
-#define LatentRedCLISessionContext_h
+#ifndef LatentRedPhyPollTask_h
+#define LatentRedPhyPollTask_h
 
-#include <embedded-cli/CLIOutputStream.h>
-#include <embedded-cli/CLISessionContext.h>
-#include <staticnet/cli/SSHOutputStream.h>
+#include <core/Task.h>
+#include <embedded-utils/CooperativeMutex.h>
 
-class LatentRedCLISessionContext : public CLISessionContext
+class LineCardState;
+
+class LatentRedPhyPollTask : public TimerTask
 {
 public:
-	LatentRedCLISessionContext();
+	LatentRedPhyPollTask(volatile APB_MDIO* mdio, uint8_t index, LineCardState& state)
+		: TimerTask(0, 10*50)
+		, m_mdio(mdio)
+		, m_lineCardIndex(index)
+		, m_state(state)
+		, m_currentPhy(0)
+		, m_pollState(POLL_IDLE)
+		, m_linkStateChanged(false)
+	{}
 
-	void Initialize(int sessid, TCPTableEntry* socket, SSHTransportServer* server, const char* username)
-	{
-		m_sshstream.Initialize(sessid, socket, server);
-		Initialize(&m_sshstream, username);
-	}
-
-	//Generic init for non-SSH streams
-	void Initialize(CLIOutputStream* stream, const char* username)
-	{
-		m_stream = stream;
-		LoadHostname();
-		CLISessionContext::Initialize(m_stream, username);
-	}
-
-	SSHOutputStream* GetSSHStream()
-	{ return &m_sshstream; }
-
-	virtual void PrintPrompt();
+	virtual void OnTimer();
+	virtual void Iteration();
 
 protected:
+	void PollPHYs();
 
-	void LoadHostname();
+	///@brief MDIO transceiver to use
+	volatile APB_MDIO* m_mdio;
 
-	virtual void OnExecute();
-	void OnExecuteRoot();
+	///@brief Index of the line card (for display of messages etc)
+	uint8_t		m_lineCardIndex;
 
-	void OnCommit();
-	//void OnDFU();
-	/*
-	void OnIPCommand();
-	void OnIPAddress(const char* addr);
-	void OnIPGateway(const char* gw);
+	///@brief State of the line card
+	LineCardState& m_state;
 
-	void OnNoCommand();
-	void OnNoSSHCommand();
+	///@brief Index of the phy being polled
+	uint16_t	m_currentPhy;
 
-	void OnNtpServer(const char* addr);
-	*/
-	void OnReload();
-	void OnRollback();
+	///@brief Current position in the polling cycle
+	enum
+	{
+		POLL_IDLE,
+		POLL_STATUS,
+		POLL_CTRL,
+		POLL_EXT_STAT
+	} m_pollState;
 
-	void OnShowCommand();
-	void OnShowFlash();
-	void OnShowHardware();
-	void PrintLineCardInfo(uint32_t ncard, I2C& i2c);
-	void PrintPowerRail(I2C& i2c, uint8_t addr, const char* name);
-	uint16_t GetVoltage(I2C& i2c, uint8_t addr);
-	uint16_t GetCurrent(I2C& i2c, uint8_t addr);
-	void OnShowInterfaceStatus();
-	/*
-	void OnShowVersion();
-	void OnSSHCommand();*/
-
-	SSHOutputStream m_sshstream;
-	CLIOutputStream* m_stream;
-
-	///@brief Hostname (only used for display)
-	char m_hostname[33];
+	///@brief True if link state of the most recent poll changed
+	bool m_linkStateChanged;
 };
 
 #endif
+

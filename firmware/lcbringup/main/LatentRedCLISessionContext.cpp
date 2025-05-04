@@ -56,6 +56,7 @@ enum cmdid_t
 	CMD_GATEWAY,
 	CMD_HARDWARE,
 	CMD_HOSTNAME,
+	CMD_INTERFACE,
 	CMD_IP,
 	CMD_KEY,
 	CMD_KEYS,
@@ -69,6 +70,7 @@ enum cmdid_t
 	CMD_SHOW,
 	CMD_SSH,
 	CMD_SSH_ED25519,
+	CMD_STATUS,
 	CMD_USERNAME,
 	CMD_VERSION,
 	CMD_ZEROIZE
@@ -175,7 +177,7 @@ static const clikeyword_t g_showSshCommands[] =
 	{"fingerprint",		CMD_FINGERPRINT,		nullptr,				"Show the SSH host key fingerprint (in OpenSSH base64 SHA256 format)"},
 	{nullptr,			INVALID_COMMAND,		nullptr,				nullptr}
 };
-
+*/
 static const clikeyword_t g_showFlashDetailCommands[] =
 {
 	{"<objname>",		FREEFORM_TOKEN,		nullptr,					"Name of the flash object to display"},
@@ -189,18 +191,25 @@ static const clikeyword_t g_showFlashCommands[] =
 	{nullptr,			INVALID_COMMAND,	nullptr,					nullptr}
 };
 
-static const clikeyword_t g_showCommands[] =
+static const clikeyword_t g_showInterfaceCommands[] =
 {
-	{"arp",				CMD_ARP,			g_showArpCommands,			"Print ARP information"},
-	{"flash",			CMD_FLASH,			g_showFlashCommands,		"Display flash usage and log data"},
-	{"hardware",		CMD_HARDWARE,		nullptr,					"Print hardware information"},
-	{"ip",				CMD_IP,				g_showIpCommands,			"Print IPv4 information"},
-	{"ntp",				CMD_NTP,			nullptr,					"Print NTP information"},
-	{"ssh",				CMD_SSH,			g_showSshCommands,			"Print SSH information"},
-	{"version",			CMD_VERSION,		nullptr,					"Show firmware / FPGA version"},
+	{"status",			CMD_STATUS,			nullptr,					"Show status of all network interfaces"},
 	{nullptr,			INVALID_COMMAND,	nullptr,					nullptr}
 };
 
+static const clikeyword_t g_showCommands[] =
+{
+	//{"arp",				CMD_ARP,			g_showArpCommands,			"Print ARP information"},
+	{"flash",			CMD_FLASH,			g_showFlashCommands,		"Display flash usage and log data"},
+	{"hardware",		CMD_HARDWARE,		nullptr,					"Print hardware information"},
+	{"interface",		CMD_INTERFACE,		g_showInterfaceCommands,	"Print network interface info"},
+	/*{"ip",				CMD_IP,				g_showIpCommands,			"Print IPv4 information"},
+	{"ntp",				CMD_NTP,			nullptr,					"Print NTP information"},
+	{"ssh",				CMD_SSH,			g_showSshCommands,			"Print SSH information"},
+	{"version",			CMD_VERSION,		nullptr,					"Show firmware / FPGA version"},*/
+	{nullptr,			INVALID_COMMAND,	nullptr,					nullptr}
+};
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "ssh"
 
@@ -277,7 +286,9 @@ static const clikeyword_t g_rootCommands[] =
 	{"ntp",			CMD_NTP,			g_ntpCommands,			"Configure NTP client"},
 	{"reload",		CMD_RELOAD,			nullptr,				"Restart the system"},
 	{"rollback",	CMD_ROLLBACK,		nullptr,				"Revert changes made since last commit"},
+	*/
 	{"show",		CMD_SHOW,			g_showCommands,			"Print information"},
+	/*
 	{"ssh",			CMD_SSH,			g_sshCommands,			"Configure SSH protocol"},
 	{"zeroize",		CMD_ZEROIZE,		g_zeroizeCommands,		"Erase all configuration data and reload"},*/
 	{nullptr,		INVALID_COMMAND,	nullptr,				nullptr}
@@ -398,11 +409,11 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 		case CMD_ROLLBACK:
 			OnRollback();
 			break;
-
+		*/
 		case CMD_SHOW:
 			OnShowCommand();
 			break;
-
+		/*
 		case CMD_SSH:
 			OnSSHCommand();
 			break;
@@ -576,7 +587,7 @@ void LatentRedCLISessionContext::OnRollback()
 	g_sshd->LoadUsername();
 	*/
 }
-/*
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "show"
 
@@ -584,6 +595,7 @@ void LatentRedCLISessionContext::OnShowCommand()
 {
 	switch(m_command[1].m_commandID)
 	{
+		/*
 		case CMD_ARP:
 			switch(m_command[2].m_commandID)
 			{
@@ -595,7 +607,7 @@ void LatentRedCLISessionContext::OnShowCommand()
 					break;
 			}
 			break;
-
+		*/
 		case CMD_FLASH:
 			OnShowFlash();
 			break;
@@ -604,6 +616,19 @@ void LatentRedCLISessionContext::OnShowCommand()
 			OnShowHardware();
 			break;
 
+		case CMD_INTERFACE:
+			switch(m_command[2].m_commandID)
+			{
+				case CMD_STATUS:
+					OnShowInterfaceStatus();
+					break;
+
+				default:
+					break;
+			}
+			break;
+
+		/*
 		case CMD_IP:
 			switch(m_command[2].m_commandID)
 			{
@@ -643,7 +668,7 @@ void LatentRedCLISessionContext::OnShowCommand()
 		case CMD_VERSION:
 			OnShowVersion();
 			break;
-
+		*/
 		default:
 			m_stream->Printf("Unrecognized command\n");
 			break;
@@ -665,6 +690,7 @@ void LatentRedCLISessionContext::OnShowHardware()
 {
 	PrintProcessorInfo(m_stream);
 
+	/*
 	//m_stream->Printf("\n");
 	//m_stream->Printf("Supervisor:");
 	//m_stream->Printf("    %s\n", g_superVersion);
@@ -673,43 +699,24 @@ void LatentRedCLISessionContext::OnShowHardware()
 	m_stream->Printf("Ethernet interface mgmt0:\n");
 	m_stream->Printf("    MAC address: %02x:%02x:%02x:%02x:%02x:%02x\n",
 		g_macAddress[0], g_macAddress[1], g_macAddress[2], g_macAddress[3], g_macAddress[4], g_macAddress[5]);
+	*/
 
-	//TODO: refactor into common
+	//FPGA info
 	m_stream->Printf("\n");
-	m_stream->Printf("FPGA:\n");
+	m_stream->Printf("Bridge FPGA:\n");
+	PrintFPGAInfo(&FDEVINFO, m_stream);
 
-	uint32_t idcode = FDEVINFO.idcode;
-	memcpy(g_fpgaSerial, (const void*)FDEVINFO.serial, 8);
+	m_stream->Printf("\n");
+	m_stream->Printf("Main FPGA:\n");
+	PrintFPGAInfo(&FKDEVINFO, m_stream);
 
-	//Print status
-	m_stream->Printf("    IDCODE:   %08x (%s rev %d)\n", idcode, GetNameOfFPGA(idcode), idcode >> 28);
-	m_stream->Printf("    Serial:   %02x%02x%02x%02x%02x%02x%02x%02x\n",
-		g_fpgaSerial[7], g_fpgaSerial[6], g_fpgaSerial[5], g_fpgaSerial[4],
-		g_fpgaSerial[3], g_fpgaSerial[2], g_fpgaSerial[1], g_fpgaSerial[0]);
+	//TODO: internal power domain stuff etc
 
-	//Read USERCODE
-	g_usercode = FDEVINFO.usercode;
-	m_stream->Printf("    Usercode: %08x\n", g_usercode);
-	{
-		LogIndenter li2(g_log);
+	//Print line card
+	m_stream->Printf("\n");
+	PrintLineCardInfo(0, g_macI2C);
 
-		//Format per XAPP1232:
-		//31:27 day
-		//26:23 month
-		//22:17 year
-		//16:12 hr
-		//11:6 min
-		//5:0 sec
-		int day = g_usercode >> 27;
-		int mon = (g_usercode >> 23) & 0xf;
-		int yr = 2000 + ((g_usercode >> 17) & 0x3f);
-		int hr = (g_usercode >> 12) & 0x1f;
-		int min = (g_usercode >> 6) & 0x3f;
-		int sec = g_usercode & 0x3f;
-		m_stream->Printf("    Version:  %04d-%02d-%02d %02d:%02d:%02d\n",
-			yr, mon, day, hr, min, sec);
-	}
-
+	/*
 	m_stream->Printf("\n");
 	m_stream->Printf("Temperatures:\n");
 	m_stream->Printf("    Supervisor: %uhk C\n", ReadSupervisorRegister(SUPER_REG_MCUTEMP));
@@ -741,8 +748,148 @@ void LatentRedCLISessionContext::OnShowHardware()
 	PrintPowerRail("VCCIO12", SUPER_REG_VIO_12, SUPER_REG_IIO_12);
 
 	m_stream->Printf("    +------------+---------+---------+-------+\n");
+	*/
 }
 
+void LatentRedCLISessionContext::PrintLineCardInfo(uint32_t ncard, I2C& i2c)
+{
+	m_stream->Printf("Line card %d:\n", ncard);
+
+	//Lock the PHY MDIO interface
+	auto& state = g_portState->m_lineCardState[ncard];
+	while(!state.m_mutex.TryLock())
+		state.m_pollTask.Iteration();
+	MDIODevice md0(state.m_mdio, 0);
+	MDIODevice md1(state.m_mdio, 12);
+
+	//Read I2C temps
+	m_stream->Printf("    Temperatures:\n");
+	uint16_t temp;
+	if(i2c.BlockingRead16(0x90, temp))
+		m_stream->Printf("        PHY 0 (PCB): %uhk C\n", temp);
+	m_stream->Printf("        PHY 0 (int): %uhk C\n", GetVSC8512Temperature(md0));
+	if(i2c.BlockingRead16(0x92, temp))
+		m_stream->Printf("        PHY 1 (PCB): %uhk C\n", temp);
+	m_stream->Printf("        PHY 1 (int): %uhk C\n", GetVSC8512Temperature(md1));
+	if(i2c.BlockingRead16(0x94, temp))
+		m_stream->Printf("        PSU (PCB):   %uhk C\n", temp);
+
+	//Done with the MDIO
+	state.m_mutex.Unlock();
+
+	//Get power
+	m_stream->Printf("    Power:\n");
+	m_stream->Printf("        +------------+---------+---------+--------+\n");
+	m_stream->Printf("        | Rail       | Voltage | Current |  Power |\n");
+	m_stream->Printf("        +------------+---------+---------+--------+\n");
+	PrintPowerRail(i2c, 0x80, "3V3");
+	PrintPowerRail(i2c, 0x82, "2V5");
+	PrintPowerRail(i2c, 0x84, "1V0");
+	PrintPowerRail(i2c, 0x86, "1V0_2");
+	m_stream->Printf("         +------------+---------+---------+-------+\n");
+}
+
+void LatentRedCLISessionContext::PrintPowerRail(I2C& i2c, uint8_t addr, const char* name)
+{
+	uint16_t v = GetVoltage(i2c, addr);
+	uint16_t i = GetCurrent(i2c, addr);
+	auto p = i * v / 1000;
+	m_stream->Printf("        | %10s |   %d.%03d |   %d.%03d |  %d.%03d |\n",
+		name, v / 1000, v % 1000, i / 1000, i % 1000, p / 1000, p % 1000);
+}
+
+uint16_t LatentRedCLISessionContext::GetVoltage(I2C& i2c, uint8_t addr)
+{
+	//bus voltage
+	if(!i2c.BlockingWrite8(addr, 0x02))
+		return 0;
+	uint16_t vraw;
+	if(!i2c.BlockingRead16(addr, vraw))
+		return 0;
+
+	//1.25 mV/LSB
+	return 1.25 * vraw;
+}
+
+uint16_t LatentRedCLISessionContext::GetCurrent(I2C& i2c, uint8_t addr)
+{
+	//shunt voltage
+	if(!i2c.BlockingWrite8(addr, 0x01))
+		return 0;
+	uint16_t iraw;
+	if(!i2c.BlockingRead16(addr, iraw))
+		return 0;
+
+	//2.5 uV/LSB, 5 milliohm shunt
+	float vshunt = iraw * 0.0000025;
+	float ishunt = vshunt / 0.005;
+	return ishunt * 1000;
+}
+
+void LatentRedCLISessionContext::OnShowInterfaceStatus()
+{
+	m_stream->Printf("-----------------------------------------------------------------------------------------------------------\n");
+	m_stream->Printf("Port     Name                             Status            Vlan     Duplex      Speed                 Type\n");
+	m_stream->Printf("-----------------------------------------------------------------------------------------------------------\n");
+
+	for(int card=0; card<2; card++)
+	{
+		auto& cardState = g_portState->m_lineCardState[card];
+
+		for(int port=0; port<24; port++)
+		{
+			auto& portState = cardState.m_state[port];
+
+			const char* portType = "10/100/1000baseT";
+			m_stream->Printf("%-5s    %-32s %-15s %6d %10s  %9s %20s\n",
+				portState.m_ifname,
+				portState.m_friendlyName,
+				portState.m_linkUp ? "up" : "down",
+				/*g_portVlans[i]*/1,
+				portState.m_fullDuplex ? "full" : "half",
+				g_linkSpeedNamesLong[portState.m_speed],
+				portType);
+		}
+	}
+
+	/*
+	//TODO: refresh interface status from hardware or something
+	for(int i=0; i<NUM_PORTS; i++)
+	{
+		const char* portType = "10/100/1000baseT";
+		if(i == UPLINK_PORT)
+			portType = "10Gbase-SR";
+
+		if(i == MGMT_PORT)
+		{
+			m_stream->Printf("%-5s    %-32s %-15s %6s %10s  %7s %20s\n",
+				g_interfaceNames[i],
+				g_interfaceDescriptions[i],
+				g_linkStateNames[g_linkState[i]],
+				"(none)",
+				"full",
+				g_linkSpeedNames[g_linkSpeed[i]],
+				portType);
+		}
+		else
+		{
+			m_stream->Printf("%-5s    %-32s %-15s %6d %10s  %7s %20s\n",
+				g_interfaceNames[i],
+				g_interfaceDescriptions[i],
+				g_linkStateNames[g_linkState[i]],
+				g_portVlans[i],
+				"full",
+				g_linkSpeedNames[g_linkSpeed[i]],
+				portType);
+		}
+	}
+	*/
+
+	//TODO: uplinks
+	//TODO: management port
+}
+
+/*
 void LatentRedCLISessionContext::OnShowVersion()
 {
 	m_stream->Printf("DUMPTRUCK v0.1\n");

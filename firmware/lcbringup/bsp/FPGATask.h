@@ -36,13 +36,13 @@ class FPGATask : public Task
 {
 public:
 	FPGATask()
-		//: m_irq(&FPGA_GPIOA, 6, APB_GPIOPin::MODE_INPUT)
+		: m_irq(&FPGA_GPIOB, 0, APB_GPIOPin::MODE_INPUT)
 	{}
 
 	virtual void Iteration() override;
 
 protected:
-	//APB_GPIOPin m_irq;
+	APB_GPIOPin m_irq;
 };
 
 #endif

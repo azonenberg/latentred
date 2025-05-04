@@ -29,11 +29,16 @@
 
 #include "latentred.h"
 #include <ctype.h>
-//#include "../bsp/FPGATask.h"
+#include "../bsp/FPGATask.h"
 #include <tcpip/IPAgingTask1Hz.h>
 #include <tcpip/IPAgingTask10Hz.h>
 #include <tcpip/PhyPollTask.h>
 #include "LocalConsoleTask.h"
+#include "LatentRedPhyPollTask.h"
+
+void InitInterfaces();
+void InitLineCardSensors(I2C& i2c, uint8_t idx);
+void InitTempSensor(I2C& i2c, uint8_t addr, const char* name);
 
 /**
 	@brief Initialize global GPIO LEDs
@@ -74,12 +79,57 @@ void InitSensors()
 	g_log("FPGA VCCBRAM:                       %uhk V\n", volt);
 	volt = FXADC.volt_aux;
 	g_log("FPGA VCCAUX:                        %uhk V\n", volt);
+
+	//Initialize the line card I2C
+	InitLineCardSensors(g_macI2C, 0);
+	//TODO: line card 1
+}
+
+/**
+	@brief Initialize I2C sensors on a line card
+ */
+void InitLineCardSensors(I2C& i2c, uint8_t idx)
+{
+	g_log("Line card %d\n", idx);
+	LogIndenter li(g_log);
+
+	//Set up the I2C sensors
+	InitTempSensor(i2c, 0x90, "PHY 0");
+	InitTempSensor(i2c, 0x92, "PHY 1");
+	InitTempSensor(i2c, 0x94, "PSU");
+}
+
+void InitTempSensor(I2C& i2c, uint8_t addr, const char* name)
+{
+	//Program for max resolution
+	uint8_t payload[] = { 0x01, 0x60, 0x00 };
+	if(!i2c.BlockingWrite(addr, payload, 3))
+	{
+		g_log(Logger::ERROR, "Failed to initialize I2C temp sensor at %02x (%s)\n", addr, name);
+		return;
+	}
+	if(!i2c.BlockingWrite8(addr, 0x00))
+	{
+		g_log(Logger::ERROR, "Failed to initialize I2C temp sensor at %02x (%s)\n", addr, name);
+		return;
+	}
+
+	//Read the current temperature
+	uint16_t reply;
+	if(!i2c.BlockingRead16(addr, reply))
+	{
+		g_log(Logger::ERROR, "Failed to initialize I2C temp sensor at %02x (%s)\n", addr, name);
+		return;
+	}
+
+	g_log("%5s:                         %uhk C\n", name, reply);
 }
 
 extern "C" void WriteTestx64(volatile void* ptr);
 
 void InitLineCardPHY();
 void InitVSC8512(uint8_t phyaddr);
+void InitSCCB();
 
 void App_Init()
 {
@@ -93,27 +143,24 @@ void App_Init()
 	InitDTS();
 	InitSensors();
 	InitLineCardPHY();
+	InitSCCB();
+	InitInterfaces();
 
-	/*
 	static FPGATask fpgaTask;
-	static PhyPollTask phyTask;
+	//static LatentRedPhyPollTask lcPhyTask(0, &FMDIO);
 	static IPAgingTask1Hz ipAgingTask1Hz;
 	static IPAgingTask10Hz ipAgingTask10Hz;
-	*/
 	static LocalConsoleTask localConsoleTask;
 
-	/*
 	g_tasks.push_back(&fpgaTask);
-	g_tasks.push_back(&phyTask);
+	//g_tasks.push_back(&lcPhyTask);
 	g_tasks.push_back(&ipAgingTask1Hz);
-	g_tasks.push_back(&ipAgingTask10Hz);*/
+	g_tasks.push_back(&ipAgingTask10Hz);
 	g_tasks.push_back(&localConsoleTask);
 
-	/*
-	g_timerTasks.push_back(&phyTask);
+	//g_timerTasks.push_back(&lcPhyTask);
 	g_timerTasks.push_back(&ipAgingTask1Hz);
 	g_timerTasks.push_back(&ipAgingTask10Hz);
-	*/
 }
 
 void RegisterProtocolHandlers(IPv4Protocol& ipv4)
@@ -143,7 +190,7 @@ void InitVSC8512(uint8_t phyaddr)
 	g_log("Initializing PHY at MDIO base address %d\n", phyaddr);
 	LogIndenter li(g_log);
 
-	//Imitial ID check
+	//Initial ID check
 	MDIODevice mdev(&FMDIO, phyaddr);
 	auto phyid1 = mdev.ReadRegister(REG_PHY_ID_1);
 	auto phyid2 = mdev.ReadRegister(REG_PHY_ID_2);
@@ -164,6 +211,30 @@ void InitVSC8512(uint8_t phyaddr)
 		while(1)
 		{}
 	}
+
+	//Soft reset
+	/*g_log("Soft reset PHY\n");
+	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_MAIN);
+	mdev.WriteRegister(REG_BASIC_CONTROL, 0x8000);
+	g_logTimer.Sleep(100 * 10);	//wait 100ms before proceeding
+
+	//Check MDIO signal quality
+	g_log("MDIO loopback test\n");
+	uint32_t prng = 1;
+	for(int i=0; i<500; i++)
+	{
+		//glibc rand() LFSR, grab low 16 bits and mask off reserved bit
+		uint16_t random = (prng & 0xffff) & 0xb000;
+		prng = ( (prng * 1103515245) + 12345 ) & 0x7fffffff;
+
+		mdev.WriteRegister(REG_AN_ADVERT, random);
+		uint16_t readback = mdev.ReadRegister(REG_AN_ADVERT);
+		if(readback != random)
+		{
+			LogIndenter li2(g_log);
+			g_log(Logger::ERROR, "MDIO loopback failed (iteration %d): wrote %04x, read %04x\n", i, random, readback);
+		}
+	}*/
 
 	//Initialization script based on values from luton26_atom12_revCD_init_script() in Microchip MESA
 	g_log("Running Atom12 rev C/D init script\n");
@@ -314,18 +385,17 @@ void InitVSC8512(uint8_t phyaddr)
 	{
 		MDIODevice pdev(&FMDIO, phyaddr + i);
 
-		uint8_t phyaddr = i;
 		//g_log("PHY %d\n", i);
 		//LogIndenter li2(g_log);
 
 		//Read the PHY ID
-		auto phyid1 = pdev.ReadRegister(REG_PHY_ID_1);
-		auto phyid2 = pdev.ReadRegister(REG_PHY_ID_2);
+		auto xphyid1 = pdev.ReadRegister(REG_PHY_ID_1);
+		auto xphyid2 = pdev.ReadRegister(REG_PHY_ID_2);
 
 		//g_log("PHY ID %d = %04x %04x\n", i, phyid1, phyid2);
-		if( (phyid1 != 0x0007) || (phyid2 >> 4) != 0x06e)
+		if( (xphyid1 != 0x0007) || (xphyid2 >> 4) != 0x06e)
 		{
-			g_log(Logger::ERROR, "PHY ID = %04x %04x (invalid)\n", phyid1, phyid2);
+			g_log(Logger::ERROR, "PHY ID = %04x %04x (invalid)\n", xphyid1, xphyid2);
 			return;
 		}
 	}
@@ -350,4 +420,32 @@ uint16_t GetVSC8512Temperature(MDIODevice& mdev)
 	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_MAIN);
 
 	return tempval;
+}
+
+void InitSCCB()
+{
+	g_log("Initializing SCCB link to remote FPGA\n");
+	LogIndenter li(g_log);
+
+	static GPIOPin sfp_tx_disable(&GPIOB, 0, GPIOPin::MODE_OUTPUT, GPIOPin::SLEW_SLOW);
+	sfp_tx_disable = 0;
+
+	//TODO: poll until link is up, for now just wait 1 sec and hope for the best
+	g_logTimer.Sleep(10 * 1000);
+
+	PrintFPGAInfo(&FKDEVINFO);
+}
+
+/**
+	@brief Initialize all of the switch ports
+ */
+void InitInterfaces()
+{
+	g_log("Initializing switch ports\n");
+	LogIndenter li(g_log);
+
+	static PortState portState;
+	g_portState = &portState;
+
+	//TODO: load speed, duplex, vlan, etc. settings from flash
 }
