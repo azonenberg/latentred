@@ -39,4 +39,20 @@ void FPGATask::Iteration()
 		if(frame != nullptr)
 			g_ethProtocol->OnRxFrame(frame);
 	}
+
+	//TEMP: management interface doesn't actually have a MDIO interface
+	if(m_ethLinkState && !g_basetLinkUp)
+	{
+		g_basetLinkSpeed = LINK_SPEED_10G;
+		g_log("Interface mgmt0: link is up at %s\n", g_linkSpeedNamesLong[g_basetLinkSpeed]);
+		g_ethProtocol->OnLinkUp();
+	}
+
+	if(!m_ethLinkState && g_basetLinkUp)
+	{
+		g_log("Interface mgmt0: link is down\n");
+		g_basetLinkSpeed = LINK_SPEED_10M;
+		g_ethProtocol->OnLinkDown();
+	}
+	g_basetLinkUp = m_ethLinkState;
 }

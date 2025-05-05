@@ -165,15 +165,13 @@ void App_Init()
 
 void RegisterProtocolHandlers(IPv4Protocol& ipv4)
 {
-	/*
-	__attribute__((section(".tcmbss"))) static DumptruckUDPProtocol udp(&ipv4);
-	__attribute__((section(".tcmbss"))) static DumptruckTCPProtocol tcp(&ipv4, udp);
+	__attribute__((section(".tcmbss"))) static LatentRedUDPProtocol udp(&ipv4);
+	__attribute__((section(".tcmbss"))) static LatentRedTCPProtocol tcp(&ipv4, udp);
 	ipv4.UseUDP(&udp);
 	ipv4.UseTCP(&tcp);
 
 	g_udp = &udp;
 	g_tcp = &tcp;
-	*/
 }
 
 void InitLineCardPHY()

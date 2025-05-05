@@ -27,72 +27,107 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-#ifndef latentred_h
-#define latentred_h
-
-#include <core/platform.h>
-#include <hwinit.h>
-
-#include <peripheral/SPI.h>
-
-#include <common-embedded-platform/services/Iperf3Server.h>
-#include <embedded-utils/StringBuffer.h>
-
-#include "LatentRedUDPProtocol.h"
+#include "latentred.h"
 #include "LatentRedTCPProtocol.h"
 
-extern Iperf3Server* g_iperfServer;
-extern LatentRedUDPProtocol* g_udp;
-extern LatentRedTCPProtocol* g_tcp;
+#define SSH_PORT	22
 
-void InitLEDs();
-void InitSensors();
+Iperf3Server* g_iperfServer = nullptr;
 
-//extern DumptruckSSHTransportServer* g_sshd;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Construction / destruction
 
-enum mdioreg_t_ext
+LatentRedTCPProtocol::LatentRedTCPProtocol(IPv4Protocol* ipv4, UDPProtocol& udp)
+	: TCPProtocol(ipv4)
+	, m_ssh(*this)
+	, m_iperf(*this, udp)
 {
-	//VSC8512 specific
-	REG_VSC8512_PAGESEL			= 0x1f,
+	g_iperfServer = &m_iperf;
+}
 
-	//VSC8512 main/standard page
-	REG_VSC8512_EXT_CTRL_STAT	= 0x14,
-	REG_VSC8512_EXT_PHY_CTRL_2	= 0x18,
-	REG_VSC8512_AUX_CTRL_STAT	= 0x1c,
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Message handlers
 
-	//VSC8512 extended page 2
-	VSC_PAGE_CU_PMD_TX			= 0x10,
-
-	//VSC8512 extended page 3
-	VSC_MAC_PCS_CTL				= 0x10,
-
-	//GPIO / global command page
-	REG_VSC_GP_GLOBAL_SERDES	= 0x12,
-	REG_VSC_MAC_MODE			= 0x13,
-	//14.2.3 p18 says 19G 15:14 = 00/10
-	REG_VSC_TEMP_CONF			= 0x1a,
-	REG_VSC_TEMP_VAL			= 0x1c
-};
-
-enum vsc_page_t
+bool LatentRedTCPProtocol::IsPortOpen(uint16_t port)
 {
-	VSC_PAGE_MAIN				= 0x0000,
-	VSC_PAGE_EXT2				= 0x0002,
-	VSC_PAGE_EXT3				= 0x0003,
+	switch(port)
+	{
+		case SSH_PORT:
+		case IPERF3_PORT:
+			return true;
 
-	VSC_PAGE_GENERAL_PURPOSE	= 0x0010,
-	VSC_PAGE_TEST				= 0x2a30,
-	VSC_PAGE_TR					= 0x52b5
-};
+		default:
+			return false;
+	}
+}
 
-uint16_t GetVSC8512Temperature(MDIODevice& mdev);
+void LatentRedTCPProtocol::OnConnectionAccepted(TCPTableEntry* state)
+{
+	switch(state->m_localPort)
+	{
+		case SSH_PORT:
+			m_ssh.OnConnectionAccepted(state);
+			break;
 
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo, CharacterDevice* stream);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo, CharacterDevice* stream);
+		case IPERF3_PORT:
+			m_iperf.OnConnectionAccepted(state);
+			break;
 
-#include "PortState.h"
-extern PortState* g_portState;
+		default:
+			break;
+	}
+}
 
+void LatentRedTCPProtocol::OnConnectionClosed(TCPTableEntry* state)
+{
+	//Call base class to free memory
+	TCPProtocol::OnConnectionClosed(state);
+
+	switch(state->m_localPort)
+	{
+		case SSH_PORT:
+			m_ssh.OnConnectionClosed(state);
+			break;
+
+		case IPERF3_PORT:
+			m_iperf.OnConnectionClosed(state);
+			break;
+
+		default:
+			break;
+	}
+}
+
+#ifdef HAVE_ITCM
+__attribute__((section(".tcmtext")))
 #endif
+void LatentRedTCPProtocol::OnRxData(TCPTableEntry* state, uint8_t* payload, uint16_t payloadLen)
+{
+	switch(state->m_localPort)
+	{
+		case SSH_PORT:
+			m_ssh.OnRxData(state, payload, payloadLen);
+			break;
+
+		case IPERF3_PORT:
+			m_iperf.OnRxData(state, payload, payloadLen);
+			break;
+
+		//ignore it
+		default:
+			break;
+	}
+}
+
+uint32_t LatentRedTCPProtocol::GenerateInitialSequenceNumber()
+{
+	uint32_t ret;
+	m_crypt.GenerateRandom(reinterpret_cast<uint8_t*>(&ret), sizeof(ret));
+	return ret;
+}
+
+void LatentRedTCPProtocol::OnAgingTick10x()
+{
+	TCPProtocol::OnAgingTick10x();
+	m_ssh.OnAgingTick10x();
+}

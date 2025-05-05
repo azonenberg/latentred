@@ -93,6 +93,6 @@ extern volatile APB_MDIO FMDIO;
 extern volatile APB_DeviceInfo_7series FDEVINFO;
 extern volatile APB_DeviceInfo_UltraScale FKDEVINFO;
 
-//extern volatile APB_Curve25519 FCURVE25519;
+extern volatile APB_Curve25519 FCURVE25519;
 
 #endif

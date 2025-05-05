@@ -1,9 +1,9 @@
 add_executable(main
 	LatentRedCLISessionContext.cpp
 	#DumptruckSFTPServer.cpp
-	#DumptruckSSHTransportServer.cpp
-	#DumptruckTCPProtocol.cpp
-	#DumptruckUDPProtocol.cpp
+	LatentRedSSHTransportServer.cpp
+	LatentRedTCPProtocol.cpp
+	LatentRedUDPProtocol.cpp
 	LatentRedPhyPollTask.cpp
 	PortState.cpp
 

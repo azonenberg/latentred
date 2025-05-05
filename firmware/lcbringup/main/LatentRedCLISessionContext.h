@@ -71,7 +71,7 @@ protected:
 
 	void OnCommit();
 	//void OnDFU();
-	/*
+
 	void OnIPCommand();
 	void OnIPAddress(const char* addr);
 	void OnIPGateway(const char* gw);
@@ -80,7 +80,7 @@ protected:
 	void OnNoSSHCommand();
 
 	void OnNtpServer(const char* addr);
-	*/
+
 	void OnReload();
 	void OnRollback();
 
@@ -92,9 +92,9 @@ protected:
 	uint16_t GetVoltage(I2C& i2c, uint8_t addr);
 	uint16_t GetCurrent(I2C& i2c, uint8_t addr);
 	void OnShowInterfaceStatus();
-	/*
+
 	void OnShowVersion();
-	void OnSSHCommand();*/
+	void OnSSHCommand();
 
 	SSHOutputStream m_sshstream;
 	CLIOutputStream* m_stream;

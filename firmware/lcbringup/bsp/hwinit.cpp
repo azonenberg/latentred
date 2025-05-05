@@ -55,7 +55,7 @@ volatile APB_XADC FXADC __attribute__((section(".fxadc")));
 volatile APB_GPIO FPGA_GPIOB __attribute__((section(".fgpiob")));
 volatile APB_DeviceInfo_UltraScale FKDEVINFO __attribute__((section(".fkdevinfo")));
 
-//volatile APB_Curve25519 FCURVE25519 __attribute__((section(".fcurve25519")));
+volatile APB_Curve25519 FCURVE25519 __attribute__((section(".fcurve25519")));
 volatile APB_EthernetTxBuffer_10G FETHTX __attribute__((section(".fethtx")));
 volatile APB_EthernetRxBuffer FETHRX __attribute__((section(".fethrx")));
 

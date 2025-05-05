@@ -27,72 +27,57 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-#ifndef latentred_h
-#define latentred_h
-
-#include <core/platform.h>
-#include <hwinit.h>
-
-#include <peripheral/SPI.h>
-
-#include <common-embedded-platform/services/Iperf3Server.h>
-#include <embedded-utils/StringBuffer.h>
-
+#include "latentred.h"
 #include "LatentRedUDPProtocol.h"
-#include "LatentRedTCPProtocol.h"
 
-extern Iperf3Server* g_iperfServer;
-extern LatentRedUDPProtocol* g_udp;
-extern LatentRedTCPProtocol* g_tcp;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Construction / destruction
 
-void InitLEDs();
-void InitSensors();
-
-//extern DumptruckSSHTransportServer* g_sshd;
-
-enum mdioreg_t_ext
+LatentRedUDPProtocol::LatentRedUDPProtocol(IPv4Protocol* ipv4)
+	: UDPProtocol(ipv4)
+	//, m_dhcp(this)
+	, m_ntp(this)
 {
-	//VSC8512 specific
-	REG_VSC8512_PAGESEL			= 0x1f,
+}
 
-	//VSC8512 main/standard page
-	REG_VSC8512_EXT_CTRL_STAT	= 0x14,
-	REG_VSC8512_EXT_PHY_CTRL_2	= 0x18,
-	REG_VSC8512_AUX_CTRL_STAT	= 0x1c,
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Timer handlers
 
-	//VSC8512 extended page 2
-	VSC_PAGE_CU_PMD_TX			= 0x10,
-
-	//VSC8512 extended page 3
-	VSC_MAC_PCS_CTL				= 0x10,
-
-	//GPIO / global command page
-	REG_VSC_GP_GLOBAL_SERDES	= 0x12,
-	REG_VSC_MAC_MODE			= 0x13,
-	//14.2.3 p18 says 19G 15:14 = 00/10
-	REG_VSC_TEMP_CONF			= 0x1a,
-	REG_VSC_TEMP_VAL			= 0x1c
-};
-
-enum vsc_page_t
+void LatentRedUDPProtocol::OnAgingTick()
 {
-	VSC_PAGE_MAIN				= 0x0000,
-	VSC_PAGE_EXT2				= 0x0002,
-	VSC_PAGE_EXT3				= 0x0003,
+	//m_dhcp.OnAgingTick();
+	m_ntp.OnAgingTick();
+}
 
-	VSC_PAGE_GENERAL_PURPOSE	= 0x0010,
-	VSC_PAGE_TEST				= 0x2a30,
-	VSC_PAGE_TR					= 0x52b5
-};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Message handlers
 
-uint16_t GetVSC8512Temperature(MDIODevice& mdev);
-
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo, CharacterDevice* stream);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo, CharacterDevice* stream);
-
-#include "PortState.h"
-extern PortState* g_portState;
-
+#ifdef HAVE_ITCM
+__attribute__((section(".tcmtext")))
 #endif
+void LatentRedUDPProtocol::OnRxData(
+	IPv4Address srcip,
+	uint16_t sport,
+	uint16_t dport,
+	uint8_t* payload,
+	uint16_t payloadLen)
+{
+	switch(dport)
+	{
+		/*case DHCP_CLIENT_PORT:
+			m_dhcp.OnRxData(srcip, sport, dport, payload, payloadLen);
+			break;*/
+
+		case IPERF3_PORT:
+			g_iperfServer->OnRxUdpData(srcip, sport, dport, payload, payloadLen);
+			break;
+
+		case NTP_PORT:
+			m_ntp.OnRxData(srcip, sport, dport, payload, payloadLen);
+			break;
+
+		//ignore it
+		default:
+			break;
+	}
+}

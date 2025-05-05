@@ -75,7 +75,7 @@ enum cmdid_t
 	CMD_VERSION,
 	CMD_ZEROIZE
 };
-/*
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "flash"
 
@@ -177,7 +177,7 @@ static const clikeyword_t g_showSshCommands[] =
 	{"fingerprint",		CMD_FINGERPRINT,		nullptr,				"Show the SSH host key fingerprint (in OpenSSH base64 SHA256 format)"},
 	{nullptr,			INVALID_COMMAND,		nullptr,				nullptr}
 };
-*/
+
 static const clikeyword_t g_showFlashDetailCommands[] =
 {
 	{"<objname>",		FREEFORM_TOKEN,		nullptr,					"Name of the flash object to display"},
@@ -203,13 +203,13 @@ static const clikeyword_t g_showCommands[] =
 	{"flash",			CMD_FLASH,			g_showFlashCommands,		"Display flash usage and log data"},
 	{"hardware",		CMD_HARDWARE,		nullptr,					"Print hardware information"},
 	{"interface",		CMD_INTERFACE,		g_showInterfaceCommands,	"Print network interface info"},
-	/*{"ip",				CMD_IP,				g_showIpCommands,			"Print IPv4 information"},
+	{"ip",				CMD_IP,				g_showIpCommands,			"Print IPv4 information"},
 	{"ntp",				CMD_NTP,			nullptr,					"Print NTP information"},
 	{"ssh",				CMD_SSH,			g_showSshCommands,			"Print SSH information"},
-	{"version",			CMD_VERSION,		nullptr,					"Show firmware / FPGA version"},*/
+	{"version",			CMD_VERSION,		nullptr,					"Show firmware / FPGA version"},
 	{nullptr,			INVALID_COMMAND,	nullptr,					nullptr}
 };
-/*
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "ssh"
 
@@ -267,30 +267,27 @@ static const clikeyword_t g_zeroizeCommands[] =
 	{"all",				FREEFORM_TOKEN,			nullptr,				"Confirm erasing all flash data and return to default state"},
 	{nullptr,			INVALID_COMMAND,		nullptr,				nullptr}
 };
-*/
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Top level command lists
 
 //Top level commands in root mode
 static const clikeyword_t g_rootCommands[] =
 {
-	/*
+
 	{"commit",		CMD_COMMIT,			nullptr,				"Commit volatile config changes to flash memory"},
 	//{"dfu",			CMD_DFU,			nullptr,				"Reboot in DFU mode for firmware updating the main CPU"},
-	{"eeprom",		CMD_EEPROM,			g_eepromCommands,		"Program or dump socket EEPROM"},*/
 	{"exit",		CMD_EXIT,			nullptr,				"Log out"},
-	/*{"flash",		CMD_FLASH,			g_flashCommands,		"Maintenance operations on flash"},
+	{"flash",		CMD_FLASH,			g_flashCommands,		"Maintenance operations on flash"},
 	{"hostname",	CMD_HOSTNAME,		g_hostnameCommands,		"Change the host name"},
 	{"ip",			CMD_IP,				g_ipCommands,			"Configure IP addresses"},
 	{"no",			CMD_NO,				g_noCommands,			"Remove or disable features"},
 	{"ntp",			CMD_NTP,			g_ntpCommands,			"Configure NTP client"},
 	{"reload",		CMD_RELOAD,			nullptr,				"Restart the system"},
 	{"rollback",	CMD_ROLLBACK,		nullptr,				"Revert changes made since last commit"},
-	*/
 	{"show",		CMD_SHOW,			g_showCommands,			"Print information"},
-	/*
 	{"ssh",			CMD_SSH,			g_sshCommands,			"Configure SSH protocol"},
-	{"zeroize",		CMD_ZEROIZE,		g_zeroizeCommands,		"Erase all configuration data and reload"},*/
+	{"zeroize",		CMD_ZEROIZE,		g_zeroizeCommands,		"Erase all configuration data and reload"},
 	{nullptr,		INVALID_COMMAND,	nullptr,				nullptr}
 };
 
@@ -343,10 +340,9 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 {
 	switch(m_command[0].m_commandID)
 	{
-		/*case CMD_COMMIT:
+		case CMD_COMMIT:
 			OnCommit();
-			break;*/
-		/*
+			break;		/*
 		case CMD_DFU:
 			{
 				//TODO: require confirmation or something
@@ -359,10 +355,6 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 			break;
 		*/
 
-		/*case CMD_EEPROM:
-			OnEepromCommand();
-			break;*/
-
 		case CMD_EXIT:
 			m_stream->Flush();
 
@@ -374,7 +366,7 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 			else
 			{
 			}
-			break;/*
+			break;
 
 		case CMD_FLASH:
 			if(m_command[1].m_commandID == CMD_COMPACT)
@@ -409,11 +401,11 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 		case CMD_ROLLBACK:
 			OnRollback();
 			break;
-		*/
+
 		case CMD_SHOW:
 			OnShowCommand();
 			break;
-		/*
+
 		case CMD_SSH:
 			OnSSHCommand();
 			break;
@@ -424,21 +416,21 @@ void LatentRedCLISessionContext::OnExecuteRoot()
 				g_kvs->WipeAll();
 				OnReload();
 			}
-			break;*/
+			break;
 
 		default:
 			m_stream->Printf("Unrecognized command\n");
 			break;
 	}
 }
-/*
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "commit"
 
 void LatentRedCLISessionContext::OnCommit()
 {
 	//Save hostname and SSH username
-	if(!g_kvs->StoreStringObjectIfNecessary(hostname_objid, m_hostname, "dumptruck"))
+	if(!g_kvs->StoreStringObjectIfNecessary(hostname_objid, m_hostname, "switch"))
 		m_stream->Printf("KVS write error\n");
 
 	if(!g_kvs->StoreStringObjectIfNecessary(g_usernameObjectID, g_sshUsername, g_defaultSshUsername))
@@ -481,12 +473,12 @@ void LatentRedCLISessionContext::OnIPCommand()
 	switch(m_command[1].m_commandID)
 	{
 		case CMD_ADDRESS:
-			if(m_command[2].m_commandID == CMD_DHCP)
+			/*if(m_command[2].m_commandID == CMD_DHCP)
 			{
 				g_usingDHCP = true;
 				g_dhcpClient->Enable();
 			}
-			else
+			else*/
 			{
 				//g_usingDHCP = false;
 				//g_dhcpClient->Disable();
@@ -556,7 +548,7 @@ void LatentRedCLISessionContext::OnNoCommand()
 		default:
 			break;
 	}
-}*/
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // "reload"
@@ -577,15 +569,13 @@ void LatentRedCLISessionContext::OnReload()
  */
 void LatentRedCLISessionContext::OnRollback()
 {
-	/*
 	g_keyMgr.LoadFromKVS(false);
 
 	//g_dhcpClient->LoadConfigFromKVS();
 	g_udp->GetNTP().LoadConfigFromKVS();
 	ConfigureIP();
 	LoadHostname();
-	g_sshd->LoadUsername();
-	*/
+	g_tcp->GetSSH().LoadUsername();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -628,7 +618,6 @@ void LatentRedCLISessionContext::OnShowCommand()
 			}
 			break;
 
-		/*
 		case CMD_IP:
 			switch(m_command[2].m_commandID)
 			{
@@ -668,7 +657,7 @@ void LatentRedCLISessionContext::OnShowCommand()
 		case CMD_VERSION:
 			OnShowVersion();
 			break;
-		*/
+
 		default:
 			m_stream->Printf("Unrecognized command\n");
 			break;
@@ -889,14 +878,13 @@ void LatentRedCLISessionContext::OnShowInterfaceStatus()
 	//TODO: management port
 }
 
-/*
 void LatentRedCLISessionContext::OnShowVersion()
 {
-	m_stream->Printf("DUMPTRUCK v0.1\n");
+	m_stream->Printf("LATENTRED v0.1\n");
 	m_stream->Printf("by Andrew D. Zonenberg\n");
 	m_stream->Printf("\n");
 	m_stream->Printf("This system is open hardware! Board design files and firmware/gateware source code are at:\n");
-	m_stream->Printf("https://github.com/azonenberg/dumptruck\n");
+	m_stream->Printf("https://github.com/azonenberg/latentred\n");
 	m_stream->Printf("\n");
 	m_stream->Printf("Firmware compiled at %s on %s\n", __TIME__, __DATE__);
 	#ifdef __GNUC__
@@ -929,4 +917,3 @@ void LatentRedCLISessionContext::OnSSHCommand()
 			break;
 	}
 }
-*/

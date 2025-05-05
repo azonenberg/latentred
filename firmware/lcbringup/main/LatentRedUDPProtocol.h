@@ -27,72 +27,33 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-#ifndef latentred_h
-#define latentred_h
+#ifndef LatentRedUDPProtocol_h
+#define LatentRedUDPProtocol_h
 
-#include <core/platform.h>
-#include <hwinit.h>
+//#include "LatentRedDHCPClient.h"
+#include <services/STM32NTPClient.h>
 
-#include <peripheral/SPI.h>
-
-#include <common-embedded-platform/services/Iperf3Server.h>
-#include <embedded-utils/StringBuffer.h>
-
-#include "LatentRedUDPProtocol.h"
-#include "LatentRedTCPProtocol.h"
-
-extern Iperf3Server* g_iperfServer;
-extern LatentRedUDPProtocol* g_udp;
-extern LatentRedTCPProtocol* g_tcp;
-
-void InitLEDs();
-void InitSensors();
-
-//extern DumptruckSSHTransportServer* g_sshd;
-
-enum mdioreg_t_ext
+/**
+	@brief UDP handlers for management stack
+ */
+class LatentRedUDPProtocol : public UDPProtocol
 {
-	//VSC8512 specific
-	REG_VSC8512_PAGESEL			= 0x1f,
+public:
+	LatentRedUDPProtocol(IPv4Protocol* ipv4);
 
-	//VSC8512 main/standard page
-	REG_VSC8512_EXT_CTRL_STAT	= 0x14,
-	REG_VSC8512_EXT_PHY_CTRL_2	= 0x18,
-	REG_VSC8512_AUX_CTRL_STAT	= 0x1c,
+	//LatentRedDHCPClient& GetDHCP()
+	//{ return m_dhcp; }
 
-	//VSC8512 extended page 2
-	VSC_PAGE_CU_PMD_TX			= 0x10,
+	STM32NTPClient& GetNTP()
+	{ return m_ntp; }
 
-	//VSC8512 extended page 3
-	VSC_MAC_PCS_CTL				= 0x10,
+	virtual void OnAgingTick();
 
-	//GPIO / global command page
-	REG_VSC_GP_GLOBAL_SERDES	= 0x12,
-	REG_VSC_MAC_MODE			= 0x13,
-	//14.2.3 p18 says 19G 15:14 = 00/10
-	REG_VSC_TEMP_CONF			= 0x1a,
-	REG_VSC_TEMP_VAL			= 0x1c
+protected:
+	virtual void OnRxData(IPv4Address srcip, uint16_t sport, uint16_t dport, uint8_t* payload, uint16_t payloadLen);
+
+	//LatentRedDHCPClient m_dhcp;
+	STM32NTPClient m_ntp;
 };
-
-enum vsc_page_t
-{
-	VSC_PAGE_MAIN				= 0x0000,
-	VSC_PAGE_EXT2				= 0x0002,
-	VSC_PAGE_EXT3				= 0x0003,
-
-	VSC_PAGE_GENERAL_PURPOSE	= 0x0010,
-	VSC_PAGE_TEST				= 0x2a30,
-	VSC_PAGE_TR					= 0x52b5
-};
-
-uint16_t GetVSC8512Temperature(MDIODevice& mdev);
-
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_7series* devinfo, CharacterDevice* stream);
-extern void PrintFPGAInfo(volatile APB_DeviceInfo_UltraScale* devinfo, CharacterDevice* stream);
-
-#include "PortState.h"
-extern PortState* g_portState;
 
 #endif

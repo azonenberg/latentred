@@ -111,10 +111,10 @@
 #define TCP_RETRANSMIT_TIMEOUT 2
 
 ///@brief If true, we have hardware offload for UDP checksums and should not waste time calculating them in firmware
-#define HAVE_UDP_V4_CHECKSUM_OFFLOAD
+//#define HAVE_UDP_V4_CHECKSUM_OFFLOAD
 
 ///@brief If true, we have hardware offload for TCP checksums and should not waste time calculating them in firmware
-#define HAVE_TCP_V4_CHECKSUM_OFFLOAD
+//#define HAVE_TCP_V4_CHECKSUM_OFFLOAD
 
 ///@brief If set, we can do 64-bit burst transactions on the FMC to transmit
 //#define HAVE_APB64_TX
