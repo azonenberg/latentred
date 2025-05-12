@@ -13899,6 +13899,17 @@
 		)
 		(uuid "9f1248a3-eddf-48e4-96b1-95d858aa6cd5")
 	)
+	(text "ERRATA: LED1 even/odd are swapped"
+		(exclude_from_sim no)
+		(at 16.764 240.538 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "acaed8e5-34a4-40a9-b4c9-658ba663a987")
+	)
 	(text "Port 2"
 		(exclude_from_sim no)
 		(at 91.44 176.53 0)

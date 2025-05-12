@@ -60,8 +60,11 @@ enum mdioreg_t_ext
 	REG_VSC8512_EXT_PHY_CTRL_2	= 0x18,
 	REG_VSC8512_AUX_CTRL_STAT	= 0x1c,
 
+	//VSC8512 extended page 1
+	REG_VSC8512_LED_MODE		= 0x1d,
+
 	//VSC8512 extended page 2
-	VSC_PAGE_CU_PMD_TX			= 0x10,
+	VSC_CU_PMD_TX				= 0x10,
 
 	//VSC8512 extended page 3
 	VSC_MAC_PCS_CTL				= 0x10,
@@ -77,6 +80,7 @@ enum mdioreg_t_ext
 enum vsc_page_t
 {
 	VSC_PAGE_MAIN				= 0x0000,
+	VSC_PAGE_EXT1				= 0x0001,
 	VSC_PAGE_EXT2				= 0x0002,
 	VSC_PAGE_EXT3				= 0x0003,
 

@@ -242,7 +242,7 @@ void InitVSC8512(uint8_t phyaddr)
 																	//Reserved bit 6 set
 																	//No jumbo frame support or loopback
 	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_EXT2);
-	mdev.WriteRegister(VSC_PAGE_CU_PMD_TX, 0x02be);					//Non-default trim values for 10baseT amplitude
+	mdev.WriteRegister(VSC_CU_PMD_TX, 0x02be);					//Non-default trim values for 10baseT amplitude
 
 	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_TEST);
 	mdev.WriteRegister(20, 0x4420);									//magic undocumented value
@@ -353,7 +353,7 @@ void InitVSC8512(uint8_t phyaddr)
 		MDIODevice pdev(&FMDIO, phyaddr + i);
 
 		pdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_EXT2);
-		pdev.WriteRegister(VSC_PAGE_CU_PMD_TX, 0x02be);						//Non-default trim values for 10baseT amplitude
+		pdev.WriteRegister(VSC_CU_PMD_TX, 0x02be);							//Non-default trim values for 10baseT amplitude
 
 		pdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_EXT3);
 		pdev.WriteRegister(VSC_MAC_PCS_CTL, 0x4180);						//Restart MAC on link state change
@@ -364,6 +364,13 @@ void InitVSC8512(uint8_t phyaddr)
 
 		pdev.WriteRegister(REG_GIG_CONTROL, 0x600);							//Advertise multi-port device, 1000/full
 		pdev.WriteRegister(REG_AN_ADVERT, 0x141);							//Advertise 100/full, 10/full only
+
+		pdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_MAIN);
+		pdev.WriteRegister(REG_VSC8512_LED_MODE, 0x80e0);					//LED configuration (default is 0x8021)
+																			//LED3 (not used): half duplex mode
+																			//LED2 (not used): link/activity
+																			//LED1: constant off
+																			//LED0: link state with pulse-stretched activity
 	}
 
 	//Initialize undocumented temperature sensor (see vtss_phy_chip_temp_init_private in MESA)

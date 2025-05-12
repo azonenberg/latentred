@@ -13866,6 +13866,17 @@
 		)
 		(uuid "43f7c7a7-b222-4234-8a96-a2df9ab42cb5")
 	)
+	(text "ERRATA: LED1 even/odd are swapped"
+		(exclude_from_sim no)
+		(at 20.574 242.824 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f6a81ca-2199-41c8-8079-1e6ca154376f")
+	)
 	(text "LIMITED pair swapping is permitted\n... but not all combinations!\nSee 4.5.4, table 5 for options\nCan correct for polarity swap\non all pairs."
 		(exclude_from_sim no)
 		(at 45.72 233.68 0)

@@ -4,6 +4,10 @@ Input: 12V at 1.25A max, fused at 3A to be conservative.
 
 Expect ~15W max power consumption, less under typical operation
 
+## ERRATA
+
+v0.1: right LED on the RJ45 is swapped between upper and lower ports
+
 ## Power
 
 ### Needs

@@ -99,22 +99,15 @@ void LatentRedPhyPollTask::PollPHYs()
 		case POLL_CTRL:
 			if(m_mdio->status == 0)
 			{
-				//Save speed/duplex state
+				/*
+				//Save speed/duplex state using the basic control register (doesn't seem to work)
 				uint32_t basicCtrl = m_mdio->data;
 				auto speed = static_cast<linkspeed_t>(( (basicCtrl >> 13) & 1) | ( (basicCtrl >> 5) & 2));
 				auto& state = m_state.m_state[m_currentPhy];
 				state.m_speed = static_cast<linkspeed_t>(speed);
+				*/
 
-				//Print log messages on state change
-				if(m_linkStateChanged)
-				{
-					if(state.m_linkUp)
-						g_log("Interface %s: link is up at %s\n", state.m_ifname, g_linkSpeedNamesLong[speed]);
-					else
-						g_log("Interface %s: changed state to down\n", state.m_ifname);
-				}
-
-				//PHY does not report duplex state as expected in basic-control register
+				//PHY does not report duplex state and speed as expected in basic-control register
 				//Instead, we want to grab it from auxiliary control/status!
 				m_mdio->cmd_addr = (REG_VSC8512_AUX_CTRL_STAT << 8) | m_currentPhy;
 				m_pollState = POLL_EXT_STAT;
@@ -127,6 +120,29 @@ void LatentRedPhyPollTask::PollPHYs()
 				uint32_t extstat = m_mdio->data;
 				auto& state = m_state.m_state[m_currentPhy];
 				state.m_fullDuplex = ((extstat & 0x20) == 0x20) ? true : false;
+
+				//Extract speed here
+				auto speed = static_cast<linkspeed_t>((extstat >> 3) & 3);
+				state.m_speed = static_cast<linkspeed_t>(speed);
+
+				//Print log messages on state change
+				if(m_linkStateChanged)
+				{
+					if(state.m_linkUp)
+						g_log("Interface %s: link is up at %s\n", state.m_ifname, g_linkSpeedNamesLong[speed]);
+					else
+						g_log("Interface %s: changed state to down\n", state.m_ifname);
+
+					//Update LED1 state
+					//Due to errata in v0.1 line card PCB, even/odd ports have LED1 swapped
+					//LED0 = link state with pulse-stretched activity
+					//LED1 = on for 10/100 mode, off for gigabit
+					MDIODevice mdev(m_mdio, m_currentPhy ^ 1);
+					uint16_t ledmode = 0x80e0;
+					if( (speed < LINK_SPEED_1000M) && state.m_linkUp )
+						ledmode |= 0x10;
+					mdev.WriteRegister(REG_VSC8512_LED_MODE, ledmode);
+				}
 
 				//Move on to next phy
 				m_currentPhy ++;
