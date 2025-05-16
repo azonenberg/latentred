@@ -1,0 +1,228 @@
+`timescale 1ns / 1ps
+`default_nettype none
+/***********************************************************************************************************************
+*                                                                                                                      *
+* LATENTRED                                                                                                            *
+*                                                                                                                      *
+* Copyright (c) 2012-2025 Andrew D. Zonenberg                                                                          *
+* All rights reserved.                                                                                                 *
+*                                                                                                                      *
+* Redistribution and use in source and binary forms, with or without modification, are permitted provided that the     *
+* following conditions are met:                                                                                        *
+*                                                                                                                      *
+*    * Redistributions of source code must retain the above copyright notice, this list of conditions, and the         *
+*      following disclaimer.                                                                                           *
+*                                                                                                                      *
+*    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the       *
+*      following disclaimer in the documentation and/or other materials provided with the distribution.                *
+*                                                                                                                      *
+*    * Neither the name of the author nor the names of any contributors may be used to endorse or promote products     *
+*      derived from this software without specific prior written permission.                                           *
+*                                                                                                                      *
+* THIS SOFTWARE IS PROVIDED BY THE AUTHORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED   *
+* TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL *
+* THE AUTHORS BE HELD LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES        *
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR       *
+* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT *
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE       *
+* POSSIBILITY OF SUCH DAMAGE.                                                                                          *
+*                                                                                                                      *
+***********************************************************************************************************************/
+
+/**
+	@file
+	@author Andrew D. Zonenberg
+	@brief Input buffering for a LATENTRED line card
+ */
+module LineCardInputBuffering #(
+
+	//Config for incoming CDC FIFOs
+	parameter CDC_FIFO_DEPTH		= 256,
+	parameter CDC_FIFO_USE_BLOCK	= 1,
+
+	parameter MATRIX_ID				= "NONE"		//Nickname for the RAM cascade block for power reporting
+)(
+
+	//Main switch fabric clock
+	input wire					clk_fabric,
+
+	//VLAN configuration
+	input wire[11:0]			port_vlan[23:0],
+	input wire					drop_tagged[23:0],
+	input wire					drop_untagged[23:0],
+
+	//Incoming data stream from each port (32-bit AXI4-Stream)
+	AXIStream.receiver			axi_rx_portclk[23:0]
+);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Validate buses are the correct size
+
+	for(genvar g=0; g<24; g++) begin : bus_width_checks
+		if(axi_rx_portclk[g].DATA_WIDTH != 32)
+			axi_bus_width_bad();
+		if(axi_rx_portclk[g].USER_WIDTH != 1)
+			axi_bus_width_bad();
+		if(axi_rx_portclk[g].ID_WIDTH != 0)
+			axi_bus_width_bad();
+		if(axi_rx_portclk[g].DEST_WIDTH != 0)
+			axi_bus_width_bad();
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Shift all of the incoming data to the fabric clock domain
+
+	AXIStream #(.DATA_WIDTH(32), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) axi_rx_coreclk[23:0]();
+
+	for(genvar g=0; g<24; g++) begin : incoming_cdc
+		AXIS_CDC #(
+			.FIFO_DEPTH(CDC_FIFO_DEPTH),
+			.USE_BLOCK(CDC_FIFO_USE_BLOCK)
+		) cdc (
+			.axi_rx(axi_rx_portclk[g]),
+			.tx_clk(clk_fabric),
+			.axi_tx(axi_rx_coreclk[g])
+		);
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Helpers for CASCADE_ORDER parameter
+
+	function string CascadeOrder(input integer i);
+		if(i == 0)
+			return "FIRST";
+		else if(i == 23)
+			return "LAST";
+		else
+			return "MIDDLE";
+	endfunction
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// The RAM cascade chain itself
+
+	//A port is not cascaded (separate write port for each incoming port)
+	//B port is cascaded
+
+	//South end of each port on the B side
+	//[0] is tied to ground to start the cascade
+	//[1] is cascade from block 0 to 1
+	//[2] is cascade from block 1 to 2, etc
+	UltraRAMCascadeBus portb_cascade[24:0]();
+	UltraRAMCascadeTieoff tieoff_south_b(.tieoff(portb_cascade[0]));
+
+	//Port A signals (writing data from CDCs to main FIFO)
+	wire		wr_en[23:0];
+	wire[11:0]	wr_addr[23:0];
+	wire[71:0]	wr_data[23:0];
+
+	//Port B bus (inputs on block 0, outputs on block 23)
+	logic		rd_en	= 0;
+	logic[16:0]	rd_addr	= 0;
+	wire[71:0]	rd_data;
+	wire		rd_valid;
+
+	for(genvar g=0; g<24; g++) begin : core_ram
+
+		//Tieoffs for cascade ports on the A side
+		UltraRAMCascadeBus porta_cascade_north();
+		UltraRAMCascadeBus porta_cascade_south();
+		//north cascade gets floated, no need to tie off since they're all outputs
+		UltraRAMCascadeTieoff porta_tieoff_south(.tieoff(porta_cascade_south));
+
+		//Port B signals (mostly unused and tied off except for first/last block)
+		wire		portb_en;
+		wire[22:0]	portb_addr;
+		wire[71:0]	portb_rdata;
+		wire		portb_rvalid;
+
+		//Drive port B inputs to block 0, tie off others
+		if(g == 0) begin
+			assign portb_en		= rd_en;
+			assign portb_addr	= { 6'h0, rd_addr };
+		end
+		else begin
+			assign portb_en		= 0;
+			assign portb_addr	= 23'h0;
+		end
+
+		//Pick off the outputs from block 23
+		if(g == 23) begin
+			assign rd_data		= portb_rdata;
+			assign rd_valid		= portb_rvalid;
+		end
+
+		UltraRAMWrapper #(
+			.CASCADE_ORDER_A("NONE"),
+			.CASCADE_ORDER_B(CascadeOrder(g)),
+			.SELF_ADDR_A(11'h000),
+			.SELF_ADDR_B(g[10:0]),
+			.SELF_MASK_A(11'h7ff),
+			.SELF_MASK_B(11'h7e0)	//bitmask 16:12 valid, high bits not needed
+		) uram (
+
+			//Shared clock and power management
+			.clk(clk_fabric),
+			.sleep(1'b0),
+
+			//Port A: write only, not cascaded, no byte lane masking
+			.a_en(wr_en[g]),
+			.a_addr({11'h0, wr_addr[g]}),
+			.a_wr(wr_en[g]),
+			.a_bwe(9'h1ff),
+			.a_wdata(wr_data[g]),
+			.a_inject_seu(1'b0),
+			.a_inject_deu(1'b0),
+			.a_core_ce(1'b1),
+			.a_ecc_ce(1'b1),
+			.a_rst(1'b0),
+			.a_rdata(),
+			.a_rdaccess(),
+			.a_seu(),
+			.a_deu(),
+
+			.b_en(portb_en),
+			.b_addr(portb_addr),
+			.b_wr(1'b0),
+			.b_bwe(9'h0),
+			.b_wdata(72'h0),
+			.b_inject_seu(1'b0),
+			.b_inject_deu(1'b0),
+			.b_core_ce(1'b1),
+			.b_ecc_ce(1'b1),
+			.b_rst(1'b0),
+			.b_rdata(portb_rdata),
+			.b_rdaccess(portb_rvalid),
+			.b_seu(),
+			.b_deu(),
+
+			.a_cascade_south(porta_cascade_south),
+			.a_cascade_north(porta_cascade_north),
+
+			.b_cascade_south(portb_cascade[g]),
+			.b_cascade_north(portb_cascade[g+1])
+		);
+
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// FIFO write logic: pop frames from CDC, check CRC status, write to URAM
+
+	for(genvar g=0; g<24; g++) begin : fifos
+
+		//Passthrough to detect and strip VLAN tags
+
+		GigabitIngressFIFO ctrl(
+			.axi_rx(axi_rx_coreclk[g]),
+
+			.port_vlan(port_vlan[g]),
+			.drop_tagged(drop_tagged[g]),
+			.drop_untagged(drop_untagged[g]),
+
+			.wr_en(wr_en[g]),
+			.wr_addr(wr_addr[g]),
+			.wr_data(wr_data[g])
+		);
+
+	end
+
+endmodule
