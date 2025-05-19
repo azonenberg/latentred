@@ -29,144 +29,117 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-/**
-	@brief Control registers for a single LATENTRED line card
-
-	Moved into its own module since most of these get used in multiple places
- */
-module LineCardControlRegisters(
-
-	//The APB bus
-	APB.completer 			apb,
-
-	//Control registers
-	output logic[11:0]		port_vlan[23:0],
-	output logic			port_drop_tagged[23:0],
-	output logic			port_drop_untagged[23:0]
-);
+module LineCardInputBuffering_Sim();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Sanity check
+	// Clocking
 
-	if(apb.DATA_WIDTH != 32)
-		apb_bus_width_is_invalid();
+	//internal GSR lasts 100 ns in sim and URAM isn't ungated until then
+	logic ready = 0;
+	initial begin
+		#110;
+		ready = 1;
+	end
+
+	logic clk = 0;
+	always begin
+		#1;
+		clk = ready;
+		#1;
+		clk = 0;
+	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Tie off unused APB signals
+	// Packet generation
 
-	assign apb.pruser = 0;
-	assign apb.pbuser = 0;
+	AXIStream #(.DATA_WIDTH(32), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) eth_rx_data[23:0]();
+
+	logic[23:0]	next = 0;
+
+	AXIS_PcapngPacketGenerator #(
+		.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/2tagged-2untagged.pcapng")
+	) eth0_gen (
+		.clk(clk),
+		.next(next[0]),
+		.axi_tx(eth_rx_data[0])
+	);
+
+	//Tie off all other ports
+	for(genvar g=1; g<24; g++) begin
+		assign eth_rx_data[g].aclk = clk;
+		assign eth_rx_data[g].areset_n = 0;
+		assign eth_rx_data[g].tvalid = 0;
+		assign eth_rx_data[g].tdata = 0;
+		assign eth_rx_data[g].tstrb = 0;
+		assign eth_rx_data[g].tkeep = 0;
+		assign eth_rx_data[g].tlast = 0;
+	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Clear everything on POR
+	// The DUT
+
+	logic[11:0]	port_vlan[23:0];
+	logic		drop_tagged[23:0];
+	logic		drop_untagged[23:0];
+
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) eth_tx_data();
+	LineCardInputBuffering dut(
+		.clk_fabric(clk),
+
+		.port_vlan(port_vlan),
+		.drop_tagged(drop_tagged),
+		.drop_untagged(drop_untagged),
+
+		.axi_rx_portclk(eth_rx_data),
+		.axi_tx(eth_tx_data)
+	);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Testbench
+
+	logic[7:0] state = 0;
 
 	initial begin
-
-		for(integer i=0; i<24; i=i+1) begin
-			port_vlan[i]			= 0;
-			port_drop_tagged[i]		= 0;
-			port_drop_untagged[i]	= 1;
+		for(integer i=0; i<24; i++) begin
+			port_vlan[i]		= 69;
+			drop_tagged[i]		= 0;
+			drop_untagged[i]	= 0;
 		end
-
 	end
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Register IDs
+	always_ff @(posedge clk) begin
+		next	<= 0;
 
-	/*
-		We have 1 kB of total address space to work with (0x400 bytes or 256 32-bit words)
-		With 24 ports this is enough for a maximum of ten registers per port, but this doesn't divide evenly
-		If we use power of two alignment, allocate 32 ports of address space with 8 registers per port
-	 */
-	typedef enum logic[2:0]
-	{
-		REG_VLAN_CFG	= 'h00,		//31	drop tagged
-									//30	drop untagged
-									//11:0	port vlan ID
+		case(state)
 
-		//7 more register IDs reserved for future use
+			0: begin
+				next[0]	<= 1;
+				state	<= 1;
+			end
 
-		REG_MAX			= 'h01
-	} regid_t;
-
-	wire[4:0]	port_id;
-	wire[2:0]	reg_id;
-
-	assign port_id	= apb.paddr[9:5];
-	assign reg_id	= apb.paddr[4:2];
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Register logic
-
-	//Combinatorial readback
-	always_comb begin
-
-		apb.pready	= apb.psel && apb.penable;
-		apb.prdata	= 0;
-		apb.pslverr	= 0;
-
-		if(apb.pready) begin
-
-			//Reject bogus register IDs
-			if( (port_id >= 24) || (reg_id >= REG_MAX) )
-				apb.pslverr	= 1;
-
-			//Valid register path
-			else begin
-
-				//read
-				if(!apb.pwrite) begin
-
-					case(reg_id)
-						REG_VLAN_CFG: begin
-							apb.prdata[31]		= port_drop_tagged[port_id];
-							apb.prdata[30]		= port_drop_untagged[port_id];
-							apb.prdata[11:0]	= port_vlan[port_id];
-						end
-
-						default:		apb.pslverr	= 1;
-					endcase
-
+			1: begin
+				if(eth_rx_data[0].tlast) begin
+					next[0]	<= 1;
+					state	<= 2;
 				end
-
-				//writes: nothing needed, we already validated the register ID
-
 			end
 
-		end
+			2: begin
+				if(eth_rx_data[0].tlast) begin
+					next[0]	<= 1;
+					state	<= 3;
+				end
+			end
+
+			3: begin
+				if(eth_rx_data[0].tlast) begin
+					next[0]	<= 1;
+					state	<= 4;
+				end
+			end
+
+		endcase
+
 	end
 
-	always_ff @(posedge apb.pclk or negedge apb.preset_n) begin
-
-		//Reset
-		if(!apb.preset_n) begin
-			for(integer i=0; i<24; i=i+1) begin
-				port_vlan[i]			<= 0;
-				port_drop_tagged[i]		<= 0;
-				port_drop_untagged[i]	<= 0;
-			end
-		end
-
-		//Normal path
-		else begin
-
-			if(apb.pready && apb.pwrite) begin
-
-				case(reg_id)
-
-					REG_VLAN_CFG: begin
-						port_drop_tagged[port_id]	<= apb.prdata[31];
-						port_drop_untagged[port_id]	<= apb.prdata[30];
-						port_vlan[port_id]			<= apb.prdata[11:0];
-					end
-
-					default: begin
-					end
-				endcase
-
-			end
-
-		end
-
-	end
 endmodule

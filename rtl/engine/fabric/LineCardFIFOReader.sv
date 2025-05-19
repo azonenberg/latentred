@@ -1,0 +1,355 @@
+`timescale 1ns / 1ps
+`default_nettype none
+/***********************************************************************************************************************
+*                                                                                                                      *
+* LATENTRED                                                                                                            *
+*                                                                                                                      *
+* Copyright (c) 2012-2025 Andrew D. Zonenberg                                                                          *
+* All rights reserved.                                                                                                 *
+*                                                                                                                      *
+* Redistribution and use in source and binary forms, with or without modification, are permitted provided that the     *
+* following conditions are met:                                                                                        *
+*                                                                                                                      *
+*    * Redistributions of source code must retain the above copyright notice, this list of conditions, and the         *
+*      following disclaimer.                                                                                           *
+*                                                                                                                      *
+*    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the       *
+*      following disclaimer in the documentation and/or other materials provided with the distribution.                *
+*                                                                                                                      *
+*    * Neither the name of the author nor the names of any contributors may be used to endorse or promote products     *
+*      derived from this software without specific prior written permission.                                           *
+*                                                                                                                      *
+* THIS SOFTWARE IS PROVIDED BY THE AUTHORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED   *
+* TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL *
+* THE AUTHORS BE HELD LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES        *
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR       *
+* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT *
+* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE       *
+* POSSIBILITY OF SUCH DAMAGE.                                                                                          *
+*                                                                                                                      *
+***********************************************************************************************************************/
+
+/**
+	@file
+	@author Andrew D. Zonenberg
+	@brief Read-side logic for the RX FIFO
+ */
+
+module LineCardFIFOReader(
+	input wire				clk,
+
+	//Read FIFO control registers
+	input wire[12:0]		fifo_rd_size[23:0],
+	input wire[12:0]		fifo_rd_ptr[23:0],
+	output logic			fifo_rd_ptr_inc[23:0],
+
+	//URAM interface
+	output logic			rd_en	= 0,
+	output logic[16:0]		rd_addr	= 0,
+	input wire[71:0]		rd_data,
+	input wire				rd_valid,
+
+	//Request/lookup interface to MAC address table
+	output logic			mac_lookup_en		= 0,
+	output vlan_t			mac_lookup_src_vlan	= 0,
+	output macaddr_t		mac_lookup_src_mac	= 0,
+	output logic[4:0]		mac_lookup_src_port	= 0,	//NOTE: this is port within the line card, not global port ID
+	output macaddr_t		mac_lookup_dst_mac	= 0,
+
+	//AXI interface to core crossbar
+	AXIStream.transmitter	axi_tx
+);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Validate buses are the right size
+
+	if(axi_tx.DATA_WIDTH != 64)
+		axi_bus_width_inconsistent();
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Hook up AXI control signals
+
+	assign axi_tx.aclk		= clk;
+	assign axi_tx.twakeup	= 1;
+
+	initial begin
+		assign axi_tx.areset_n	= 0;
+	end
+	always_ff @(posedge clk) begin
+		axi_tx.areset_n		<= 1;
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Per-port state tables
+
+	typedef enum logic[2:0]
+	{
+		PORT_STATE_IDLE					= 0,	//nothing to do
+		PORT_STATE_DATA_READY			= 1,	//frame ready to start forwarding
+		PORT_STATE_HEADER_WAIT			= 2,	//read of header was dispatched
+		PORT_STATE_WORD_0				= 3,	//read of first payload word was dispatched
+		PORT_STATE_WORD_1				= 4,	//read of second payload word was dispatched
+		PORT_STATE_MAC_LOOKUP			= 5		//mac address lookup in progress
+	} PortState;
+
+	//Current forwarding state
+	PortState	port_states[23:0];
+
+	//VLAN of the current frame
+	vlan_t		port_vlans[23:0];
+
+	//Dest MAC of the current frame
+	macaddr_t	port_dst_mac[23:0];
+
+	//Source MAC of the current frame
+	macaddr_t	port_src_mac[23:0];
+
+	//First 4 payload bytes of the current frame (ethertype and two more after)
+	logic[31:0]	port_first4[23:0];
+
+	//Length of the current frame
+	logic[10:0]	port_lens[23:0];
+
+	initial begin
+		for(integer i=0; i<24; i++) begin
+			port_states[i]		= PORT_STATE_IDLE;
+			port_vlans[i]		= 0;
+			port_lens[i]		= 0;
+			port_dst_mac[i]		= 0;
+			port_src_mac[i]		= 0;
+			port_first4[i]		= 0;
+
+			fifo_rd_ptr_inc[i]	= 0;
+		end
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// State for in-progress packets
+
+	typedef enum logic[2:0]
+	{
+		//0 reserved for now
+		MTYPE_HEADER	= 1,	//header read
+		MTYPE_WORD0		= 2,
+		MTYPE_WORD1		= 3,
+		MTYPE_BODY		= 4
+	} mtype_t;
+
+	typedef struct packed
+	{
+		mtype_t		mtype;
+		logic[4:0]	port;
+	} PendingMetadata;
+
+	logic			meta_wr_en	= 0;
+	PendingMetadata meta_wdata;
+
+	wire			meta_empty;
+	logic			meta_rd_en = 0;
+	PendingMetadata	meta_rdata;
+
+	SingleClockFifo #(
+		.WIDTH($bits(PendingMetadata)),
+		.DEPTH(32),
+		.USE_BLOCK(0),
+		.OUT_REG(0)
+	) meta_fifo (
+		.clk(clk),
+
+		.wr(meta_wr_en),
+		.din(meta_wdata),
+
+		.rd(meta_rd_en),
+		.dout(meta_rdata),
+
+		.overflow(),
+		.underflow(),
+		.empty(meta_empty),
+		.full(),
+		.rsize(),
+		.wsize(),
+		.reset(!axi_tx.areset_n)
+	);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Main reader block
+
+	//Round robin port counter
+	logic[4:0]	main_rr_port	= 0;
+
+	//FIFO read pointer of the round robin winner
+	logic[11:0]	main_rr_ptr;
+
+	//FIFO read pointer of the most recent read transaction
+	logic[11:0] meta_rdata_ptr;
+
+	always_comb begin
+		main_rr_ptr		= fifo_rd_ptr[main_rr_port][11:0];
+		meta_rdata_ptr	= fifo_rd_ptr[meta_rdata.port][11:0];
+	end
+
+	always_ff @(posedge clk) begin
+
+		rd_en					<= 0;
+		meta_wr_en				<= 0;
+		meta_rd_en				<= 0;
+		mac_lookup_en			<= 0;
+
+		for(integer i=0; i<24; i++) begin
+
+			//Default to not incrementing the read pointer
+			fifo_rd_ptr_inc[i]		<= 0;
+
+			//Check all ports in parallel for having data ready to go
+			if( (port_states[i] == PORT_STATE_IDLE) && (fifo_rd_size[i] != 0) )
+				port_states[i]	<= PORT_STATE_DATA_READY;
+		end
+
+		//Read data will always show up after the metadata, so no need to check if there's data in the metadata fifo
+		if(rd_valid) begin
+
+			//Figure out why we read it
+			case(meta_rdata.mtype)
+
+				//It's a header
+				MTYPE_HEADER: begin
+
+					//Save the header
+					port_vlans[meta_rdata.port]	<= rd_data[27:16];
+					port_lens[meta_rdata.port]	<= rd_data[10:0];
+
+					//Request read of the first frame word and bump the pointer
+					rd_en								<= 1;
+					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
+					fifo_rd_ptr_inc[meta_rdata.port]	<= 1;
+
+					port_states[meta_rdata.port]		<= PORT_STATE_WORD_0;
+
+					//Save metadata
+					meta_wr_en							<= 1;
+					meta_wdata.mtype					<= MTYPE_WORD0;
+					meta_wdata.port						<= meta_rdata.port;
+
+				end //MTYPE_HEADER
+
+				//It's the first packet word
+				MTYPE_WORD0: begin
+
+					//Save the header we have so far
+					port_dst_mac[meta_rdata.port]	<=
+					{
+						rd_data[0*8 +: 8],
+						rd_data[1*8 +: 8],
+						rd_data[2*8 +: 8],
+						rd_data[3*8 +: 8],
+						rd_data[4*8 +: 8],
+						rd_data[5*8 +: 8]
+					};
+
+					port_src_mac[meta_rdata.port][47:32]	<=
+					{
+						rd_data[6*8 +: 8],
+						rd_data[7*8 +: 8]
+					};
+
+					//Request read of the second frame word and bump the pointer
+					rd_en								<= 1;
+					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
+					fifo_rd_ptr_inc[meta_rdata.port]	<= 1;
+					port_states[meta_rdata.port]		<= PORT_STATE_WORD_1;
+
+					//Save metadata
+					meta_wr_en							<= 1;
+					meta_wdata.mtype					<= MTYPE_WORD1;
+					meta_wdata.port						<= meta_rdata.port;
+
+				end //MTYPE_WORD0
+
+				//Second packet word
+				MTYPE_WORD1: begin
+
+					//Save the remaining headers
+					port_src_mac[meta_rdata.port][31:0]	<=
+					{
+						rd_data[0*8 +: 8],
+						rd_data[1*8 +: 8],
+						rd_data[2*8 +: 8],
+						rd_data[3*8 +: 8]
+					};
+
+					port_first4[meta_rdata.port]		<=
+					{
+						rd_data[4*8 +: 8],
+						rd_data[5*8 +: 8],
+						rd_data[6*8 +: 8],
+						rd_data[7*8 +: 8]
+					};
+
+					//Don't dispatch a new memory request
+					//Just mark the state as ready to go for routing lookup
+					port_states[meta_rdata.port]		<= PORT_STATE_MAC_LOOKUP;
+
+					//Dispatch the MAC address lookup
+					mac_lookup_en						<= 1;
+					mac_lookup_src_vlan					<= port_vlans[meta_rdata.port];
+					mac_lookup_dst_mac					<= port_dst_mac[meta_rdata.port];
+					mac_lookup_src_mac[47:32]			<= port_src_mac[meta_rdata.port][47:32];
+					mac_lookup_src_mac[31:0]			<=
+					{
+						rd_data[0*8 +: 8],
+						rd_data[1*8 +: 8],
+						rd_data[2*8 +: 8],
+						rd_data[3*8 +: 8]
+					};
+					mac_lookup_src_port					<= meta_rdata.port;
+
+				end	//MTYPE_WORD1
+
+				//Don't know why? Ignore the read
+				default: begin
+				end
+			endcase
+
+			//Pop the word
+			meta_rd_en	<= 1;
+
+		end
+
+		//No action needed based on a previously read word.
+		//Start processing new stuff, if we have something to do.
+		else begin
+
+			//Default to bumping round robin counter
+			main_rr_port						<= main_rr_port + 1;
+			if(main_rr_port == 23)
+				main_rr_port					<= 0;
+
+			//See what the current port state is and if any action is needed
+			case(port_states[main_rr_port])
+
+				//New frame ready to forward
+				PORT_STATE_DATA_READY: begin
+
+					//Request a read of the header, then bump the upstream pointer
+					rd_en							<= 1;
+					fifo_rd_ptr_inc[main_rr_port]	<= 1;
+					rd_addr							<= { main_rr_port, main_rr_ptr };
+					port_states[main_rr_port]		<= PORT_STATE_HEADER_WAIT;
+
+					//Record that we have a header read pending so we know what to do when the response comes in
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_HEADER;
+					meta_wdata.port					<= main_rr_port;
+
+				end	//PORT_STATE_DATA_READY
+
+				default: begin
+				end
+
+			endcase
+
+		end
+
+	end
+
+endmodule

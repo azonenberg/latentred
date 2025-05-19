@@ -29,6 +29,8 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
+import EthernetBus::*;
+
 /**
 	@brief Top level module for the actual switch fabric
  */
@@ -41,13 +43,18 @@ module SwitchFabric(
 	AXIStream.receiver	lc0_axi_rx[23:0],
 
 	//Line card configuration
-	input wire[11:0]	lc0_port_vlan[23:0],
+	input wire vlan_t	lc0_port_vlan[23:0],
 	input wire			lc0_port_drop_tagged[23:0],
 	input wire			lc0_port_drop_untagged[23:0]
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// MAC address table
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Input buffers
+
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) lc0_xbar_in();
 
 	LineCardInputBuffering #(
 		.CDC_FIFO_DEPTH(256),
@@ -60,7 +67,18 @@ module SwitchFabric(
 		.drop_tagged(),
 		.drop_untagged(),
 
-		.axi_rx_portclk(lc0_axi_rx)
+		.axi_rx_portclk(lc0_axi_rx),
+		.axi_tx(lc0_xbar_in)
 	);
+
+	//TODO: other line cards
+
+	//TODO: uplinks
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// The actual crossbar
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Exit queues
 
 endmodule

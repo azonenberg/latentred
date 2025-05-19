@@ -29,6 +29,8 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
+import EthernetBus::*;
+
 /**
 	@file
 	@author Andrew D. Zonenberg
@@ -47,12 +49,15 @@ module LineCardInputBuffering #(
 	input wire					clk_fabric,
 
 	//VLAN configuration
-	input wire[11:0]			port_vlan[23:0],
+	input wire vlan_t			port_vlan[23:0],
 	input wire					drop_tagged[23:0],
 	input wire					drop_untagged[23:0],
 
 	//Incoming data stream from each port (32-bit AXI4-Stream)
-	AXIStream.receiver			axi_rx_portclk[23:0]
+	AXIStream.receiver			axi_rx_portclk[23:0],
+
+	//Outbound data stream to crossbar (64-bit AXI4-Stream)
+	AXIStream.transmitter		axi_tx
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -97,6 +102,15 @@ module LineCardInputBuffering #(
 			return "MIDDLE";
 	endfunction
 
+	function string CascadeRegB(input integer i);
+		case(i)
+			7:	return "TRUE";
+			14:	return "TRUE";
+			21: return "TRUE";
+			default:	return "FALSE";
+		endcase
+	endfunction
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// The RAM cascade chain itself
 
@@ -116,8 +130,8 @@ module LineCardInputBuffering #(
 	wire[71:0]	wr_data[23:0];
 
 	//Port B bus (inputs on block 0, outputs on block 23)
-	logic		rd_en	= 0;
-	logic[16:0]	rd_addr	= 0;
+	wire		rd_en;
+	wire[16:0]	rd_addr;
 	wire[71:0]	rd_data;
 	wire		rd_valid;
 
@@ -154,6 +168,8 @@ module LineCardInputBuffering #(
 		UltraRAMWrapper #(
 			.CASCADE_ORDER_A("NONE"),
 			.CASCADE_ORDER_B(CascadeOrder(g)),
+			.OUT_REG_B("TRUE"),
+			.CASCADE_REG_B(CascadeRegB(g)),
 			.SELF_ADDR_A(11'h000),
 			.SELF_ADDR_B(g[10:0]),
 			.SELF_MASK_A(11'h7ff),
@@ -207,22 +223,89 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FIFO write logic: pop frames from CDC, check CRC status, write to URAM
 
-	for(genvar g=0; g<24; g++) begin : fifos
+	wire[12:0]	fifo_rd_size[23:0];
+	wire[12:0]	fifo_rd_ptr[23:0];
+	wire		fifo_rd_ptr_inc[23:0];
 
-		//Passthrough to detect and strip VLAN tags
+	for(genvar g=0; g<24; g=g+1) begin : fifos
 
-		GigabitIngressFIFO ctrl(
+		//Decode VLAN tags
+		AXIStream #(.DATA_WIDTH(32), .ID_WIDTH(0), .DEST_WIDTH(12), .USER_WIDTH(1)) decoded();
+
+		AXIS_VLANTagDecoder vlan_decoder(
 			.axi_rx(axi_rx_coreclk[g]),
+			.axi_tx(decoded),
 
 			.port_vlan(port_vlan[g]),
 			.drop_tagged(drop_tagged[g]),
-			.drop_untagged(drop_untagged[g]),
+			.drop_untagged(drop_untagged[g])
+		);
+
+		//The actual FIFO controller
+		GigabitIngressFIFO ctrl(
+			.axi_rx(decoded),
 
 			.wr_en(wr_en[g]),
 			.wr_addr(wr_addr[g]),
-			.wr_data(wr_data[g])
+			.wr_data(wr_data[g]),
+
+			.rd_size(fifo_rd_size[g]),
+			.rd_ptr(fifo_rd_ptr[g]),
+			.rd_ptr_inc(fifo_rd_ptr_inc[g])
 		);
 
 	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Reading and routing logic
+
+	wire		mac_lookup_en;
+	vlan_t		mac_lookup_src_vlan;
+	macaddr_t	mac_lookup_src_mac;
+	wire[4:0]	mac_lookup_src_port;
+	macaddr_t	mac_lookup_dst_mac;
+
+	LineCardFIFOReader reader(
+		.clk(clk_fabric),
+
+		.fifo_rd_size(fifo_rd_size),
+		.fifo_rd_ptr(fifo_rd_ptr),
+		.fifo_rd_ptr_inc(fifo_rd_ptr_inc),
+
+		.rd_en(rd_en),
+		.rd_addr(rd_addr),
+		.rd_data(rd_data),
+		.rd_valid(rd_valid),
+
+		.mac_lookup_en(mac_lookup_en),
+		.mac_lookup_src_vlan(mac_lookup_src_vlan),
+		.mac_lookup_src_mac(mac_lookup_src_mac),
+		.mac_lookup_src_port(mac_lookup_src_port),
+		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+
+		.axi_tx(axi_tx)
+	);
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Debug ILA
+
+	ila_2 ila(
+		.clk(clk_fabric),
+
+		.probe0(fifo_rd_size[0]),
+		.probe1(fifo_rd_ptr[0]),
+		.probe2(fifo_rd_ptr_inc[0]),
+
+		.probe3(rd_en),
+		.probe4(rd_addr),
+		.probe5(rd_data),
+		.probe6(rd_valid),
+
+		.probe7(mac_lookup_en),
+		.probe8(mac_lookup_src_vlan),
+		.probe9(mac_lookup_src_mac),
+		.probe10(mac_lookup_src_port),
+		.probe11(mac_lookup_dst_mac)
+	);
 
 endmodule

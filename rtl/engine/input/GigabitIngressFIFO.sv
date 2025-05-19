@@ -29,6 +29,8 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
+import EthernetBus::*;
+
 /**
 	@file
 	@author Andrew D. Zonenberg
@@ -55,28 +57,67 @@ module GigabitIngressFIFO #(
 )(
 
 	//32-bit AXI in (switch fabric clock domain)
-	AXIStream.receiver		axi_rx,
-
-	//Port VLAN ID for untagged frames
-	input wire[11:0]		port_vlan,
-	input wire				drop_tagged,
-	input wire				drop_untagged,
+	AXIStream.receiver			axi_rx,
 
 	//64-bit (plus ecc or metadata) write bus to URAM
-	output logic			wr_en	= 0,
-	output logic[DEPTH-1:0]	wr_addr	= 0,
-	output logic[71:0]		wr_data	= 0
+	output logic				wr_en	= 0,
+	output logic[ADDR_BITS-1:0]	wr_addr	= 0,
+	output logic[71:0]			wr_data	= 0,
+
+	//Read-side bus
+	//(we do not actually read the URAM here, just do address calc)
+	output wire[ADDR_BITS:0]	rd_size,
+	output logic[ADDR_BITS:0]	rd_ptr = 0,
+	input wire					rd_ptr_inc
 );
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Pipeline the incoming data
+
+	logic[2:0]	wr_valid 	= 0;
+	logic		tvalid_ff	= 0;
+	logic[31:0]	tdata_ff	= 0;
+	logic		tlast_ff	= 0;
+	vlan_t		tdest_ff	= 0;
+
+	always_ff @(posedge axi_rx.aclk or negedge axi_rx.areset_n) begin
+		if(!axi_rx.areset_n) begin
+			wr_valid	<= 0;
+			tvalid_ff	<= 0;
+			tdata_ff	<= 0;
+		end
+
+		else begin
+
+			//Extract the number of valid bytes from the AXI byte strobes
+			if(axi_rx.tstrb[3])
+				wr_valid	<= 4;
+			else if(axi_rx.tstrb[2])
+				wr_valid	<= 3;
+			else if(axi_rx.tstrb[1])
+				wr_valid	<= 2;
+			else if(axi_rx.tstrb[0])
+				wr_valid	<= 1;
+			else
+				wr_valid	<= 0;
+
+			//Pipeline stuff
+			tvalid_ff		<= axi_rx.tvalid && axi_rx.tready;
+			tdata_ff		<= axi_rx.tdata;
+			tlast_ff		<= axi_rx.tlast;
+			tdest_ff		<= axi_rx.tdest;
+
+		end
+	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FIFO write logic
 
-	logic[DEPTH:0]			rd_ptr = 0;
-	logic[DEPTH:0]			wr_ptr_committed = 0;
-	logic[DEPTH:0]			wr_ptr = 0;
+	logic[ADDR_BITS:0]			wr_ptr_committed = 0;
+	logic[ADDR_BITS:0]			wr_ptr = 0;
 
 	//Amount of space available for writes
-	wire[DEPTH:0]			wr_size;
+	wire[ADDR_BITS:0]			wr_size;
 	assign wr_size = DEPTH + rd_ptr - wr_ptr;
 
 	//Main RX state machine
@@ -90,51 +131,46 @@ module GigabitIngressFIFO #(
 	} wr_state = WR_IDLE;
 
 	//Pointer to the 0th word of the packet (in-band header just before the packet itself)
-	logic[DEPTH-1:0]		sof_ptr		= 0;
+	logic[ADDR_BITS-1:0]	sof_ptr		= 0;
 
 	//Running length of current frame
-	logic[DEPTH-1:0]		frame_len	= 0;
+	logic[ADDR_BITS-1:0]	frame_len	= 0;
+
+	//VLAN ID of the frame (may be from port or 802.1q tag)
+	vlan_t					frame_vlan	= 0;
 
 	//Ready to accept new data if we're not full or writing the metadata word
-	assign axi_rx.tready = (wr_size > 1) && (wr_state != WR_HEADER);
-
-	//Extract the number of valid bytes from the AXI byte strobes
-	logic[2:0]				wr_valid;
-	always_comb begin
-		if(axi_rx.tstrb[3])
-			wr_valid	= 4;
-		else if(axi_rx.tstrb[2])
-			wr_valid	= 3;
-		else if(axi_rx.tstrb[1])
-			wr_valid	= 2;
-		else if(axi_rx.tstrb[0])
-			wr_valid	= 1;
-		else
-			wr_valid	= 0;
-	end
+	assign axi_rx.tready = (wr_size > 2) && !tlast_ff;
 
 	always_ff @(posedge axi_rx.aclk or negedge axi_rx.areset_n) begin
 
 		//Reset pointers when the RX link flaps
 		if(!axi_rx.areset_n) begin
-			rd_ptr				<= 0;
 			wr_ptr_committed	<= 0;
 			wr_ptr				<= 0;
 			wr_state			<= WR_IDLE;
 			sof_ptr				<= 0;
 			frame_len			<= 0;
+			frame_vlan			<= 0;
 		end
 
 		else begin
 
-			wr_en	<= 0;
+			wr_en				<= 0;
+
+			//always clear high/ECC byte
+			wr_data[71:63]		<= 0;
+
+			//Bump pointers on write unless we're currently in STATE_IDLE (which means we just wrote the header)
+			if(wr_en && (wr_state != WR_HEADER) )
+				wr_ptr	<= wr_ptr + 1;
 
 			case(wr_state)
 
 				//Starting a new frame?
 				WR_IDLE: begin
 
-					if(axi_rx.tvalid && axi_rx.tready) begin
+					if(tvalid_ff) begin
 
 						//Save start pointer so we know where to write the header when we're done
 						sof_ptr			<= wr_ptr;
@@ -145,7 +181,7 @@ module GigabitIngressFIFO #(
 						//Write the first data block to the working buffer but don't commit to memory yet
 						frame_len		<= wr_valid;
 						wr_data[63:32]	<= 0;
-						wr_data[31:0]	<= axi_rx.tdata;
+						wr_data[31:0]	<= tdata_ff;
 						wr_state		<= WR_HIGH;
 
 					end
@@ -155,7 +191,7 @@ module GigabitIngressFIFO #(
 				//Write the high half of a 64-bit block and commit to memory
 				WR_HIGH: begin
 
-					if(axi_rx.tvalid && axi_rx.tready) begin
+					if(tvalid_ff) begin
 
 						//Default to writing the low half of the next word
 						wr_state		<= WR_LOW;
@@ -164,10 +200,10 @@ module GigabitIngressFIFO #(
 						frame_len		<= frame_len + wr_valid;
 						wr_en			<= 1;
 						wr_addr			<= wr_ptr;
-						wr_data[63:32]	<= axi_rx.tdata;
+						wr_data[63:32]	<= tdata_ff;
 
 						//Last word needs special handling
-						if(axi_rx.tlast) begin
+						if(tlast_ff) begin
 
 							//Errors? Roll back to the starting point
 							//OK to let the write commit - we'll never use it, and it wastes a tiny bit of power
@@ -178,8 +214,10 @@ module GigabitIngressFIFO #(
 							end
 
 							//If good, we're doing the header next cycle
-							else
+							else begin
 								wr_state		<= WR_HEADER;
+								frame_vlan		<= tdest_ff;
+							end
 
 						end
 
@@ -190,38 +228,53 @@ module GigabitIngressFIFO #(
 				//Write the low half of a 64-bit block to the working buffer but don't push to URAM (yet)
 				WR_LOW: begin
 
-					/*
-					if(axi_rx.tvalid && axi_rx.tready) begin
+					if(tvalid_ff) begin
 
-						//Default to writing the low half of the next word
-						wr_state		<= WR_LOW;
+						//Default to writing the high half of the next word
+						wr_state		<= WR_HIGH;
 
-						//Default to writing the data to URAM
+						//Track the data but don't push to RAM
 						frame_len		<= frame_len + wr_valid;
-						wr_en			<= 1;
-						wr_addr			<= wr_ptr;
-						wr_data[63:32]	<= axi_rx.tdata;
+						wr_data[31:0]	<= tdata_ff;
 
 						//Last word needs special handling
-						if(axi_rx.tlast) begin
+						if(tlast_ff) begin
 
-							//Errors? Roll back to the starting point
-							//OK to let the write commit - we'll never use it, and it wastes a tiny bit of power
-							//but this is infrequent and letting it happen probably saves a bit of timing overhead
+							//Errors? Roll back to the starting point (no active write to cancel)
 							if(axi_rx.tuser[0]) begin
 								wr_ptr			<= sof_ptr;
 								wr_state		<= WR_IDLE;
 							end
 
-							//If good, we're doing the header next cycle
-							else
+							//If good, we're doing the header next cycle. Write the last word of the frame this cycle
+							else begin
+								frame_vlan		<= tdest_ff;
 								wr_state		<= WR_HEADER;
+								wr_data[63:32]	<= 0;
+								wr_en			<= 1;
+								wr_addr			<= wr_ptr;
+							end
 
 						end
 
 					end
-					*/
 
+				end //WR_LOW
+
+				//Write the header to the start of the buffer
+				WR_HEADER: begin
+					wr_en				<= 1;
+					wr_addr				<= sof_ptr;
+					wr_data[63:32]		<= 0;
+					wr_data[31:28]		<= 0;
+					wr_data[27:16]		<= frame_vlan;
+					wr_data[15:11]		<= 0;
+					wr_data[10:0]		<= frame_len;
+
+					wr_state			<= WR_IDLE;
+
+					//Now that the header is valid, the reader can start consuming data
+					wr_ptr_committed	<= wr_ptr;
 				end
 
 			endcase
@@ -233,13 +286,18 @@ module GigabitIngressFIFO #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FIFO read logic
 
-	wire[DEPTH:0]			rd_size;
 	assign rd_size = wr_ptr_committed - rd_ptr;
 
-	//For now, dummy: just bump the read pointer any time we have data
+	//Just increment the pointer on request, all the fun is elsewhere
 	always_ff @(posedge axi_rx.aclk or negedge axi_rx.areset_n) begin
-		if(rd_size)
-			rd_ptr	<= rd_ptr + 1;
+		if(!axi_rx.areset_n) begin
+			rd_ptr		<= 0;
+		end
+
+		else begin
+			if(rd_ptr_inc)
+				rd_ptr	<= rd_ptr + 1;
+		end
 	end
 
 endmodule
