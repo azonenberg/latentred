@@ -142,8 +142,8 @@ void App_Init()
 	InitLEDs();
 	InitDTS();
 	InitSensors();
-	InitLineCardPHY();
 	InitSCCB();
+	InitLineCardPHY();	//must come after SCCB link is up since we depend on kintex-side peripherals
 	InitInterfaces();
 
 	static FPGATask fpgaTask;
@@ -178,6 +178,11 @@ void InitLineCardPHY()
 {
 	g_log("Initializing line card PHYs\n");
 	LogIndenter li(g_log);
+
+	//Initialize the GPIOs on the QSFP28 interface to the upper PHY
+	g_qsfp0_lpmode = 1;
+	g_qsfp0_rst_n = 1;
+	g_logTimer.Sleep(250);
 
 	InitVSC8512(0);
 	InitVSC8512(12);

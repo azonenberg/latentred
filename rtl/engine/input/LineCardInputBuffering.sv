@@ -104,8 +104,9 @@ module LineCardInputBuffering #(
 
 	function string CascadeRegB(input integer i);
 		case(i)
-			7:	return "TRUE";
-			14:	return "TRUE";
+			5:	return "TRUE";
+			10:	return "TRUE";
+			15: return "TRUE";
 			21: return "TRUE";
 			default:	return "FALSE";
 		endcase

@@ -73,7 +73,7 @@ module LineCardFIFOReader(
 	assign axi_tx.twakeup	= 1;
 
 	initial begin
-		assign axi_tx.areset_n	= 0;
+		axi_tx.areset_n		= 0;
 	end
 	always_ff @(posedge clk) begin
 		axi_tx.areset_n		<= 1;

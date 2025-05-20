@@ -95,4 +95,7 @@ extern volatile APB_DeviceInfo_UltraScale FKDEVINFO;
 
 extern volatile APB_Curve25519 FCURVE25519;
 
+extern APB_GPIOPin g_qsfp0_lpmode;
+extern APB_GPIOPin g_qsfp0_rst_n;
+
 #endif
