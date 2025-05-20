@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-21")
-		(rev "0.1")
+		(date "2025-05-20")
+		(rev "0.1b")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)

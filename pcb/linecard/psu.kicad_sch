@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Line Card")
-		(date "2024-12-21")
-		(rev "0.1")
+		(date "2025-05-20")
+		(rev "0.1b")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)
@@ -3884,7 +3884,7 @@
 					)
 					(alternate "COMP1_OUT" output line)
 					(alternate "EVENTOUT" output line)
-					(alternate "I2C3_SCL" bidirectional line)
+					(alternate "I2C2_SCL" bidirectional line)
 					(alternate "LPUART1_RX" input line)
 					(alternate "QUADSPI_CLK" output line)
 					(alternate "SAI1_SCK_A" bidirectional line)
@@ -18780,7 +18780,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22 uF 25VC"
+		(property "Value" "22 uF 25V"
 			(at 33.401 190.4421 0)
 			(effects
 				(font
