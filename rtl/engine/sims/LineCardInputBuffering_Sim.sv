@@ -185,7 +185,7 @@ module LineCardInputBuffering_Sim();
 				state	<= 1;
 			end
 
-			1: begin
+			/*1: begin
 				if(eth_rx_data[1].tlast) begin
 					next[1]	<= 1;
 					state	<= 2;
@@ -204,7 +204,7 @@ module LineCardInputBuffering_Sim();
 					next[1]	<= 1;
 					state	<= 4;
 				end
-			end
+			end*/
 
 		endcase
 

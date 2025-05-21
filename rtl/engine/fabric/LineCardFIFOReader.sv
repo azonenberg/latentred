@@ -105,7 +105,7 @@ module LineCardFIFOReader #(
 	{
 		PORT_STATE_IDLE					= 0,	//nothing to do
 		PORT_STATE_DATA_READY			= 1,	//frame ready to start forwarding
-		PORT_STATE_HEADER_WAIT			= 2,	//read of header was dispatched
+		PORT_STATE_HEADER			= 2,	//read of header was dispatched
 		PORT_STATE_WORD_0				= 3,	//read of first payload word was dispatched
 		PORT_STATE_WORD_1				= 4,	//read of second payload word was dispatched
 		PORT_STATE_MAC_LOOKUP			= 5,	//mac address lookup in progress
@@ -209,7 +209,6 @@ module LineCardFIFOReader #(
 	PendingMetadata meta_wdata;
 
 	wire			meta_empty;
-	logic			meta_rd_en = 0;
 	PendingMetadata	meta_rdata;
 
 	SingleClockFifo #(
@@ -223,7 +222,7 @@ module LineCardFIFOReader #(
 		.wr(meta_wr_en),
 		.din(meta_wdata),
 
-		.rd(meta_rd_en),
+		.rd(rd_valid),
 		.dout(meta_rdata),
 
 		.overflow(),
@@ -272,7 +271,6 @@ module LineCardFIFOReader #(
 
 		rd_en					<= 0;
 		meta_wr_en				<= 0;
-		meta_rd_en				<= 0;
 		mac_lookup_en			<= 0;
 
 		//Clear AXI stuff on ack
@@ -387,28 +385,15 @@ module LineCardFIFOReader #(
 		//Read data will always show up after the metadata, so no need to check if there's data in the metadata fifo
 		if(rd_valid) begin
 
+			$display("rd_valid");
+
 			//Figure out why we read it
 			case(meta_rdata.mtype)
 
 				//It's a header
 				MTYPE_HEADER: begin
-
-					//Save the header
 					port_vlans[meta_rdata.port]			<= rd_data[27:16];
 					port_lens[meta_rdata.port]			<= rd_data[10:0];
-
-					//Request read of the first frame word and bump the pointer
-					rd_en								<= 1;
-					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
-					rd_ptr[meta_rdata.port]				<= rd_ptr[meta_rdata.port] + 1;
-
-					port_states[meta_rdata.port]		<= PORT_STATE_WORD_0;
-
-					//Save metadata
-					meta_wr_en							<= 1;
-					meta_wdata.mtype					<= MTYPE_WORD0;
-					meta_wdata.port						<= meta_rdata.port;
-
 				end //MTYPE_HEADER
 
 				//It's the first packet word
@@ -431,21 +416,12 @@ module LineCardFIFOReader #(
 						rd_data[7*8 +: 8]
 					};
 
-					//Request read of the second frame word and bump the pointer
-					rd_en								<= 1;
-					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
-					rd_ptr[meta_rdata.port]				<= rd_ptr[meta_rdata.port] + 1;
-					port_states[meta_rdata.port]		<= PORT_STATE_WORD_1;
-
-					//Save metadata
-					meta_wr_en							<= 1;
-					meta_wdata.mtype					<= MTYPE_WORD1;
-					meta_wdata.port						<= meta_rdata.port;
-
 				end //MTYPE_WORD0
 
 				//Second packet word
 				MTYPE_WORD1: begin
+
+					$display("word1\n");
 
 					//Save the remaining headers
 					port_src_mac[meta_rdata.port][31:0]	<=
@@ -484,17 +460,15 @@ module LineCardFIFOReader #(
 
 				end	//MTYPE_WORD1
 
-				//Don't know why? Ignore the read
+				//Don't know why? I	gnore the read
 				default: begin
+					$display("unknown type");
 				end
 			endcase
 
-			//Pop the word
-			meta_rd_en	<= 1;
-
 		end
 
-		else if(fwd_state != FWD_STATE_IDLE) begin
+		if(fwd_state != FWD_STATE_IDLE) begin
 
 			case(fwd_state)
 
@@ -566,16 +540,64 @@ module LineCardFIFOReader #(
 
 					//Request a read of the header, then bump the pointer
 					rd_en							<= 1;
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-					port_states[main_rr_port]		<= PORT_STATE_HEADER_WAIT;
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
+					port_states[main_rr_port]		<= PORT_STATE_HEADER;
 
 					//Record that we have a header read pending so we know what to do when the response comes in
 					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_HEADER;
 					meta_wdata.port					<= main_rr_port;
 
+					//Do not bump the RR pointer, we want to read the next word next clock
+					main_rr_port					<= main_rr_port;
+
 				end	//PORT_STATE_DATA_READY
+
+				//Header read in progress
+				PORT_STATE_HEADER: begin
+
+					//Request read of the first frame word and bump the pointer
+					rd_en							<= 1;
+					rd_addr							<= { main_rr_port, main_rr_ptr };
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
+
+					port_states[main_rr_port]		<= PORT_STATE_WORD_0;
+
+					//Save metadata
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_WORD0;
+					meta_wdata.port					<= main_rr_port;
+
+					//Do not bump the RR pointer, we want to read the next word next clock
+					main_rr_port					<= main_rr_port;
+
+				end //PORT_STATE_HEADER
+
+				//First data word in progress
+				PORT_STATE_WORD_0: begin
+
+					//Request read of the second frame word and bump the pointer
+					rd_en							<= 1;
+					rd_addr							<= { main_rr_port, main_rr_ptr };
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
+
+					port_states[main_rr_port]		<= PORT_STATE_WORD_1;
+
+					//Save metadata
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_WORD1;
+					meta_wdata.port					<= main_rr_port;
+
+					//Do not bump the RR pointer, we want to read the next word next clock
+					main_rr_port					<= main_rr_port;
+
+				end	//PORT_STATE_WORD_0
+
+				//Second data word in progress: no new reads to dispatch
+				//TODO: prefetch data words during MAC lookup?
+				PORT_STATE_WORD_1: begin
+				end	//PORT_STATE_WORD_1
 
 				PORT_STATE_FWD_READY: begin
 
