@@ -245,9 +245,9 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FIFO write logic: pop frames from CDC, check CRC status, write to URAM
 
-	wire[12:0]	fifo_rd_size[23:0];
-	wire[12:0]	fifo_rd_ptr[23:0];
-	wire		fifo_rd_ptr_inc[23:0];
+	wire		rd_ptr_reset[23:0];
+	wire[12:0]	rd_ptr[23:0];
+	wire[12:0]	wr_ptr_committed[23:0];
 
 	for(genvar g=0; g<24; g=g+1) begin : fifos
 
@@ -271,10 +271,11 @@ module LineCardInputBuffering #(
 			.wr_addr(wr_addr[g]),
 			.wr_data(wr_data[g]),
 
-			.rd_size(fifo_rd_size[g]),
-			.rd_ptr(fifo_rd_ptr[g]),
-			.rd_ptr_inc(fifo_rd_ptr_inc[g])
+			.wr_ptr_committed(wr_ptr_committed[g]),
+			.rd_ptr(rd_ptr[g])
 		);
+
+		assign rd_ptr_reset[g] = !decoded.areset_n;
 
 	end
 
@@ -286,14 +287,14 @@ module LineCardInputBuffering #(
 	) reader (
 		.clk(clk_fabric),
 
-		.fifo_rd_size(fifo_rd_size),
-		.fifo_rd_ptr(fifo_rd_ptr),
-		.fifo_rd_ptr_inc(fifo_rd_ptr_inc),
-
 		.rd_en(rd_en),
 		.rd_addr(rd_addr),
 		.rd_data(rd_data),
 		.rd_valid(rd_valid),
+
+		.rd_ptr(rd_ptr),
+		.rd_ptr_reset(rd_ptr_reset),
+		.wr_ptr_committed(wr_ptr_committed),
 
 		.mac_lookup_en(mac_lookup_en),
 		.mac_lookup_src_vlan(mac_lookup_src_vlan),
@@ -311,6 +312,7 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Debug ILA
 
+	/*
 	ila_2 ila(
 		.clk(clk_fabric),
 
@@ -329,5 +331,6 @@ module LineCardInputBuffering #(
 		.probe10(mac_lookup_src_port),
 		.probe11(mac_lookup_dst_mac)
 	);
+	*/
 
 endmodule

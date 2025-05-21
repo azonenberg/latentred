@@ -64,11 +64,12 @@ module GigabitIngressFIFO #(
 	output logic[ADDR_BITS-1:0]	wr_addr	= 0,
 	output logic[71:0]			wr_data	= 0,
 
+	//Write pointer
+	output logic[ADDR_BITS:0]	wr_ptr_committed = 0,
+
 	//Read-side bus
 	//(we do not actually read the URAM here, just do address calc)
-	output wire[ADDR_BITS:0]	rd_size,
-	output logic[ADDR_BITS:0]	rd_ptr = 0,
-	input wire					rd_ptr_inc
+	input wire[ADDR_BITS:0]		rd_ptr
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,7 +114,6 @@ module GigabitIngressFIFO #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// FIFO write logic
 
-	logic[ADDR_BITS:0]			wr_ptr_committed = 0;
 	logic[ADDR_BITS:0]			wr_ptr = 0;
 
 	//Amount of space available for writes
@@ -162,7 +162,7 @@ module GigabitIngressFIFO #(
 			wr_data[71:63]		<= 0;
 
 			//Bump pointers on write unless we're currently in STATE_IDLE (which means we just wrote the header)
-			if(wr_en && (wr_state != WR_HEADER) )
+			if(wr_en && (wr_state != WR_IDLE) )
 				wr_ptr	<= wr_ptr + 1;
 
 			case(wr_state)
@@ -281,23 +281,6 @@ module GigabitIngressFIFO #(
 
 		end
 
-	end
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// FIFO read logic
-
-	assign rd_size = wr_ptr_committed - rd_ptr;
-
-	//Just increment the pointer on request, all the fun is elsewhere
-	always_ff @(posedge axi_rx.aclk or negedge axi_rx.areset_n) begin
-		if(!axi_rx.areset_n) begin
-			rd_ptr		<= 0;
-		end
-
-		else begin
-			if(rd_ptr_inc)
-				rd_ptr	<= rd_ptr + 1;
-		end
 	end
 
 endmodule

@@ -46,10 +46,10 @@ module LineCardFIFOReader #(
 ) (
 	input wire				clk,
 
-	//Read FIFO control registers
-	input wire[12:0]			fifo_rd_size[23:0],
-	input wire[12:0]			fifo_rd_ptr[23:0],
-	output logic				fifo_rd_ptr_inc[23:0],
+	//Read FIFO state
+	input wire[12:0]			wr_ptr_committed[23:0],
+	input wire					rd_ptr_reset[23:0],
+	output logic[12:0]			rd_ptr[23:0],
 
 	//URAM interface
 	output logic				rd_en	= 0,
@@ -146,8 +146,17 @@ module LineCardFIFOReader #(
 			port_dst_port[i]			= 0;
 			port_dst_is_broadcast[i]	= 0;
 
-			fifo_rd_ptr_inc[i]			= 0;
+			rd_ptr[i]					= 0;
 		end
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// FIFO read helpers
+
+	logic[12:0] fifo_rd_size[23:0];
+	always_comb begin
+		for(integer i=0; i<24; i=i+1)
+			fifo_rd_size[i] = wr_ptr_committed[i] - rd_ptr[i];
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -244,9 +253,9 @@ module LineCardFIFOReader #(
 	logic[11:0] fwd_ptr;
 
 	always_comb begin
-		main_rr_ptr		= fifo_rd_ptr[main_rr_port][11:0];
-		meta_rdata_ptr	= fifo_rd_ptr[meta_rdata.port][11:0];
-		fwd_ptr			= fifo_rd_ptr[fwd_port][11:0];
+		main_rr_ptr		= rd_ptr[main_rr_port][11:0];
+		meta_rdata_ptr	= rd_ptr[meta_rdata.port][11:0];
+		fwd_ptr			= rd_ptr[fwd_port][11:0];
 	end
 
 	logic[10:0]	fwd_bytesToRead	= 0;
@@ -277,8 +286,9 @@ module LineCardFIFOReader #(
 
 		for(integer i=0; i<24; i++) begin
 
-			//Default to not incrementing the read pointer
-			fifo_rd_ptr_inc[i]		<= 0;
+			//Reset read pointer on request
+			if(rd_ptr_reset[i])
+				rd_ptr[i]		<= 0;
 
 			//Check all ports in parallel for having data ready to go
 			if( (port_states[i] == PORT_STATE_IDLE) && (fifo_rd_size[i] != 0) )
@@ -361,7 +371,7 @@ module LineCardFIFOReader #(
 				//Request a read of the data, then bump the upstream pointer
 				rd_en							<= 1;
 				rd_addr							<= { fwd_port, fwd_ptr };
-				fifo_rd_ptr_inc[fwd_port]		<= 1;
+				rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
 				//Record that we have a data read pending
 				meta_wr_en						<= 1;
@@ -390,7 +400,7 @@ module LineCardFIFOReader #(
 					//Request read of the first frame word and bump the pointer
 					rd_en								<= 1;
 					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
-					fifo_rd_ptr_inc[meta_rdata.port]	<= 1;
+					rd_ptr[meta_rdata.port]				<= rd_ptr[meta_rdata.port] + 1;
 
 					port_states[meta_rdata.port]		<= PORT_STATE_WORD_0;
 
@@ -424,7 +434,7 @@ module LineCardFIFOReader #(
 					//Request read of the second frame word and bump the pointer
 					rd_en								<= 1;
 					rd_addr								<= { meta_rdata.port, meta_rdata_ptr };
-					fifo_rd_ptr_inc[meta_rdata.port]	<= 1;
+					rd_ptr[meta_rdata.port]				<= rd_ptr[meta_rdata.port] + 1;
 					port_states[meta_rdata.port]		<= PORT_STATE_WORD_1;
 
 					//Save metadata
@@ -494,7 +504,7 @@ module LineCardFIFOReader #(
 					//Request a read of the data, then bump the upstream pointer
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-					fifo_rd_ptr_inc[fwd_port]		<= 1;
+					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
 					//Record that we have a data read pending
 					meta_wr_en						<= 1;
@@ -554,9 +564,9 @@ module LineCardFIFOReader #(
 							main_rr_port + BASE_PORT);
 					`endif
 
-					//Request a read of the header, then bump the upstream pointer
+					//Request a read of the header, then bump the pointer
 					rd_en							<= 1;
-					fifo_rd_ptr_inc[main_rr_port]	<= 1;
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
 					port_states[main_rr_port]		<= PORT_STATE_HEADER_WAIT;
 
@@ -577,10 +587,10 @@ module LineCardFIFOReader #(
 							main_rr_port + BASE_PORT);
 					`endif
 
-					//Request a read of the data, then bump the upstream pointer
+					//Request a read of the data, then bump the pointer
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-					fifo_rd_ptr_inc[main_rr_port]	<= 1;
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
 					//We've started to forward the frame
 					//8 bytes forwarded so far, 24 read (8 we just kicked off, 16 in headers)
