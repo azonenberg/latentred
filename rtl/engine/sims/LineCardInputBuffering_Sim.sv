@@ -56,23 +56,29 @@ module LineCardInputBuffering_Sim();
 
 	logic[23:0]	next = 0;
 
-	AXIS_PcapngPacketGenerator #(
-		.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/2tagged-2untagged.pcapng")
-	) eth0_gen (
-		.clk(clk),
-		.next(next[0]),
-		.axi_tx(eth_rx_data[0])
-	);
+	for(genvar g=0; g<24; g++) begin
 
-	//Tie off all other ports
-	for(genvar g=1; g<24; g++) begin
-		assign eth_rx_data[g].aclk = clk;
-		assign eth_rx_data[g].areset_n = 0;
-		assign eth_rx_data[g].tvalid = 0;
-		assign eth_rx_data[g].tdata = 0;
-		assign eth_rx_data[g].tstrb = 0;
-		assign eth_rx_data[g].tkeep = 0;
-		assign eth_rx_data[g].tlast = 0;
+		//Hook up stuff
+		if(g == 1) begin
+			AXIS_PcapngPacketGenerator #(
+				.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/2tagged-2untagged.pcapng")
+			) eth0_gen (
+				.clk(clk),
+				.next(next[1]),
+				.axi_tx(eth_rx_data[1])
+			);
+		end
+
+		//Tie off all other ports
+		else begin
+			assign eth_rx_data[g].aclk = clk;
+			assign eth_rx_data[g].areset_n = 0;
+			assign eth_rx_data[g].tvalid = 0;
+			assign eth_rx_data[g].tdata = 0;
+			assign eth_rx_data[g].tstrb = 0;
+			assign eth_rx_data[g].tkeep = 0;
+			assign eth_rx_data[g].tlast = 0;
+		end
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,16 +88,74 @@ module LineCardInputBuffering_Sim();
 	logic		drop_tagged[23:0];
 	logic		drop_untagged[23:0];
 
-	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) eth_tx_data();
-	LineCardInputBuffering dut(
+	wire		mac_lookup_en;
+	vlan_t		mac_lookup_src_vlan;
+	macaddr_t	mac_lookup_src_mac;
+	wire[4:0]	mac_lookup_src_port;
+	macaddr_t	mac_lookup_dst_mac;
+
+	wire		mac_lookup_done;
+	wire		mac_lookup_hit;
+	wire[5:0]	mac_lookup_dst_port;
+
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) eth_tx_data();
+	LineCardInputBuffering #(
+		.BASE_PORT(0)
+	) dut (
 		.clk_fabric(clk),
 
 		.port_vlan(port_vlan),
 		.drop_tagged(drop_tagged),
 		.drop_untagged(drop_untagged),
 
+		.mac_lookup_en(mac_lookup_en),
+		.mac_lookup_src_vlan(mac_lookup_src_vlan),
+		.mac_lookup_src_mac(mac_lookup_src_mac),
+		.mac_lookup_src_port(mac_lookup_src_port),
+		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+
+		.mac_lookup_done(mac_lookup_done),
+		.mac_lookup_hit(mac_lookup_hit),
+		.mac_lookup_dst_port(mac_lookup_dst_port),
+
 		.axi_rx_portclk(eth_rx_data),
 		.axi_tx(eth_tx_data)
+	);
+
+	//extend line card port to global port
+	wire[5:0] mac_lookup_src_port_global = {1'b0, mac_lookup_src_port};
+
+	MACAddressTable #(
+		.TABLE_ROWS(2048),
+		.ASSOC_WAYS(8),
+		.PENDING_SIZE(8),
+		.NUM_PORTS(50)
+	) mactable (
+		.clk(clk),
+
+		.lookup_en(mac_lookup_en),
+		.lookup_src_vlan(mac_lookup_src_vlan),
+		.lookup_src_mac(mac_lookup_src_mac),
+		.lookup_src_port(mac_lookup_src_port_global),
+		.lookup_dst_mac(mac_lookup_dst_mac),
+
+		.lookup_done(mac_lookup_done),
+		.lookup_hit(mac_lookup_hit),
+		.lookup_dst_port(mac_lookup_dst_port),
+
+		//management interface not used
+		.gc_en(1'b0),
+		.gc_done(),
+		.mgmt_rd_en(1'b0),
+		.mgmt_del_en(1'b0),
+		.mgmt_ack(),
+		.mgmt_addr(11'h0),
+		.mgmt_way(),
+		.mgmt_rd_valid(),
+		.mgmt_rd_gc_mark(),
+		.mgmt_rd_mac(),
+		.mgmt_rd_vlan(),
+		.mgmt_rd_port()
 	);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,35 +169,39 @@ module LineCardInputBuffering_Sim();
 			drop_tagged[i]		= 0;
 			drop_untagged[i]	= 0;
 		end
+
+		eth_tx_data.tready	= 1;
 	end
 
 	always_ff @(posedge clk) begin
-		next	<= 0;
+
+		next				<= 0;
+		eth_tx_data.tready	<= 1;
 
 		case(state)
 
 			0: begin
-				next[0]	<= 1;
+				next[1]	<= 1;
 				state	<= 1;
 			end
 
 			1: begin
-				if(eth_rx_data[0].tlast) begin
-					next[0]	<= 1;
+				if(eth_rx_data[1].tlast) begin
+					next[1]	<= 1;
 					state	<= 2;
 				end
 			end
 
 			2: begin
-				if(eth_rx_data[0].tlast) begin
-					next[0]	<= 1;
+				if(eth_rx_data[1].tlast) begin
+					next[1]	<= 1;
 					state	<= 3;
 				end
 			end
 
 			3: begin
-				if(eth_rx_data[0].tlast) begin
-					next[0]	<= 1;
+				if(eth_rx_data[1].tlast) begin
+					next[1]	<= 1;
 					state	<= 4;
 				end
 			end

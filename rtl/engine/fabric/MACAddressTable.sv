@@ -89,12 +89,14 @@ module MACAddressTable #(
 	input wire					lookup_en,				//indicates a new packet has arrived
 	input wire vlan_t			lookup_src_vlan,		//VLAN ID of the packet
 	input wire macaddr_t		lookup_src_mac,			//source address of the packet (inserted in table if needed)
-	input wire[PORT_BITS-1:0]	lookup_src_port,		//port ID of the packet (0...31)
+	input wire[PORT_BITS-1:0]	lookup_src_port,		//port ID of the packet
 	input wire macaddr_t		lookup_dst_mac,			//dest address of the packet (to be looked up)
 
-	output logic				lookup_hit		= 0,	//indicates the lookup has completed
+	output logic				lookup_done		= 0,
+	output logic				lookup_hit		= 0,	//indicates the lookup has completed and we found something
 	output logic[PORT_BITS-1:0]	lookup_dst_port = 0,	//port ID of the destination (only valid if lookup_hit is true)
 
+	//TODO: convert management interface to APB
 	input wire					gc_en,					//assert for one clock to start garbage collection
 	output logic				gc_done			= 0,	//goes high at end of garbage collection
 
@@ -271,6 +273,7 @@ module MACAddressTable #(
 
 	always_ff @(posedge clk) begin
 
+		lookup_done		<= lookup_en_ff2;
 		lookup_hit		<= lookup_hit_comb;
 		lookup_dst_port	<= lookup_dst_port_comb;
 

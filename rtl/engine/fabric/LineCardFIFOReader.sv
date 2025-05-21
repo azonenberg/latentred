@@ -35,29 +35,41 @@
 	@brief Read-side logic for the RX FIFO
  */
 
-module LineCardFIFOReader(
+module LineCardFIFOReader #(
+
+	//Global index of the first port in our line card
+	parameter BASE_PORT		= 0,
+
+	parameter NUM_PORTS		= 50,
+	localparam PORT_BITS	= $clog2(NUM_PORTS)
+
+) (
 	input wire				clk,
 
 	//Read FIFO control registers
-	input wire[12:0]		fifo_rd_size[23:0],
-	input wire[12:0]		fifo_rd_ptr[23:0],
-	output logic			fifo_rd_ptr_inc[23:0],
+	input wire[12:0]			fifo_rd_size[23:0],
+	input wire[12:0]			fifo_rd_ptr[23:0],
+	output logic				fifo_rd_ptr_inc[23:0],
 
 	//URAM interface
-	output logic			rd_en	= 0,
-	output logic[16:0]		rd_addr	= 0,
-	input wire[71:0]		rd_data,
-	input wire				rd_valid,
+	output logic				rd_en	= 0,
+	output logic[16:0]			rd_addr	= 0,
+	input wire[71:0]			rd_data,
+	input wire					rd_valid,
 
 	//Request/lookup interface to MAC address table
-	output logic			mac_lookup_en		= 0,
-	output vlan_t			mac_lookup_src_vlan	= 0,
-	output macaddr_t		mac_lookup_src_mac	= 0,
-	output logic[4:0]		mac_lookup_src_port	= 0,	//NOTE: this is port within the line card, not global port ID
-	output macaddr_t		mac_lookup_dst_mac	= 0,
+	output logic				mac_lookup_en		= 0,
+	output vlan_t				mac_lookup_src_vlan	= 0,
+	output macaddr_t			mac_lookup_src_mac	= 0,
+	output logic[4:0]			mac_lookup_src_port	= 0,	//NOTE: this is port within the line card, not global port ID
+	output macaddr_t			mac_lookup_dst_mac	= 0,
+
+	input wire					mac_lookup_done,
+	input wire					mac_lookup_hit,
+	input wire[PORT_BITS-1:0]	mac_lookup_dst_port,
 
 	//AXI interface to core crossbar
-	AXIStream.transmitter	axi_tx
+	AXIStream.transmitter		axi_tx
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +86,13 @@ module LineCardFIFOReader(
 
 	initial begin
 		axi_tx.areset_n		= 0;
+		axi_tx.tvalid		= 0;
+		axi_tx.tdata		= 0;
+		axi_tx.tkeep		= 0;
+		axi_tx.tstrb		= 0;
+		axi_tx.tdest		= 0;
+		axi_tx.tuser		= 0;
+		axi_tx.tlast		= 0;
 	end
 	always_ff @(posedge clk) begin
 		axi_tx.areset_n		<= 1;
@@ -89,39 +108,75 @@ module LineCardFIFOReader(
 		PORT_STATE_HEADER_WAIT			= 2,	//read of header was dispatched
 		PORT_STATE_WORD_0				= 3,	//read of first payload word was dispatched
 		PORT_STATE_WORD_1				= 4,	//read of second payload word was dispatched
-		PORT_STATE_MAC_LOOKUP			= 5		//mac address lookup in progress
+		PORT_STATE_MAC_LOOKUP			= 5,	//mac address lookup in progress
+		PORT_STATE_FWD_READY			= 6,	//ready to forward
+		PORT_STATE_FORWARDING			= 7		//actively forwarding
 	} PortState;
 
 	//Current forwarding state
-	PortState	port_states[23:0];
+	PortState				port_states[23:0];
 
 	//VLAN of the current frame
-	vlan_t		port_vlans[23:0];
+	vlan_t					port_vlans[23:0];
 
 	//Dest MAC of the current frame
-	macaddr_t	port_dst_mac[23:0];
+	macaddr_t				port_dst_mac[23:0];
 
 	//Source MAC of the current frame
-	macaddr_t	port_src_mac[23:0];
+	macaddr_t				port_src_mac[23:0];
 
 	//First 4 payload bytes of the current frame (ethertype and two more after)
-	logic[31:0]	port_first4[23:0];
+	logic[31:0]				port_first4[23:0];
 
 	//Length of the current frame
-	logic[10:0]	port_lens[23:0];
+	logic[10:0]				port_lens[23:0];
+
+	//Destination port of the current frame
+	logic[PORT_BITS-1:0]	port_dst_port[23:0];
+	logic					port_dst_is_broadcast[23:0];
 
 	initial begin
 		for(integer i=0; i<24; i++) begin
-			port_states[i]		= PORT_STATE_IDLE;
-			port_vlans[i]		= 0;
-			port_lens[i]		= 0;
-			port_dst_mac[i]		= 0;
-			port_src_mac[i]		= 0;
-			port_first4[i]		= 0;
+			port_states[i]				= PORT_STATE_IDLE;
+			port_vlans[i]				= 0;
+			port_lens[i]				= 0;
+			port_dst_mac[i]				= 0;
+			port_src_mac[i]				= 0;
+			port_first4[i]				= 0;
+			port_dst_port[i]			= 0;
+			port_dst_is_broadcast[i]	= 0;
 
-			fifo_rd_ptr_inc[i]	= 0;
+			fifo_rd_ptr_inc[i]			= 0;
 		end
 	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Remember which ports we sent MAC lookups for
+
+	wire[4:0]	next_mac_local_port;
+
+	SingleClockFifo #(
+		.WIDTH(5),
+		.DEPTH(32),
+		.USE_BLOCK(0),
+		.OUT_REG(0)
+	) lookup_src_fifo (
+		.clk(clk),
+
+		.wr(mac_lookup_en),
+		.din(mac_lookup_src_port),
+
+		.rd(mac_lookup_done),
+		.dout(next_mac_local_port),
+
+		.overflow(),
+		.underflow(),
+		.empty(),
+		.full(),
+		.rsize(),
+		.wsize(),
+		.reset()
+	);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// State for in-progress packets
@@ -177,16 +232,32 @@ module LineCardFIFOReader(
 	//Round robin port counter
 	logic[4:0]	main_rr_port	= 0;
 
+	logic[4:0]	fwd_port		= 0;
+
 	//FIFO read pointer of the round robin winner
 	logic[11:0]	main_rr_ptr;
 
 	//FIFO read pointer of the most recent read transaction
 	logic[11:0] meta_rdata_ptr;
 
+	//FIFO read pointer of the frame being forwarded
+	logic[11:0] fwd_ptr;
+
 	always_comb begin
 		main_rr_ptr		= fifo_rd_ptr[main_rr_port][11:0];
 		meta_rdata_ptr	= fifo_rd_ptr[meta_rdata.port][11:0];
+		fwd_ptr			= fifo_rd_ptr[fwd_port][11:0];
 	end
+
+	logic[10:0]	fwd_bytesToRead	= 0;
+	logic[10:0]	fwd_bytesToSend	= 0;
+
+	enum logic[1:0]
+	{
+		FWD_STATE_IDLE,
+		FWD_STATE_HEADER_1,
+		FWD_STATE_BODY
+	} fwd_state = FWD_STATE_IDLE;
 
 	always_ff @(posedge clk) begin
 
@@ -194,6 +265,15 @@ module LineCardFIFOReader(
 		meta_wr_en				<= 0;
 		meta_rd_en				<= 0;
 		mac_lookup_en			<= 0;
+
+		//Clear AXI stuff on ack
+		if(axi_tx.tready) begin
+			axi_tx.tvalid		<= 0;
+			axi_tx.tkeep		<= 0;
+			axi_tx.tstrb		<= 0;
+			axi_tx.tdata		<= 0;
+			axi_tx.tlast		<= 0;
+		end
 
 		for(integer i=0; i<24; i++) begin
 
@@ -203,6 +283,95 @@ module LineCardFIFOReader(
 			//Check all ports in parallel for having data ready to go
 			if( (port_states[i] == PORT_STATE_IDLE) && (fifo_rd_size[i] != 0) )
 				port_states[i]	<= PORT_STATE_DATA_READY;
+		end
+
+		//Handle MAC address lookups coming back
+		if(mac_lookup_done) begin
+			port_dst_is_broadcast[next_mac_local_port]	<= !mac_lookup_hit;
+			port_dst_port[next_mac_local_port]			<= mac_lookup_dst_port;
+			port_states[next_mac_local_port]			<= PORT_STATE_FWD_READY;
+
+			`ifdef SIMULATION
+				$display("[%t] Frame on interface %d is ready to forward",
+					$realtime(),
+					next_mac_local_port + BASE_PORT);
+			`endif
+		end
+
+		//Forwarding payload body
+		/*
+			assuming 5 cycle gap here
+			this is a net loss of 320 bit times
+			ethernet interframe gap is 96 bits, plus preamble/SFD is another 64, plus FCS is 32: total 192 bits
+			so we waste 128 bits per packet
+			with min sized packets we forward 24 Gbps * 1.488 Mpps/Gbps = 35.712 Mpps, so 4.571 Gbps of overhead
+			we can only afford 1 Gbps to be fully wire speed, so this needs to improve!
+		 */
+		if(fwd_state == FWD_STATE_BODY) begin
+
+			//Forward data
+			if(rd_valid && meta_rdata.mtype == MTYPE_BODY) begin
+
+				//Full word?
+				if(fwd_bytesToSend > 8) begin
+					fwd_bytesToSend				<= fwd_bytesToSend - 8;
+					axi_tx.tstrb				<= 8'hff;
+				end
+
+				//Partial word? We're done
+				else begin
+					case(fwd_bytesToSend)
+						7:	axi_tx.tstrb		<= 8'b01111111;
+						6:	axi_tx.tstrb		<= 8'b00111111;
+						5:	axi_tx.tstrb		<= 8'b00011111;
+						4:	axi_tx.tstrb		<= 8'b00001111;
+						3:	axi_tx.tstrb		<= 8'b00000111;
+						2:	axi_tx.tstrb		<= 8'b00000011;
+						1:	axi_tx.tstrb		<= 8'b00000001;
+						default: begin
+							axi_tx.tstrb		<= 8'b00000000;
+						end
+					endcase
+
+					axi_tx.tlast				<= 1;
+
+					//Clear lots of state
+					fwd_state					<= FWD_STATE_IDLE;
+					port_states[fwd_port]		<= PORT_STATE_IDLE;
+
+				end
+
+				axi_tx.tvalid					<= 1;
+				axi_tx.tdata					<=
+				{
+					rd_data[63:0]
+				};
+				axi_tx.tkeep					<= 8'hff;
+
+			end
+
+			//Request more data unless we're done
+			if(fwd_bytesToRead > 0) begin
+
+				if(fwd_bytesToRead >= 8)
+					fwd_bytesToRead				<= fwd_bytesToRead - 8;
+				else
+					fwd_bytesToRead				<= 0;
+
+				//Request a read of the data, then bump the upstream pointer
+				rd_en							<= 1;
+				rd_addr							<= { fwd_port, fwd_ptr };
+				fifo_rd_ptr_inc[fwd_port]		<= 1;
+
+				//Record that we have a data read pending
+				meta_wr_en						<= 1;
+				meta_wdata.mtype				<= MTYPE_BODY;
+				meta_wdata.port					<= fwd_port;
+
+			end
+
+			//TODO: if we're almost at the end of the frame, start prefetching next frame?
+
 		end
 
 		//Read data will always show up after the metadata, so no need to check if there's data in the metadata fifo
@@ -215,8 +384,8 @@ module LineCardFIFOReader(
 				MTYPE_HEADER: begin
 
 					//Save the header
-					port_vlans[meta_rdata.port]	<= rd_data[27:16];
-					port_lens[meta_rdata.port]	<= rd_data[10:0];
+					port_vlans[meta_rdata.port]			<= rd_data[27:16];
+					port_lens[meta_rdata.port]			<= rd_data[10:0];
 
 					//Request read of the first frame word and bump the pointer
 					rd_en								<= 1;
@@ -236,7 +405,7 @@ module LineCardFIFOReader(
 				MTYPE_WORD0: begin
 
 					//Save the header we have so far
-					port_dst_mac[meta_rdata.port]	<=
+					port_dst_mac[meta_rdata.port]		<=
 					{
 						rd_data[0*8 +: 8],
 						rd_data[1*8 +: 8],
@@ -315,6 +484,55 @@ module LineCardFIFOReader(
 
 		end
 
+		else if(fwd_state != FWD_STATE_IDLE) begin
+
+			case(fwd_state)
+
+				//First header word sent, send second
+				FWD_STATE_HEADER_1: begin
+
+					//Request a read of the data, then bump the upstream pointer
+					rd_en							<= 1;
+					rd_addr							<= { fwd_port, fwd_ptr };
+					fifo_rd_ptr_inc[fwd_port]		<= 1;
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= fwd_port;
+
+					//Send the next data word
+					fwd_bytesToRead					<= fwd_bytesToRead - 8;
+					fwd_bytesToSend					<= fwd_bytesToSend - 8;
+					axi_tx.tvalid					<= 1;
+					axi_tx.tdata					<=
+					{
+						port_first4[fwd_port][0*8 +: 8],
+						port_first4[fwd_port][1*8 +: 8],
+						port_first4[fwd_port][2*8 +: 8],
+						port_first4[fwd_port][3*8 +: 8],
+						port_src_mac[fwd_port][0*8 +: 8],
+						port_src_mac[fwd_port][1*8 +: 8],
+						port_src_mac[fwd_port][2*8 +: 8],
+						port_src_mac[fwd_port][3*8 +: 8]
+					};
+					axi_tx.tstrb					<= 8'hff;
+					axi_tx.tkeep					<= 8'hff;
+
+					fwd_state						<= FWD_STATE_BODY;
+
+				end
+
+				//Forward data handled elsewhere
+				FWD_STATE_BODY: begin
+				end
+
+				default: begin
+				end
+			endcase
+
+		end
+
 		//No action needed based on a previously read word.
 		//Start processing new stuff, if we have something to do.
 		else begin
@@ -330,6 +548,12 @@ module LineCardFIFOReader(
 				//New frame ready to forward
 				PORT_STATE_DATA_READY: begin
 
+					`ifdef SIMULATION
+						$display("[%t] Frame arrived on interface %d, starting lookup process",
+							$realtime(),
+							main_rr_port + BASE_PORT);
+					`endif
+
 					//Request a read of the header, then bump the upstream pointer
 					rd_en							<= 1;
 					fifo_rd_ptr_inc[main_rr_port]	<= 1;
@@ -342,6 +566,60 @@ module LineCardFIFOReader(
 					meta_wdata.port					<= main_rr_port;
 
 				end	//PORT_STATE_DATA_READY
+
+				PORT_STATE_FWD_READY: begin
+
+					//TODO: only proceed if fabric is ready to take a frame?
+
+					`ifdef SIMULATION
+						$display("[%t] Starting forward of frame from interface %d",
+							$realtime(),
+							main_rr_port + BASE_PORT);
+					`endif
+
+					//Request a read of the data, then bump the upstream pointer
+					rd_en							<= 1;
+					rd_addr							<= { main_rr_port, main_rr_ptr };
+					fifo_rd_ptr_inc[main_rr_port]	<= 1;
+
+					//We've started to forward the frame
+					//8 bytes forwarded so far, 24 read (8 we just kicked off, 16 in headers)
+					fwd_state						<= FWD_STATE_HEADER_1;
+					fwd_bytesToRead					<= port_lens[main_rr_port] - 24;
+					fwd_bytesToSend					<= port_lens[main_rr_port] - 8;
+
+					//Save the port number
+					fwd_port						<= main_rr_port;
+
+					//Start sending previously-read data out the AXI bus
+					//TODO: can we avoid this much inter-frame gap somehow?
+					axi_tx.tvalid					<= 1;
+					axi_tx.tdata					<=
+					{
+						port_src_mac[main_rr_port][4*8 +: 8],
+						port_src_mac[main_rr_port][5*8 +: 8],
+						port_dst_mac[main_rr_port][0*8 +: 8],
+						port_dst_mac[main_rr_port][1*8 +: 8],
+						port_dst_mac[main_rr_port][2*8 +: 8],
+						port_dst_mac[main_rr_port][3*8 +: 8],
+						port_dst_mac[main_rr_port][4*8 +: 8],
+						port_dst_mac[main_rr_port][5*8 +: 8]
+					};
+					axi_tx.tstrb					<= 8'hff;
+					axi_tx.tkeep					<= 8'hff;
+					axi_tx.tuser					<= port_vlans[main_rr_port];
+					axi_tx.tdest					<=
+					{
+						port_dst_is_broadcast[main_rr_port],
+						port_dst_port[main_rr_port]
+					};
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= main_rr_port;
+
+				end
 
 				default: begin
 				end

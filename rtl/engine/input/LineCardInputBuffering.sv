@@ -35,12 +35,22 @@ import EthernetBus::*;
 	@file
 	@author Andrew D. Zonenberg
 	@brief Input buffering for a LATENTRED line card
+
+	Output stream
+		TUSER is VLAN
+		TDEST is {broadcast flag, dest port}
  */
 module LineCardInputBuffering #(
 
 	//Config for incoming CDC FIFOs
 	parameter CDC_FIFO_DEPTH		= 256,
 	parameter CDC_FIFO_USE_BLOCK	= 1,
+
+	//Global index of the first port in our line card
+	parameter BASE_PORT				= 0,
+
+	parameter NUM_PORTS				= 50,
+	localparam PORT_BITS			= $clog2(NUM_PORTS),
 
 	parameter MATRIX_ID				= "NONE"		//Nickname for the RAM cascade block for power reporting
 )(
@@ -52,6 +62,17 @@ module LineCardInputBuffering #(
 	input wire vlan_t			port_vlan[23:0],
 	input wire					drop_tagged[23:0],
 	input wire					drop_untagged[23:0],
+
+	//Interface to MAC address table
+	output wire					mac_lookup_en,
+	output vlan_t				mac_lookup_src_vlan,
+	output macaddr_t			mac_lookup_src_mac,
+	output wire[4:0]			mac_lookup_src_port,
+	output macaddr_t			mac_lookup_dst_mac,
+
+	input wire					mac_lookup_done,
+	input wire					mac_lookup_hit,
+	input wire[PORT_BITS-1:0]	mac_lookup_dst_port,
 
 	//Incoming data stream from each port (32-bit AXI4-Stream)
 	AXIStream.receiver			axi_rx_portclk[23:0],
@@ -260,13 +281,9 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Reading and routing logic
 
-	wire		mac_lookup_en;
-	vlan_t		mac_lookup_src_vlan;
-	macaddr_t	mac_lookup_src_mac;
-	wire[4:0]	mac_lookup_src_port;
-	macaddr_t	mac_lookup_dst_mac;
-
-	LineCardFIFOReader reader(
+	LineCardFIFOReader #(
+		.BASE_PORT(BASE_PORT)
+	) reader (
 		.clk(clk_fabric),
 
 		.fifo_rd_size(fifo_rd_size),
@@ -283,6 +300,10 @@ module LineCardInputBuffering #(
 		.mac_lookup_src_mac(mac_lookup_src_mac),
 		.mac_lookup_src_port(mac_lookup_src_port),
 		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+
+		.mac_lookup_done(mac_lookup_done),
+		.mac_lookup_hit(mac_lookup_hit),
+		.mac_lookup_dst_port(mac_lookup_dst_port),
 
 		.axi_tx(axi_tx)
 	);

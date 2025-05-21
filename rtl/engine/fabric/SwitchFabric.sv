@@ -71,6 +71,9 @@ module SwitchFabric(
 		.axi_tx(lc0_xbar_in)
 	);
 
+	//DEBUG: accept traffic leaving the input buffer
+	assign lc0_xbar_in.tready = 1;
+
 	//TODO: other line cards
 
 	//TODO: uplinks
