@@ -161,9 +161,17 @@ module GigabitIngressFIFO #(
 			//always clear high/ECC byte
 			wr_data[71:63]		<= 0;
 
-			//Bump pointers on write unless we're currently in STATE_IDLE (which means we just wrote the header)
-			if(wr_en && (wr_state != WR_IDLE) )
-				wr_ptr	<= wr_ptr + 1;
+			//Write pointer management at the end of a write cycle
+			if(wr_en) begin
+
+				//Not writing header? bump pointer
+				if(wr_state != WR_IDLE)
+					wr_ptr	<= wr_ptr + 1;
+
+				//Header is valid, the reader can start consuming data up to the previous high water mark
+				else
+					wr_ptr_committed	<= wr_ptr;
+			end
 
 			case(wr_state)
 
@@ -272,9 +280,6 @@ module GigabitIngressFIFO #(
 					wr_data[10:0]		<= frame_len;
 
 					wr_state			<= WR_IDLE;
-
-					//Now that the header is valid, the reader can start consuming data
-					wr_ptr_committed	<= wr_ptr;
 				end
 
 			endcase

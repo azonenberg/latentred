@@ -38,13 +38,16 @@
 module LineCardFIFOReader #(
 
 	//Global index of the first port in our line card
-	parameter BASE_PORT		= 0,
+	parameter BASE_PORT			= 0,
 
-	parameter NUM_PORTS		= 50,
-	localparam PORT_BITS	= $clog2(NUM_PORTS)
+	//Index of the crossbar port we're attached to
+	parameter XBAR_PORT			= 0,
+
+	parameter NUM_PORTS			= 50,
+	localparam PORT_BITS		= $clog2(NUM_PORTS)
 
 ) (
-	input wire				clk,
+	input wire					clk,
 
 	//Read FIFO state
 	input wire[12:0]			wr_ptr_committed[23:0],
@@ -58,11 +61,7 @@ module LineCardFIFOReader #(
 	input wire					rd_valid,
 
 	//Request/lookup interface to MAC address table
-	output logic				mac_lookup_en		= 0,
-	output vlan_t				mac_lookup_src_vlan	= 0,
-	output macaddr_t			mac_lookup_src_mac	= 0,
-	output logic[4:0]			mac_lookup_src_port	= 0,	//NOTE: this is port within the line card, not global port ID
-	output macaddr_t			mac_lookup_dst_mac	= 0,
+	AXIStream.transmitter		axi_lookup,
 
 	input wire					mac_lookup_done,
 	input wire					mac_lookup_hit,
@@ -81,8 +80,11 @@ module LineCardFIFOReader #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Hook up AXI control signals
 
-	assign axi_tx.aclk		= clk;
-	assign axi_tx.twakeup	= 1;
+	assign axi_tx.aclk			= clk;
+	assign axi_tx.twakeup		= 1;
+
+	assign axi_lookup.aclk		= clk;
+	assign axi_lookup.twakeup	= 1;
 
 	initial begin
 		axi_tx.areset_n		= 0;
@@ -93,9 +95,21 @@ module LineCardFIFOReader #(
 		axi_tx.tdest		= 0;
 		axi_tx.tuser		= 0;
 		axi_tx.tlast		= 0;
+
+		axi_lookup.areset_n	= 0;
+		axi_lookup.tvalid	= 0;
+		axi_lookup.tdata	= 0;
+		axi_lookup.tkeep	= 0;
+		axi_lookup.tstrb	= 0;
+		axi_lookup.tdest	= 0;
+		axi_lookup.tuser	= 0;
+		axi_lookup.tlast	= 0;
+		axi_lookup.tid		= 0;
 	end
+
 	always_ff @(posedge clk) begin
 		axi_tx.areset_n		<= 1;
+		axi_lookup.areset_n	<= 1;
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,7 +174,7 @@ module LineCardFIFOReader #(
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Remember which ports we sent MAC lookups for
+	// Remember which ports we sent MAC lookups for (this will be obsolete once fully axi-ified)
 
 	wire[4:0]	next_mac_local_port;
 
@@ -172,11 +186,11 @@ module LineCardFIFOReader #(
 	) lookup_src_fifo (
 		.clk(clk),
 
-		.wr(mac_lookup_en),
-		.din(mac_lookup_src_port),
+		.wr(axi_lookup.tvalid),
+		.din(axi_lookup.tdata[108 +: PORT_BITS]),
 
 		.rd(mac_lookup_done),
-		.dout(next_mac_local_port),
+		.dout(next_mac_local_port),//Index of the crossbar port we're attached to
 
 		.overflow(),
 		.underflow(),
@@ -271,7 +285,7 @@ module LineCardFIFOReader #(
 
 		rd_en					<= 0;
 		meta_wr_en				<= 0;
-		mac_lookup_en			<= 0;
+		axi_lookup.tvalid		<= 0;
 
 		//Clear AXI stuff on ack
 		if(axi_tx.tready) begin
@@ -352,7 +366,7 @@ module LineCardFIFOReader #(
 				axi_tx.tvalid					<= 1;
 				axi_tx.tdata					<=
 				{
-					rd_data[63:0]
+					rd_data[63:0]//Index of the crossbar port we're attached to
 				};
 				axi_tx.tkeep					<= 8'hff;
 
@@ -384,8 +398,6 @@ module LineCardFIFOReader #(
 
 		//Read data will always show up after the metadata, so no need to check if there's data in the metadata fifo
 		if(rd_valid) begin
-
-			$display("rd_valid");
 
 			//Figure out why we read it
 			case(meta_rdata.mtype)
@@ -421,8 +433,6 @@ module LineCardFIFOReader #(
 				//Second packet word
 				MTYPE_WORD1: begin
 
-					$display("word1\n");
-
 					//Save the remaining headers
 					port_src_mac[meta_rdata.port][31:0]	<=
 					{
@@ -445,24 +455,28 @@ module LineCardFIFOReader #(
 					port_states[meta_rdata.port]		<= PORT_STATE_MAC_LOOKUP;
 
 					//Dispatch the MAC address lookup
-					mac_lookup_en						<= 1;
-					mac_lookup_src_vlan					<= port_vlans[meta_rdata.port];
-					mac_lookup_dst_mac					<= port_dst_mac[meta_rdata.port];
-					mac_lookup_src_mac[47:32]			<= port_src_mac[meta_rdata.port][47:32];
-					mac_lookup_src_mac[31:0]			<=
+					axi_lookup.tvalid					<= 1;
+					axi_lookup.tdata					<=
 					{
+						meta_rdata.port + BASE_PORT,
+						port_vlans[meta_rdata.port],
+
+						//src mac
+						port_src_mac[meta_rdata.port][47:32],
 						rd_data[0*8 +: 8],
 						rd_data[1*8 +: 8],
 						rd_data[2*8 +: 8],
-						rd_data[3*8 +: 8]
+						rd_data[3*8 +: 8],
+
+						port_dst_mac[meta_rdata.port]
 					};
-					mac_lookup_src_port					<= meta_rdata.port;
+					axi_lookup.tid						<= meta_rdata.port;
+					axi_lookup.tdest					<= XBAR_PORT;
 
 				end	//MTYPE_WORD1
 
-				//Don't know why? I	gnore the read
+				//Don't know why? Ignore the read
 				default: begin
-					$display("unknown type");
 				end
 			endcase
 

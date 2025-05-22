@@ -49,6 +49,9 @@ module LineCardInputBuffering #(
 	//Global index of the first port in our line card
 	parameter BASE_PORT				= 0,
 
+	//Index of the crossbar port we're attached to
+	parameter XBAR_PORT				= 0,
+
 	parameter NUM_PORTS				= 50,
 	localparam PORT_BITS			= $clog2(NUM_PORTS),
 
@@ -64,11 +67,7 @@ module LineCardInputBuffering #(
 	input wire					drop_untagged[23:0],
 
 	//Interface to MAC address table
-	output wire					mac_lookup_en,
-	output vlan_t				mac_lookup_src_vlan,
-	output macaddr_t			mac_lookup_src_mac,
-	output wire[4:0]			mac_lookup_src_port,
-	output macaddr_t			mac_lookup_dst_mac,
+	AXIStream.transmitter		axi_lookup,
 
 	input wire					mac_lookup_done,
 	input wire					mac_lookup_hit,
@@ -94,6 +93,13 @@ module LineCardInputBuffering #(
 		if(axi_rx_portclk[g].DEST_WIDTH != 0)
 			axi_bus_width_bad();
 	end
+
+	if(axi_lookup.DATA_WIDTH != (108 + PORT_BITS) )
+		axi_bus_width_bad();
+	if(axi_lookup.ID_WIDTH != 5)
+		axi_bus_width_bad();
+	if(axi_lookup.DEST_WIDTH != 2)
+		axi_bus_width_bad();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Shift all of the incoming data to the fabric clock domain
@@ -283,7 +289,8 @@ module LineCardInputBuffering #(
 	// Reading and routing logic
 
 	LineCardFIFOReader #(
-		.BASE_PORT(BASE_PORT)
+		.BASE_PORT(BASE_PORT),
+		.XBAR_PORT(XBAR_PORT)
 	) reader (
 		.clk(clk_fabric),
 
@@ -296,11 +303,7 @@ module LineCardInputBuffering #(
 		.rd_ptr_reset(rd_ptr_reset),
 		.wr_ptr_committed(wr_ptr_committed),
 
-		.mac_lookup_en(mac_lookup_en),
-		.mac_lookup_src_vlan(mac_lookup_src_vlan),
-		.mac_lookup_src_mac(mac_lookup_src_mac),
-		.mac_lookup_src_port(mac_lookup_src_port),
-		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+		.axi_lookup(axi_lookup),
 
 		.mac_lookup_done(mac_lookup_done),
 		.mac_lookup_hit(mac_lookup_hit),
@@ -331,6 +334,7 @@ module LineCardInputBuffering #(
 		tuser_ff	<= axi_tx.tuser;
 	end
 
+	/*
 	ila_2 ila(
 		.clk(clk_fabric),
 
@@ -357,6 +361,6 @@ module LineCardInputBuffering #(
 		.probe19(mac_lookup_done),
 		.probe20(mac_lookup_hit),
 		.probe21(mac_lookup_dst_port)
-	);
+	);*/
 
 endmodule

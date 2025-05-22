@@ -61,11 +61,21 @@ module LineCardInputBuffering_Sim();
 		//Hook up stuff
 		if(g == 1) begin
 			AXIS_PcapngPacketGenerator #(
-				.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/2tagged-2untagged.pcapng")
-			) eth0_gen (
+				.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/ping-host1.pcapng")
+			) host1_gen (
 				.clk(clk),
 				.next(next[1]),
 				.axi_tx(eth_rx_data[1])
+			);
+		end
+
+		else if(g == 2) begin
+			AXIS_PcapngPacketGenerator #(
+				.FILENAME("/ceph/fast/home/azonenberg/code/latentred/testdata/ping-host2.pcapng")
+			) host2_gen (
+				.clk(clk),
+				.next(next[2]),
+				.axi_tx(eth_rx_data[2])
 			);
 		end
 
@@ -88,19 +98,19 @@ module LineCardInputBuffering_Sim();
 	logic		drop_tagged[23:0];
 	logic		drop_untagged[23:0];
 
-	wire		mac_lookup_en;
-	vlan_t		mac_lookup_src_vlan;
-	macaddr_t	mac_lookup_src_mac;
-	wire[4:0]	mac_lookup_src_port;
-	macaddr_t	mac_lookup_dst_mac;
+	//Interface from line card buffer to the MAC table
+	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup();
 
 	wire		mac_lookup_done;
 	wire		mac_lookup_hit;
 	wire[5:0]	mac_lookup_dst_port;
 
+	//Data to the crossbar
 	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) eth_tx_data();
+
 	LineCardInputBuffering #(
-		.BASE_PORT(0)
+		.BASE_PORT(0),
+		.XBAR_PORT(0)
 	) dut (
 		.clk_fabric(clk),
 
@@ -108,11 +118,7 @@ module LineCardInputBuffering_Sim();
 		.drop_tagged(drop_tagged),
 		.drop_untagged(drop_untagged),
 
-		.mac_lookup_en(mac_lookup_en),
-		.mac_lookup_src_vlan(mac_lookup_src_vlan),
-		.mac_lookup_src_mac(mac_lookup_src_mac),
-		.mac_lookup_src_port(mac_lookup_src_port),
-		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+		.axi_lookup(eth_mac_lookup),
 
 		.mac_lookup_done(mac_lookup_done),
 		.mac_lookup_hit(mac_lookup_hit),
@@ -122,9 +128,6 @@ module LineCardInputBuffering_Sim();
 		.axi_tx(eth_tx_data)
 	);
 
-	//extend line card port to global port
-	wire[5:0] mac_lookup_src_port_global = {1'b0, mac_lookup_src_port};
-
 	MACAddressTable #(
 		.TABLE_ROWS(2048),
 		.ASSOC_WAYS(8),
@@ -133,11 +136,7 @@ module LineCardInputBuffering_Sim();
 	) mactable (
 		.clk(clk),
 
-		.lookup_en(mac_lookup_en),
-		.lookup_src_vlan(mac_lookup_src_vlan),
-		.lookup_src_mac(mac_lookup_src_mac),
-		.lookup_src_port(mac_lookup_src_port_global),
-		.lookup_dst_mac(mac_lookup_dst_mac),
+		.axi_lookup(eth_mac_lookup),
 
 		.lookup_done(mac_lookup_done),
 		.lookup_hit(mac_lookup_hit),

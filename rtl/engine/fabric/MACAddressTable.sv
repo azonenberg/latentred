@@ -78,6 +78,21 @@ import EthernetBus::*;
 		marked addresses are un-marked.
 
 		TODO: allow management interface to "pin" table entries so they can't be GC'd
+
+	AXI INTERFACE conventions
+		Common
+			Single words (must always have TLAST asserted when TVALID is asserted)
+			TSTRB/TKEEP ignored
+			TID is port index for line cards and will be echoed to the reply
+			TDEST is crossbar port (line card or uplink index) making the request and will be echoed to the reply
+
+		Request stream
+			TDATA is {src port, src vlan, src mac, dst mac }
+			TUSER is ignored
+
+		Reply stream
+			TDATA is dest port
+			TUSER is hit flag (1=hit, 0=miss)
  */
 module MACAddressTable #(
 	parameter TABLE_ROWS	= 2048,				//Number of rows in each set
@@ -92,11 +107,8 @@ module MACAddressTable #(
 )(
 	input wire					clk,					//nominally 156.25 MHz
 
-	input wire					lookup_en,				//indicates a new packet has arrived
-	input wire vlan_t			lookup_src_vlan,		//VLAN ID of the packet
-	input wire macaddr_t		lookup_src_mac,			//source address of the packet (inserted in table if needed)
-	input wire[PORT_BITS-1:0]	lookup_src_port,		//port ID of the packet
-	input wire macaddr_t		lookup_dst_mac,			//dest address of the packet (to be looked up)
+	//TODO: remove clk and use axi_lookup.aclk
+	AXIStream.receiver			axi_lookup,
 
 	output logic				lookup_done		= 0,
 	output logic				lookup_hit		= 0,	//indicates the lookup has completed and we found something
@@ -117,6 +129,30 @@ module MACAddressTable #(
 	output vlan_t				mgmt_rd_vlan	= 0,
 	output logic[PORT_BITS-1:0]	mgmt_rd_port	= 0
 );
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Crack AXI request fields
+
+	//always ready for stuff
+	assign axi_lookup.tready	= 1;
+
+	logic					lookup_en;
+	vlan_t					lookup_src_vlan;
+	macaddr_t				lookup_src_mac;
+	logic[PORT_BITS-1:0]	lookup_src_port;
+	macaddr_t				lookup_dst_mac;
+	logic[1:0]				lookup_xbarport;
+	logic[4:0]				lookup_lcport;
+
+	always_comb begin
+		lookup_en			= axi_lookup.tvalid;
+		lookup_dst_mac		= axi_lookup.tdata[0 +: 48];
+		lookup_src_mac		= axi_lookup.tdata[48 +: 48];
+		lookup_src_vlan		= axi_lookup.tdata[96 +: 12];
+		lookup_src_port		= axi_lookup.tdata[108 +: PORT_BITS];
+		lookup_lcport		= axi_lookup.tid;
+		lookup_xbarport		= axi_lookup.tdest;
+	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Cache indexing
