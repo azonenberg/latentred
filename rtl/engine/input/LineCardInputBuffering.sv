@@ -68,6 +68,7 @@ module LineCardInputBuffering #(
 
 	//Interface to MAC address table
 	AXIStream.transmitter		axi_lookup,
+	AXIStream.receiver			axi_results,
 
 	input wire					mac_lookup_done,
 	input wire					mac_lookup_hit,
@@ -99,6 +100,13 @@ module LineCardInputBuffering #(
 	if(axi_lookup.ID_WIDTH != 5)
 		axi_bus_width_bad();
 	if(axi_lookup.DEST_WIDTH != 2)
+		axi_bus_width_bad();
+
+	if(axi_results.DATA_WIDTH != PORT_BITS)
+		axi_bus_width_bad();
+	if(axi_results.ID_WIDTH != 5)
+		axi_bus_width_bad();
+	if(axi_results.USER_WIDTH != 1)
 		axi_bus_width_bad();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -304,10 +312,7 @@ module LineCardInputBuffering #(
 		.wr_ptr_committed(wr_ptr_committed),
 
 		.axi_lookup(axi_lookup),
-
-		.mac_lookup_done(mac_lookup_done),
-		.mac_lookup_hit(mac_lookup_hit),
-		.mac_lookup_dst_port(mac_lookup_dst_port),
+		.axi_results(axi_results),
 
 		.axi_tx(axi_tx)
 	);

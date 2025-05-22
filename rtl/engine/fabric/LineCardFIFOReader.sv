@@ -62,10 +62,7 @@ module LineCardFIFOReader #(
 
 	//Request/lookup interface to MAC address table
 	AXIStream.transmitter		axi_lookup,
-
-	input wire					mac_lookup_done,
-	input wire					mac_lookup_hit,
-	input wire[PORT_BITS-1:0]	mac_lookup_dst_port,
+	AXIStream.receiver			axi_results,
 
 	//AXI interface to core crossbar
 	AXIStream.transmitter		axi_tx
@@ -85,6 +82,8 @@ module LineCardFIFOReader #(
 
 	assign axi_lookup.aclk		= clk;
 	assign axi_lookup.twakeup	= 1;
+
+	assign axi_results.tready	= 1;
 
 	initial begin
 		axi_tx.areset_n		= 0;
@@ -174,34 +173,6 @@ module LineCardFIFOReader #(
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Remember which ports we sent MAC lookups for (this will be obsolete once fully axi-ified)
-
-	wire[4:0]	next_mac_local_port;
-
-	SingleClockFifo #(
-		.WIDTH(5),
-		.DEPTH(32),
-		.USE_BLOCK(0),
-		.OUT_REG(0)
-	) lookup_src_fifo (
-		.clk(clk),
-
-		.wr(axi_lookup.tvalid),
-		.din(axi_lookup.tdata[108 +: PORT_BITS]),
-
-		.rd(mac_lookup_done),
-		.dout(next_mac_local_port),//Index of the crossbar port we're attached to
-
-		.overflow(),
-		.underflow(),
-		.empty(),
-		.full(),
-		.rsize(),
-		.wsize(),
-		.reset()
-	);
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// State for in-progress packets
 
 	typedef enum logic[2:0]
@@ -286,6 +257,7 @@ module LineCardFIFOReader #(
 		rd_en					<= 0;
 		meta_wr_en				<= 0;
 		axi_lookup.tvalid		<= 0;
+		axi_lookup.tlast		<= 0;
 
 		//Clear AXI stuff on ack
 		if(axi_tx.tready) begin
@@ -308,15 +280,15 @@ module LineCardFIFOReader #(
 		end
 
 		//Handle MAC address lookups coming back
-		if(mac_lookup_done) begin
-			port_dst_is_broadcast[next_mac_local_port]	<= !mac_lookup_hit;
-			port_dst_port[next_mac_local_port]			<= mac_lookup_dst_port;
-			port_states[next_mac_local_port]			<= PORT_STATE_FWD_READY;
+		if(axi_results.tvalid) begin
+			port_dst_is_broadcast[axi_results.tid]	<= !axi_results.tuser[0];
+			port_dst_port[axi_results.tid]			<= axi_results.tdata;
+			port_states[axi_results.tid]			<= PORT_STATE_FWD_READY;
 
 			`ifdef SIMULATION
 				$display("[%t] Frame on interface %d is ready to forward",
 					$realtime(),
-					next_mac_local_port + BASE_PORT);
+					axi_results.tid + BASE_PORT);
 			`endif
 		end
 
@@ -456,6 +428,7 @@ module LineCardFIFOReader #(
 
 					//Dispatch the MAC address lookup
 					axi_lookup.tvalid					<= 1;
+					axi_lookup.tlast					<= 1;
 					axi_lookup.tdata					<=
 					{
 						meta_rdata.port + BASE_PORT,

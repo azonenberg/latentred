@@ -100,10 +100,7 @@ module LineCardInputBuffering_Sim();
 
 	//Interface from line card buffer to the MAC table
 	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup();
-
-	wire		mac_lookup_done;
-	wire		mac_lookup_hit;
-	wire[5:0]	mac_lookup_dst_port;
+	AXIStream #(.DATA_WIDTH(6), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(1)) eth_mac_results();
 
 	//Data to the crossbar
 	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) eth_tx_data();
@@ -119,10 +116,7 @@ module LineCardInputBuffering_Sim();
 		.drop_untagged(drop_untagged),
 
 		.axi_lookup(eth_mac_lookup),
-
-		.mac_lookup_done(mac_lookup_done),
-		.mac_lookup_hit(mac_lookup_hit),
-		.mac_lookup_dst_port(mac_lookup_dst_port),
+		.axi_results(eth_mac_results),
 
 		.axi_rx_portclk(eth_rx_data),
 		.axi_tx(eth_tx_data)
@@ -134,13 +128,8 @@ module LineCardInputBuffering_Sim();
 		.PENDING_SIZE(8),
 		.NUM_PORTS(50)
 	) mactable (
-		.clk(clk),
-
 		.axi_lookup(eth_mac_lookup),
-
-		.lookup_done(mac_lookup_done),
-		.lookup_hit(mac_lookup_hit),
-		.lookup_dst_port(mac_lookup_dst_port),
+		.axi_results(eth_mac_results),
 
 		//management interface not used
 		.gc_en(1'b0),
@@ -179,18 +168,23 @@ module LineCardInputBuffering_Sim();
 
 		case(state)
 
+			//Request
 			0: begin
 				next[1]	<= 1;
 				state	<= 1;
 			end
 
-			/*1: begin
+			//Reply
+			1: begin
 				if(eth_rx_data[1].tlast) begin
-					next[1]	<= 1;
+					next[2]	<= 1;
 					state	<= 2;
 				end
 			end
 
+			//Two simultaneous packets?
+
+			/*
 			2: begin
 				if(eth_rx_data[1].tlast) begin
 					next[1]	<= 1;

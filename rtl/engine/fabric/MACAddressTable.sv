@@ -43,6 +43,8 @@ import EthernetBus::*;
 		Default configuration is 8 ways * 2048 rows * ~66 bits per port
 		One RAMB36 is 2K x 18, so we need 4 BRAMs per way or 32 BRAMs for the entire table
 
+		Fixed latency, no flow control support.
+
 	PERFORMANCE
 		A single Ethernet frame can be a minimum size of 8 bytes preamble/SFD, 64 bytes frame, plus 12 of IFG which
 		comes out to a total of 84 bytes * 8 bits = 672 UIs. This comes out to 1.488 Mpps/Gbps.
@@ -53,8 +55,6 @@ import EthernetBus::*;
 
 		LATENTRED has 48x 1 Gbps + 2x 25 Gbps = 98 Gbps of max forwarding throughput, or 145.824 Mpps.
 		So we need to clock the MAC table at at least 146 MHz.
-
-		Easy option is probably
 
 	THEORY OF OPERATION
 
@@ -105,16 +105,10 @@ module MACAddressTable #(
 	localparam ROW_BITS		= $clog2(TABLE_ROWS),
 	localparam ASSOC_BITS	= $clog2(ASSOC_WAYS)
 )(
-	input wire					clk,					//nominally 156.25 MHz
-
-	//TODO: remove clk and use axi_lookup.aclk
 	AXIStream.receiver			axi_lookup,
+	AXIStream.transmitter		axi_results,
 
-	output logic				lookup_done		= 0,
-	output logic				lookup_hit		= 0,	//indicates the lookup has completed and we found something
-	output logic[PORT_BITS-1:0]	lookup_dst_port = 0,	//port ID of the destination (only valid if lookup_hit is true)
-
-	//TODO: convert management interface to APB
+	//TODO: convert management interface to APB in same clock domain
 	input wire					gc_en,					//assert for one clock to start garbage collection
 	output logic				gc_done			= 0,	//goes high at end of garbage collection
 
@@ -131,27 +125,40 @@ module MACAddressTable #(
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Crack AXI request fields
+	// Hook up AXI control signals
+
+	assign axi_results.aclk		= axi_lookup.aclk;
+	assign axi_results.areset_n	= axi_lookup.areset_n;
+	assign axi_results.twakeup	= 1;
 
 	//always ready for stuff
 	assign axi_lookup.tready	= 1;
 
-	logic					lookup_en;
+	initial begin
+		axi_results.areset_n	= 0;
+		axi_results.tvalid		= 0;
+		axi_results.tdata		= 0;
+		axi_results.tkeep		= 0;
+		axi_results.tstrb		= 0;
+		axi_results.tdest		= 0;
+		axi_results.tuser		= 0;
+		axi_results.tlast		= 0;
+		axi_results.tid			= 0;
+	end
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Crack AXI request fields
+
 	vlan_t					lookup_src_vlan;
 	macaddr_t				lookup_src_mac;
 	logic[PORT_BITS-1:0]	lookup_src_port;
 	macaddr_t				lookup_dst_mac;
-	logic[1:0]				lookup_xbarport;
-	logic[4:0]				lookup_lcport;
 
 	always_comb begin
-		lookup_en			= axi_lookup.tvalid;
 		lookup_dst_mac		= axi_lookup.tdata[0 +: 48];
 		lookup_src_mac		= axi_lookup.tdata[48 +: 48];
 		lookup_src_vlan		= axi_lookup.tdata[96 +: 12];
 		lookup_src_port		= axi_lookup.tdata[108 +: PORT_BITS];
-		lookup_lcport		= axi_lookup.tid;
-		lookup_xbarport		= axi_lookup.tdest;
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -192,7 +199,7 @@ module MACAddressTable #(
 			cache_set_fwd <= cache_set;
 	end
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 		cache_set <= cache_set_fwd;
 	end
 
@@ -226,14 +233,14 @@ module MACAddressTable #(
 			.TRUE_DUAL(1),
 			.INIT_VALUE({$bits(entry_t){1'h0}})
 		) mem (
-			.porta_clk(clk),
-			.porta_en(lookup_en),
+			.porta_clk(axi_lookup.aclk),
+			.porta_en(axi_lookup.tvalid),
 			.porta_addr(lookup_dst_index),
 			.porta_we(1'b0),
 			.porta_din({$bits(entry_t){1'h0}}),
 			.porta_dout(lookup_rdata[g]),
 
-			.portb_clk(clk),
+			.portb_clk(axi_lookup.aclk),
 			.portb_en(learn_en),
 			.portb_addr(learn_addr),
 			.portb_we(learn_wr[g]),
@@ -245,18 +252,23 @@ module MACAddressTable #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Pipeline delay for read requests
 
-	logic				lookup_en_ff			= 0;
-	logic				lookup_en_ff2			= 0;
-	logic[ROW_BITS-1:0]	lookup_src_index_ff		= 0;
-	logic[ROW_BITS-1:0]	lookup_src_index_ff2	= 0;
+	logic					lookup_en_ff			= 0;
+	logic					lookup_en_ff2			= 0;
+	logic[ROW_BITS-1:0]		lookup_src_index_ff		= 0;
+	logic[ROW_BITS-1:0]		lookup_src_index_ff2	= 0;
 
-	entry_t				lookup_src_ff			= 0;
-	entry_t				lookup_src_ff2			= 0;
-	macaddr_t			lookup_dst_mac_ff		= 0;
-	macaddr_t			lookup_dst_mac_ff2		= 0;
+	entry_t					lookup_src_ff			= 0;
+	entry_t					lookup_src_ff2			= 0;
+	macaddr_t				lookup_dst_mac_ff		= 0;
+	macaddr_t				lookup_dst_mac_ff2		= 0;
 
-	always_ff @(posedge clk) begin
-		lookup_en_ff			<= lookup_en;
+	logic[PORT_BITS-1:0]	dest_ff		= 0;
+	logic[PORT_BITS-1:0]	dest_ff2	= 0;
+	logic[1:0]				id_ff		= 0;
+	logic[1:0]				id_ff2		= 0;
+
+	always_ff @(posedge axi_lookup.aclk) begin
+		lookup_en_ff			<= axi_lookup.tvalid;
 		lookup_en_ff2			<= lookup_en_ff;
 		lookup_src_index_ff		<= lookup_src_index;
 		lookup_src_index_ff2	<= lookup_src_index_ff;
@@ -269,6 +281,12 @@ module MACAddressTable #(
 
 		lookup_dst_mac_ff		<= lookup_dst_mac;
 		lookup_dst_mac_ff2		<= lookup_dst_mac_ff;
+
+		dest_ff					<= axi_lookup.tdest;
+		dest_ff2				<= dest_ff;
+
+		id_ff					<= axi_lookup.tid;
+		id_ff2					<= id_ff;
 	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -313,15 +331,18 @@ module MACAddressTable #(
 		end
 	end
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
-		lookup_done		<= lookup_en_ff2;
-		lookup_hit		<= lookup_hit_comb;
-		lookup_dst_port	<= lookup_dst_port_comb;
+		axi_results.tvalid		<= lookup_en_ff2;
+		axi_results.tlast		<= lookup_en_ff2;
+		axi_results.tuser		<= lookup_hit_comb;
+		axi_results.tdata		<= lookup_dst_port_comb;
+		axi_results.tdest		<= dest_ff2;
+		axi_results.tid			<= id_ff2;
 
 		//Print status when a new packet arrives.
 		//Nothing else to do at this point, we have to wait 2 clocks for the RAM to give us data
-		if(lookup_en) begin
+		if(axi_lookup.tvalid) begin
 			$display("[%t] Packet on interface %d, vlan %d, from %x:%x:%x:%x:%x:%x to %x:%x:%x:%x:%x:%x",
 				$realtime(),
 				lookup_src_port,
@@ -370,7 +391,7 @@ module MACAddressTable #(
 	logic					need_to_refresh_ff	= 0;
 	entry_t					lookup_rdata_ff[ASSOC_WAYS-1:0];
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 		lookup_way_ff			<= lookup_way_comb;
 		need_to_refresh_ff		<= need_to_refresh_comb;
 
@@ -388,7 +409,7 @@ module MACAddressTable #(
 
 	logic					refresh_wr_ack	= 0;
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
 		refresh_wr_en	<= 0;
 
@@ -463,7 +484,7 @@ module MACAddressTable #(
 		mgmt_ack_fwd		= 0;
 
 		//If an incoming packet is arriving, look up the source
-		if(lookup_en) begin
+		if(axi_lookup.tvalid) begin
 			learn_en			= 1;
 			learn_addr			= lookup_src_index;
 		end
@@ -520,7 +541,7 @@ module MACAddressTable #(
 
 	end
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 		pend_wr_ack		<= pend_wr_ack_fwd;
 		gc_rd_ack		<= gc_rd_ack_fwd;
 		gc_wr_ack		<= gc_wr_ack_fwd;
@@ -533,7 +554,7 @@ module MACAddressTable #(
 	logic	mgmt_rd_ack		= 0;
 	logic	mgmt_rd_ack_ff	= 0;
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 		mgmt_rd_ack		<= mgmt_ack_fwd && mgmt_rd_en;
 		mgmt_rd_ack_ff	<= mgmt_rd_ack;
 
@@ -582,7 +603,7 @@ module MACAddressTable #(
 	//TODO: this should probably be refactored into a standalone module?
 	logic					already_pending	= 0;
 	logic					found_opening	= 0;
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
 		already_pending	= 0;
 		found_opening	= 0;
@@ -650,7 +671,7 @@ module MACAddressTable #(
 
 	logic				learned_comb 	= 0;
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
 		need_to_learn	<= 0;
 		bump_set		<= 0;
@@ -719,7 +740,7 @@ module MACAddressTable #(
 		pend_clear	<= pend_wr_ack;
 	end
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
 		pend_wr_addr	<= 0;
 
@@ -782,7 +803,7 @@ module MACAddressTable #(
 
 	wire entry_t gc_rdata = learn_rdata[gc_way];
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge axi_lookup.aclk) begin
 
 		gc_done		<= 0;
 
