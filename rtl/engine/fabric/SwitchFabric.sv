@@ -51,10 +51,60 @@ module SwitchFabric(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MAC address table
 
+	//TODO: convert to axi-stream and APB
+
+	//TODO: arbitration on lookups
+
+	wire		mac_lookup_en;
+	vlan_t		mac_lookup_src_vlan;
+	macaddr_t	mac_lookup_src_mac;
+	wire[4:0]	mac_lookup_src_port;
+	macaddr_t	mac_lookup_dst_mac;
+
+	wire		mac_lookup_done;
+	wire		mac_lookup_hit;
+	wire[5:0]	mac_lookup_dst_port;
+
+	//extend line card port to global port
+	wire[5:0] mac_lookup_src_port_global = {1'b0, mac_lookup_src_port};
+
+	MACAddressTable #(
+		.TABLE_ROWS(2048),
+		.ASSOC_WAYS(8),
+		.PENDING_SIZE(8),
+		.NUM_PORTS(50)
+	) mactable (
+		.clk(clk_fabric),
+
+		.lookup_en(mac_lookup_en),
+		.lookup_src_vlan(mac_lookup_src_vlan),
+		.lookup_src_mac(mac_lookup_src_mac),
+		.lookup_src_port(mac_lookup_src_port_global),
+		.lookup_dst_mac(mac_lookup_dst_mac),
+
+		.lookup_done(mac_lookup_done),
+		.lookup_hit(mac_lookup_hit),
+		.lookup_dst_port(mac_lookup_dst_port),
+
+		//management interface not used
+		.gc_en(1'b0),
+		.gc_done(),
+		.mgmt_rd_en(1'b0),
+		.mgmt_del_en(1'b0),
+		.mgmt_ack(),
+		.mgmt_addr(11'h0),
+		.mgmt_way(),
+		.mgmt_rd_valid(),
+		.mgmt_rd_gc_mark(),
+		.mgmt_rd_mac(),
+		.mgmt_rd_vlan(),
+		.mgmt_rd_port()
+	);
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Input buffers
 
-	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) lc0_xbar_in();
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) lc0_xbar_in();
 
 	LineCardInputBuffering #(
 		.CDC_FIFO_DEPTH(256),
@@ -63,9 +113,18 @@ module SwitchFabric(
 	) lc0_rx_bufs (
 		.clk_fabric(clk_fabric),
 
-		.port_vlan(),
-		.drop_tagged(),
-		.drop_untagged(),
+		.port_vlan(lc0_port_vlan),
+		.drop_tagged(lc0_port_drop_tagged),
+		.drop_untagged(lc0_port_drop_untagged),
+
+		.mac_lookup_en(mac_lookup_en),
+		.mac_lookup_src_vlan(mac_lookup_src_vlan),
+		.mac_lookup_src_mac(mac_lookup_src_mac),
+		.mac_lookup_src_port(mac_lookup_src_port),
+		.mac_lookup_dst_mac(mac_lookup_dst_mac),
+		.mac_lookup_done(mac_lookup_done),
+		.mac_lookup_hit(mac_lookup_hit),
+		.mac_lookup_dst_port(mac_lookup_dst_port),
 
 		.axi_rx_portclk(lc0_axi_rx),
 		.axi_tx(lc0_xbar_in)

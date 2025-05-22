@@ -312,25 +312,51 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Debug ILA
 
-	/*
+	//Debug: register axi signals so we can see them in the ILA with proper netnames
+	logic		tvalid_ff	= 0;
+	logic[63:0]	tdata_ff	= 0;
+	logic[7:0]	tkeep_ff	= 0;
+	logic[7:0]	tstrb_ff	= 0;
+	logic[6:0]	tdest_ff	= 0;
+	logic[11:0]	tuser_ff	= 0;
+	logic		tlast_ff	= 0;
+
+	always_ff @(posedge clk_fabric) begin
+		tvalid_ff	<= axi_tx.tvalid;
+		tdata_ff	<= axi_tx.tdata;
+		tkeep_ff	<= axi_tx.tkeep;
+		tstrb_ff	<= axi_tx.tstrb;
+		tlast_ff	<= axi_tx.tlast;
+		tdest_ff	<= axi_tx.tdest;
+		tuser_ff	<= axi_tx.tuser;
+	end
+
 	ila_2 ila(
 		.clk(clk_fabric),
 
-		.probe0(fifo_rd_size[0]),
-		.probe1(fifo_rd_ptr[0]),
-		.probe2(fifo_rd_ptr_inc[0]),
-
+		.probe0(rd_ptr[0]),
+		.probe1(rd_ptr_reset[0]),
+		.probe2(wr_ptr_committed[0]),
 		.probe3(rd_en),
 		.probe4(rd_addr),
 		.probe5(rd_data),
 		.probe6(rd_valid),
-
 		.probe7(mac_lookup_en),
 		.probe8(mac_lookup_src_vlan),
 		.probe9(mac_lookup_src_mac),
 		.probe10(mac_lookup_src_port),
-		.probe11(mac_lookup_dst_mac)
+		.probe11(mac_lookup_dst_mac),
+		.probe12(axi_tx.tvalid),
+		.probe13(axi_tx.tdata),
+		.probe14(axi_tx.tkeep),
+		.probe15(axi_tx.tstrb),
+		.probe16(axi_tx.tlast),
+		.probe17(axi_tx.tdest),
+		.probe18(axi_tx.tuser),
+
+		.probe19(mac_lookup_done),
+		.probe20(mac_lookup_hit),
+		.probe21(mac_lookup_dst_port)
 	);
-	*/
 
 endmodule

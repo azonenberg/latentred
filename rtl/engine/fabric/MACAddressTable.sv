@@ -43,14 +43,20 @@ import EthernetBus::*;
 		Default configuration is 8 ways * 2048 rows * ~66 bits per port
 		One RAMB36 is 2K x 18, so we need 4 BRAMs per way or 32 BRAMs for the entire table
 
-	THEORY OF OPERATION
-
+	PERFORMANCE
 		A single Ethernet frame can be a minimum size of 8 bytes preamble/SFD, 64 bytes frame, plus 12 of IFG which
 		comes out to a total of 84 bytes * 8 bits = 672 UIs. This comes out to 1.488 Mpps/Gbps.
 
 		We target a sustained throughput of 1 clock per packet with a fixed latency from request to reply. This gives
 		us a maximum forwarding throughput of 1 Mpps/MHz (However, running at the theoretical forwarding limit will
 		prevent table bandwidth from being available for learning new addresses and garbage-collecting old ones.)
+
+		LATENTRED has 48x 1 Gbps + 2x 25 Gbps = 98 Gbps of max forwarding throughput, or 145.824 Mpps.
+		So we need to clock the MAC table at at least 146 MHz.
+
+		Easy option is probably
+
+	THEORY OF OPERATION
 
 		The table is organized as a set-associative cache, indexed by a simple XOR hash of the MAC address. Replacement
 		policy is random.

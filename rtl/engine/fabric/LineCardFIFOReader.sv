@@ -105,7 +105,7 @@ module LineCardFIFOReader #(
 	{
 		PORT_STATE_IDLE					= 0,	//nothing to do
 		PORT_STATE_DATA_READY			= 1,	//frame ready to start forwarding
-		PORT_STATE_HEADER			= 2,	//read of header was dispatched
+		PORT_STATE_HEADER				= 2,	//read of header was dispatched
 		PORT_STATE_WORD_0				= 3,	//read of first payload word was dispatched
 		PORT_STATE_WORD_1				= 4,	//read of second payload word was dispatched
 		PORT_STATE_MAC_LOOKUP			= 5,	//mac address lookup in progress

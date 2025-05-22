@@ -62,10 +62,11 @@ module LineCardControlRegisters(
 
 	initial begin
 
+		//Default configuration for TESTING until firmware knows how to talk to this
 		for(integer i=0; i<24; i=i+1) begin
-			port_vlan[i]			= 0;
+			port_vlan[i]			= 5;
 			port_drop_tagged[i]		= 0;
-			port_drop_untagged[i]	= 1;
+			port_drop_untagged[i]	= 0;
 		end
 
 	end
