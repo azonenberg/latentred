@@ -335,7 +335,6 @@ module LineCardInputBuffering #(
 		tuser_ff	<= axi_tx.tuser;
 	end
 
-	/*
 	ila_2 ila(
 		.clk(clk_fabric),
 
@@ -346,22 +345,18 @@ module LineCardInputBuffering #(
 		.probe4(rd_addr),
 		.probe5(rd_data),
 		.probe6(rd_valid),
-		.probe7(mac_lookup_en),
-		.probe8(mac_lookup_src_vlan),
-		.probe9(mac_lookup_src_mac),
-		.probe10(mac_lookup_src_port),
-		.probe11(mac_lookup_dst_mac),
-		.probe12(axi_tx.tvalid),
-		.probe13(axi_tx.tdata),
-		.probe14(axi_tx.tkeep),
-		.probe15(axi_tx.tstrb),
-		.probe16(axi_tx.tlast),
-		.probe17(axi_tx.tdest),
-		.probe18(axi_tx.tuser),
 
-		.probe19(mac_lookup_done),
-		.probe20(mac_lookup_hit),
-		.probe21(mac_lookup_dst_port)
-	);*/
+		.probe7(axi_lookup.tvalid),
+		.probe8(axi_lookup.tid),
+		.probe9(axi_results.tvalid),
+		.probe10(axi_results.tuser),
+		.probe11(tuser_ff),
+		.probe12(tvalid_ff),
+		.probe13(tdata_ff),
+		.probe14(tkeep_ff),
+		.probe15(tstrb_ff),
+		.probe16(tlast_ff),
+		.probe17(tdest_ff)
+	);
 
 endmodule
