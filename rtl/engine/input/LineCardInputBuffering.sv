@@ -70,10 +70,6 @@ module LineCardInputBuffering #(
 	AXIStream.transmitter		axi_lookup,
 	AXIStream.receiver			axi_results,
 
-	input wire					mac_lookup_done,
-	input wire					mac_lookup_hit,
-	input wire[PORT_BITS-1:0]	mac_lookup_dst_port,
-
 	//Incoming data stream from each port (32-bit AXI4-Stream)
 	AXIStream.receiver			axi_rx_portclk[23:0],
 

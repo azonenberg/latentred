@@ -114,16 +114,17 @@ module LineCardFIFOReader #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Per-port state tables
 
-	typedef enum logic[2:0]
+	typedef enum logic[3:0]
 	{
 		PORT_STATE_IDLE					= 0,	//nothing to do
 		PORT_STATE_DATA_READY			= 1,	//frame ready to start forwarding
 		PORT_STATE_HEADER				= 2,	//read of header was dispatched
 		PORT_STATE_WORD_0				= 3,	//read of first payload word was dispatched
 		PORT_STATE_WORD_1				= 4,	//read of second payload word was dispatched
-		PORT_STATE_MAC_LOOKUP			= 5,	//mac address lookup in progress
-		PORT_STATE_FWD_READY			= 6,	//ready to forward
-		PORT_STATE_FORWARDING			= 7		//actively forwarding
+		PORT_STATE_PREFETCH				= 5,	//prefetching more of the packet
+		PORT_STATE_MAC_LOOKUP			= 6,	//mac address lookup in progress
+		PORT_STATE_FWD_READY			= 7,	//ready to forward
+		PORT_STATE_FORWARDING			= 8		//actively forwarding
 	} PortState;
 
 	//Current forwarding state
@@ -158,7 +159,6 @@ module LineCardFIFOReader #(
 			port_first4[i]				= 0;
 			port_dst_port[i]			= 0;
 			port_dst_is_broadcast[i]	= 0;
-
 			rd_ptr[i]					= 0;
 		end
 	end
@@ -181,7 +181,8 @@ module LineCardFIFOReader #(
 		MTYPE_HEADER	= 1,	//header read
 		MTYPE_WORD0		= 2,
 		MTYPE_WORD1		= 3,
-		MTYPE_BODY		= 4
+		MTYPE_BODY		= 4,
+		MTYPE_PREFETCH	= 5
 	} mtype_t;
 
 	typedef struct packed
@@ -220,12 +221,58 @@ module LineCardFIFOReader #(
 	);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Prefetch buffer
+
+	//The actual memory
+	logic[63:0] prefetch_buf[255:0];
+
+	initial begin
+		for(integer i=0; i<256; i++)
+			prefetch_buf[i]	= 0;
+	end
+
+	//Prefetch progress for the current frame
+	logic[2:0]		prefetch_wr_count		= 0;
+	logic[2:0]		prefetch_wr_count_ff	= 0;
+	logic[2:0]		prefetch_wr_count_ff2	= 0;
+	logic[2:0]		prefetch_wr_count_ff3	= 0;
+	logic[2:0]		prefetch_wr_count_ff4	= 0;
+	logic[2:0]		prefetch_wr_count_ff5	= 0;
+	logic[2:0]		prefetch_wr_count_ff6	= 0;
+
+	logic[4:0]		fwd_port				= 0;
+
+	logic			prefetch_wr_en;
+	logic[7:0]		prefetch_wr_addr;
+	logic[7:0]		prefetch_rd_addr		= 0;
+	logic[63:0]		prefetch_rd_data;
+	always_comb begin
+		prefetch_wr_en		= rd_valid && (meta_rdata.mtype == MTYPE_PREFETCH);
+		prefetch_wr_addr	= { meta_rdata.port, prefetch_wr_count_ff6 };
+		prefetch_rd_data	= prefetch_buf[prefetch_rd_addr];
+	end
+
+	//Writes
+	always_ff @(posedge clk) begin
+		prefetch_wr_count_ff	<= prefetch_wr_count;
+		prefetch_wr_count_ff2	<= prefetch_wr_count_ff;
+		prefetch_wr_count_ff3	<= prefetch_wr_count_ff2;
+		prefetch_wr_count_ff4	<= prefetch_wr_count_ff3;
+		prefetch_wr_count_ff5	<= prefetch_wr_count_ff4;
+		prefetch_wr_count_ff6	<= prefetch_wr_count_ff5;
+
+		if(prefetch_wr_en)
+			prefetch_buf[prefetch_wr_addr]	<= rd_data[63:0];
+
+	end
+
+	//Reads
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Main reader block
 
 	//Round robin port counter
 	logic[4:0]	main_rr_port	= 0;
-
-	logic[4:0]	fwd_port		= 0;
 
 	//FIFO read pointer of the round robin winner
 	logic[11:0]	main_rr_ptr;
@@ -245,11 +292,13 @@ module LineCardFIFOReader #(
 	logic[10:0]	fwd_bytesToRead	= 0;
 	logic[10:0]	fwd_bytesToSend	= 0;
 
-	enum logic[1:0]
+	enum logic[2:0]
 	{
 		FWD_STATE_IDLE,
 		FWD_STATE_HEADER_1,
-		FWD_STATE_BODY
+		FWD_STATE_PREFETCH_DATA,
+		FWD_STATE_BODY,
+		FWD_STATE_TAIL
 	} fwd_state = FWD_STATE_IDLE;
 
 	always_ff @(posedge clk) begin
@@ -292,81 +341,126 @@ module LineCardFIFOReader #(
 			`endif
 		end
 
-		//Forwarding payload body
-		/*
-			assuming 5 cycle gap here
-			this is a net loss of 320 bit times
-			ethernet interframe gap is 96 bits, plus preamble/SFD is another 64, plus FCS is 32: total 192 bits
-			so we waste 128 bits per packet
-			with min sized packets we forward 24 Gbps * 1.488 Mpps/Gbps = 35.712 Mpps, so 4.571 Gbps of overhead
-			we can only afford 1 Gbps to be fully wire speed, so this needs to improve!
-		 */
-		if(fwd_state == FWD_STATE_BODY) begin
+		case(fwd_state)
 
-			//Forward data
-			if(rd_valid && meta_rdata.mtype == MTYPE_BODY) begin
+			//Forwarding payload body with live-streaming data
+			FWD_STATE_BODY: begin
 
-				//Full word?
-				if(fwd_bytesToSend > 8) begin
-					fwd_bytesToSend				<= fwd_bytesToSend - 8;
-					axi_tx.tstrb				<= 8'hff;
+				//Forward data
+				if(rd_valid && meta_rdata.mtype == MTYPE_BODY) begin
+
+					//Full word?
+					if(fwd_bytesToSend > 8) begin
+						fwd_bytesToSend				<= fwd_bytesToSend - 8;
+						axi_tx.tstrb				<= 8'hff;
+					end
+
+					//Partial word? We're done
+					else begin
+						case(fwd_bytesToSend)
+							7:	axi_tx.tstrb		<= 8'b01111111;
+							6:	axi_tx.tstrb		<= 8'b00111111;
+							5:	axi_tx.tstrb		<= 8'b00011111;
+							4:	axi_tx.tstrb		<= 8'b00001111;
+							3:	axi_tx.tstrb		<= 8'b00000111;
+							2:	axi_tx.tstrb		<= 8'b00000011;
+							1:	axi_tx.tstrb		<= 8'b00000001;
+							default: begin
+								axi_tx.tstrb		<= 8'b00000000;
+							end
+						endcase
+
+						axi_tx.tlast				<= 1;
+
+						//Clear lots of state
+						fwd_state					<= FWD_STATE_IDLE;
+						port_states[fwd_port]		<= PORT_STATE_IDLE;
+
+					end
+
+					axi_tx.tvalid					<= 1;
+					axi_tx.tdata					<=
+					{
+						rd_data[63:0]//Index of the crossbar port we're attached to
+					};
+					axi_tx.tkeep					<= 8'hff;
+
 				end
 
-				//Partial word? We're done
-				else begin
-					case(fwd_bytesToSend)
-						7:	axi_tx.tstrb		<= 8'b01111111;
-						6:	axi_tx.tstrb		<= 8'b00111111;
-						5:	axi_tx.tstrb		<= 8'b00011111;
-						4:	axi_tx.tstrb		<= 8'b00001111;
-						3:	axi_tx.tstrb		<= 8'b00000111;
-						2:	axi_tx.tstrb		<= 8'b00000011;
-						1:	axi_tx.tstrb		<= 8'b00000001;
-						default: begin
-							axi_tx.tstrb		<= 8'b00000000;
-						end
-					endcase
+				//Request more data unless we're done
+				if(fwd_bytesToRead > 0) begin
 
-					axi_tx.tlast				<= 1;
+					if(fwd_bytesToRead >= 8)
+						fwd_bytesToRead				<= fwd_bytesToRead - 8;
+					else
+						fwd_bytesToRead				<= 0;
 
-					//Clear lots of state
-					fwd_state					<= FWD_STATE_IDLE;
-					port_states[fwd_port]		<= PORT_STATE_IDLE;
+					//Request a read of the data, then bump the upstream pointer
+					rd_en							<= 1;
+					rd_addr							<= { fwd_port, fwd_ptr };
+					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= fwd_port;
 
 				end
 
-				axi_tx.tvalid					<= 1;
-				axi_tx.tdata					<=
-				{
-					rd_data[63:0]//Index of the crossbar port we're attached to
-				};
-				axi_tx.tkeep					<= 8'hff;
+			end //FWD_STATE_BODY
 
+			//Forwarding payload body with prefetched data
+			//No range check because we will always have enough stuff to read
+			FWD_STATE_PREFETCH_DATA: begin
+
+				//Advance
+				prefetch_rd_addr			<= prefetch_rd_addr + 1;
+				fwd_bytesToSend				<= fwd_bytesToSend - 8;
+
+				//Send data
+				axi_tx.tvalid				<= 1;
+				axi_tx.tdata				<= prefetch_rd_data;
+				axi_tx.tkeep				<= 8'hff;
+				axi_tx.tstrb				<= 8'hff;
+
+				//Once we get to the end of the prefetch, time to move on to normal forwarding
+				if(prefetch_rd_addr[2:0] == 4)
+					fwd_state				<= FWD_STATE_BODY;
+
+				//Frame ended, and minimum size?
+				//TODO: test on min sized packets and make sure this condition is right
+				if(fwd_bytesToSend <= 8) begin
+					fwd_state				<= FWD_STATE_IDLE;
+					axi_tx.tlast			<= 1;
+					port_states[fwd_port]	<= PORT_STATE_IDLE;
+				end
+
+				//Request more data unless we're done
+				if(fwd_bytesToRead > 0) begin
+
+					if(fwd_bytesToRead >= 8)
+						fwd_bytesToRead				<= fwd_bytesToRead - 8;
+					else
+						fwd_bytesToRead				<= 0;
+
+					//Request a read of the data, then bump the upstream pointer
+					rd_en							<= 1;
+					rd_addr							<= { fwd_port, fwd_ptr };
+					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= fwd_port;
+
+				end
+
+			end	//FWD_STATE_PREFETCH_DATA
+
+			default: begin
 			end
 
-			//Request more data unless we're done
-			if(fwd_bytesToRead > 0) begin
-
-				if(fwd_bytesToRead >= 8)
-					fwd_bytesToRead				<= fwd_bytesToRead - 8;
-				else
-					fwd_bytesToRead				<= 0;
-
-				//Request a read of the data, then bump the upstream pointer
-				rd_en							<= 1;
-				rd_addr							<= { fwd_port, fwd_ptr };
-				rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
-
-				//Record that we have a data read pending
-				meta_wr_en						<= 1;
-				meta_wdata.mtype				<= MTYPE_BODY;
-				meta_wdata.port					<= fwd_port;
-
-			end
-
-			//TODO: if we're almost at the end of the frame, start prefetching next frame?
-
-		end
+		endcase
 
 		//Read data will always show up after the metadata, so no need to check if there's data in the metadata fifo
 		if(rd_valid) begin
@@ -490,8 +584,13 @@ module LineCardFIFOReader #(
 					axi_tx.tstrb					<= 8'hff;
 					axi_tx.tkeep					<= 8'hff;
 
-					fwd_state						<= FWD_STATE_BODY;
+					fwd_state						<= FWD_STATE_PREFETCH_DATA;
+					prefetch_rd_addr				<= { fwd_port, 3'h0 };
 
+				end
+
+				//Forward data handled elsewhere
+				FWD_STATE_PREFETCH_DATA: begin
 				end
 
 				//Forward data handled elsewhere
@@ -526,18 +625,18 @@ module LineCardFIFOReader #(
 					`endif
 
 					//Request a read of the header, then bump the pointer
-					rd_en							<= 1;
-					rd_addr							<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
-					port_states[main_rr_port]		<= PORT_STATE_HEADER;
+					rd_en								<= 1;
+					rd_addr								<= { main_rr_port, main_rr_ptr };
+					rd_ptr[main_rr_port]				<= rd_ptr[main_rr_port] + 1;
+					port_states[main_rr_port]			<= PORT_STATE_HEADER;
 
 					//Record that we have a header read pending so we know what to do when the response comes in
-					meta_wr_en						<= 1;
-					meta_wdata.mtype				<= MTYPE_HEADER;
-					meta_wdata.port					<= main_rr_port;
+					meta_wr_en							<= 1;
+					meta_wdata.mtype					<= MTYPE_HEADER;
+					meta_wdata.port						<= main_rr_port;
 
 					//Do not bump the RR pointer, we want to read the next word next clock
-					main_rr_port					<= main_rr_port;
+					main_rr_port						<= main_rr_port;
 
 				end	//PORT_STATE_DATA_READY
 
@@ -581,10 +680,51 @@ module LineCardFIFOReader #(
 
 				end	//PORT_STATE_WORD_0
 
-				//Second data word in progress: no new reads to dispatch
-				//TODO: prefetch data words during MAC lookup?
+				//Second data word in progress: start prefetching
 				PORT_STATE_WORD_1: begin
+
+					prefetch_wr_count				<= 0;
+
+					//Prefetch and bump the pointer
+					rd_en							<= 1;
+					rd_addr							<= { main_rr_port, main_rr_ptr };
+					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
+
+					//Save metadata
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_PREFETCH;
+					meta_wdata.port					<= main_rr_port;
+
+					//Do not bump the RR pointer, we want to read the next word next clock
+					main_rr_port					<= main_rr_port;
+
+					port_states[main_rr_port]		<= PORT_STATE_PREFETCH;
+
 				end	//PORT_STATE_WORD_1
+
+				PORT_STATE_PREFETCH: begin
+
+					//Done?
+					if(prefetch_wr_count < 4) begin
+
+						prefetch_wr_count			<= prefetch_wr_count + 1;
+
+						//Prefetch and bump the pointer
+						rd_en						<= 1;
+						rd_addr						<= { main_rr_port, main_rr_ptr };
+						rd_ptr[main_rr_port]		<= rd_ptr[main_rr_port] + 1;
+
+						//Save metadata
+						meta_wr_en					<= 1;
+						meta_wdata.mtype			<= MTYPE_PREFETCH;
+						meta_wdata.port				<= main_rr_port;
+
+						//Do not bump the RR pointer, we want to read the next word next clock
+						main_rr_port				<= main_rr_port;
+
+					end
+
+				end //PORT_STATE_PREFETCH
 
 				PORT_STATE_FWD_READY: begin
 
@@ -601,17 +741,22 @@ module LineCardFIFOReader #(
 					rd_addr							<= { main_rr_port, main_rr_ptr };
 					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
-					//We've started to forward the frame
-					//8 bytes forwarded so far, 24 read (8 we just kicked off, 16 in headers)
+					fwd_bytesToRead					<= port_lens[main_rr_port] - 64;
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= main_rr_port;
+
+					//We've started to forward the frame, 8 bytes forwarded so far
 					fwd_state						<= FWD_STATE_HEADER_1;
-					fwd_bytesToRead					<= port_lens[main_rr_port] - 24;
 					fwd_bytesToSend					<= port_lens[main_rr_port] - 8;
+					port_states[main_rr_port]		<= PORT_STATE_FORWARDING;
 
 					//Save the port number
 					fwd_port						<= main_rr_port;
 
 					//Start sending previously-read data out the AXI bus
-					//TODO: can we avoid this much inter-frame gap somehow?
 					axi_tx.tvalid					<= 1;
 					axi_tx.tdata					<=
 					{
@@ -632,11 +777,6 @@ module LineCardFIFOReader #(
 						port_dst_is_broadcast[main_rr_port],
 						port_dst_port[main_rr_port]
 					};
-
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
-					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= main_rr_port;
 
 				end
 
