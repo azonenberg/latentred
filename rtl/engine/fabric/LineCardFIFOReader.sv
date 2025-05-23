@@ -343,10 +343,11 @@ module LineCardFIFOReader #(
 
 		case(fwd_state)
 
-			//Forwarding payload body with live-streaming data
-			FWD_STATE_BODY: begin
+			//Forwarding payload body with live-streaming data but done actively reading
+			FWD_STATE_TAIL: begin
 
 				//Forward data
+				//TODO: can we omit this condition? should always be true
 				if(rd_valid && meta_rdata.mtype == MTYPE_BODY) begin
 
 					//Full word?
@@ -379,12 +380,25 @@ module LineCardFIFOReader #(
 					end
 
 					axi_tx.tvalid					<= 1;
-					axi_tx.tdata					<=
-					{
-						rd_data[63:0]//Index of the crossbar port we're attached to
-					};
+					axi_tx.tdata					<= rd_data[63:0];
 					axi_tx.tkeep					<= 8'hff;
 
+				end
+
+			end
+
+			//Forwarding payload body with live-streaming data
+			FWD_STATE_BODY: begin
+
+				//Forward data
+				//TODO: can we omit this condition? should always be true
+				if(rd_valid && meta_rdata.mtype == MTYPE_BODY) begin
+					fwd_bytesToSend					<= fwd_bytesToSend - 8;
+					axi_tx.tstrb					<= 8'hff;
+
+					axi_tx.tvalid					<= 1;
+					axi_tx.tdata					<= rd_data[63:0];
+					axi_tx.tkeep					<= 8'hff;
 				end
 
 				//Request more data unless we're done
@@ -406,6 +420,8 @@ module LineCardFIFOReader #(
 					meta_wdata.port					<= fwd_port;
 
 				end
+				else
+					fwd_state						<= FWD_STATE_TAIL;
 
 			end //FWD_STATE_BODY
 
@@ -549,57 +565,43 @@ module LineCardFIFOReader #(
 
 		end
 
-		if(fwd_state != FWD_STATE_IDLE) begin
+		//Handle forwarding paths that can trigger memory reads
+		if( (fwd_state != FWD_STATE_IDLE) && (fwd_state != FWD_STATE_TAIL) ) begin
 
-			case(fwd_state)
+			if(fwd_state == FWD_STATE_HEADER_1) begin
+				//Request a read of the data, then bump the upstream pointer
+				rd_en							<= 1;
+				rd_addr							<= { fwd_port, fwd_ptr };
+				rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
-				//First header word sent, send second
-				FWD_STATE_HEADER_1: begin
+				//Record that we have a data read pending
+				meta_wr_en						<= 1;
+				meta_wdata.mtype				<= MTYPE_BODY;
+				meta_wdata.port					<= fwd_port;
 
-					//Request a read of the data, then bump the upstream pointer
-					rd_en							<= 1;
-					rd_addr							<= { fwd_port, fwd_ptr };
-					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
+				//Send the next data word
+				fwd_bytesToRead					<= fwd_bytesToRead - 8;
+				fwd_bytesToSend					<= fwd_bytesToSend - 8;
+				axi_tx.tvalid					<= 1;
+				axi_tx.tdata					<=
+				{
+					port_first4[fwd_port][0*8 +: 8],
+					port_first4[fwd_port][1*8 +: 8],
+					port_first4[fwd_port][2*8 +: 8],
+					port_first4[fwd_port][3*8 +: 8],
+					port_src_mac[fwd_port][0*8 +: 8],
+					port_src_mac[fwd_port][1*8 +: 8],
+					port_src_mac[fwd_port][2*8 +: 8],
+					port_src_mac[fwd_port][3*8 +: 8]
+				};
+				axi_tx.tstrb					<= 8'hff;
+				axi_tx.tkeep					<= 8'hff;
 
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
-					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= fwd_port;
+				fwd_state						<= FWD_STATE_PREFETCH_DATA;
+				prefetch_rd_addr				<= { fwd_port, 3'h0 };
+			end
 
-					//Send the next data word
-					fwd_bytesToRead					<= fwd_bytesToRead - 8;
-					fwd_bytesToSend					<= fwd_bytesToSend - 8;
-					axi_tx.tvalid					<= 1;
-					axi_tx.tdata					<=
-					{
-						port_first4[fwd_port][0*8 +: 8],
-						port_first4[fwd_port][1*8 +: 8],
-						port_first4[fwd_port][2*8 +: 8],
-						port_first4[fwd_port][3*8 +: 8],
-						port_src_mac[fwd_port][0*8 +: 8],
-						port_src_mac[fwd_port][1*8 +: 8],
-						port_src_mac[fwd_port][2*8 +: 8],
-						port_src_mac[fwd_port][3*8 +: 8]
-					};
-					axi_tx.tstrb					<= 8'hff;
-					axi_tx.tkeep					<= 8'hff;
-
-					fwd_state						<= FWD_STATE_PREFETCH_DATA;
-					prefetch_rd_addr				<= { fwd_port, 3'h0 };
-
-				end
-
-				//Forward data handled elsewhere
-				FWD_STATE_PREFETCH_DATA: begin
-				end
-
-				//Forward data handled elsewhere
-				FWD_STATE_BODY: begin
-				end
-
-				default: begin
-				end
-			endcase
+			//other states need to block main state machine from sending memory requests but need not do anything here
 
 		end
 
