@@ -191,7 +191,6 @@ module LineCardFIFOReader #(
 		logic[4:0]	port;
 	} PendingMetadata;
 
-	logic			meta_wr_en	= 0;
 	PendingMetadata meta_wdata;
 
 	wire			meta_empty;
@@ -205,7 +204,7 @@ module LineCardFIFOReader #(
 	) meta_fifo (
 		.clk(clk),
 
-		.wr(meta_wr_en),
+		.wr(rd_en),
 		.din(meta_wdata),
 
 		.rd(rd_valid),
@@ -219,6 +218,10 @@ module LineCardFIFOReader #(
 		.wsize(),
 		.reset(!axi_tx.areset_n)
 	);
+
+	always_comb begin
+		meta_wdata.port	= rd_addr[16:12];
+	end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Prefetch buffer
@@ -263,7 +266,6 @@ module LineCardFIFOReader #(
 
 		if(prefetch_wr_en)
 			prefetch_buf[prefetch_wr_addr]	<= rd_data[63:0];
-
 	end
 
 	//Reads
@@ -361,7 +363,6 @@ module LineCardFIFOReader #(
 	always_ff @(posedge clk) begin
 
 		rd_en					<= 0;
-		meta_wr_en				<= 0;
 		axi_lookup.tvalid		<= 0;
 		axi_lookup.tlast		<= 0;
 
@@ -469,11 +470,7 @@ module LineCardFIFOReader #(
 					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= fwd_port;
 
 				end
 				else
@@ -518,11 +515,7 @@ module LineCardFIFOReader #(
 					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= fwd_port;
 
 				end
 
@@ -625,17 +618,11 @@ module LineCardFIFOReader #(
 
 			if(fwd_state == FWD_STATE_HEADER_1) begin
 
+				//Request a read of the data
 				if(fwd_bytesToRead > 0) begin
-
-					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= fwd_port;
-
 				end
 
 				//Send the next data word
@@ -689,12 +676,8 @@ module LineCardFIFOReader #(
 					//Request a read of the header
 					rd_en								<= 1;
 					rd_addr								<= { main_rr_port, main_rr_ptr };
-					port_states[main_rr_port]			<= PORT_STATE_HEADER;
-
-					//Record that we have a header read pending so we know what to do when the response comes in
-					meta_wr_en							<= 1;
 					meta_wdata.mtype					<= MTYPE_HEADER;
-					meta_wdata.port						<= main_rr_port;
+					port_states[main_rr_port]			<= PORT_STATE_HEADER;
 
 					//Do not bump the RR pointer, we want to read the next word next clock
 					main_rr_port						<= main_rr_port;
@@ -707,13 +690,8 @@ module LineCardFIFOReader #(
 					//Request read of the first frame word
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-
-					port_states[main_rr_port]		<= PORT_STATE_WORD_0;
-
-					//Save metadata
-					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_WORD0;
-					meta_wdata.port					<= main_rr_port;
+					port_states[main_rr_port]		<= PORT_STATE_WORD_0;
 
 					//Do not bump the RR pointer, we want to read the next word next clock
 					main_rr_port					<= main_rr_port;
@@ -726,13 +704,9 @@ module LineCardFIFOReader #(
 					//Request read of the second frame word
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
+					meta_wdata.mtype				<= MTYPE_WORD1;
 
 					port_states[main_rr_port]		<= PORT_STATE_WORD_1;
-
-					//Save metadata
-					meta_wr_en						<= 1;
-					meta_wdata.mtype				<= MTYPE_WORD1;
-					meta_wdata.port					<= main_rr_port;
 
 					//Do not bump the RR pointer, we want to read the next word next clock
 					main_rr_port					<= main_rr_port;
@@ -747,16 +721,12 @@ module LineCardFIFOReader #(
 					//Prefetch
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-
-					//Save metadata
-					meta_wr_en						<= 1;
 					meta_wdata.mtype				<= MTYPE_PREFETCH;
-					meta_wdata.port					<= main_rr_port;
+
+					port_states[main_rr_port]		<= PORT_STATE_PREFETCH;
 
 					//Do not bump the RR pointer, we want to read the next word next clock
 					main_rr_port					<= main_rr_port;
-
-					port_states[main_rr_port]		<= PORT_STATE_PREFETCH;
 
 				end	//PORT_STATE_WORD_1
 
@@ -770,11 +740,7 @@ module LineCardFIFOReader #(
 						//Read the data
 						rd_en						<= 1;
 						rd_addr						<= { main_rr_port, main_rr_ptr };
-
-						//Save metadata
-						meta_wr_en					<= 1;
 						meta_wdata.mtype			<= MTYPE_PREFETCH;
-						meta_wdata.port				<= main_rr_port;
 
 						//Do not bump the RR pointer, we want to read the next word next clock
 						main_rr_port				<= main_rr_port;
@@ -798,13 +764,9 @@ module LineCardFIFOReader #(
 					if(port_lens[main_rr_port] > 64) begin
 						rd_en							<= 1;
 						rd_addr							<= { main_rr_port, main_rr_ptr };
+						meta_wdata.mtype				<= MTYPE_BODY;
 
 						fwd_bytesToRead					<= port_lens[main_rr_port] - 64;
-
-						//Record that we have a data read pending
-						meta_wr_en						<= 1;
-						meta_wdata.mtype				<= MTYPE_BODY;
-						meta_wdata.port					<= main_rr_port;
 					end
 
 					//We've started to forward the frame, 8 bytes forwarded so far
