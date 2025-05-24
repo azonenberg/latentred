@@ -301,6 +301,63 @@ module LineCardFIFOReader #(
 		FWD_STATE_TAIL
 	} fwd_state = FWD_STATE_IDLE;
 
+	//Combinatorially decide to increment read pointer
+	logic[12:0]		rd_ptr_next[23:0];
+	logic			rd_ptr_inc[23:0];
+	always_comb begin
+
+		//Default to not incrementing read pointer
+		for(integer i=0; i<24; i++)
+			rd_ptr_inc[i] = 0;
+
+		//Actively forwarding?
+		if( (fwd_state != FWD_STATE_IDLE) && (fwd_state != FWD_STATE_TAIL) ) begin
+
+			if(fwd_bytesToRead > 0) begin
+				case(fwd_state)
+					FWD_STATE_HEADER_1:			rd_ptr_inc[fwd_port]	= 1;
+					FWD_STATE_PREFETCH_DATA:	rd_ptr_inc[fwd_port]	= 1;
+					FWD_STATE_BODY:				rd_ptr_inc[fwd_port]	= 1;
+					default: begin
+					end
+				endcase
+			end
+
+		end
+
+		//Main port state machine
+		else begin
+			case(port_states[main_rr_port])
+				PORT_STATE_DATA_READY:	rd_ptr_inc[main_rr_port]	= 1;
+				PORT_STATE_HEADER:		rd_ptr_inc[main_rr_port]	= 1;
+				PORT_STATE_WORD_0:		rd_ptr_inc[main_rr_port]	= 1;
+				PORT_STATE_WORD_1:		rd_ptr_inc[main_rr_port]	= 1;
+				PORT_STATE_FWD_READY: begin
+					if(port_lens[main_rr_port] > 64)
+						rd_ptr_inc[main_rr_port]	= 1;
+				end
+				PORT_STATE_PREFETCH: begin
+					if(prefetch_wr_count < 4)
+						rd_ptr_inc[main_rr_port]	= 1;
+				end
+
+			endcase
+		end
+
+		//Calculate new read pointers
+		for(integer i=0; i<24; i++) begin
+
+			//Reset read pointer on request
+			if(rd_ptr_reset[i])
+				rd_ptr_next[i]		= 0;
+			else if(rd_ptr_inc[i])
+				rd_ptr_next[i]		= rd_ptr[i] + 1;
+			else
+				rd_ptr_next[i]		= rd_ptr[i];
+		end
+
+	end
+
 	always_ff @(posedge clk) begin
 
 		rd_en					<= 0;
@@ -319,9 +376,9 @@ module LineCardFIFOReader #(
 
 		for(integer i=0; i<24; i++) begin
 
-			//Reset read pointer on request
-			if(rd_ptr_reset[i])
-				rd_ptr[i]		<= 0;
+			//Register the calculated read pointer values
+			//TODO: explicit replication for fanout control?
+			rd_ptr[i]		<= rd_ptr_next[i];
 
 			//Check all ports in parallel for having data ready to go
 			if( (port_states[i] == PORT_STATE_IDLE) && (fifo_rd_size[i] != 0) )
@@ -409,10 +466,9 @@ module LineCardFIFOReader #(
 					else
 						fwd_bytesToRead				<= 0;
 
-					//Request a read of the data, then bump the upstream pointer
+					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
 					//Record that we have a data read pending
 					meta_wr_en						<= 1;
@@ -459,10 +515,9 @@ module LineCardFIFOReader #(
 					else
 						fwd_bytesToRead				<= 0;
 
-					//Request a read of the data, then bump the upstream pointer
+					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
 					//Record that we have a data read pending
 					meta_wr_en						<= 1;
@@ -572,10 +627,9 @@ module LineCardFIFOReader #(
 
 				if(fwd_bytesToRead > 0) begin
 
-					//Request a read of the data, then bump the upstream pointer
+					//Request a read of the data
 					rd_en							<= 1;
 					rd_addr							<= { fwd_port, fwd_ptr };
-					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
 					//Record that we have a data read pending
 					meta_wr_en						<= 1;
@@ -632,10 +686,9 @@ module LineCardFIFOReader #(
 							main_rr_port + BASE_PORT);
 					`endif
 
-					//Request a read of the header, then bump the pointer
+					//Request a read of the header
 					rd_en								<= 1;
 					rd_addr								<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]				<= rd_ptr[main_rr_port] + 1;
 					port_states[main_rr_port]			<= PORT_STATE_HEADER;
 
 					//Record that we have a header read pending so we know what to do when the response comes in
@@ -651,10 +704,9 @@ module LineCardFIFOReader #(
 				//Header read in progress
 				PORT_STATE_HEADER: begin
 
-					//Request read of the first frame word and bump the pointer
+					//Request read of the first frame word
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
 					port_states[main_rr_port]		<= PORT_STATE_WORD_0;
 
@@ -671,10 +723,9 @@ module LineCardFIFOReader #(
 				//First data word in progress
 				PORT_STATE_WORD_0: begin
 
-					//Request read of the second frame word and bump the pointer
+					//Request read of the second frame word
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
 					port_states[main_rr_port]		<= PORT_STATE_WORD_1;
 
@@ -693,10 +744,9 @@ module LineCardFIFOReader #(
 
 					prefetch_wr_count				<= 0;
 
-					//Prefetch and bump the pointer
+					//Prefetch
 					rd_en							<= 1;
 					rd_addr							<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
 					//Save metadata
 					meta_wr_en						<= 1;
@@ -717,10 +767,9 @@ module LineCardFIFOReader #(
 
 						prefetch_wr_count			<= prefetch_wr_count + 1;
 
-						//Prefetch and bump the pointer
+						//Read the data
 						rd_en						<= 1;
 						rd_addr						<= { main_rr_port, main_rr_ptr };
-						rd_ptr[main_rr_port]		<= rd_ptr[main_rr_port] + 1;
 
 						//Save metadata
 						meta_wr_en					<= 1;
@@ -744,12 +793,11 @@ module LineCardFIFOReader #(
 							main_rr_port + BASE_PORT);
 					`endif
 
-					//Request a read of the data, then bump the pointer
+					//Request a read of the data
 					//(but do skip it if we already read all the data!)
 					if(port_lens[main_rr_port] > 64) begin
 						rd_en							<= 1;
 						rd_addr							<= { main_rr_port, main_rr_ptr };
-						rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
 						fwd_bytesToRead					<= port_lens[main_rr_port] - 64;
 
