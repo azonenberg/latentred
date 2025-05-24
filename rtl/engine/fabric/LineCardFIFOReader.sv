@@ -569,18 +569,24 @@ module LineCardFIFOReader #(
 		if( (fwd_state != FWD_STATE_IDLE) && (fwd_state != FWD_STATE_TAIL) ) begin
 
 			if(fwd_state == FWD_STATE_HEADER_1) begin
-				//Request a read of the data, then bump the upstream pointer
-				rd_en							<= 1;
-				rd_addr							<= { fwd_port, fwd_ptr };
-				rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
 
-				//Record that we have a data read pending
-				meta_wr_en						<= 1;
-				meta_wdata.mtype				<= MTYPE_BODY;
-				meta_wdata.port					<= fwd_port;
+				if(fwd_bytesToRead > 0) begin
+
+					//Request a read of the data, then bump the upstream pointer
+					rd_en							<= 1;
+					rd_addr							<= { fwd_port, fwd_ptr };
+					rd_ptr[fwd_port]				<= rd_ptr[fwd_port] + 1;
+
+					//Record that we have a data read pending
+					meta_wr_en						<= 1;
+					meta_wdata.mtype				<= MTYPE_BODY;
+					meta_wdata.port					<= fwd_port;
+
+				end
 
 				//Send the next data word
 				fwd_bytesToRead					<= fwd_bytesToRead - 8;
+
 				fwd_bytesToSend					<= fwd_bytesToSend - 8;
 				axi_tx.tvalid					<= 1;
 				axi_tx.tdata					<=
@@ -739,16 +745,19 @@ module LineCardFIFOReader #(
 					`endif
 
 					//Request a read of the data, then bump the pointer
-					rd_en							<= 1;
-					rd_addr							<= { main_rr_port, main_rr_ptr };
-					rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
+					//(but do skip it if we already read all the data!)
+					if(port_lens[main_rr_port] > 64) begin
+						rd_en							<= 1;
+						rd_addr							<= { main_rr_port, main_rr_ptr };
+						rd_ptr[main_rr_port]			<= rd_ptr[main_rr_port] + 1;
 
-					fwd_bytesToRead					<= port_lens[main_rr_port] - 64;
+						fwd_bytesToRead					<= port_lens[main_rr_port] - 64;
 
-					//Record that we have a data read pending
-					meta_wr_en						<= 1;
-					meta_wdata.mtype				<= MTYPE_BODY;
-					meta_wdata.port					<= main_rr_port;
+						//Record that we have a data read pending
+						meta_wr_en						<= 1;
+						meta_wdata.mtype				<= MTYPE_BODY;
+						meta_wdata.port					<= main_rr_port;
+					end
 
 					//We've started to forward the frame, 8 bytes forwarded so far
 					fwd_state						<= FWD_STATE_HEADER_1;

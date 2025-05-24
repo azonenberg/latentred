@@ -345,7 +345,6 @@ module LineCardInputBuffering #(
 		.probe4(rd_addr),
 		.probe5(rd_data),
 		.probe6(rd_valid),
-
 		.probe7(axi_lookup.tvalid),
 		.probe8(axi_lookup.tid),
 		.probe9(axi_results.tvalid),
@@ -356,7 +355,20 @@ module LineCardInputBuffering #(
 		.probe14(tkeep_ff),
 		.probe15(tstrb_ff),
 		.probe16(tlast_ff),
-		.probe17(tdest_ff)
+		.probe17(tdest_ff),
+		.probe18(reader.port_states[0]),
+		.probe19(reader.port_vlans[0]),
+		.probe20(reader.port_src_mac[0]),
+		.probe21(reader.port_dst_mac[0]),
+		.probe22(reader.port_lens[0]),
+		.probe23(reader.meta_rdata),
+		.probe24(reader.prefetch_wr_en),
+		.probe25(reader.fwd_bytesToRead),
+		.probe26(reader.fwd_bytesToSend),
+		.probe27(reader.fifo_rd_size[0]),
+
+		//TODO
+		.probe28(reader.fwd_state)
 	);
 
 endmodule

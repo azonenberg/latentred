@@ -38,6 +38,7 @@ module SwitchFabric(
 
 	//Main system clock
 	input wire			clk_fabric,
+	input wire			clk_fabric_div2,
 
 	//Line card 0 receive data stream (PHY clock domain)
 	AXIStream.receiver	lc0_axi_rx[23:0],
@@ -56,7 +57,28 @@ module SwitchFabric(
 
 	//Interface from line card buffer to the MAC table
 	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup();
+	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup_macclk();
 	AXIStream #(.DATA_WIDTH(6), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(1)) eth_mac_results();
+	AXIStream #(.DATA_WIDTH(6), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(1)) eth_mac_results_macclk();
+
+	//CDC FIFOs
+	AXIS_CDC #(
+		.FIFO_DEPTH(64),
+		.USE_BLOCK(1)
+	) mac_lookup_cdc (
+		.axi_rx(eth_mac_lookup),
+		.tx_clk(clk_fabric_div2),
+		.axi_tx(eth_mac_lookup_macclk)
+	);
+
+	AXIS_CDC #(
+		.FIFO_DEPTH(64),
+		.USE_BLOCK(1)
+	) mac_results_cdc (
+		.axi_rx(eth_mac_results_macclk),
+		.tx_clk(clk_fabric),
+		.axi_tx(eth_mac_results)
+	);
 
 	MACAddressTable #(
 		.TABLE_ROWS(2048),
@@ -64,8 +86,8 @@ module SwitchFabric(
 		.PENDING_SIZE(8),
 		.NUM_PORTS(50)
 	) mactable (
-		.axi_lookup(eth_mac_lookup),
-		.axi_results(eth_mac_results),
+		.axi_lookup(eth_mac_lookup_macclk),
+		.axi_results(eth_mac_results_macclk),
 
 		//management interface not used
 		.gc_en(1'b0),
