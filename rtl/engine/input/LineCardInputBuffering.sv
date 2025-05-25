@@ -324,6 +324,7 @@ module LineCardInputBuffering #(
 	logic[6:0]	tdest_ff	= 0;
 	logic[11:0]	tuser_ff	= 0;
 	logic		tlast_ff	= 0;
+	logic		tready_ff	= 0;
 
 	always_ff @(posedge clk_fabric) begin
 		tvalid_ff	<= axi_tx.tvalid;
@@ -333,6 +334,7 @@ module LineCardInputBuffering #(
 		tlast_ff	<= axi_tx.tlast;
 		tdest_ff	<= axi_tx.tdest;
 		tuser_ff	<= axi_tx.tuser;
+		tready_ff	<= axi_tx.tready;
 	end
 
 	ila_2 ila(
@@ -366,9 +368,17 @@ module LineCardInputBuffering #(
 		.probe25(reader.fwd_bytesToRead),
 		.probe26(reader.fwd_bytesToSend),
 		.probe27(reader.fifo_rd_size[0]),
-
-		//TODO
-		.probe28(reader.fwd_state)
+		.probe28(reader.fwd_state),
+		.probe29(fifos[0].decoded.tvalid),
+		.probe30(fifos[0].decoded.tdata),
+		.probe31(fifos[0].decoded.tstrb),
+		.probe32(fifos[0].decoded.tlast),
+		.probe33(fifos[0].ctrl.wr_en),
+		.probe34(fifos[0].ctrl.wr_state),
+		.probe35(fifos[0].ctrl.frame_len),
+		.probe36(fifos[0].ctrl.wr_data),
+		.probe37(reader.prefetch_rd_addr),
+		.probe38(tready_ff)
 	);
 
 endmodule
