@@ -146,6 +146,9 @@ module GigabitIngressFIFO #(
 
 		//Reset pointers when the RX link flaps
 		if(!axi_rx.areset_n) begin
+			wr_en				<= 0;
+			wr_addr				<= 0;
+			wr_data				<= 0;
 			wr_ptr_committed	<= 0;
 			wr_ptr				<= 0;
 			wr_state			<= WR_IDLE;
@@ -258,9 +261,20 @@ module GigabitIngressFIFO #(
 							else begin
 								frame_vlan		<= tdest_ff;
 								wr_state		<= WR_HEADER;
-								wr_data[63:32]	<= 0;
-								wr_en			<= 1;
-								wr_addr			<= wr_ptr;
+
+								//Make sure we actually have a partial word
+								//(rather than TLAST with no content)
+								if(wr_valid > 0) begin
+									wr_data[63:32]	<= 0;
+									wr_en			<= 1;
+
+									//forward pending write enable
+									if(wr_en)
+										wr_addr		<= wr_ptr + 1;
+									else
+										wr_addr		<= wr_ptr;
+								end
+
 							end
 
 						end

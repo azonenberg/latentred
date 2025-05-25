@@ -111,6 +111,7 @@ module LineCardInputBuffering #(
 	AXIStream #(.DATA_WIDTH(32), .ID_WIDTH(0), .DEST_WIDTH(0), .USER_WIDTH(1)) axi_rx_coreclk[23:0]();
 
 	for(genvar g=0; g<24; g++) begin : incoming_cdc
+
 		AXIS_CDC #(
 			.FIFO_DEPTH(CDC_FIFO_DEPTH),
 			.USE_BLOCK(CDC_FIFO_USE_BLOCK)
@@ -378,7 +379,23 @@ module LineCardInputBuffering #(
 		.probe35(fifos[0].ctrl.frame_len),
 		.probe36(fifos[0].ctrl.wr_data),
 		.probe37(reader.prefetch_rd_addr),
-		.probe38(tready_ff)
+		.probe38(tready_ff),
+		.probe39(fifos[0].ctrl.wr_addr),
+		.probe40(fifos[0].ctrl.wr_ptr),
+
+		.probe41(axi_rx_coreclk[0].tvalid),
+		.probe42(axi_rx_coreclk[0].tready),
+		.probe43(axi_rx_coreclk[0].tlast)
+	);
+
+	ila_3 ila3(
+		.clk(axi_rx_portclk[0].aclk),
+		.probe0(axi_rx_portclk[0].tvalid),
+		.probe1(axi_rx_portclk[0].tready),
+		.probe2(axi_rx_portclk[0].tdata),
+		.probe3(axi_rx_portclk[0].tlast),
+		.probe4(axi_rx_portclk[0].tstrb),
+		.probe5(incoming_cdc[0].cdc.wr_size)
 	);
 
 endmodule
