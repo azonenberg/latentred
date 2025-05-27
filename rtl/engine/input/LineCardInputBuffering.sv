@@ -260,6 +260,9 @@ module LineCardInputBuffering #(
 	wire[12:0]	rd_ptr[23:0];
 	wire[12:0]	wr_ptr_committed[23:0];
 
+	//DEBUG
+	logic[23:0]	stuck	= 0;
+
 	for(genvar g=0; g<24; g=g+1) begin : fifos
 
 		//Decode VLAN tags
@@ -273,6 +276,20 @@ module LineCardInputBuffering #(
 			.drop_tagged(drop_tagged[g]),
 			.drop_untagged(drop_untagged[g])
 		);
+
+		//DEBUG: detect stuck state
+		//check running write length
+		logic[14:0]	running_burst_len = 0;
+		always_ff @(posedge clk_fabric) begin
+			if(decoded.tvalid)
+				running_burst_len	<= running_burst_len + 1;
+			else begin
+				running_burst_len	<= 0;
+				stuck[g]			<= 0;
+			end
+			if(running_burst_len > 380)
+				stuck[g]			<= 1;
+		end
 
 		//The actual FIFO controller
 		GigabitIngressFIFO ctrl(
@@ -326,6 +343,7 @@ module LineCardInputBuffering #(
 	logic[11:0]	tuser_ff	= 0;
 	logic		tlast_ff	= 0;
 	logic		tready_ff	= 0;
+	logic		any_stuck	= 0;
 
 	always_ff @(posedge clk_fabric) begin
 		tvalid_ff	<= axi_tx.tvalid;
@@ -336,7 +354,19 @@ module LineCardInputBuffering #(
 		tdest_ff	<= axi_tx.tdest;
 		tuser_ff	<= axi_tx.tuser;
 		tready_ff	<= axi_tx.tready;
+		any_stuck	<= (stuck != 0);
 	end
+
+	//CDC the stuck flag
+	wire		any_stuck_sync;
+	ThreeStageSynchronizer #(
+		.IN_REG(1)
+	) sync_stuck (
+		.clk_in(clk_fabric),
+		.din(any_stuck),
+		.clk_out(axi_rx_portclk[0].aclk),
+		.dout(any_stuck_sync)
+	);
 
 	ila_2 ila(
 		.clk(clk_fabric),
@@ -380,22 +410,7 @@ module LineCardInputBuffering #(
 		.probe36(fifos[0].ctrl.wr_data),
 		.probe37(reader.prefetch_rd_addr),
 		.probe38(tready_ff),
-		.probe39(fifos[0].ctrl.wr_addr),
-		.probe40(fifos[0].ctrl.wr_ptr),
-
-		.probe41(axi_rx_coreclk[0].tvalid),
-		.probe42(axi_rx_coreclk[0].tready),
-		.probe43(axi_rx_coreclk[0].tlast)
-	);
-
-	ila_3 ila3(
-		.clk(axi_rx_portclk[0].aclk),
-		.probe0(axi_rx_portclk[0].tvalid),
-		.probe1(axi_rx_portclk[0].tready),
-		.probe2(axi_rx_portclk[0].tdata),
-		.probe3(axi_rx_portclk[0].tlast),
-		.probe4(axi_rx_portclk[0].tstrb),
-		.probe5(incoming_cdc[0].cdc.wr_size)
+		.probe39(any_stuck)
 	);
 
 endmodule
