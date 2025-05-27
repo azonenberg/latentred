@@ -391,7 +391,7 @@ module LineCardInputBuffering #(
 		.probe17(tdest_ff),
 		.probe18(reader.port_states[0]),
 		.probe19(reader.port_vlan_metaport),
-		.probe20(reader.port_src_mac[0]),
+		.probe20(any_stuck),
 		.probe21(reader.port_dst_mac_metaport),
 		.probe22(reader.port_len_rdata),
 		.probe23(reader.meta_rdata),
@@ -409,8 +409,7 @@ module LineCardInputBuffering #(
 		.probe35(fifos[0].ctrl.frame_len),
 		.probe36(fifos[0].ctrl.wr_data),
 		.probe37(reader.prefetch_rd_addr),
-		.probe38(tready_ff),
-		.probe39(any_stuck)
+		.probe38(tready_ff)
 	);
 
 endmodule

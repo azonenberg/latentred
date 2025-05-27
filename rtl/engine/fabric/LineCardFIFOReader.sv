@@ -135,6 +135,9 @@ module LineCardFIFOReader #(
 
 	PendingMetadata	meta_rdata;
 
+	//Source of the packet currently being forwarded
+	logic[4:0]		fwd_port	= 0;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Per-port state tables
 
@@ -163,7 +166,10 @@ module LineCardFIFOReader #(
 	macaddr_t				port_dst_mac_replica1[23:0];
 
 	//Source MAC of the current frame
-	macaddr_t				port_src_mac[23:0];
+	logic[15:0]				port_src_mac_hi_replica0[23:0];
+	logic[15:0]				port_src_mac_hi_replica1[23:0];
+	logic[31:0]				port_src_mac_lo_replica0[23:0];
+	//logic[31:0]				port_src_mac_lo_replica1[23:0];
 
 	//First 4 payload bytes of the current frame (ethertype and two more after)
 	logic[31:0]				port_first4[23:0];
@@ -183,7 +189,10 @@ module LineCardFIFOReader #(
 			port_lens[i]				= 0;
 			port_dst_mac_replica0[i]	= 0;
 			port_dst_mac_replica1[i]	= 0;
-			port_src_mac[i]				= 0;
+			port_src_mac_hi_replica0[i]	= 0;
+			port_src_mac_hi_replica1[i]	= 0;
+			port_src_mac_lo_replica0[i]	= 0;
+			//port_src_mac_lo_replica1[i]	= 0;
 			port_first4[i]				= 0;
 			port_dst_port[i]			= 0;
 			port_dst_is_broadcast[i]	= 0;
@@ -197,29 +206,42 @@ module LineCardFIFOReader #(
 	vlan_t					port_vlan_metaport;
 	vlan_t					port_vlan_mainport;
 	logic[10:0]				port_len_rdata;
+	logic[15:0]				port_src_mac_hi_metaport;
+	logic[15:0]				port_src_mac_hi_rrport;
+	logic[31:0]				port_src_mac_lo_fwdport;
 	always_comb begin
-		port_dst_mac_metaport 	= port_dst_mac_replica0[meta_rdata.port];
-		port_dst_mac_mainport 	= port_dst_mac_replica1[main_rr_port];
+		port_dst_mac_metaport 		= port_dst_mac_replica0[meta_rdata.port];
+		port_dst_mac_mainport 		= port_dst_mac_replica1[main_rr_port];
 
-		port_vlan_metaport 		= port_vlans_replica0[meta_rdata.port];
-		port_vlan_mainport 		= port_vlans_replica1[main_rr_port];
+		port_vlan_metaport 			= port_vlans_replica0[meta_rdata.port];
+		port_vlan_mainport 			= port_vlans_replica1[main_rr_port];
 
-		port_len_rdata			= port_lens[main_rr_port];
+		port_len_rdata				= port_lens[main_rr_port];
+
+		port_src_mac_hi_metaport	= port_src_mac_hi_replica0[meta_rdata.port];
+		port_src_mac_lo_fwdport		= port_src_mac_lo_replica0[fwd_port];
+		port_src_mac_hi_rrport		= port_src_mac_hi_replica1[main_rr_port];
 	end
 
 	//Write side
 	logic		port_dst_mac_we;
 	logic		port_vlan_we;
 	logic		port_len_we;
+	logic		port_src_mac_hi_we;
+	logic		port_src_mac_lo_we;
 
 	macaddr_t	port_dst_mac_wdata;
 	vlan_t		port_vlan_wdata;
 	logic[10:0]	port_len_wdata;
+	logic[15:0]	port_src_mac_hi_wdata;
+	logic[31:0]	port_src_mac_lo_wdata;
 
 	always_comb begin
 		port_vlan_we		= rd_valid && (meta_rdata.mtype == MTYPE_HEADER);
 		port_len_we			= rd_valid && (meta_rdata.mtype == MTYPE_HEADER);
 		port_dst_mac_we		= rd_valid && (meta_rdata.mtype == MTYPE_WORD0);
+		port_src_mac_hi_we	= rd_valid && (meta_rdata.mtype == MTYPE_WORD0);
+		port_src_mac_lo_we	= rd_valid && (meta_rdata.mtype == MTYPE_WORD1);
 
 		port_dst_mac_wdata	=
 		{
@@ -231,22 +253,46 @@ module LineCardFIFOReader #(
 			rd_data[5*8 +: 8]
 		};
 
+		port_src_mac_hi_wdata =
+		{
+			rd_data[6*8 +: 8],
+			rd_data[7*8 +: 8]
+		};
+
+		port_src_mac_lo_wdata =
+		{
+			rd_data[0*8 +: 8],
+			rd_data[1*8 +: 8],
+			rd_data[2*8 +: 8],
+			rd_data[3*8 +: 8]
+		};
+
 		port_vlan_wdata		= rd_data[27:16];
 		port_len_wdata		= rd_data[10:0];
 	end
 	always_ff @(posedge clk) begin
 		if(port_dst_mac_we) begin
-			port_dst_mac_replica0[meta_rdata.port]	<= port_dst_mac_wdata;
-			port_dst_mac_replica1[meta_rdata.port]	<= port_dst_mac_wdata;
+			port_dst_mac_replica0[meta_rdata.port]		<= port_dst_mac_wdata;
+			port_dst_mac_replica1[meta_rdata.port]		<= port_dst_mac_wdata;
 		end
 
 		if(port_vlan_we) begin
-			port_vlans_replica0[meta_rdata.port]	<= port_vlan_wdata;
-			port_vlans_replica1[meta_rdata.port]	<= port_vlan_wdata;
+			port_vlans_replica0[meta_rdata.port]		<= port_vlan_wdata;
+			port_vlans_replica1[meta_rdata.port]		<= port_vlan_wdata;
 		end
 
 		if(port_len_we)
-			port_lens[meta_rdata.port]				<= port_len_wdata;
+			port_lens[meta_rdata.port]					<= port_len_wdata;
+
+		if(port_src_mac_hi_we) begin
+			port_src_mac_hi_replica0[meta_rdata.port]	<= port_src_mac_hi_wdata;
+			port_src_mac_hi_replica1[meta_rdata.port]	<= port_src_mac_hi_wdata;
+		end
+
+		if(port_src_mac_lo_we) begin
+			port_src_mac_lo_replica0[meta_rdata.port]	<= port_src_mac_lo_wdata;
+			//port_src_mac_lo_replica1[meta_rdata.port]	<= port_src_mac_lo_wdata;
+		end
 
 	end
 
@@ -312,8 +358,6 @@ module LineCardFIFOReader #(
 	logic[2:0]		prefetch_wr_count_ff4	= 0;
 	logic[2:0]		prefetch_wr_count_ff5	= 0;
 	logic[2:0]		prefetch_wr_count_ff6	= 0;
-
-	logic[4:0]		fwd_port				= 0;
 
 	logic			prefetch_wr_en;
 	logic[7:0]		prefetch_wr_addr;
@@ -570,33 +614,17 @@ module LineCardFIFOReader #(
 			//Figure out why we read it
 			case(meta_rdata.mtype)
 
-				//It's a header
+				//nothing to do, handled in memory write block
 				MTYPE_HEADER: begin
-					//nothing to do, handled in memory write block
 				end //MTYPE_HEADER
 
-				//It's the first packet word
 				MTYPE_WORD0: begin
-					port_src_mac[meta_rdata.port][47:32]	<=
-					{
-						rd_data[6*8 +: 8],
-						rd_data[7*8 +: 8]
-					};
-
 				end //MTYPE_WORD0
 
 				//Second packet word
 				MTYPE_WORD1: begin
 
 					//Save the remaining headers
-					port_src_mac[meta_rdata.port][31:0]	<=
-					{
-						rd_data[0*8 +: 8],
-						rd_data[1*8 +: 8],
-						rd_data[2*8 +: 8],
-						rd_data[3*8 +: 8]
-					};
-
 					port_first4[meta_rdata.port]		<=
 					{
 						rd_data[4*8 +: 8],
@@ -617,12 +645,9 @@ module LineCardFIFOReader #(
 						meta_rdata.port + BASE_PORT,
 						port_vlan_metaport,
 
-						//src mac
-						port_src_mac[meta_rdata.port][47:32],
-						rd_data[0*8 +: 8],
-						rd_data[1*8 +: 8],
-						rd_data[2*8 +: 8],
-						rd_data[3*8 +: 8],
+						//src mac comes in two chunks
+						port_src_mac_hi_metaport,
+						port_src_mac_lo_wdata,
 
 						port_dst_mac_metaport
 					};
@@ -664,10 +689,10 @@ module LineCardFIFOReader #(
 					port_first4[fwd_port][1*8 +: 8],
 					port_first4[fwd_port][2*8 +: 8],
 					port_first4[fwd_port][3*8 +: 8],
-					port_src_mac[fwd_port][0*8 +: 8],
-					port_src_mac[fwd_port][1*8 +: 8],
-					port_src_mac[fwd_port][2*8 +: 8],
-					port_src_mac[fwd_port][3*8 +: 8]
+					port_src_mac_lo_fwdport[0*8 +: 8],
+					port_src_mac_lo_fwdport[1*8 +: 8],
+					port_src_mac_lo_fwdport[2*8 +: 8],
+					port_src_mac_lo_fwdport[3*8 +: 8]
 				};
 				axi_tx.tstrb					<= 8'hff;
 				axi_tx.tkeep					<= 8'hff;
@@ -809,8 +834,8 @@ module LineCardFIFOReader #(
 					axi_tx.tvalid					<= 1;
 					axi_tx.tdata					<=
 					{
-						port_src_mac[main_rr_port][4*8 +: 8],
-						port_src_mac[main_rr_port][5*8 +: 8],
+						port_src_mac_hi_rrport[0*8 +: 8],
+						port_src_mac_hi_rrport[1*8 +: 8],
 						port_dst_mac_mainport[0*8 +: 8],
 						port_dst_mac_mainport[1*8 +: 8],
 						port_dst_mac_mainport[2*8 +: 8],
