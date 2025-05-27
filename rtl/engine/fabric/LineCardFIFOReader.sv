@@ -522,7 +522,7 @@ module LineCardFIFOReader #(
 			end
 
 			//Done reading? Move to tail unless this was a min-sized frame with no tail needed after prefetch
-			else if(fwd_bytesToSend > 0)
+			else if(fwd_bytesToSend > 8)
 				fwd_state						<= FWD_STATE_TAIL;
 
 		end
