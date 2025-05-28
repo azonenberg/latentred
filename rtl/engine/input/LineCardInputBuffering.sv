@@ -74,7 +74,8 @@ module LineCardInputBuffering #(
 	AXIStream.receiver			axi_rx_portclk[23:0],
 
 	//Outbound data stream to crossbar (64-bit AXI4-Stream)
-	AXIStream.transmitter		axi_tx
+	AXIStream.transmitter		axi_tx,
+	input wire[9:0]				xbar_fifo_wsize
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -310,6 +311,11 @@ module LineCardInputBuffering #(
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Reading and routing logic
 
+	//Only allow forwarding frames when the crossbar FIFO has at least one MTU worth of capacity
+	//(1512 bytes including headers but no VLAN tag or FCS = 189 64-bit words)
+	wire xbar_ready;
+	assign xbar_ready	= (xbar_fifo_wsize > 189);
+
 	LineCardFIFOReader #(
 		.BASE_PORT(BASE_PORT),
 		.XBAR_PORT(XBAR_PORT)
@@ -328,7 +334,8 @@ module LineCardInputBuffering #(
 		.axi_lookup(axi_lookup),
 		.axi_results(axi_results),
 
-		.axi_tx(axi_tx)
+		.axi_tx(axi_tx),
+		.xbar_ready(xbar_ready)
 	);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

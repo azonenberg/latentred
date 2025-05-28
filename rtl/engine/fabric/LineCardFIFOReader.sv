@@ -65,7 +65,8 @@ module LineCardFIFOReader #(
 	AXIStream.receiver			axi_results,
 
 	//AXI interface to core crossbar
-	AXIStream.transmitter		axi_tx
+	AXIStream.transmitter		axi_tx,
+	input wire					xbar_ready
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -418,16 +419,15 @@ module LineCardFIFOReader #(
 	logic			canStartForwarding;
 	always_comb begin
 
-		//TODO: only proceed if fabric is ready to take a frame?
 		canStartForwarding = 0;
 
 		//Only proceed if previous frame isn't being actively forwarded
 		if(fwd_state == FWD_STATE_IDLE)
-			canStartForwarding = 1;
+			canStartForwarding = xbar_ready;
 
 		//or it's ending this cycle
 		if( (fwd_state == FWD_STATE_TAIL) && (fwd_bytesToSend <= 8) )
-			canStartForwarding = 1;
+			canStartForwarding = xbar_ready;
 
 	end
 

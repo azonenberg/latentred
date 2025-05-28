@@ -109,6 +109,7 @@ module SwitchFabric(
 
 	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) lc0_xbar_in();
 
+	//Main buffer block
 	LineCardInputBuffering #(
 		.CDC_FIFO_DEPTH(256),
 		.CDC_FIFO_USE_BLOCK(1),
@@ -126,6 +127,9 @@ module SwitchFabric(
 		.axi_rx_portclk(lc0_axi_rx),
 		.axi_tx(lc0_xbar_in)
 	);
+
+	//Small FIFO between input buffer and crossbar
+	//(because input buffer can't handle backpressure mid-packet)
 
 	//DEBUG: accept traffic leaving the input buffer
 	assign lc0_xbar_in.tready = 1;

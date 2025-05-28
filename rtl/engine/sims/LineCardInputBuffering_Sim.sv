@@ -104,7 +104,7 @@ module LineCardInputBuffering_Sim();
 
 	//Data to the crossbar
 	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) eth_tx_data();
-
+	wire[9:0]	xbar_fifo_wsize;
 	LineCardInputBuffering #(
 		.BASE_PORT(0),
 		.XBAR_PORT(0)
@@ -119,7 +119,8 @@ module LineCardInputBuffering_Sim();
 		.axi_results(eth_mac_results),
 
 		.axi_rx_portclk(eth_rx_data),
-		.axi_tx(eth_tx_data)
+		.axi_tx(eth_tx_data),
+		.xbar_fifo_wsize(xbar_fifo_wsize)
 	);
 
 	MACAddressTable #(
@@ -146,6 +147,17 @@ module LineCardInputBuffering_Sim();
 		.mgmt_rd_port()
 	);
 
+	//Output FIFO (single BRAM)
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) fifo_tx_data();
+	AXIS_FIFO #(
+		.FIFO_DEPTH(512),
+		.USE_BLOCK(1)
+	) outfifo (
+		.axi_rx(eth_tx_data),
+		.axi_tx(fifo_tx_data),
+		.wr_size(xbar_fifo_wsize)
+	);
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Testbench
 
@@ -158,13 +170,14 @@ module LineCardInputBuffering_Sim();
 			drop_untagged[i]	= 0;
 		end
 
-		eth_tx_data.tready	= 1;
+		fifo_tx_data.tready	= 0;
 	end
+
+	logic[7:0] count = 0;
 
 	always_ff @(posedge clk) begin
 
 		next				<= 0;
-		eth_tx_data.tready	<= 1;
 
 		case(state)
 
@@ -179,6 +192,23 @@ module LineCardInputBuffering_Sim();
 				if(eth_rx_data[1].tlast) begin
 					next[2]	<= 1;
 					state	<= 2;
+				end
+			end
+
+			//wait until second frame is buffered etc
+			2: begin
+				if(eth_rx_data[2].tlast) begin
+					state	<= 3;
+					count	<= 0;
+				end
+			end
+
+			//ungate fabric
+			3: begin
+				count	<= count + 1;
+				if(count == 31) begin
+					state				<= 4;
+					fifo_tx_data.tready	<= 1;
 				end
 			end
 
