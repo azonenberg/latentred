@@ -147,13 +147,20 @@ module LineCardInputBuffering_Sim();
 		.mgmt_rd_port()
 	);
 
+	//Combinatorial decoding of TDEST
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(11), .USER_WIDTH(12)) decode_tx_data();
+	LineCardDestinationDecoder decoder(
+		.axi_rx(eth_tx_data),
+		.axi_tx(decode_tx_data)
+	);
+
 	//Output FIFO (single BRAM)
-	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) fifo_tx_data();
+	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(11), .USER_WIDTH(12)) fifo_tx_data();
 	AXIS_FIFO #(
 		.FIFO_DEPTH(512),
 		.USE_BLOCK(1)
 	) outfifo (
-		.axi_rx(eth_tx_data),
+		.axi_rx(decode_tx_data),
 		.axi_tx(fifo_tx_data),
 		.wr_size(xbar_fifo_wsize)
 	);

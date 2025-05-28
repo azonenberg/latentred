@@ -29,121 +29,107 @@
 *                                                                                                                      *
 ***********************************************************************************************************************/
 
-import EthernetBus::*;
-
 /**
-	@brief Top level module for the actual switch fabric
+	@file
+	@author Andrew D. Zonenberg
+	@brief Port index decoder for LATENTRED
+
+	Input stream
+		TUSER is VLAN
+		TDEST is
+			[6] 	broadcast flag
+			[5:0]	dest port
+
+	Output stream
+		TUSER is VLAN
+		TDEST is
+			[10]	broadcast flag
+			[9:4]	dest switch port
+			[3:0]	dest crossbar port bitmask
  */
-module SwitchFabric(
-
-	//Main system clock
-	input wire			clk_fabric,
-	input wire			clk_fabric_div2,
-
-	//Line card 0 receive data stream (PHY clock domain)
-	AXIStream.receiver	lc0_axi_rx[23:0],
-
-	//Line card configuration
-	input wire vlan_t	lc0_port_vlan[23:0],
-	input wire			lc0_port_drop_tagged[23:0],
-	input wire			lc0_port_drop_untagged[23:0]
+module LineCardDestinationDecoder (
+	AXIStream.receiver			axi_rx,
+	AXIStream.transmitter		axi_tx
 );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// MAC address table
+	// Validate buses are the same size
 
-	//TODO: convert to APB
-	//TODO: arbitration for multiple sources
-
-	//Interface from line card buffer to the MAC table
-	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup();
-	AXIStream #(.DATA_WIDTH(114), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(0)) eth_mac_lookup_macclk();
-	AXIStream #(.DATA_WIDTH(6), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(1)) eth_mac_results();
-	AXIStream #(.DATA_WIDTH(6), .ID_WIDTH(5), .DEST_WIDTH(2), .USER_WIDTH(1)) eth_mac_results_macclk();
-
-	//CDC FIFOs
-	AXIS_CDC #(
-		.FIFO_DEPTH(64),
-		.USE_BLOCK(1)
-	) mac_lookup_cdc (
-		.axi_rx(eth_mac_lookup),
-		.tx_clk(clk_fabric_div2),
-		.axi_tx(eth_mac_lookup_macclk)
-	);
-
-	AXIS_CDC #(
-		.FIFO_DEPTH(64),
-		.USE_BLOCK(1)
-	) mac_results_cdc (
-		.axi_rx(eth_mac_results_macclk),
-		.tx_clk(clk_fabric),
-		.axi_tx(eth_mac_results)
-	);
-
-	MACAddressTable #(
-		.TABLE_ROWS(2048),
-		.ASSOC_WAYS(8),
-		.PENDING_SIZE(8),
-		.NUM_PORTS(50)
-	) mactable (
-		.axi_lookup(eth_mac_lookup_macclk),
-		.axi_results(eth_mac_results_macclk),
-
-		//management interface not used
-		.gc_en(1'b0),
-		.gc_done(),
-		.mgmt_rd_en(1'b0),
-		.mgmt_del_en(1'b0),
-		.mgmt_ack(),
-		.mgmt_addr(11'h0),
-		.mgmt_way(),
-		.mgmt_rd_valid(),
-		.mgmt_rd_gc_mark(),
-		.mgmt_rd_mac(),
-		.mgmt_rd_vlan(),
-		.mgmt_rd_port()
-	);
+	if(axi_rx.DATA_WIDTH != axi_tx.DATA_WIDTH)
+		axi_bus_width_inconsistent();
+	if(axi_rx.USER_WIDTH != axi_tx.USER_WIDTH)
+		axi_bus_width_inconsistent();
+	if(axi_rx.ID_WIDTH != axi_tx.ID_WIDTH)
+		axi_bus_width_inconsistent();
+	if(axi_rx.DEST_WIDTH != 7)
+		axi_bus_width_inconsistent();
+	if(axi_tx.DEST_WIDTH != 11)
+		axi_bus_width_inconsistent();
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Input buffers
+	// Pass-through on control signals
 
-	AXIStream #(.DATA_WIDTH(64), .ID_WIDTH(0), .DEST_WIDTH(7), .USER_WIDTH(12)) lc0_xbar_in();
-
-	//Main buffer block
-	LineCardInputBuffering #(
-		.CDC_FIFO_DEPTH(256),
-		.CDC_FIFO_USE_BLOCK(1),
-		.MATRIX_ID("LINECARD0")
-	) lc0_rx_bufs (
-		.clk_fabric(clk_fabric),
-
-		.port_vlan(lc0_port_vlan),
-		.drop_tagged(lc0_port_drop_tagged),
-		.drop_untagged(lc0_port_drop_untagged),
-
-		.axi_lookup(eth_mac_lookup),
-		.axi_results(eth_mac_results),
-
-		.axi_rx_portclk(lc0_axi_rx),
-		.axi_tx(lc0_xbar_in)
-	);
-
-	//Decode TDEST from switch port indexes and broadcast flag out to crossbar bitmask
-
-	//Small FIFO between input buffer and crossbar
-	//(because input buffer can't handle backpressure mid-packet)
-
-	//DEBUG: accept traffic leaving the input buffer
-	assign lc0_xbar_in.tready = 1;
-
-	//TODO: other line cards
-
-	//TODO: uplinks
+	assign axi_tx.aclk		= axi_rx.aclk;
+	assign axi_tx.twakeup	= axi_rx.twakeup;
+	assign axi_tx.areset_n	= axi_rx.areset_n;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// The actual crossbar
+	// Pass-through on data lines
+
+	assign axi_tx.tvalid	= axi_rx.tvalid;
+	assign axi_tx.tdata		= axi_rx.tdata;
+	assign axi_tx.tlast		= axi_rx.tlast;
+	assign axi_tx.tstrb		= axi_rx.tstrb;
+	assign axi_tx.tkeep		= axi_rx.tkeep;
+	assign axi_tx.tid		= axi_rx.tid;
+	assign axi_tx.tuser		= axi_rx.tuser;
+
+	assign axi_rx.tready	= axi_tx.tready;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Exit queues
+	// Decode TDEST
+
+	logic		is_broadcast;
+	logic[5:0]	dest_port;
+
+	always_comb begin
+
+		//Crack input fields
+		is_broadcast			= axi_rx.tdest[6];
+		dest_port				= axi_rx.tdest[5:0];
+
+		//Mirror output fields
+		axi_tx.tdest[10]		= is_broadcast;
+		axi_tx.tdest[9:4]		= dest_port;
+
+		//If broadcast, send to all ports
+		if(is_broadcast)
+			axi_tx.tdest[3:0]	= 4'b1111;
+
+		//Unicast, decode each port individually
+		else begin
+
+			//Default to no output bits set
+			axi_tx.tdest[3:0]		= 0;
+
+			//First line card
+			if(dest_port < 24)
+				axi_tx.tdest[0]		= 1;
+
+			//Second line card
+			if( (dest_port >= 24) && (dest_port < 48) )
+				axi_tx.tdest[1]		= 1;
+
+			//First uplink
+			if(dest_port == 48)
+				axi_tx.tdest[2]		= 1;
+
+			//Second uplink
+			if(dest_port == 49)
+				axi_tx.tdest[3]		= 1;
+
+		end
+
+	end
 
 endmodule
