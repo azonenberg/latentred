@@ -414,6 +414,23 @@ module LineCardFIFOReader #(
 		FWD_STATE_TAIL				= 4
 	} fwd_state = FWD_STATE_IDLE;
 
+	//Figure out if we are available to begin forwarding a frame this cycle
+	logic			canStartForwarding;
+	always_comb begin
+
+		//TODO: only proceed if fabric is ready to take a frame?
+		canStartForwarding = 0;
+
+		//Only proceed if previous frame isn't being actively forwarded
+		if(fwd_state == FWD_STATE_IDLE)
+			canStartForwarding = 1;
+
+		//or it's ending this cycle
+		if( (fwd_state == FWD_STATE_TAIL) && (fwd_bytesToSend <= 8) )
+			canStartForwarding = 1;
+
+	end
+
 	//Combinatorially decide to increment read pointer
 	logic[12:0]		rd_ptr_next[23:0];
 	logic			rd_ptr_inc[23:0];
@@ -444,7 +461,7 @@ module LineCardFIFOReader #(
 				PORT_STATE_WORD_0:		rd_ptr_inc[main_rr_port]	= 1;
 				PORT_STATE_WORD_1:		rd_ptr_inc[main_rr_port]	= 1;
 				PORT_STATE_FWD_READY: begin
-					if(port_len_rdata > 64)
+					if( (port_len_rdata > 64) && canStartForwarding )
 						rd_ptr_inc[main_rr_port]	= 1;
 				end
 				PORT_STATE_PREFETCH: begin
@@ -804,53 +821,54 @@ module LineCardFIFOReader #(
 
 				PORT_STATE_FWD_READY: begin
 
-					//TODO: only proceed if fabric is ready to take a frame?
+					if(canStartForwarding) begin
 
-					`ifdef SIMULATION
-						$display("[%t] Starting forward of frame from interface %d",
-							$realtime(),
-							main_rr_port + BASE_PORT);
-					`endif
+						`ifdef SIMULATION
+							$display("[%t] Starting forward of frame from interface %d",
+								$realtime(),
+								main_rr_port + BASE_PORT);
+						`endif
 
-					//Request a read of the data (56 bytes read previously by header/prefetch, 8 this cycle)
-					//Ethernet minimum frame size is 64 bytes so we'll always need to read this much
-					rd_en							<= 1;
-					rd_addr							<= { main_rr_port, main_rr_ptr };
-					meta_wdata.mtype				<= MTYPE_BODY;
-					if(port_len_rdata > 64)
-						fwd_bytesToRead				<= port_len_rdata - 64;
-					else
-						fwd_bytesToRead				<= 0;
+						//Request a read of the data (56 bytes read previously by header/prefetch, 8 this cycle)
+						//Ethernet minimum frame size is 64 bytes so we'll always need to read this much
+						rd_en							<= 1;
+						rd_addr							<= { main_rr_port, main_rr_ptr };
+						meta_wdata.mtype				<= MTYPE_BODY;
+						if(port_len_rdata > 64)
+							fwd_bytesToRead				<= port_len_rdata - 64;
+						else
+							fwd_bytesToRead				<= 0;
 
-					//We've started to forward the frame, 8 bytes forwarded so far
-					fwd_state						<= FWD_STATE_HEADER_1;
-					fwd_bytesToSend					<= port_len_rdata - 8;
-					port_states[main_rr_port]		<= PORT_STATE_FORWARDING;
+						//We've started to forward the frame, 8 bytes forwarded so far
+						fwd_state						<= FWD_STATE_HEADER_1;
+						fwd_bytesToSend					<= port_len_rdata - 8;
+						port_states[main_rr_port]		<= PORT_STATE_FORWARDING;
 
-					//Save the port number
-					fwd_port						<= main_rr_port;
+						//Save the port number
+						fwd_port						<= main_rr_port;
 
-					//Start sending previously-read data out the AXI bus
-					axi_tx.tvalid					<= 1;
-					axi_tx.tdata					<=
-					{
-						port_src_mac_hi_rrport[0*8 +: 8],
-						port_src_mac_hi_rrport[1*8 +: 8],
-						port_dst_mac_mainport[0*8 +: 8],
-						port_dst_mac_mainport[1*8 +: 8],
-						port_dst_mac_mainport[2*8 +: 8],
-						port_dst_mac_mainport[3*8 +: 8],
-						port_dst_mac_mainport[4*8 +: 8],
-						port_dst_mac_mainport[5*8 +: 8]
-					};
-					axi_tx.tstrb					<= 8'hff;
-					axi_tx.tkeep					<= 8'hff;
-					axi_tx.tuser					<= port_vlan_mainport;
-					axi_tx.tdest					<=
-					{
-						port_dst_is_broadcast[main_rr_port],
-						port_dst_port[main_rr_port]
-					};
+						//Start sending previously-read data out the AXI bus
+						axi_tx.tvalid					<= 1;
+						axi_tx.tdata					<=
+						{
+							port_src_mac_hi_rrport[0*8 +: 8],
+							port_src_mac_hi_rrport[1*8 +: 8],
+							port_dst_mac_mainport[0*8 +: 8],
+							port_dst_mac_mainport[1*8 +: 8],
+							port_dst_mac_mainport[2*8 +: 8],
+							port_dst_mac_mainport[3*8 +: 8],
+							port_dst_mac_mainport[4*8 +: 8],
+							port_dst_mac_mainport[5*8 +: 8]
+						};
+						axi_tx.tstrb					<= 8'hff;
+						axi_tx.tkeep					<= 8'hff;
+						axi_tx.tuser					<= port_vlan_mainport;
+						axi_tx.tdest					<=
+						{
+							port_dst_is_broadcast[main_rr_port],
+							port_dst_port[main_rr_port]
+						};
+					end
 
 				end
 
