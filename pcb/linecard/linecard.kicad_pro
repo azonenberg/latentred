@@ -503,7 +503,7 @@
       "plot": "output/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../mechanical/board-models/linecard.step",
       "svg": "",
       "vrml": ""
     },
