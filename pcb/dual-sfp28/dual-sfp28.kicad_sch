@@ -4,6 +4,13 @@
 	(generator_version "8.0")
 	(uuid "7ea945ed-5ba9-4bc9-b496-b6629c8655ec")
 	(paper "A3")
+	(title_block
+		(title "Dual SFP28 to ARF6/PicoBlade")
+		(date "2025-05-31")
+		(rev "0.1")
+		(company "Antikernel Labs")
+		(comment 1 "Andrew D. Zonenberg")
+	)
 	(lib_symbols
 		(symbol "conn:CONN_01X01"
 			(pin_names
@@ -3333,6 +3340,10 @@
 		(uuid "01a81cb2-6fee-4599-b52f-88da5d01d73f")
 	)
 	(no_connect
+		(at 39.37 167.64)
+		(uuid "2300cf21-fb18-49c9-8f8d-b3fdfa3df5c1")
+	)
+	(no_connect
 		(at 41.91 91.44)
 		(uuid "3f415a0f-df94-492a-8a99-328798f71738")
 	)
@@ -3349,52 +3360,58 @@
 		(uuid "60e815b0-10da-490a-8573-e4ed856557f3")
 	)
 	(no_connect
-		(at 39.37 124.46)
-		(uuid "60f59bdc-fa43-4b64-b08a-3916ffb8c525")
-	)
-	(no_connect
-		(at 39.37 154.94)
-		(uuid "65e905b5-9eff-4ea2-a6b9-a0f71a325b19")
-	)
-	(no_connect
 		(at 67.31 91.44)
 		(uuid "767a1a63-4141-46f3-8df3-22ec20dcd51a")
 	)
 	(no_connect
-		(at 39.37 177.8)
-		(uuid "895c296b-b633-4ddf-8f93-8c81a567508f")
+		(at 39.37 162.56)
+		(uuid "8f673164-8e66-4100-9d52-79c778a55a76")
 	)
 	(no_connect
 		(at 67.31 93.98)
 		(uuid "90f5aee7-518a-4f88-9bf0-a7bbc00a2ec2")
 	)
 	(no_connect
-		(at 39.37 129.54)
-		(uuid "9a6e9a99-0329-4581-8542-b571492ee081")
-	)
-	(no_connect
 		(at 67.31 99.06)
 		(uuid "9b769341-cdad-4670-8890-4f96995a5d67")
-	)
-	(no_connect
-		(at 39.37 132.08)
-		(uuid "a084091b-6e76-47bb-af45-a48c9e6fc6ec")
 	)
 	(no_connect
 		(at 41.91 99.06)
 		(uuid "a30aac07-d791-4333-94b9-ec122c568721")
 	)
 	(no_connect
-		(at 39.37 127)
-		(uuid "a875e313-028d-49a8-877a-1cb6923ad1d8")
-	)
-	(no_connect
 		(at 41.91 101.6)
 		(uuid "bfe88365-9ea9-491f-a01a-1a2c418b3f66")
 	)
 	(no_connect
+		(at 39.37 170.18)
+		(uuid "d0615e5f-0734-4543-97c7-fe4d1b62649d")
+	)
+	(no_connect
+		(at 39.37 177.8)
+		(uuid "ee02b7dd-ffca-4497-80b9-d502a95f43b1")
+	)
+	(no_connect
+		(at 39.37 165.1)
+		(uuid "ee472d97-b9f1-4342-a333-fc6c42936f50")
+	)
+	(no_connect
 		(at 39.37 152.4)
 		(uuid "f79cb4fb-a01d-4691-a02f-f9724542267e")
+	)
+	(no_connect
+		(at 39.37 172.72)
+		(uuid "f867f2f6-98c2-40a2-9902-2efb6dd877e9")
+	)
+	(wire
+		(pts
+			(xy 30.48 127) (xy 39.37 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00614ea5-e3dc-48e4-af03-3f6b2682b29b")
 	)
 	(wire
 		(pts
@@ -3415,16 +3432,6 @@
 			(type default)
 		)
 		(uuid "028ca4c5-c047-458b-ba0b-18c6f10c731d")
-	)
-	(wire
-		(pts
-			(xy 38.1 167.64) (xy 39.37 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02c43557-e094-41ab-8222-991c32f34309")
 	)
 	(wire
 		(pts
@@ -3648,6 +3655,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 124.46) (xy 39.37 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7164d128-9b14-4b2c-ad67-65532f0928c6")
+	)
+	(wire
+		(pts
 			(xy 52.07 215.9) (xy 54.61 215.9)
 		)
 		(stroke
@@ -3838,7 +3855,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 144.78) (xy 39.37 144.78)
+			(xy 38.1 149.86) (xy 39.37 149.86)
 		)
 		(stroke
 			(width 0)
@@ -3898,6 +3915,16 @@
 	)
 	(wire
 		(pts
+			(xy 38.1 129.54) (xy 39.37 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b73a11d4-1af6-49bb-b2ac-2aca1341326a")
+	)
+	(wire
+		(pts
 			(xy 121.92 218.44) (xy 124.46 218.44)
 		)
 		(stroke
@@ -3918,7 +3945,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 142.24) (xy 39.37 142.24)
+			(xy 38.1 154.94) (xy 39.37 154.94)
 		)
 		(stroke
 			(width 0)
@@ -3935,16 +3962,6 @@
 			(type default)
 		)
 		(uuid "c35676a8-6c48-4306-8fc0-395b549dd849")
-	)
-	(wire
-		(pts
-			(xy 30.48 170.18) (xy 39.37 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3e32ba6-7936-4f5e-b523-96f5c5218260")
 	)
 	(wire
 		(pts
@@ -4038,16 +4055,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 165.1) (xy 39.37 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb80b9ce-4c1e-45e2-b07f-c5d190c2f614")
-	)
-	(wire
-		(pts
 			(xy 151.13 218.44) (xy 162.56 218.44)
 		)
 		(stroke
@@ -4055,6 +4062,16 @@
 			(type default)
 		)
 		(uuid "fbddc6cf-8d71-4b82-b0d5-7d593256916b")
+	)
+	(wire
+		(pts
+			(xy 30.48 132.08) (xy 39.37 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fefd9705-db0f-4c17-b278-cf83b3dea08a")
 	)
 	(wire
 		(pts
@@ -4111,7 +4128,7 @@
 		(uuid "050a9c40-9809-45a4-a7a8-d187fdab269b")
 	)
 	(label "SFP0_RX_LOS"
-		(at 39.37 149.86 180)
+		(at 39.37 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4199,7 +4216,7 @@
 		(uuid "15bf57d5-23a4-44a7-943d-1b662c849381")
 	)
 	(label "SFP1_RX_LOS"
-		(at 39.37 172.72 180)
+		(at 30.48 127 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4408,7 +4425,7 @@
 		(uuid "376ef732-54d7-4672-9721-07a9431b17fc")
 	)
 	(label "SFP1_MOD_ABS"
-		(at 30.48 170.18 180)
+		(at 30.48 132.08 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4441,7 +4458,7 @@
 		(uuid "3b8ee589-710f-4ffa-8d2f-238dc355d0f7")
 	)
 	(label "LED2_P"
-		(at 39.37 119.38 180)
+		(at 39.37 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4639,7 +4656,7 @@
 		(uuid "68c2e4ad-23d7-4d4e-a5bb-ed8fd7cdd6c1")
 	)
 	(label "SFP0_RS0"
-		(at 30.48 142.24 180)
+		(at 30.48 154.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4694,7 +4711,7 @@
 		(uuid "74688d70-ca60-4185-93c1-dcaabe9fb779")
 	)
 	(label "SFP0_TX_DISABLE"
-		(at 39.37 139.7 180)
+		(at 39.37 121.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4716,7 +4733,7 @@
 		(uuid "7f01db68-3b65-464f-8766-2bedf82fe5fb")
 	)
 	(label "SFP1_RS0"
-		(at 30.48 165.1 180)
+		(at 30.48 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4881,7 +4898,7 @@
 		(uuid "933abaa1-760e-4d59-bea9-db8f05d6193e")
 	)
 	(label "SFP0_RS1"
-		(at 30.48 144.78 180)
+		(at 30.48 149.86 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4892,7 +4909,7 @@
 		(uuid "96d02815-ff74-4727-9045-46875c8e1b65")
 	)
 	(label "SFP1_TX_FAULT"
-		(at 39.37 160.02 180)
+		(at 39.37 144.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5035,7 +5052,7 @@
 		(uuid "bca24744-5e5f-4ae7-bf4a-fd7469a51db5")
 	)
 	(label "SFP1_RS1"
-		(at 30.48 167.64 180)
+		(at 30.48 124.46 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5046,7 +5063,7 @@
 		(uuid "c6722105-76df-4776-8724-b5df58475a0c")
 	)
 	(label "SFP0_TX_FAULT"
-		(at 39.37 137.16 180)
+		(at 39.37 119.38 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5112,7 +5129,7 @@
 		(uuid "de715d98-fa96-437d-8ef4-bd2384416fa1")
 	)
 	(label "SFP1_TX_DISABLE"
-		(at 39.37 162.56 180)
+		(at 39.37 142.24 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5145,7 +5162,7 @@
 		(uuid "e166f8a7-bd18-42ce-ba11-9594df287480")
 	)
 	(label "LED3_P"
-		(at 39.37 121.92 180)
+		(at 39.37 137.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6004,7 +6021,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 34.29 167.64 90)
+		(at 34.29 124.46 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6012,7 +6029,7 @@
 		(dnp no)
 		(uuid "2fe598b5-a009-4a6d-b5bb-60f0bd80f953")
 		(property "Reference" "R11"
-			(at 38.1 166.37 90)
+			(at 38.1 123.19 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6020,7 +6037,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 34.29 167.64 90)
+			(at 34.29 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6028,7 +6045,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 34.29 169.418 90)
+			(at 34.29 126.238 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6037,7 +6054,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 167.64 0)
+			(at 34.29 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6046,7 +6063,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 34.29 167.64 0)
+			(at 34.29 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7069,7 +7086,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 34.29 165.1 90)
+		(at 34.29 129.54 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7077,7 +7094,7 @@
 		(dnp no)
 		(uuid "7375c8f7-34be-4e11-a194-da0303bae69b")
 		(property "Reference" "R10"
-			(at 38.1 163.83 90)
+			(at 38.1 128.27 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7085,7 +7102,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 34.29 165.1 90)
+			(at 34.29 129.54 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7093,7 +7110,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 34.29 166.878 90)
+			(at 34.29 131.318 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7102,7 +7119,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 165.1 0)
+			(at 34.29 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7111,7 +7128,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 34.29 165.1 0)
+			(at 34.29 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8846,7 +8863,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 34.29 144.78 90)
+		(at 34.29 149.86 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8854,7 +8871,7 @@
 		(dnp no)
 		(uuid "d271e216-3117-4f6f-8b07-057a6fa6652d")
 		(property "Reference" "R7"
-			(at 38.1 143.51 90)
+			(at 38.1 148.59 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8862,7 +8879,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 34.29 144.78 90)
+			(at 34.29 149.86 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8870,7 +8887,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 34.29 146.558 90)
+			(at 34.29 151.638 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8879,7 +8896,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 144.78 0)
+			(at 34.29 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8888,7 +8905,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 34.29 144.78 0)
+			(at 34.29 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9048,7 +9065,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 34.29 142.24 90)
+		(at 34.29 154.94 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9056,7 +9073,7 @@
 		(dnp no)
 		(uuid "e7810908-b5a9-41f5-a013-b4c18fcbb2a8")
 		(property "Reference" "R6"
-			(at 38.1 140.97 90)
+			(at 38.1 153.67 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9064,7 +9081,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 34.29 142.24 90)
+			(at 34.29 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9072,7 +9089,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 34.29 144.018 90)
+			(at 34.29 156.718 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9081,7 +9098,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 142.24 0)
+			(at 34.29 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9090,7 +9107,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 34.29 142.24 0)
+			(at 34.29 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
