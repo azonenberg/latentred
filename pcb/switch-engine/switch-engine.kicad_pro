@@ -406,6 +406,14 @@
     [
       "15f4f4ac-4994-41bd-acdb-25a94e84fa2c",
       "SFP28 interfaces"
+    ],
+    [
+      "e87a4021-4ab4-458d-9a9b-ec7360f04365",
+      "RGMII PHY"
+    ],
+    [
+      "5d67cbb7-84e5-4db2-ab19-574eade6a082",
+      "Unused HPIO banks"
     ]
   ],
   "text_variables": {}

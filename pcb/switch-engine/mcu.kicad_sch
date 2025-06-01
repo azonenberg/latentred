@@ -22031,6 +22031,17 @@
 		)
 		(uuid "fab84890-395f-4225-b23f-99f394eb884f")
 	)
+	(text "TODO: management RS232 port"
+		(exclude_from_sim no)
+		(at 295.91 214.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "25c57542-3c83-44c6-8b38-0054218a6121")
+	)
 	(text "MCU VDD decoupling"
 		(exclude_from_sim no)
 		(at 92.71 154.94 0)

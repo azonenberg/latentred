@@ -9642,6 +9642,17 @@
 		)
 		(uuid "8ddae309-0a21-4c4e-a961-c19798e29bf1")
 	)
+	(text "TODO: little LDO for MDIO level shifters"
+		(exclude_from_sim no)
+		(at 162.56 270.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8f522a39-e72c-491b-9496-ec378c57ba33")
+	)
 	(text "1.8V Vih\nInternal: 33K pulldown, 100K pullup\nSo should float at ~2.7V if undriven"
 		(exclude_from_sim no)
 		(at 58.42 151.13 0)
@@ -11800,6 +11811,18 @@
 			(justify right)
 		)
 		(uuid "292258d5-363a-477d-93df-5f1147dbf426")
+	)
+	(hierarchical_label "2V5"
+		(shape output)
+		(at 160.02 265.43 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "29e82aad-ee93-406b-8e4b-d104e019658e")
 	)
 	(hierarchical_label "1V8"
 		(shape output)

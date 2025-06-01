@@ -490,7 +490,7 @@
       "plot": "output/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../mechanical/board-models/pdu.step",
       "svg": "",
       "vrml": ""
     },
