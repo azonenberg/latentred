@@ -1,3 +1,4 @@
 *.lck
 *backups*
 *cache
+*auto_save*

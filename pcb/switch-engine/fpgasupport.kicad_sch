@@ -13931,6 +13931,12 @@
 		(uuid "0d59b69d-eb23-43e1-ad4f-6b1d193d6bf2")
 	)
 	(junction
+		(at 49.53 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "102bf3ae-08f4-4f06-a618-e858bc5ee516")
+	)
+	(junction
 		(at 207.01 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -13977,6 +13983,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "141ef2e0-d69d-424f-88b9-4c23185c47ff")
+	)
+	(junction
+		(at 49.53 241.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "16f07f1e-a871-439a-bbe0-0147458d3b31")
 	)
 	(junction
 		(at 129.54 116.84)
@@ -14801,6 +14813,18 @@
 		(uuid "8cea9a4b-645a-4bb9-bc2e-412771fa2344")
 	)
 	(junction
+		(at 60.96 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "905d27a6-ea74-411a-bf2e-4e2ad649e12e")
+	)
+	(junction
+		(at 49.53 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "90adf420-0e7f-4c4c-8812-b5694b2f738d")
+	)
+	(junction
 		(at 63.5 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -15395,6 +15419,12 @@
 		(uuid "e613ff72-ee47-4b02-85af-6c396d7caad1")
 	)
 	(junction
+		(at 49.53 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6781bfc-f788-43a6-8194-96b919a9a175")
+	)
+	(junction
 		(at 63.5 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -15459,6 +15489,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f31b2711-c7fd-4b46-923c-450e5760d52c")
+	)
+	(junction
+		(at 60.96 241.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f3b6ddcf-2265-4e24-ab0b-fc449e3b8fe4")
 	)
 	(junction
 		(at 86.36 99.06)
@@ -16036,6 +16072,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 233.68) (xy 73.66 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c78363d-ef19-4873-ab7f-4fe1608a1cc4")
+	)
+	(wire
+		(pts
 			(xy 102.87 172.72) (xy 114.3 172.72)
 		)
 		(stroke
@@ -16193,6 +16239,16 @@
 			(type default)
 		)
 		(uuid "3626f988-975e-47f0-b64b-273784342fa3")
+	)
+	(wire
+		(pts
+			(xy 49.53 266.7) (xy 60.96 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36ace059-2d27-4009-ae0d-9d84bcef9b58")
 	)
 	(wire
 		(pts
@@ -17056,16 +17112,6 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 224.79) (xy 201.93 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "737ad10d-03c0-425e-924b-56bcbdbccdd6")
-	)
-	(wire
-		(pts
 			(xy 345.44 100.33) (xy 349.25 100.33)
 		)
 		(stroke
@@ -17723,6 +17769,26 @@
 			(type default)
 		)
 		(uuid "a2f6a3d7-d587-4c81-a045-0c9d9868e7f5")
+	)
+	(wire
+		(pts
+			(xy 49.53 259.08) (xy 60.96 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a31c9a70-eb7b-458c-8001-83cde7be17cc")
+	)
+	(wire
+		(pts
+			(xy 49.53 241.3) (xy 60.96 241.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a47df6d1-6abe-4c6b-9fea-5078bdb96fae")
 	)
 	(wire
 		(pts
@@ -18836,6 +18902,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 241.3) (xy 73.66 241.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0fcb945-591f-4909-9e7e-56b83db47c29")
+	)
+	(wire
+		(pts
 			(xy 77.47 180.34) (xy 90.17 180.34)
 		)
 		(stroke
@@ -18923,6 +18999,16 @@
 			(type default)
 		)
 		(uuid "f6ecb153-c179-4a3d-bdf2-3ea6918b58d8")
+	)
+	(wire
+		(pts
+			(xy 49.53 233.68) (xy 60.96 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f731d716-1592-48d8-9196-c9612a22525f")
 	)
 	(wire
 		(pts
@@ -19045,17 +19131,6 @@
 			(justify left)
 		)
 		(uuid "346a35c4-b337-41d4-9767-1159adccc4c8")
-	)
-	(text "TODO: verify sufficient caps"
-		(exclude_from_sim no)
-		(at 88.9 254 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5d5d218a-6e3c-4323-8b99-a9685359658d")
 	)
 	(text "FPGA boot/debug"
 		(exclude_from_sim no)
@@ -19531,17 +19606,6 @@
 		(uuid "47d69683-9fa5-45be-9ea4-2e686a80b9b1")
 	)
 	(label "GND"
-		(at 228.6 227.33 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4cfc2482-b811-4d0d-91ac-80840ca9ca72")
-	)
-	(label "GND"
 		(at 325.12 250.19 180)
 		(fields_autoplaced yes)
 		(effects
@@ -19815,6 +19879,17 @@
 			(justify left bottom)
 		)
 		(uuid "8e93b24c-d640-431f-8af9-3addeb915c50")
+	)
+	(label "GND"
+		(at 201.93 227.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8f602411-4c8a-4760-bd74-94de04133e53")
 	)
 	(label "GND"
 		(at 270.51 39.37 180)
@@ -20353,6 +20428,18 @@
 			(justify right)
 		)
 		(uuid "f863fc81-e778-4f68-80ea-e6fd7206df8c")
+	)
+	(hierarchical_label "FPGA_INIT_OE"
+		(shape input)
+		(at 228.6 227.33 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f9164a61-4918-4fa8-ab1d-32a44215cb08")
 	)
 	(symbol
 		(lib_id "device:R")
@@ -25749,13 +25836,13 @@
 	)
 	(symbol
 		(lib_id "special-azonenberg:74LVC1T45")
-		(at 207.01 233.68 0)
+		(at 223.52 233.68 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "44397ff3-1565-4ee4-821b-1c9d8ad600f6")
 		(property "Reference" "U10"
 			(at 215.265 219.4359 0)
@@ -25774,7 +25861,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:DFN_6_0.5MM_1.6x1.6MM_TI_DPK"
-			(at 207.01 233.68 0)
+			(at 223.52 233.68 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25783,7 +25870,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 207.01 233.68 0)
+			(at 223.52 233.68 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25792,7 +25879,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 207.01 233.68 0)
+			(at 223.52 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28889,6 +28976,76 @@
 		)
 	)
 	(symbol
+		(lib_id "device:C")
+		(at 60.96 262.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8af180cc-0285-4cb5-adac-003e4ed3e014")
+		(property "Reference" "C155"
+			(at 63.881 262.0553 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10 uF"
+			(at 63.881 264.5922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0805_CAP_NOSILK"
+			(at 61.9252 266.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "391ffaf9-8276-4f76-b4d2-b793beeb9915")
+		)
+		(pin "2"
+			(uuid "32426715-695a-48ba-bcb4-86c8d427f555")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
+					(reference "C155")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "memory-azonenberg:S25FS064S_BGA")
 		(at 325.12 238.76 0)
 		(unit 1)
@@ -29676,6 +29833,76 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
 					(reference "C53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 73.66 237.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6a455ac-d3b5-47fe-a67f-ff6aadc46c1f")
+		(property "Reference" "C154"
+			(at 76.581 236.6553 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10 uF"
+			(at 76.581 239.1922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0805_CAP_NOSILK"
+			(at 74.6252 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e5a50690-1e89-4214-adb2-915617d6597c")
+		)
+		(pin "2"
+			(uuid "3292b6d4-dca1-4cae-8c60-dc971e933c48")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
+					(reference "C154")
 					(unit 1)
 				)
 			)
@@ -31907,6 +32134,76 @@
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
 					(reference "U8")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 60.96 237.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf382d69-e96c-4535-9488-5d139ae14032")
+		(property "Reference" "C102"
+			(at 63.881 236.6553 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10 uF"
+			(at 63.881 239.1922 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0805_CAP_NOSILK"
+			(at 61.9252 241.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2f22ad6-096a-4680-9558-28066a105161")
+		)
+		(pin "2"
+			(uuid "8f3d1681-d490-48ec-bed3-919482761833")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
+					(reference "C102")
+					(unit 1)
 				)
 			)
 		)

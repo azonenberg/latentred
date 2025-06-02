@@ -385,6 +385,173 @@
 				)
 			)
 		)
+		(symbol "conn:CONN_COAXIAL"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CONN_COAXIAL"
+				(at 2.921 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC coaxial connector CINCH RCA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_COAXIAL_0_1"
+				(arc
+					(start -1.778 -0.508)
+					(mid 0.2311 -1.8066)
+					(end 1.778 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.778 0)
+					(mid 0.2099 1.8101)
+					(end -1.778 0.508)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_COAXIAL_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -14126,10 +14293,6 @@
 		(uuid "f1132a43-4141-4397-8848-fec61b8b2a55")
 	)
 	(no_connect
-		(at 52.07 57.15)
-		(uuid "03d18abc-344a-4ba4-a9bf-6d669a2e05c8")
-	)
-	(no_connect
 		(at 142.24 217.17)
 		(uuid "2f17f5d5-3938-4733-bb51-8145fef69565")
 	)
@@ -14184,10 +14347,6 @@
 	(no_connect
 		(at 73.66 209.55)
 		(uuid "cbb90a1a-97a8-4172-a7e0-c136b36b25ae")
-	)
-	(no_connect
-		(at 52.07 59.69)
-		(uuid "dcc922c7-07ba-49ac-864a-7fa35e87ad21")
 	)
 	(no_connect
 		(at 116.84 207.01)
@@ -14349,6 +14508,26 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 247.65) (xy 257.81 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d112779-b88d-441e-a363-913422b68a49")
+	)
+	(polyline
+		(pts
+			(xy 210.82 236.22) (xy 299.72 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "410a0182-b0b0-4c51-93a5-baff4d37bfa1")
+	)
+	(wire
+		(pts
 			(xy 36.83 64.77) (xy 38.1 64.77)
 		)
 		(stroke
@@ -14409,6 +14588,16 @@
 	)
 	(wire
 		(pts
+			(xy 248.92 257.81) (xy 257.81 257.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "666d9a8e-1e2c-4763-b97d-377970f7f8ce")
+	)
+	(wire
+		(pts
 			(xy 48.26 184.15) (xy 48.26 186.69)
 		)
 		(stroke
@@ -14436,6 +14625,16 @@
 			(type default)
 		)
 		(uuid "6e7334f2-9f67-40e1-a4b8-39dfb60852c9")
+	)
+	(polyline
+		(pts
+			(xy 299.72 236.22) (xy 299.72 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f0a71f6-85ca-4643-950d-62f7be1779ae")
 	)
 	(polyline
 		(pts
@@ -14599,6 +14798,17 @@
 		)
 		(uuid "345c6ac8-c577-4913-b567-b24073a36dad")
 	)
+	(text "Recovered clock out"
+		(exclude_from_sim no)
+		(at 212.09 279.4 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "72aecdb5-4229-46fe-a6af-397766aee6fe")
+	)
 	(text "ARF6 connectors"
 		(exclude_from_sim no)
 		(at 13.97 233.68 0)
@@ -14653,6 +14863,39 @@
 			(justify right bottom)
 		)
 		(uuid "07a2783c-4201-4951-8162-6da372181c15")
+	)
+	(label "REFO_N"
+		(at 248.92 257.81 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "084fb529-393a-4a7e-ac60-35c8a18f1ed3")
+	)
+	(label "REFCLK_OUT_P"
+		(at 241.3 247.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "09eeb07d-94b8-4a71-9f7a-a7d405d3b4cd")
+	)
+	(label "GND"
+		(at 261.62 262.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0a020a8e-9902-49f1-93ca-355f405ebb1a")
 	)
 	(label "SFP28_0_TX_P"
 		(at 48.26 191.77 180)
@@ -14775,6 +15018,17 @@
 		)
 		(uuid "5077a421-1e5e-4261-911b-93740ab9dc03")
 	)
+	(label "REFCLK_OUT_P"
+		(at 52.07 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "51e945c1-d707-4308-a9a5-da3fa88a19c5")
+	)
 	(label "GTY3_RX_N"
 		(at 52.07 97.79 180)
 		(fields_autoplaced yes)
@@ -14819,6 +15073,28 @@
 		)
 		(uuid "60a2e8dd-e844-4794-a6ab-75eca32d7c28")
 	)
+	(label "REFO_P"
+		(at 248.92 247.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6a495e4c-d438-41dc-b390-021359a1b944")
+	)
+	(label "REFCLK_OUT_N"
+		(at 52.07 59.69 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6ae8d3a1-606a-44c2-b980-40a694fd9860")
+	)
 	(label "GND"
 		(at 147.32 260.35 0)
 		(fields_autoplaced yes)
@@ -14829,6 +15105,17 @@
 			(justify left bottom)
 		)
 		(uuid "6d719ca1-7564-47e3-8bf6-a74bd4354853")
+	)
+	(label "GND"
+		(at 261.62 252.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "71bbf89c-9762-4b76-b266-0a80c7c9104c")
 	)
 	(label "SFP28_0_RX_N"
 		(at 52.07 74.93 180)
@@ -15093,6 +15380,17 @@
 			(justify right bottom)
 		)
 		(uuid "ce5764a6-7d98-4879-8bf7-6e05d2f2f261")
+	)
+	(label "REFCLK_OUT_N"
+		(at 241.3 257.81 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e72b8329-8a7c-4f64-9c71-af95049091a5")
 	)
 	(label "RC2_N"
 		(at 73.66 254 0)
@@ -15463,6 +15761,144 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
 					(reference "C141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 245.11 257.81 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "266202e7-27be-471f-a1c3-ce5d78e11402")
+		(property "Reference" "C157"
+			(at 245.11 251.5065 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1 uF"
+			(at 245.11 253.9308 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 256.8448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 245.11 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1b12e994-3562-4ba8-a9c3-756fea64257a")
+		)
+		(pin "1"
+			(uuid "d12478e5-5f36-4708-91c3-48202b48783f")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
+					(reference "C157")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_COAXIAL")
+		(at 261.62 257.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88ba912c-e705-4c58-8ef5-f2fb1cfa31a3")
+		(property "Reference" "J24"
+			(at 264.1601 256.891 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMPM"
+			(at 264.1601 259.3153 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"
+			(at 261.62 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6f66fbcc-70f4-4cfa-a4fc-165745e8dbc8")
+		)
+		(pin "1"
+			(uuid "1edc99bb-b1e5-44db-86ce-348eed79e31a")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
+					(reference "J24")
 					(unit 1)
 				)
 			)
@@ -17984,6 +18420,76 @@
 		)
 	)
 	(symbol
+		(lib_id "conn:CONN_COAXIAL")
+		(at 261.62 247.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dbd620a6-367b-4ea8-9def-829eb521811d")
+		(property "Reference" "J11"
+			(at 264.1601 246.731 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMPM"
+			(at 264.1601 249.1553 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"
+			(at 261.62 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dae23897-6f5e-4f5f-8220-86a6511335d6")
+		)
+		(pin "1"
+			(uuid "06f33b6c-d3a8-4086-ae51-3993eb17d734")
+		)
+		(instances
+			(project ""
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "device:R")
 		(at 41.91 64.77 90)
 		(unit 1)
@@ -18045,6 +18551,74 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
 					(reference "R85")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:C")
+		(at 245.11 247.65 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ff02516c-d024-46fe-b0c5-87804604c440")
+		(property "Reference" "C156"
+			(at 245.11 241.3465 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1 uF"
+			(at 245.11 243.7708 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 246.6848 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 245.11 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5a996926-021e-4cb8-85ed-c7770ac0cebf")
+		)
+		(pin "1"
+			(uuid "3156e59f-5500-4e63-b5f2-5759ce20d805")
+		)
+		(instances
+			(project ""
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/15f4f4ac-4994-41bd-acdb-25a94e84fa2c"
+					(reference "C156")
 					(unit 1)
 				)
 			)

@@ -2423,217 +2423,6 @@
 				)
 			)
 		)
-		(symbol "special-azonenberg:JUMPER_0402_SPDT"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "JUMPER_0402_SPDT"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "JUMPER_0402_SPDT_0_1"
-				(rectangle
-					(start -8.89 10.16)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -5.08 2.54)
-					(radius 0.0001)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -5.08 2.54)
-					(radius 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -5.08 7.62)
-					(radius 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 5.08) (xy -5.08 6.35)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 5.08) (xy -2.54 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -5.08 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy -1.27 5.08)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 7.62) (xy -5.08 7.62)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "JUMPER_0402_SPDT_1_1"
-				(pin passive line
-					(at 7.62 7.62 180)
-					(length 7.62)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 5.08 180)
-					(length 7.62)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 7.62)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "special-azonenberg:PMOD_HOST"
 			(pin_names
 				(offset 1.016)
@@ -23154,7 +22943,7 @@
 	)
 	(text "TX/RX crossover jumpers\nin case we got the RJ45 pinout wrong :)"
 		(exclude_from_sim no)
-		(at 314.96 193.04 0)
+		(at 307.34 179.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -24451,13 +24240,13 @@
 		(uuid "7226210a-e720-4297-8785-978b216e6b80")
 	)
 	(label "RS232_RX_RJ45"
-		(at 307.34 182.88 180)
+		(at 314.96 172.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "7303f9e7-dd1b-43af-b943-e7dce90d7201")
 	)
@@ -24493,17 +24282,6 @@
 			(justify right bottom)
 		)
 		(uuid "75729914-297c-42c3-9503-9abc72e2865c")
-	)
-	(label "RS232_TX"
-		(at 307.34 185.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7951740e-abe5-4842-83db-27a882788934")
 	)
 	(label "FMC_NOE"
 		(at 228.6 62.23 180)
@@ -24769,17 +24547,6 @@
 		)
 		(uuid "8eee5803-2413-42ff-9954-b9f46ff9dd7b")
 	)
-	(label "RS232_RX"
-		(at 307.34 172.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "90a4a411-9a3c-489c-a129-eb9694d79a97")
-	)
 	(label "GND"
 		(at 306.07 106.68 180)
 		(fields_autoplaced yes)
@@ -24792,7 +24559,7 @@
 		(uuid "9567aefd-d61c-4f59-be35-c858e0b1c304")
 	)
 	(label "RS232_RX"
-		(at 307.34 180.34 180)
+		(at 307.34 172.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25584,13 +25351,13 @@
 		(uuid "e431f633-5a69-42eb-b8d2-29216a2184f3")
 	)
 	(label "RS232_TX_RJ45"
-		(at 307.34 170.18 180)
+		(at 314.96 167.64 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "e6a98cf5-1ff5-4566-bbc0-64053334bfe8")
 	)
@@ -26015,79 +25782,6 @@
 			(justify left)
 		)
 		(uuid "ffbc81da-7009-46a7-ae0d-9c13cdff9566")
-	)
-	(symbol
-		(lib_id "special-azonenberg:JUMPER_0402_SPDT")
-		(at 314.96 175.26 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "05860194-3e72-4a70-97a0-84b97530964a")
-		(property "Reference" "J24"
-			(at 324.485 169.1153 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "JUMPER_0402_SPDT"
-			(at 324.485 172.3943 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_JUMPER"
-			(at 314.96 175.26 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 314.96 175.26 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 314.96 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "128419ff-92ff-4ca5-acb7-79c5c4a0125b")
-		)
-		(pin "2"
-			(uuid "426888be-5b2a-4721-ae87-7b615d8185f1")
-		)
-		(pin "3"
-			(uuid "362c8ab4-c5b9-4106-a092-60374cdf9342")
-		)
-		(instances
-			(project "switch-engine"
-				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
-					(reference "J24")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "device:C")
@@ -32242,6 +31936,73 @@
 		)
 	)
 	(symbol
+		(lib_id "device:R")
+		(at 311.15 172.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6b6fe47b-2ad7-4ca2-9b50-2557ea5c6b72")
+		(property "Reference" "R71"
+			(at 311.15 170.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 311.15 172.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 311.15 174.498 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 311.15 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 311.15 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9c367699-7508-4dea-a5d6-28e451649b7b")
+		)
+		(pin "1"
+			(uuid "1e477c75-797a-4aaf-84e1-dd1d51353c47")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
+					(reference "R71")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "st-azonenberg:STM32H735-UFBGA176-25")
 		(at 182.88 115.57 0)
 		(unit 7)
@@ -33954,79 +33715,6 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
 					(reference "C103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "special-azonenberg:JUMPER_0402_SPDT")
-		(at 314.96 187.96 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "82924d37-4c79-442a-bb37-beb82b08ceeb")
-		(property "Reference" "J25"
-			(at 324.485 181.8153 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "JUMPER_0402_SPDT"
-			(at 324.485 185.0943 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_JUMPER"
-			(at 314.96 187.96 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 314.96 187.96 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 314.96 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "765111de-a5bf-46f4-809c-4ff9b7b1c5dc")
-		)
-		(pin "2"
-			(uuid "e9375bae-9bd3-41e0-8867-0474e44af0ee")
-		)
-		(pin "3"
-			(uuid "c3bb3224-9185-4cd3-9e26-1a7a93198cf9")
-		)
-		(instances
-			(project "switch-engine"
-				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
-					(reference "J25")
 					(unit 1)
 				)
 			)
@@ -37055,6 +36743,73 @@
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
 					(reference "U9")
 					(unit 9)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "device:R")
+		(at 311.15 167.64 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b944cce5-8c1f-4664-b8b7-7f523dbb2aea")
+		(property "Reference" "R9"
+			(at 311.15 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 311.15 167.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 311.15 169.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 311.15 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 311.15 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9a3bd785-47d4-4615-bae0-4d6087dca566")
+		)
+		(pin "1"
+			(uuid "5021718d-e34c-49e3-b85e-c23ab3552c41")
+		)
+		(instances
+			(project ""
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/16e4b61f-e96f-427b-b17b-02c8899758b5"
+					(reference "R9")
+					(unit 1)
 				)
 			)
 		)
