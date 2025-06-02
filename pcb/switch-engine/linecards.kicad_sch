@@ -4,6 +4,13 @@
 	(generator_version "8.0")
 	(uuid "e5fa81ca-cab1-4ba2-ba2a-cb290879d8a4")
 	(paper "A3")
+	(title_block
+		(title "LATENTRED Ethernet Switch - Main Board")
+		(date "2025-06-02")
+		(rev "0.1")
+		(company "Antikernel Labs")
+		(comment 1 "Andrew D. Zonenberg")
+	)
 	(lib_symbols
 		(symbol "conn:CONN_01X10"
 			(pin_names
@@ -14320,6 +14327,10 @@
 		(uuid "2cfdc822-1c28-4850-89fa-a3f40031de2e")
 	)
 	(no_connect
+		(at 64.77 241.3)
+		(uuid "31ba2d8e-76d6-4837-a0a4-63aed5d2a69e")
+	)
+	(no_connect
 		(at 39.37 187.96)
 		(uuid "33b3cd03-5886-4cfb-b005-1a07140aa9f5")
 	)
@@ -14330,6 +14341,14 @@
 	(no_connect
 		(at 201.93 185.42)
 		(uuid "3eee7d1d-aaf0-459d-89fc-a2cbc4975c6b")
+	)
+	(no_connect
+		(at 147.32 241.3)
+		(uuid "4ac2dd7a-fec8-45d9-9b41-971e2dbbd675")
+	)
+	(no_connect
+		(at 64.77 190.5)
+		(uuid "69580735-3c6b-400f-b4f7-afd8bf2a8a3e")
 	)
 	(no_connect
 		(at 39.37 41.91)
@@ -14350,6 +14369,14 @@
 	(no_connect
 		(at 201.93 44.45)
 		(uuid "9245e954-039c-455e-a169-0318aa2dce5f")
+	)
+	(no_connect
+		(at 147.32 243.84)
+		(uuid "96f85696-64e5-4624-8dee-5c9eb5bc8f2f")
+	)
+	(no_connect
+		(at 147.32 190.5)
+		(uuid "ab6e8000-0ca7-44ed-ac24-00ddb000fdfb")
 	)
 	(no_connect
 		(at 201.93 193.04)
@@ -14384,12 +14411,24 @@
 		(uuid "d5739b97-2f20-4703-a3b7-ae5ae6862e58")
 	)
 	(no_connect
+		(at 64.77 243.84)
+		(uuid "d7635ecf-f4e3-42de-9110-6853798eb25e")
+	)
+	(no_connect
 		(at 39.37 49.53)
 		(uuid "e0de78c0-e908-4d5b-b806-b8b5cf0a5444")
 	)
 	(no_connect
 		(at 120.65 52.07)
 		(uuid "e36aa50f-a5a2-4e7d-9f37-4fd3d2e04d52")
+	)
+	(no_connect
+		(at 147.32 187.96)
+		(uuid "ecbff94e-3763-421a-b543-c0e39ce5ffd6")
+	)
+	(no_connect
+		(at 64.77 187.96)
+		(uuid "ece6d6e9-aca5-4148-82fe-63aca663557f")
 	)
 	(no_connect
 		(at 39.37 241.3)
@@ -14537,6 +14576,16 @@
 	)
 	(wire
 		(pts
+			(xy 298.45 74.93) (xy 298.45 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34528bb5-7a23-4bf2-8992-e3677d9457b5")
+	)
+	(wire
+		(pts
 			(xy 64.77 149.86) (xy 64.77 152.4)
 		)
 		(stroke
@@ -14544,6 +14593,16 @@
 			(type default)
 		)
 		(uuid "388e8324-18a0-43b2-a1e6-87749dfc2d80")
+	)
+	(wire
+		(pts
+			(xy 298.45 58.42) (xy 298.45 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38b6ec3c-0ff8-47a6-9fda-426aad4ba18d")
 	)
 	(wire
 		(pts
@@ -17222,7 +17281,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 207.01 205.74 0)
 			(effects
 				(font
@@ -20484,7 +20543,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 207.01 125.73 0)
 			(effects
 				(font
@@ -22885,7 +22944,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 44.45 125.73 0)
 			(effects
 				(font
@@ -24976,7 +25035,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 125.73 125.73 0)
 			(effects
 				(font

@@ -4,6 +4,13 @@
 	(generator_version "8.0")
 	(uuid "b0a9346a-76c6-49ab-a657-f6030b08a505")
 	(paper "A3")
+	(title_block
+		(title "LATENTRED Ethernet Switch - Main Board")
+		(date "2025-06-02")
+		(rev "0.1")
+		(company "Antikernel Labs")
+		(comment 1 "Andrew D. Zonenberg")
+	)
 	(lib_symbols
 		(symbol "conn:CONN_01X03"
 			(pin_names
@@ -14104,7 +14111,7 @@
 		(uuid "3124a086-4efb-44d5-827e-7e8a56adb6eb")
 	)
 	(junction
-		(at 313.69 97.79)
+		(at 288.29 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3205bc20-d4fc-4340-b145-e6469dc471c7")
@@ -14170,7 +14177,7 @@
 		(uuid "384919fa-93ec-4396-9386-570db3ec5c2f")
 	)
 	(junction
-		(at 218.44 228.6)
+		(at 187.96 248.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "38ec3e6f-7ebd-4e6a-997c-0f2cd311b5f7")
@@ -14254,7 +14261,7 @@
 		(uuid "4001b4ef-f761-498d-9f16-8d54ac426355")
 	)
 	(junction
-		(at 374.65 87.63)
+		(at 349.25 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4188052b-6af7-4275-bf09-6f48eb5cfe4c")
@@ -14302,7 +14309,7 @@
 		(uuid "4586b85f-3ac2-4c46-8c62-9704f3d530b9")
 	)
 	(junction
-		(at 218.44 212.09)
+		(at 187.96 232.41)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4773cfbd-2129-43c4-8284-2e43b540194f")
@@ -14500,7 +14507,7 @@
 		(uuid "62123233-bf15-43c5-9b2b-8db9baac546e")
 	)
 	(junction
-		(at 313.69 102.87)
+		(at 288.29 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "625db6e7-a189-4335-9b35-0a2312280372")
@@ -14512,7 +14519,7 @@
 		(uuid "62c8e6fc-8174-472f-ae4c-b7111d8c1ef4")
 	)
 	(junction
-		(at 218.44 245.11)
+		(at 187.96 265.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "639f4066-d27b-435b-b5a9-3b7db2b22658")
@@ -14932,7 +14939,7 @@
 		(uuid "a587d9af-2600-426c-805c-8b4f741e83dd")
 	)
 	(junction
-		(at 313.69 100.33)
+		(at 288.29 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a5e78bb2-4f86-4d34-910e-642290d3269b")
@@ -15520,11 +15527,11 @@
 		(uuid "fe910ce4-f8c3-4966-9cc5-5be25f1e22c4")
 	)
 	(no_connect
-		(at 313.69 107.95)
+		(at 288.29 123.19)
 		(uuid "a8ae9a37-918e-4ebf-b0f9-fea4aa4eb0d0")
 	)
 	(no_connect
-		(at 313.69 120.65)
+		(at 288.29 135.89)
 		(uuid "e4feac35-c485-49d5-b3b1-88a79e63d98a")
 	)
 	(wire
@@ -15539,7 +15546,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 222.25) (xy 128.27 222.25)
+			(xy 85.09 215.9) (xy 97.79 215.9)
 		)
 		(stroke
 			(width 0)
@@ -15549,7 +15556,7 @@
 	)
 	(wire
 		(pts
-			(xy 370.84 87.63) (xy 374.65 87.63)
+			(xy 345.44 102.87) (xy 349.25 102.87)
 		)
 		(stroke
 			(width 0)
@@ -15649,7 +15656,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 245.11) (xy 232.41 245.11)
+			(xy 187.96 265.43) (xy 201.93 265.43)
 		)
 		(stroke
 			(width 0)
@@ -15697,6 +15704,16 @@
 		)
 		(uuid "106eb5ac-6ce1-4359-8b5f-9b2e90e96914")
 	)
+	(polyline
+		(pts
+			(xy 285.75 213.36) (xy 407.67 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10bbca87-eb14-44f7-b594-bf7b4f788d3d")
+	)
 	(wire
 		(pts
 			(xy 86.36 71.12) (xy 86.36 73.66)
@@ -15709,7 +15726,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 220.98) (xy 232.41 223.52)
+			(xy 201.93 241.3) (xy 201.93 243.84)
 		)
 		(stroke
 			(width 0)
@@ -15779,7 +15796,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 158.75) (xy 356.87 158.75)
+			(xy 364.49 227.33) (xy 372.11 227.33)
 		)
 		(stroke
 			(width 0)
@@ -15917,6 +15934,16 @@
 		)
 		(uuid "2508e945-3433-4cb8-893f-e560924a7ec9")
 	)
+	(polyline
+		(pts
+			(xy 227.33 163.83) (xy 165.1 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "253d5983-1fae-4429-8f8d-30408331a61e")
+	)
 	(wire
 		(pts
 			(xy 86.36 119.38) (xy 86.36 121.92)
@@ -15989,7 +16016,7 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 19.05) (xy 369.57 19.05)
+			(xy 340.36 34.29) (xy 344.17 34.29)
 		)
 		(stroke
 			(width 0)
@@ -16169,7 +16196,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 26.67) (xy 313.69 26.67)
+			(xy 270.51 41.91) (xy 288.29 41.91)
 		)
 		(stroke
 			(width 0)
@@ -16179,7 +16206,7 @@
 	)
 	(wire
 		(pts
-			(xy 374.65 85.09) (xy 374.65 87.63)
+			(xy 349.25 100.33) (xy 349.25 102.87)
 		)
 		(stroke
 			(width 0)
@@ -16189,7 +16216,7 @@
 	)
 	(wire
 		(pts
-			(xy 308.61 52.07) (xy 313.69 52.07)
+			(xy 283.21 67.31) (xy 288.29 67.31)
 		)
 		(stroke
 			(width 0)
@@ -16229,7 +16256,7 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 212.09) (xy 300.99 212.09)
+			(xy 255.27 232.41) (xy 270.51 232.41)
 		)
 		(stroke
 			(width 0)
@@ -16417,9 +16444,19 @@
 		)
 		(uuid "471dfe61-26f1-4204-b657-762b96326fc0")
 	)
+	(polyline
+		(pts
+			(xy 227.33 13.97) (xy 227.33 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "476245a4-9e71-4b1a-bcf9-3f7714e0b03a")
+	)
 	(wire
 		(pts
-			(xy 285.75 228.6) (xy 300.99 228.6)
+			(xy 255.27 248.92) (xy 270.51 248.92)
 		)
 		(stroke
 			(width 0)
@@ -16549,7 +16586,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 212.09) (xy 218.44 212.09)
+			(xy 182.88 232.41) (xy 187.96 232.41)
 		)
 		(stroke
 			(width 0)
@@ -16559,7 +16596,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 102.87) (xy 313.69 105.41)
+			(xy 288.29 118.11) (xy 288.29 120.65)
 		)
 		(stroke
 			(width 0)
@@ -16629,7 +16666,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 228.6) (xy 218.44 228.6)
+			(xy 182.88 248.92) (xy 187.96 248.92)
 		)
 		(stroke
 			(width 0)
@@ -16649,7 +16686,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 100.33) (xy 313.69 102.87)
+			(xy 288.29 115.57) (xy 288.29 118.11)
 		)
 		(stroke
 			(width 0)
@@ -16679,7 +16716,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 21.59) (xy 313.69 21.59)
+			(xy 270.51 36.83) (xy 288.29 36.83)
 		)
 		(stroke
 			(width 0)
@@ -16709,7 +16746,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 195.58) (xy 128.27 195.58)
+			(xy 85.09 189.23) (xy 97.79 189.23)
 		)
 		(stroke
 			(width 0)
@@ -16779,7 +16816,7 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 21.59) (xy 369.57 21.59)
+			(xy 340.36 36.83) (xy 344.17 36.83)
 		)
 		(stroke
 			(width 0)
@@ -16809,7 +16846,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 245.11) (xy 218.44 245.11)
+			(xy 182.88 265.43) (xy 187.96 265.43)
 		)
 		(stroke
 			(width 0)
@@ -16856,6 +16893,16 @@
 			(type default)
 		)
 		(uuid "6b35e9d0-9b18-4625-9eb0-84397563418b")
+	)
+	(polyline
+		(pts
+			(xy 285.75 251.46) (xy 406.4 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b5e17a4-ec57-498a-b1e7-708bbfe9b89b")
 	)
 	(wire
 		(pts
@@ -17009,7 +17056,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 204.47) (xy 232.41 207.01)
+			(xy 201.93 224.79) (xy 201.93 227.33)
 		)
 		(stroke
 			(width 0)
@@ -17019,7 +17066,7 @@
 	)
 	(wire
 		(pts
-			(xy 370.84 85.09) (xy 374.65 85.09)
+			(xy 345.44 100.33) (xy 349.25 100.33)
 		)
 		(stroke
 			(width 0)
@@ -17039,7 +17086,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 95.25) (xy 313.69 97.79)
+			(xy 288.29 110.49) (xy 288.29 113.03)
 		)
 		(stroke
 			(width 0)
@@ -17079,7 +17126,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 163.83) (xy 356.87 163.83)
+			(xy 364.49 232.41) (xy 372.11 232.41)
 		)
 		(stroke
 			(width 0)
@@ -17089,7 +17136,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 209.55) (xy 128.27 209.55)
+			(xy 85.09 203.2) (xy 97.79 203.2)
 		)
 		(stroke
 			(width 0)
@@ -17146,6 +17193,16 @@
 			(type default)
 		)
 		(uuid "7d8daf2a-025d-45bf-b5e3-23ce839cf0c2")
+	)
+	(polyline
+		(pts
+			(xy 12.7 163.83) (xy 165.1 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7deeddf9-0ab8-41c8-8605-e829a16c52c0")
 	)
 	(wire
 		(pts
@@ -17219,7 +17276,7 @@
 	)
 	(wire
 		(pts
-			(xy 374.65 87.63) (xy 374.65 90.17)
+			(xy 349.25 102.87) (xy 349.25 105.41)
 		)
 		(stroke
 			(width 0)
@@ -17319,7 +17376,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 228.6) (xy 232.41 228.6)
+			(xy 187.96 248.92) (xy 201.93 248.92)
 		)
 		(stroke
 			(width 0)
@@ -17366,6 +17423,16 @@
 			(type default)
 		)
 		(uuid "8c573c82-0565-410c-a3b6-0f189bbfae5e")
+	)
+	(polyline
+		(pts
+			(xy 165.1 163.83) (xy 165.1 283.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e123f43-8ae7-49df-9304-47d0818cfec6")
 	)
 	(wire
 		(pts
@@ -17469,7 +17536,7 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 29.21) (xy 369.57 29.21)
+			(xy 340.36 44.45) (xy 344.17 44.45)
 		)
 		(stroke
 			(width 0)
@@ -17529,7 +17596,7 @@
 	)
 	(wire
 		(pts
-			(xy 280.67 29.21) (xy 313.69 29.21)
+			(xy 255.27 44.45) (xy 288.29 44.45)
 		)
 		(stroke
 			(width 0)
@@ -17629,7 +17696,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 156.21) (xy 356.87 156.21)
+			(xy 364.49 224.79) (xy 372.11 224.79)
 		)
 		(stroke
 			(width 0)
@@ -17639,7 +17706,7 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 24.13) (xy 369.57 24.13)
+			(xy 340.36 39.37) (xy 344.17 39.37)
 		)
 		(stroke
 			(width 0)
@@ -17756,6 +17823,16 @@
 			(type default)
 		)
 		(uuid "a9c7ce76-b5ee-4608-9ed5-a39b8e56b79d")
+	)
+	(polyline
+		(pts
+			(xy 285.75 213.36) (xy 285.75 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab5a6301-c3de-4712-85cc-d020dd063343")
 	)
 	(wire
 		(pts
@@ -17919,7 +17996,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 217.17) (xy 128.27 217.17)
+			(xy 85.09 210.82) (xy 97.79 210.82)
 		)
 		(stroke
 			(width 0)
@@ -17949,7 +18026,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 161.29) (xy 356.87 161.29)
+			(xy 364.49 229.87) (xy 372.11 229.87)
 		)
 		(stroke
 			(width 0)
@@ -17959,13 +18036,23 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 26.67) (xy 369.57 26.67)
+			(xy 340.36 41.91) (xy 344.17 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bb740a94-894a-4a46-8029-d76d6f959206")
+	)
+	(polyline
+		(pts
+			(xy 227.33 163.83) (xy 407.67 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbaa1d91-9d9a-44f5-b80c-8c4914b39005")
 	)
 	(wire
 		(pts
@@ -18009,7 +18096,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 203.2) (xy 128.27 203.2)
+			(xy 85.09 196.85) (xy 97.79 196.85)
 		)
 		(stroke
 			(width 0)
@@ -18179,7 +18266,7 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 245.11) (xy 300.99 245.11)
+			(xy 255.27 265.43) (xy 270.51 265.43)
 		)
 		(stroke
 			(width 0)
@@ -18199,7 +18286,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 24.13) (xy 313.69 24.13)
+			(xy 270.51 39.37) (xy 288.29 39.37)
 		)
 		(stroke
 			(width 0)
@@ -18219,7 +18306,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 24.13) (xy 295.91 26.67)
+			(xy 270.51 39.37) (xy 270.51 41.91)
 		)
 		(stroke
 			(width 0)
@@ -18269,7 +18356,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 212.09) (xy 232.41 212.09)
+			(xy 187.96 232.41) (xy 201.93 232.41)
 		)
 		(stroke
 			(width 0)
@@ -18339,7 +18426,7 @@
 	)
 	(wire
 		(pts
-			(xy 365.76 31.75) (xy 369.57 31.75)
+			(xy 340.36 46.99) (xy 344.17 46.99)
 		)
 		(stroke
 			(width 0)
@@ -18389,7 +18476,7 @@
 	)
 	(wire
 		(pts
-			(xy 374.65 90.17) (xy 370.84 90.17)
+			(xy 349.25 105.41) (xy 345.44 105.41)
 		)
 		(stroke
 			(width 0)
@@ -18619,13 +18706,23 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 181.61) (xy 323.85 181.61)
+			(xy 325.12 250.19) (xy 339.09 250.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e46fd0ae-811c-4930-9ac6-94ed2f12f581")
+	)
+	(polyline
+		(pts
+			(xy 165.1 213.36) (xy 285.75 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5a05a77-fe9b-4e78-ac61-49c97146ba95")
 	)
 	(wire
 		(pts
@@ -18649,7 +18746,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 229.87) (xy 128.27 229.87)
+			(xy 85.09 223.52) (xy 97.79 223.52)
 		)
 		(stroke
 			(width 0)
@@ -18709,7 +18806,7 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 173.99) (xy 323.85 173.99)
+			(xy 325.12 242.57) (xy 339.09 242.57)
 		)
 		(stroke
 			(width 0)
@@ -18839,7 +18936,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 97.79) (xy 313.69 100.33)
+			(xy 288.29 113.03) (xy 288.29 115.57)
 		)
 		(stroke
 			(width 0)
@@ -18927,16 +19024,49 @@
 		)
 		(uuid "ffdf7607-3404-4433-abf1-a70cb705a884")
 	)
-	(text "This assumes all HDIO at 3.3 and HPIO at 1.8\nTODO verify"
+	(text "FPGA control signal level shifting"
 		(exclude_from_sim no)
-		(at 95.25 261.62 0)
+		(at 166.37 281.94 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "29dd5de7-00ab-411c-acd0-fe9e94e49627")
+	)
+	(text "FPGA decoupling"
+		(exclude_from_sim no)
+		(at 13.97 281.94 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "346a35c4-b337-41d4-9767-1159adccc4c8")
+	)
+	(text "TODO: verify sufficient caps"
+		(exclude_from_sim no)
+		(at 88.9 254 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "1dd580f7-5f7d-4ea4-a4e5-fc34fdc272ce")
+		(uuid "5d5d218a-6e3c-4323-8b99-a9685359658d")
+	)
+	(text "FPGA boot/debug"
+		(exclude_from_sim no)
+		(at 228.6 161.29 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "615970e2-cae8-414b-9009-3cf7c170b95d")
 	)
 	(text "VCCO 0/64/65/66/67"
 		(exclude_from_sim no)
@@ -18951,7 +19081,7 @@
 	)
 	(text "We don't support holding DONE low to delay configuration\nIt's only used as an output in this design"
 		(exclude_from_sim no)
-		(at 237.49 251.46 0)
+		(at 207.01 271.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18962,7 +19092,7 @@
 	)
 	(text "Need min 128 Mb flash\nFor fallback boot, need 256 Mb\nMust be 1.8V capable"
 		(exclude_from_sim no)
-		(at 309.88 142.24 0)
+		(at 370.84 246.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18973,7 +19103,7 @@
 	)
 	(text "POR_OVERRIDE to VCCINT not VCCO!\nSee UG575 table 1-5"
 		(exclude_from_sim no)
-		(at 354.33 41.91 0)
+		(at 328.93 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18992,6 +19122,17 @@
 			(justify left bottom)
 		)
 		(uuid "b3f39ca1-cefd-4750-b5e1-11b4ad0df4d9")
+	)
+	(text "FPGA power"
+		(exclude_from_sim no)
+		(at 13.97 161.29 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "cc1f512f-e639-4e24-affe-b495923a9a14")
 	)
 	(text "VCCBRAM\n(this might be overkill if we combine rails)"
 		(exclude_from_sim no)
@@ -19026,9 +19167,20 @@
 		)
 		(uuid "f009da02-0d80-42ef-8e1a-3ce806da38e2")
 	)
+	(text "Flash"
+		(exclude_from_sim no)
+		(at 287.02 248.92 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "f862437d-ca46-422b-9a7b-8c384921cda6")
+	)
 	(text "GTY decoupling\nWe have only one power supply group, so one set of caps is probably enough\nkup-lulz had two, keep that if we have space at layout time"
 		(exclude_from_sim no)
-		(at 115.316 233.934 0)
+		(at 84.836 227.584 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -19038,7 +19190,7 @@
 		(uuid "fd7e66d4-44e2-4c96-ba0d-03dbc39c594d")
 	)
 	(label "1V8"
-		(at 232.41 204.47 180)
+		(at 201.93 224.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19049,7 +19201,7 @@
 		(uuid "00638147-0f69-47e0-902b-56b8e0317dbd")
 	)
 	(label "GND"
-		(at 259.08 240.03 0)
+		(at 228.6 260.35 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19060,7 +19212,7 @@
 		(uuid "0356b177-c46e-4bd6-970c-e46140acaa20")
 	)
 	(label "GTY_VCC"
-		(at 115.57 195.58 180)
+		(at 85.09 189.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19071,7 +19223,7 @@
 		(uuid "057addff-3aea-4190-a421-f7682b4117c2")
 	)
 	(label "FPGA_RESET_N"
-		(at 313.69 34.29 180)
+		(at 288.29 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19082,7 +19234,7 @@
 		(uuid "066f91f3-79bd-477c-bfcd-6ac64a5396ed")
 	)
 	(label "FPGA_FLASH_DQ2"
-		(at 356.87 161.29 0)
+		(at 372.11 229.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19093,7 +19245,7 @@
 		(uuid "06894954-7a07-48ff-b4a0-de0c6e9103a9")
 	)
 	(label "GND"
-		(at 115.57 203.2 180)
+		(at 85.09 196.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19104,7 +19256,7 @@
 		(uuid "099c3074-2bf5-423f-9b48-9040816358bb")
 	)
 	(label "FPGA_JTAG_TMS"
-		(at 313.69 110.49 180)
+		(at 288.29 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19126,7 +19278,7 @@
 		(uuid "0af40fc6-5e64-4b66-97b1-b52ee8e125e3")
 	)
 	(label "FPGA_FLASH_DQ3"
-		(at 356.87 163.83 0)
+		(at 372.11 232.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19137,7 +19289,7 @@
 		(uuid "113577ce-c931-400f-8633-aae97168a80f")
 	)
 	(label "FPGA_JTAG_TDI"
-		(at 313.69 49.53 180)
+		(at 288.29 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19148,7 +19300,7 @@
 		(uuid "13385881-89ba-4c83-abe3-6635b5a36cde")
 	)
 	(label "GND"
-		(at 115.57 217.17 180)
+		(at 85.09 210.82 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19159,7 +19311,7 @@
 		(uuid "1534d3e8-e754-469d-9c11-fcca0b3fb48b")
 	)
 	(label "FPGA_FLASH_DQ0"
-		(at 356.87 156.21 0)
+		(at 372.11 224.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19170,7 +19322,7 @@
 		(uuid "15a51dd8-5963-4afb-9e3d-ecff682261f9")
 	)
 	(label "1V8"
-		(at 218.44 237.49 180)
+		(at 187.96 257.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19181,7 +19333,7 @@
 		(uuid "192cf5d8-07ee-424b-8c04-bf1b807aaed1")
 	)
 	(label "FPGA_FLASH_DQ2"
-		(at 369.57 29.21 0)
+		(at 344.17 44.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19192,7 +19344,7 @@
 		(uuid "1d0dc26f-f526-4899-91b3-111054d58878")
 	)
 	(label "FPGA_JTAG_TMS"
-		(at 313.69 54.61 180)
+		(at 288.29 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19203,7 +19355,7 @@
 		(uuid "1d8b4daa-774b-40fd-98d0-c6af77ffeecf")
 	)
 	(label "GND"
-		(at 313.69 69.85 180)
+		(at 288.29 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19214,7 +19366,7 @@
 		(uuid "222e88df-c996-42cf-a186-47e92e7be645")
 	)
 	(label "FPGA_JTAG_TCK"
-		(at 313.69 46.99 180)
+		(at 288.29 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19225,7 +19377,7 @@
 		(uuid "2253943e-bcf5-4d3e-98b0-4b04fd1ff374")
 	)
 	(label "3V3"
-		(at 300.99 220.98 0)
+		(at 270.51 241.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19236,7 +19388,7 @@
 		(uuid "23481699-f5fd-4192-b602-cacf41162aac")
 	)
 	(label "GND"
-		(at 313.69 95.25 180)
+		(at 288.29 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19258,7 +19410,7 @@
 		(uuid "2448ed2c-1e83-48aa-97d9-4bf32e8e2543")
 	)
 	(label "GND"
-		(at 285.75 212.09 180)
+		(at 255.27 232.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19269,7 +19421,7 @@
 		(uuid "2453533a-4229-436e-94f7-1ec6b85a2f59")
 	)
 	(label "GND"
-		(at 280.67 31.75 0)
+		(at 255.27 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19280,7 +19432,7 @@
 		(uuid "254d1320-0180-43f8-ae25-68c7d23b27ac")
 	)
 	(label "FPGA_FLASH_DQ1"
-		(at 369.57 26.67 0)
+		(at 344.17 41.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19302,7 +19454,7 @@
 		(uuid "2f39a0b6-7648-4c9f-b63e-146bfdb707d9")
 	)
 	(label "GND"
-		(at 232.41 240.03 180)
+		(at 201.93 260.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19324,7 +19476,7 @@
 		(uuid "340fad15-f3b3-4271-836c-df4b494aaf9c")
 	)
 	(label "FPGA_INIT"
-		(at 313.69 39.37 180)
+		(at 288.29 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19335,7 +19487,7 @@
 		(uuid "3ad4ef11-d299-4f56-888a-1c4b088c9ce9")
 	)
 	(label "3V3"
-		(at 259.08 204.47 0)
+		(at 228.6 224.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19346,7 +19498,7 @@
 		(uuid "3b6e60e1-5e4c-438b-9204-93cecd2f9586")
 	)
 	(label "1V8"
-		(at 309.88 173.99 180)
+		(at 325.12 242.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19357,7 +19509,7 @@
 		(uuid "43cb02e4-9592-40b5-b0ba-5697eb040a04")
 	)
 	(label "VCCINT"
-		(at 280.67 26.67 0)
+		(at 255.27 41.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19368,7 +19520,7 @@
 		(uuid "45fd8a27-12d0-483c-8b8c-691fe4491d50")
 	)
 	(label "FPGA_FLASH_DQ2"
-		(at 363.22 87.63 180)
+		(at 337.82 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19379,7 +19531,7 @@
 		(uuid "47d69683-9fa5-45be-9ea4-2e686a80b9b1")
 	)
 	(label "GND"
-		(at 259.08 207.01 0)
+		(at 228.6 227.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19390,7 +19542,7 @@
 		(uuid "4cfc2482-b811-4d0d-91ac-80840ca9ca72")
 	)
 	(label "GND"
-		(at 309.88 181.61 180)
+		(at 325.12 250.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19401,7 +19553,7 @@
 		(uuid "5553e6e7-c13e-4b1a-8356-cf11679e17bc")
 	)
 	(label "1V8"
-		(at 313.69 41.91 180)
+		(at 288.29 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19445,7 +19597,7 @@
 		(uuid "60ab76ab-27d7-49ef-92fd-522356d18eaf")
 	)
 	(label "GND"
-		(at 313.69 77.47 180)
+		(at 288.29 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19456,7 +19608,7 @@
 		(uuid "64e332e0-8021-4427-84f0-3f90dc9d3c1c")
 	)
 	(label "FPGA_JTAG_TCK"
-		(at 313.69 113.03 180)
+		(at 288.29 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19467,7 +19619,7 @@
 		(uuid "6857b1e0-c8fd-43b2-916a-0f04881a6dd1")
 	)
 	(label "GND"
-		(at 313.69 19.05 180)
+		(at 288.29 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19478,7 +19630,7 @@
 		(uuid "6cf8051a-2c6e-4ce0-b6f2-0fc74ee44a98")
 	)
 	(label "1V8"
-		(at 218.44 204.47 180)
+		(at 187.96 224.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19500,7 +19652,7 @@
 		(uuid "6f39cd95-a4cb-4be1-a279-90103d6ed1ed")
 	)
 	(label "1V8"
-		(at 285.75 220.98 180)
+		(at 255.27 241.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19511,7 +19663,7 @@
 		(uuid "6f6e9663-6f05-419b-971b-ba10bed609f7")
 	)
 	(label "GND"
-		(at 285.75 245.11 180)
+		(at 255.27 265.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19522,7 +19674,7 @@
 		(uuid "7091e2af-b7b3-4730-b17a-e98b5557241b")
 	)
 	(label "GND"
-		(at 313.69 62.23 180)
+		(at 288.29 77.47 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19533,7 +19685,7 @@
 		(uuid "71fb8f4b-e12b-4e51-957c-4cf82718c0c2")
 	)
 	(label "FPGA_FLASH_CS_N"
-		(at 304.8 166.37 180)
+		(at 320.04 234.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19544,7 +19696,7 @@
 		(uuid "7973b8d5-f0ee-49ac-8c32-5a02b9b58109")
 	)
 	(label "1V8"
-		(at 297.18 161.29 180)
+		(at 312.42 229.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19566,7 +19718,7 @@
 		(uuid "7e5f8edc-2f81-481d-9f6e-d3ce7bbff03e")
 	)
 	(label "1V8"
-		(at 285.75 204.47 180)
+		(at 255.27 224.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19577,7 +19729,7 @@
 		(uuid "7f7b864a-8248-464c-84d6-3ee38f72bd4d")
 	)
 	(label "GND"
-		(at 115.57 229.87 180)
+		(at 85.09 223.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19588,7 +19740,7 @@
 		(uuid "7ff8e739-8a4a-4c18-a310-4c2e2be820a8")
 	)
 	(label "FPGA_FLASH_DQ3"
-		(at 369.57 31.75 0)
+		(at 344.17 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19599,7 +19751,7 @@
 		(uuid "877cbdb9-8d12-4b95-887c-f13b44b386fd")
 	)
 	(label "3V3"
-		(at 300.99 237.49 0)
+		(at 270.51 257.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19610,7 +19762,7 @@
 		(uuid "88e4e362-20a0-420e-88e9-c782d6117b4f")
 	)
 	(label "1V8"
-		(at 218.44 220.98 180)
+		(at 187.96 241.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19621,7 +19773,7 @@
 		(uuid "8b21daa4-7123-4b9b-b8e7-a6ee3106d73b")
 	)
 	(label "FPGA_FLASH_SCK"
-		(at 304.8 168.91 180)
+		(at 320.04 237.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19632,7 +19784,7 @@
 		(uuid "8d1c4b31-6e88-468e-bd29-207c700dd0c0")
 	)
 	(label "GTY_VTT"
-		(at 115.57 209.55 180)
+		(at 85.09 203.2 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19643,7 +19795,7 @@
 		(uuid "8d27e675-fd8e-476c-b7c8-cc4a615704c4")
 	)
 	(label "FPGA_DONE"
-		(at 313.69 36.83 180)
+		(at 288.29 52.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19654,7 +19806,7 @@
 		(uuid "8e35fe5d-af74-4289-80ec-db14391fb8b2")
 	)
 	(label "3V3"
-		(at 259.08 220.98 0)
+		(at 228.6 241.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19665,7 +19817,7 @@
 		(uuid "8e93b24c-d640-431f-8af9-3addeb915c50")
 	)
 	(label "GND"
-		(at 295.91 24.13 180)
+		(at 270.51 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19687,7 +19839,7 @@
 		(uuid "9388fb3f-49b2-4991-8974-ce043008b917")
 	)
 	(label "3V3"
-		(at 259.08 237.49 0)
+		(at 228.6 257.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19698,7 +19850,7 @@
 		(uuid "99255318-7937-42dc-a30f-444276177ecc")
 	)
 	(label "GND"
-		(at 313.69 59.69 180)
+		(at 288.29 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19720,7 +19872,7 @@
 		(uuid "9d3c9b15-b6f8-4895-b8af-f07d7ccc329d")
 	)
 	(label "1V8"
-		(at 232.41 237.49 180)
+		(at 201.93 257.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19731,7 +19883,7 @@
 		(uuid "9dd1f4d5-3ea4-4737-87b4-a2a22d1ae295")
 	)
 	(label "GTY_VCCAUX"
-		(at 115.57 222.25 180)
+		(at 85.09 215.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19742,7 +19894,7 @@
 		(uuid "9e9a86e4-c91f-4f1e-bd50-078f6c6b7da2")
 	)
 	(label "1V8"
-		(at 374.65 85.09 0)
+		(at 349.25 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19753,7 +19905,7 @@
 		(uuid "ab7dca6f-e85b-4c47-96ba-ca930da8ecc7")
 	)
 	(label "1V8"
-		(at 304.8 153.67 180)
+		(at 320.04 222.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19764,7 +19916,7 @@
 		(uuid "ac7c0559-8237-40a7-bf45-93af73df0af7")
 	)
 	(label "GND"
-		(at 313.69 67.31 180)
+		(at 288.29 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19775,7 +19927,7 @@
 		(uuid "b7a1db6a-34ad-45a3-b9ce-8a343167ae2f")
 	)
 	(label "FPGA_FLASH_DQ0"
-		(at 369.57 24.13 0)
+		(at 344.17 39.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19786,7 +19938,7 @@
 		(uuid "b949c4ac-7ce4-492d-8da5-848f292959f0")
 	)
 	(label "FPGA_FLASH_DQ3"
-		(at 363.22 90.17 180)
+		(at 337.82 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19808,7 +19960,7 @@
 		(uuid "c54a0c2c-8de5-4dba-a6ad-f58f204d4c09")
 	)
 	(label "FPGA_FLASH_CS_N"
-		(at 363.22 85.09 180)
+		(at 337.82 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19830,7 +19982,7 @@
 		(uuid "ca8c6a02-e142-44c7-9fc0-ae4dc6f1e001")
 	)
 	(label "GND"
-		(at 304.8 156.21 180)
+		(at 320.04 224.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19852,7 +20004,7 @@
 		(uuid "d02f2de1-0043-4afc-874a-cb68e35deb87")
 	)
 	(label "GND"
-		(at 259.08 223.52 0)
+		(at 228.6 243.84 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19863,7 +20015,7 @@
 		(uuid "d0b18348-01a0-4d98-9359-af65afe75ff0")
 	)
 	(label "1V8"
-		(at 285.75 237.49 180)
+		(at 255.27 257.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19885,7 +20037,7 @@
 		(uuid "d11a471b-49cc-40ee-bd28-3ba4511485bd")
 	)
 	(label "FPGA_DONE"
-		(at 213.36 228.6 180)
+		(at 182.88 248.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19896,7 +20048,7 @@
 		(uuid "d196bde5-0108-4286-a06e-c592a3a1f6b8")
 	)
 	(label "FPGA_FLASH_DQ1"
-		(at 356.87 158.75 0)
+		(at 372.11 227.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19918,7 +20070,7 @@
 		(uuid "d3e7a626-c002-4aa2-96e9-053ab38b2d49")
 	)
 	(label "FPGA_JTAG_TDI"
-		(at 313.69 118.11 180)
+		(at 288.29 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19929,7 +20081,7 @@
 		(uuid "d50b80e3-79ee-4525-a004-4c1ea643c0e6")
 	)
 	(label "FPGA_JTAG_TDO"
-		(at 300.99 52.07 180)
+		(at 275.59 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19940,7 +20092,7 @@
 		(uuid "d56725c6-6c32-4059-8d68-15749570e8f1")
 	)
 	(label "1V8"
-		(at 295.91 21.59 180)
+		(at 270.51 36.83 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19951,7 +20103,7 @@
 		(uuid "d60ba42e-d5c0-41f4-8db1-535e1ab45e08")
 	)
 	(label "1V8"
-		(at 232.41 220.98 180)
+		(at 201.93 241.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19973,7 +20125,7 @@
 		(uuid "da608587-6ea2-42d9-8115-38e8f921de52")
 	)
 	(label "1V8"
-		(at 313.69 92.71 180)
+		(at 288.29 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19984,7 +20136,7 @@
 		(uuid "db489ceb-2d21-4676-9138-92238e1396d3")
 	)
 	(label "FPGA_JTAG_TDO"
-		(at 313.69 115.57 180)
+		(at 288.29 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19995,7 +20147,7 @@
 		(uuid "e3203856-dfd9-40c3-82e3-04cf686fd0cc")
 	)
 	(label "GND"
-		(at 313.69 74.93 180)
+		(at 288.29 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20006,7 +20158,7 @@
 		(uuid "e5851474-4d91-4ffb-b786-54656fd47d5b")
 	)
 	(label "3V3"
-		(at 300.99 204.47 0)
+		(at 270.51 224.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20017,7 +20169,7 @@
 		(uuid "eab1ae16-bf67-447a-a470-1e044a511f68")
 	)
 	(label "FPGA_INIT"
-		(at 213.36 212.09 180)
+		(at 182.88 232.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20028,7 +20180,7 @@
 		(uuid "eeb35a4e-b6eb-422f-bc61-e79c8f135ff2")
 	)
 	(label "GND"
-		(at 285.75 228.6 180)
+		(at 255.27 248.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20039,7 +20191,7 @@
 		(uuid "ef106f6b-2e84-4119-bddc-c1b9d57e2c9e")
 	)
 	(label "FPGA_FLASH_CS_N"
-		(at 369.57 19.05 0)
+		(at 344.17 34.29 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20061,7 +20213,7 @@
 		(uuid "fb50f96b-2dd3-467d-a8c1-c6fd01fafeef")
 	)
 	(label "FPGA_FLASH_SCK"
-		(at 369.57 21.59 0)
+		(at 344.17 36.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20072,7 +20224,7 @@
 		(uuid "fe69e92a-4c93-4f18-83af-99ecef247a5f")
 	)
 	(label "FPGA_RESET_N"
-		(at 213.36 245.11 180)
+		(at 182.88 265.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20096,7 +20248,7 @@
 	)
 	(hierarchical_label "FPGA_INIT_3V3"
 		(shape output)
-		(at 259.08 212.09 0)
+		(at 228.6 232.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20108,7 +20260,7 @@
 	)
 	(hierarchical_label "FPGA_DONE_3V3"
 		(shape output)
-		(at 259.08 228.6 0)
+		(at 228.6 248.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20156,7 +20308,7 @@
 	)
 	(hierarchical_label "FPGA_RESET_N_3V3"
 		(shape input)
-		(at 259.08 245.11 0)
+		(at 228.6 265.43 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20204,7 +20356,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 367.03 85.09 90)
+		(at 341.63 100.33 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20212,7 +20364,7 @@
 		(dnp no)
 		(uuid "03436c36-47df-49b1-8ebb-658b25f857cf")
 		(property "Reference" "R54"
-			(at 370.84 83.82 90)
+			(at 345.44 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20220,7 +20372,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 367.03 85.09 90)
+			(at 341.63 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20228,7 +20380,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 367.03 86.868 90)
+			(at 341.63 102.108 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20237,7 +20389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 367.03 85.09 0)
+			(at 341.63 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20246,7 +20398,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 367.03 85.09 0)
+			(at 341.63 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20271,7 +20423,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 345.44 163.83 90)
+		(at 360.68 232.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20279,7 +20431,7 @@
 		(dnp no)
 		(uuid "054223f4-ddc0-453c-b760-f3ce943d9bf9")
 		(property "Reference" "R47"
-			(at 349.25 162.56 90)
+			(at 364.49 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20287,7 +20439,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 345.44 163.83 90)
+			(at 360.68 232.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20295,7 +20447,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 345.44 165.608 90)
+			(at 360.68 234.188 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20304,7 +20456,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 345.44 163.83 0)
+			(at 360.68 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20313,7 +20465,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 345.44 163.83 0)
+			(at 360.68 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20338,7 +20490,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 115.57 199.39 0)
+		(at 85.09 193.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20347,7 +20499,7 @@
 		(fields_autoplaced yes)
 		(uuid "1a1e7bf9-95cd-4009-b6ce-34cbf799202b")
 		(property "Reference" "C58"
-			(at 118.491 198.5553 0)
+			(at 88.011 192.2053 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20356,7 +20508,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 118.491 201.0922 0)
+			(at 88.011 194.7422 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20365,7 +20517,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 116.5352 203.2 0)
+			(at 86.0552 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20374,7 +20526,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 199.39 0)
+			(at 85.09 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20383,7 +20535,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 115.57 199.39 0)
+			(at 85.09 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20408,7 +20560,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 19.05 90)
+		(at 336.55 34.29 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20416,7 +20568,7 @@
 		(dnp no)
 		(uuid "1fd60cc4-4075-47f6-beae-f61fa659f0ed")
 		(property "Reference" "R48"
-			(at 365.76 17.78 90)
+			(at 340.36 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20424,7 +20576,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 19.05 90)
+			(at 336.55 34.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20432,7 +20584,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 20.828 90)
+			(at 336.55 36.068 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20441,7 +20593,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 19.05 0)
+			(at 336.55 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20450,7 +20602,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 19.05 0)
+			(at 336.55 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20475,7 +20627,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 29.21 90)
+		(at 336.55 44.45 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20483,7 +20635,7 @@
 		(dnp no)
 		(uuid "21866429-a17f-42af-9e4c-bd4c7a541036")
 		(property "Reference" "R52"
-			(at 365.76 27.94 90)
+			(at 340.36 43.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20491,7 +20643,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 29.21 90)
+			(at 336.55 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20499,7 +20651,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 30.988 90)
+			(at 336.55 46.228 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20508,7 +20660,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 29.21 0)
+			(at 336.55 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20517,7 +20669,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 29.21 0)
+			(at 336.55 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20542,7 +20694,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 367.03 90.17 90)
+		(at 341.63 105.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20550,7 +20702,7 @@
 		(dnp no)
 		(uuid "27716cb7-7538-4732-b23f-bd0936f54e40")
 		(property "Reference" "R56"
-			(at 370.84 88.9 90)
+			(at 345.44 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20558,7 +20710,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 367.03 90.17 90)
+			(at 341.63 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20566,7 +20718,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 367.03 91.948 90)
+			(at 341.63 107.188 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20575,7 +20727,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 367.03 90.17 0)
+			(at 341.63 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20584,7 +20736,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 367.03 90.17 0)
+			(at 341.63 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20609,7 +20761,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 285.75 224.79 0)
+		(at 255.27 245.11 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20618,7 +20770,7 @@
 		(fields_autoplaced yes)
 		(uuid "28a24d19-6f76-4336-83f7-09eca30e1e65")
 		(property "Reference" "C65"
-			(at 288.671 223.9553 0)
+			(at 258.191 244.2753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20627,7 +20779,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 288.671 226.4922 0)
+			(at 258.191 246.8122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20636,7 +20788,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 286.7152 228.6 0)
+			(at 256.2352 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20645,7 +20797,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 285.75 224.79 0)
+			(at 255.27 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20654,7 +20806,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 224.79 0)
+			(at 255.27 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20679,7 +20831,7 @@
 	)
 	(symbol
 		(lib_id "xilinx-azonenberg:XILINX_ULTRASCALEPLUS_B676")
-		(at 318.77 78.74 0)
+		(at 293.37 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -20688,15 +20840,15 @@
 		(fields_autoplaced yes)
 		(uuid "2a9889d4-a13c-4857-b8fb-a6cf2b7d05fe")
 		(property "Reference" "U8"
-			(at 335.915 13.6863 0)
+			(at 310.515 28.9263 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
-			(at 335.915 16.1106 0)
+		(property "Value" "XCKU5P-2FFVB676I"
+			(at 310.515 31.3506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20704,7 +20856,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 382.27 77.47 0)
+			(at 356.87 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20713,7 +20865,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 382.27 77.47 0)
+			(at 356.87 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20722,7 +20874,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 318.77 78.74 0)
+			(at 293.37 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22909,7 +23061,7 @@
 	)
 	(symbol
 		(lib_id "xilinx-azonenberg:XILINX_JTAG")
-		(at 313.69 120.65 0)
+		(at 288.29 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22917,7 +23069,7 @@
 		(dnp no)
 		(uuid "316e9286-e15a-40f7-b4e9-73c4eb9d4001")
 		(property "Reference" "J8"
-			(at 321.31 123.19 0)
+			(at 295.91 138.43 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -22926,7 +23078,7 @@
 			)
 		)
 		(property "Value" "XILINX_JTAG"
-			(at 321.31 125.73 0)
+			(at 295.91 140.97 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -22935,7 +23087,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:XILINX_JTAG_PTH_MOLEX_0878311420"
-			(at 313.69 120.65 0)
+			(at 288.29 135.89 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -22944,7 +23096,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 313.69 120.65 0)
+			(at 288.29 135.89 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -22952,7 +23104,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 313.69 120.65 0)
+			(at 288.29 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23029,7 +23181,7 @@
 				)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 41.91 19.9206 0)
 			(effects
 				(font
@@ -25173,7 +25325,7 @@
 	)
 	(symbol
 		(lib_id "special-azonenberg:74LVC1T45")
-		(at 237.49 246.38 0)
+		(at 207.01 266.7 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25182,7 +25334,7 @@
 		(fields_autoplaced yes)
 		(uuid "3639367c-1603-40c0-8db2-bf92f5649203")
 		(property "Reference" "U12"
-			(at 245.745 232.1359 0)
+			(at 215.265 252.4559 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25190,7 +25342,7 @@
 			)
 		)
 		(property "Value" "74LVC1T45"
-			(at 245.745 235.1293 0)
+			(at 215.265 255.4493 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25198,7 +25350,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:DFN_6_0.5MM_1.6x1.6MM_TI_DPK"
-			(at 237.49 246.38 0)
+			(at 207.01 266.7 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25207,7 +25359,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 246.38 0)
+			(at 207.01 266.7 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25216,7 +25368,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 246.38 0)
+			(at 207.01 266.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25323,7 +25475,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 300.99 241.3 0)
+		(at 270.51 261.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25332,7 +25484,7 @@
 		(fields_autoplaced yes)
 		(uuid "3ceb654c-3cbd-4042-8e71-2e2b144dcd67")
 		(property "Reference" "C69"
-			(at 303.911 240.4653 0)
+			(at 273.431 260.7853 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25341,7 +25493,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 303.911 243.0022 0)
+			(at 273.431 263.3222 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25350,7 +25502,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 301.9552 245.11 0)
+			(at 271.4752 265.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25359,7 +25511,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 241.3 0)
+			(at 270.51 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25368,7 +25520,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 300.99 241.3 0)
+			(at 270.51 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25463,7 +25615,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 31.75 90)
+		(at 336.55 46.99 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25471,7 +25623,7 @@
 		(dnp no)
 		(uuid "401eed33-8b1c-458d-88f1-88b01bbff78d")
 		(property "Reference" "R53"
-			(at 365.76 30.48 90)
+			(at 340.36 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25479,7 +25631,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 31.75 90)
+			(at 336.55 46.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25487,7 +25639,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 33.528 90)
+			(at 336.55 48.768 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25496,7 +25648,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 31.75 0)
+			(at 336.55 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25505,7 +25657,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 31.75 0)
+			(at 336.55 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25530,7 +25682,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 304.8 52.07 90)
+		(at 279.4 67.31 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25538,7 +25690,7 @@
 		(dnp no)
 		(uuid "4154d7b4-5ffe-4c84-8d02-bdbce2c3cdff")
 		(property "Reference" "R43"
-			(at 308.61 50.8 90)
+			(at 283.21 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25546,7 +25698,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 304.8 52.07 90)
+			(at 279.4 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25554,7 +25706,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 304.8 53.848 90)
+			(at 279.4 69.088 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25563,7 +25715,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 304.8 52.07 0)
+			(at 279.4 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25572,7 +25724,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 304.8 52.07 0)
+			(at 279.4 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25597,7 +25749,7 @@
 	)
 	(symbol
 		(lib_id "special-azonenberg:74LVC1T45")
-		(at 237.49 213.36 0)
+		(at 207.01 233.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25606,7 +25758,7 @@
 		(fields_autoplaced yes)
 		(uuid "44397ff3-1565-4ee4-821b-1c9d8ad600f6")
 		(property "Reference" "U10"
-			(at 245.745 199.1159 0)
+			(at 215.265 219.4359 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25614,7 +25766,7 @@
 			)
 		)
 		(property "Value" "74LVC1T45"
-			(at 245.745 202.1093 0)
+			(at 215.265 222.4293 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25622,7 +25774,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:DFN_6_0.5MM_1.6x1.6MM_TI_DPK"
-			(at 237.49 213.36 0)
+			(at 207.01 233.68 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25631,7 +25783,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 213.36 0)
+			(at 207.01 233.68 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -25640,7 +25792,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 213.36 0)
+			(at 207.01 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25747,7 +25899,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 21.59 90)
+		(at 336.55 36.83 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25755,7 +25907,7 @@
 		(dnp no)
 		(uuid "4cee37c6-01ec-4071-af4a-4492d86b11c7")
 		(property "Reference" "R49"
-			(at 365.76 20.32 90)
+			(at 340.36 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25763,7 +25915,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 21.59 90)
+			(at 336.55 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25771,7 +25923,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 23.368 90)
+			(at 336.55 38.608 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25780,7 +25932,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 21.59 0)
+			(at 336.55 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25789,7 +25941,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 21.59 0)
+			(at 336.55 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25814,7 +25966,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 345.44 158.75 90)
+		(at 360.68 227.33 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25822,7 +25974,7 @@
 		(dnp no)
 		(uuid "50064428-2743-4460-84a6-c58dad2836b9")
 		(property "Reference" "R45"
-			(at 349.25 157.48 90)
+			(at 364.49 226.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25830,7 +25982,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 345.44 158.75 90)
+			(at 360.68 227.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25838,7 +25990,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 345.44 160.528 90)
+			(at 360.68 229.108 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25847,7 +25999,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 345.44 158.75 0)
+			(at 360.68 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25856,7 +26008,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 345.44 158.75 0)
+			(at 360.68 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25881,7 +26033,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 128.27 213.36 0)
+		(at 97.79 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25890,7 +26042,7 @@
 		(fields_autoplaced yes)
 		(uuid "532eefa4-f272-472c-a5fc-3b1fd58961c4")
 		(property "Reference" "C62"
-			(at 131.191 212.5253 0)
+			(at 100.711 206.1753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25899,7 +26051,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 131.191 215.0622 0)
+			(at 100.711 208.7122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25908,7 +26060,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 129.2352 217.17 0)
+			(at 98.7552 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25917,7 +26069,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 213.36 0)
+			(at 97.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25926,7 +26078,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 128.27 213.36 0)
+			(at 97.79 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25967,7 +26119,7 @@
 				)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 107.95 19.9206 0)
 			(effects
 				(font
@@ -28181,7 +28333,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 218.44 208.28 180)
+		(at 187.96 228.6 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28190,7 +28342,7 @@
 		(fields_autoplaced yes)
 		(uuid "68aefdd7-633f-4fcd-a11d-8a30aaab68e7")
 		(property "Reference" "R39"
-			(at 220.218 207.4453 0)
+			(at 189.738 227.7653 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28199,7 +28351,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 220.218 209.9822 0)
+			(at 189.738 230.3022 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28208,7 +28360,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 220.218 208.28 90)
+			(at 189.738 228.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28217,7 +28369,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 218.44 208.28 0)
+			(at 187.96 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28226,7 +28378,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 218.44 208.28 0)
+			(at 187.96 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28391,7 +28543,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 218.44 241.3 180)
+		(at 187.96 261.62 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28400,7 +28552,7 @@
 		(fields_autoplaced yes)
 		(uuid "77e38518-ee18-4c5f-8c45-3e4304be4033")
 		(property "Reference" "R41"
-			(at 220.218 240.4653 0)
+			(at 189.738 260.7853 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28409,7 +28561,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 220.218 243.0022 0)
+			(at 189.738 263.3222 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28418,7 +28570,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 220.218 241.3 90)
+			(at 189.738 261.62 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28427,7 +28579,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 218.44 241.3 0)
+			(at 187.96 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28436,7 +28588,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 218.44 241.3 0)
+			(at 187.96 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28671,7 +28823,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 24.13 90)
+		(at 336.55 39.37 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28679,7 +28831,7 @@
 		(dnp no)
 		(uuid "85128559-cdf2-4403-893e-7e9df186dab6")
 		(property "Reference" "R50"
-			(at 365.76 22.86 90)
+			(at 340.36 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28687,7 +28839,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 24.13 90)
+			(at 336.55 39.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28695,7 +28847,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 25.908 90)
+			(at 336.55 41.148 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28704,7 +28856,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 24.13 0)
+			(at 336.55 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28713,7 +28865,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 24.13 0)
+			(at 336.55 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28738,7 +28890,7 @@
 	)
 	(symbol
 		(lib_id "memory-azonenberg:S25FS064S_BGA")
-		(at 309.88 170.18 0)
+		(at 325.12 238.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28747,7 +28899,7 @@
 		(fields_autoplaced yes)
 		(uuid "9014b8d1-f225-4d7e-b088-219122453de5")
 		(property "Reference" "U13"
-			(at 323.215 148.3159 0)
+			(at 338.455 216.8959 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -28755,7 +28907,7 @@
 			)
 		)
 		(property "Value" "MT25QU256ABA8E12-0AUT"
-			(at 323.215 151.3093 0)
+			(at 338.455 219.8893 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -28763,7 +28915,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:BGA_24_6x8_DEPOP1_1MM"
-			(at 309.88 170.18 0)
+			(at 325.12 238.76 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -28772,7 +28924,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 309.88 170.18 0)
+			(at 325.12 238.76 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -28781,7 +28933,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 309.88 170.18 0)
+			(at 325.12 238.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28827,7 +28979,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 300.99 161.29 90)
+		(at 316.23 229.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28835,7 +28987,7 @@
 		(dnp no)
 		(uuid "90e51662-2d98-470a-a753-26f8b373b14b")
 		(property "Reference" "R42"
-			(at 300.99 158.75 90)
+			(at 316.23 227.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28843,7 +28995,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 300.99 161.29 90)
+			(at 316.23 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28851,7 +29003,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 300.99 163.068 90)
+			(at 316.23 231.648 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28860,7 +29012,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 161.29 0)
+			(at 316.23 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28869,7 +29021,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 300.99 161.29 0)
+			(at 316.23 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28894,7 +29046,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 309.88 177.8 0)
+		(at 325.12 246.38 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28903,7 +29055,7 @@
 		(fields_autoplaced yes)
 		(uuid "92809dd2-787b-4031-943f-63ca9fee4510")
 		(property "Reference" "C70"
-			(at 312.801 176.9653 0)
+			(at 328.041 245.5453 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28912,7 +29064,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 312.801 179.5022 0)
+			(at 328.041 248.0822 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28921,7 +29073,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 310.8452 181.61 0)
+			(at 326.0852 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28930,7 +29082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 309.88 177.8 0)
+			(at 325.12 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28939,7 +29091,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 309.88 177.8 0)
+			(at 325.12 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28964,7 +29116,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 285.75 241.3 0)
+		(at 255.27 261.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28973,7 +29125,7 @@
 		(fields_autoplaced yes)
 		(uuid "9dbecc60-1e4a-409f-b262-94a330a9abb7")
 		(property "Reference" "C66"
-			(at 288.671 240.4653 0)
+			(at 258.191 260.7853 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28982,7 +29134,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 288.671 243.0022 0)
+			(at 258.191 263.3222 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28991,7 +29143,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 286.7152 245.11 0)
+			(at 256.2352 265.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29000,7 +29152,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 285.75 241.3 0)
+			(at 255.27 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29009,7 +29161,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 241.3 0)
+			(at 255.27 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29034,7 +29186,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 128.27 199.39 0)
+		(at 97.79 193.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29043,7 +29195,7 @@
 		(fields_autoplaced yes)
 		(uuid "a30fdcbc-d7b0-46a9-a8ed-b550afebd42e")
 		(property "Reference" "C61"
-			(at 131.191 198.5553 0)
+			(at 100.711 192.2053 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29052,7 +29204,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 131.191 201.0922 0)
+			(at 100.711 194.7422 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29061,7 +29213,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 129.2352 203.2 0)
+			(at 98.7552 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29070,7 +29222,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 199.39 0)
+			(at 97.79 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29079,7 +29231,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 128.27 199.39 0)
+			(at 97.79 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29104,7 +29256,7 @@
 	)
 	(symbol
 		(lib_id "special-azonenberg:74LVC1T45")
-		(at 237.49 229.87 0)
+		(at 207.01 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29113,7 +29265,7 @@
 		(fields_autoplaced yes)
 		(uuid "a59d7bf9-6c54-4c21-955c-0feee18d46c1")
 		(property "Reference" "U11"
-			(at 245.745 215.6259 0)
+			(at 215.265 235.9459 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29121,7 +29273,7 @@
 			)
 		)
 		(property "Value" "74LVC1T45"
-			(at 245.745 218.6193 0)
+			(at 215.265 238.9393 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29129,7 +29281,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:DFN_6_0.5MM_1.6x1.6MM_TI_DPK"
-			(at 237.49 229.87 0)
+			(at 207.01 250.19 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29138,7 +29290,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 237.49 229.87 0)
+			(at 207.01 250.19 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -29147,7 +29299,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 237.49 229.87 0)
+			(at 207.01 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29184,7 +29336,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 300.99 224.79 0)
+		(at 270.51 245.11 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29193,7 +29345,7 @@
 		(fields_autoplaced yes)
 		(uuid "a606e9a8-53d8-4d35-86f9-737b0c223dce")
 		(property "Reference" "C68"
-			(at 303.911 223.9553 0)
+			(at 273.431 244.2753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29202,7 +29354,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 303.911 226.4922 0)
+			(at 273.431 246.8122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29211,7 +29363,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 301.9552 228.6 0)
+			(at 271.4752 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29220,7 +29372,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 224.79 0)
+			(at 270.51 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29229,7 +29381,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 300.99 224.79 0)
+			(at 270.51 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29254,7 +29406,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 323.85 177.8 0)
+		(at 339.09 246.38 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29263,7 +29415,7 @@
 		(fields_autoplaced yes)
 		(uuid "af7228c2-f6e1-451f-a5bb-c0d8e0b3a45e")
 		(property "Reference" "C71"
-			(at 326.771 176.9653 0)
+			(at 342.011 245.5453 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29272,7 +29424,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 326.771 179.5022 0)
+			(at 342.011 248.0822 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29281,7 +29433,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 324.8152 181.61 0)
+			(at 340.0552 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29290,7 +29442,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 323.85 177.8 0)
+			(at 339.09 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29299,7 +29451,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 323.85 177.8 0)
+			(at 339.09 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29324,7 +29476,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 345.44 156.21 90)
+		(at 360.68 224.79 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29332,7 +29484,7 @@
 		(dnp no)
 		(uuid "afb4679d-aab7-4a05-8ade-f5f0cb2c0010")
 		(property "Reference" "R44"
-			(at 349.25 154.94 90)
+			(at 364.49 223.52 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29340,7 +29492,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 345.44 156.21 90)
+			(at 360.68 224.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29348,7 +29500,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 345.44 157.988 90)
+			(at 360.68 226.568 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29357,7 +29509,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 345.44 156.21 0)
+			(at 360.68 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29366,7 +29518,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 345.44 156.21 0)
+			(at 360.68 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29601,7 +29753,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 300.99 208.28 0)
+		(at 270.51 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -29610,7 +29762,7 @@
 		(fields_autoplaced yes)
 		(uuid "c53f23bc-73a7-4ad0-8860-81ad139a9536")
 		(property "Reference" "C67"
-			(at 303.911 207.4453 0)
+			(at 273.431 227.7653 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29619,7 +29771,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 303.911 209.9822 0)
+			(at 273.431 230.3022 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29628,7 +29780,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 301.9552 212.09 0)
+			(at 271.4752 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29637,7 +29789,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 208.28 0)
+			(at 270.51 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29646,7 +29798,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 300.99 208.28 0)
+			(at 270.51 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29687,7 +29839,7 @@
 				)
 			)
 		)
-		(property "Value" "XILINX_ULTRASCALEPLUS_B676"
+		(property "Value" "XCKU5P-2FFVB676I"
 			(at 184.15 16.1106 0)
 			(effects
 				(font
@@ -31761,7 +31913,7 @@
 	)
 	(symbol
 		(lib_id "conn:CONN_01X03")
-		(at 275.59 29.21 0)
+		(at 250.19 44.45 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31771,7 +31923,7 @@
 		(fields_autoplaced yes)
 		(uuid "d0cdea88-5b26-43ae-9910-fbf100786a8d")
 		(property "Reference" "J7"
-			(at 275.59 21.8272 0)
+			(at 250.19 37.0672 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31779,7 +31931,7 @@
 			)
 		)
 		(property "Value" "JUMPER_0402"
-			(at 275.59 24.3641 0)
+			(at 250.19 39.6041 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31787,7 +31939,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_JUMPER"
-			(at 275.59 29.21 0)
+			(at 250.19 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31796,7 +31948,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 275.59 29.21 0)
+			(at 250.19 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31805,7 +31957,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 275.59 29.21 0)
+			(at 250.19 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31903,7 +32055,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 361.95 26.67 90)
+		(at 336.55 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -31911,7 +32063,7 @@
 		(dnp no)
 		(uuid "dc55bf30-4537-4e3e-bdec-95d66fca8877")
 		(property "Reference" "R51"
-			(at 365.76 25.4 90)
+			(at 340.36 40.64 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31919,7 +32071,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 361.95 26.67 90)
+			(at 336.55 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31927,7 +32079,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 361.95 28.448 90)
+			(at 336.55 43.688 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31936,7 +32088,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 361.95 26.67 0)
+			(at 336.55 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31945,7 +32097,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 361.95 26.67 0)
+			(at 336.55 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31970,7 +32122,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 285.75 208.28 0)
+		(at 255.27 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -31979,7 +32131,7 @@
 		(fields_autoplaced yes)
 		(uuid "dd3cc649-fd7b-46e5-95f4-1f05c5884001")
 		(property "Reference" "C64"
-			(at 288.671 207.4453 0)
+			(at 258.191 227.7653 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31988,7 +32140,7 @@
 			)
 		)
 		(property "Value" "0.47 uF"
-			(at 288.671 209.9822 0)
+			(at 258.191 230.3022 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31997,7 +32149,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 286.7152 212.09 0)
+			(at 256.2352 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32006,7 +32158,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 285.75 208.28 0)
+			(at 255.27 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32015,7 +32167,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 208.28 0)
+			(at 255.27 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32040,7 +32192,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 367.03 87.63 90)
+		(at 341.63 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32048,7 +32200,7 @@
 		(dnp no)
 		(uuid "defc1441-298b-454c-83e2-1dc512c5582a")
 		(property "Reference" "R55"
-			(at 370.84 86.36 90)
+			(at 345.44 101.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32056,7 +32208,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 367.03 87.63 90)
+			(at 341.63 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32064,7 +32216,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 367.03 89.408 90)
+			(at 341.63 104.648 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32073,7 +32225,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 367.03 87.63 0)
+			(at 341.63 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32082,7 +32234,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 367.03 87.63 0)
+			(at 341.63 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32107,7 +32259,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 115.57 226.06 0)
+		(at 85.09 219.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32116,7 +32268,7 @@
 		(fields_autoplaced yes)
 		(uuid "ecc3e11a-39a8-4833-a4d4-07bbd48e238f")
 		(property "Reference" "C60"
-			(at 118.491 225.2253 0)
+			(at 88.011 218.8753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32125,7 +32277,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 118.491 227.7622 0)
+			(at 88.011 221.4122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32134,7 +32286,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 116.5352 229.87 0)
+			(at 86.0552 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32143,7 +32295,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 226.06 0)
+			(at 85.09 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32152,7 +32304,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 115.57 226.06 0)
+			(at 85.09 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32177,7 +32329,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 128.27 226.06 0)
+		(at 97.79 219.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32186,7 +32338,7 @@
 		(fields_autoplaced yes)
 		(uuid "f76e3edc-deaf-4417-9209-2b6fd8cb2895")
 		(property "Reference" "C63"
-			(at 131.191 225.2253 0)
+			(at 100.711 218.8753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32195,7 +32347,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 131.191 227.7622 0)
+			(at 100.711 221.4122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32204,7 +32356,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 129.2352 229.87 0)
+			(at 98.7552 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32213,7 +32365,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 226.06 0)
+			(at 97.79 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32222,7 +32374,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 128.27 226.06 0)
+			(at 97.79 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32247,7 +32399,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 218.44 224.79 180)
+		(at 187.96 245.11 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32256,7 +32408,7 @@
 		(fields_autoplaced yes)
 		(uuid "f7b4af51-e874-483a-b65c-36fdfd80dd4d")
 		(property "Reference" "R40"
-			(at 220.218 223.9553 0)
+			(at 189.738 244.2753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32265,7 +32417,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 220.218 226.4922 0)
+			(at 189.738 246.8122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32274,7 +32426,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 220.218 224.79 90)
+			(at 189.738 245.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32283,7 +32435,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 218.44 224.79 0)
+			(at 187.96 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32292,7 +32444,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 218.44 224.79 0)
+			(at 187.96 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32317,7 +32469,7 @@
 	)
 	(symbol
 		(lib_id "device:R")
-		(at 345.44 161.29 90)
+		(at 360.68 229.87 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32325,7 +32477,7 @@
 		(dnp no)
 		(uuid "faa4c45c-b173-4b9a-86b9-db8a4fd92430")
 		(property "Reference" "R46"
-			(at 349.25 160.02 90)
+			(at 364.49 228.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32333,7 +32485,7 @@
 			)
 		)
 		(property "Value" "33"
-			(at 345.44 161.29 90)
+			(at 360.68 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32341,7 +32493,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 345.44 163.068 90)
+			(at 360.68 231.648 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32350,7 +32502,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 345.44 161.29 0)
+			(at 360.68 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32359,7 +32511,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 345.44 161.29 0)
+			(at 360.68 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32384,7 +32536,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 115.57 213.36 0)
+		(at 85.09 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32393,7 +32545,7 @@
 		(fields_autoplaced yes)
 		(uuid "fdeea94e-6834-4c4e-81c3-49ffd1d37355")
 		(property "Reference" "C59"
-			(at 118.491 212.5253 0)
+			(at 88.011 206.1753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32402,7 +32554,7 @@
 			)
 		)
 		(property "Value" "4.7 uF"
-			(at 118.491 215.0622 0)
+			(at 88.011 208.7122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32411,7 +32563,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
-			(at 116.5352 217.17 0)
+			(at 86.0552 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32420,7 +32572,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 213.36 0)
+			(at 85.09 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32429,7 +32581,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 115.57 213.36 0)
+			(at 85.09 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
