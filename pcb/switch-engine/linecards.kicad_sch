@@ -17290,7 +17290,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 270.51 200.66 0)
 			(effects
 				(font
@@ -20552,7 +20552,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 270.51 120.65 0)
 			(effects
 				(font
@@ -22953,7 +22953,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 107.95 120.65 0)
 			(effects
 				(font
@@ -25044,7 +25044,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 189.23 120.65 0)
 			(effects
 				(font

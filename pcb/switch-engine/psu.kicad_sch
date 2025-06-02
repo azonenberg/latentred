@@ -13479,7 +13479,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
 			(at 146.05 264.16 0)
 			(effects
 				(font
@@ -18324,7 +18324,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:TESTPOINT_SMT_KEYSTONE_5016"
 			(at 146.05 257.81 0)
 			(effects
 				(font

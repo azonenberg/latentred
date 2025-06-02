@@ -11,7 +11,196 @@
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
 	)
-	(lib_symbols)
+	(lib_symbols
+		(symbol "conn:CONN_01X01"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CONN_01X01"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Connector, single row, 01x01, pin header"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin_Header_Straight_1X* Pin_Header_Angled_1X* Socket_Strip_Straight_1X* Socket_Strip_Angled_1X*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CONN_01X01_0_1"
+				(rectangle
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CONN_01X01_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "P1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "special-azonenberg:MECHANICAL"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MECHANICAL"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MECHANICAL_0_1"
+				(rectangle
+					(start 0 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 20.32 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "08514ebd-5c7a-47f7-b4c1-0bbca835bc2c")
+	)
+	(junction
+		(at 20.32 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "827e6b6f-3ce2-426b-83f2-73af28d5be0a")
+	)
 	(no_connect
 		(at 34.29 19.05)
 		(uuid "a69ebeee-299c-48c4-8acd-d3e5443195a0")
@@ -95,6 +284,16 @@
 			(type default)
 		)
 		(uuid "34fc85e7-e4ac-42a3-962f-3902a0f771ce")
+	)
+	(wire
+		(pts
+			(xy 20.32 167.64) (xy 20.32 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36883e0d-d64a-4a88-8db5-e572f588c0c1")
 	)
 	(wire
 		(pts
@@ -238,6 +437,16 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 172.72) (xy 20.32 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7fd8ef7-330e-4d8a-ae99-79e0cb7650c3")
+	)
+	(wire
+		(pts
 			(xy 34.29 34.29) (xy 48.26 34.29)
 		)
 		(stroke
@@ -255,6 +464,16 @@
 			(type default)
 		)
 		(uuid "b088215e-bd51-4685-acdf-7186ce1e0d96")
+	)
+	(wire
+		(pts
+			(xy 20.32 177.8) (xy 20.32 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcdb3a39-655c-402d-aaf7-8b359db17be4")
 	)
 	(wire
 		(pts
@@ -384,6 +603,17 @@
 		(uuid "5fb1b61c-68b8-456a-bd31-d65b52c1ff37")
 	)
 	(label "GND"
+		(at 20.32 167.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "62fbc276-53c0-461d-b572-093afc33e833")
+	)
+	(label "GND"
 		(at 93.98 31.75 180)
 		(fields_autoplaced yes)
 		(effects
@@ -492,6 +722,466 @@
 			(justify left bottom)
 		)
 		(uuid "f49f0358-c5df-4927-a2ab-3adb18c03d96")
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "141972aa-6162-48c6-8c9c-dc3b9556a406")
+		(property "Reference" "M1"
+			(at 27.305 166.4278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 27.305 168.8521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 25.4 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x01, pin header"
+			(at 25.4 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "38b53499-c69b-40c4-841c-e3756c695223")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 172.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33a63a54-6238-402d-bfc9-96a431ff63d4")
+		(property "Reference" "M2"
+			(at 27.305 171.5078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 27.305 173.9321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x01, pin header"
+			(at 25.4 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7bfb960b-1537-4f01-ac80-5f7885c840a6")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84b22c6d-edc8-4dba-84dd-5be0042add46")
+		(property "Reference" "M4"
+			(at 27.305 181.6678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 27.305 184.0921 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 25.4 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x01, pin header"
+			(at 25.4 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a3c6a497-b076-419e-8ca9-6ad4fa92f50e")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "conn:CONN_01X01")
+		(at 25.4 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a852fbdf-35d8-4c79-b573-93a2c9cceadb")
+		(property "Reference" "M3"
+			(at 27.305 176.5878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SCREWHOLE"
+			(at 27.305 179.0121 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:MECHANICAL_CLEARANCEHOLE_4_40"
+			(at 25.4 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connector, single row, 01x01, pin header"
+			(at 25.4 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8714512-1deb-4e20-ba6b-a506cc08fa62")
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 49.53 172.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d3b21a05-2647-4e19-a628-1f31c8be9a3e")
+		(property "Reference" "M6"
+			(at 52.705 171.5078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LOGO"
+			(at 52.705 173.9321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "w_logo:Logo_silk_OSHW_6x6mm"
+			(at 49.53 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 49.53 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8bca5a5-697c-4cc8-9fcc-952acd0017d3")
+		(property "Reference" "M7"
+			(at 52.705 176.5878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LOGO"
+			(at 52.705 179.0121 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "w_logo:Logo_silk_WEEE_3.4x5mm"
+			(at 49.53 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 49.53 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dea9f60f-9832-4231-96e1-9dbd67b786c0")
+		(property "Reference" "M5"
+			(at 52.705 166.4278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LOGO"
+			(at 52.705 168.8521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:LONGTHING-1200DPI"
+			(at 49.53 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M5")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(sheet
 		(at 135.89 20.32)

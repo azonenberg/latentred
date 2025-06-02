@@ -845,6 +845,70 @@
 				)
 			)
 		)
+		(symbol "special-azonenberg:MECHANICAL"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "M"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MECHANICAL"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MECHANICAL_0_1"
+				(rectangle
+					(start 0 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
 		(symbol "xilinx-azonenberg:XILINX_JTAG"
 			(pin_names
 				(offset 1.016)
@@ -17150,6 +17214,16 @@
 		)
 		(uuid "760990f0-9366-4b8d-be99-fb487861b37f")
 	)
+	(polyline
+		(pts
+			(xy 227.33 163.83) (xy 227.33 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b9df5b-e2ab-4ffd-bdad-6f78dfbf5b3a")
+	)
 	(wire
 		(pts
 			(xy 161.29 142.24) (xy 161.29 144.78)
@@ -18159,6 +18233,16 @@
 			(type default)
 		)
 		(uuid "bd5c7ada-4b21-490b-bc62-919864ae8357")
+	)
+	(polyline
+		(pts
+			(xy 165.1 179.07) (xy 227.33 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdb199ec-55fd-48fc-936a-197f20396a97")
 	)
 	(wire
 		(pts
@@ -19230,6 +19314,17 @@
 			(justify left bottom)
 		)
 		(uuid "d6ce2a66-1223-4490-9bfb-564069a42cf2")
+	)
+	(text "Heatsink"
+		(exclude_from_sim no)
+		(at 167.64 176.53 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "e7c1d675-75f9-4465-9a4b-de80bcc78b18")
 	)
 	(text "VCCAUX"
 		(exclude_from_sim no)
@@ -20942,7 +21037,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 356.87 92.71 0)
 			(effects
 				(font
@@ -23276,7 +23371,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 88.9 154.94 0)
 			(effects
 				(font
@@ -26214,7 +26309,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 154.94 154.94 0)
 			(effects
 				(font
@@ -30074,7 +30169,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "azonenberg_pcb:BGA_676_27x27_FULLARRAY_1MM_FFG676"
 			(at 229.87 154.94 0)
 			(effects
 				(font
@@ -32549,6 +32644,70 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
 					(reference "R55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 168.91 168.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e8cf6738-4380-4bfa-af13-c5a7060dd9af")
+		(property "Reference" "M8"
+			(at 172.085 167.6978 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "960-27-23-D-AB-0"
+			(at 172.085 170.1221 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:HEATSINK_WAKEFIELDVETTE_960-27-12-D-AB-0"
+			(at 168.91 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 168.91 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 168.91 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "switch-engine"
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243/9989755c-0d3b-4905-8e52-92e034d7bb45"
+					(reference "M8")
 					(unit 1)
 				)
 			)
