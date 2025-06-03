@@ -39841,7 +39841,7 @@
 		(fields_autoplaced yes)
 		(uuid "c972154f-f6ca-4dab-b83f-623f264add4b")
 		(property "Reference" "C79"
-			(at 46.101 204.8315 0)
+			(at 46.101 204.5278 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39849,8 +39849,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2 uF"
-			(at 46.101 207.6066 0)
+		(property "Value" "4.7 uF"
+			(at 46.101 206.9521 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39858,7 +39858,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:EIA_0805_CAP_NOSILK"
+		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
 			(at 44.1452 209.55 0)
 			(effects
 				(font
@@ -42696,7 +42696,7 @@
 		(fields_autoplaced yes)
 		(uuid "eeb90c0a-7e8d-4c4a-aad5-59f4e5d1ac35")
 		(property "Reference" "C75"
-			(at 33.401 204.8315 0)
+			(at 33.401 204.5278 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42704,8 +42704,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2 uF"
-			(at 33.401 207.6066 0)
+		(property "Value" "4.7 uF"
+			(at 33.401 206.9521 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42713,7 +42713,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "azonenberg_pcb:EIA_0805_CAP_NOSILK"
+		(property "Footprint" "azonenberg_pcb:EIA_0603_CAP_NOSILK"
 			(at 31.4452 209.55 0)
 			(effects
 				(font
