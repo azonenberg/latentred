@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-02")
+		(date "2025-06-04")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -15612,8 +15612,8 @@
 		(uuid "0493aeb8-5ef6-48c6-8185-305692f419f8")
 	)
 	(no_connect
-		(at 323.85 19.05)
-		(uuid "0613663d-da75-4aaf-bd08-347f74a8c136")
+		(at 323.85 102.87)
+		(uuid "087b82e8-59b5-42f9-88c2-7d76bc2164ff")
 	)
 	(no_connect
 		(at 323.85 82.55)
@@ -15624,20 +15624,12 @@
 		(uuid "0e528418-9c78-4135-8d18-25dbf6d3f4f3")
 	)
 	(no_connect
-		(at 323.85 97.79)
-		(uuid "10de21bb-32c5-4362-b502-2005fefe4433")
-	)
-	(no_connect
-		(at 323.85 100.33)
-		(uuid "1235c25b-a8ad-40f9-a389-fb2e232fe2f7")
-	)
-	(no_connect
 		(at 323.85 118.11)
 		(uuid "125609e2-6636-41e4-8df6-2f4ebb1ef2bb")
 	)
 	(no_connect
-		(at 323.85 26.67)
-		(uuid "1d3a8444-bc46-427b-94b2-9887fe796409")
+		(at 323.85 64.77)
+		(uuid "1b88faa6-a82a-4334-8743-50ef29d481bd")
 	)
 	(no_connect
 		(at 323.85 59.69)
@@ -15660,12 +15652,20 @@
 		(uuid "39d1a59a-9e0e-4ccc-8e80-a70dc5c0d7e8")
 	)
 	(no_connect
+		(at 323.85 105.41)
+		(uuid "42653378-46c6-46a3-b3f8-c4987c47e364")
+	)
+	(no_connect
 		(at 323.85 69.85)
 		(uuid "489fd255-357f-435a-8992-0ce75955404a")
 	)
 	(no_connect
-		(at 323.85 95.25)
-		(uuid "50189bf7-3b0e-46fc-9f2d-a0e40c48b44c")
+		(at 323.85 90.17)
+		(uuid "49af9111-8b78-450b-a4ae-5613c54b772c")
+	)
+	(no_connect
+		(at 323.85 97.79)
+		(uuid "57968607-dd92-462d-9500-795ff7a2ad60")
 	)
 	(no_connect
 		(at 323.85 115.57)
@@ -15674,10 +15674,6 @@
 	(no_connect
 		(at 323.85 125.73)
 		(uuid "66bbe352-1f3e-4314-a121-23b3fe86c05e")
-	)
-	(no_connect
-		(at 323.85 49.53)
-		(uuid "69ccbd80-f70c-4012-a7ae-c440ea03cded")
 	)
 	(no_connect
 		(at 323.85 146.05)
@@ -15704,28 +15700,12 @@
 		(uuid "9f93652d-5d8f-45a5-b612-93a798521254")
 	)
 	(no_connect
-		(at 323.85 24.13)
-		(uuid "a8e01606-8794-4153-9880-04e39617aed4")
-	)
-	(no_connect
-		(at 323.85 46.99)
-		(uuid "a968afed-9363-45a4-90df-9d1d1c59d2a4")
-	)
-	(no_connect
 		(at 323.85 151.13)
 		(uuid "ad6fe2d7-d5b3-4cb7-9f24-ac24611e5fac")
 	)
 	(no_connect
 		(at 99.06 91.44)
 		(uuid "b2c2c28f-fe09-44b6-8938-38eb0649cadf")
-	)
-	(no_connect
-		(at 323.85 31.75)
-		(uuid "b4881bc0-489d-4d6b-aeb6-fd84d90dcde4")
-	)
-	(no_connect
-		(at 323.85 29.21)
-		(uuid "b7c97849-1c38-49f7-a850-c67a276de047")
 	)
 	(no_connect
 		(at 323.85 140.97)
@@ -15736,12 +15716,32 @@
 		(uuid "cb1da18b-eab5-4c00-95f2-1b327f231dbe")
 	)
 	(no_connect
+		(at 323.85 80.01)
+		(uuid "d178509e-be06-4c47-8d26-be4c0030ddc1")
+	)
+	(no_connect
+		(at 323.85 110.49)
+		(uuid "db2ea203-052e-4aec-83d3-cdb1678182db")
+	)
+	(no_connect
+		(at 323.85 62.23)
+		(uuid "dec4f9d3-f156-494c-b0cf-37cb7687e400")
+	)
+	(no_connect
+		(at 323.85 107.95)
+		(uuid "e7e14d89-70ba-42c0-8884-d13a0cfa5782")
+	)
+	(no_connect
 		(at 323.85 113.03)
 		(uuid "ed250937-cc67-427d-b625-402c3b983a22")
 	)
 	(no_connect
-		(at 323.85 21.59)
-		(uuid "fc241290-31a3-4d38-8b12-00fae4b83622")
+		(at 323.85 72.39)
+		(uuid "fc363f42-8d1a-4464-a7b0-43295d6369f9")
+	)
+	(no_connect
+		(at 323.85 52.07)
+		(uuid "ffaaaf09-2813-4f05-9e2e-5915a5b91eaf")
 	)
 	(wire
 		(pts
@@ -17284,7 +17284,7 @@
 		(uuid "0a62034a-48c5-4ea6-be8a-b2b5894434e4")
 	)
 	(label "ETH_RST_N"
-		(at 323.85 72.39 180)
+		(at 323.85 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17317,7 +17317,7 @@
 		(uuid "0e389d42-db41-40d6-b4a2-10d74a75f9b3")
 	)
 	(label "RGMII_TXD0"
-		(at 323.85 52.07 180)
+		(at 323.85 36.83 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17383,7 +17383,7 @@
 		(uuid "17533c43-e54b-44d0-8045-7f2e5fc6ac7c")
 	)
 	(label "ETH_LED2_N_1V8"
-		(at 323.85 105.41 180)
+		(at 323.85 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17416,7 +17416,7 @@
 		(uuid "1e49a18b-81df-4021-98d8-a221dec0e368")
 	)
 	(label "ETH_RXD0"
-		(at 323.85 107.95 180)
+		(at 323.85 24.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17548,7 +17548,7 @@
 		(uuid "43af153e-47e8-42c1-b6f0-b23931329ed0")
 	)
 	(label "RGMII_TXD2"
-		(at 323.85 74.93 180)
+		(at 323.85 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17581,7 +17581,7 @@
 		(uuid "4789ca18-2487-4998-9457-477514a966a4")
 	)
 	(label "ETH_RX_DV"
-		(at 323.85 102.87 180)
+		(at 323.85 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17669,7 +17669,7 @@
 		(uuid "5f2229c8-1006-471e-a22c-9d329b5cafaa")
 	)
 	(label "RGMII_TX_EN"
-		(at 323.85 34.29 180)
+		(at 323.85 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17768,7 +17768,7 @@
 		(uuid "6c40bdeb-5602-47a6-801c-8cf21bec5eb4")
 	)
 	(label "ETH_MDC"
-		(at 323.85 110.49 180)
+		(at 323.85 21.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17812,7 +17812,7 @@
 		(uuid "76b19a19-ebd0-4f01-9444-ab689e38c159")
 	)
 	(label "ETH_RXD1"
-		(at 323.85 90.17 180)
+		(at 323.85 26.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17900,7 +17900,7 @@
 		(uuid "815507e0-7bb4-480b-85b4-df2173a19d72")
 	)
 	(label "RGMII_TX_CLK"
-		(at 323.85 57.15 180)
+		(at 323.85 29.21 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17988,7 +17988,7 @@
 		(uuid "8fbb1259-a17c-40a9-91b9-d5a14107459a")
 	)
 	(label "RGMII_TXD1"
-		(at 323.85 62.23 180)
+		(at 323.85 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17999,7 +17999,7 @@
 		(uuid "9149f4d9-52a3-4387-ba2d-14912b2fdeb6")
 	)
 	(label "ETH_RXD3"
-		(at 323.85 41.91 180)
+		(at 323.85 19.05 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18054,7 +18054,7 @@
 		(uuid "9a15af8b-47f9-473a-8d6b-e259a9621124")
 	)
 	(label "ETH_LED1_N_1V8"
-		(at 323.85 54.61 180)
+		(at 323.85 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18329,7 +18329,7 @@
 		(uuid "cc16db1c-c49b-438b-a7c6-11f941caf94b")
 	)
 	(label "ETH_LED2_N_1V8_INV"
-		(at 323.85 39.37 180)
+		(at 323.85 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18340,7 +18340,7 @@
 		(uuid "cca6df04-fc5f-4030-a054-cfac1d6be808")
 	)
 	(label "ETH_MDIO"
-		(at 323.85 80.01 180)
+		(at 323.85 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18417,7 +18417,7 @@
 		(uuid "d96caf5f-6389-49ca-baa3-23d06957e191")
 	)
 	(label "RGMII_TXD3"
-		(at 323.85 64.77 180)
+		(at 323.85 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18439,7 +18439,7 @@
 		(uuid "db595b3f-c28d-4f64-89c6-350a1dcb7e54")
 	)
 	(label "ETH_LED1_N_1V8_INV"
-		(at 323.85 36.83 180)
+		(at 323.85 41.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
