@@ -15124,6 +15124,39 @@
 		)
 		(uuid "fc8324a9-aa85-4b48-a2f9-b06e7466b277")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 62.23 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "245647c6-d731-48d8-b8d2-3fb293a753ba")
+	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 62.23 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a875fec-efa6-4f70-b1c4-abe5ce1cdf4b")
+	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 60.96 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4463f2d6-c74d-45c3-a154-fe5bff0f611e")
+	)
 	(text "SERDES reference clock"
 		(exclude_from_sim no)
 		(at 176.53 281.94 0)
@@ -15190,6 +15223,17 @@
 		)
 		(uuid "b57874b8-5c0b-44c8-b521-9e6ef53c5fe5")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 62.23 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b7964b9f-41d8-4ee7-bf8c-0f15947c4d62")
+	)
 	(text "Line card 1"
 		(exclude_from_sim no)
 		(at 96.52 283.21 0)
@@ -15244,8 +15288,19 @@
 		)
 		(uuid "fd80e55f-b4ae-4415-8e75-91e164d91b70")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 62.23 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "febbd7f0-d3e9-4262-bbeb-52051ee51c65")
+	)
 	(label "LC0_PHY0_LANE2_RX_P"
-		(at 39.37 80.01 180)
+		(at 39.37 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15366,7 +15421,7 @@
 		(uuid "0e83fa50-2561-4dd5-98ad-6d822e59721f")
 	)
 	(label "LC0_PHY0_LANE2_TX_N"
-		(at 39.37 113.03 180)
+		(at 39.37 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15421,7 +15476,7 @@
 		(uuid "14e05ad1-d5f3-4199-9280-1d222848c698")
 	)
 	(label "LC0_PHY0_LANE1_TX_N"
-		(at 39.37 105.41 180)
+		(at 39.37 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15960,7 +16015,7 @@
 		(uuid "5eaba07c-52f8-44ce-a1f9-b1fd784d2c4f")
 	)
 	(label "LC0_PHY0_LANE1_TX_P"
-		(at 39.37 102.87 180)
+		(at 39.37 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15982,7 +16037,7 @@
 		(uuid "5f249772-d83c-45e2-833e-458a684d1f71")
 	)
 	(label "LC0_PHY1_LANE0_TX_P"
-		(at 39.37 118.11 180)
+		(at 39.37 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16059,7 +16114,7 @@
 		(uuid "6783d2bc-565d-4b16-81b6-8a6343e7db6c")
 	)
 	(label "LC0_PHY0_LANE2_RX_N"
-		(at 39.37 82.55 180)
+		(at 39.37 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16488,7 +16543,7 @@
 		(uuid "9c82ec90-c52d-4996-9293-342cb149cef3")
 	)
 	(label "LC0_PHY1_LANE0_TX_N"
-		(at 39.37 120.65 180)
+		(at 39.37 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16653,7 +16708,7 @@
 		(uuid "af8fd065-4c55-4141-81ce-da29aa42c03a")
 	)
 	(label "LC0_PHY0_LANE0_TX_N"
-		(at 39.37 97.79 180)
+		(at 39.37 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16697,7 +16752,7 @@
 		(uuid "b2d252e1-165f-4204-a901-d6919d435277")
 	)
 	(label "LC0_PHY0_LANE2_TX_P"
-		(at 39.37 110.49 180)
+		(at 39.37 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17104,7 +17159,7 @@
 		(uuid "f03f00d2-f5f9-4596-a572-3d8ac3895d8c")
 	)
 	(label "LC0_PHY0_LANE0_TX_P"
-		(at 39.37 95.25 180)
+		(at 39.37 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font

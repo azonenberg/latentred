@@ -14798,6 +14798,28 @@
 		)
 		(uuid "345c6ac8-c577-4913-b567-b24073a36dad")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 22.86 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4282f337-b65e-45fc-bb87-e3b33eae26d6")
+	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 22.86 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "661e7036-39dd-4feb-b5c1-157f71278801")
+	)
 	(text "Recovered clock out"
 		(exclude_from_sim no)
 		(at 212.09 279.4 0)
@@ -14832,7 +14854,7 @@
 		(uuid "c12cf362-e7bb-4210-a942-4d5b51ac5c5f")
 	)
 	(label "SFP28_1_TX_N"
-		(at 52.07 113.03 180)
+		(at 52.07 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14909,7 +14931,7 @@
 		(uuid "1207f2d1-81e1-4f34-a9f1-f1a1448188c4")
 	)
 	(label "GTY2_TX_N"
-		(at 52.07 120.65 180)
+		(at 52.07 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14920,7 +14942,7 @@
 		(uuid "132c80b4-90c8-4b8c-b574-794867daf00b")
 	)
 	(label "SFP28_1_TX_P"
-		(at 52.07 110.49 180)
+		(at 52.07 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14931,7 +14953,7 @@
 		(uuid "148c53c3-5fd5-404e-ad9a-077088d113bc")
 	)
 	(label "GTY3_TX_N"
-		(at 52.07 128.27 180)
+		(at 52.07 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14942,7 +14964,7 @@
 		(uuid "1560fd75-6ef2-47f5-82a3-1f4256228318")
 	)
 	(label "GTY3_RX_P"
-		(at 52.07 95.25 180)
+		(at 52.07 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14953,7 +14975,7 @@
 		(uuid "16995966-a011-4ab6-8d64-b6144f0c6098")
 	)
 	(label "SFP28_0_TX_N"
-		(at 52.07 105.41 180)
+		(at 52.07 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15030,7 +15052,7 @@
 		(uuid "51e945c1-d707-4308-a9a5-da3fa88a19c5")
 	)
 	(label "GTY3_RX_N"
-		(at 52.07 97.79 180)
+		(at 52.07 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15118,7 +15140,7 @@
 		(uuid "71bbf89c-9762-4b76-b266-0a80c7c9104c")
 	)
 	(label "SFP28_0_RX_N"
-		(at 52.07 74.93 180)
+		(at 52.07 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15173,7 +15195,7 @@
 		(uuid "86471dcf-712c-4766-a229-a339127003e3")
 	)
 	(label "GTY2_RX_P"
-		(at 52.07 87.63 180)
+		(at 52.07 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15217,7 +15239,7 @@
 		(uuid "a09607f5-bd0f-4589-bdd9-be885d5fc5ba")
 	)
 	(label "GTY2_TX_P"
-		(at 52.07 118.11 180)
+		(at 52.07 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15250,7 +15272,7 @@
 		(uuid "b5cbb17f-2701-4231-8797-a384e027d3af")
 	)
 	(label "GTY3_TX_P"
-		(at 52.07 125.73 180)
+		(at 52.07 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15305,7 +15327,7 @@
 		(uuid "c51fcbce-f8e4-4a2e-abbc-8d393f158610")
 	)
 	(label "SFP28_1_RX_P"
-		(at 52.07 80.01 180)
+		(at 52.07 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15316,7 +15338,7 @@
 		(uuid "cacda386-c30c-44f4-915a-8bd6dd85c08a")
 	)
 	(label "SFP28_1_RX_N"
-		(at 52.07 82.55 180)
+		(at 52.07 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15338,7 +15360,7 @@
 		(uuid "cbd91428-005b-49bf-8983-09ae27f3c41d")
 	)
 	(label "GTY2_RX_N"
-		(at 52.07 90.17 180)
+		(at 52.07 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15371,7 +15393,7 @@
 		(uuid "ce56c41c-f120-4aa5-9913-89a7e47920ba")
 	)
 	(label "SFP28_0_RX_P"
-		(at 52.07 72.39 180)
+		(at 52.07 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15415,7 +15437,7 @@
 		(uuid "ee69bfef-fa02-435a-b3da-6b7275ffc4ae")
 	)
 	(label "SFP28_0_TX_P"
-		(at 52.07 102.87 180)
+		(at 52.07 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
