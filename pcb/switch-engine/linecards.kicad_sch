@@ -15157,6 +15157,17 @@
 		)
 		(uuid "4463f2d6-c74d-45c3-a154-fe5bff0f611e")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 223.52 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f81916d-60de-4dc4-b203-da331aa372b2")
+	)
 	(text "SERDES reference clock"
 		(exclude_from_sim no)
 		(at 176.53 281.94 0)
@@ -15201,6 +15212,17 @@
 		)
 		(uuid "6a977bd2-3842-42d7-bc03-2316309ffaa2")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 142.24 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "80410a39-46d5-4d6c-8f80-ea228078082f")
+	)
 	(text "MDIO level shifters"
 		(exclude_from_sim no)
 		(at 261.62 132.08 0)
@@ -15211,6 +15233,17 @@
 			(justify left)
 		)
 		(uuid "85699bc9-51f5-421b-8e01-b859f179e067")
+	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 142.24 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa2577d9-41a3-4736-8314-138a0706dc27")
 	)
 	(text "Low speed control buses"
 		(exclude_from_sim no)
@@ -15256,6 +15289,17 @@
 		)
 		(uuid "cef71c16-0c8a-4c3c-9716-5e08ec312002")
 	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 142.24 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e26eaa70-0d5b-4765-9ad0-debc7db82a25")
+	)
 	(text "Use ARC6-08-12.0-LU-LD-2-1 cable"
 		(exclude_from_sim no)
 		(at 52.07 138.43 0)
@@ -15265,6 +15309,17 @@
 			)
 		)
 		(uuid "e9d8aafe-ce8a-4db8-aaeb-5bb7a24cefb9")
+	)
+	(text "Polarity swap"
+		(exclude_from_sim no)
+		(at 142.24 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f15380c8-b81e-45c5-80d1-11ba51ea3430")
 	)
 	(text "MDIO/MDC to line cards are LVCMOS25\nEverything else is LVCMOS33"
 		(exclude_from_sim no)
@@ -15311,7 +15366,7 @@
 		(uuid "03061aa7-33df-4326-bfa6-75a644499ef2")
 	)
 	(label "LC1_PHY1_LANE0_RX_P"
-		(at 201.93 72.39 180)
+		(at 201.93 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15487,7 +15542,7 @@
 		(uuid "15c38cfa-d091-4c64-9bea-1857aa95f57e")
 	)
 	(label "LC1_PHY0_LANE0_TX_N"
-		(at 120.65 113.03 180)
+		(at 120.65 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15531,7 +15586,7 @@
 		(uuid "1922afce-b6eb-4269-8e39-28fec5e1ecb5")
 	)
 	(label "LC1_PHY0_LANE0_TX_P"
-		(at 120.65 110.49 180)
+		(at 120.65 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15641,7 +15696,7 @@
 		(uuid "245069c4-1ad5-4da6-a39c-5301b88feced")
 	)
 	(label "LC1_PHY1_LANE0_TX_P"
-		(at 201.93 102.87 180)
+		(at 201.93 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15685,7 +15740,7 @@
 		(uuid "2d0efbed-8bd1-4f26-9793-9ef2fe85011a")
 	)
 	(label "LC1_PHY0_LANE2_RX_P"
-		(at 201.93 64.77 180)
+		(at 201.93 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15806,7 +15861,7 @@
 		(uuid "3f6bb97f-bdbb-49dc-83be-1ed6da232806")
 	)
 	(label "LC1_PHY0_LANE1_TX_N"
-		(at 120.65 120.65 180)
+		(at 120.65 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15850,7 +15905,7 @@
 		(uuid "45cb2abf-f257-42d1-9a2e-9cc912042c96")
 	)
 	(label "LC1_PHY0_LANE2_TX_N"
-		(at 201.93 97.79 180)
+		(at 201.93 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15905,7 +15960,7 @@
 		(uuid "4e9dfe53-e274-47ec-84ac-e249e8a02b73")
 	)
 	(label "LC1_PHY1_LANE0_RX_N"
-		(at 201.93 74.93 180)
+		(at 201.93 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15916,7 +15971,7 @@
 		(uuid "51cfd332-9c8b-4489-8a3f-54357bb887ab")
 	)
 	(label "LC0_PHY1_LANE1_TX_N"
-		(at 120.65 97.79 180)
+		(at 120.65 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16576,7 +16631,7 @@
 		(uuid "a0fbfbe7-2b21-494d-bdd6-aa7cbae6895a")
 	)
 	(label "LC0_PHY1_LANE2_TX_N"
-		(at 120.65 105.41 180)
+		(at 120.65 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16642,7 +16697,7 @@
 		(uuid "a73e6ca0-e773-477a-9016-7c2c581b2935")
 	)
 	(label "LC1_PHY0_LANE2_TX_P"
-		(at 201.93 95.25 180)
+		(at 201.93 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16675,7 +16730,7 @@
 		(uuid "ae028440-65f8-4b70-b274-917d6076e870")
 	)
 	(label "LC1_PHY0_LANE1_TX_P"
-		(at 120.65 118.11 180)
+		(at 120.65 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16818,7 +16873,7 @@
 		(uuid "bd53f06f-abc6-4cc2-8839-cc2211c048c9")
 	)
 	(label "LC1_PHY0_LANE2_RX_N"
-		(at 201.93 67.31 180)
+		(at 201.93 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16950,7 +17005,7 @@
 		(uuid "d9777a1c-40b1-4ed2-8f0c-4ea39ee54f2e")
 	)
 	(label "LC0_PHY1_LANE1_TX_P"
-		(at 120.65 95.25 180)
+		(at 120.65 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16961,7 +17016,7 @@
 		(uuid "d9f5712d-2300-41ab-9b8f-814e04c2bdb0")
 	)
 	(label "LC0_PHY1_LANE2_TX_P"
-		(at 120.65 102.87 180)
+		(at 120.65 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17181,7 +17236,7 @@
 		(uuid "f61749fd-3c0e-4471-b02f-0dbb8c004bb7")
 	)
 	(label "LC1_PHY1_LANE0_TX_N"
-		(at 201.93 105.41 180)
+		(at 201.93 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
