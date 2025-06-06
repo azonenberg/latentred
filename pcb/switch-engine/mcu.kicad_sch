@@ -23376,7 +23376,7 @@
 		(uuid "1183f7bb-33e3-49f0-810c-db1d09d5e546")
 	)
 	(label "FMC_A25"
-		(at 294.64 52.07 180)
+		(at 294.64 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24388,7 +24388,7 @@
 		(uuid "7fbe473b-7645-40b7-b529-68441144d316")
 	)
 	(label "FMC_A20"
-		(at 294.64 62.23 180)
+		(at 294.64 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24773,7 +24773,7 @@
 		(uuid "ac2a55b2-15e1-4e50-bc34-5b2498185d61")
 	)
 	(label "FMC_AD2"
-		(at 294.64 49.53 180)
+		(at 294.64 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24817,7 +24817,7 @@
 		(uuid "b3128569-8a01-48a5-b8e8-f58963df1da5")
 	)
 	(label "FMC_A22"
-		(at 294.64 57.15 180)
+		(at 294.64 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25037,7 +25037,7 @@
 		(uuid "c93583fd-e757-43d1-9ea4-180ba81c749f")
 	)
 	(label "FMC_NL_NADV"
-		(at 294.64 39.37 180)
+		(at 294.64 52.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font

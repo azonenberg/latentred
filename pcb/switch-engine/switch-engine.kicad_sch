@@ -679,7 +679,7 @@
 		)
 		(uuid "cbc035ba-a6e3-4edf-be5e-56896d582412")
 	)
-	(label "1V2"
+	(label "GTY_VTT"
 		(at 34.29 115.57 0)
 		(fields_autoplaced yes)
 		(effects
