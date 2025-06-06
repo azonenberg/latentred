@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-04")
+		(date "2025-06-06")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -919,6 +919,70 @@
 			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
 					(reference "M4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "special-azonenberg:MECHANICAL")
+		(at 49.53 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a830d56e-ddae-4735-bbbe-d41353d5a0c7")
+		(property "Reference" "M9"
+			(at 52.705 182.9378 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "FAN"
+			(at 52.705 185.3621 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:FAN_DELTA_EFB0412VHD-SP05"
+			(at 49.53 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
+					(reference "M9")
 					(unit 1)
 				)
 			)

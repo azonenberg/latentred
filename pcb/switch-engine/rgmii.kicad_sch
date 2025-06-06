@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-04")
+		(date "2025-06-06")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -17383,7 +17383,7 @@
 		(uuid "17533c43-e54b-44d0-8045-7f2e5fc6ac7c")
 	)
 	(label "ETH_LED2_N_1V8"
-		(at 323.85 95.25 180)
+		(at 323.85 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18054,7 +18054,7 @@
 		(uuid "9a15af8b-47f9-473a-8d6b-e259a9621124")
 	)
 	(label "ETH_LED1_N_1V8"
-		(at 323.85 100.33 180)
+		(at 323.85 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font

@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-04")
+		(date "2025-06-06")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -21017,12 +21017,12 @@
 		(uuid "ff1c0659-bdb0-4b80-89c0-37f25c0f9972")
 	)
 	(no_connect
-		(at 127 109.22)
-		(uuid "01c013a6-3a52-4ee8-96cd-31fecf72edf3")
+		(at 127 31.75)
+		(uuid "016015f1-c74b-46f6-8f93-492cc176d3f0")
 	)
 	(no_connect
-		(at 127 54.61)
-		(uuid "020dbb6d-876d-4882-afbe-c6c7c24b5c8b")
+		(at 127 109.22)
+		(uuid "01c013a6-3a52-4ee8-96cd-31fecf72edf3")
 	)
 	(no_connect
 		(at 33.02 106.68)
@@ -21065,8 +21065,12 @@
 		(uuid "1f6c5ee3-895d-405f-85f8-89ecc6060c8f")
 	)
 	(no_connect
-		(at 179.07 101.6)
-		(uuid "208f9bf6-8c7e-4281-87bb-1a1735673139")
+		(at 33.02 31.75)
+		(uuid "2138cef1-57e6-4bc8-a798-323ee286064a")
+	)
+	(no_connect
+		(at 127 83.82)
+		(uuid "2dfd6461-c2e9-4007-a37d-8ed810e4a105")
 	)
 	(no_connect
 		(at 127 78.74)
@@ -21081,10 +21085,6 @@
 		(uuid "39062cb1-f963-44a0-b041-93b09cfbf279")
 	)
 	(no_connect
-		(at 83.82 93.98)
-		(uuid "3930d056-62da-4e97-b48a-98521b873ce3")
-	)
-	(no_connect
 		(at 179.07 114.3)
 		(uuid "3a17bfec-03fa-4920-a8e1-5312077a49f2")
 	)
@@ -21097,8 +21097,8 @@
 		(uuid "3ad3a33a-f661-4127-83cc-6694403c7b78")
 	)
 	(no_connect
-		(at 179.07 39.37)
-		(uuid "3f4b0cf9-9092-4d36-8d34-b86d2a42694b")
+		(at 127 96.52)
+		(uuid "413e2050-5053-4d01-9c8c-4a2795f9102f")
 	)
 	(no_connect
 		(at 127 24.13)
@@ -21141,8 +21141,12 @@
 		(uuid "68a83f73-5ab4-436f-81c6-f649cf811a75")
 	)
 	(no_connect
-		(at 83.82 86.36)
-		(uuid "7082ee65-04c8-4066-a6f8-8bc287d23f43")
+		(at 83.82 111.76)
+		(uuid "6fbf7193-3713-457b-bc62-93fd59cc0b76")
+	)
+	(no_connect
+		(at 127 106.68)
+		(uuid "7dae1521-990e-4c76-bfd1-d17015abe3a3")
 	)
 	(no_connect
 		(at 83.82 83.82)
@@ -21161,6 +21165,10 @@
 		(uuid "818bd3a2-7899-41bf-a143-6775db63c406")
 	)
 	(no_connect
+		(at 83.82 109.22)
+		(uuid "8bc01d40-65b7-498a-9d81-ea0434a06533")
+	)
+	(no_connect
 		(at 179.07 86.36)
 		(uuid "8da0fc80-3f51-4c99-bdae-6709fc934e49")
 	)
@@ -21169,20 +21177,8 @@
 		(uuid "9651ed1d-70cb-4671-b843-ced1124f579a")
 	)
 	(no_connect
-		(at 83.82 34.29)
-		(uuid "97d6e462-c0f4-40ba-83e5-7b846fab15a4")
-	)
-	(no_connect
 		(at 179.07 78.74)
 		(uuid "9a3643ef-ee49-469b-b2bf-7410e19501d5")
-	)
-	(no_connect
-		(at 83.82 81.28)
-		(uuid "9d9ef7fe-e538-449c-a6ca-7ea364cf05ad")
-	)
-	(no_connect
-		(at 127 21.59)
-		(uuid "9f357296-9397-451e-a709-bec584b1fc7b")
 	)
 	(no_connect
 		(at 83.82 91.44)
@@ -21191,6 +21187,14 @@
 	(no_connect
 		(at 179.07 96.52)
 		(uuid "a5816754-4f25-44d9-9c72-a5954489c756")
+	)
+	(no_connect
+		(at 127 101.6)
+		(uuid "a80305a5-24ee-41bc-bed8-56d2c9ae8c22")
+	)
+	(no_connect
+		(at 83.82 114.3)
+		(uuid "ab74e85f-b790-47c7-9884-e1f24e0b4a76")
 	)
 	(no_connect
 		(at 83.82 106.68)
@@ -21203,6 +21207,14 @@
 	(no_connect
 		(at 127 99.06)
 		(uuid "b1d64689-4c81-476d-9384-4ad3d105d304")
+	)
+	(no_connect
+		(at 83.82 54.61)
+		(uuid "b972f6d7-c34a-4dbb-9307-91e7bbd6f3b1")
+	)
+	(no_connect
+		(at 83.82 52.07)
+		(uuid "bc84c8c0-a00f-4841-99b1-19199e9f7a44")
 	)
 	(no_connect
 		(at 127 57.15)
@@ -21229,16 +21241,8 @@
 		(uuid "c1a6908e-5fdb-438b-8ace-8441b8c3b914")
 	)
 	(no_connect
-		(at 83.82 101.6)
-		(uuid "c2ec1399-a0a1-4a45-a00c-bd2c9ee64d51")
-	)
-	(no_connect
 		(at 83.82 46.99)
 		(uuid "c55d5495-5d20-4b5e-9722-704d89f68f22")
-	)
-	(no_connect
-		(at 127 26.67)
-		(uuid "c5a07980-7eca-411b-9c4b-a4a7c0cb064a")
 	)
 	(no_connect
 		(at 179.07 81.28)
@@ -21261,6 +21265,10 @@
 		(uuid "d540e35c-c33b-4213-80de-a9328e058f06")
 	)
 	(no_connect
+		(at 127 91.44)
+		(uuid "d81629d6-1ac2-47e4-8a32-f9cb2d9ed60c")
+	)
+	(no_connect
 		(at 27.94 261.62)
 		(uuid "dc8db989-ec9f-46c5-b1a4-783a8c499e37")
 	)
@@ -21277,10 +21285,6 @@
 		(uuid "e1c23bde-d35d-4143-ae45-cf162afecca2")
 	)
 	(no_connect
-		(at 83.82 96.52)
-		(uuid "e29396f5-0c9a-4787-8c94-7cf9be1304d3")
-	)
-	(no_connect
 		(at 83.82 49.53)
 		(uuid "e71b749c-8a57-4a90-b296-4e5faff69cc1")
 	)
@@ -21295,10 +21299,6 @@
 	(no_connect
 		(at 179.07 104.14)
 		(uuid "f36fef94-83b8-45a3-9d25-a1722ad6896c")
-	)
-	(no_connect
-		(at 127 16.51)
-		(uuid "f45eeb38-128c-4db0-ae1f-5f46a8ab705f")
 	)
 	(no_connect
 		(at 179.07 88.9)
@@ -23156,7 +23156,7 @@
 		(uuid "05fa20af-cb34-41d9-9859-ce22001fc188")
 	)
 	(label "FPGA_PMOD_DQ6"
-		(at 294.64 59.69 180)
+		(at 294.64 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23211,7 +23211,7 @@
 		(uuid "0782a20a-0bf4-490e-b723-3797e7bbe5ba")
 	)
 	(label "FMC_AD3"
-		(at 294.64 64.77 180)
+		(at 228.6 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23354,7 +23354,7 @@
 		(uuid "0fc8039d-b17f-4744-9e13-12e3a887526d")
 	)
 	(label "FMC_NWE"
-		(at 294.64 67.31 180)
+		(at 228.6 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23365,7 +23365,7 @@
 		(uuid "1175ea8f-6cca-429b-b835-90f5fd941d78")
 	)
 	(label "MCU_LED_2"
-		(at 83.82 114.3 180)
+		(at 83.82 34.29 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23486,7 +23486,7 @@
 		(uuid "1d1f1a03-ef6c-4549-bffb-da4aa89b20ca")
 	)
 	(label "MCU_LED_1"
-		(at 83.82 109.22 180)
+		(at 179.07 101.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23519,7 +23519,7 @@
 		(uuid "2039e9b8-db43-4a85-a22c-f16460d48874")
 	)
 	(label "FMC_NBL1"
-		(at 228.6 46.99 180)
+		(at 228.6 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23585,7 +23585,7 @@
 		(uuid "2575c29f-4a92-43b2-b081-3d499f2cb8b7")
 	)
 	(label "FPGA_PMOD_DQ4"
-		(at 228.6 67.31 180)
+		(at 228.6 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23717,7 +23717,7 @@
 		(uuid "39722f67-8996-4734-9d25-4d2988f77715")
 	)
 	(label "FPGA_LED_0"
-		(at 294.64 69.85 180)
+		(at 228.6 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23761,7 +23761,7 @@
 		(uuid "3d890e08-4d22-4872-8802-3651557de7af")
 	)
 	(label "MCU_LED_3"
-		(at 83.82 111.76 180)
+		(at 127 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -23992,7 +23992,7 @@
 		(uuid "530b0396-fb8a-48a0-9318-caad652a220b")
 	)
 	(label "MCU_PMOD_DQ4"
-		(at 83.82 54.61 180)
+		(at 127 21.59 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24058,7 +24058,7 @@
 		(uuid "5c1da2d7-2243-4ee3-9321-297b99fe78eb")
 	)
 	(label "FPGA_LED_3"
-		(at 294.64 72.39 180)
+		(at 228.6 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24113,7 +24113,7 @@
 		(uuid "5f76ad8b-b542-4a8c-ad45-158392448cca")
 	)
 	(label "MCU_PMOD_DQ6"
-		(at 127 91.44 180)
+		(at 83.82 96.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24124,7 +24124,7 @@
 		(uuid "611d373b-1c0e-4ee6-ba07-faf69e7da02c")
 	)
 	(label "FPGA_LED_2"
-		(at 294.64 77.47 180)
+		(at 228.6 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24135,7 +24135,7 @@
 		(uuid "638e9d1c-b497-4d6e-8b1b-a620ba3c940a")
 	)
 	(label "FPGA_LED_1"
-		(at 294.64 74.93 180)
+		(at 228.6 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24300,7 +24300,7 @@
 		(uuid "7323ee9b-79b8-4d70-b887-ccb4963e1778")
 	)
 	(label "MCU_LED_0"
-		(at 127 96.52 180)
+		(at 179.07 39.37 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24311,7 +24311,7 @@
 		(uuid "742aabbe-0830-4657-9709-fa7ee333a1d4")
 	)
 	(label "MCU_PMOD_DQ2"
-		(at 127 31.75 180)
+		(at 83.82 86.36 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24322,7 +24322,7 @@
 		(uuid "75729914-297c-42c3-9503-9abc72e2865c")
 	)
 	(label "FMC_NOE"
-		(at 294.64 62.23 180)
+		(at 228.6 49.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24333,7 +24333,7 @@
 		(uuid "7a23dfa8-3b07-4c8c-b356-53bdb0e44b17")
 	)
 	(label "FMC_A21"
-		(at 228.6 54.61 180)
+		(at 294.64 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24388,7 +24388,7 @@
 		(uuid "7fbe473b-7645-40b7-b529-68441144d316")
 	)
 	(label "FMC_A20"
-		(at 228.6 49.53 180)
+		(at 294.64 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24421,7 +24421,7 @@
 		(uuid "83911c05-6972-47e1-bde8-70adab27ccd3")
 	)
 	(label "FPGA_PMOD_DQ5"
-		(at 228.6 69.85 180)
+		(at 294.64 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24476,7 +24476,7 @@
 		(uuid "85d4378f-0661-4177-9c7e-09e6760749d3")
 	)
 	(label "FPGA_PMOD_DQ7"
-		(at 228.6 64.77 180)
+		(at 294.64 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24487,7 +24487,7 @@
 		(uuid "86f9846c-1e4e-449e-8fe1-b30c530d617e")
 	)
 	(label "MCU_PMOD_DQ5"
-		(at 127 101.6 180)
+		(at 127 16.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24542,7 +24542,7 @@
 		(uuid "8a743672-2b4a-4456-9c20-3414411ceba7")
 	)
 	(label "FMC_A23"
-		(at 228.6 59.69 180)
+		(at 228.6 52.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24619,7 +24619,7 @@
 		(uuid "994aba2b-f4b6-4426-a57a-34972920ff29")
 	)
 	(label "MCU_PMOD_DQ7"
-		(at 127 83.82 180)
+		(at 83.82 93.98 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24707,7 +24707,7 @@
 		(uuid "a8298905-40a7-4f77-9f1c-bf72c62a1a38")
 	)
 	(label "FPGA_PMOD_DQ3"
-		(at 228.6 77.47 180)
+		(at 294.64 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24795,7 +24795,7 @@
 		(uuid "af8b3729-3457-419a-9714-082c9a70594d")
 	)
 	(label "FPGA_PMOD_DQ0"
-		(at 228.6 72.39 180)
+		(at 228.6 77.47 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24817,7 +24817,7 @@
 		(uuid "b3128569-8a01-48a5-b8e8-f58963df1da5")
 	)
 	(label "FMC_A22"
-		(at 228.6 52.07 180)
+		(at 294.64 57.15 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24850,7 +24850,7 @@
 		(uuid "b9563a9f-63fc-41e9-9ad1-64055c8b5168")
 	)
 	(label "MCU_PMOD_DQ0"
-		(at 83.82 52.07 180)
+		(at 127 26.67 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24883,7 +24883,7 @@
 		(uuid "bbdadf32-8474-4c00-881e-465ebf995761")
 	)
 	(label "FMC_A24"
-		(at 294.64 57.15 180)
+		(at 294.64 44.45 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24905,7 +24905,7 @@
 		(uuid "bf6f2301-0473-437c-9ed8-9ab5e3ccc833")
 	)
 	(label "MCU_PMOD_DQ3"
-		(at 33.02 31.75 180)
+		(at 83.82 81.28 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24927,7 +24927,7 @@
 		(uuid "c0ae69f2-6346-4040-9149-be9d3438db60")
 	)
 	(label "FMC_NBL0"
-		(at 228.6 57.15 180)
+		(at 294.64 67.31 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25048,7 +25048,7 @@
 		(uuid "c96e4bdc-bdcc-4369-9fc9-095c962602ab")
 	)
 	(label "FPGA_PMOD_DQ2"
-		(at 228.6 62.23 180)
+		(at 294.64 77.47 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25125,7 +25125,7 @@
 		(uuid "cf0ff1c9-05a9-4ee4-8329-e6c928ac530f")
 	)
 	(label "FPGA_PMOD_DQ1"
-		(at 228.6 74.93 180)
+		(at 228.6 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25158,7 +25158,7 @@
 		(uuid "d0d07bdb-d9a3-46e5-b52b-d004e2ac56a7")
 	)
 	(label "MCU_PMOD_DQ1"
-		(at 127 106.68 180)
+		(at 83.82 101.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25598,7 +25598,7 @@
 		(uuid "fe1e27b8-5f54-4bd0-8e0d-ac9f48f9f0f9")
 	)
 	(label "FMC_A19"
-		(at 294.64 54.61 180)
+		(at 228.6 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -25631,7 +25631,7 @@
 		(uuid "ff0fdedd-5271-42fa-aa9c-1564c35eb29d")
 	)
 	(label "FMC_NE2"
-		(at 294.64 44.45 180)
+		(at 294.64 54.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
