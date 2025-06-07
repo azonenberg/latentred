@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-06")
+		(date "2025-06-07")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -14307,14 +14307,6 @@
 		(uuid "ff7571f3-8f6d-4e5c-89b4-54f890bb3e66")
 	)
 	(no_connect
-		(at 201.93 187.96)
-		(uuid "057f9804-5de9-426b-a89f-faab4b0d2f9d")
-	)
-	(no_connect
-		(at 201.93 195.58)
-		(uuid "0eda7a79-e0ab-4f4a-b4b4-3b82adc5e284")
-	)
-	(no_connect
 		(at 39.37 52.07)
 		(uuid "129c5181-d84c-45f0-936f-9ba72e86da2a")
 	)
@@ -14339,12 +14331,12 @@
 		(uuid "3d517b4a-0a56-4dd4-b4ae-393f57b83c72")
 	)
 	(no_connect
-		(at 201.93 185.42)
-		(uuid "3eee7d1d-aaf0-459d-89fc-a2cbc4975c6b")
-	)
-	(no_connect
 		(at 147.32 241.3)
 		(uuid "4ac2dd7a-fec8-45d9-9b41-971e2dbbd675")
+	)
+	(no_connect
+		(at 201.93 167.64)
+		(uuid "5c6a1c9d-1688-4737-8c35-c10e1bb08546")
 	)
 	(no_connect
 		(at 64.77 190.5)
@@ -14359,12 +14351,16 @@
 		(uuid "7ac4738f-c607-4545-855f-e9f9ce69be35")
 	)
 	(no_connect
-		(at 201.93 190.5)
-		(uuid "7e7a7462-d080-4d44-80cb-854f8a6020f2")
-	)
-	(no_connect
 		(at 121.92 243.84)
 		(uuid "87bf6bfc-9865-4eeb-8c10-f38b44d96ff5")
+	)
+	(no_connect
+		(at 201.93 152.4)
+		(uuid "89db93ca-9cde-4d02-86aa-1d2bbd4d38e8")
+	)
+	(no_connect
+		(at 201.93 149.86)
+		(uuid "9056b32d-45cc-43ca-adbd-f71c9a36a377")
 	)
 	(no_connect
 		(at 201.93 44.45)
@@ -14375,12 +14371,12 @@
 		(uuid "96f85696-64e5-4624-8dee-5c9eb5bc8f2f")
 	)
 	(no_connect
-		(at 147.32 190.5)
-		(uuid "ab6e8000-0ca7-44ed-ac24-00ddb000fdfb")
+		(at 201.93 142.24)
+		(uuid "9f1b87c4-31dc-45bc-825a-f2cf7d9ea673")
 	)
 	(no_connect
-		(at 201.93 193.04)
-		(uuid "ae2da26e-78c3-474b-82e7-5832779826ca")
+		(at 147.32 190.5)
+		(uuid "ab6e8000-0ca7-44ed-ac24-00ddb000fdfb")
 	)
 	(no_connect
 		(at 120.65 49.53)
@@ -14403,12 +14399,12 @@
 		(uuid "c791c4d8-3c78-4f8c-b4d0-8bbc38525797")
 	)
 	(no_connect
-		(at 121.92 190.5)
-		(uuid "d08a22c4-5d4c-49e1-ad13-b1da791f8d85")
+		(at 201.93 157.48)
+		(uuid "c7d4ba28-9335-4b7a-825b-d8cffe48d44d")
 	)
 	(no_connect
-		(at 201.93 198.12)
-		(uuid "d5739b97-2f20-4703-a3b7-ae5ae6862e58")
+		(at 121.92 190.5)
+		(uuid "d08a22c4-5d4c-49e1-ad13-b1da791f8d85")
 	)
 	(no_connect
 		(at 64.77 243.84)
@@ -14433,6 +14429,10 @@
 	(no_connect
 		(at 39.37 241.3)
 		(uuid "ed88e38b-7dae-48c6-bf93-c72406f9010b")
+	)
+	(no_connect
+		(at 201.93 139.7)
+		(uuid "fa001324-84b0-4dca-979d-a6af405a5272")
 	)
 	(wire
 		(pts
@@ -15839,7 +15839,7 @@
 		(uuid "2ee8f082-4016-4d37-bf91-233832677dfa")
 	)
 	(label "LC0_I2C_SCL"
-		(at 201.93 139.7 180)
+		(at 201.93 195.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15982,7 +15982,7 @@
 		(uuid "47dc5f79-e8fa-44aa-b09d-e4e321cb1a89")
 	)
 	(label "LC1_SPI_MOSI"
-		(at 201.93 167.64 180)
+		(at 201.93 190.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16070,7 +16070,7 @@
 		(uuid "56aadc5e-b25f-44ee-a38f-47631f26307f")
 	)
 	(label "LC0_SPI_MISO"
-		(at 201.93 149.86 180)
+		(at 201.93 185.42 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16345,7 +16345,7 @@
 		(uuid "75720029-1688-4a48-8dd9-bceafe2493c4")
 	)
 	(label "LC0_I2C_SDA"
-		(at 201.93 142.24 180)
+		(at 201.93 198.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16444,7 +16444,7 @@
 		(uuid "81497a66-e7bf-4e4a-9ea0-2f4aa8072ef2")
 	)
 	(label "LC1_I2C_SDA"
-		(at 201.93 157.48 180)
+		(at 201.93 154.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16697,7 +16697,7 @@
 		(uuid "a22f195d-28bc-4d78-b8bb-d8873af4041c")
 	)
 	(label "LC1_I2C_SCL"
-		(at 201.93 154.94 180)
+		(at 201.93 187.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16884,7 +16884,7 @@
 		(uuid "b5e82764-91e6-44da-8477-27ded5c820b4")
 	)
 	(label "LC0_SPI_MOSI"
-		(at 201.93 152.4 180)
+		(at 201.93 193.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font

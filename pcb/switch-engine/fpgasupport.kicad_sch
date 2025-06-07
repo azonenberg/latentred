@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-06")
+		(date "2025-06-07")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -19501,6 +19501,17 @@
 			(justify right bottom)
 		)
 		(uuid "192cf5d8-07ee-424b-8c04-bf1b807aaed1")
+	)
+	(label "POR_OVERRIDE"
+		(at 255.27 44.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b37261e-8624-49c9-90df-f23b8ea096dd")
 	)
 	(label "FPGA_FLASH_DQ2"
 		(at 344.17 44.45 0)
