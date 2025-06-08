@@ -17317,7 +17317,7 @@
 		(uuid "0e389d42-db41-40d6-b4a2-10d74a75f9b3")
 	)
 	(label "RGMII_TXD0"
-		(at 323.85 36.83 180)
+		(at 323.85 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17383,7 +17383,7 @@
 		(uuid "17533c43-e54b-44d0-8045-7f2e5fc6ac7c")
 	)
 	(label "ETH_LED2_N_1V8"
-		(at 323.85 100.33 180)
+		(at 323.85 41.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18329,7 +18329,7 @@
 		(uuid "cc16db1c-c49b-438b-a7c6-11f941caf94b")
 	)
 	(label "ETH_LED2_N_1V8_INV"
-		(at 323.85 31.75 180)
+		(at 323.85 36.83 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18439,7 +18439,7 @@
 		(uuid "db595b3f-c28d-4f64-89c6-350a1dcb7e54")
 	)
 	(label "ETH_LED1_N_1V8_INV"
-		(at 323.85 41.91 180)
+		(at 323.85 31.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
