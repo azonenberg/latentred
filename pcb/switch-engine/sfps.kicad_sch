@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-07")
+		(date "2025-06-11")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -14986,7 +14986,7 @@
 		(uuid "1d155a04-d5fa-41c8-8bd7-bf5f276065a8")
 	)
 	(label "SFP28_REFCLK_AC_P"
-		(at 91.44 247.65 0)
+		(at 91.44 257.81 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15074,7 +15074,7 @@
 		(uuid "5a5c3f14-c74d-45bf-9183-3102a0d3b462")
 	)
 	(label "SFP28_REFCLK_AC_N"
-		(at 91.44 257.81 0)
+		(at 91.44 247.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15722,7 +15722,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 87.63 247.65 90)
+		(at 87.63 257.81 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15731,7 +15731,7 @@
 		(fields_autoplaced yes)
 		(uuid "1d057ceb-444c-407a-9dec-871a789ea032")
 		(property "Reference" "C141"
-			(at 87.63 241.7912 90)
+			(at 87.63 251.9512 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15739,7 +15739,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 87.63 244.3281 90)
+			(at 87.63 254.4881 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15747,7 +15747,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 91.44 246.6848 0)
+			(at 91.44 256.8448 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15756,7 +15756,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 87.63 247.65 0)
+			(at 87.63 257.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15765,7 +15765,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 87.63 247.65 0)
+			(at 87.63 257.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16071,7 +16071,7 @@
 	)
 	(symbol
 		(lib_id "device:C")
-		(at 87.63 257.81 90)
+		(at 87.63 247.65 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16080,7 +16080,7 @@
 		(fields_autoplaced yes)
 		(uuid "bd9bcf23-f0e7-4a16-b6c0-18308f223a40")
 		(property "Reference" "C142"
-			(at 87.63 251.9512 90)
+			(at 87.63 241.7912 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16088,7 +16088,7 @@
 			)
 		)
 		(property "Value" "0.1 uF"
-			(at 87.63 254.4881 90)
+			(at 87.63 244.3281 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16096,7 +16096,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_0402_CAP_NOSILK"
-			(at 91.44 256.8448 0)
+			(at 91.44 246.6848 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16105,7 +16105,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 87.63 257.81 0)
+			(at 87.63 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16114,7 +16114,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 87.63 257.81 0)
+			(at 87.63 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)

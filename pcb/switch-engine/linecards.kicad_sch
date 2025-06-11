@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-07")
+		(date "2025-06-11")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -15498,7 +15498,7 @@
 		(uuid "0aee5581-ec74-4f35-ae6f-51eb4c2617b6")
 	)
 	(label "LC0_MDIO_3V3"
-		(at 201.93 175.26 180)
+		(at 201.93 190.5 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15564,7 +15564,7 @@
 		(uuid "119491c1-b4a9-4d29-9f32-eacc8e3f61ba")
 	)
 	(label "LC0_SPI_CS_N"
-		(at 201.93 144.78 180)
+		(at 201.93 185.42 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15696,7 +15696,7 @@
 		(uuid "1ed1a1d7-c649-4883-890b-76a62e1732b6")
 	)
 	(label "LC1_MDIO_OE"
-		(at 201.93 182.88 180)
+		(at 201.93 172.72 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15839,7 +15839,7 @@
 		(uuid "2ee8f082-4016-4d37-bf91-233832677dfa")
 	)
 	(label "LC0_I2C_SCL"
-		(at 201.93 195.58 180)
+		(at 201.93 198.12 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15982,7 +15982,7 @@
 		(uuid "47dc5f79-e8fa-44aa-b09d-e4e321cb1a89")
 	)
 	(label "LC1_SPI_MOSI"
-		(at 201.93 190.5 180)
+		(at 201.93 193.04 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16070,7 +16070,7 @@
 		(uuid "56aadc5e-b25f-44ee-a38f-47631f26307f")
 	)
 	(label "LC0_SPI_MISO"
-		(at 201.93 185.42 180)
+		(at 201.93 175.26 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16235,7 +16235,7 @@
 		(uuid "6cd8f780-1f03-4ee8-b94f-eff1ca1a2b63")
 	)
 	(label "LC1_SPI_SCK"
-		(at 201.93 162.56 180)
+		(at 201.93 170.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16345,7 +16345,7 @@
 		(uuid "75720029-1688-4a48-8dd9-bceafe2493c4")
 	)
 	(label "LC0_I2C_SDA"
-		(at 201.93 198.12 180)
+		(at 201.93 195.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16444,7 +16444,7 @@
 		(uuid "81497a66-e7bf-4e4a-9ea0-2f4aa8072ef2")
 	)
 	(label "LC1_I2C_SDA"
-		(at 201.93 154.94 180)
+		(at 201.93 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16598,7 +16598,7 @@
 		(uuid "9919e06b-bf48-40c8-8ea0-40f8ac2b479b")
 	)
 	(label "LC1_MDC_3V3"
-		(at 201.93 172.72 180)
+		(at 201.93 144.78 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16664,7 +16664,7 @@
 		(uuid "9f760938-918d-471b-95dc-9736a8d3235d")
 	)
 	(label "LC1_SPI_MISO"
-		(at 201.93 165.1 180)
+		(at 201.93 182.88 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16697,7 +16697,7 @@
 		(uuid "a22f195d-28bc-4d78-b8bb-d8873af4041c")
 	)
 	(label "LC1_I2C_SCL"
-		(at 201.93 187.96 180)
+		(at 201.93 162.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16763,7 +16763,7 @@
 		(uuid "a99710a8-8ecf-45f6-bcfa-3913252628c7")
 	)
 	(label "LC1_MDIO_3V3"
-		(at 201.93 177.8 180)
+		(at 201.93 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16884,7 +16884,7 @@
 		(uuid "b5e82764-91e6-44da-8477-27ded5c820b4")
 	)
 	(label "LC0_SPI_MOSI"
-		(at 201.93 193.04 180)
+		(at 201.93 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16939,7 +16939,7 @@
 		(uuid "c0f2ea67-78ee-45d0-8269-8791fa3d8608")
 	)
 	(label "LC1_SPI_CS_N"
-		(at 201.93 160.02 180)
+		(at 201.93 154.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16972,7 +16972,7 @@
 		(uuid "caf1bda6-f788-4097-871d-f4f2b385c9a1")
 	)
 	(label "LC0_MDC_3V3"
-		(at 201.93 170.18 180)
+		(at 201.93 177.8 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -17038,7 +17038,7 @@
 		(uuid "d54b8171-18e1-4ee1-9412-be71237ee89e")
 	)
 	(label "LC0_SPI_SCK"
-		(at 201.93 147.32 180)
+		(at 201.93 187.96 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
