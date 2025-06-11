@@ -9886,7 +9886,7 @@
 		(uuid "07803fc7-9577-4d70-9d40-a535b6c4b2be")
 	)
 	(label "GTY_VCCAUX_EN"
-		(at 287.02 128.27 180)
+		(at 287.02 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10106,7 +10106,7 @@
 		(uuid "21b6b0ba-3196-4470-843f-400a398b93e6")
 	)
 	(label "12V0_EN"
-		(at 287.02 105.41 180)
+		(at 330.2 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10128,7 +10128,7 @@
 		(uuid "23b6438d-d8ac-49ea-9d34-99fae34a8c29")
 	)
 	(label "3V3_PGOOD"
-		(at 287.02 102.87 180)
+		(at 287.02 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10370,7 +10370,7 @@
 		(uuid "44c02d4f-e579-4e9a-b353-fa775753e795")
 	)
 	(label "3V3_EN"
-		(at 287.02 100.33 180)
+		(at 330.2 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10480,7 +10480,7 @@
 		(uuid "4e2823f8-e741-4972-a762-4c39767907bd")
 	)
 	(label "SUPER_LED1"
-		(at 375.92 124.46 180)
+		(at 330.2 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10524,7 +10524,7 @@
 		(uuid "527b731c-9487-4937-8ab7-7771a1fa6a44")
 	)
 	(label "GTY_VCCAUX_PGOOD"
-		(at 287.02 115.57 180)
+		(at 287.02 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11096,7 +11096,7 @@
 		(uuid "9dda887e-649e-4f79-97ea-a74bbae7c4af")
 	)
 	(label "12V0_VMON"
-		(at 330.2 102.87 180)
+		(at 287.02 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11195,7 +11195,7 @@
 		(uuid "adcfdf96-8eff-44ea-97e3-5277a85289d2")
 	)
 	(label "SOFT_POWER"
-		(at 287.02 130.81 180)
+		(at 287.02 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11415,7 +11415,7 @@
 		(uuid "c2f15944-7bb0-45fd-8ba7-5d015371c462")
 	)
 	(label "1V8_EN"
-		(at 287.02 110.49 180)
+		(at 287.02 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11459,7 +11459,7 @@
 		(uuid "c79fec8d-017d-455c-95dd-26af2fa69735")
 	)
 	(label "SUPER_LED0"
-		(at 330.2 130.81 180)
+		(at 330.2 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11712,7 +11712,7 @@
 		(uuid "ddad8fd2-8587-4c5a-9b4b-e27a5c57b978")
 	)
 	(label "SOFT_RESET"
-		(at 330.2 113.03 180)
+		(at 375.92 124.46 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11822,7 +11822,7 @@
 		(uuid "f4a87767-6fbf-44a2-a395-9612177203cf")
 	)
 	(label "2V5_PGOOD"
-		(at 330.2 120.65 180)
+		(at 330.2 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11888,7 +11888,7 @@
 		(uuid "fe682d9c-e1c0-4f16-aeea-8ca742601d90")
 	)
 	(label "GTY_VCC_EN"
-		(at 287.02 107.95 180)
+		(at 287.02 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12103,7 +12103,7 @@
 	)
 	(hierarchical_label "MCU_RST_N"
 		(shape output)
-		(at 330.2 123.19 180)
+		(at 287.02 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13771,6 +13771,7 @@
 		)
 		(pin "12"
 			(uuid "195b8bfb-76f8-4104-867a-afa48a249fab")
+			(alternate "ADC1_IN7")
 		)
 		(pin "34"
 			(uuid "4ac4faf5-223a-4214-bfdc-183dc0eaed77")
@@ -13778,7 +13779,6 @@
 		)
 		(pin "19"
 			(uuid "d2571650-b0b9-46de-aff6-a7a48b517ed7")
-			(alternate "ADC1_IN16")
 		)
 		(pin "13"
 			(uuid "57165f54-a860-40b5-a77c-5773df6ce8ec")
@@ -16045,6 +16045,7 @@
 		)
 		(pin "12"
 			(uuid "4d0cd470-34e5-4479-9ba6-376266b52c14")
+			(alternate "ADC1_IN7")
 		)
 		(pin "34"
 			(uuid "e7181163-a00c-4218-85c2-b6c4ce3a7dd6")
@@ -16052,7 +16053,6 @@
 		)
 		(pin "19"
 			(uuid "d2571650-b0b9-46de-aff6-a7a48b517ed6")
-			(alternate "ADC1_IN16")
 		)
 		(pin "13"
 			(uuid "544c56c3-77a6-49ff-b604-4f5d6f24c4c0")
@@ -16547,6 +16547,7 @@
 		)
 		(pin "12"
 			(uuid "4d0cd470-34e5-4479-9ba6-376266b52c17")
+			(alternate "ADC1_IN7")
 		)
 		(pin "34"
 			(uuid "e7181163-a00c-4218-85c2-b6c4ce3a7dd9")
@@ -16554,7 +16555,6 @@
 		)
 		(pin "19"
 			(uuid "6b1f456f-852a-4e61-aa97-9bc32282c6a0")
-			(alternate "ADC1_IN16")
 		)
 		(pin "13"
 			(uuid "544c56c3-77a6-49ff-b604-4f5d6f24c4c3")
@@ -17183,6 +17183,7 @@
 		)
 		(pin "12"
 			(uuid "4d0cd470-34e5-4479-9ba6-376266b52c13")
+			(alternate "ADC1_IN7")
 		)
 		(pin "34"
 			(uuid "e7181163-a00c-4218-85c2-b6c4ce3a7dd5")
@@ -17190,7 +17191,6 @@
 		)
 		(pin "19"
 			(uuid "d2571650-b0b9-46de-aff6-a7a48b517ed5")
-			(alternate "ADC1_IN16")
 		)
 		(pin "13"
 			(uuid "544c56c3-77a6-49ff-b604-4f5d6f24c4bf")
@@ -17405,6 +17405,7 @@
 		)
 		(pin "12"
 			(uuid "4d0cd470-34e5-4479-9ba6-376266b52c16")
+			(alternate "ADC1_IN7")
 		)
 		(pin "34"
 			(uuid "e7181163-a00c-4218-85c2-b6c4ce3a7dd8")
@@ -17412,7 +17413,6 @@
 		)
 		(pin "19"
 			(uuid "d2571650-b0b9-46de-aff6-a7a48b517ed8")
-			(alternate "ADC1_IN16")
 		)
 		(pin "13"
 			(uuid "544c56c3-77a6-49ff-b604-4f5d6f24c4c2")
