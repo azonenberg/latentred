@@ -10172,7 +10172,7 @@
 		(uuid "2c9bf97d-425d-4afc-9296-a82e6bb72086")
 	)
 	(label "1V8_PGOOD"
-		(at 375.92 135.89 180)
+		(at 330.2 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10249,7 +10249,7 @@
 		(uuid "386a4861-6ff2-454b-bc0e-af315b4b9fa9")
 	)
 	(label "VCCINT_EN"
-		(at 375.92 133.35 180)
+		(at 330.2 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11415,7 +11415,7 @@
 		(uuid "c2f15944-7bb0-45fd-8ba7-5d015371c462")
 	)
 	(label "1V8_EN"
-		(at 375.92 138.43 180)
+		(at 287.02 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11459,7 +11459,7 @@
 		(uuid "c79fec8d-017d-455c-95dd-26af2fa69735")
 	)
 	(label "SUPER_LED0"
-		(at 375.92 121.92 180)
+		(at 330.2 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11923,7 +11923,7 @@
 	)
 	(hierarchical_label "FPGA_INIT"
 		(shape input)
-		(at 330.2 105.41 180)
+		(at 375.92 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12079,7 +12079,7 @@
 	)
 	(hierarchical_label "FPGA_DONE"
 		(shape input)
-		(at 287.02 110.49 180)
+		(at 375.92 138.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12127,7 +12127,7 @@
 	)
 	(hierarchical_label "FPGA_RST_N"
 		(shape output)
-		(at 330.2 130.81 180)
+		(at 375.92 121.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12163,7 +12163,7 @@
 	)
 	(hierarchical_label "FPGA_INIT_OE"
 		(shape output)
-		(at 330.2 138.43 180)
+		(at 375.92 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
