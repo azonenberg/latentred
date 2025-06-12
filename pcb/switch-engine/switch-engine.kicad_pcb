@@ -903,11 +903,12 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "00feb8e2-f107-4a7c-8a67-b6c8ea5b77a6")
-		(at 201 73)
+		(at 165.45 84.4625 180)
 		(property "Reference" "C3"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "01116bc6-d23c-4d19-b82e-9edb7cfa56db")
 			(effects
 				(font
@@ -917,7 +918,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "9f80da4c-903e-49db-bbe4-b90c4a44086f")
@@ -929,7 +930,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -942,7 +943,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -955,7 +956,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -973,7 +974,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -981,7 +982,7 @@
 			(uuid "8e1f7922-b305-4c23-9f13-db7c99da01b9")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -1003,7 +1004,7 @@
 	(footprint "azonenberg_pcb:MODULE_MURATA_MYMGK00504ERSR"
 		(layer "F.Cu")
 		(uuid "010cdf0f-5a85-41ba-b1d2-fc2e19557db9")
-		(at 166.2 100.5 180)
+		(at 177.05 100.5 180)
 		(property "Reference" "U6"
 			(at 0 5.75 180)
 			(unlocked yes)
@@ -2102,11 +2103,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "0dba5aab-e534-4f95-97b4-d0c6f072361f")
-		(at 221 75)
+		(at 167.95 66.5)
 		(property "Reference" "C8"
 			(at 0.2 2.1 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d38fe2aa-4978-4eaa-851d-708413d15f83")
 			(effects
 				(font
@@ -2654,11 +2656,12 @@
 	(footprint "azonenberg_pcb:MODULE_MURATA_MYMGK00504ERSR"
 		(layer "F.Cu")
 		(uuid "1014d1a2-f816-4a0f-84e0-0e46f97a4eb1")
-		(at 212 89)
+		(at 166.5 100.5 180)
 		(property "Reference" "U4"
-			(at 0 5.75 0)
+			(at 0 5.75 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "26497414-2448-497c-bf10-70c27d24c892")
 			(effects
 				(font
@@ -2668,7 +2671,7 @@
 			)
 		)
 		(property "Value" "MYMGK00506ERSR"
-			(at -3.75 18.25 0)
+			(at -3.75 18.25 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2681,7 +2684,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:MODULE_MURATA_MYMGK00504ERSR"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2694,7 +2697,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2707,7 +2710,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -2725,6 +2728,26 @@
 		(solder_paste_ratio -0.1)
 		(attr smd)
 		(fp_line
+			(start -3.25 -5.250001)
+			(end -4.25 -5.25)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "73ab5174-0b87-48f4-b05f-f88a4c753e4b")
+		)
+		(fp_line
+			(start -4.25 -4.25)
+			(end -3.25 -5.250001)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9510012d-b335-42f4-9f01-7c194a55b2e6")
+		)
+		(fp_line
 			(start -4.25 -5.25)
 			(end -4.25 -4.25)
 			(stroke
@@ -2734,28 +2757,8 @@
 			(layer "F.SilkS")
 			(uuid "9b398cda-070b-438c-b16c-7ba6b98d9a71")
 		)
-		(fp_line
-			(start -4.25 -4.25)
-			(end -3.25 -5.25)
-			(stroke
-				(width 0.15)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9510012d-b335-42f4-9f01-7c194a55b2e6")
-		)
-		(fp_line
-			(start -3.25 -5.25)
-			(end -4.25 -5.25)
-			(stroke
-				(width 0.15)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "73ab5174-0b87-48f4-b05f-f88a4c753e4b")
-		)
 		(pad "1" smd rect
-			(at -2.75 -3.55)
+			(at -2.75 -3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -2764,7 +2767,7 @@
 			(uuid "35a8463a-f354-45e3-a2b6-080760f2e821")
 		)
 		(pad "2" smd rect
-			(at -1.2 -3.55)
+			(at -1.2 -3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -2773,7 +2776,7 @@
 			(uuid "8e8b5cc7-adfa-428d-a301-1d1c37501443")
 		)
 		(pad "3" smd rect
-			(at -2.75 -1.2)
+			(at -2.75 -1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2782,7 +2785,7 @@
 			(uuid "502ca64c-f5af-4f03-9712-6d9681359326")
 		)
 		(pad "4" smd rect
-			(at -2.75 0)
+			(at -2.75 0 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 264 "Net-(U4-TRIM)")
@@ -2791,7 +2794,7 @@
 			(uuid "96644756-ea91-4c2f-a496-a37d7c4020ba")
 		)
 		(pad "5" smd rect
-			(at -2.75 1.2)
+			(at -2.75 1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 8 "/3V3")
@@ -2800,7 +2803,7 @@
 			(uuid "f25a4601-2b54-4592-9f29-f58efc0fe133")
 		)
 		(pad "6" smd rect
-			(at -2.75 3.55)
+			(at -2.75 3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 8 "/3V3")
@@ -2809,7 +2812,7 @@
 			(uuid "848c27a2-4485-43e2-bb2f-3b9ed210e0f9")
 		)
 		(pad "7" smd rect
-			(at -1.2 3.55)
+			(at -1.2 3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 8 "/3V3")
@@ -2818,7 +2821,7 @@
 			(uuid "a759ca9b-3bee-4a59-bb8e-5c684fc4cc0e")
 		)
 		(pad "8" smd rect
-			(at 1.2 3.55)
+			(at 1.2 3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2827,7 +2830,7 @@
 			(uuid "179bc30a-b2cf-4a67-a160-dd092cc9070b")
 		)
 		(pad "9" smd rect
-			(at 2.75 3.55)
+			(at 2.75 3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2836,7 +2839,7 @@
 			(uuid "bca54e9f-fc26-4a73-8dce-3fb704d651e0")
 		)
 		(pad "10" smd rect
-			(at 2.75 1.2)
+			(at 2.75 1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2845,7 +2848,7 @@
 			(uuid "27e2ade2-7081-49d5-ad30-7a0e2a745da4")
 		)
 		(pad "11" smd rect
-			(at 2.75 0)
+			(at 2.75 0 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 270 "/Power Supply/3V3_PGOOD")
@@ -2854,7 +2857,7 @@
 			(uuid "589abdc0-150c-4f23-a5ae-68738309417d")
 		)
 		(pad "12" smd rect
-			(at 2.75 -1.2)
+			(at 2.75 -1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 271 "/Power Supply/3V3_EN")
@@ -2863,7 +2866,7 @@
 			(uuid "cd87bb38-faf2-4e8e-8c26-82446c006ada")
 		)
 		(pad "13" smd rect
-			(at 2.75 -3.55)
+			(at 2.75 -3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2872,7 +2875,7 @@
 			(uuid "cc078a70-dfac-4814-95d4-173ca11a1ad5")
 		)
 		(pad "14" smd rect
-			(at 1.2 -3.55)
+			(at 1.2 -3.55 180)
 			(size 1 1.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2881,7 +2884,7 @@
 			(uuid "506ed30e-1c14-4468-a0f2-d424988756ba")
 		)
 		(pad "15" smd roundrect
-			(at -1.2 -1.2)
+			(at -1.2 -1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0)
@@ -2893,7 +2896,7 @@
 			(uuid "b58657df-7c6c-408d-b4a1-777f77c11218")
 		)
 		(pad "16" smd rect
-			(at -1.2 0)
+			(at -1.2 0 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2902,7 +2905,7 @@
 			(uuid "25a32c3d-ec5b-4531-90f4-9a52090f5112")
 		)
 		(pad "17" smd rect
-			(at -1.2 1.2)
+			(at -1.2 1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2911,7 +2914,7 @@
 			(uuid "bae854fb-d375-416e-aef1-03786b5f77f0")
 		)
 		(pad "18" smd rect
-			(at 0 -1.2)
+			(at 0 -1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2920,7 +2923,7 @@
 			(uuid "17e001b1-a746-4ea6-b00c-27e738731a1b")
 		)
 		(pad "19" smd rect
-			(at 0 0)
+			(at 0 0 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2929,7 +2932,7 @@
 			(uuid "eb062f9b-d752-450f-ac61-700948aebfc3")
 		)
 		(pad "20" smd rect
-			(at 0 1.2)
+			(at 0 1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2938,7 +2941,7 @@
 			(uuid "0ee86372-2b73-4f08-ab78-60a00639e880")
 		)
 		(pad "21" smd rect
-			(at 1.2 -1.2)
+			(at 1.2 -1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2947,7 +2950,7 @@
 			(uuid "2f6ce2d9-7348-46e1-9ff2-577bd58b6656")
 		)
 		(pad "22" smd rect
-			(at 1.2 0)
+			(at 1.2 0 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -2956,7 +2959,7 @@
 			(uuid "4180a498-91f4-47f8-93f0-bcae56b47c53")
 		)
 		(pad "23" smd rect
-			(at 1.2 1.2)
+			(at 1.2 1.2 180)
 			(size 1 0.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -3147,7 +3150,7 @@
 	(footprint "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
 		(layer "F.Cu")
 		(uuid "1132eb17-9c44-4888-a7bf-6d2be4a9d8ac")
-		(at 162.2375 100.5)
+		(at 173.0875 100.5)
 		(property "Reference" "TP5"
 			(at 0 1.5 0)
 			(unlocked yes)
@@ -3425,106 +3428,6 @@
 			)
 		)
 	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "1309d22e-8d51-40b0-b6e1-29cbce497894")
-		(at 156 80)
-		(property "Reference" "R24"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "063af5ba-487f-4ca3-a8ef-1afdaf3b5cb7")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "1K"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "9001db27-6e06-42b2-8d2e-7e1078c3edf1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fffbee8f-6c0d-4b69-88f8-78fd18e58656")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "de43431c-5c74-491f-a83f-ca8965448ed6")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "26cdbc2b-aa4b-4dba-8729-52a92132d023")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/8b1fca08-98fe-4ff3-9f66-4998ae83332c")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 271 "/Power Supply/3V3_EN")
-			(pintype "passive")
-			(uuid "d10b3d8a-d7ff-4a2c-9d72-d4dcb762511c")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 2 "/GND")
-			(pintype "passive")
-			(uuid "07226d5c-750e-43ab-8ac0-def9e82dd3f9")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "143e86c6-08cb-4cf7-8f31-385d0c16ac8a")
@@ -3728,11 +3631,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "15bee858-3cc4-4bfa-8cf8-5d1c769341de")
-		(at 221 70)
+		(at 163.45 66.5 180)
 		(property "Reference" "C6"
-			(at 0.2 2.1 0)
+			(at 0.2 2.1 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8510eaae-9b21-4fd1-9e66-cccd5ee4bc49")
 			(effects
 				(font
@@ -3742,7 +3646,7 @@
 			)
 		)
 		(property "Value" "220 uF"
-			(at 0 3.7 0)
+			(at 0 3.7 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "2647d8d0-fef2-4ee0-97ee-6407068681db")
@@ -3754,7 +3658,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3767,7 +3671,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3780,7 +3684,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -3798,7 +3702,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -1.55 0.01493)
+			(at -1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -3806,7 +3710,7 @@
 			(uuid "dc09d083-32b1-475f-8853-f1d14bd8c5f3")
 		)
 		(pad "2" smd rect
-			(at 1.55 0.01493)
+			(at 1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -3914,106 +3818,6 @@
 			(uuid "66348028-78e8-4837-9dac-703484f8a660")
 		)
 		(model ":WALTER:smd_cap/c_0402.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "1716bcdc-5983-4088-91c9-49e0677e8e82")
-		(at 219 88)
-		(property "Reference" "R20"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "5e2ac7dc-96d0-410c-bfdc-54fe00387aba")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "22"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "7a8aa332-4ffc-4245-92b6-bf887e720ce3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2cb3d23d-b364-4eae-ae14-a79cc5bcc27b")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4ed2d58c-652f-4914-9d4c-eac5502957bd")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "789ad154-5396-4413-91a3-6fdc955bf840")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/8ad6d5c7-e514-4e72-b161-80fbe97f33d7")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 2 "/GND")
-			(pintype "passive")
-			(uuid "51bc2755-237d-43cd-90a7-2d6c845de772")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 265 "Net-(R17-Pad2)")
-			(pintype "passive")
-			(uuid "eb50a466-8bdf-4c32-8534-0f7cf4b704fc")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4231,106 +4035,6 @@
 			)
 			(rotate
 				(xyz -90 0 0)
-			)
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "1aff4559-7b98-4c90-bc3f-dd44b05728d4")
-		(at 219.5 85)
-		(property "Reference" "R17"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "a56dfad6-1296-4c82-86ee-a8b1eb6fd6a7")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "2.2k"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "2d7e3563-7d46-4935-a1f2-698af2ee3811")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "73787ce9-d68f-4788-a372-62a340af9e74")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8156dbfa-eef7-4ebe-b65f-bad04a01ef23")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "66581d8a-6b9e-4fe9-a8aa-4f890fc7d933")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/068e565f-66ba-4a25-8921-b3ae41d7cc05")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 264 "Net-(U4-TRIM)")
-			(pintype "passive")
-			(uuid "1e1e5bf7-0195-46d8-b8ae-7823763f8253")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 265 "Net-(R17-Pad2)")
-			(pintype "passive")
-			(uuid "802762be-5b16-4c1f-8169-203f4c7b8e1e")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
 			)
 		)
 	)
@@ -4638,11 +4342,12 @@
 	(footprint "azonenberg_pcb:CONN_U.FL_TE_1909763-1"
 		(layer "F.Cu")
 		(uuid "1fdd5192-91ae-4723-9e11-93f84d54ae34")
-		(at 241.775 72.3)
+		(at 168.5 62.5)
 		(property "Reference" "TP9"
 			(at 0 3.8 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "c4e767b7-6ccb-47b9-a559-da1cf45a22e7")
 			(effects
 				(font
@@ -4961,11 +4666,12 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "2204c90d-e55d-4b09-a288-1fefe534b72c")
-		(at 202.35 85)
+		(at 166.5 111 180)
 		(property "Reference" "C15"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "68255ef6-2669-41b9-9abd-c98f8f9b97fa")
 			(effects
 				(font
@@ -4975,7 +4681,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "eb6e7c37-8c6e-44e2-8072-8f447dc95414")
@@ -4987,7 +4693,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5000,7 +4706,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5013,7 +4719,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -5031,7 +4737,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -5039,7 +4745,7 @@
 			(uuid "b61c9d51-2af2-4756-aa75-d1f6bd5c6499")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -6026,9 +5732,9 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "26bdeecd-6cbb-49e0-ba2a-6a2a5aabf235")
-		(at 165.5 111)
+		(at 176.35 111 180)
 		(property "Reference" "C14"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
@@ -6041,7 +5747,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "cb683ead-b021-4b89-a23f-d2f84639a1ed")
@@ -6053,7 +5759,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6066,7 +5772,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6079,7 +5785,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -6097,7 +5803,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -6105,7 +5811,7 @@
 			(uuid "737fa104-846c-43d3-b8d4-aec6c298cba4")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -6746,106 +6452,6 @@
 			(uuid "9735a12f-db4a-40e9-a0b1-7c8a4b2fca4f")
 		)
 		(model ":WALTER:smd_cap/c_1210.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "2a68d141-c11b-4af3-8bf5-277ba74af7ce")
-		(at 156 77.5)
-		(property "Reference" "R26"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "c2d98205-5eba-4b9c-92c7-223443ee7c05")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "1K"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "9bac9881-9958-4b93-954f-a47d79ac61ed")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "97d5f9ab-d02f-4eb4-8f34-0cf39fc539ec")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f8e69c5c-2947-4310-ae8e-5ad83c0504b9")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f310a562-7a22-45f5-939f-f9256d98cd03")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/88708264-cdc3-4fe0-b8fb-d3bd014a7c32")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 273 "/Power Supply/VCCINT_EN")
-			(pintype "passive")
-			(uuid "977c265a-7f78-4762-b18e-8292ed278235")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 2 "/GND")
-			(pintype "passive")
-			(uuid "ebb8908e-9f4c-4a91-ab7d-824dbe99f717")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7823,7 +7429,7 @@
 	(footprint "azonenberg_pcb:CONN_U.FL_TE_1909763-1"
 		(layer "F.Cu")
 		(uuid "338c6ca4-2411-482a-a14d-2b8914b9e071")
-		(at 168.5 89.975)
+		(at 179.35 89.975)
 		(property "Reference" "TP14"
 			(at 0 3.8 0)
 			(unlocked yes)
@@ -7975,11 +7581,12 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "3573d168-92ac-434c-9550-e910ae5f6c75")
-		(at 202 91)
+		(at 166.5 107.5 180)
 		(property "Reference" "C12"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "15f65525-8093-4afd-986e-7c34278312e2")
 			(effects
 				(font
@@ -7989,7 +7596,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "63b5a34c-baec-4062-ba7a-bf10799f8186")
@@ -8001,7 +7608,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8014,7 +7621,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8027,7 +7634,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -8045,7 +7652,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -8053,7 +7660,7 @@
 			(uuid "f773836a-32ed-4736-ba8e-577cb456db42")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -10065,7 +9672,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "48d42503-1e21-4f10-811f-02dd8be6da77")
-		(at 164 94 180)
+		(at 174.85 94 180)
 		(property "Reference" "C30"
 			(at 0.2 2.1 180)
 			(unlocked yes)
@@ -10753,7 +10360,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "4dd07eaf-00ff-4272-94cc-d4554e791c7e")
-		(at 175.5 90.5 180)
+		(at 174.85 64 180)
 		(property "Reference" "C32"
 			(at 0.2 2.1 180)
 			(unlocked yes)
@@ -12992,11 +12599,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "52de4714-0671-4f4c-984d-4aa1c52a2ee4")
-		(at 225 87)
+		(at 164 94 180)
 		(property "Reference" "C24"
-			(at 0.2 2.1 0)
+			(at 0.2 2.1 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7c8574c8-1f33-4d55-a08a-aca44ccdeb96")
 			(effects
 				(font
@@ -13006,7 +12614,7 @@
 			)
 		)
 		(property "Value" "100 uF"
-			(at 0 3.7 0)
+			(at 0 3.7 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "53902f8d-4c6b-4e82-9a32-9da387d694f3")
@@ -13018,7 +12626,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -13031,7 +12639,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -13044,7 +12652,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -13062,7 +12670,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -1.55 0.01493)
+			(at -1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 8 "/3V3")
@@ -13070,7 +12678,7 @@
 			(uuid "95272ea0-d13e-4d39-94b3-2556c773474c")
 		)
 		(pad "2" smd rect
-			(at 1.55 0.01493)
+			(at 1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -13327,11 +12935,12 @@
 	(footprint "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
 		(layer "F.Cu")
 		(uuid "55edbf14-5e0b-4019-aadb-8e00f73b1ca8")
-		(at 238 71)
+		(at 171 74.5)
 		(property "Reference" "TP1"
 			(at 0 1.5 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "8cb04ad8-2336-4916-9dac-e228bb6b003d")
 			(effects
 				(font
@@ -13409,7 +13018,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "563c9756-6053-4af7-9afb-9f98a07459be")
-		(at 168.45 94.014931)
+		(at 179.3 94.014931)
 		(property "Reference" "C26"
 			(at 0.2 2.1 0)
 			(unlocked yes)
@@ -15296,7 +14905,7 @@
 	(footprint "azonenberg_pcb:MODULE_MURATA_MYMGK00504ERSR"
 		(layer "F.Cu")
 		(uuid "6d70f9c3-5d03-407e-ab07-ca87e4fa0b06")
-		(at 177.5 100.5 180)
+		(at 176.85 74 180)
 		(property "Reference" "U5"
 			(at 0 5.75 180)
 			(unlocked yes)
@@ -17424,106 +17033,6 @@
 			(fill solid)
 			(layer "F.SilkS")
 			(uuid "ca994a23-cdff-406d-a5ed-241ec07054b2")
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "79f65c1c-6713-44d2-a8a9-3b825718a277")
-		(at 230.25 73.7)
-		(property "Reference" "R7"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "fe9f71cc-5905-4abc-8873-7719173c18f7")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "1.2k"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "1457839e-677a-4d7b-b16c-a0e814135c1e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2f5babae-f2a9-4910-9ed0-caf559a69517")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f18a2b78-4e66-4887-ae2a-cefc4d4dd830")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "116e9e67-8985-4d82-92cb-bde0bbada1eb")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/7f0864de-1e10-4cdb-9bfb-9c6a7bd786df")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 2 "/GND")
-			(pintype "passive")
-			(uuid "603616e1-b854-4911-b219-4657fc1d6f42")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 253 "Net-(R5-Pad2)")
-			(pintype "passive")
-			(uuid "4a9377e0-b0ce-451d-a26d-ce58f7d78a12")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
 		)
 	)
 	(footprint "azonenberg_pcb:BGA_201_10x10_DEPOP_0.65MM_OSHPARK"
@@ -21273,7 +20782,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "8781e30e-80d4-4cda-a48b-7ad2a53d25d3")
-		(at 164 90.5 180)
+		(at 174.85 90.5 180)
 		(property "Reference" "C33"
 			(at 0.2 2.1 180)
 			(unlocked yes)
@@ -22426,11 +21935,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "8d000209-b476-41ca-b193-a6a220853ed5")
-		(at 230 87)
+		(at 169.05 93.98507)
 		(property "Reference" "C28"
 			(at 0.2 2.1 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "165f676f-823d-4785-b172-9913558b7ade")
 			(effects
 				(font
@@ -23225,11 +22735,12 @@
 	(footprint "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
 		(layer "F.Cu")
 		(uuid "9a37c77f-2876-41b7-ad5d-3b1541792717")
-		(at 219 91)
+		(at 162 100.5)
 		(property "Reference" "TP3"
 			(at 0 1.5 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "22e1f67a-f778-4ee6-b67d-48936b810ef2")
 			(effects
 				(font
@@ -23510,11 +23021,12 @@
 	(footprint "azonenberg_pcb:MODULE_MURATA_MYMGK1R812"
 		(layer "F.Cu")
 		(uuid "9d4319d5-0ac0-45bf-8fac-7cc7417356f4")
-		(at 212 74)
+		(at 165.5 73.35 180)
 		(property "Reference" "U2"
-			(at -0.05 6.45 0)
+			(at -0.05 6.45 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ff19372d-23a7-4105-ae36-af58f2738f2f")
 			(effects
 				(font
@@ -23524,7 +23036,7 @@
 			)
 		)
 		(property "Value" "MYMGK1R812ERSR"
-			(at -0.05 7.95 0)
+			(at -0.05 7.95 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -23537,7 +23049,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:MODULE_MURATA_MYMGK1R812"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -23550,7 +23062,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -23563,7 +23075,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -23581,14 +23093,14 @@
 		(solder_paste_ratio -0.1)
 		(attr smd)
 		(fp_line
-			(start -5.25 -6)
-			(end -5.25 -5.25)
+			(start -4.5 -6)
+			(end -5.25 -6)
 			(stroke
 				(width 0.15)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "2e9d93de-0af8-4ca0-be11-ed0f25d8c116")
+			(uuid "21e71775-e324-4ccb-b95c-56fa30039b0f")
 		)
 		(fp_line
 			(start -5.25 -5.25)
@@ -23601,17 +23113,17 @@
 			(uuid "613e1bdc-698e-4eb9-806f-6aaa23454a49")
 		)
 		(fp_line
-			(start -4.5 -6)
-			(end -5.25 -6)
+			(start -5.25 -6)
+			(end -5.25 -5.25)
 			(stroke
 				(width 0.15)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "21e71775-e324-4ccb-b95c-56fa30039b0f")
+			(uuid "2e9d93de-0af8-4ca0-be11-ed0f25d8c116")
 		)
 		(pad "1" smd rect
-			(at -3.55 -4.35)
+			(at -3.550001 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23620,7 +23132,7 @@
 			(uuid "e4984601-1def-4c6a-94a0-9378a2394d3f")
 		)
 		(pad "2" smd rect
-			(at -2.25 -4.35)
+			(at -2.25 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23629,7 +23141,7 @@
 			(uuid "d114e79d-bb30-49fa-b4ea-ff2795bcd7df")
 		)
 		(pad "3" smd rect
-			(at -0.95 -4.35)
+			(at -0.95 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23638,7 +23150,7 @@
 			(uuid "a1ff6d34-9c57-46a0-8aa5-7963efd2181f")
 		)
 		(pad "4" smd rect
-			(at -3.55 -3.15)
+			(at -3.55 -3.149999 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23647,7 +23159,7 @@
 			(uuid "efc2c8c1-73f4-4834-9df8-f9beebc6df9a")
 		)
 		(pad "5" smd rect
-			(at -2.25 -3.15)
+			(at -2.25 -3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23656,7 +23168,7 @@
 			(uuid "2595f4d8-e68c-4411-bb2c-8ce3996d878c")
 		)
 		(pad "6" smd rect
-			(at -0.95 -3.15)
+			(at -0.95 -3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -23665,7 +23177,7 @@
 			(uuid "9a5764dd-bcd9-4f4e-82ce-21695c720699")
 		)
 		(pad "7" smd rect
-			(at -3.5 -1.25)
+			(at -3.5 -1.25 180)
 			(size 1.2 1.2)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 272 "/Power Supply/VCCINT_PGOOD")
@@ -23674,7 +23186,7 @@
 			(uuid "7e768e33-ce1f-47e7-94bb-ec19cc341eca")
 		)
 		(pad "8" smd rect
-			(at -3.5 1.25)
+			(at -3.5 1.25 180)
 			(size 1.2 1.2)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 273 "/Power Supply/VCCINT_EN")
@@ -23683,7 +23195,7 @@
 			(uuid "455a1696-b63d-4797-9af1-c71caf0c6471")
 		)
 		(pad "9" smd rect
-			(at -3.55 3.15)
+			(at -3.55 3.149999 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23692,7 +23204,7 @@
 			(uuid "fab023bf-d87b-4fbb-845b-6ec8b496b478")
 		)
 		(pad "10" smd rect
-			(at -2.25 3.15)
+			(at -2.25 3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23701,7 +23213,7 @@
 			(uuid "de877737-2b63-4ef8-9529-517d104b2910")
 		)
 		(pad "11" smd rect
-			(at -0.95 3.15)
+			(at -0.95 3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23710,7 +23222,7 @@
 			(uuid "076992aa-9753-4628-8076-4d425a2674d4")
 		)
 		(pad "12" smd rect
-			(at -3.55 4.35)
+			(at -3.550001 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23719,7 +23231,7 @@
 			(uuid "a1013324-24a6-4ecb-9c0d-6f55bb54f16f")
 		)
 		(pad "13" smd rect
-			(at -2.25 4.35)
+			(at -2.25 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23728,7 +23240,7 @@
 			(uuid "3334ac33-0ccc-42bb-ab77-0a21fb92ed21")
 		)
 		(pad "14" smd rect
-			(at -0.95 4.35)
+			(at -0.95 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23737,7 +23249,7 @@
 			(uuid "d581e92c-4f9d-4e83-b817-1c5209a0861a")
 		)
 		(pad "15" smd rect
-			(at 0.95 3.15)
+			(at 0.95 3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23746,7 +23258,7 @@
 			(uuid "4b9463c6-3858-4097-bcc3-2b62ce05021c")
 		)
 		(pad "16" smd rect
-			(at 2.25 3.15)
+			(at 2.25 3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23755,7 +23267,7 @@
 			(uuid "c9a83457-b38e-4a25-962a-cbac1b7ea0ec")
 		)
 		(pad "17" smd rect
-			(at 3.55 3.15)
+			(at 3.55 3.149999 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23764,7 +23276,7 @@
 			(uuid "d4e30555-9fd5-4f80-8686-7c2c869b893e")
 		)
 		(pad "18" smd rect
-			(at 0.95 4.35)
+			(at 0.95 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23773,7 +23285,7 @@
 			(uuid "d56aaaf8-c21a-47bb-954a-af9542ea4060")
 		)
 		(pad "19" smd rect
-			(at 2.25 4.35)
+			(at 2.25 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23782,7 +23294,7 @@
 			(uuid "a6781151-a8b4-4675-be56-06f8cee5787e")
 		)
 		(pad "20" smd rect
-			(at 3.55 4.35)
+			(at 3.550001 4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -23791,7 +23303,7 @@
 			(uuid "6e88dd9f-a16c-4681-969c-26107f1f1177")
 		)
 		(pad "21" smd rect
-			(at 3.5 1.25)
+			(at 3.5 1.25 180)
 			(size 1.2 1.2)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 259 "/Power Supply/VCCINT_SENSE")
@@ -23800,7 +23312,7 @@
 			(uuid "9f89f116-d808-4169-8698-377f34621e7b")
 		)
 		(pad "22" smd rect
-			(at 3.5 -1.25)
+			(at 3.5 -1.25 180)
 			(size 1.2 1.2)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 254 "Net-(U2-TRIM)")
@@ -23809,7 +23321,7 @@
 			(uuid "238de235-46ba-4f41-b66d-5feee5960bf1")
 		)
 		(pad "23" smd rect
-			(at 0.95 -4.35)
+			(at 0.95 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23818,7 +23330,7 @@
 			(uuid "de38054e-c44f-48f8-8cec-3c4b734ce312")
 		)
 		(pad "24" smd rect
-			(at 2.25 -4.35)
+			(at 2.25 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23827,7 +23339,7 @@
 			(uuid "3807bb47-c637-451d-8c53-45f67429eb77")
 		)
 		(pad "25" smd rect
-			(at 3.55 -4.35)
+			(at 3.550001 -4.35 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23836,7 +23348,7 @@
 			(uuid "762dc8b1-73ca-41a8-961f-823345fd0160")
 		)
 		(pad "26" smd rect
-			(at 0.95 -3.15)
+			(at 0.95 -3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23845,7 +23357,7 @@
 			(uuid "6661606d-abec-4958-8877-60107ba8da21")
 		)
 		(pad "27" smd rect
-			(at 2.25 -3.15)
+			(at 2.25 -3.15 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23854,7 +23366,7 @@
 			(uuid "4647351f-89db-4590-87a7-0310d606d846")
 		)
 		(pad "28" smd rect
-			(at 3.55 -3.15)
+			(at 3.55 -3.149999 180)
 			(size 1.1 1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23863,7 +23375,7 @@
 			(uuid "f3020fee-ad46-4777-9530-15e650d05bbe")
 		)
 		(pad "29" smd roundrect
-			(at -1.5 -1.3)
+			(at -1.5 -1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0)
@@ -23875,7 +23387,7 @@
 			(uuid "9784e137-28df-4fc9-9d05-4fa81be553a6")
 		)
 		(pad "30" smd rect
-			(at 0 -1.3)
+			(at 0 -1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23884,7 +23396,7 @@
 			(uuid "f91d132b-efa1-4089-a0cd-7763933b5d21")
 		)
 		(pad "31" smd rect
-			(at 1.5 -1.3)
+			(at 1.5 -1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23893,7 +23405,7 @@
 			(uuid "106ce544-c577-478b-a6a8-4f5a55f9d0d3")
 		)
 		(pad "32" smd rect
-			(at 1.5 0)
+			(at 1.5 0 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23902,7 +23414,7 @@
 			(uuid "cd394e03-5d41-4b2e-80ee-48827ab1bad2")
 		)
 		(pad "33" smd rect
-			(at 0 0)
+			(at 0 0 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23911,7 +23423,7 @@
 			(uuid "5311e308-25be-40d7-bb0e-19784c9fa02f")
 		)
 		(pad "34" smd rect
-			(at -1.5 0)
+			(at -1.5 0 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23920,7 +23432,7 @@
 			(uuid "e9b56428-b9f9-4be4-9b98-813ba5fa7d62")
 		)
 		(pad "35" smd rect
-			(at -1.5 1.3)
+			(at -1.5 1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23929,7 +23441,7 @@
 			(uuid "1499d70f-ad3c-423c-a67f-c3867a4d0aad")
 		)
 		(pad "36" smd rect
-			(at 0 1.3)
+			(at 0 1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -23938,7 +23450,7 @@
 			(uuid "9c94c45a-7aa0-4c09-a087-4537fa6c3e9d")
 		)
 		(pad "37" smd rect
-			(at 1.5 1.3)
+			(at 1.5 1.3 180)
 			(size 1.3 1.1)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -24834,7 +24346,7 @@
 		(uuid "a4f66e8f-2d42-4342-a1de-807e375764ad")
 		(at 158.5 106.75 90)
 		(property "Reference" "C147"
-			(at 0 1.5 90)
+			(at 0 1.5 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "479bc763-1fc7-4ce6-930b-b306efc6b06d")
@@ -24932,9 +24444,9 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "a83ce3c2-8ac2-490b-a3ed-c19e279e8dac")
-		(at 165.5 107.5)
+		(at 176.35 107.5 180)
 		(property "Reference" "C17"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24947,7 +24459,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "958ffb95-31be-43b8-ba3b-26192a7cd54c")
@@ -24959,7 +24471,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -24972,7 +24484,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -24985,7 +24497,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -25003,7 +24515,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -25011,7 +24523,7 @@
 			(uuid "05f43369-add6-4275-9946-158d4f5b3b2c")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -26296,7 +25808,7 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "bb5b610d-b39d-4ad2-b117-f8506cb248b7")
-		(at 177 107.5 180)
+		(at 176.35 81 180)
 		(property "Reference" "C16"
 			(at -0.05 2.65 180)
 			(unlocked yes)
@@ -26666,7 +26178,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "c0a2ebb4-f97c-492f-94b6-fdccac4ff566")
-		(at 180.05 93.98507)
+		(at 179.4 67.48507)
 		(property "Reference" "C25"
 			(at 0.2 2.1 0)
 			(unlocked yes)
@@ -27507,106 +27019,6 @@
 			(uuid "76479b5a-11bf-4401-9674-747c9d1d71fb")
 		)
 		(model ":WALTER:smd_cap/c_0805.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
-		(uuid "c5cf40db-99d4-4a10-b08b-80671294252a")
-		(at 225.5 74)
-		(property "Reference" "R11"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "4f18fbfc-f592-438f-960b-c1020f58165f")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "32a90d00-5185-4ca4-902f-6cbaba661f64")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "423047cc-5983-4d72-bdee-0a21857f32b1")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c881737b-f142-4bd7-8161-53288e5eea82")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "77e189e1-c43f-44ce-91ec-f82448de56e3")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/3face172-25df-4c0c-a13e-6d224497c19a")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 259 "/Power Supply/VCCINT_SENSE")
-			(pintype "passive")
-			(uuid "484df74a-597e-4220-8d31-51861b3b0b4b")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 3 "/FPGA support/VCCINT")
-			(pintype "passive")
-			(uuid "e6347ee5-a444-41c1-b19a-70c3293ed218")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -28975,7 +28387,7 @@
 	(footprint "azonenberg_pcb:TESTPOINT_SMT_0.5MM"
 		(layer "F.Cu")
 		(uuid "d2a0f7b4-1c9e-419e-b4d4-998b9a5d1214")
-		(at 173.5 100.5)
+		(at 172.85 74)
 		(property "Reference" "TP4"
 			(at 0 1.5 0)
 			(unlocked yes)
@@ -29561,7 +28973,7 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "e16e3362-d22b-4ed0-b35f-4fd9576c2a01")
-		(at 177 111 180)
+		(at 176.35 84.5 180)
 		(property "Reference" "C13"
 			(at -0.05 2.65 180)
 			(unlocked yes)
@@ -30066,7 +29478,7 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "e6a39e41-3a4b-45d7-9e26-0089b97e371e")
-		(at 175.5 94 180)
+		(at 174.85 67.5 180)
 		(property "Reference" "C29"
 			(at 0.2 2.1 180)
 			(unlocked yes)
@@ -30266,106 +29678,6 @@
 	)
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "F.Cu")
-		(uuid "e890d00e-e742-450c-a452-4e8b9b218064")
-		(at 228 74)
-		(property "Reference" "R5"
-			(at 0 1.5 0)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "8848e2ea-55fb-464a-8d3c-ea7a91c2af59")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.1)
-				)
-			)
-		)
-		(property "Value" "24.9k"
-			(at 0 3.5 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "916723bf-3e1f-4b01-bb4b-6fbb0388f82a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b8cec164-10a1-4fbb-b8f3-3c684925f535")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1ae91ec8-1672-4e07-85d2-3d781afcb96c")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1b41d4f9-2d68-4faf-8080-2c2fc4cf69c2")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "R_* R_*")
-		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/fd503033-03db-4261-b1b6-ca747c6fba19")
-		(sheetname "Power Supply")
-		(sheetfile "psu.kicad_sch")
-		(attr smd)
-		(pad "1" smd rect
-			(at -0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 254 "Net-(U2-TRIM)")
-			(pintype "passive")
-			(uuid "a703b564-7247-4401-8305-81e5715a76ca")
-		)
-		(pad "2" smd rect
-			(at 0.5 0)
-			(size 0.5 0.5)
-			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 253 "Net-(R5-Pad2)")
-			(pintype "passive")
-			(uuid "34ac778d-33d1-416c-9455-f746e35ce2e8")
-		)
-		(model ":WALTER:smd_resistors/r_0402.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
-		(layer "F.Cu")
 		(uuid "e94e23a1-4b15-41a2-bbfe-1107b73cfcbc")
 		(at 138.000001 77 180)
 		(property "Reference" "R2"
@@ -30467,11 +29779,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "e9acf05b-5183-457d-9b5e-daeebcf8c498")
-		(at 227 70)
+		(at 163.45 63 180)
 		(property "Reference" "C10"
-			(at 0.2 2.1 0)
+			(at -47 -4.5 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ff242394-cd3d-4720-bfe6-7984b95fbb3a")
 			(effects
 				(font
@@ -30481,7 +29794,7 @@
 			)
 		)
 		(property "Value" "220 uF"
-			(at 0 3.7 0)
+			(at 0 3.7 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "53fbaf58-4207-4af5-9fa1-af894e6d4966")
@@ -30493,7 +29806,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -30506,7 +29819,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -30519,7 +29832,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -30537,7 +29850,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -1.55 0.01493)
+			(at -1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 3 "/FPGA support/VCCINT")
@@ -30545,7 +29858,7 @@
 			(uuid "148a3076-9b8e-4d1f-8d90-6d46868c7377")
 		)
 		(pad "2" smd rect
-			(at 1.55 0.01493)
+			(at 1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -31036,11 +30349,12 @@
 	(footprint "azonenberg_pcb:EIA_1812_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "f1455c2e-8720-4dd5-bfb0-0f8b45125f83")
-		(at 193 73)
+		(at 165.45 80.9625 180)
 		(property "Reference" "C1"
-			(at -0.05 2.65 0)
+			(at -0.05 2.65 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "23bf2311-c91f-482d-946c-c31c07a8077e")
 			(effects
 				(font
@@ -31050,7 +30364,7 @@
 			)
 		)
 		(property "Value" "22 uF 25V"
-			(at -0.05 4.15 0)
+			(at -0.05 4.15 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "38806850-8631-4edd-af49-d5a847b89b77")
@@ -31062,7 +30376,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1812_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -31075,7 +30389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -31088,7 +30402,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -31106,7 +30420,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -2.35 0)
+			(at -2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 1 "/Power Supply/12V0")
@@ -31114,7 +30428,7 @@
 			(uuid "1de709bf-504e-4851-b6f4-a6b33965df0d")
 		)
 		(pad "2" smd rect
-			(at 2.35 0)
+			(at 2.35 0 180)
 			(size 1.25 3)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -37458,11 +36772,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "f38c77f4-61be-4054-a0c1-897a57c60938")
-		(at 236 87)
+		(at 169 90.5)
 		(property "Reference" "C31"
 			(at 0.2 2.1 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4bcd1698-e763-4ff8-b375-f782c9431904")
 			(effects
 				(font
@@ -39353,11 +38668,12 @@
 	(footprint "azonenberg_pcb:EIA_1210_CAP_NOSILK"
 		(layer "F.Cu")
 		(uuid "fcd8b081-82a7-4cd6-aaf9-6a7fcbd72923")
-		(at 241 87)
+		(at 163.95 90.514931 180)
 		(property "Reference" "C34"
-			(at 0.2 2.1 0)
+			(at 0.2 2.1 180)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4da0c6fd-e4cf-47e5-8f67-b538be725cfd")
 			(effects
 				(font
@@ -39367,7 +38683,7 @@
 			)
 		)
 		(property "Value" "100 uF"
-			(at 0 3.7 0)
+			(at 0 3.7 360)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "ba8f1789-de7b-4cf1-9f21-ac6cb3830d19")
@@ -39379,7 +38695,7 @@
 			)
 		)
 		(property "Footprint" "azonenberg_pcb:EIA_1210_CAP_NOSILK"
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -39392,7 +38708,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -39405,7 +38721,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -39423,7 +38739,7 @@
 		(sheetfile "psu.kicad_sch")
 		(attr smd)
 		(pad "1" smd rect
-			(at -1.55 0.01493)
+			(at -1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 8 "/3V3")
@@ -39431,7 +38747,7 @@
 			(uuid "7165379d-1c6d-4036-859b-d8744db6b6b8")
 		)
 		(pad "2" smd rect
-			(at 1.55 0.01493)
+			(at 1.55 0.014931 180)
 			(size 0.9 2.9)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 2 "/GND")
@@ -40800,6 +40116,111 @@
 			)
 		)
 	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "1309d22e-8d51-40b0-b6e1-29cbce497894")
+		(at 164.5 101.75)
+		(property "Reference" "R24"
+			(at 0 -0.75 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "063af5ba-487f-4ca3-a8ef-1afdaf3b5cb7")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "1K"
+			(at 0 -3.5 360)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "9001db27-6e06-42b2-8d2e-7e1078c3edf1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "fffbee8f-6c0d-4b69-88f8-78fd18e58656")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "de43431c-5c74-491f-a83f-ca8965448ed6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "26cdbc2b-aa4b-4dba-8729-52a92132d023")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/8b1fca08-98fe-4ff3-9f66-4998ae83332c")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 271 "/Power Supply/3V3_EN")
+			(pintype "passive")
+			(uuid "d10b3d8a-d7ff-4a2c-9d72-d4dcb762511c")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 2 "/GND")
+			(pintype "passive")
+			(uuid "07226d5c-750e-43ab-8ac0-def9e82dd3f9")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "azonenberg_pcb:EIA_0603_CAP_NOSILK"
 		(layer "B.Cu")
 		(uuid "1396a9a2-619b-42d6-ae6e-8a5992d6df14")
@@ -40997,6 +40418,111 @@
 			(net 291 "/FPGA support/FPGA_FLASH_DQ1")
 			(pintype "passive")
 			(uuid "12266d08-e9ce-494b-b4a1-e20f8df91264")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "1716bcdc-5983-4088-91c9-49e0677e8e82")
+		(at 169.749999 101.75)
+		(property "Reference" "R20"
+			(at -2.249999 0 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "5e2ac7dc-96d0-410c-bfdc-54fe00387aba")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "22"
+			(at 0 -3.5 360)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "7a8aa332-4ffc-4245-92b6-bf887e720ce3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "2cb3d23d-b364-4eae-ae14-a79cc5bcc27b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "4ed2d58c-652f-4914-9d4c-eac5502957bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "789ad154-5396-4413-91a3-6fdc955bf840")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/8ad6d5c7-e514-4e72-b161-80fbe97f33d7")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 2 "/GND")
+			(pintype "passive")
+			(uuid "51bc2755-237d-43cd-90a7-2d6c845de772")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 265 "Net-(R17-Pad2)")
+			(pintype "passive")
+			(uuid "eb50a466-8bdf-4c32-8534-0f7cf4b704fc")
 		)
 		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
@@ -41324,6 +40850,111 @@
 			(net 255 "Net-(R6-Pad2)")
 			(pintype "passive")
 			(uuid "6f7ae095-0126-418b-8e3a-88ba889346b2")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "1aff4559-7b98-4c90-bc3f-dd44b05728d4")
+		(at 169.75 100.5)
+		(property "Reference" "R17"
+			(at -2.25 0 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "a56dfad6-1296-4c82-86ee-a8b1eb6fd6a7")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 0 -3.5 360)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "2d7e3563-7d46-4935-a1f2-698af2ee3811")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "73787ce9-d68f-4788-a372-62a340af9e74")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "8156dbfa-eef7-4ebe-b65f-bad04a01ef23")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "66581d8a-6b9e-4fe9-a8aa-4f890fc7d933")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/068e565f-66ba-4a25-8921-b3ae41d7cc05")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 264 "Net-(U4-TRIM)")
+			(pintype "passive")
+			(uuid "1e1e5bf7-0195-46d8-b8ae-7823763f8253")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 265 "Net-(R17-Pad2)")
+			(pintype "passive")
+			(uuid "802762be-5b16-4c1f-8169-203f4c7b8e1e")
 		)
 		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
@@ -42062,6 +41693,111 @@
 			(uuid "52749dd1-2183-490d-9549-7cd48b2ecfc8")
 		)
 		(model ":WALTER:smd_cap/c_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "2a68d141-c11b-4af3-8bf5-277ba74af7ce")
+		(at 168 72 180)
+		(property "Reference" "R26"
+			(at 0 0.75 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "c2d98205-5eba-4b9c-92c7-223443ee7c05")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "1K"
+			(at 0 -3.5 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "9bac9881-9958-4b93-954f-a47d79ac61ed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "97d5f9ab-d02f-4eb4-8f34-0cf39fc539ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "f8e69c5c-2947-4310-ae8e-5ad83c0504b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "f310a562-7a22-45f5-939f-f9256d98cd03")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/88708264-cdc3-4fe0-b8fb-d3bd014a7c32")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0 180)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 273 "/Power Supply/VCCINT_EN")
+			(pintype "passive")
+			(uuid "977c265a-7f78-4762-b18e-8292ed278235")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0 180)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 2 "/GND")
+			(pintype "passive")
+			(uuid "ebb8908e-9f4c-4a91-ab7d-824dbe99f717")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -43753,7 +43489,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "4867036f-517e-459f-ac30-b4036fbd52e6")
-		(at 164.25 101.75)
+		(at 175.1 101.75)
 		(property "Reference" "R32"
 			(at 0 -1 0)
 			(unlocked yes)
@@ -47852,6 +47588,111 @@
 	)
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
+		(uuid "79f65c1c-6713-44d2-a8a9-3b825718a277")
+		(at 162.75 74 90)
+		(property "Reference" "R7"
+			(at -1.75 0 90)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "fe9f71cc-5905-4abc-8873-7719173c18f7")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "1.2k"
+			(at 0 -3.5 90)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "1457839e-677a-4d7b-b16c-a0e814135c1e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "2f5babae-f2a9-4910-9ed0-caf559a69517")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "f18a2b78-4e66-4887-ae2a-cefc4d4dd830")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "116e9e67-8985-4d82-92cb-bde0bbada1eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/7f0864de-1e10-4cdb-9bfb-9c6a7bd786df")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0 90)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 2 "/GND")
+			(pintype "passive")
+			(uuid "603616e1-b854-4911-b219-4657fc1d6f42")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0 90)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 253 "Net-(R5-Pad2)")
+			(pintype "passive")
+			(uuid "4a9377e0-b0ce-451d-a26d-ce58f7d78a12")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
 		(uuid "7d11e657-a8ca-4664-ac2e-de3d2991f066")
 		(at 78.4 58.5 90)
 		(property "Reference" "R68"
@@ -49595,7 +49436,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "93e9447e-12a8-4188-9568-cb4c1543cc84")
-		(at 180 101.5 180)
+		(at 179.35 75 180)
 		(property "Reference" "R21"
 			(at -2 0 0)
 			(unlocked yes)
@@ -51816,7 +51657,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "a98940b4-48cd-4dab-a00e-6e327c196cab")
-		(at 175.5 101.75)
+		(at 174.85 75.25)
 		(property "Reference" "R35"
 			(at 0 -0.75 0)
 			(unlocked yes)
@@ -54383,6 +54224,111 @@
 			)
 		)
 	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "c5cf40db-99d4-4a10-b08b-80671294252a")
+		(at 154.5 69.5 180)
+		(property "Reference" "R11"
+			(at 0 -1.5 0)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "4f18fbfc-f592-438f-960b-c1020f58165f")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "0"
+			(at 0 -3.5 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "32a90d00-5185-4ca4-902f-6cbaba661f64")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "423047cc-5983-4d72-bdee-0a21857f32b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "c881737b-f142-4bd7-8161-53288e5eea82")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "77e189e1-c43f-44ce-91ec-f82448de56e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/3face172-25df-4c0c-a13e-6d224497c19a")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.5 0 180)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 259 "/Power Supply/VCCINT_SENSE")
+			(pintype "passive")
+			(uuid "484df74a-597e-4220-8d31-51861b3b0b4b")
+		)
+		(pad "2" smd rect
+			(at 0.5 0 180)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 3 "/FPGA support/VCCINT")
+			(pintype "passive")
+			(uuid "e6347ee5-a444-41c1-b19a-70c3293ed218")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "azonenberg_pcb:EIA_0402_CAP_NOSILK"
 		(layer "B.Cu")
 		(uuid "c6025652-b490-4ba9-aad7-71a0e0d75983")
@@ -55015,7 +54961,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "ca881746-418f-41d0-b011-c057cd0c31ae")
-		(at 180 100.5 180)
+		(at 179.35 74 180)
 		(property "Reference" "R18"
 			(at -2 0 0)
 			(unlocked yes)
@@ -57734,6 +57680,111 @@
 			)
 		)
 	)
+	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
+		(layer "B.Cu")
+		(uuid "e890d00e-e742-450c-a452-4e8b9b218064")
+		(at 162 74 90)
+		(property "Reference" "R5"
+			(at -1.75 -0.25 90)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "8848e2ea-55fb-464a-8d3c-ea7a91c2af59")
+			(effects
+				(font
+					(size 0.75 0.75)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "24.9k"
+			(at 0 -3.5 90)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "916723bf-3e1f-4b01-bb4b-6fbb0388f82a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "azonenberg_pcb:EIA_0402_RES_NOSILK"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "b8cec164-10a1-4fbb-b8f3-3c684925f535")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "1ae91ec8-1672-4e07-85d2-3d781afcb96c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "1b41d4f9-2d68-4faf-8080-2c2fc4cf69c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "R_* R_*")
+		(path "/a3f84a70-99b8-4382-a9c4-a0362ca53d67/fd503033-03db-4261-b1b6-ca747c6fba19")
+		(sheetname "Power Supply")
+		(sheetfile "psu.kicad_sch")
+		(attr smd)
+		(pad "1" smd rect
+			(at -0.499999 0 90)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 254 "Net-(U2-TRIM)")
+			(pintype "passive")
+			(uuid "a703b564-7247-4401-8305-81e5715a76ca")
+		)
+		(pad "2" smd rect
+			(at 0.499999 0 90)
+			(size 0.5 0.5)
+			(layers "B.Cu" "B.Paste" "B.Mask")
+			(net 253 "Net-(R5-Pad2)")
+			(pintype "passive")
+			(uuid "34ac778d-33d1-416c-9455-f746e35ce2e8")
+		)
+		(model ":WALTER:smd_resistors/r_0402.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "azonenberg_pcb:EIA_0402_CAP_NOSILK"
 		(layer "B.Cu")
 		(uuid "ebb6d672-9abe-4e5a-9a15-f5a0a6eac4ea")
@@ -58367,7 +58418,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "f764557e-a665-497c-b326-fd982a9ac318")
-		(at 168.5 101.5 180)
+		(at 179.35 101.5 180)
 		(property "Reference" "R22"
 			(at 0 -1.5 0)
 			(unlocked yes)
@@ -59524,7 +59575,7 @@
 	(footprint "azonenberg_pcb:EIA_0402_RES_NOSILK"
 		(layer "B.Cu")
 		(uuid "fd3d7150-6ed0-4dfe-bbf3-b4c2d2e70d8d")
-		(at 168.5 100.5 180)
+		(at 179.35 100.5 180)
 		(property "Reference" "R19"
 			(at 0 0.75 0)
 			(unlocked yes)
@@ -59732,7 +59783,7 @@
 		)
 	)
 	(gr_rect
-		(start 161.5 61.25)
+		(start 161 59.75)
 		(end 171.5 86.75)
 		(stroke
 			(width 0.1)
@@ -59743,7 +59794,7 @@
 		(uuid "30339d3b-7f56-4132-928b-88aa90856217")
 	)
 	(gr_rect
-		(start 172.5 61.25)
+		(start 172.5 59.75)
 		(end 182.5 86.75)
 		(stroke
 			(width 0.1)
@@ -59776,7 +59827,7 @@
 		(uuid "5ea4bf71-0f7e-4be6-b6d5-89ed1fe5fc32")
 	)
 	(gr_rect
-		(start 161.5 87.5)
+		(start 161 87.5)
 		(end 171.5 113)
 		(stroke
 			(width 0.1)
@@ -59785,6 +59836,28 @@
 		(fill none)
 		(layer "F.SilkS")
 		(uuid "81efbf55-de0e-4a1c-9e11-34ab3c64591b")
+	)
+	(gr_rect
+		(start 149.5 101.5)
+		(end 160.5 116)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "c708b93d-8c13-48c6-bd84-85cf9f0d70b0")
+	)
+	(gr_rect
+		(start 121.5 102)
+		(end 130 114.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "f63997ba-fb23-4d41-919d-d796ed0d0950")
 	)
 	(gr_line
 		(start 135 31)
@@ -60008,7 +60081,7 @@
 		)
 	)
 	(gr_text "GTY_\nVCCAUX"
-		(at 131.5 112 0)
+		(at 123 112 90)
 		(layer "F.SilkS")
 		(uuid "18e9a4da-2162-4509-8dd9-b760b3e6bff4")
 		(effects
@@ -60089,8 +60162,8 @@
 			(justify left)
 		)
 	)
-	(gr_text "SFP1 I2C"
-		(at 132 99 90)
+	(gr_text "SFP1\nI2C"
+		(at 131.5 99 90)
 		(layer "F.SilkS")
 		(uuid "28257290-d2c0-444c-b9a0-3e1a35d96458")
 		(effects
@@ -60325,7 +60398,7 @@
 		)
 	)
 	(gr_text "GTY_VCC"
-		(at 171 112.5 90)
+		(at 181.85 112.5 90)
 		(layer "F.SilkS")
 		(uuid "6160afbe-c02b-482b-974e-92a1acfaf794")
 		(effects
@@ -60526,6 +60599,18 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "3V3"
+		(at 171 112.5 90)
+		(layer "F.SilkS")
+		(uuid "989061db-6c10-4f40-8354-398b343e3d63")
+		(effects
+			(font
+				(size 0.75 0.75)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "LINE CARD 0 MGMT"
 		(at 140 125 0)
 		(layer "F.SilkS")
@@ -60572,8 +60657,8 @@
 			(justify bottom)
 		)
 	)
-	(gr_text "SFP0 I2C"
-		(at 152 99 90)
+	(gr_text "SFP0\nI2C"
+		(at 152.5 99 90)
 		(layer "F.SilkS")
 		(uuid "aac5fae1-7df6-4d28-8a50-1f3d8bf216b7")
 		(effects
@@ -60667,7 +60752,7 @@
 		)
 	)
 	(gr_text "1V8"
-		(at 182 112.5 90)
+		(at 182 86 90)
 		(layer "F.SilkS")
 		(uuid "be2b90a5-d7d8-4f4f-b2d1-d1a3efb2f36f")
 		(effects
@@ -80999,6 +81084,14 @@
 		(uuid "2e333391-bd6a-4a9e-8b17-95f93b2263ad")
 	)
 	(segment
+		(start 160.5 111.5)
+		(end 160.5 112.5)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 4)
+		(uuid "35c5687e-0b73-4f74-9be8-a66f30a1d986")
+	)
+	(segment
 		(start 99.5 106.5)
 		(end 100 107)
 		(width 0.123)
@@ -81029,6 +81122,14 @@
 		(layer "In4.Cu")
 		(net 4)
 		(uuid "3fdf0b62-d3b1-4852-976b-5ce4b2be8670")
+	)
+	(segment
+		(start 160.5 112.5)
+		(end 161.5 113.5)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 4)
+		(uuid "403992dc-c2e2-4b85-a5bb-93b5dedf472b")
 	)
 	(segment
 		(start 97 106.5)
@@ -81303,6 +81404,14 @@
 		(uuid "b2cc90cd-2c53-4a4b-8e71-712d3d06fcc3")
 	)
 	(segment
+		(start 164.5 113.5)
+		(end 165 114)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 4)
+		(uuid "b6ed6f4f-ca89-4f7d-b1d5-f8984ab37ada")
+	)
+	(segment
 		(start 148.75 104)
 		(end 151 104)
 		(width 0.106)
@@ -81397,6 +81506,22 @@
 		(layer "In4.Cu")
 		(net 4)
 		(uuid "ee39a5eb-4dc5-4b15-999b-87399693ea65")
+	)
+	(segment
+		(start 161.5 113.5)
+		(end 164.5 113.5)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 4)
+		(uuid "f3d78f37-f69b-4b99-a398-928621a8f67f")
+	)
+	(segment
+		(start 165 114)
+		(end 165 123)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 4)
+		(uuid "f47d1701-cc44-4b15-b4c3-89555e631e6e")
 	)
 	(segment
 		(start 93.25 70.5)
@@ -110259,6 +110384,14 @@
 		(uuid "020c085e-2d61-4877-8467-24e467e5a05d")
 	)
 	(segment
+		(start 160.75 124.75)
+		(end 162.5 124.75)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 260)
+		(uuid "0b16ba97-d798-4dbe-9de6-54845dd98ddd")
+	)
+	(segment
 		(start 159.5 105.5)
 		(end 159.5 123.5)
 		(width 0.106)
@@ -110297,6 +110430,14 @@
 		(layer "In4.Cu")
 		(net 260)
 		(uuid "a1ba6342-3676-45ac-b9a7-1c5b60b8aa85")
+	)
+	(segment
+		(start 159.5 123.5)
+		(end 160.75 124.75)
+		(width 0.123)
+		(layer "In4.Cu")
+		(net 260)
+		(uuid "ce04adaf-8e6c-400c-8277-c348ac237c93")
 	)
 	(segment
 		(start 109 105)
