@@ -10106,7 +10106,7 @@
 		(uuid "21b6b0ba-3196-4470-843f-400a398b93e6")
 	)
 	(label "12V0_EN"
-		(at 330.2 102.87 180)
+		(at 287.02 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11008,7 +11008,7 @@
 		(uuid "8fe1ef5d-608e-4cd1-b576-814338f7cced")
 	)
 	(label "GTY_VCC_PGOOD"
-		(at 330.2 100.33 180)
+		(at 287.02 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11426,7 +11426,7 @@
 		(uuid "c3a9faed-3462-4cb8-a437-5cefbc741dce")
 	)
 	(label "GTY_VTT_PGOOD"
-		(at 287.02 118.11 180)
+		(at 330.2 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11569,7 +11569,7 @@
 		(uuid "d55a40a0-a842-40ce-9519-6769afb936d4")
 	)
 	(label "2V5_EN"
-		(at 287.02 120.65 180)
+		(at 330.2 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11822,7 +11822,7 @@
 		(uuid "f4a87767-6fbf-44a2-a395-9612177203cf")
 	)
 	(label "2V5_PGOOD"
-		(at 330.2 130.81 180)
+		(at 287.02 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -11888,7 +11888,7 @@
 		(uuid "fe682d9c-e1c0-4f16-aeea-8ca742601d90")
 	)
 	(label "GTY_VCC_EN"
-		(at 287.02 115.57 180)
+		(at 330.2 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12151,7 +12151,7 @@
 	)
 	(hierarchical_label "MCU_READY"
 		(shape input)
-		(at 287.02 113.03 180)
+		(at 287.02 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
