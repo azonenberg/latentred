@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SonnetProject Version="20" Type="GEO" xmlns="https://www.sonnetsoftware.com/schema/project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sonnetsoftware.com/schema/project https://www.sonnetsoftware.com/schema/project/sonnet_project_file-1.0.xsd">
+    <GlobalTemperature Tnom="25.000"/>
+    <Header>
+        <Created Program="xgeom" Version="18.52">
+            <Date>11/18/2021 20:28:07</Date>
+        </Created>
+        <Modified Program="sonnet" Version="19.52.2025">
+            <License>antikernel2.1.73578</License>
+            <Date>06/30/2025 21:24:21</Date>
+            <Change Importance="MEDIUM">
+                <Date>06/30/2025 21:24:21</Date>
+            </Change>
+            <Change Importance="HIGH">
+                <Date>06/30/2025 21:24:21</Date>
+            </Change>
+        </Modified>
+        <Comment>
+            <Line>Created by dxfgeo, Sonnet Software Inc.</Line>
+        </Comment>
+    </Header>
+    <Units>
+        <Angle>DEG</Angle>
+        <Capacitance>PF</Capacitance>
+        <Conductance>/OH</Conductance>
+        <Conductivity>SM</Conductivity>
+        <Frequency>GHZ</Frequency>
+        <Inductance>NH</Inductance>
+        <Length>MM</Length>
+        <Roughness>UM</Roughness>
+        <Resistance>OH</Resistance>
+        <Resistivity>OHCM</Resistivity>
+        <SheetRes>OHSQ</SheetRes>
+    </Units>
+    <Control>
+        <SweepType>VARSWP</SweepType>
+        <DeEmbed On="TRUE"/>
+        <Currents On="TRUE"/>
+        <Precision>DOUBLE</Precision>
+        <SpeedControl>MAX_ACCURACY</SpeedControl>
+        <ABSCacheLevel>MULTI_SWEEP</ABSCacheLevel>
+    </Control>
+    <Geometry YDirection="Negative">
+        <Dielectric MacroID="dielectricA" Name="Air" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="1.0"/>
+            <Tan Value="0.0"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricB" Name="Soldermask" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.5"/>
+            <Tan Value="0.025"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricC" Name="TU-872_SLK" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.9"/>
+            <Tan Value="0.008"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricD" Name="Shengyi_S1000-2M" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="4.49"/>
+            <Tan Value="0.016"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Conductor MacroID="conductorA" Name="Perfect Conductor" Conductivity="INF" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorB" Name="Copper_1oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorC" Name="Copper_1oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorD" Name="Copper_1oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorE" Name="Copper_0.5oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorF" Name="Copper_0.5oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorG" Name="Copper_0.5oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Box>
+            <BoxCover MacroID="top_cover" Type="TOP" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <BoxCover MacroID="bot_cover" Type="BOTTOM" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <Size X="4" Y="3" Z="11.36"/>
+            <NumCells X="400" Y="300"/>
+            <LocalOrigin X="0" Y="3"/>
+            <Symmetry On="FALSE"/>
+            <RefPlane Type="FIXED" Side="LEFT" RefLength="0.85"/>
+        </Box>
+        <Level MacroID="diel_layerA" MaterialName="Air" Number="0">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <Level MacroID="diel_layerB" MaterialName="Soldermask" Number="1">
+            <DielectricMaterialModel Thickness="0.04"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLA" Name="F.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLB" Name="F.Cu_thick" MaterialName="Copper_1oz_thick">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thick:drawing" DXFName="L1D0"/>
+                    <ColorPattern Color="#a52a2a" Pattern="hatch"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBS" Id="99">
+                            <Points>(0.497,2.378) (0.475,2.376) (0.453,2.371) (0.432,2.365) (0.412,2.356)</Points>
+                            <Points>(0.392,2.346) (0.374,2.334) (0.357,2.32) (0.341,2.304) (0.327,2.287)</Points>
+                            <Points>(0.315,2.269) (0.305,2.249) (0.296,2.229) (0.29,2.208) (0.285,2.186)</Points>
+                            <Points>(0.283,2.164) (0.283,2.142) (0.285,2.12) (0.29,2.098) (0.296,2.077)</Points>
+                            <Points>(0.305,2.057) (0.315,2.037) (0.327,2.019) (0.341,2.002) (0.357,1.986)</Points>
+                            <Points>(0.374,1.972) (0.392,1.96) (0.412,1.95) (0.432,1.941) (0.453,1.935)</Points>
+                            <Points>(0.475,1.93) (0.497,1.928) (0.519,1.928) (0.541,1.93) (0.563,1.935)</Points>
+                            <Points>(0.584,1.941) (0.604,1.95) (0.624,1.96) (0.642,1.972) (0.659,1.986)</Points>
+                            <Points>(0.675,2.002) (0.689,2.019) (0.701,2.037) (0.711,2.057) (0.72,2.077)</Points>
+                            <Points>(0.726,2.098) (0.731,2.12) (0.733,2.142) (0.733,2.164) (0.731,2.186)</Points>
+                            <Points>(0.726,2.208) (0.72,2.229) (0.711,2.249) (0.701,2.269) (0.689,2.287)</Points>
+                            <Points>(0.675,2.304) (0.659,2.32) (0.642,2.334) (0.624,2.346) (0.604,2.356)</Points>
+                            <Points>(0.584,2.365) (0.563,2.371) (0.541,2.376) (0.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBT" Id="100">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBU" Id="101">
+                            <Points>(2.497,2.378) (2.475,2.376) (2.453,2.371) (2.432,2.365) (2.412,2.356)</Points>
+                            <Points>(2.392,2.346) (2.374,2.334) (2.357,2.32) (2.341,2.304) (2.327,2.287)</Points>
+                            <Points>(2.315,2.269) (2.305,2.249) (2.296,2.229) (2.29,2.208) (2.285,2.186)</Points>
+                            <Points>(2.283,2.164) (2.283,2.142) (2.285,2.12) (2.29,2.098) (2.296,2.077)</Points>
+                            <Points>(2.305,2.057) (2.315,2.037) (2.327,2.019) (2.341,2.002) (2.357,1.986)</Points>
+                            <Points>(2.374,1.972) (2.392,1.96) (2.412,1.95) (2.432,1.941) (2.453,1.935)</Points>
+                            <Points>(2.475,1.93) (2.497,1.928) (2.519,1.928) (2.541,1.93) (2.563,1.935)</Points>
+                            <Points>(2.584,1.941) (2.604,1.95) (2.624,1.96) (2.642,1.972) (2.659,1.986)</Points>
+                            <Points>(2.675,2.002) (2.689,2.019) (2.701,2.037) (2.711,2.057) (2.72,2.077)</Points>
+                            <Points>(2.726,2.098) (2.731,2.12) (2.733,2.142) (2.733,2.164) (2.731,2.186)</Points>
+                            <Points>(2.726,2.208) (2.72,2.229) (2.711,2.249) (2.701,2.269) (2.689,2.287)</Points>
+                            <Points>(2.675,2.304) (2.659,2.32) (2.642,2.334) (2.624,2.346) (2.604,2.356)</Points>
+                            <Points>(2.584,2.365) (2.563,2.371) (2.541,2.376) (2.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBZ" Id="106">
+                            <Points>(0.497,1.378) (0.475,1.376) (0.453,1.371) (0.432,1.365) (0.412,1.356)</Points>
+                            <Points>(0.392,1.346) (0.374,1.334) (0.357,1.32) (0.341,1.304) (0.327,1.287)</Points>
+                            <Points>(0.315,1.269) (0.305,1.249) (0.296,1.229) (0.29,1.208) (0.285,1.186)</Points>
+                            <Points>(0.283,1.164) (0.283,1.142) (0.285,1.12) (0.29,1.098) (0.296,1.077)</Points>
+                            <Points>(0.305,1.057) (0.315,1.037) (0.327,1.019) (0.341,1.002) (0.357,0.986)</Points>
+                            <Points>(0.374,0.972) (0.392,0.96) (0.412,0.95) (0.432,0.941) (0.453,0.935)</Points>
+                            <Points>(0.475,0.93) (0.497,0.928) (0.519,0.928) (0.541,0.93) (0.563,0.935)</Points>
+                            <Points>(0.584,0.941) (0.604,0.95) (0.624,0.96) (0.642,0.972) (0.659,0.986)</Points>
+                            <Points>(0.675,1.002) (0.689,1.019) (0.701,1.037) (0.711,1.057) (0.72,1.077)</Points>
+                            <Points>(0.726,1.098) (0.731,1.12) (0.733,1.142) (0.733,1.164) (0.731,1.186)</Points>
+                            <Points>(0.726,1.208) (0.72,1.229) (0.711,1.249) (0.701,1.269) (0.689,1.287)</Points>
+                            <Points>(0.675,1.304) (0.659,1.32) (0.642,1.334) (0.624,1.346) (0.604,1.356)</Points>
+                            <Points>(0.584,1.365) (0.563,1.371) (0.541,1.376) (0.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCA" Id="107">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCB" Id="108">
+                            <Points>(2.497,1.378) (2.475,1.376) (2.453,1.371) (2.432,1.365) (2.412,1.356)</Points>
+                            <Points>(2.392,1.346) (2.374,1.334) (2.357,1.32) (2.341,1.304) (2.327,1.287)</Points>
+                            <Points>(2.315,1.269) (2.305,1.249) (2.296,1.229) (2.29,1.208) (2.285,1.186)</Points>
+                            <Points>(2.283,1.164) (2.283,1.142) (2.285,1.12) (2.29,1.098) (2.296,1.077)</Points>
+                            <Points>(2.305,1.057) (2.315,1.037) (2.327,1.019) (2.341,1.002) (2.357,0.986)</Points>
+                            <Points>(2.374,0.972) (2.392,0.96) (2.412,0.95) (2.432,0.941) (2.453,0.935)</Points>
+                            <Points>(2.475,0.93) (2.497,0.928) (2.519,0.928) (2.541,0.93) (2.563,0.935)</Points>
+                            <Points>(2.584,0.941) (2.604,0.95) (2.624,0.96) (2.642,0.972) (2.659,0.986)</Points>
+                            <Points>(2.675,1.002) (2.689,1.019) (2.701,1.037) (2.711,1.057) (2.72,1.077)</Points>
+                            <Points>(2.726,1.098) (2.731,1.12) (2.733,1.142) (2.733,1.164) (2.731,1.186)</Points>
+                            <Points>(2.726,1.208) (2.72,1.229) (2.711,1.249) (2.701,1.269) (2.689,1.287)</Points>
+                            <Points>(2.675,1.304) (2.659,1.32) (2.642,1.334) (2.624,1.346) (2.604,1.356)</Points>
+                            <Points>(2.584,1.365) (2.563,1.371) (2.541,1.376) (2.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCG" Id="113">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCH" Id="114">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCI" Id="115">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDG" Id="139">
+                            <Points>(1.497,3.378) (1.475,3.376) (1.453,3.371) (1.432,3.365) (1.412,3.356)</Points>
+                            <Points>(1.392,3.346) (1.374,3.334) (1.357,3.32) (1.341,3.304) (1.327,3.287)</Points>
+                            <Points>(1.315,3.269) (1.305,3.249) (1.296,3.229) (1.29,3.208) (1.285,3.186)</Points>
+                            <Points>(1.283,3.164) (1.283,3.142) (1.285,3.12) (1.29,3.098) (1.296,3.077)</Points>
+                            <Points>(1.305,3.057) (1.315,3.037) (1.327,3.019) (1.341,3.002) (1.357,2.986)</Points>
+                            <Points>(1.374,2.972) (1.392,2.96) (1.412,2.95) (1.432,2.941) (1.453,2.935)</Points>
+                            <Points>(1.475,2.93) (1.497,2.928) (1.519,2.928) (1.541,2.93) (1.563,2.935)</Points>
+                            <Points>(1.584,2.941) (1.604,2.95) (1.624,2.96) (1.642,2.972) (1.659,2.986)</Points>
+                            <Points>(1.675,3.002) (1.689,3.019) (1.701,3.037) (1.711,3.057) (1.72,3.077)</Points>
+                            <Points>(1.726,3.098) (1.731,3.12) (1.733,3.142) (1.733,3.164) (1.731,3.186)</Points>
+                            <Points>(1.726,3.208) (1.72,3.229) (1.711,3.249) (1.701,3.269) (1.689,3.287)</Points>
+                            <Points>(1.675,3.304) (1.659,3.32) (1.642,3.334) (1.624,3.346) (1.604,3.356)</Points>
+                            <Points>(1.584,3.365) (1.563,3.371) (1.541,3.376) (1.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDH" Id="140">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVG" Id="4677">
+                            <Points>(1.958,2.888) (1.957,2.884) (1.957,2.881) (1.956,2.877) (1.954,2.873)</Points>
+                            <Points>(1.952,2.87) (1.95,2.866) (1.795,2.711) (1.791,2.709) (1.788,2.707)</Points>
+                            <Points>(1.784,2.706) (1.781,2.705) (1.773,2.703) (1.187,2.703) (0.958,2.474)</Points>
+                            <Points>(0.958,0.988) (0.957,0.984) (0.957,0.981) (0.956,0.977) (0.954,0.973)</Points>
+                            <Points>(0.952,0.97) (0.95,0.966) (0.942,0.958) (0.702,0.719) (0.7,0.716)</Points>
+                            <Points>(0.697,0.714) (0.695,0.711) (0.691,0.709) (0.688,0.707) (0.684,0.706)</Points>
+                            <Points>(0.681,0.705) (0.673,0.703) (0.2435,0.703) (0.2435,0.783) (0.655,0.783)</Points>
+                            <Points>(0.878,1.006) (0.878,2.492) (0.88,2.5) (0.881,2.503) (0.882,2.507)</Points>
+                            <Points>(0.884,2.51) (0.886,2.514) (1.147,2.775) (1.149,2.776) (1.15,2.777)</Points>
+                            <Points>(1.152,2.777) (1.154,2.779) (1.156,2.78) (1.158,2.78) (1.161,2.781)</Points>
+                            <Points>(1.169,2.783) (1.755,2.783) (1.878,2.906) (1.878,3.58) (1.958,3.58)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVH" Id="4678">
+                            <Points>(0.728,3.331) (0.726,3.323) (0.725,3.32) (0.724,3.316) (0.722,3.313)</Points>
+                            <Points>(0.72,3.309) (0.693,3.282) (0.701,3.269) (0.711,3.249) (0.72,3.229)</Points>
+                            <Points>(0.726,3.208) (0.731,3.186) (0.733,3.164) (0.733,3.142) (0.731,3.12)</Points>
+                            <Points>(0.726,3.098) (0.72,3.077) (0.711,3.057) (0.701,3.037) (0.689,3.019)</Points>
+                            <Points>(0.675,3.002) (0.659,2.986) (0.642,2.972) (0.624,2.96) (0.604,2.95)</Points>
+                            <Points>(0.584,2.941) (0.563,2.935) (0.541,2.93) (0.519,2.928) (0.497,2.928)</Points>
+                            <Points>(0.475,2.93) (0.453,2.935) (0.432,2.941) (0.412,2.95) (0.392,2.96)</Points>
+                            <Points>(0.374,2.972) (0.357,2.986) (0.341,3.002) (0.327,3.019) (0.315,3.037)</Points>
+                            <Points>(0.305,3.057) (0.296,3.077) (0.29,3.098) (0.285,3.12) (0.283,3.142)</Points>
+                            <Points>(0.283,3.164) (0.285,3.186) (0.29,3.208) (0.296,3.229) (0.305,3.249)</Points>
+                            <Points>(0.315,3.269) (0.327,3.287) (0.341,3.304) (0.357,3.32) (0.374,3.334)</Points>
+                            <Points>(0.392,3.346) (0.412,3.356) (0.432,3.365) (0.453,3.371) (0.475,3.376)</Points>
+                            <Points>(0.497,3.378) (0.519,3.378) (0.541,3.376) (0.563,3.371) (0.584,3.365)</Points>
+                            <Points>(0.604,3.356) (0.624,3.346) (0.637,3.338) (0.648,3.349) (0.648,3.58)</Points>
+                            <Points>(0.728,3.58)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVI" Id="4679">
+                            <Points>(2.138,2.814) (2.136,2.806) (2.135,2.803) (2.135,2.801) (2.134,2.799)</Points>
+                            <Points>(2.132,2.797) (2.132,2.795) (2.131,2.794) (2.13,2.792) (2.129,2.792)</Points>
+                            <Points>(2.127,2.789) (1.869,2.531) (1.865,2.529) (1.862,2.527) (1.858,2.526)</Points>
+                            <Points>(1.855,2.525) (1.847,2.523) (1.261,2.523) (1.138,2.4) (1.138,0.914)</Points>
+                            <Points>(1.136,0.906) (1.135,0.903) (1.135,0.901) (1.134,0.899) (1.132,0.897)</Points>
+                            <Points>(1.132,0.895) (1.131,0.894) (1.13,0.892) (1.129,0.892) (1.127,0.889)</Points>
+                            <Points>(0.777,0.539) (0.775,0.536) (0.772,0.534) (0.769,0.531) (0.766,0.529)</Points>
+                            <Points>(0.762,0.527) (0.759,0.526) (0.758,0.526) (0.755,0.525) (0.747,0.523)</Points>
+                            <Points>(0.2435,0.523) (0.2435,0.603) (0.729,0.603) (1.058,0.932) (1.058,2.418)</Points>
+                            <Points>(1.06,2.426) (1.061,2.429) (1.062,2.433) (1.064,2.436) (1.066,2.44)</Points>
+                            <Points>(1.221,2.595) (1.225,2.597) (1.228,2.599) (1.232,2.601) (1.236,2.602)</Points>
+                            <Points>(1.239,2.602) (1.243,2.603) (1.829,2.603) (2.058,2.832) (2.058,3.58)</Points>
+                            <Points>(2.138,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerC" MaterialName="TU-872_SLK" Number="2">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLC" Name="In1.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In1.Cu:drawing" DXFName="L2D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonABA" Id="757">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonABG" Id="763">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonABJ" Id="766">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVJ" Id="4680">
+                            <Points>(3.4035,3.153) (3.4035,-0.23) (0.2435,-0.23) (0.2435,2.153) (1.128,2.153)</Points>
+                            <Points>(1.146,2.036) (1.2,1.93) (1.215,1.915) (1.233,1.871) (1.233,1.435)</Points>
+                            <Points>(1.215,1.391) (1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036)</Points>
+                            <Points>(1.2,0.93) (1.285,0.845) (1.391,0.791) (1.508,0.773) (1.625,0.791)</Points>
+                            <Points>(1.731,0.845) (1.816,0.93) (1.859,1.015) (1.87,1.036) (1.888,1.153)</Points>
+                            <Points>(1.87,1.27) (1.816,1.375) (1.816,1.376) (1.801,1.391) (1.783,1.435)</Points>
+                            <Points>(1.783,1.673) (1.783,1.773) (1.783,1.871) (1.801,1.915) (1.816,1.93)</Points>
+                            <Points>(1.859,2.015) (1.87,2.036) (1.888,2.153) (1.87,2.27) (1.824,2.361)</Points>
+                            <Points>(1.816,2.376) (1.731,2.461) (1.625,2.515) (1.508,2.533) (1.391,2.515)</Points>
+                            <Points>(1.304,2.47) (1.285,2.461) (1.2,2.376) (1.146,2.27) (1.128,2.153)</Points>
+                            <Points>(0.2435,2.153) (0.2435,2.153) (0.2435,3.102115385) (0.254,3.048) (0.314,2.959)</Points>
+                            <Points>(0.403,2.899) (0.508,2.878) (0.613,2.899) (0.702,2.959) (0.762,3.048)</Points>
+                            <Points>(0.783,3.153) (0.783,3.58) (2.233,3.58) (2.233,3.435) (2.215,3.391)</Points>
+                            <Points>(2.2,3.376) (2.146,3.27) (2.128,3.153) (2.146,3.036) (2.2,2.93)</Points>
+                            <Points>(2.285,2.845) (2.391,2.791) (2.508,2.773) (2.625,2.791) (2.731,2.845)</Points>
+                            <Points>(2.816,2.93) (2.828,2.953) (2.87,3.036) (2.888,3.153) (2.87,3.27)</Points>
+                            <Points>(2.847,3.315) (2.816,3.376) (2.801,3.391) (2.783,3.435) (2.783,3.58)</Points>
+                            <Points>(3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerD" MaterialName="TU-872_SLK" Number="3">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLD" Name="In2.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLE" Name="In2.Cu_thick" MaterialName="Copper_0.5oz_thick">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu_thick:drawing" DXFName="L3D0"/>
+                    <ColorPattern Color="#ff00ff" Pattern="grey3"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonAHB" Id="914">
+                            <Points>(1.497,3.378) (1.475,3.376) (1.453,3.371) (1.432,3.365) (1.412,3.356)</Points>
+                            <Points>(1.392,3.346) (1.374,3.334) (1.357,3.32) (1.341,3.304) (1.327,3.287)</Points>
+                            <Points>(1.315,3.269) (1.305,3.249) (1.296,3.229) (1.29,3.208) (1.285,3.186)</Points>
+                            <Points>(1.283,3.164) (1.283,3.142) (1.285,3.12) (1.29,3.098) (1.296,3.077)</Points>
+                            <Points>(1.305,3.057) (1.315,3.037) (1.327,3.019) (1.341,3.002) (1.357,2.986)</Points>
+                            <Points>(1.374,2.972) (1.392,2.96) (1.412,2.95) (1.432,2.941) (1.453,2.935)</Points>
+                            <Points>(1.475,2.93) (1.497,2.928) (1.519,2.928) (1.541,2.93) (1.563,2.935)</Points>
+                            <Points>(1.584,2.941) (1.604,2.95) (1.624,2.96) (1.642,2.972) (1.659,2.986)</Points>
+                            <Points>(1.675,3.002) (1.689,3.019) (1.701,3.037) (1.711,3.057) (1.72,3.077)</Points>
+                            <Points>(1.726,3.098) (1.731,3.12) (1.733,3.142) (1.733,3.164) (1.731,3.186)</Points>
+                            <Points>(1.726,3.208) (1.72,3.229) (1.711,3.249) (1.701,3.269) (1.689,3.287)</Points>
+                            <Points>(1.675,3.304) (1.659,3.32) (1.642,3.334) (1.624,3.346) (1.604,3.356)</Points>
+                            <Points>(1.584,3.365) (1.563,3.371) (1.541,3.376) (1.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHC" Id="915">
+                            <Points>(0.497,1.378) (0.475,1.376) (0.453,1.371) (0.432,1.365) (0.412,1.356)</Points>
+                            <Points>(0.392,1.346) (0.374,1.334) (0.357,1.32) (0.341,1.304) (0.327,1.287)</Points>
+                            <Points>(0.315,1.269) (0.305,1.249) (0.296,1.229) (0.29,1.208) (0.285,1.186)</Points>
+                            <Points>(0.283,1.164) (0.283,1.142) (0.285,1.12) (0.29,1.098) (0.296,1.077)</Points>
+                            <Points>(0.305,1.057) (0.315,1.037) (0.327,1.019) (0.341,1.002) (0.357,0.986)</Points>
+                            <Points>(0.374,0.972) (0.392,0.96) (0.412,0.95) (0.432,0.941) (0.453,0.935)</Points>
+                            <Points>(0.475,0.93) (0.497,0.928) (0.519,0.928) (0.541,0.93) (0.563,0.935)</Points>
+                            <Points>(0.584,0.941) (0.604,0.95) (0.624,0.96) (0.642,0.972) (0.659,0.986)</Points>
+                            <Points>(0.675,1.002) (0.689,1.019) (0.701,1.037) (0.711,1.057) (0.72,1.077)</Points>
+                            <Points>(0.726,1.098) (0.731,1.12) (0.733,1.142) (0.733,1.164) (0.731,1.186)</Points>
+                            <Points>(0.726,1.208) (0.72,1.229) (0.711,1.249) (0.701,1.269) (0.689,1.287)</Points>
+                            <Points>(0.675,1.304) (0.659,1.32) (0.642,1.334) (0.624,1.346) (0.604,1.356)</Points>
+                            <Points>(0.584,1.365) (0.563,1.371) (0.541,1.376) (0.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHD" Id="916">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHE" Id="917">
+                            <Points>(2.497,1.378) (2.475,1.376) (2.453,1.371) (2.432,1.365) (2.412,1.356)</Points>
+                            <Points>(2.392,1.346) (2.374,1.334) (2.357,1.32) (2.341,1.304) (2.327,1.287)</Points>
+                            <Points>(2.315,1.269) (2.305,1.249) (2.296,1.229) (2.29,1.208) (2.285,1.186)</Points>
+                            <Points>(2.283,1.164) (2.283,1.142) (2.285,1.12) (2.29,1.098) (2.296,1.077)</Points>
+                            <Points>(2.305,1.057) (2.315,1.037) (2.327,1.019) (2.341,1.002) (2.357,0.986)</Points>
+                            <Points>(2.374,0.972) (2.392,0.96) (2.412,0.95) (2.432,0.941) (2.453,0.935)</Points>
+                            <Points>(2.475,0.93) (2.497,0.928) (2.519,0.928) (2.541,0.93) (2.563,0.935)</Points>
+                            <Points>(2.584,0.941) (2.604,0.95) (2.624,0.96) (2.642,0.972) (2.659,0.986)</Points>
+                            <Points>(2.675,1.002) (2.689,1.019) (2.701,1.037) (2.711,1.057) (2.72,1.077)</Points>
+                            <Points>(2.726,1.098) (2.731,1.12) (2.733,1.142) (2.733,1.164) (2.731,1.186)</Points>
+                            <Points>(2.726,1.208) (2.72,1.229) (2.711,1.249) (2.701,1.269) (2.689,1.287)</Points>
+                            <Points>(2.675,1.304) (2.659,1.32) (2.642,1.334) (2.624,1.346) (2.604,1.356)</Points>
+                            <Points>(2.584,1.365) (2.563,1.371) (2.541,1.376) (2.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHI" Id="921">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHO" Id="927">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHP" Id="928">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHQ" Id="929">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAHY" Id="937">
+                            <Points>(0.497,2.378) (0.475,2.376) (0.453,2.371) (0.432,2.365) (0.412,2.356)</Points>
+                            <Points>(0.392,2.346) (0.374,2.334) (0.357,2.32) (0.341,2.304) (0.327,2.287)</Points>
+                            <Points>(0.315,2.269) (0.305,2.249) (0.296,2.229) (0.29,2.208) (0.285,2.186)</Points>
+                            <Points>(0.283,2.164) (0.283,2.142) (0.285,2.12) (0.29,2.098) (0.296,2.077)</Points>
+                            <Points>(0.305,2.057) (0.315,2.037) (0.327,2.019) (0.341,2.002) (0.357,1.986)</Points>
+                            <Points>(0.374,1.972) (0.392,1.96) (0.412,1.95) (0.432,1.941) (0.453,1.935)</Points>
+                            <Points>(0.475,1.93) (0.497,1.928) (0.519,1.928) (0.541,1.93) (0.563,1.935)</Points>
+                            <Points>(0.584,1.941) (0.604,1.95) (0.624,1.96) (0.642,1.972) (0.659,1.986)</Points>
+                            <Points>(0.675,2.002) (0.689,2.019) (0.701,2.037) (0.711,2.057) (0.72,2.077)</Points>
+                            <Points>(0.726,2.098) (0.731,2.12) (0.733,2.142) (0.733,2.164) (0.731,2.186)</Points>
+                            <Points>(0.726,2.208) (0.72,2.229) (0.711,2.249) (0.701,2.269) (0.689,2.287)</Points>
+                            <Points>(0.675,2.304) (0.659,2.32) (0.642,2.334) (0.624,2.346) (0.604,2.356)</Points>
+                            <Points>(0.584,2.365) (0.563,2.371) (0.541,2.376) (0.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAIE" Id="943">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAIN" Id="952">
+                            <Points>(2.497,2.378) (2.475,2.376) (2.453,2.371) (2.432,2.365) (2.412,2.356)</Points>
+                            <Points>(2.392,2.346) (2.374,2.334) (2.357,2.32) (2.341,2.304) (2.327,2.287)</Points>
+                            <Points>(2.315,2.269) (2.305,2.249) (2.296,2.229) (2.29,2.208) (2.285,2.186)</Points>
+                            <Points>(2.283,2.164) (2.283,2.142) (2.285,2.12) (2.29,2.098) (2.296,2.077)</Points>
+                            <Points>(2.305,2.057) (2.315,2.037) (2.327,2.019) (2.341,2.002) (2.357,1.986)</Points>
+                            <Points>(2.374,1.972) (2.392,1.96) (2.412,1.95) (2.432,1.941) (2.453,1.935)</Points>
+                            <Points>(2.475,1.93) (2.497,1.928) (2.519,1.928) (2.541,1.93) (2.563,1.935)</Points>
+                            <Points>(2.584,1.941) (2.604,1.95) (2.624,1.96) (2.642,1.972) (2.659,1.986)</Points>
+                            <Points>(2.675,2.002) (2.689,2.019) (2.701,2.037) (2.711,2.057) (2.72,2.077)</Points>
+                            <Points>(2.726,2.098) (2.731,2.12) (2.733,2.142) (2.733,2.164) (2.731,2.186)</Points>
+                            <Points>(2.726,2.208) (2.72,2.229) (2.711,2.249) (2.701,2.269) (2.689,2.287)</Points>
+                            <Points>(2.675,2.304) (2.659,2.32) (2.642,2.334) (2.624,2.346) (2.604,2.356)</Points>
+                            <Points>(2.584,2.365) (2.563,2.371) (2.541,2.376) (2.519,2.378)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerE" MaterialName="TU-872_SLK" Number="4">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLF" Name="In3.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In3.Cu:drawing" DXFName="L4D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBGN" Id="1576">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBGT" Id="1582">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBGW" Id="1585">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVK" Id="4681">
+                            <Points>(3.4035,3.153) (3.4035,-0.23) (0.2435,-0.23) (0.2435,1.153) (0.2435,2.153)</Points>
+                            <Points>(1.128,2.153) (1.146,2.036) (1.2,1.93) (1.285,1.845) (1.391,1.791)</Points>
+                            <Points>(1.508,1.773) (1.508,1.533) (1.391,1.515) (1.325,1.481) (1.285,1.461)</Points>
+                            <Points>(1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036) (1.2,0.93)</Points>
+                            <Points>(1.285,0.845) (1.391,0.791) (1.508,0.773) (1.625,0.791) (1.731,0.845)</Points>
+                            <Points>(1.816,0.93) (1.859,1.015) (1.87,1.036) (1.888,1.153) (1.87,1.27)</Points>
+                            <Points>(1.816,1.375) (1.816,1.376) (1.731,1.461) (1.625,1.515) (1.508,1.533)</Points>
+                            <Points>(1.508,1.773) (1.508,1.773) (1.508,1.773) (1.625,1.791) (1.731,1.845)</Points>
+                            <Points>(1.816,1.93) (1.859,2.015) (1.87,2.036) (1.888,2.153) (1.87,2.27)</Points>
+                            <Points>(1.824,2.361) (1.816,2.376) (1.731,2.461) (1.625,2.515) (1.508,2.533)</Points>
+                            <Points>(1.391,2.515) (1.304,2.47) (1.285,2.461) (1.2,2.376) (1.146,2.27)</Points>
+                            <Points>(1.128,2.153) (0.2435,2.153) (0.2435,2.153) (0.2435,3.58) (2.508,3.58)</Points>
+                            <Points>(2.508,3.533) (2.391,3.515) (2.285,3.461) (2.2,3.376) (2.146,3.27)</Points>
+                            <Points>(2.128,3.153) (2.146,3.036) (2.2,2.93) (2.285,2.845) (2.391,2.791)</Points>
+                            <Points>(2.508,2.773) (2.625,2.791) (2.731,2.845) (2.816,2.93) (2.828,2.953)</Points>
+                            <Points>(2.87,3.036) (2.888,3.153) (2.87,3.27) (2.847,3.315) (2.816,3.376)</Points>
+                            <Points>(2.731,3.461) (2.625,3.515) (2.508,3.533) (2.508,3.58) (3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerF" MaterialName="Shengyi_S1000-2M" Number="5">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLG" Name="In4.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In4.Cu:drawing" DXFName="L5D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBLB" Id="1694">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLH" Id="1700">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLL" Id="1704">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLR" Id="1710">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLS" Id="1711">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLT" Id="1712">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFUZ" Id="4670">
+                            <Points>(2.99,0.635) (3.008,0.592) (3.008,-0.23) (1.508,-0.23) (1.508,-0.202)</Points>
+                            <Points>(1.618,-0.184) (1.717,-0.134) (1.795,-0.056) (1.846,0.043) (1.863,0.153)</Points>
+                            <Points>(1.846,0.263) (1.814,0.325) (1.795,0.362) (1.717,0.44) (1.618,0.491)</Points>
+                            <Points>(1.508,0.508) (1.398,0.491) (1.384,0.483) (1.299,0.44) (1.221,0.362)</Points>
+                            <Points>(1.17,0.263) (1.153,0.153) (1.17,0.043) (1.221,-0.056) (1.299,-0.134)</Points>
+                            <Points>(1.398,-0.184) (1.508,-0.202) (1.508,-0.23) (2.508,-0.23) (2.508,-0.202)</Points>
+                            <Points>(2.618,-0.185) (2.717,-0.134) (2.795,-0.056) (2.846,0.043) (2.863,0.153)</Points>
+                            <Points>(2.846,0.263) (2.819,0.315) (2.795,0.362) (2.717,0.44) (2.618,0.491)</Points>
+                            <Points>(2.508,0.508) (2.398,0.491) (2.384,0.483) (2.299,0.44) (2.221,0.362)</Points>
+                            <Points>(2.17,0.263) (2.153,0.153) (2.17,0.043) (2.221,-0.056) (2.299,-0.134)</Points>
+                            <Points>(2.398,-0.185) (2.508,-0.202) (2.508,-0.23) (0.2435,-0.23) (0.2435,-0.0785)</Points>
+                            <Points>(0.299,-0.134) (0.398,-0.185) (0.508,-0.202) (0.618,-0.185) (0.717,-0.134)</Points>
+                            <Points>(0.795,-0.056) (0.846,0.043) (0.863,0.153) (0.846,0.263) (0.819,0.315)</Points>
+                            <Points>(0.795,0.362) (0.717,0.44) (0.618,0.491) (0.508,0.508) (0.398,0.491)</Points>
+                            <Points>(0.384,0.483) (0.299,0.44) (0.2435,0.3845) (0.2435,0.653) (2.947,0.653)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVL" Id="4682">
+                            <Points>(3.4035,3.153) (3.4035,-0.23) (3.258,-0.23) (3.258,0.903) (1.902,0.903)</Points>
+                            <Points>(1.874,0.91) (1.844,0.945) (1.848,0.992) (1.853,1.004) (1.87,1.036)</Points>
+                            <Points>(1.888,1.153) (1.87,1.27) (1.856,1.297) (1.816,1.376) (1.731,1.461)</Points>
+                            <Points>(1.625,1.515) (1.508,1.533) (1.508,1.773) (1.625,1.791) (1.731,1.845)</Points>
+                            <Points>(1.816,1.93) (1.863,2.023) (1.87,2.036) (1.888,2.153) (1.87,2.27)</Points>
+                            <Points>(1.834,2.34) (1.816,2.376) (1.731,2.461) (1.625,2.515) (1.508,2.533)</Points>
+                            <Points>(1.391,2.515) (1.308,2.472) (1.285,2.461) (1.2,2.376) (1.146,2.27)</Points>
+                            <Points>(1.128,2.153) (1.146,2.036) (1.2,1.93) (1.285,1.845) (1.391,1.791)</Points>
+                            <Points>(1.508,1.773) (1.508,1.533) (1.508,1.533) (1.391,1.515) (1.285,1.461)</Points>
+                            <Points>(1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036) (1.168,0.992)</Points>
+                            <Points>(1.175,0.965) (1.157,0.921) (1.114,0.903) (0.2435,0.903) (0.2435,3.58)</Points>
+                            <Points>(2.508,3.58) (2.508,3.533) (2.391,3.515) (2.285,3.461) (2.2,3.376)</Points>
+                            <Points>(2.146,3.27) (2.128,3.153) (2.146,3.036) (2.2,2.93) (2.285,2.845)</Points>
+                            <Points>(2.391,2.791) (2.508,2.773) (2.625,2.791) (2.731,2.845) (2.816,2.93)</Points>
+                            <Points>(2.833,2.964) (2.87,3.036) (2.888,3.153) (2.87,3.27) (2.829,3.35)</Points>
+                            <Points>(2.816,3.376) (2.731,3.461) (2.625,3.515) (2.508,3.533) (2.508,3.58)</Points>
+                            <Points>(3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerG" MaterialName="Shengyi_S1000-2M" Number="6">
+            <DielectricMaterialModel Thickness="0.5"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLH" Name="In5.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L6D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBTC" Id="1903">
+                            <Points>(0.497,2.378) (0.475,2.376) (0.453,2.371) (0.432,2.365) (0.412,2.356)</Points>
+                            <Points>(0.392,2.346) (0.374,2.334) (0.357,2.32) (0.341,2.304) (0.327,2.287)</Points>
+                            <Points>(0.315,2.269) (0.305,2.249) (0.296,2.229) (0.29,2.208) (0.285,2.186)</Points>
+                            <Points>(0.283,2.164) (0.283,2.142) (0.285,2.12) (0.29,2.098) (0.296,2.077)</Points>
+                            <Points>(0.305,2.057) (0.315,2.037) (0.327,2.019) (0.341,2.002) (0.357,1.986)</Points>
+                            <Points>(0.374,1.972) (0.392,1.96) (0.412,1.95) (0.432,1.941) (0.453,1.935)</Points>
+                            <Points>(0.475,1.93) (0.497,1.928) (0.519,1.928) (0.541,1.93) (0.563,1.935)</Points>
+                            <Points>(0.584,1.941) (0.604,1.95) (0.624,1.96) (0.642,1.972) (0.659,1.986)</Points>
+                            <Points>(0.675,2.002) (0.689,2.019) (0.701,2.037) (0.711,2.057) (0.72,2.077)</Points>
+                            <Points>(0.726,2.098) (0.731,2.12) (0.733,2.142) (0.733,2.164) (0.731,2.186)</Points>
+                            <Points>(0.726,2.208) (0.72,2.229) (0.711,2.249) (0.701,2.269) (0.689,2.287)</Points>
+                            <Points>(0.675,2.304) (0.659,2.32) (0.642,2.334) (0.624,2.346) (0.604,2.356)</Points>
+                            <Points>(0.584,2.365) (0.563,2.371) (0.541,2.376) (0.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTD" Id="1904">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTE" Id="1905">
+                            <Points>(2.497,2.378) (2.475,2.376) (2.453,2.371) (2.432,2.365) (2.412,2.356)</Points>
+                            <Points>(2.392,2.346) (2.374,2.334) (2.357,2.32) (2.341,2.304) (2.327,2.287)</Points>
+                            <Points>(2.315,2.269) (2.305,2.249) (2.296,2.229) (2.29,2.208) (2.285,2.186)</Points>
+                            <Points>(2.283,2.164) (2.283,2.142) (2.285,2.12) (2.29,2.098) (2.296,2.077)</Points>
+                            <Points>(2.305,2.057) (2.315,2.037) (2.327,2.019) (2.341,2.002) (2.357,1.986)</Points>
+                            <Points>(2.374,1.972) (2.392,1.96) (2.412,1.95) (2.432,1.941) (2.453,1.935)</Points>
+                            <Points>(2.475,1.93) (2.497,1.928) (2.519,1.928) (2.541,1.93) (2.563,1.935)</Points>
+                            <Points>(2.584,1.941) (2.604,1.95) (2.624,1.96) (2.642,1.972) (2.659,1.986)</Points>
+                            <Points>(2.675,2.002) (2.689,2.019) (2.701,2.037) (2.711,2.057) (2.72,2.077)</Points>
+                            <Points>(2.726,2.098) (2.731,2.12) (2.733,2.142) (2.733,2.164) (2.731,2.186)</Points>
+                            <Points>(2.726,2.208) (2.72,2.229) (2.711,2.249) (2.701,2.269) (2.689,2.287)</Points>
+                            <Points>(2.675,2.304) (2.659,2.32) (2.642,2.334) (2.624,2.346) (2.604,2.356)</Points>
+                            <Points>(2.584,2.365) (2.563,2.371) (2.541,2.376) (2.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTI" Id="1909">
+                            <Points>(0.497,1.378) (0.475,1.376) (0.453,1.371) (0.432,1.365) (0.412,1.356)</Points>
+                            <Points>(0.392,1.346) (0.374,1.334) (0.357,1.32) (0.341,1.304) (0.327,1.287)</Points>
+                            <Points>(0.315,1.269) (0.305,1.249) (0.296,1.229) (0.29,1.208) (0.285,1.186)</Points>
+                            <Points>(0.283,1.164) (0.283,1.142) (0.285,1.12) (0.29,1.098) (0.296,1.077)</Points>
+                            <Points>(0.305,1.057) (0.315,1.037) (0.327,1.019) (0.341,1.002) (0.357,0.986)</Points>
+                            <Points>(0.374,0.972) (0.392,0.96) (0.412,0.95) (0.432,0.941) (0.453,0.935)</Points>
+                            <Points>(0.475,0.93) (0.497,0.928) (0.519,0.928) (0.541,0.93) (0.563,0.935)</Points>
+                            <Points>(0.584,0.941) (0.604,0.95) (0.624,0.96) (0.642,0.972) (0.659,0.986)</Points>
+                            <Points>(0.675,1.002) (0.689,1.019) (0.701,1.037) (0.711,1.057) (0.72,1.077)</Points>
+                            <Points>(0.726,1.098) (0.731,1.12) (0.733,1.142) (0.733,1.164) (0.731,1.186)</Points>
+                            <Points>(0.726,1.208) (0.72,1.229) (0.711,1.249) (0.701,1.269) (0.689,1.287)</Points>
+                            <Points>(0.675,1.304) (0.659,1.32) (0.642,1.334) (0.624,1.346) (0.604,1.356)</Points>
+                            <Points>(0.584,1.365) (0.563,1.371) (0.541,1.376) (0.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTJ" Id="1910">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTK" Id="1911">
+                            <Points>(2.497,1.378) (2.475,1.376) (2.453,1.371) (2.432,1.365) (2.412,1.356)</Points>
+                            <Points>(2.392,1.346) (2.374,1.334) (2.357,1.32) (2.341,1.304) (2.327,1.287)</Points>
+                            <Points>(2.315,1.269) (2.305,1.249) (2.296,1.229) (2.29,1.208) (2.285,1.186)</Points>
+                            <Points>(2.283,1.164) (2.283,1.142) (2.285,1.12) (2.29,1.098) (2.296,1.077)</Points>
+                            <Points>(2.305,1.057) (2.315,1.037) (2.327,1.019) (2.341,1.002) (2.357,0.986)</Points>
+                            <Points>(2.374,0.972) (2.392,0.96) (2.412,0.95) (2.432,0.941) (2.453,0.935)</Points>
+                            <Points>(2.475,0.93) (2.497,0.928) (2.519,0.928) (2.541,0.93) (2.563,0.935)</Points>
+                            <Points>(2.584,0.941) (2.604,0.95) (2.624,0.96) (2.642,0.972) (2.659,0.986)</Points>
+                            <Points>(2.675,1.002) (2.689,1.019) (2.701,1.037) (2.711,1.057) (2.72,1.077)</Points>
+                            <Points>(2.726,1.098) (2.731,1.12) (2.733,1.142) (2.733,1.164) (2.731,1.186)</Points>
+                            <Points>(2.726,1.208) (2.72,1.229) (2.711,1.249) (2.701,1.269) (2.689,1.287)</Points>
+                            <Points>(2.675,1.304) (2.659,1.32) (2.642,1.334) (2.624,1.346) (2.604,1.356)</Points>
+                            <Points>(2.584,1.365) (2.563,1.371) (2.541,1.376) (2.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTR" Id="1918">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTS" Id="1919">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBTT" Id="1920">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBUN" Id="1940">
+                            <Points>(1.497,3.378) (1.475,3.376) (1.453,3.371) (1.432,3.365) (1.412,3.356)</Points>
+                            <Points>(1.392,3.346) (1.374,3.334) (1.357,3.32) (1.341,3.304) (1.327,3.287)</Points>
+                            <Points>(1.315,3.269) (1.305,3.249) (1.296,3.229) (1.29,3.208) (1.285,3.186)</Points>
+                            <Points>(1.283,3.164) (1.283,3.142) (1.285,3.12) (1.29,3.098) (1.296,3.077)</Points>
+                            <Points>(1.305,3.057) (1.315,3.037) (1.327,3.019) (1.341,3.002) (1.357,2.986)</Points>
+                            <Points>(1.374,2.972) (1.392,2.96) (1.412,2.95) (1.432,2.941) (1.453,2.935)</Points>
+                            <Points>(1.475,2.93) (1.497,2.928) (1.519,2.928) (1.541,2.93) (1.563,2.935)</Points>
+                            <Points>(1.584,2.941) (1.604,2.95) (1.624,2.96) (1.642,2.972) (1.659,2.986)</Points>
+                            <Points>(1.675,3.002) (1.689,3.019) (1.701,3.037) (1.711,3.057) (1.72,3.077)</Points>
+                            <Points>(1.726,3.098) (1.731,3.12) (1.733,3.142) (1.733,3.164) (1.731,3.186)</Points>
+                            <Points>(1.726,3.208) (1.72,3.229) (1.711,3.249) (1.701,3.269) (1.689,3.287)</Points>
+                            <Points>(1.675,3.304) (1.659,3.32) (1.642,3.334) (1.624,3.346) (1.604,3.356)</Points>
+                            <Points>(1.584,3.365) (1.563,3.371) (1.541,3.376) (1.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBUO" Id="1941">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFUE" Id="4649">
+                            <Points>(3.4035,-0.191) (2.843,-0.191) (2.8,-0.173) (2.782,-0.13) (2.8,-0.087)</Points>
+                            <Points>(2.816,-0.07) (2.859,0.015) (2.87,0.036) (2.888,0.153) (2.87,0.27)</Points>
+                            <Points>(2.821,0.366) (2.816,0.376) (2.731,0.461) (2.625,0.515) (2.508,0.533)</Points>
+                            <Points>(2.508,0.773) (2.625,0.791) (2.731,0.845) (2.816,0.93) (2.834,0.966)</Points>
+                            <Points>(2.87,1.036) (2.888,1.153) (2.87,1.27) (2.816,1.375) (2.816,1.376)</Points>
+                            <Points>(2.731,1.461) (2.625,1.515) (2.508,1.533) (2.391,1.515) (2.325,1.481)</Points>
+                            <Points>(2.285,1.461) (2.2,1.376) (2.146,1.27) (2.128,1.153) (2.128,1.153)</Points>
+                            <Points>(1.888,1.153) (1.87,1.27) (1.816,1.375) (1.816,1.376) (1.731,1.461)</Points>
+                            <Points>(1.625,1.515) (1.508,1.533) (1.391,1.515) (1.325,1.481) (1.285,1.461)</Points>
+                            <Points>(1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036) (1.2,0.93)</Points>
+                            <Points>(1.285,0.845) (1.391,0.791) (1.508,0.773) (1.625,0.791) (1.731,0.845)</Points>
+                            <Points>(1.816,0.93) (1.834,0.966) (1.87,1.036) (1.888,1.153) (2.128,1.153)</Points>
+                            <Points>(2.146,1.036) (2.2,0.93) (2.285,0.845) (2.391,0.791) (2.508,0.773)</Points>
+                            <Points>(2.508,0.533) (2.508,0.533) (2.391,0.515) (2.285,0.461) (2.2,0.376)</Points>
+                            <Points>(2.146,0.27) (2.128,0.153) (2.146,0.036) (2.2,-0.07) (2.216,-0.087)</Points>
+                            <Points>(2.234,-0.13) (2.216,-0.173) (2.173,-0.191) (1.843,-0.191) (1.8,-0.173)</Points>
+                            <Points>(1.782,-0.13) (1.8,-0.087) (1.816,-0.07) (1.847,-0.01) (1.87,0.036)</Points>
+                            <Points>(1.888,0.153) (1.87,0.27) (1.831,0.345) (1.816,0.376) (1.731,0.461)</Points>
+                            <Points>(1.625,0.515) (1.508,0.533) (1.391,0.515) (1.285,0.461) (1.2,0.376)</Points>
+                            <Points>(1.146,0.27) (1.128,0.153) (1.146,0.036) (1.2,-0.07) (1.216,-0.087)</Points>
+                            <Points>(1.234,-0.13) (1.216,-0.173) (1.173,-0.191) (0.843,-0.191) (0.8,-0.173)</Points>
+                            <Points>(0.782,-0.13) (0.8,-0.087) (0.816,-0.07) (0.859,0.015) (0.87,0.036)</Points>
+                            <Points>(0.888,0.153) (0.87,0.27) (0.821,0.366) (0.816,0.376) (0.731,0.461)</Points>
+                            <Points>(0.625,0.515) (0.508,0.533) (0.391,0.515) (0.285,0.461) (0.2435,0.4195)</Points>
+                            <Points>(0.2435,0.8865) (0.285,0.845) (0.391,0.791) (0.508,0.773) (0.625,0.791)</Points>
+                            <Points>(0.731,0.845) (0.816,0.93) (0.834,0.966) (0.87,1.036) (0.888,1.153)</Points>
+                            <Points>(0.87,1.27) (0.816,1.375) (0.816,1.376) (0.731,1.461) (0.625,1.515)</Points>
+                            <Points>(0.508,1.533) (0.391,1.515) (0.325,1.481) (0.285,1.461) (0.2435,1.4195)</Points>
+                            <Points>(0.2435,1.8865) (0.285,1.845) (0.391,1.791) (0.508,1.773) (0.625,1.791)</Points>
+                            <Points>(0.731,1.845) (0.816,1.93) (0.859,2.015) (0.87,2.036) (0.888,2.153)</Points>
+                            <Points>(0.87,2.27) (0.853,2.304) (0.816,2.376) (0.731,2.461) (0.625,2.515)</Points>
+                            <Points>(0.508,2.533) (0.391,2.515) (0.324,2.481) (0.285,2.461) (0.2435,2.4195)</Points>
+                            <Points>(0.2435,3.498) (1.173,3.498) (1.216,3.479) (1.234,3.436) (1.216,3.393)</Points>
+                            <Points>(1.2,3.376) (1.146,3.27) (1.128,3.153) (1.146,3.036) (1.2,2.93)</Points>
+                            <Points>(1.285,2.845) (1.391,2.791) (1.508,2.773) (1.625,2.791) (1.731,2.845)</Points>
+                            <Points>(1.816,2.93) (1.847,2.992) (1.87,3.036) (1.888,3.153) (1.87,3.27)</Points>
+                            <Points>(1.816,3.376) (1.8,3.393) (1.782,3.436) (1.8,3.479) (1.843,3.498)</Points>
+                            <Points>(2.173,3.498) (2.216,3.479) (2.234,3.436) (2.216,3.393) (2.2,3.376)</Points>
+                            <Points>(2.146,3.27) (2.128,3.153) (2.146,3.036) (2.2,2.93) (2.285,2.845)</Points>
+                            <Points>(2.391,2.791) (2.508,2.773) (2.508,2.533) (2.391,2.515) (2.324,2.481)</Points>
+                            <Points>(2.285,2.461) (2.2,2.376) (2.146,2.27) (2.128,2.153) (2.128,2.153)</Points>
+                            <Points>(1.888,2.153) (1.87,2.27) (1.853,2.304) (1.816,2.376) (1.731,2.461)</Points>
+                            <Points>(1.625,2.515) (1.508,2.533) (1.391,2.515) (1.324,2.481) (1.285,2.461)</Points>
+                            <Points>(1.2,2.376) (1.146,2.27) (1.128,2.153) (1.146,2.036) (1.2,1.93)</Points>
+                            <Points>(1.285,1.845) (1.391,1.791) (1.508,1.773) (1.625,1.791) (1.731,1.845)</Points>
+                            <Points>(1.816,1.93) (1.859,2.015) (1.87,2.036) (1.888,2.153) (2.128,2.153)</Points>
+                            <Points>(2.146,2.036) (2.2,1.93) (2.285,1.845) (2.391,1.791) (2.508,1.773)</Points>
+                            <Points>(2.625,1.791) (2.731,1.845) (2.816,1.93) (2.859,2.015) (2.87,2.036)</Points>
+                            <Points>(2.888,2.153) (2.87,2.27) (2.853,2.304) (2.816,2.376) (2.731,2.461)</Points>
+                            <Points>(2.625,2.515) (2.508,2.533) (2.508,2.773) (2.508,2.773) (2.625,2.791)</Points>
+                            <Points>(2.731,2.845) (2.816,2.93) (2.847,2.992) (2.87,3.036) (2.888,3.153)</Points>
+                            <Points>(2.87,3.27) (2.816,3.376) (2.8,3.393) (2.782,3.436) (2.8,3.479)</Points>
+                            <Points>(2.843,3.498) (3.4035,3.498)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerH" MaterialName="Shengyi_S1000-2M" Number="7">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLI" Name="In6.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L7D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonCIW" Id="2313">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCJC" Id="2319">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCJF" Id="2322">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVM" Id="4683">
+                            <Points>(3.4035,3.153) (3.4035,-0.23) (0.2435,-0.23) (0.2435,1.153) (0.2435,2.153)</Points>
+                            <Points>(1.128,2.153) (1.146,2.036) (1.2,1.93) (1.285,1.845) (1.391,1.791)</Points>
+                            <Points>(1.508,1.773) (1.508,1.533) (1.391,1.515) (1.325,1.481) (1.285,1.461)</Points>
+                            <Points>(1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036) (1.2,0.93)</Points>
+                            <Points>(1.285,0.845) (1.391,0.791) (1.508,0.773) (1.625,0.791) (1.731,0.845)</Points>
+                            <Points>(1.816,0.93) (1.859,1.015) (1.87,1.036) (1.888,1.153) (1.87,1.27)</Points>
+                            <Points>(1.816,1.375) (1.816,1.376) (1.731,1.461) (1.625,1.515) (1.508,1.533)</Points>
+                            <Points>(1.508,1.773) (1.508,1.773) (1.508,1.773) (1.625,1.791) (1.731,1.845)</Points>
+                            <Points>(1.816,1.93) (1.859,2.015) (1.87,2.036) (1.888,2.153) (1.87,2.27)</Points>
+                            <Points>(1.824,2.361) (1.816,2.376) (1.731,2.461) (1.625,2.515) (1.508,2.533)</Points>
+                            <Points>(1.391,2.515) (1.304,2.47) (1.285,2.461) (1.2,2.376) (1.146,2.27)</Points>
+                            <Points>(1.128,2.153) (0.2435,2.153) (0.2435,2.153) (0.2435,3.58) (2.508,3.58)</Points>
+                            <Points>(2.508,3.533) (2.391,3.515) (2.285,3.461) (2.2,3.376) (2.146,3.27)</Points>
+                            <Points>(2.128,3.153) (2.146,3.036) (2.2,2.93) (2.285,2.845) (2.391,2.791)</Points>
+                            <Points>(2.508,2.773) (2.625,2.791) (2.731,2.845) (2.816,2.93) (2.828,2.953)</Points>
+                            <Points>(2.87,3.036) (2.888,3.153) (2.87,3.27) (2.847,3.315) (2.816,3.376)</Points>
+                            <Points>(2.731,3.461) (2.625,3.515) (2.508,3.533) (2.508,3.58) (3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerI" MaterialName="TU-872_SLK" Number="8">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLJ" Name="In7.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLK" Name="In7.Cu_thick" MaterialName="Copper_0.5oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu_thick:drawing" DXFName="L8D0"/>
+                    <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonCOY" Id="2471">
+                            <Points>(0.497,1.378) (0.475,1.376) (0.453,1.371) (0.432,1.365) (0.412,1.356)</Points>
+                            <Points>(0.392,1.346) (0.374,1.334) (0.357,1.32) (0.341,1.304) (0.327,1.287)</Points>
+                            <Points>(0.315,1.269) (0.305,1.249) (0.296,1.229) (0.29,1.208) (0.285,1.186)</Points>
+                            <Points>(0.283,1.164) (0.283,1.142) (0.285,1.12) (0.29,1.098) (0.296,1.077)</Points>
+                            <Points>(0.305,1.057) (0.315,1.037) (0.327,1.019) (0.341,1.002) (0.357,0.986)</Points>
+                            <Points>(0.374,0.972) (0.392,0.96) (0.412,0.95) (0.432,0.941) (0.453,0.935)</Points>
+                            <Points>(0.475,0.93) (0.497,0.928) (0.519,0.928) (0.541,0.93) (0.563,0.935)</Points>
+                            <Points>(0.584,0.941) (0.604,0.95) (0.624,0.96) (0.642,0.972) (0.659,0.986)</Points>
+                            <Points>(0.675,1.002) (0.689,1.019) (0.701,1.037) (0.711,1.057) (0.72,1.077)</Points>
+                            <Points>(0.726,1.098) (0.731,1.12) (0.733,1.142) (0.733,1.164) (0.731,1.186)</Points>
+                            <Points>(0.726,1.208) (0.72,1.229) (0.711,1.249) (0.701,1.269) (0.689,1.287)</Points>
+                            <Points>(0.675,1.304) (0.659,1.32) (0.642,1.334) (0.624,1.346) (0.604,1.356)</Points>
+                            <Points>(0.584,1.365) (0.563,1.371) (0.541,1.376) (0.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCOZ" Id="2472">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPA" Id="2473">
+                            <Points>(2.497,1.378) (2.475,1.376) (2.453,1.371) (2.432,1.365) (2.412,1.356)</Points>
+                            <Points>(2.392,1.346) (2.374,1.334) (2.357,1.32) (2.341,1.304) (2.327,1.287)</Points>
+                            <Points>(2.315,1.269) (2.305,1.249) (2.296,1.229) (2.29,1.208) (2.285,1.186)</Points>
+                            <Points>(2.283,1.164) (2.283,1.142) (2.285,1.12) (2.29,1.098) (2.296,1.077)</Points>
+                            <Points>(2.305,1.057) (2.315,1.037) (2.327,1.019) (2.341,1.002) (2.357,0.986)</Points>
+                            <Points>(2.374,0.972) (2.392,0.96) (2.412,0.95) (2.432,0.941) (2.453,0.935)</Points>
+                            <Points>(2.475,0.93) (2.497,0.928) (2.519,0.928) (2.541,0.93) (2.563,0.935)</Points>
+                            <Points>(2.584,0.941) (2.604,0.95) (2.624,0.96) (2.642,0.972) (2.659,0.986)</Points>
+                            <Points>(2.675,1.002) (2.689,1.019) (2.701,1.037) (2.711,1.057) (2.72,1.077)</Points>
+                            <Points>(2.726,1.098) (2.731,1.12) (2.733,1.142) (2.733,1.164) (2.731,1.186)</Points>
+                            <Points>(2.726,1.208) (2.72,1.229) (2.711,1.249) (2.701,1.269) (2.689,1.287)</Points>
+                            <Points>(2.675,1.304) (2.659,1.32) (2.642,1.334) (2.624,1.346) (2.604,1.356)</Points>
+                            <Points>(2.584,1.365) (2.563,1.371) (2.541,1.376) (2.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPF" Id="2478">
+                            <Points>(1.497,3.378) (1.475,3.376) (1.453,3.371) (1.432,3.365) (1.412,3.356)</Points>
+                            <Points>(1.392,3.346) (1.374,3.334) (1.357,3.32) (1.341,3.304) (1.327,3.287)</Points>
+                            <Points>(1.315,3.269) (1.305,3.249) (1.296,3.229) (1.29,3.208) (1.285,3.186)</Points>
+                            <Points>(1.283,3.164) (1.283,3.142) (1.285,3.12) (1.29,3.098) (1.296,3.077)</Points>
+                            <Points>(1.305,3.057) (1.315,3.037) (1.327,3.019) (1.341,3.002) (1.357,2.986)</Points>
+                            <Points>(1.374,2.972) (1.392,2.96) (1.412,2.95) (1.432,2.941) (1.453,2.935)</Points>
+                            <Points>(1.475,2.93) (1.497,2.928) (1.519,2.928) (1.541,2.93) (1.563,2.935)</Points>
+                            <Points>(1.584,2.941) (1.604,2.95) (1.624,2.96) (1.642,2.972) (1.659,2.986)</Points>
+                            <Points>(1.675,3.002) (1.689,3.019) (1.701,3.037) (1.711,3.057) (1.72,3.077)</Points>
+                            <Points>(1.726,3.098) (1.731,3.12) (1.733,3.142) (1.733,3.164) (1.731,3.186)</Points>
+                            <Points>(1.726,3.208) (1.72,3.229) (1.711,3.249) (1.701,3.269) (1.689,3.287)</Points>
+                            <Points>(1.675,3.304) (1.659,3.32) (1.642,3.334) (1.624,3.346) (1.604,3.356)</Points>
+                            <Points>(1.584,3.365) (1.563,3.371) (1.541,3.376) (1.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPG" Id="2479">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPK" Id="2483">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPL" Id="2484">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCPM" Id="2485">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCQA" Id="2499">
+                            <Points>(0.497,2.378) (0.475,2.376) (0.453,2.371) (0.432,2.365) (0.412,2.356)</Points>
+                            <Points>(0.392,2.346) (0.374,2.334) (0.357,2.32) (0.341,2.304) (0.327,2.287)</Points>
+                            <Points>(0.315,2.269) (0.305,2.249) (0.296,2.229) (0.29,2.208) (0.285,2.186)</Points>
+                            <Points>(0.283,2.164) (0.283,2.142) (0.285,2.12) (0.29,2.098) (0.296,2.077)</Points>
+                            <Points>(0.305,2.057) (0.315,2.037) (0.327,2.019) (0.341,2.002) (0.357,1.986)</Points>
+                            <Points>(0.374,1.972) (0.392,1.96) (0.412,1.95) (0.432,1.941) (0.453,1.935)</Points>
+                            <Points>(0.475,1.93) (0.497,1.928) (0.519,1.928) (0.541,1.93) (0.563,1.935)</Points>
+                            <Points>(0.584,1.941) (0.604,1.95) (0.624,1.96) (0.642,1.972) (0.659,1.986)</Points>
+                            <Points>(0.675,2.002) (0.689,2.019) (0.701,2.037) (0.711,2.057) (0.72,2.077)</Points>
+                            <Points>(0.726,2.098) (0.731,2.12) (0.733,2.142) (0.733,2.164) (0.731,2.186)</Points>
+                            <Points>(0.726,2.208) (0.72,2.229) (0.711,2.249) (0.701,2.269) (0.689,2.287)</Points>
+                            <Points>(0.675,2.304) (0.659,2.32) (0.642,2.334) (0.624,2.346) (0.604,2.356)</Points>
+                            <Points>(0.584,2.365) (0.563,2.371) (0.541,2.376) (0.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCQL" Id="2510">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCQM" Id="2511">
+                            <Points>(2.497,2.378) (2.475,2.376) (2.453,2.371) (2.432,2.365) (2.412,2.356)</Points>
+                            <Points>(2.392,2.346) (2.374,2.334) (2.357,2.32) (2.341,2.304) (2.327,2.287)</Points>
+                            <Points>(2.315,2.269) (2.305,2.249) (2.296,2.229) (2.29,2.208) (2.285,2.186)</Points>
+                            <Points>(2.283,2.164) (2.283,2.142) (2.285,2.12) (2.29,2.098) (2.296,2.077)</Points>
+                            <Points>(2.305,2.057) (2.315,2.037) (2.327,2.019) (2.341,2.002) (2.357,1.986)</Points>
+                            <Points>(2.374,1.972) (2.392,1.96) (2.412,1.95) (2.432,1.941) (2.453,1.935)</Points>
+                            <Points>(2.475,1.93) (2.497,1.928) (2.519,1.928) (2.541,1.93) (2.563,1.935)</Points>
+                            <Points>(2.584,1.941) (2.604,1.95) (2.624,1.96) (2.642,1.972) (2.659,1.986)</Points>
+                            <Points>(2.675,2.002) (2.689,2.019) (2.701,2.037) (2.711,2.057) (2.72,2.077)</Points>
+                            <Points>(2.726,2.098) (2.731,2.12) (2.733,2.142) (2.733,2.164) (2.731,2.186)</Points>
+                            <Points>(2.726,2.208) (2.72,2.229) (2.711,2.249) (2.701,2.269) (2.689,2.287)</Points>
+                            <Points>(2.675,2.304) (2.659,2.32) (2.642,2.334) (2.624,2.346) (2.604,2.356)</Points>
+                            <Points>(2.584,2.365) (2.563,2.371) (2.541,2.376) (2.519,2.378)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerJ" MaterialName="TU-872_SLK" Number="9">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLL" Name="In8.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In6.Cu:drawing" DXFName="L9D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonDON" Id="3136">
+                            <Points>(2.497,3.378) (2.475,3.376) (2.453,3.371) (2.432,3.365) (2.412,3.356)</Points>
+                            <Points>(2.392,3.346) (2.374,3.334) (2.357,3.32) (2.341,3.304) (2.327,3.287)</Points>
+                            <Points>(2.315,3.269) (2.305,3.249) (2.296,3.229) (2.29,3.208) (2.285,3.186)</Points>
+                            <Points>(2.283,3.164) (2.283,3.142) (2.285,3.12) (2.29,3.098) (2.296,3.077)</Points>
+                            <Points>(2.305,3.057) (2.315,3.037) (2.327,3.019) (2.341,3.002) (2.357,2.986)</Points>
+                            <Points>(2.374,2.972) (2.392,2.96) (2.412,2.95) (2.432,2.941) (2.453,2.935)</Points>
+                            <Points>(2.475,2.93) (2.497,2.928) (2.519,2.928) (2.541,2.93) (2.563,2.935)</Points>
+                            <Points>(2.584,2.941) (2.604,2.95) (2.624,2.96) (2.642,2.972) (2.659,2.986)</Points>
+                            <Points>(2.675,3.002) (2.689,3.019) (2.701,3.037) (2.711,3.057) (2.72,3.077)</Points>
+                            <Points>(2.726,3.098) (2.731,3.12) (2.733,3.142) (2.733,3.164) (2.731,3.186)</Points>
+                            <Points>(2.726,3.208) (2.72,3.229) (2.711,3.249) (2.701,3.269) (2.689,3.287)</Points>
+                            <Points>(2.675,3.304) (2.659,3.32) (2.642,3.334) (2.624,3.346) (2.604,3.356)</Points>
+                            <Points>(2.584,3.365) (2.563,3.371) (2.541,3.376) (2.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDOT" Id="3142">
+                            <Points>(1.497,2.378) (1.475,2.376) (1.453,2.371) (1.432,2.365) (1.412,2.356)</Points>
+                            <Points>(1.392,2.346) (1.374,2.334) (1.357,2.32) (1.341,2.304) (1.327,2.287)</Points>
+                            <Points>(1.315,2.269) (1.305,2.249) (1.296,2.229) (1.29,2.208) (1.285,2.186)</Points>
+                            <Points>(1.283,2.164) (1.283,2.142) (1.285,2.12) (1.29,2.098) (1.296,2.077)</Points>
+                            <Points>(1.305,2.057) (1.315,2.037) (1.327,2.019) (1.341,2.002) (1.357,1.986)</Points>
+                            <Points>(1.374,1.972) (1.392,1.96) (1.412,1.95) (1.432,1.941) (1.453,1.935)</Points>
+                            <Points>(1.475,1.93) (1.497,1.928) (1.519,1.928) (1.541,1.93) (1.563,1.935)</Points>
+                            <Points>(1.584,1.941) (1.604,1.95) (1.624,1.96) (1.642,1.972) (1.659,1.986)</Points>
+                            <Points>(1.675,2.002) (1.689,2.019) (1.701,2.037) (1.711,2.057) (1.72,2.077)</Points>
+                            <Points>(1.726,2.098) (1.731,2.12) (1.733,2.142) (1.733,2.164) (1.731,2.186)</Points>
+                            <Points>(1.726,2.208) (1.72,2.229) (1.711,2.249) (1.701,2.269) (1.689,2.287)</Points>
+                            <Points>(1.675,2.304) (1.659,2.32) (1.642,2.334) (1.624,2.346) (1.604,2.356)</Points>
+                            <Points>(1.584,2.365) (1.563,2.371) (1.541,2.376) (1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDOW" Id="3145">
+                            <Points>(1.497,1.378) (1.475,1.376) (1.453,1.371) (1.432,1.365) (1.412,1.356)</Points>
+                            <Points>(1.392,1.346) (1.374,1.334) (1.357,1.32) (1.341,1.304) (1.327,1.287)</Points>
+                            <Points>(1.315,1.269) (1.305,1.249) (1.296,1.229) (1.29,1.208) (1.285,1.186)</Points>
+                            <Points>(1.283,1.164) (1.283,1.142) (1.285,1.12) (1.29,1.098) (1.296,1.077)</Points>
+                            <Points>(1.305,1.057) (1.315,1.037) (1.327,1.019) (1.341,1.002) (1.357,0.986)</Points>
+                            <Points>(1.374,0.972) (1.392,0.96) (1.412,0.95) (1.432,0.941) (1.453,0.935)</Points>
+                            <Points>(1.475,0.93) (1.497,0.928) (1.519,0.928) (1.541,0.93) (1.563,0.935)</Points>
+                            <Points>(1.584,0.941) (1.604,0.95) (1.624,0.96) (1.642,0.972) (1.659,0.986)</Points>
+                            <Points>(1.675,1.002) (1.689,1.019) (1.701,1.037) (1.711,1.057) (1.72,1.077)</Points>
+                            <Points>(1.726,1.098) (1.731,1.12) (1.733,1.142) (1.733,1.164) (1.731,1.186)</Points>
+                            <Points>(1.726,1.208) (1.72,1.229) (1.711,1.249) (1.701,1.269) (1.689,1.287)</Points>
+                            <Points>(1.675,1.304) (1.659,1.32) (1.642,1.334) (1.624,1.346) (1.604,1.356)</Points>
+                            <Points>(1.584,1.365) (1.563,1.371) (1.541,1.376) (1.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVN" Id="4684">
+                            <Points>(3.4035,3.153) (3.4035,-0.23) (0.2435,-0.23) (0.2435,1.153) (0.2435,2.153)</Points>
+                            <Points>(1.128,2.153) (1.146,2.036) (1.2,1.93) (1.285,1.845) (1.391,1.791)</Points>
+                            <Points>(1.508,1.773) (1.508,1.533) (1.391,1.515) (1.325,1.481) (1.285,1.461)</Points>
+                            <Points>(1.2,1.376) (1.146,1.27) (1.128,1.153) (1.146,1.036) (1.2,0.93)</Points>
+                            <Points>(1.285,0.845) (1.391,0.791) (1.508,0.773) (1.625,0.791) (1.731,0.845)</Points>
+                            <Points>(1.816,0.93) (1.859,1.015) (1.87,1.036) (1.888,1.153) (1.87,1.27)</Points>
+                            <Points>(1.816,1.375) (1.816,1.376) (1.731,1.461) (1.625,1.515) (1.508,1.533)</Points>
+                            <Points>(1.508,1.773) (1.508,1.773) (1.508,1.773) (1.625,1.791) (1.731,1.845)</Points>
+                            <Points>(1.816,1.93) (1.859,2.015) (1.87,2.036) (1.888,2.153) (1.87,2.27)</Points>
+                            <Points>(1.824,2.361) (1.816,2.376) (1.731,2.461) (1.625,2.515) (1.508,2.533)</Points>
+                            <Points>(1.391,2.515) (1.304,2.47) (1.285,2.461) (1.2,2.376) (1.146,2.27)</Points>
+                            <Points>(1.128,2.153) (0.2435,2.153) (0.2435,2.153) (0.2435,3.58) (2.508,3.58)</Points>
+                            <Points>(2.508,3.533) (2.391,3.515) (2.285,3.461) (2.2,3.376) (2.146,3.27)</Points>
+                            <Points>(2.128,3.153) (2.146,3.036) (2.2,2.93) (2.285,2.845) (2.391,2.791)</Points>
+                            <Points>(2.508,2.773) (2.625,2.791) (2.731,2.845) (2.816,2.93) (2.828,2.953)</Points>
+                            <Points>(2.87,3.036) (2.888,3.153) (2.87,3.27) (2.847,3.315) (2.816,3.376)</Points>
+                            <Points>(2.731,3.461) (2.625,3.515) (2.508,3.533) (2.508,3.58) (3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerK" MaterialName="TU-872_SLK" Number="10">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLM" Name="B.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLN" Name="B.Cu_thick" MaterialName="Copper_1oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thick:drawing" DXFName="L10D0"/>
+                    <ColorPattern Color="#da70d6" Pattern="ltgrey"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonDVK" Id="3315">
+                            <Points>(0.497,1.378) (0.475,1.376) (0.453,1.371) (0.432,1.365) (0.412,1.356)</Points>
+                            <Points>(0.392,1.346) (0.374,1.334) (0.357,1.32) (0.341,1.304) (0.327,1.287)</Points>
+                            <Points>(0.315,1.269) (0.305,1.249) (0.296,1.229) (0.29,1.208) (0.285,1.186)</Points>
+                            <Points>(0.283,1.164) (0.283,1.142) (0.285,1.12) (0.29,1.098) (0.296,1.077)</Points>
+                            <Points>(0.305,1.057) (0.315,1.037) (0.327,1.019) (0.341,1.002) (0.357,0.986)</Points>
+                            <Points>(0.374,0.972) (0.392,0.96) (0.412,0.95) (0.432,0.941) (0.453,0.935)</Points>
+                            <Points>(0.475,0.93) (0.497,0.928) (0.519,0.928) (0.541,0.93) (0.563,0.935)</Points>
+                            <Points>(0.584,0.941) (0.604,0.95) (0.624,0.96) (0.642,0.972) (0.659,0.986)</Points>
+                            <Points>(0.675,1.002) (0.689,1.019) (0.701,1.037) (0.711,1.057) (0.72,1.077)</Points>
+                            <Points>(0.726,1.098) (0.731,1.12) (0.733,1.142) (0.733,1.164) (0.731,1.186)</Points>
+                            <Points>(0.726,1.208) (0.72,1.229) (0.711,1.249) (0.701,1.269) (0.689,1.287)</Points>
+                            <Points>(0.675,1.304) (0.659,1.32) (0.642,1.334) (0.624,1.346) (0.604,1.356)</Points>
+                            <Points>(0.584,1.365) (0.563,1.371) (0.541,1.376) (0.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDVL" Id="3316">
+                            <Points>(2.497,1.378) (2.475,1.376) (2.453,1.371) (2.432,1.365) (2.412,1.356)</Points>
+                            <Points>(2.392,1.346) (2.374,1.334) (2.357,1.32) (2.341,1.304) (2.327,1.287)</Points>
+                            <Points>(2.315,1.269) (2.305,1.249) (2.296,1.229) (2.29,1.208) (2.285,1.186)</Points>
+                            <Points>(2.283,1.164) (2.283,1.142) (2.285,1.12) (2.29,1.098) (2.296,1.077)</Points>
+                            <Points>(2.305,1.057) (2.315,1.037) (2.327,1.019) (2.341,1.002) (2.357,0.986)</Points>
+                            <Points>(2.374,0.972) (2.392,0.96) (2.412,0.95) (2.432,0.941) (2.453,0.935)</Points>
+                            <Points>(2.475,0.93) (2.497,0.928) (2.519,0.928) (2.541,0.93) (2.563,0.935)</Points>
+                            <Points>(2.584,0.941) (2.604,0.95) (2.624,0.96) (2.642,0.972) (2.659,0.986)</Points>
+                            <Points>(2.675,1.002) (2.689,1.019) (2.701,1.037) (2.711,1.057) (2.72,1.077)</Points>
+                            <Points>(2.726,1.098) (2.731,1.12) (2.733,1.142) (2.733,1.164) (2.731,1.186)</Points>
+                            <Points>(2.726,1.208) (2.72,1.229) (2.711,1.249) (2.701,1.269) (2.689,1.287)</Points>
+                            <Points>(2.675,1.304) (2.659,1.32) (2.642,1.334) (2.624,1.346) (2.604,1.356)</Points>
+                            <Points>(2.584,1.365) (2.563,1.371) (2.541,1.376) (2.519,1.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDVQ" Id="3321">
+                            <Points>(1.497,3.378) (1.475,3.376) (1.453,3.371) (1.432,3.365) (1.412,3.356)</Points>
+                            <Points>(1.392,3.346) (1.374,3.334) (1.357,3.32) (1.341,3.304) (1.327,3.287)</Points>
+                            <Points>(1.315,3.269) (1.305,3.249) (1.296,3.229) (1.29,3.208) (1.285,3.186)</Points>
+                            <Points>(1.283,3.164) (1.283,3.142) (1.285,3.12) (1.29,3.098) (1.296,3.077)</Points>
+                            <Points>(1.305,3.057) (1.315,3.037) (1.327,3.019) (1.341,3.002) (1.357,2.986)</Points>
+                            <Points>(1.374,2.972) (1.392,2.96) (1.412,2.95) (1.432,2.941) (1.453,2.935)</Points>
+                            <Points>(1.475,2.93) (1.497,2.928) (1.519,2.928) (1.541,2.93) (1.563,2.935)</Points>
+                            <Points>(1.584,2.941) (1.604,2.95) (1.624,2.96) (1.642,2.972) (1.659,2.986)</Points>
+                            <Points>(1.675,3.002) (1.689,3.019) (1.701,3.037) (1.711,3.057) (1.72,3.077)</Points>
+                            <Points>(1.726,3.098) (1.731,3.12) (1.733,3.142) (1.733,3.164) (1.731,3.186)</Points>
+                            <Points>(1.726,3.208) (1.72,3.229) (1.711,3.249) (1.701,3.269) (1.689,3.287)</Points>
+                            <Points>(1.675,3.304) (1.659,3.32) (1.642,3.334) (1.624,3.346) (1.604,3.356)</Points>
+                            <Points>(1.584,3.365) (1.563,3.371) (1.541,3.376) (1.519,3.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDVT" Id="3324">
+                            <Points>(0.497,0.378) (0.475,0.376) (0.453,0.371) (0.432,0.365) (0.412,0.356)</Points>
+                            <Points>(0.392,0.346) (0.374,0.334) (0.357,0.32) (0.341,0.304) (0.327,0.287)</Points>
+                            <Points>(0.315,0.269) (0.305,0.249) (0.296,0.229) (0.29,0.208) (0.285,0.186)</Points>
+                            <Points>(0.283,0.164) (0.283,0.142) (0.285,0.12) (0.29,0.098) (0.296,0.077)</Points>
+                            <Points>(0.305,0.057) (0.315,0.037) (0.327,0.019) (0.341,0.002) (0.357,-0.014)</Points>
+                            <Points>(0.374,-0.028) (0.392,-0.04) (0.412,-0.05) (0.432,-0.059) (0.453,-0.065)</Points>
+                            <Points>(0.475,-0.07) (0.497,-0.072) (0.519,-0.072) (0.541,-0.07) (0.563,-0.065)</Points>
+                            <Points>(0.584,-0.059) (0.604,-0.05) (0.624,-0.04) (0.642,-0.028) (0.659,-0.014)</Points>
+                            <Points>(0.675,0.002) (0.689,0.019) (0.701,0.037) (0.711,0.057) (0.72,0.077)</Points>
+                            <Points>(0.726,0.098) (0.731,0.12) (0.733,0.142) (0.733,0.164) (0.731,0.186)</Points>
+                            <Points>(0.726,0.208) (0.72,0.229) (0.711,0.249) (0.701,0.269) (0.689,0.287)</Points>
+                            <Points>(0.675,0.304) (0.659,0.32) (0.642,0.334) (0.624,0.346) (0.604,0.356)</Points>
+                            <Points>(0.584,0.365) (0.563,0.371) (0.541,0.376) (0.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDVU" Id="3325">
+                            <Points>(1.497,0.378) (1.475,0.376) (1.453,0.371) (1.432,0.365) (1.412,0.356)</Points>
+                            <Points>(1.392,0.346) (1.374,0.334) (1.357,0.32) (1.341,0.304) (1.327,0.287)</Points>
+                            <Points>(1.315,0.269) (1.305,0.249) (1.296,0.229) (1.29,0.208) (1.285,0.186)</Points>
+                            <Points>(1.283,0.164) (1.283,0.142) (1.285,0.12) (1.29,0.098) (1.296,0.077)</Points>
+                            <Points>(1.305,0.057) (1.315,0.037) (1.327,0.019) (1.341,0.002) (1.357,-0.014)</Points>
+                            <Points>(1.374,-0.028) (1.392,-0.04) (1.412,-0.05) (1.432,-0.059) (1.453,-0.065)</Points>
+                            <Points>(1.475,-0.07) (1.497,-0.072) (1.519,-0.072) (1.541,-0.07) (1.563,-0.065)</Points>
+                            <Points>(1.584,-0.059) (1.604,-0.05) (1.624,-0.04) (1.642,-0.028) (1.659,-0.014)</Points>
+                            <Points>(1.675,0.002) (1.689,0.019) (1.701,0.037) (1.711,0.057) (1.72,0.077)</Points>
+                            <Points>(1.726,0.098) (1.731,0.12) (1.733,0.142) (1.733,0.164) (1.731,0.186)</Points>
+                            <Points>(1.726,0.208) (1.72,0.229) (1.711,0.249) (1.701,0.269) (1.689,0.287)</Points>
+                            <Points>(1.675,0.304) (1.659,0.32) (1.642,0.334) (1.624,0.346) (1.604,0.356)</Points>
+                            <Points>(1.584,0.365) (1.563,0.371) (1.541,0.376) (1.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDVV" Id="3326">
+                            <Points>(2.497,0.378) (2.475,0.376) (2.453,0.371) (2.432,0.365) (2.412,0.356)</Points>
+                            <Points>(2.392,0.346) (2.374,0.334) (2.357,0.32) (2.341,0.304) (2.327,0.287)</Points>
+                            <Points>(2.315,0.269) (2.305,0.249) (2.296,0.229) (2.29,0.208) (2.285,0.186)</Points>
+                            <Points>(2.283,0.164) (2.283,0.142) (2.285,0.12) (2.29,0.098) (2.296,0.077)</Points>
+                            <Points>(2.305,0.057) (2.315,0.037) (2.327,0.019) (2.341,0.002) (2.357,-0.014)</Points>
+                            <Points>(2.374,-0.028) (2.392,-0.04) (2.412,-0.05) (2.432,-0.059) (2.453,-0.065)</Points>
+                            <Points>(2.475,-0.07) (2.497,-0.072) (2.519,-0.072) (2.541,-0.07) (2.563,-0.065)</Points>
+                            <Points>(2.584,-0.059) (2.604,-0.05) (2.624,-0.04) (2.642,-0.028) (2.659,-0.014)</Points>
+                            <Points>(2.675,0.002) (2.689,0.019) (2.701,0.037) (2.711,0.057) (2.72,0.077)</Points>
+                            <Points>(2.726,0.098) (2.731,0.12) (2.733,0.142) (2.733,0.164) (2.731,0.186)</Points>
+                            <Points>(2.726,0.208) (2.72,0.229) (2.711,0.249) (2.701,0.269) (2.689,0.287)</Points>
+                            <Points>(2.675,0.304) (2.659,0.32) (2.642,0.334) (2.624,0.346) (2.604,0.356)</Points>
+                            <Points>(2.584,0.365) (2.563,0.371) (2.541,0.376) (2.519,0.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDWM" Id="3343">
+                            <Points>(0.497,2.378) (0.475,2.376) (0.453,2.371) (0.432,2.365) (0.412,2.356)</Points>
+                            <Points>(0.392,2.346) (0.374,2.334) (0.357,2.32) (0.341,2.304) (0.327,2.287)</Points>
+                            <Points>(0.315,2.269) (0.305,2.249) (0.296,2.229) (0.29,2.208) (0.285,2.186)</Points>
+                            <Points>(0.283,2.164) (0.283,2.142) (0.285,2.12) (0.29,2.098) (0.296,2.077)</Points>
+                            <Points>(0.305,2.057) (0.315,2.037) (0.327,2.019) (0.341,2.002) (0.357,1.986)</Points>
+                            <Points>(0.374,1.972) (0.392,1.96) (0.412,1.95) (0.432,1.941) (0.453,1.935)</Points>
+                            <Points>(0.475,1.93) (0.497,1.928) (0.519,1.928) (0.541,1.93) (0.563,1.935)</Points>
+                            <Points>(0.584,1.941) (0.604,1.95) (0.624,1.96) (0.642,1.972) (0.659,1.986)</Points>
+                            <Points>(0.675,2.002) (0.689,2.019) (0.701,2.037) (0.711,2.057) (0.72,2.077)</Points>
+                            <Points>(0.726,2.098) (0.731,2.12) (0.733,2.142) (0.733,2.164) (0.731,2.186)</Points>
+                            <Points>(0.726,2.208) (0.72,2.229) (0.711,2.249) (0.701,2.269) (0.689,2.287)</Points>
+                            <Points>(0.675,2.304) (0.659,2.32) (0.642,2.334) (0.624,2.346) (0.604,2.356)</Points>
+                            <Points>(0.584,2.365) (0.563,2.371) (0.541,2.376) (0.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDWV" Id="3352">
+                            <Points>(2.497,2.378) (2.475,2.376) (2.453,2.371) (2.432,2.365) (2.412,2.356)</Points>
+                            <Points>(2.392,2.346) (2.374,2.334) (2.357,2.32) (2.341,2.304) (2.327,2.287)</Points>
+                            <Points>(2.315,2.269) (2.305,2.249) (2.296,2.229) (2.29,2.208) (2.285,2.186)</Points>
+                            <Points>(2.283,2.164) (2.283,2.142) (2.285,2.12) (2.29,2.098) (2.296,2.077)</Points>
+                            <Points>(2.305,2.057) (2.315,2.037) (2.327,2.019) (2.341,2.002) (2.357,1.986)</Points>
+                            <Points>(2.374,1.972) (2.392,1.96) (2.412,1.95) (2.432,1.941) (2.453,1.935)</Points>
+                            <Points>(2.475,1.93) (2.497,1.928) (2.519,1.928) (2.541,1.93) (2.563,1.935)</Points>
+                            <Points>(2.584,1.941) (2.604,1.95) (2.624,1.96) (2.642,1.972) (2.659,1.986)</Points>
+                            <Points>(2.675,2.002) (2.689,2.019) (2.701,2.037) (2.711,2.057) (2.72,2.077)</Points>
+                            <Points>(2.726,2.098) (2.731,2.12) (2.733,2.142) (2.733,2.164) (2.731,2.186)</Points>
+                            <Points>(2.726,2.208) (2.72,2.229) (2.711,2.249) (2.701,2.269) (2.689,2.287)</Points>
+                            <Points>(2.675,2.304) (2.659,2.32) (2.642,2.334) (2.624,2.346) (2.604,2.356)</Points>
+                            <Points>(2.584,2.365) (2.563,2.371) (2.541,2.376) (2.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFUT" Id="4664">
+                            <Points>(3.4035,1.523) (1.934,1.523) (1.693,1.282) (1.701,1.269) (1.711,1.249)</Points>
+                            <Points>(1.72,1.229) (1.726,1.208) (1.731,1.186) (1.733,1.164) (1.733,1.142)</Points>
+                            <Points>(1.731,1.12) (1.726,1.098) (1.72,1.077) (1.711,1.057) (1.701,1.037)</Points>
+                            <Points>(1.689,1.019) (1.675,1.002) (1.659,0.986) (1.642,0.972) (1.624,0.96)</Points>
+                            <Points>(1.604,0.95) (1.584,0.941) (1.563,0.935) (1.541,0.93) (1.519,0.928)</Points>
+                            <Points>(1.497,0.928) (1.475,0.93) (1.453,0.935) (1.432,0.941) (1.412,0.95)</Points>
+                            <Points>(1.392,0.96) (1.374,0.972) (1.357,0.986) (1.341,1.002) (1.327,1.019)</Points>
+                            <Points>(1.315,1.037) (1.305,1.057) (1.296,1.077) (1.29,1.098) (1.285,1.12)</Points>
+                            <Points>(1.283,1.142) (1.283,1.164) (1.285,1.186) (1.29,1.208) (1.296,1.229)</Points>
+                            <Points>(1.305,1.249) (1.315,1.269) (1.327,1.287) (1.341,1.304) (1.357,1.32)</Points>
+                            <Points>(1.374,1.334) (1.392,1.346) (1.412,1.356) (1.432,1.365) (1.453,1.371)</Points>
+                            <Points>(1.475,1.376) (1.497,1.378) (1.519,1.378) (1.541,1.376) (1.563,1.371)</Points>
+                            <Points>(1.584,1.365) (1.604,1.356) (1.624,1.346) (1.637,1.338) (1.894,1.595)</Points>
+                            <Points>(1.898,1.597) (1.901,1.599) (1.905,1.6) (1.908,1.601) (1.916,1.603)</Points>
+                            <Points>(3.4035,1.603)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFUU" Id="4665">
+                            <Points>(1.541,2.376) (1.563,2.371) (1.584,2.365) (1.604,2.356) (1.624,2.346)</Points>
+                            <Points>(1.642,2.334) (1.659,2.32) (1.675,2.304) (1.689,2.287) (1.701,2.269)</Points>
+                            <Points>(1.711,2.249) (1.72,2.229) (1.726,2.208) (1.731,2.186) (1.733,2.164)</Points>
+                            <Points>(1.733,2.142) (1.731,2.12) (1.726,2.098) (1.72,2.077) (1.711,2.057)</Points>
+                            <Points>(1.701,2.037) (1.693,2.024) (1.934,1.783) (3.4035,1.783) (3.4035,1.703)</Points>
+                            <Points>(1.916,1.703) (1.908,1.705) (1.905,1.706) (1.901,1.707) (1.898,1.709)</Points>
+                            <Points>(1.894,1.711) (1.637,1.968) (1.624,1.96) (1.604,1.95) (1.584,1.941)</Points>
+                            <Points>(1.563,1.935) (1.541,1.93) (1.519,1.928) (1.497,1.928) (1.475,1.93)</Points>
+                            <Points>(1.453,1.935) (1.432,1.941) (1.412,1.95) (1.392,1.96) (1.374,1.972)</Points>
+                            <Points>(1.357,1.986) (1.341,2.002) (1.327,2.019) (1.315,2.037) (1.305,2.057)</Points>
+                            <Points>(1.296,2.077) (1.29,2.098) (1.285,2.12) (1.283,2.142) (1.283,2.164)</Points>
+                            <Points>(1.285,2.186) (1.29,2.208) (1.296,2.229) (1.305,2.249) (1.315,2.269)</Points>
+                            <Points>(1.327,2.287) (1.341,2.304) (1.357,2.32) (1.374,2.334) (1.392,2.346)</Points>
+                            <Points>(1.412,2.356) (1.432,2.365) (1.453,2.371) (1.475,2.376) (1.497,2.378)</Points>
+                            <Points>(1.519,2.378)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVO" Id="4685">
+                            <Points>(3.4035,3.523) (2.934,3.523) (2.693,3.282) (2.701,3.269) (2.711,3.249)</Points>
+                            <Points>(2.72,3.229) (2.726,3.208) (2.731,3.186) (2.733,3.164) (2.733,3.142)</Points>
+                            <Points>(2.731,3.12) (2.726,3.098) (2.72,3.077) (2.711,3.057) (2.701,3.037)</Points>
+                            <Points>(2.689,3.019) (2.675,3.002) (2.659,2.986) (2.642,2.972) (2.624,2.96)</Points>
+                            <Points>(2.604,2.95) (2.584,2.941) (2.563,2.935) (2.541,2.93) (2.519,2.928)</Points>
+                            <Points>(2.497,2.928) (2.475,2.93) (2.453,2.935) (2.432,2.941) (2.412,2.95)</Points>
+                            <Points>(2.392,2.96) (2.374,2.972) (2.357,2.986) (2.341,3.002) (2.327,3.019)</Points>
+                            <Points>(2.315,3.037) (2.305,3.057) (2.296,3.077) (2.29,3.098) (2.285,3.12)</Points>
+                            <Points>(2.283,3.142) (2.283,3.164) (2.285,3.186) (2.29,3.208) (2.296,3.229)</Points>
+                            <Points>(2.305,3.249) (2.315,3.269) (2.327,3.287) (2.341,3.304) (2.357,3.32)</Points>
+                            <Points>(2.374,3.334) (2.392,3.346) (2.412,3.356) (2.432,3.365) (2.453,3.371)</Points>
+                            <Points>(2.475,3.376) (2.497,3.378) (2.519,3.378) (2.541,3.376) (2.563,3.371)</Points>
+                            <Points>(2.584,3.365) (2.604,3.356) (2.624,3.346) (2.637,3.338) (2.879,3.58)</Points>
+                            <Points>(3.4035,3.58)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVP" Id="4686">
+                            <Points>(1.138,-0.19) (1.136,-0.198) (1.134,-0.201) (1.132,-0.205) (1.128,-0.211)</Points>
+                            <Points>(1.109,-0.23) (0.997,-0.23) (1.058,-0.169) (1.058,3.58) (1.138,3.58)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVQ" Id="4687">
+                            <Points>(0.958,3.332) (0.956,3.326) (0.956,3.312) (0.955,3.308) (0.95,3.287)</Points>
+                            <Points>(0.948,3.283) (0.947,3.28) (0.945,3.277) (0.944,3.276) (0.941,3.269)</Points>
+                            <Points>(0.94,3.266) (0.938,3.262) (0.935,3.259) (0.935,3.258) (0.932,3.255)</Points>
+                            <Points>(0.93,3.252) (0.929,3.251) (0.928,3.248) (0.924,3.242) (0.923,3.242)</Points>
+                            <Points>(0.911,3.23) (0.909,3.227) (0.906,3.224) (0.902,3.222) (0.899,3.22)</Points>
+                            <Points>(0.898,3.22) (0.895,3.217) (0.892,3.215) (0.889,3.212) (0.885,3.21)</Points>
+                            <Points>(0.866,3.201) (0.862,3.2) (0.859,3.199) (0.855,3.199) (0.851,3.198)</Points>
+                            <Points>(0.85,3.197) (0.848,3.196) (0.84,3.194) (0.819,3.192) (0.817,3.193)</Points>
+                            <Points>(0.805,3.191) (0.794,3.188) (0.79,3.187) (0.781,3.182) (0.77,3.171)</Points>
+                            <Points>(0.762,3.161) (0.76,3.158) (0.759,3.155) (0.755,3.137) (0.755,2.739)</Points>
+                            <Points>(0.757,2.718) (0.757,2.716) (0.764,2.701) (0.766,2.698) (0.77,2.693)</Points>
+                            <Points>(0.773,2.69) (0.787,2.679) (0.793,2.676) (0.81,2.672) (0.818,2.672)</Points>
+                            <Points>(0.839,2.67) (0.855,2.666) (0.856,2.666) (0.858,2.665) (0.863,2.664)</Points>
+                            <Points>(0.864,2.664) (0.866,2.663) (0.867,2.662) (0.87,2.661) (0.874,2.659)</Points>
+                            <Points>(0.879,2.657) (0.885,2.655) (0.889,2.653) (0.906,2.64) (0.909,2.638)</Points>
+                            <Points>(0.912,2.635) (0.914,2.632) (0.92,2.626) (0.923,2.624) (0.925,2.621)</Points>
+                            <Points>(0.926,2.62) (0.928,2.616) (0.93,2.613) (0.933,2.61) (0.935,2.607)</Points>
+                            <Points>(0.938,2.604) (0.94,2.6) (0.949,2.581) (0.951,2.573) (0.951,2.569)</Points>
+                            <Points>(0.953,2.563) (0.954,2.562) (0.956,2.554) (0.956,2.55) (0.958,2.533)</Points>
+                            <Points>(0.958,-0.112) (0.956,-0.12) (0.955,-0.123) (0.954,-0.127) (0.952,-0.13)</Points>
+                            <Points>(0.95,-0.134) (0.854,-0.23) (0.742,-0.23) (0.878,-0.094) (0.878,2.537)</Points>
+                            <Points>(0.874,2.555) (0.871,2.561) (0.863,2.571) (0.852,2.582) (0.839,2.588)</Points>
+                            <Points>(0.827,2.591) (0.817,2.592) (0.815,2.592) (0.794,2.594) (0.786,2.596)</Points>
+                            <Points>(0.785,2.597) (0.779,2.599) (0.774,2.599) (0.771,2.6) (0.767,2.601)</Points>
+                            <Points>(0.748,2.61) (0.744,2.612) (0.741,2.615) (0.738,2.617) (0.735,2.62)</Points>
+                            <Points>(0.734,2.62) (0.731,2.622) (0.727,2.624) (0.709,2.642) (0.705,2.648)</Points>
+                            <Points>(0.704,2.651) (0.703,2.652) (0.701,2.655) (0.698,2.658) (0.698,2.659)</Points>
+                            <Points>(0.695,2.662) (0.693,2.666) (0.692,2.669) (0.689,2.676) (0.688,2.677)</Points>
+                            <Points>(0.686,2.68) (0.685,2.683) (0.683,2.687) (0.678,2.708) (0.677,2.712)</Points>
+                            <Points>(0.677,2.726) (0.675,2.732) (0.675,3.134) (0.677,3.15) (0.677,3.154)</Points>
+                            <Points>(0.679,3.162) (0.68,3.163) (0.682,3.169) (0.682,3.173) (0.684,3.181)</Points>
+                            <Points>(0.693,3.2) (0.695,3.204) (0.698,3.207) (0.7,3.21) (0.703,3.213)</Points>
+                            <Points>(0.705,3.216) (0.707,3.22) (0.708,3.221) (0.71,3.224) (0.713,3.226)</Points>
+                            <Points>(0.719,3.232) (0.721,3.235) (0.724,3.238) (0.727,3.24) (0.744,3.253)</Points>
+                            <Points>(0.748,3.255) (0.754,3.257) (0.759,3.259) (0.763,3.261) (0.766,3.262)</Points>
+                            <Points>(0.767,3.263) (0.769,3.264) (0.77,3.264) (0.775,3.265) (0.777,3.266)</Points>
+                            <Points>(0.78,3.266) (0.782,3.267) (0.794,3.27) (0.815,3.272) (0.823,3.272)</Points>
+                            <Points>(0.84,3.276) (0.846,3.279) (0.86,3.29) (0.863,3.293) (0.867,3.298)</Points>
+                            <Points>(0.869,3.301) (0.876,3.316) (0.876,3.318) (0.878,3.339) (0.878,3.58)</Points>
+                            <Points>(0.958,3.58)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerL" MaterialName="Soldermask" Number="11">
+            <DielectricMaterialModel Thickness="0.04"/>
+        </Level>
+        <Level MacroID="diel_layerM" MaterialName="Air" Number="12">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <ViaTechLayer MacroID="viaTLA" Name="Via1" MaterialName="Perfect Conductor">
+            <ImportExportMapping CADLayerPurposes="Via1:drawing" DXFName="L11D0"/>
+            <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+            <ViaMaterialModel ModelType="VOLUME" Solid="TRUE"/>
+            <ViaMeshing AutoHeight="FALSE" EnableMesh="TRUE" FillType="RING" HasPads="FALSE"/>
+            <GLGMeshing GLG="FALSE"/>
+            <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
+            <Objects>
+                <ViaPolygon MacroID="polygonESL" Id="3914">
+                    <Points>(0.508,2.278) (0.484,2.276) (0.472,2.273) (0.46,2.268) (0.449,2.263)</Points>
+                    <Points>(0.439,2.257) (0.429,2.25) (0.411,2.232) (0.404,2.222) (0.398,2.212)</Points>
+                    <Points>(0.393,2.201) (0.388,2.189) (0.385,2.177) (0.383,2.153) (0.385,2.129)</Points>
+                    <Points>(0.388,2.117) (0.393,2.105) (0.398,2.094) (0.404,2.084) (0.411,2.074)</Points>
+                    <Points>(0.429,2.056) (0.439,2.049) (0.449,2.043) (0.46,2.038) (0.472,2.033)</Points>
+                    <Points>(0.484,2.03) (0.508,2.028) (0.532,2.03) (0.544,2.033) (0.556,2.038)</Points>
+                    <Points>(0.567,2.043) (0.577,2.049) (0.587,2.056) (0.605,2.074) (0.612,2.084)</Points>
+                    <Points>(0.618,2.094) (0.623,2.105) (0.628,2.117) (0.631,2.129) (0.633,2.153)</Points>
+                    <Points>(0.631,2.177) (0.628,2.189) (0.623,2.201) (0.618,2.212) (0.612,2.222)</Points>
+                    <Points>(0.605,2.232) (0.587,2.25) (0.577,2.257) (0.567,2.263) (0.556,2.268)</Points>
+                    <Points>(0.544,2.273) (0.532,2.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonESM" Id="3915">
+                    <Points>(1.508,2.278) (1.484,2.276) (1.472,2.273) (1.46,2.268) (1.449,2.263)</Points>
+                    <Points>(1.439,2.257) (1.429,2.25) (1.411,2.232) (1.404,2.222) (1.398,2.212)</Points>
+                    <Points>(1.393,2.201) (1.388,2.189) (1.385,2.177) (1.383,2.153) (1.385,2.129)</Points>
+                    <Points>(1.388,2.117) (1.393,2.105) (1.398,2.094) (1.404,2.084) (1.411,2.074)</Points>
+                    <Points>(1.429,2.056) (1.439,2.049) (1.449,2.043) (1.46,2.038) (1.472,2.033)</Points>
+                    <Points>(1.484,2.03) (1.508,2.028) (1.532,2.03) (1.544,2.033) (1.556,2.038)</Points>
+                    <Points>(1.567,2.043) (1.577,2.049) (1.587,2.056) (1.605,2.074) (1.612,2.084)</Points>
+                    <Points>(1.618,2.094) (1.623,2.105) (1.628,2.117) (1.631,2.129) (1.633,2.153)</Points>
+                    <Points>(1.631,2.177) (1.628,2.189) (1.623,2.201) (1.618,2.212) (1.612,2.222)</Points>
+                    <Points>(1.605,2.232) (1.587,2.25) (1.577,2.257) (1.567,2.263) (1.556,2.268)</Points>
+                    <Points>(1.544,2.273) (1.532,2.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonESN" Id="3916">
+                    <Points>(2.508,2.278) (2.484,2.276) (2.472,2.273) (2.46,2.268) (2.449,2.263)</Points>
+                    <Points>(2.439,2.257) (2.429,2.25) (2.411,2.232) (2.404,2.222) (2.398,2.212)</Points>
+                    <Points>(2.393,2.201) (2.388,2.189) (2.385,2.177) (2.383,2.153) (2.385,2.129)</Points>
+                    <Points>(2.388,2.117) (2.393,2.105) (2.398,2.094) (2.404,2.084) (2.411,2.074)</Points>
+                    <Points>(2.429,2.056) (2.439,2.049) (2.449,2.043) (2.46,2.038) (2.472,2.033)</Points>
+                    <Points>(2.484,2.03) (2.508,2.028) (2.532,2.03) (2.544,2.033) (2.556,2.038)</Points>
+                    <Points>(2.567,2.043) (2.577,2.049) (2.587,2.056) (2.605,2.074) (2.612,2.084)</Points>
+                    <Points>(2.618,2.094) (2.623,2.105) (2.628,2.117) (2.631,2.129) (2.633,2.153)</Points>
+                    <Points>(2.631,2.177) (2.628,2.189) (2.623,2.201) (2.618,2.212) (2.612,2.222)</Points>
+                    <Points>(2.605,2.232) (2.587,2.25) (2.577,2.257) (2.567,2.263) (2.556,2.268)</Points>
+                    <Points>(2.544,2.273) (2.532,2.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonEST" Id="3922">
+                    <Points>(0.508,1.278) (0.484,1.276) (0.472,1.273) (0.46,1.268) (0.449,1.263)</Points>
+                    <Points>(0.439,1.257) (0.429,1.25) (0.411,1.232) (0.404,1.222) (0.398,1.212)</Points>
+                    <Points>(0.393,1.201) (0.388,1.189) (0.385,1.177) (0.383,1.153) (0.385,1.129)</Points>
+                    <Points>(0.388,1.117) (0.393,1.105) (0.398,1.094) (0.404,1.084) (0.411,1.074)</Points>
+                    <Points>(0.429,1.056) (0.439,1.049) (0.449,1.043) (0.46,1.038) (0.472,1.033)</Points>
+                    <Points>(0.484,1.03) (0.508,1.028) (0.532,1.03) (0.544,1.033) (0.556,1.038)</Points>
+                    <Points>(0.567,1.043) (0.577,1.049) (0.587,1.056) (0.605,1.074) (0.612,1.084)</Points>
+                    <Points>(0.618,1.094) (0.623,1.105) (0.628,1.117) (0.631,1.129) (0.633,1.153)</Points>
+                    <Points>(0.631,1.177) (0.628,1.189) (0.623,1.201) (0.618,1.212) (0.612,1.222)</Points>
+                    <Points>(0.605,1.232) (0.587,1.25) (0.577,1.257) (0.567,1.263) (0.556,1.268)</Points>
+                    <Points>(0.544,1.273) (0.532,1.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonESU" Id="3923">
+                    <Points>(1.508,1.278) (1.484,1.276) (1.472,1.273) (1.46,1.268) (1.449,1.263)</Points>
+                    <Points>(1.439,1.257) (1.429,1.25) (1.411,1.232) (1.404,1.222) (1.398,1.212)</Points>
+                    <Points>(1.393,1.201) (1.388,1.189) (1.385,1.177) (1.383,1.153) (1.385,1.129)</Points>
+                    <Points>(1.388,1.117) (1.393,1.105) (1.398,1.094) (1.404,1.084) (1.411,1.074)</Points>
+                    <Points>(1.429,1.056) (1.439,1.049) (1.449,1.043) (1.46,1.038) (1.472,1.033)</Points>
+                    <Points>(1.484,1.03) (1.508,1.028) (1.532,1.03) (1.544,1.033) (1.556,1.038)</Points>
+                    <Points>(1.567,1.043) (1.577,1.049) (1.587,1.056) (1.605,1.074) (1.612,1.084)</Points>
+                    <Points>(1.618,1.094) (1.623,1.105) (1.628,1.117) (1.631,1.129) (1.633,1.153)</Points>
+                    <Points>(1.631,1.177) (1.628,1.189) (1.623,1.201) (1.618,1.212) (1.612,1.222)</Points>
+                    <Points>(1.605,1.232) (1.587,1.25) (1.577,1.257) (1.567,1.263) (1.556,1.268)</Points>
+                    <Points>(1.544,1.273) (1.532,1.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonESV" Id="3924">
+                    <Points>(2.508,1.278) (2.484,1.276) (2.472,1.273) (2.46,1.268) (2.449,1.263)</Points>
+                    <Points>(2.439,1.257) (2.429,1.25) (2.411,1.232) (2.404,1.222) (2.398,1.212)</Points>
+                    <Points>(2.393,1.201) (2.388,1.189) (2.385,1.177) (2.383,1.153) (2.385,1.129)</Points>
+                    <Points>(2.388,1.117) (2.393,1.105) (2.398,1.094) (2.404,1.084) (2.411,1.074)</Points>
+                    <Points>(2.429,1.056) (2.439,1.049) (2.449,1.043) (2.46,1.038) (2.472,1.033)</Points>
+                    <Points>(2.484,1.03) (2.508,1.028) (2.532,1.03) (2.544,1.033) (2.556,1.038)</Points>
+                    <Points>(2.567,1.043) (2.577,1.049) (2.587,1.056) (2.605,1.074) (2.612,1.084)</Points>
+                    <Points>(2.618,1.094) (2.623,1.105) (2.628,1.117) (2.631,1.129) (2.633,1.153)</Points>
+                    <Points>(2.631,1.177) (2.628,1.189) (2.623,1.201) (2.618,1.212) (2.612,1.222)</Points>
+                    <Points>(2.605,1.232) (2.587,1.25) (2.577,1.257) (2.567,1.263) (2.556,1.268)</Points>
+                    <Points>(2.544,1.273) (2.532,1.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonETD" Id="3932">
+                    <Points>(1.508,3.278) (1.484,3.276) (1.472,3.273) (1.46,3.268) (1.449,3.263)</Points>
+                    <Points>(1.439,3.257) (1.429,3.25) (1.411,3.232) (1.404,3.222) (1.398,3.212)</Points>
+                    <Points>(1.393,3.201) (1.388,3.189) (1.385,3.177) (1.383,3.153) (1.385,3.129)</Points>
+                    <Points>(1.388,3.117) (1.393,3.105) (1.398,3.094) (1.404,3.084) (1.411,3.074)</Points>
+                    <Points>(1.429,3.056) (1.439,3.049) (1.449,3.043) (1.46,3.038) (1.472,3.033)</Points>
+                    <Points>(1.484,3.03) (1.508,3.028) (1.532,3.03) (1.544,3.033) (1.556,3.038)</Points>
+                    <Points>(1.567,3.043) (1.577,3.049) (1.587,3.056) (1.605,3.074) (1.612,3.084)</Points>
+                    <Points>(1.618,3.094) (1.623,3.105) (1.628,3.117) (1.631,3.129) (1.633,3.153)</Points>
+                    <Points>(1.631,3.177) (1.628,3.189) (1.623,3.201) (1.618,3.212) (1.612,3.222)</Points>
+                    <Points>(1.605,3.232) (1.587,3.25) (1.577,3.257) (1.567,3.263) (1.556,3.268)</Points>
+                    <Points>(1.544,3.273) (1.532,3.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonETE" Id="3933">
+                    <Points>(2.508,3.278) (2.484,3.276) (2.472,3.273) (2.46,3.268) (2.449,3.263)</Points>
+                    <Points>(2.439,3.257) (2.429,3.25) (2.411,3.232) (2.404,3.222) (2.398,3.212)</Points>
+                    <Points>(2.393,3.201) (2.388,3.189) (2.385,3.177) (2.383,3.153) (2.385,3.129)</Points>
+                    <Points>(2.388,3.117) (2.393,3.105) (2.398,3.094) (2.404,3.084) (2.411,3.074)</Points>
+                    <Points>(2.429,3.056) (2.439,3.049) (2.449,3.043) (2.46,3.038) (2.472,3.033)</Points>
+                    <Points>(2.484,3.03) (2.508,3.028) (2.532,3.03) (2.544,3.033) (2.556,3.038)</Points>
+                    <Points>(2.567,3.043) (2.577,3.049) (2.587,3.056) (2.605,3.074) (2.612,3.084)</Points>
+                    <Points>(2.618,3.094) (2.623,3.105) (2.628,3.117) (2.631,3.129) (2.633,3.153)</Points>
+                    <Points>(2.631,3.177) (2.628,3.189) (2.623,3.201) (2.618,3.212) (2.612,3.222)</Points>
+                    <Points>(2.605,3.232) (2.587,3.25) (2.577,3.257) (2.567,3.263) (2.556,3.268)</Points>
+                    <Points>(2.544,3.273) (2.532,3.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonETF" Id="3934">
+                    <Points>(0.508,0.278) (0.484,0.276) (0.472,0.273) (0.46,0.268) (0.449,0.263)</Points>
+                    <Points>(0.439,0.257) (0.429,0.25) (0.411,0.232) (0.404,0.222) (0.398,0.212)</Points>
+                    <Points>(0.393,0.201) (0.388,0.189) (0.385,0.177) (0.383,0.153) (0.385,0.129)</Points>
+                    <Points>(0.388,0.117) (0.393,0.105) (0.398,0.094) (0.404,0.084) (0.411,0.074)</Points>
+                    <Points>(0.429,0.056) (0.439,0.049) (0.449,0.043) (0.46,0.038) (0.472,0.033)</Points>
+                    <Points>(0.484,0.03) (0.508,0.028) (0.532,0.03) (0.544,0.033) (0.556,0.038)</Points>
+                    <Points>(0.567,0.043) (0.577,0.049) (0.587,0.056) (0.605,0.074) (0.612,0.084)</Points>
+                    <Points>(0.618,0.094) (0.623,0.105) (0.628,0.117) (0.631,0.129) (0.633,0.153)</Points>
+                    <Points>(0.631,0.177) (0.628,0.189) (0.623,0.201) (0.618,0.212) (0.612,0.222)</Points>
+                    <Points>(0.605,0.232) (0.587,0.25) (0.577,0.257) (0.567,0.263) (0.556,0.268)</Points>
+                    <Points>(0.544,0.273) (0.532,0.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonETG" Id="3935">
+                    <Points>(1.508,0.278) (1.484,0.276) (1.472,0.273) (1.46,0.268) (1.449,0.263)</Points>
+                    <Points>(1.439,0.257) (1.429,0.25) (1.411,0.232) (1.404,0.222) (1.398,0.212)</Points>
+                    <Points>(1.393,0.201) (1.388,0.189) (1.385,0.177) (1.383,0.153) (1.385,0.129)</Points>
+                    <Points>(1.388,0.117) (1.393,0.105) (1.398,0.094) (1.404,0.084) (1.411,0.074)</Points>
+                    <Points>(1.429,0.056) (1.439,0.049) (1.449,0.043) (1.46,0.038) (1.472,0.033)</Points>
+                    <Points>(1.484,0.03) (1.508,0.028) (1.532,0.03) (1.544,0.033) (1.556,0.038)</Points>
+                    <Points>(1.567,0.043) (1.577,0.049) (1.587,0.056) (1.605,0.074) (1.612,0.084)</Points>
+                    <Points>(1.618,0.094) (1.623,0.105) (1.628,0.117) (1.631,0.129) (1.633,0.153)</Points>
+                    <Points>(1.631,0.177) (1.628,0.189) (1.623,0.201) (1.618,0.212) (1.612,0.222)</Points>
+                    <Points>(1.605,0.232) (1.587,0.25) (1.577,0.257) (1.567,0.263) (1.556,0.268)</Points>
+                    <Points>(1.544,0.273) (1.532,0.276)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonETH" Id="3936">
+                    <Points>(2.508,0.278) (2.484,0.276) (2.472,0.273) (2.46,0.268) (2.449,0.263)</Points>
+                    <Points>(2.439,0.257) (2.429,0.25) (2.411,0.232) (2.404,0.222) (2.398,0.212)</Points>
+                    <Points>(2.393,0.201) (2.388,0.189) (2.385,0.177) (2.383,0.153) (2.385,0.129)</Points>
+                    <Points>(2.388,0.117) (2.393,0.105) (2.398,0.094) (2.404,0.084) (2.411,0.074)</Points>
+                    <Points>(2.429,0.056) (2.439,0.049) (2.449,0.043) (2.46,0.038) (2.472,0.033)</Points>
+                    <Points>(2.484,0.03) (2.508,0.028) (2.532,0.03) (2.544,0.033) (2.556,0.038)</Points>
+                    <Points>(2.567,0.043) (2.577,0.049) (2.587,0.056) (2.605,0.074) (2.612,0.084)</Points>
+                    <Points>(2.618,0.094) (2.623,0.105) (2.628,0.117) (2.631,0.129) (2.633,0.153)</Points>
+                    <Points>(2.631,0.177) (2.628,0.189) (2.623,0.201) (2.618,0.212) (2.612,0.222)</Points>
+                    <Points>(2.605,0.232) (2.587,0.25) (2.577,0.257) (2.567,0.263) (2.556,0.268)</Points>
+                    <Points>(2.544,0.273) (2.532,0.276)</Points>
+                </ViaPolygon>
+            </Objects>
+        </ViaTechLayer>
+        <CoupledGroup Name="A"/>
+    </Geometry>
+    <Sweeps SweepVariables="FALSE">
+        <Set MacroID="sweepsetA" On="TRUE">
+            <Frequencies>
+                <Sweep MacroID="freq_sweepA" Type="ABS_ENTRY" On="TRUE" Adaptive="TRUE" Start="0.01" Stop="30" Target="300"/>
+            </Frequencies>
+        </Set>
+    </Sweeps>
+    <OutputFiles Folder="."/>
+    <Translator>
+        <DXFIMPORT ImportUnits="microns">
+            <Template UseTemplate="TRUE" UsePresentProject="FALSE" KeepPolygons="FALSE"/>
+            <Box BoxType="Template" PlacementType="Center" CellCalcType="Auto" CellSizeX="0.01" CellSizeY="0.01" BoxSizeX="4" BoxSizeY="3"/>
+            <Margins MarginType="Relative" AddMargins="FALSE" TopMargin="0" LeftMargin="0" RightMargin="0" BottomMargin="0"/>
+            <Advanced MergePlanar="FALSE" AdditionalOptions="" ViasRectangular="FALSE" AddViaPads="FALSE" AdditionalViaOptions=""/>
+            <ViaSimplification SimplifyViaArrays="FALSE" MinViasInArray="5" DistanceToSizeRatio="8" SizeRatio="1.5" MaxExpansionCoeff="7" MergePlanarVias="TRUE"/>
+            <BarVias IdentifyBarVias="FALSE" BarViaRatio="2.5"/>
+            <DXFOnly DxfArc="10" DxfTolerance="0.0011" DxfMiter="FALSE"/>
+        </DXFIMPORT>
+    </Translator>
+</SonnetProject>

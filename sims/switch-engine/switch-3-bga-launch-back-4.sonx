@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SonnetProject Version="20" Type="GEO" xmlns="https://www.sonnetsoftware.com/schema/project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sonnetsoftware.com/schema/project https://www.sonnetsoftware.com/schema/project/sonnet_project_file-1.0.xsd">
+    <GlobalTemperature Tnom="25.000"/>
+    <Header>
+        <Created Program="xgeom" Version="18.52">
+            <Date>11/18/2021 20:28:07</Date>
+        </Created>
+        <Modified Program="sonnet" Version="19.52.2025">
+            <License>antikernel2.1.73578</License>
+            <Date>06/30/2025 21:34:40</Date>
+            <Change Importance="MEDIUM">
+                <Date>06/30/2025 21:34:40</Date>
+            </Change>
+            <Change Importance="HIGH">
+                <Date>06/30/2025 21:34:40</Date>
+            </Change>
+        </Modified>
+        <Comment>
+            <Line>Created by dxfgeo, Sonnet Software Inc.</Line>
+        </Comment>
+    </Header>
+    <Units>
+        <Angle>DEG</Angle>
+        <Capacitance>PF</Capacitance>
+        <Conductance>/OH</Conductance>
+        <Conductivity>SM</Conductivity>
+        <Frequency>GHZ</Frequency>
+        <Inductance>NH</Inductance>
+        <Length>MM</Length>
+        <Roughness>UM</Roughness>
+        <Resistance>OH</Resistance>
+        <Resistivity>OHCM</Resistivity>
+        <SheetRes>OHSQ</SheetRes>
+    </Units>
+    <Control>
+        <SweepType>VARSWP</SweepType>
+        <DeEmbed On="TRUE"/>
+        <Currents On="TRUE"/>
+        <Precision>DOUBLE</Precision>
+        <SpeedControl>MEDIUM_SPEED</SpeedControl>
+        <ABSCacheLevel>MULTI_SWEEP</ABSCacheLevel>
+    </Control>
+    <Geometry YDirection="Negative">
+        <Dielectric MacroID="dielectricA" Name="Air" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="1.0"/>
+            <Tan Value="0.0"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricB" Name="Soldermask" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.5"/>
+            <Tan Value="0.025"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricC" Name="TU-872_SLK" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.9"/>
+            <Tan Value="0.008"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricD" Name="Shengyi_S1000-2M" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="4.49"/>
+            <Tan Value="0.016"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Conductor MacroID="conductorA" Name="Perfect Conductor" Conductivity="INF" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorB" Name="Copper_1oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorC" Name="Copper_1oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorD" Name="Copper_1oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorE" Name="Copper_0.5oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorF" Name="Copper_0.5oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorG" Name="Copper_0.5oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Box>
+            <BoxCover MacroID="top_cover" Type="TOP" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <BoxCover MacroID="bot_cover" Type="BOTTOM" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <Size X="4" Y="4" Z="11.36"/>
+            <NumCells X="400" Y="400"/>
+            <LocalOrigin X="0" Y="4"/>
+            <Symmetry On="FALSE"/>
+            <RefPlane Type="FIXED" Side="LEFT" RefLength="0.85"/>
+        </Box>
+        <Level MacroID="diel_layerA" MaterialName="Air" Number="0">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <Level MacroID="diel_layerB" MaterialName="Soldermask" Number="1">
+            <DielectricMaterialModel Thickness="0.04"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLA" Name="F.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLB" Name="F.Cu_thick" MaterialName="Copper_1oz_thick">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thick:drawing" DXFName="L1D0"/>
+                    <ColorPattern Color="#a52a2a" Pattern="hatch"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBT" Id="100">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCA" Id="107">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFWD" Id="4704">
+                            <Points>(0.8,1.33) (1.09,1.33) (1.09,1.45) (0.8,1.45)</Points>
+                            <Objects>
+                                <Port MacroID="portA" Number="1" Vertex="3">
+                                    <Type Type="COUPLED" AutoGroupName="Auto">
+                                        <GndRef Type="AUTO"/>
+                                        <TerminalWidth Type="FEED"/>
+                                    </Type>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(0.8,1.39)</Center>
+                                    <CoupledGroup Name="Auto">
+                                        <RefPlane Type="FIXED" Side="RIGHT" RefLength="0.25"/>
+                                    </CoupledGroup>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFWE" Id="4705">
+                            <Points>(0.8,2.321) (1.09,2.321) (1.09,2.441) (0.8,2.441)</Points>
+                            <Objects>
+                                <Port MacroID="portB" Number="-1" Vertex="3">
+                                    <Type Type="COUPLED" AutoGroupName="Auto">
+                                        <GndRef Type="AUTO"/>
+                                        <TerminalWidth Type="FEED"/>
+                                    </Type>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(0.8,2.381)</Center>
+                                    <CoupledGroup Name="Auto">
+                                        <RefPlane Type="FIXED" Side="RIGHT" RefLength="0.25"/>
+                                    </CoupledGroup>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerC" MaterialName="TU-872_SLK" Number="2">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLC" Name="In1.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In1.Cu:drawing" DXFName="L2D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonABG" Id="763">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonABJ" Id="766">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVU" Id="4695">
+                            <Points>(2.14,3.99) (4,3.99) (4,0) (1.87,0) (1.87,1.110223025e-16)</Points>
+                            <Points>(0.0035,1.110223025e-16) (0.0035,2.383) (0.888,2.383) (0.906,2.266) (0.96,2.16)</Points>
+                            <Points>(0.975,2.145) (0.993,2.101) (0.993,1.665) (0.975,1.621) (0.96,1.606)</Points>
+                            <Points>(0.906,1.5) (0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075)</Points>
+                            <Points>(1.151,1.021) (1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16)</Points>
+                            <Points>(1.619,1.245) (1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605)</Points>
+                            <Points>(1.576,1.606) (1.561,1.621) (1.543,1.665) (1.543,1.903) (1.543,2.003)</Points>
+                            <Points>(1.543,2.101) (1.561,2.145) (1.576,2.16) (1.619,2.245) (1.63,2.266)</Points>
+                            <Points>(1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606) (1.491,2.691)</Points>
+                            <Points>(1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7) (1.045,2.691)</Points>
+                            <Points>(0.96,2.606) (0.906,2.5) (0.888,2.383) (0.0035,2.383) (0.0035,2.383)</Points>
+                            <Points>(0.0035,2.86) (0,2.86) (0,4) (2.14,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerD" MaterialName="TU-872_SLK" Number="3">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLD" Name="In2.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLE" Name="In2.Cu_thick" MaterialName="Copper_0.5oz_thick">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu_thick:drawing" DXFName="L3D0"/>
+                    <ColorPattern Color="#ff00ff" Pattern="grey3"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonAHD" Id="916">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonAIE" Id="943">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerE" MaterialName="TU-872_SLK" Number="4">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLF" Name="In3.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In3.Cu:drawing" DXFName="L4D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBGT" Id="1582">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBGW" Id="1585">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVX" Id="4698">
+                            <Points>(4,0) (1.79,0) (1.79,1.110223025e-16) (0.0035,1.110223025e-16) (0.0035,1.383)</Points>
+                            <Points>(0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075) (1.151,1.021)</Points>
+                            <Points>(1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16) (1.619,1.245)</Points>
+                            <Points>(1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605) (1.576,1.606)</Points>
+                            <Points>(1.491,1.691) (1.385,1.745) (1.268,1.763) (1.268,1.763) (1.268,2.003)</Points>
+                            <Points>(1.268,2.003) (1.385,2.021) (1.491,2.075) (1.576,2.16) (1.619,2.245)</Points>
+                            <Points>(1.63,2.266) (1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606)</Points>
+                            <Points>(1.491,2.691) (1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7)</Points>
+                            <Points>(1.045,2.691) (0.96,2.606) (0.906,2.5) (0.888,2.383) (0.906,2.266)</Points>
+                            <Points>(0.96,2.16) (1.045,2.075) (1.151,2.021) (1.268,2.003) (1.268,1.763)</Points>
+                            <Points>(1.151,1.745) (1.085,1.711) (1.045,1.691) (0.96,1.606) (0.906,1.5)</Points>
+                            <Points>(0.888,1.383) (0.0035,1.383) (0.0035,1.383) (0.0035,2.383) (0.0035,2.9)</Points>
+                            <Points>(0,2.9) (0,4) (4,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerF" MaterialName="Shengyi_S1000-2M" Number="5">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLG" Name="In4.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In4.Cu:drawing" DXFName="L5D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonBLH" Id="1700">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonBLL" Id="1704">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFVY" Id="4699">
+                            <Points>(4,0) (1.79,0) (1.79,1.110223025e-16) (0.0035,1.110223025e-16) (0.0035,1.383)</Points>
+                            <Points>(0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075) (1.151,1.021)</Points>
+                            <Points>(1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16) (1.619,1.245)</Points>
+                            <Points>(1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605) (1.576,1.606)</Points>
+                            <Points>(1.491,1.691) (1.385,1.745) (1.268,1.763) (1.268,1.763) (1.268,2.003)</Points>
+                            <Points>(1.268,2.003) (1.385,2.021) (1.491,2.075) (1.576,2.16) (1.619,2.245)</Points>
+                            <Points>(1.63,2.266) (1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606)</Points>
+                            <Points>(1.491,2.691) (1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7)</Points>
+                            <Points>(1.045,2.691) (0.96,2.606) (0.906,2.5) (0.888,2.383) (0.906,2.266)</Points>
+                            <Points>(0.96,2.16) (1.045,2.075) (1.151,2.021) (1.268,2.003) (1.268,1.763)</Points>
+                            <Points>(1.151,1.745) (1.085,1.711) (1.045,1.691) (0.96,1.606) (0.906,1.5)</Points>
+                            <Points>(0.888,1.383) (0.0035,1.383) (0.0035,1.383) (0.0035,2.383) (0.0035,2.9)</Points>
+                            <Points>(0,2.9) (0,4) (4,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerG" MaterialName="Shengyi_S1000-2M" Number="6">
+            <DielectricMaterialModel Thickness="0.5"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLH" Name="In5.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L6D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonFVZ" Id="4700">
+                            <Points>(4,0) (1.79,0) (1.79,1.110223025e-16) (0.0035,1.110223025e-16) (0.0035,1.383)</Points>
+                            <Points>(0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075) (1.151,1.021)</Points>
+                            <Points>(1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16) (1.619,1.245)</Points>
+                            <Points>(1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605) (1.576,1.606)</Points>
+                            <Points>(1.491,1.691) (1.385,1.745) (1.268,1.763) (1.268,1.763) (1.268,2.003)</Points>
+                            <Points>(1.268,2.003) (1.385,2.021) (1.491,2.075) (1.576,2.16) (1.619,2.245)</Points>
+                            <Points>(1.63,2.266) (1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606)</Points>
+                            <Points>(1.491,2.691) (1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7)</Points>
+                            <Points>(1.045,2.691) (0.96,2.606) (0.906,2.5) (0.888,2.383) (0.906,2.266)</Points>
+                            <Points>(0.96,2.16) (1.045,2.075) (1.151,2.021) (1.268,2.003) (1.268,1.763)</Points>
+                            <Points>(1.151,1.745) (1.085,1.711) (1.045,1.691) (0.96,1.606) (0.906,1.5)</Points>
+                            <Points>(0.888,1.383) (0.0035,1.383) (0.0035,1.383) (0.0035,2.383) (0.0035,2.9)</Points>
+                            <Points>(0,2.9) (0,4) (4,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerH" MaterialName="Shengyi_S1000-2M" Number="7">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLI" Name="In6.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L7D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonCJC" Id="2319">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCJF" Id="2322">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFWB" Id="4702">
+                            <Points>(4,0) (1.79,0) (1.79,1.110223025e-16) (0.0035,1.110223025e-16) (0.0035,1.383)</Points>
+                            <Points>(0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075) (1.151,1.021)</Points>
+                            <Points>(1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16) (1.619,1.245)</Points>
+                            <Points>(1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605) (1.576,1.606)</Points>
+                            <Points>(1.491,1.691) (1.385,1.745) (1.268,1.763) (1.268,1.763) (1.268,2.003)</Points>
+                            <Points>(1.268,2.003) (1.385,2.021) (1.491,2.075) (1.576,2.16) (1.619,2.245)</Points>
+                            <Points>(1.63,2.266) (1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606)</Points>
+                            <Points>(1.491,2.691) (1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7)</Points>
+                            <Points>(1.045,2.691) (0.96,2.606) (0.906,2.5) (0.888,2.383) (0.906,2.266)</Points>
+                            <Points>(0.96,2.16) (1.045,2.075) (1.151,2.021) (1.268,2.003) (1.268,1.763)</Points>
+                            <Points>(1.151,1.745) (1.085,1.711) (1.045,1.691) (0.96,1.606) (0.906,1.5)</Points>
+                            <Points>(0.888,1.383) (0.0035,1.383) (0.0035,1.383) (0.0035,2.383) (0.0035,2.9)</Points>
+                            <Points>(0,2.9) (0,4) (4,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerI" MaterialName="TU-872_SLK" Number="8">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLJ" Name="In7.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLK" Name="In7.Cu_thick" MaterialName="Copper_0.5oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu_thick:drawing" DXFName="L8D0"/>
+                    <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonCOZ" Id="2472">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonCQL" Id="2510">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerJ" MaterialName="TU-872_SLK" Number="9">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLL" Name="In8.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In6.Cu:drawing" DXFName="L9D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonDOT" Id="3142">
+                            <Points>(1.257,2.608) (1.235,2.606) (1.213,2.601) (1.192,2.595) (1.172,2.586)</Points>
+                            <Points>(1.152,2.576) (1.134,2.564) (1.117,2.55) (1.101,2.534) (1.087,2.517)</Points>
+                            <Points>(1.075,2.499) (1.065,2.479) (1.056,2.459) (1.05,2.438) (1.045,2.416)</Points>
+                            <Points>(1.043,2.394) (1.043,2.372) (1.045,2.35) (1.05,2.328) (1.056,2.307)</Points>
+                            <Points>(1.065,2.287) (1.075,2.267) (1.087,2.249) (1.101,2.232) (1.117,2.216)</Points>
+                            <Points>(1.134,2.202) (1.152,2.19) (1.172,2.18) (1.192,2.171) (1.213,2.165)</Points>
+                            <Points>(1.235,2.16) (1.257,2.158) (1.279,2.158) (1.301,2.16) (1.323,2.165)</Points>
+                            <Points>(1.344,2.171) (1.364,2.18) (1.384,2.19) (1.402,2.202) (1.419,2.216)</Points>
+                            <Points>(1.435,2.232) (1.449,2.249) (1.461,2.267) (1.471,2.287) (1.48,2.307)</Points>
+                            <Points>(1.486,2.328) (1.491,2.35) (1.493,2.372) (1.493,2.394) (1.491,2.416)</Points>
+                            <Points>(1.486,2.438) (1.48,2.459) (1.471,2.479) (1.461,2.499) (1.449,2.517)</Points>
+                            <Points>(1.435,2.534) (1.419,2.55) (1.402,2.564) (1.384,2.576) (1.364,2.586)</Points>
+                            <Points>(1.344,2.595) (1.323,2.601) (1.301,2.606) (1.279,2.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonDOW" Id="3145">
+                            <Points>(1.257,1.608) (1.235,1.606) (1.213,1.601) (1.192,1.595) (1.172,1.586)</Points>
+                            <Points>(1.152,1.576) (1.134,1.564) (1.117,1.55) (1.101,1.534) (1.087,1.517)</Points>
+                            <Points>(1.075,1.499) (1.065,1.479) (1.056,1.459) (1.05,1.438) (1.045,1.416)</Points>
+                            <Points>(1.043,1.394) (1.043,1.372) (1.045,1.35) (1.05,1.328) (1.056,1.307)</Points>
+                            <Points>(1.065,1.287) (1.075,1.267) (1.087,1.249) (1.101,1.232) (1.117,1.216)</Points>
+                            <Points>(1.134,1.202) (1.152,1.19) (1.172,1.18) (1.192,1.171) (1.213,1.165)</Points>
+                            <Points>(1.235,1.16) (1.257,1.158) (1.279,1.158) (1.301,1.16) (1.323,1.165)</Points>
+                            <Points>(1.344,1.171) (1.364,1.18) (1.384,1.19) (1.402,1.202) (1.419,1.216)</Points>
+                            <Points>(1.435,1.232) (1.449,1.249) (1.461,1.267) (1.471,1.287) (1.48,1.307)</Points>
+                            <Points>(1.486,1.328) (1.491,1.35) (1.493,1.372) (1.493,1.394) (1.491,1.416)</Points>
+                            <Points>(1.486,1.438) (1.48,1.459) (1.471,1.479) (1.461,1.499) (1.449,1.517)</Points>
+                            <Points>(1.435,1.534) (1.419,1.55) (1.402,1.564) (1.384,1.576) (1.364,1.586)</Points>
+                            <Points>(1.344,1.595) (1.323,1.601) (1.301,1.606) (1.279,1.608)</Points>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFWC" Id="4703">
+                            <Points>(4,0) (1.79,0) (1.79,1.110223025e-16) (0.0035,1.110223025e-16) (0.0035,1.383)</Points>
+                            <Points>(0.888,1.383) (0.906,1.266) (0.96,1.16) (1.045,1.075) (1.151,1.021)</Points>
+                            <Points>(1.268,1.003) (1.385,1.021) (1.491,1.075) (1.576,1.16) (1.619,1.245)</Points>
+                            <Points>(1.63,1.266) (1.648,1.383) (1.63,1.5) (1.576,1.605) (1.576,1.606)</Points>
+                            <Points>(1.491,1.691) (1.385,1.745) (1.268,1.763) (1.268,1.763) (1.268,2.003)</Points>
+                            <Points>(1.268,2.003) (1.385,2.021) (1.491,2.075) (1.576,2.16) (1.619,2.245)</Points>
+                            <Points>(1.63,2.266) (1.648,2.383) (1.63,2.5) (1.584,2.591) (1.576,2.606)</Points>
+                            <Points>(1.491,2.691) (1.385,2.745) (1.268,2.763) (1.151,2.745) (1.064,2.7)</Points>
+                            <Points>(1.045,2.691) (0.96,2.606) (0.906,2.5) (0.888,2.383) (0.906,2.266)</Points>
+                            <Points>(0.96,2.16) (1.045,2.075) (1.151,2.021) (1.268,2.003) (1.268,1.763)</Points>
+                            <Points>(1.151,1.745) (1.085,1.711) (1.045,1.691) (0.96,1.606) (0.906,1.5)</Points>
+                            <Points>(0.888,1.383) (0.0035,1.383) (0.0035,1.383) (0.0035,2.383) (0.0035,2.9)</Points>
+                            <Points>(0,2.9) (0,4) (4,4)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerK" MaterialName="TU-872_SLK" Number="10">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLM" Name="B.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLN" Name="B.Cu_thick" MaterialName="Copper_1oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thick:drawing" DXFName="L10D0"/>
+                    <ColorPattern Color="#da70d6" Pattern="ltgrey"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonFUT" Id="4664">
+                            <Points>(4,1.753) (1.694,1.753) (1.453,1.512) (1.461,1.499) (1.471,1.479)</Points>
+                            <Points>(1.48,1.459) (1.486,1.438) (1.491,1.416) (1.493,1.394) (1.493,1.372)</Points>
+                            <Points>(1.491,1.35) (1.486,1.328) (1.48,1.307) (1.471,1.287) (1.461,1.267)</Points>
+                            <Points>(1.449,1.249) (1.435,1.232) (1.419,1.216) (1.402,1.202) (1.384,1.19)</Points>
+                            <Points>(1.364,1.18) (1.344,1.171) (1.323,1.165) (1.301,1.16) (1.279,1.158)</Points>
+                            <Points>(1.257,1.158) (1.235,1.16) (1.213,1.165) (1.192,1.171) (1.172,1.18)</Points>
+                            <Points>(1.152,1.19) (1.134,1.202) (1.117,1.216) (1.101,1.232) (1.087,1.249)</Points>
+                            <Points>(1.075,1.267) (1.065,1.287) (1.056,1.307) (1.05,1.328) (1.045,1.35)</Points>
+                            <Points>(1.043,1.372) (1.043,1.394) (1.045,1.416) (1.05,1.438) (1.056,1.459)</Points>
+                            <Points>(1.065,1.479) (1.075,1.499) (1.087,1.517) (1.101,1.534) (1.117,1.55)</Points>
+                            <Points>(1.134,1.564) (1.152,1.576) (1.172,1.586) (1.192,1.595) (1.213,1.601)</Points>
+                            <Points>(1.235,1.606) (1.257,1.608) (1.279,1.608) (1.301,1.606) (1.323,1.601)</Points>
+                            <Points>(1.344,1.595) (1.364,1.586) (1.384,1.576) (1.397,1.568) (1.654,1.825)</Points>
+                            <Points>(1.658,1.827) (1.661,1.829) (1.665,1.83) (1.668,1.831) (1.676,1.833)</Points>
+                            <Points>(4,1.833)</Points>
+                            <Objects>
+                                <Port MacroID="portC" Number="2" Vertex="70">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(4,1.793)</Center>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonFUU" Id="4665">
+                            <Points>(1.301,2.606) (1.323,2.601) (1.344,2.595) (1.364,2.586) (1.384,2.576)</Points>
+                            <Points>(1.402,2.564) (1.419,2.55) (1.435,2.534) (1.449,2.517) (1.461,2.499)</Points>
+                            <Points>(1.471,2.479) (1.48,2.459) (1.486,2.438) (1.491,2.416) (1.493,2.394)</Points>
+                            <Points>(1.493,2.372) (1.491,2.35) (1.486,2.328) (1.48,2.307) (1.471,2.287)</Points>
+                            <Points>(1.461,2.267) (1.453,2.254) (1.694,2.013) (4,2.013) (4,1.933)</Points>
+                            <Points>(1.676,1.933) (1.668,1.935) (1.665,1.936) (1.661,1.937) (1.658,1.939)</Points>
+                            <Points>(1.654,1.941) (1.397,2.198) (1.384,2.19) (1.364,2.18) (1.344,2.171)</Points>
+                            <Points>(1.323,2.165) (1.301,2.16) (1.279,2.158) (1.257,2.158) (1.235,2.16)</Points>
+                            <Points>(1.213,2.165) (1.192,2.171) (1.172,2.18) (1.152,2.19) (1.134,2.202)</Points>
+                            <Points>(1.117,2.216) (1.101,2.232) (1.087,2.249) (1.075,2.267) (1.065,2.287)</Points>
+                            <Points>(1.056,2.307) (1.05,2.328) (1.045,2.35) (1.043,2.372) (1.043,2.394)</Points>
+                            <Points>(1.045,2.416) (1.05,2.438) (1.056,2.459) (1.065,2.479) (1.075,2.499)</Points>
+                            <Points>(1.087,2.517) (1.101,2.534) (1.117,2.55) (1.134,2.564) (1.152,2.576)</Points>
+                            <Points>(1.172,2.586) (1.192,2.595) (1.213,2.601) (1.235,2.606) (1.257,2.608)</Points>
+                            <Points>(1.279,2.608)</Points>
+                            <Objects>
+                                <Port MacroID="portD" Number="-2" Vertex="23">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(4,1.973)</Center>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerL" MaterialName="Soldermask" Number="11">
+            <DielectricMaterialModel Thickness="0.04"/>
+        </Level>
+        <Level MacroID="diel_layerM" MaterialName="Air" Number="12">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <ViaTechLayer MacroID="viaTLA" Name="Via1" MaterialName="Perfect Conductor">
+            <ImportExportMapping CADLayerPurposes="Via1:drawing" DXFName="L11D0"/>
+            <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+            <ViaMaterialModel ModelType="VOLUME" Solid="TRUE"/>
+            <ViaMeshing AutoHeight="FALSE" EnableMesh="TRUE" FillType="RING" HasPads="FALSE"/>
+            <GLGMeshing GLG="FALSE"/>
+            <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
+            <Objects>
+                <ViaPolygon MacroID="polygonESM" Id="3915">
+                    <Points>(1.268,2.508) (1.244,2.506) (1.232,2.503) (1.22,2.498) (1.209,2.493)</Points>
+                    <Points>(1.199,2.487) (1.189,2.48) (1.171,2.462) (1.164,2.452) (1.158,2.442)</Points>
+                    <Points>(1.153,2.431) (1.148,2.419) (1.145,2.407) (1.143,2.383) (1.145,2.359)</Points>
+                    <Points>(1.148,2.347) (1.153,2.335) (1.158,2.324) (1.164,2.314) (1.171,2.304)</Points>
+                    <Points>(1.189,2.286) (1.199,2.279) (1.209,2.273) (1.22,2.268) (1.232,2.263)</Points>
+                    <Points>(1.244,2.26) (1.268,2.258) (1.292,2.26) (1.304,2.263) (1.316,2.268)</Points>
+                    <Points>(1.327,2.273) (1.337,2.279) (1.347,2.286) (1.365,2.304) (1.372,2.314)</Points>
+                    <Points>(1.378,2.324) (1.383,2.335) (1.388,2.347) (1.391,2.359) (1.393,2.383)</Points>
+                    <Points>(1.391,2.407) (1.388,2.419) (1.383,2.431) (1.378,2.442) (1.372,2.452)</Points>
+                    <Points>(1.365,2.462) (1.347,2.48) (1.337,2.487) (1.327,2.493) (1.316,2.498)</Points>
+                    <Points>(1.304,2.503) (1.292,2.506)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonESU" Id="3923">
+                    <Points>(1.268,1.508) (1.244,1.506) (1.232,1.503) (1.22,1.498) (1.209,1.493)</Points>
+                    <Points>(1.199,1.487) (1.189,1.48) (1.171,1.462) (1.164,1.452) (1.158,1.442)</Points>
+                    <Points>(1.153,1.431) (1.148,1.419) (1.145,1.407) (1.143,1.383) (1.145,1.359)</Points>
+                    <Points>(1.148,1.347) (1.153,1.335) (1.158,1.324) (1.164,1.314) (1.171,1.304)</Points>
+                    <Points>(1.189,1.286) (1.199,1.279) (1.209,1.273) (1.22,1.268) (1.232,1.263)</Points>
+                    <Points>(1.244,1.26) (1.268,1.258) (1.292,1.26) (1.304,1.263) (1.316,1.268)</Points>
+                    <Points>(1.327,1.273) (1.337,1.279) (1.347,1.286) (1.365,1.304) (1.372,1.314)</Points>
+                    <Points>(1.378,1.324) (1.383,1.335) (1.388,1.347) (1.391,1.359) (1.393,1.383)</Points>
+                    <Points>(1.391,1.407) (1.388,1.419) (1.383,1.431) (1.378,1.442) (1.372,1.452)</Points>
+                    <Points>(1.365,1.462) (1.347,1.48) (1.337,1.487) (1.327,1.493) (1.316,1.498)</Points>
+                    <Points>(1.304,1.503) (1.292,1.506)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWH" Id="4716">
+                    <Points>(1.14,0.26) (1.39,0.26) (1.39,0.51) (1.14,0.51)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWI" Id="4717">
+                    <Points>(0.14,1.26) (0.39,1.26) (0.39,1.51) (0.14,1.51)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWJ" Id="4718">
+                    <Points>(0.14,2.26) (0.39,2.26) (0.39,2.51) (0.14,2.51)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWK" Id="4719">
+                    <Points>(2.14,1.25) (2.39,1.25) (2.39,1.5) (2.14,1.5)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWL" Id="4720">
+                    <Points>(2.14,2.26) (2.39,2.26) (2.39,2.51) (2.14,2.51)</Points>
+                </ViaPolygon>
+                <ViaPolygon MacroID="polygonFWM" Id="4721">
+                    <Points>(1.14,3.26) (1.39,3.26) (1.39,3.51) (1.14,3.51)</Points>
+                </ViaPolygon>
+            </Objects>
+        </ViaTechLayer>
+    </Geometry>
+    <Sweeps SweepVariables="FALSE">
+        <Set MacroID="sweepsetA" On="TRUE">
+            <Frequencies>
+                <Sweep MacroID="freq_sweepA" Type="ABS_ENTRY" On="TRUE" Adaptive="TRUE" Start="0.01" Stop="30" Target="300"/>
+            </Frequencies>
+        </Set>
+    </Sweeps>
+    <OutputFiles Folder="."/>
+    <Translator>
+        <DXFIMPORT ImportUnits="microns">
+            <Template UseTemplate="TRUE" UsePresentProject="FALSE" KeepPolygons="FALSE"/>
+            <Box BoxType="Template" PlacementType="Center" CellCalcType="Auto" CellSizeX="0.01" CellSizeY="0.01" BoxSizeX="4" BoxSizeY="3"/>
+            <Margins MarginType="Relative" AddMargins="FALSE" TopMargin="0" LeftMargin="0" RightMargin="0" BottomMargin="0"/>
+            <Advanced MergePlanar="FALSE" AdditionalOptions="" ViasRectangular="FALSE" AddViaPads="FALSE" AdditionalViaOptions=""/>
+            <ViaSimplification SimplifyViaArrays="FALSE" MinViasInArray="5" DistanceToSizeRatio="8" SizeRatio="1.5" MaxExpansionCoeff="7" MergePlanarVias="TRUE"/>
+            <BarVias IdentifyBarVias="FALSE" BarViaRatio="2.5"/>
+            <DXFOnly DxfArc="10" DxfTolerance="0.0011" DxfMiter="FALSE"/>
+        </DXFIMPORT>
+    </Translator>
+</SonnetProject>
