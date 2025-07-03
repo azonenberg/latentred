@@ -40,6 +40,15 @@ void InitInterfaces();
 void InitLineCardSensors(I2C& i2c, uint8_t idx);
 void InitTempSensor(I2C& i2c, uint8_t addr, const char* name);
 
+void WaitForVSC8512MCUToFinish(MDIODevice& mdev);
+void ReadVSC8512ShadowRegisters(MDIODevice& mdev);
+void WriteVSC8512ShadowRegisters(MDIODevice& mdev);
+uint16_t ReadVSC8512SerdesRegisterWithoutPostIncrement(MDIODevice& mdev);
+void WriteVSC8512SerdesRegisterWithPostIncrement(MDIODevice& mdev, uint16_t value);
+void WriteVSC8512SerdesRegisterWithoutPostIncrement(MDIODevice& mdev, uint16_t value);
+void SetVSC8512SerdesRegisterIndirectAddress(MDIODevice& mdev, uint16_t addr);
+void SetVSC8512EqualizerCoefficients(MDIODevice& mdev, uint16_t post0);
+
 /**
 	@brief Initialize global GPIO LEDs
  */
@@ -188,6 +197,89 @@ void InitLineCardPHY()
 	InitVSC8512(12);
 }
 
+void WaitForVSC8512MCUToFinish(MDIODevice& mdev)
+{
+	while(true)
+	{
+		auto tmp = mdev.ReadRegister(REG_VSC_GP_GLOBAL_SERDES);
+		if( (tmp & 0x8000) == 0)
+			break;
+	}
+}
+
+/**
+	@brief Read SERDES shadow registers ("MCB") into working buffer ("PRAM")
+ */
+void ReadVSC8512ShadowRegisters(MDIODevice& mdev)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x8113);	//Read shadow registers into working buffer and wait
+	WaitForVSC8512MCUToFinish(mdev);
+}
+
+/**
+	@brief Reads a SERDES register from PRAM without changing the address pointer
+ */
+uint16_t ReadVSC8512SerdesRegisterWithoutPostIncrement(MDIODevice& mdev)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x8007);	//read without post increment
+	WaitForVSC8512MCUToFinish(mdev);
+	return mdev.ReadRegister(REG_VSC_GP_GLOBAL_SERDES) >> 4;
+}
+
+/**
+	@brief Writes a SERDES register to PRAM and increments the address pointer
+ */
+void WriteVSC8512SerdesRegisterWithPostIncrement(MDIODevice& mdev, uint16_t value)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x9006 | (value << 4) );
+	WaitForVSC8512MCUToFinish(mdev);
+}
+
+/**
+	@brief Writes a SERDES register to PRAM without changing the address pointer
+ */
+void WriteVSC8512SerdesRegisterWithoutPostIncrement(MDIODevice& mdev, uint16_t value)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x8006 | (value << 4) );
+	WaitForVSC8512MCUToFinish(mdev);
+}
+
+void SetVSC8512SerdesRegisterIndirectAddress(MDIODevice& mdev, uint16_t addr)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x9000 | addr );
+	WaitForVSC8512MCUToFinish(mdev);
+}
+
+void WriteVSC8512ShadowRegisters(MDIODevice& mdev)
+{
+	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x9cc0);	//Write shadow registers to ports indicated by addr_vec
+	WaitForVSC8512MCUToFinish(mdev);
+}
+
+/**
+	@brief Set the QSGMII SERDES equalizer taps
+ */
+void SetVSC8512EqualizerCoefficients(MDIODevice& mdev, uint16_t post0)
+{
+	//Read the shadow registers
+	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_GENERAL_PURPOSE);
+	ReadVSC8512ShadowRegisters(mdev);
+
+	//Read the POST0 field (split between cfg_buf[9] and [10]), patch in the new value, and write back
+	SetVSC8512SerdesRegisterIndirectAddress(mdev, 0x47d8);		//select cfg_buf[9] = 0x47d8
+	uint16_t tmp = ReadVSC8512SerdesRegisterWithoutPostIncrement(mdev) & 0x1f;
+	tmp |= (post0 & 7) << 5;
+	WriteVSC8512SerdesRegisterWithPostIncrement(mdev, tmp);		//cfg_buf[10] is now selected since we incremented
+	tmp = ReadVSC8512SerdesRegisterWithoutPostIncrement(mdev) & 0xf8;
+	tmp |= (post0 >> 3) & 7;
+	WriteVSC8512SerdesRegisterWithoutPostIncrement(mdev, tmp);
+
+	SetVSC8512SerdesRegisterIndirectAddress(mdev, 0x47ce);		//select addr_vec
+	WriteVSC8512SerdesRegisterWithoutPostIncrement(mdev, 0x0e);	//bitmask to select macros 3:1 but not 0 (QSGMII lanes)
+
+	WriteVSC8512ShadowRegisters(mdev);
+}
+
 void InitVSC8512(uint8_t phyaddr)
 {
 	g_log("Initializing PHY at MDIO base address %d\n", phyaddr);
@@ -333,20 +425,10 @@ void InitVSC8512(uint8_t phyaddr)
 	//Wait until this completes
 	g_log("Selecting 12-PHY QSGMII mode\n");
 	mdev.WriteRegister(REG_VSC8512_PAGESEL, VSC_PAGE_GENERAL_PURPOSE);
-	while(true)
-	{
-		auto tmp = mdev.ReadRegister(REG_VSC_GP_GLOBAL_SERDES);
-		if( (tmp & 0x8000) == 0)
-			break;
-	}
+	WaitForVSC8512MCUToFinish(mdev);
 	mdev.WriteRegister(REG_VSC_GP_GLOBAL_SERDES, 0x80a0);	//table 77 of datasheet says 80a0,
 															//this doesn't seem to match what we see in MESA code? (80e0)
-	while(true)
-	{
-		auto tmp = mdev.ReadRegister(REG_VSC_GP_GLOBAL_SERDES);
-		if( (tmp & 0x8000) == 0)
-			break;
-	}
+	WaitForVSC8512MCUToFinish(mdev);
 
 	//Set MAC mode to QSGMII
 	mdev.WriteMasked(REG_VSC_MAC_MODE, 0x0000, 0xc000);
@@ -409,6 +491,11 @@ void InitVSC8512(uint8_t phyaddr)
 			return;
 		}
 	}
+
+	//Fine tune QSGMII SERDES equalizers on SERDES_E1 to E3
+	//Undocumented magic numbers from vtss_phy_cfg_ob_post0_private in MESA
+	g_log("Set QSGMII SERDES eq\n");
+	SetVSC8512EqualizerCoefficients(mdev, 0x04);
 }
 
 /**
