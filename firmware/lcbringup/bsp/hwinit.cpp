@@ -55,6 +55,8 @@ volatile APB_XADC FXADC __attribute__((section(".fxadc")));
 volatile APB_GPIO FPGA_GPIOB __attribute__((section(".fgpiob")));
 volatile APB_DeviceInfo_UltraScale FKDEVINFO __attribute__((section(".fkdevinfo")));
 
+volatile APB_SPIHostInterface FQSPI __attribute__((section(".fqspi")));
+
 volatile APB_Curve25519 FCURVE25519 __attribute__((section(".fcurve25519")));
 volatile APB_EthernetTxBuffer_10G FETHTX __attribute__((section(".fethtx")));
 volatile APB_EthernetRxBuffer FETHRX __attribute__((section(".fethrx")));
@@ -160,6 +162,10 @@ void BSP_Init()
 	InitITM();
 
 	App_Init();
+
+	//Can't initialize FPGA flash until the SCCB link is up
+	//TODO: should we move SCCB init into the BSP?
+	InitFPGAFlash();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -256,4 +262,26 @@ void InitI2C()
 	g_log("Initializing I2C interfaces\n");
 	static GPIOPin mac_i2c_scl(&GPIOH, 4, GPIOPin::MODE_PERIPHERAL, GPIOPin::SLEW_SLOW, 4, true);
 	static GPIOPin mac_i2c_sda(&GPIOH, 5, GPIOPin::MODE_PERIPHERAL, GPIOPin::SLEW_SLOW, 4, true);
+}
+
+void InitFPGAFlash()
+{
+	g_log("Initializing FPGA flash\n");
+	LogIndenter li(g_log);
+
+	static APB_SpiFlashInterface flash(&FQSPI, 2);	//Divider from PCLK to SCK
+	//g_fpgaFlash = &flash;
+
+	//Read some registers
+	auto sr = flash.GetStatusRegister1();
+	g_log("SR   = %04x\n", sr);
+	auto nvcr = flash.GetNVCR();
+	g_log("NVCR = %04x\n", nvcr);
+
+	//Set NVCR to use 3-byte address mode
+	if(nvcr != 0xffff)
+		flash.WriteNVCR(0xffff);
+
+	//Validate SFDP
+	flash.SFDPMultipleReadTest(1000);
 }

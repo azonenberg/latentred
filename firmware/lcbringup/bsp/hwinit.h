@@ -73,6 +73,8 @@ extern APB_GPIOPin g_fpgaLEDs[4];
 //extern bool g_usingDHCP;
 //extern ManagementDHCPClient* g_dhcpClient;
 
+void InitFPGAFlash();
+
 extern SSHKeyManager g_keyMgr;
 
 extern const char* g_defaultSshUsername;
@@ -92,6 +94,7 @@ extern volatile APB_GPIO FPGA_GPIOB;
 extern volatile APB_MDIO FMDIO;
 extern volatile APB_DeviceInfo_7series FDEVINFO;
 extern volatile APB_DeviceInfo_UltraScale FKDEVINFO;
+extern volatile APB_SPIHostInterface FQSPI;
 
 extern volatile APB_Curve25519 FCURVE25519;
 
