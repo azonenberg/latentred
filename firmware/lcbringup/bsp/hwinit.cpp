@@ -98,6 +98,15 @@ APB_GPIOPin g_fpgaLEDs[4] =
 APB_GPIOPin g_qsfp0_lpmode(&FPGA_GPIOB, 2, APB_GPIOPin::MODE_OUTPUT, APB_GPIOPin::INIT_DEFERRED);
 APB_GPIOPin g_qsfp0_rst_n(&FPGA_GPIOB, 4, APB_GPIOPin::MODE_OUTPUT, APB_GPIOPin::INIT_DEFERRED);
 
+//PHYs on the line cards
+VSC8512 g_linecard0_phy0(&FMDIO, 0);
+VSC8512 g_linecard0_phy1(&FMDIO, 12);
+VSC8512* g_linecard0_phys[2] =
+{
+	&g_linecard0_phy0,
+	&g_linecard0_phy1
+};
+
 /**
 	@brief MAC address I2C EEPROM
 	Default kernel clock for I2C2 is pclk2 (68.75 MHz for our current config)

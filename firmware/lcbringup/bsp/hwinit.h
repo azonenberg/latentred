@@ -62,6 +62,8 @@
 #include <boilerplate/h735/StandardBSP.h>
 #include <fpga/FMCUtils.h>
 
+#include <drivers/VSC8512.h>
+
 void App_Init();
 void InitFMC();
 void InitI2C();
@@ -100,5 +102,9 @@ extern volatile APB_Curve25519 FCURVE25519;
 
 extern APB_GPIOPin g_qsfp0_lpmode;
 extern APB_GPIOPin g_qsfp0_rst_n;
+
+extern VSC8512 g_linecard0_phy0;
+extern VSC8512 g_linecard0_phy1;
+extern VSC8512* g_linecard0_phys[2];
 
 #endif

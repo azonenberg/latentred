@@ -744,22 +744,20 @@ void LatentRedCLISessionContext::PrintLineCardInfo(uint32_t ncard, I2C& i2c)
 {
 	m_stream->Printf("Line card %d:\n", ncard);
 
-	//Lock the PHY MDIO interface
+	//Lock the PHY MDIO interface so nothing else will mess with it
 	auto& state = g_portState->m_lineCardState[ncard];
 	while(!state.m_mutex.TryLock())
 		state.m_pollTask.Iteration();
-	MDIODevice md0(state.m_mdio, 0);
-	MDIODevice md1(state.m_mdio, 12);
 
 	//Read I2C temps
 	m_stream->Printf("    Temperatures:\n");
 	uint16_t temp;
 	if(i2c.BlockingRead16(0x90, temp))
 		m_stream->Printf("        PHY 0 (PCB): %uhk C\n", temp);
-	m_stream->Printf("        PHY 0 (int): %uhk C\n", GetVSC8512Temperature(md0));
+	m_stream->Printf("        PHY 0 (int): %uhk C\n", g_linecard0_phys[0]->GetTemperature());
 	if(i2c.BlockingRead16(0x92, temp))
 		m_stream->Printf("        PHY 1 (PCB): %uhk C\n", temp);
-	m_stream->Printf("        PHY 1 (int): %uhk C\n", GetVSC8512Temperature(md1));
+	m_stream->Printf("        PHY 1 (int): %uhk C\n", g_linecard0_phys[1]->GetTemperature());
 	if(i2c.BlockingRead16(0x94, temp))
 		m_stream->Printf("        PSU (PCB):   %uhk C\n", temp);
 

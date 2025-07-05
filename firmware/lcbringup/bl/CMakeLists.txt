@@ -21,6 +21,7 @@ target_link_libraries(bootloader
 	common-embedded-platform-boilerplate-h735
 	common-embedded-platform-bootloader
 	common-embedded-platform-core
+	common-embedded-platform-drivers
 	common-embedded-platform-fpga
 	common-embedded-platform-tcpip
 	common-embedded-platform-services
