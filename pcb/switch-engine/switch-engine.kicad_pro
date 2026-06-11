@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.25
+          "min_clearance": 0.15
         }
       },
       "diff_pair_dimensions": [
@@ -68,7 +68,12 @@
           "width": 0.079
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_edge_clearance|73000000|31000000|da9a6f9e-3f58-478d-a943-2ef82769e872|952573da-6be7-46fa-8f60-2b550eba33cc",
+        "silk_edge_clearance|91000000|31000000|da9a6f9e-3f58-478d-a943-2ef82769e872|a6b26c3a-b49c-4d9a-a529-5b494401adcc",
+        "silk_over_copper|73000000|32841837|952573da-6be7-46fa-8f60-2b550eba33cc|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|90942268|32733828|a6b26c3a-b49c-4d9a-a529-5b494401adcc|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -502,7 +507,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "output/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
