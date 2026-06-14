@@ -1,0 +1,567 @@
+version: 2
+metadata:
+  appver: ngscopeclient v0.1.1-571-gf282c3f2a
+  appdate: Jun 11 2026 09:01:26
+  created: 2026-06-13 22:41:16
+instruments: ~
+triggergroups: ~
+decodes:
+  filter5:
+    inputs: ~
+    parameters:
+      Touchstone File:
+        type: unitless (linear)
+        value: /tmp/arc6-backside5-arc6launch-1.s2p
+    id: 5
+    protocol: Touchstone Import
+    color: "#1f78b4"
+    nick: arc6-backside5-arc6launch-1.s2p
+    name: arc6-backside5-arc6launch-1.s2p
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 45.5499611
+        offset: 38.750824
+        yunit: dB
+      stream1:
+        index: 1
+        vrange: 350.444397
+        offset: 2.90657043
+        yunit: °
+      stream2:
+        index: 2
+        vrange: 0.667298079
+        offset: 0.324824035
+        yunit: dB
+      stream3:
+        index: 3
+        vrange: 314.63092
+        offset: -29.5004845
+        yunit: °
+      stream4:
+        index: 4
+        vrange: 2.36270642
+        offset: 1.0410099
+        yunit: dB
+      stream5:
+        index: 5
+        vrange: 314.63092
+        offset: -29.5004845
+        yunit: °
+      stream6:
+        index: 6
+        vrange: 45.9471779
+        offset: 38.5060272
+        yunit: dB
+      stream7:
+        index: 7
+        vrange: 339.662048
+        offset: 17.7419891
+        yunit: °
+  filter53:
+    inputs:
+      din: 2/1
+    parameters:
+      Pj Amplitude:
+        type: fs
+        value: 0.0000000 fs
+      Pj Frequency:
+        type: Hz
+        value: 10.000000 MHz
+      Rj Stdev:
+        type: fs
+        value: 500.0000 fs
+    id: 53
+    protocol: Jitter
+    color: "#fdbf6f"
+    nick: Jitter_1
+    name: Jitter_1
+    xunit: fs
+  filter65:
+    inputs: ~
+    parameters:
+      Beginning Level:
+        type: V
+        value: 0.0000000 mV
+      Ending Level:
+        type: V
+        value: 1.0000000 V
+      Memory Depth:
+        type: sa
+        value: 100 kS
+      Sample Rate:
+        type: sa/s
+        value: 500 GS/s
+      Step Position:
+        type: sa
+        value: 50 kS
+    id: 65
+    protocol: Step
+    color: "#cab2d6"
+    nick: Step_1
+    name: Step_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
+  filter114:
+    inputs:
+      din: 5/4
+    parameters: ~
+    id: 114
+    protocol: Memory
+    color: "#f3ff00"
+    nick: dumb
+    name: Memory_5
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 2.36270642
+        offset: 1.0410099
+        yunit: dB
+  filter14:
+    inputs:
+      data: 2/0
+      clk: 53/0
+    parameters:
+      Level 0:
+        type: V
+        value: -200.0000 mV
+      Level 1:
+        type: V
+        value: 200.0000 mV
+      Sample Rate:
+        type: sa/s
+        value: 500 GS/s
+      Transition Time:
+        type: fs
+        value: 10 ps
+    id: 14
+    protocol: Digital to NRZ
+    color: "#b2df8a"
+    nick: DigitaltoNRZ_1
+    name: DigitaltoNRZ_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.466666698
+        offset: -0
+        yunit: V
+  filter69:
+    inputs:
+      voltage: 66/0
+    parameters:
+      Output Format:
+        type: unitless (linear)
+        value: Impedance
+      Port impedance:
+        type: Ω
+        value: 100.00000 Ω
+      Step end:
+        type: V
+        value: 0.0000000 mV
+      Step start:
+        type: V
+        value: -1.0000000 V
+    id: 69
+    protocol: TDR
+    color: "#f300ff"
+    nick: TDRImpedance(ChannelEmulation_2)
+    name: TDRImpedance(ChannelEmulation_2)
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 45.1513824
+        offset: -88.0288467
+        yunit: Ω
+  filter115:
+    inputs:
+      din: 5/4
+    parameters: ~
+    id: 115
+    protocol: Memory
+    color: "#ff0000"
+    nick: backside5-1
+    name: Memory_6
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: 1.0410099
+        yunit: dB
+  filter83:
+    inputs:
+      din: 69/0
+    parameters: ~
+    id: 83
+    protocol: Memory
+    color: "#f3ff00"
+    nick: dumb
+    name: Memory_3
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 45.1513824
+        offset: -88.0288467
+        yunit: Ω
+  filter78:
+    inputs:
+      din: 69/0
+    parameters: ~
+    id: 78
+    protocol: Memory
+    color: "#2868b1"
+    nick: Baseline
+    name: Memory_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 45.1513824
+        offset: -88.0288467
+        yunit: Ω
+  filter66:
+    inputs:
+      signal: 65/0
+      mag: 5/0
+      angle: 5/1
+    parameters:
+      Group Delay Truncation:
+        type: fs
+        value: 0 fs
+      Group Delay Truncation Mode:
+        type: unitless (linear)
+        value: Auto
+      Max Gain:
+        type: dB
+        value: 20.00000 dB
+    id: 66
+    protocol: Channel Emulation
+    color: "#6a3d9a"
+    nick: ChannelEmulation_2
+    name: ChannelEmulation_2
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
+  filter2:
+    inputs: ~
+    parameters:
+      Data Rate:
+        type: b/s
+        value: 25.78125 Gbps
+      Depth:
+        type: sa
+        value: 1 MS
+      Polynomial:
+        type: unitless (linear)
+        value: PRBS-31
+    id: 2
+    protocol: PRBS
+    color: "#a6cee3"
+    nick: PRBS31(25.78125 Gbps)
+    name: PRBS31(25.78125 Gbps)
+    xunit: fs
+  filter25:
+    inputs:
+      IN: 43/0
+      Gate: 0
+      Edges: 0
+    parameters:
+      Multithreading:
+        type: unitless (linear)
+        value: GPU
+      Symbol rate:
+        type: Hz
+        value: 25.78125 GHz
+      Threshold:
+        type: V
+        value: 0.0000000 mV
+    id: 25
+    protocol: Clock Recovery (PLL)
+    color: "#33a02c"
+    nick: ClockRecoveryPLL_1
+    name: ClockRecoveryPLL_1
+    xunit: fs
+    streams:
+      stream1:
+        index: 1
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
+  filter32:
+    inputs:
+      din: 43/0
+      clk: 25/0
+    parameters:
+      Bit Rate:
+        type: b/s
+        value: 1.25 Gbps
+      Bit Rate Mode:
+        type: unitless (linear)
+        value: Auto
+      Center Voltage:
+        type: V
+        value: 0.0000000 mV
+      Clock Alignment:
+        type: unitless (linear)
+        value: Center
+      Clock Edge:
+        type: unitless (linear)
+        value: Both
+      Mask:
+        type: unitless (linear)
+        value: /ceph/fast/home/azonenberg/code/scopehal-apps/src/ngscopeclient/masks/xfi.yml
+      Modulation Levels:
+        type: unitless (linear)
+        value: 2
+      Saturation Level:
+        type: unitless (linear)
+        value: 1.0000000
+      Vertical Range:
+        type: V
+        value: 250.0000 mV
+      Vertical Scale Mode:
+        type: unitless (linear)
+        value: Auto
+    id: 32
+    protocol: Eye pattern
+    color: "#fb9a99"
+    nick: Eyepattern_1
+    name: Eyepattern_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
+      stream1:
+        index: 1
+        vrange: 0.576131761
+        offset: -0
+        yunit: ratio (scientific)
+      stream2:
+        index: 2
+        vrange: 0.576131761
+        offset: -0
+        yunit: UI
+      stream3:
+        index: 3
+        vrange: 0.576131761
+        offset: -0
+        yunit: sa
+  filter43:
+    inputs:
+      signal: 58/0
+      mag: 5/4
+      angle: 5/5
+    parameters:
+      Group Delay Truncation:
+        type: fs
+        value: 0 fs
+      Group Delay Truncation Mode:
+        type: unitless (linear)
+        value: Auto
+      Max Gain:
+        type: dB
+        value: 20.00000 dB
+    id: 43
+    protocol: Channel Emulation
+    color: "#e31a1c"
+    nick: ChannelEmulation_1
+    name: ChannelEmulation_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
+  filter58:
+    inputs:
+      din: 14/0
+    parameters:
+      Deviation:
+        type: V
+        value: 5.000000 mV
+    id: 58
+    protocol: Noise
+    color: "#ff7f00"
+    nick: Noise_1
+    name: Noise_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.466666698
+        offset: -0
+        yunit: V
+  filter79:
+    inputs:
+      din: 69/0
+    parameters: ~
+    id: 79
+    protocol: Memory
+    color: "#ff0000"
+    nick: backside5-1
+    name: Memory_2
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 45.1513824
+        offset: -88.0288467
+        yunit: Ω
+ui_config:
+  window:
+    height: 1147
+    width: 2082
+    fullscreen: false
+    traceAlpha: 0.75
+    persistenceDecay: 0.800000012
+  areas:
+    area107:
+      id: 107
+      ycursors:
+        mode: none
+        pos0: 0
+        pos1: 0
+      streams:
+        stream0:
+          persistence: false
+          channel: 43
+          stream: 0
+          colorRamp: eye-gradient-viridis
+    area109:
+      id: 109
+      ycursors:
+        mode: none
+        pos0: 0
+        pos1: 0
+      streams:
+        stream0:
+          persistence: false
+          channel: 5
+          stream: 4
+          colorRamp: eye-gradient-viridis
+        stream1:
+          persistence: false
+          channel: 114
+          stream: 0
+          colorRamp: eye-gradient-viridis
+        stream2:
+          persistence: false
+          channel: 115
+          stream: 0
+          colorRamp: eye-gradient-viridis
+    area111:
+      id: 111
+      ycursors:
+        mode: none
+        pos0: 0
+        pos1: 0
+      streams:
+        stream0:
+          persistence: false
+          channel: 32
+          stream: 0
+          colorRamp: eye-gradient-viridis
+    area113:
+      id: 113
+      ycursors:
+        mode: none
+        pos0: 0
+        pos1: 0
+      streams:
+        stream0:
+          persistence: false
+          channel: 69
+          stream: 0
+          colorRamp: eye-gradient-viridis
+        stream1:
+          persistence: false
+          channel: 78
+          stream: 0
+          colorRamp: eye-gradient-viridis
+        stream2:
+          persistence: false
+          channel: 79
+          stream: 0
+          colorRamp: eye-gradient-viridis
+        stream3:
+          persistence: false
+          channel: 83
+          stream: 0
+          colorRamp: eye-gradient-viridis
+  groups:
+    group106:
+      timebaseResolution: fs
+      pixelsPerXUnit: 0.000569531345
+      xAxisOffset: 7121995
+      name: Waveform Group 1
+      id: Waveform Group 1
+      cursorConfig: none
+      xcursor0: 0
+      xcursor1: 0
+      areas:
+        area107:
+          id: 107
+    group108:
+      timebaseResolution: fs
+      pixelsPerXUnit: 3.38319737e-08
+      xAxisOffset: -9063499776
+      name: s-params
+      id: Waveform Group 2
+      cursorConfig: none
+      xcursor0: 0
+      xcursor1: 0
+      areas:
+        area109:
+          id: 109
+    group110:
+      timebaseResolution: fs
+      pixelsPerXUnit: 0.0105838031
+      xAxisOffset: -38785
+      name: Waveform Group 3
+      id: Waveform Group 3
+      cursorConfig: none
+      xcursor0: 0
+      xcursor1: 0
+      areas:
+        area111:
+          id: 111
+    group112:
+      timebaseResolution: fs
+      pixelsPerXUnit: 0.00432487857
+      xAxisOffset: 99953969
+      name: Waveform Group 4
+      id: Waveform Group 4
+      cursorConfig: none
+      xcursor0: 0
+      xcursor1: 0
+      areas:
+        area113:
+          id: 113
+  markers: ~
+  dialogs:
+    streambrowser: true
+    filterpalette: true
+    filtergraph: true
+  workspaces:
+    - id: 1
+      title: Filter Graph
+    - id: 24
+      title: New Workspace
