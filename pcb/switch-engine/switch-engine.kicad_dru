@@ -1,0 +1,6 @@
+(version 1)
+(rule "ViaToPlaneClearance"
+	(layer inner)
+	(condition "A.Type == 'Zone'")
+	(condition "B.Type == 'Via'")
+	(constraint hole_clearance (min 0.25mm)))
