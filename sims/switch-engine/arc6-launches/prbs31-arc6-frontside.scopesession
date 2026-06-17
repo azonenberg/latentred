@@ -1,8 +1,8 @@
 version: 2
 metadata:
   appver: ngscopeclient v0.1.1-589-gcceaaec97
-  appdate: Jun 14 2026 21:47:43
-  created: 2026-06-15 03:47:23
+  appdate: Jun 15 2026 03:59:28
+  created: 2026-06-17 15:53:31
 instruments: ~
 triggergroups: ~
 decodes:
@@ -11,12 +11,12 @@ decodes:
     parameters:
       Touchstone File:
         type: unitless (linear)
-        value: /tmp/arc6-frontside7-smolcut.s2p
+        value: /tmp/arc6-frontside7-smolcut2-finer2.s2p
     id: 5
     protocol: Touchstone Import
     color: "#1f78b4"
-    nick: arc6-frontside7-smolcut.s2p
-    name: arc6-frontside7-smolcut.s2p
+    nick: arc6-frontside7-smolcut2-finer2.s2p
+    name: arc6-frontside7-smolcut2-finer2.s2p
     xunit: Hz
     streams:
       stream0:
@@ -41,8 +41,8 @@ decodes:
         yunit: °
       stream4:
         index: 4
-        vrange: 7.42706728
-        offset: 3.50864935
+        vrange: 9.16921902
+        offset: 4.29261732
         yunit: dB
       stream5:
         index: 5
@@ -59,6 +59,36 @@ decodes:
         vrange: 304.705841
         offset: 2.44409943
         yunit: °
+  filter65:
+    inputs: ~
+    parameters:
+      Beginning Level:
+        type: V
+        value: 0.0000000 mV
+      Ending Level:
+        type: V
+        value: 1.0000000 V
+      Memory Depth:
+        type: sa
+        value: 100 kS
+      Sample Rate:
+        type: sa/s
+        value: 500 GS/s
+      Step Position:
+        type: sa
+        value: 50 kS
+    id: 65
+    protocol: Step
+    color: "#cab2d6"
+    nick: Step_1
+    name: Step_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 0.576131761
+        offset: -0
+        yunit: V
   filter53:
     inputs:
       din: 2/1
@@ -107,36 +137,6 @@ decodes:
         vrange: 0.466666698
         offset: -0
         yunit: V
-  filter65:
-    inputs: ~
-    parameters:
-      Beginning Level:
-        type: V
-        value: 0.0000000 mV
-      Ending Level:
-        type: V
-        value: 1.0000000 V
-      Memory Depth:
-        type: sa
-        value: 100 kS
-      Sample Rate:
-        type: sa/s
-        value: 500 GS/s
-      Step Position:
-        type: sa
-        value: 50 kS
-    id: 65
-    protocol: Step
-    color: "#cab2d6"
-    nick: Step_1
-    name: Step_1
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 0.576131761
-        offset: -0
-        yunit: V
   filter69:
     inputs:
       voltage: 66/0
@@ -155,96 +155,81 @@ decodes:
         value: -1.0000000 V
     id: 69
     protocol: TDR
-    color: "#f300ff"
+    color: "#1f78b4"
     nick: TDRImpedance(ChannelEmulation_2)
     name: TDRImpedance(ChannelEmulation_2)
     xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 68.8178329
-        offset: -97.5679169
+        vrange: 55.7424469
+        offset: -95.8047562
         yunit: Ω
-  filter126:
+  filter143:
     inputs:
-      din: 5/4
+      din: 69/0
     parameters: ~
-    id: 126
+    id: 143
     protocol: Memory
-    color: "#ff0000"
+    color: "#008000"
     nick: NoCutouts
-    name: Memory_8
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 7.42706728
-        offset: 3.50864935
-        yunit: dB
-  filter132:
-    inputs:
-      din: 5/4
-    parameters: ~
-    id: 132
-    protocol: Memory
-    color: "#ff8000"
-    nick: Final
-    name: Memory_14
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 7.42706728
-        offset: 3.50864935
-        yunit: dB
-  filter127:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 127
-    protocol: Memory
-    color: "#0000ff"
-    nick: NoArc6cUT
-    name: Memory_13
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 68.8178329
-        offset: -97.5679169
-        yunit: Ω
-  filter128:
-    inputs:
-      din: 5/4
-    parameters: ~
-    id: 128
-    protocol: Memory
-    color: "#0000ff"
-    nick: NoARC6Cut
     name: Memory_12
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 7.42706728
-        offset: 3.50864935
-        yunit: dB
-  filter133:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 133
-    protocol: Memory
-    color: "#ff8000"
-    nick: Final
-    name: Memory_15
     xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 68.8178329
-        offset: -97.5679169
+        vrange: 55.7424469
+        offset: -95.8047562
         yunit: Ω
+  filter157:
+    inputs:
+      IN+: 145/0
+      IN-: 146/0
+    parameters: ~
+    id: 157
+    protocol: Subtract
+    color: "#e3c01a"
+    nick: CutoutDelta
+    name: Subtract_1
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 4.14976025
+        offset: 1.9756
+        yunit: dB
+  filter144:
+    inputs:
+      din: 5/4
+    parameters: ~
+    id: 144
+    protocol: Memory
+    color: "#00c0ff"
+    nick: OldFanout
+    name: Memory_13
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 9.16921902
+        offset: 4.29261732
+        yunit: dB
+  filter145:
+    inputs:
+      din: 5/4
+    parameters: ~
+    id: 145
+    protocol: Memory
+    color: "#008000"
+    nick: NoCutouts
+    name: Memory_11
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 9.16921902
+        offset: 4.29261732
+        yunit: dB
   filter66:
     inputs:
       signal: 65/0
@@ -425,53 +410,53 @@ decodes:
         vrange: 0.466666698
         offset: -0
         yunit: V
-  filter129:
+  filter146:
     inputs:
       din: 5/4
     parameters: ~
-    id: 129
+    id: 146
     protocol: Memory
-    color: "#00ff00"
-    nick: NoBgaCut
-    name: Memory_10
+    color: "#ff0000"
+    nick: final
+    name: Memory_15
     xunit: Hz
     streams:
       stream0:
         index: 0
-        vrange: 7.42706728
-        offset: 3.50864935
+        vrange: 9.16921902
+        offset: 4.29261732
         yunit: dB
-  filter130:
+  filter147:
     inputs:
       din: 69/0
     parameters: ~
-    id: 130
+    id: 147
+    protocol: Memory
+    color: "#00c0ff"
+    nick: OldFanout
+    name: Memory_14
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 55.7424469
+        offset: -95.8047562
+        yunit: Ω
+  filter148:
+    inputs:
+      din: 69/0
+    parameters: ~
+    id: 148
     protocol: Memory
     color: "#ff0000"
-    nick: NoCutouts
-    name: Memory_9
+    nick: Final
+    name: Memory_16
     xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 68.8178329
-        offset: -97.5679169
-        yunit: Ω
-  filter131:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 131
-    protocol: Memory
-    color: "#00ff00"
-    nick: NoBGACut
-    name: Memory_11
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 68.8178329
-        offset: -97.5679169
+        vrange: 55.7424469
+        offset: -95.8047562
         yunit: Ω
 ui_config:
   window:
@@ -481,8 +466,8 @@ ui_config:
     traceAlpha: 0.75
     persistenceDecay: 0.800000012
   areas:
-    area135:
-      id: 135
+    area150:
+      id: 150
       ycursors:
         mode: none
         pos0: 0
@@ -493,8 +478,8 @@ ui_config:
           channel: 43
           stream: 0
           colorRamp: eye-gradient-viridis
-    area137:
-      id: 137
+    area152:
+      id: 152
       ycursors:
         mode: none
         pos0: 0
@@ -507,26 +492,21 @@ ui_config:
           colorRamp: eye-gradient-viridis
         stream1:
           persistence: false
-          channel: 126
+          channel: 145
           stream: 0
           colorRamp: eye-gradient-viridis
         stream2:
           persistence: false
-          channel: 129
+          channel: 144
           stream: 0
           colorRamp: eye-gradient-viridis
         stream3:
           persistence: false
-          channel: 128
+          channel: 146
           stream: 0
           colorRamp: eye-gradient-viridis
-        stream4:
-          persistence: false
-          channel: 132
-          stream: 0
-          colorRamp: eye-gradient-viridis
-    area139:
-      id: 139
+    area154:
+      id: 154
       ycursors:
         mode: none
         pos0: 0
@@ -537,8 +517,8 @@ ui_config:
           channel: 32
           stream: 0
           colorRamp: eye-gradient-viridis
-    area141:
-      id: 141
+    area156:
+      id: 156
       ycursors:
         mode: none
         pos0: 0
@@ -551,26 +531,33 @@ ui_config:
           colorRamp: eye-gradient-viridis
         stream1:
           persistence: false
-          channel: 130
+          channel: 143
           stream: 0
           colorRamp: eye-gradient-viridis
         stream2:
           persistence: false
-          channel: 131
+          channel: 147
           stream: 0
           colorRamp: eye-gradient-viridis
         stream3:
           persistence: false
-          channel: 127
+          channel: 148
           stream: 0
           colorRamp: eye-gradient-viridis
-        stream4:
+    area159:
+      id: 159
+      ycursors:
+        mode: none
+        pos0: 0
+        pos1: 0
+      streams:
+        stream0:
           persistence: false
-          channel: 133
+          channel: 157
           stream: 0
           colorRamp: eye-gradient-viridis
   groups:
-    group134:
+    group149:
       timebaseResolution: fs
       pixelsPerXUnit: 0.000569531345
       xAxisOffset: 6930060
@@ -580,44 +567,56 @@ ui_config:
       xcursor0: 0
       xcursor1: 0
       areas:
-        area135:
-          id: 135
-    group136:
+        area150:
+          id: 150
+    group151:
       timebaseResolution: fs
       pixelsPerXUnit: 3.38319737e-08
-      xAxisOffset: -9063499776
+      xAxisOffset: -9270404642
       name: s-params
       id: Waveform Group 2
       cursorConfig: none
-      xcursor0: 0
+      xcursor0: 26258115038
       xcursor1: 0
       areas:
-        area137:
-          id: 137
-    group138:
+        area152:
+          id: 152
+    group153:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.010776313
-      xAxisOffset: -38092
+      pixelsPerXUnit: 0.0105834194
+      xAxisOffset: -38787
       name: Waveform Group 3
       id: Waveform Group 3
       cursorConfig: none
       xcursor0: 0
       xcursor1: 0
       areas:
-        area139:
-          id: 139
-    group140:
+        area154:
+          id: 154
+    group155:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.0012814455
-      xAxisOffset: 99784796
+      pixelsPerXUnit: 0.00128144538
+      xAxisOffset: 99847682
       name: Waveform Group 4
       id: Waveform Group 4
       cursorConfig: none
-      xcursor0: 100053393
+      xcursor0: 100002195
+      xcursor1: 100346337
+      areas:
+        area156:
+          id: 156
+    group158:
+      timebaseResolution: fs
+      pixelsPerXUnit: 3.38319737e-08
+      xAxisOffset: -3567878144
+      name: Waveform Group 5
+      id: Waveform Group 5
+      cursorConfig: none
+      xcursor0: 34945986560
       xcursor1: 0
       areas:
-        area141:
-          id: 141
+        area159:
+          id: 159
   markers: ~
   dialogs:
     streambrowser: true

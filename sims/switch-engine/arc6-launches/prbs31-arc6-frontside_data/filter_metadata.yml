@@ -1,0 +1,67 @@
+waveforms:
+  filt143:
+    timestamp: 1781727836
+    time_fsec: 116993665695190
+    id: 143
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 2467169
+        flags: 0
+        format: densev1
+  filt144:
+    timestamp: 1781728044
+    time_fsec: 43589432000000
+    id: 144
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt145:
+    timestamp: 1781727821
+    time_fsec: 96381700000000
+    id: 145
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt146:
+    timestamp: 1781727796
+    time_fsec: 772468805000000
+    id: 146
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt147:
+    timestamp: 1781728051
+    time_fsec: 59813261032104
+    id: 147
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 111007
+        flags: 0
+        format: densev1
+  filt148:
+    timestamp: 1781728744
+    time_fsec: 699476003646850
+    id: 148
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 142301
+        flags: 0
+        format: densev1

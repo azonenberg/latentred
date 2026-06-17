@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerMaps>
+    <LayerMap Name="L1D0" DXFName="L1D0" LevelNumber="1" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thick" Purpose="PLANAR" TechLayerName="F.Cu_thick" TechLayerType="PLANAR"/>
+    <LayerMap Name="L2D0" DXFName="L2D0" LevelNumber="2" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In1.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L3D0" DXFName="L3D0" LevelNumber="3" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_0.5oz_thick" Purpose="PLANAR" TechLayerName="In2.Cu_thick" TechLayerType="PLANAR"/>
+    <LayerMap Name="L4D0" DXFName="L4D0" LevelNumber="4" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In3.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L5D0" DXFName="L5D0" LevelNumber="5" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In4.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L6D0" DXFName="L6D0" LevelNumber="6" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In5.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L7D0" DXFName="L7D0" LevelNumber="7" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In6.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L8D0" DXFName="L8D0" LevelNumber="8" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_0.5oz_thick_down" Purpose="PLANAR" TechLayerName="In7.Cu_thick" TechLayerType="PLANAR"/>
+    <LayerMap Name="L9D0" CADLayerName="In6.Cu" CADPurposeName="drawing" DXFName="L9D0" LevelNumber="9" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In8.Cu" TechLayerType="PLANAR"/>
+    <LayerMap Name="L10D0" DXFName="L10D0" LevelNumber="10" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Copper_1oz_thick_down" Purpose="PLANAR" TechLayerName="B.Cu_thick" TechLayerType="PLANAR"/>
+    <LayerMap Name="L11D0" DXFName="L11D0" MappedCAD="TRUE" MappedDXF="TRUE" MaterialName="Perfect Conductor" Purpose="VIA" TechLayerName="Via1" TechLayerType="VIA">
+        <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
+    </LayerMap>
+</LayerMaps>
