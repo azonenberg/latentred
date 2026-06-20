@@ -1,12 +1,12 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "2594b26d-2fe5-4054-81d2-ca5df3747243")
 	(paper "A4")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-11")
+		(date "2026-06-17")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -14,7 +14,9 @@
 	(lib_symbols
 		(symbol "conn:CONN_01X01"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -81,8 +83,8 @@
 			)
 			(symbol "CONN_01X01_0_1"
 				(rectangle
-					(start -1.27 0.127)
-					(end 0.254 -0.127)
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
 					(stroke
 						(width 0)
 						(type default)
@@ -92,8 +94,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -1.27)
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
 					(stroke
 						(width 0)
 						(type default)
@@ -123,6 +125,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "special-azonenberg:MECHANICAL"
 			(pin_names
@@ -187,6 +190,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(junction
@@ -527,7 +531,6 @@
 	)
 	(label "GND"
 		(at 36.83 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -538,7 +541,6 @@
 	)
 	(label "GTY_VTT"
 		(at 135.89 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -549,7 +551,6 @@
 	)
 	(label "GND"
 		(at 34.29 118.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -560,7 +561,6 @@
 	)
 	(label "3V3"
 		(at 36.83 24.13 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -571,7 +571,6 @@
 	)
 	(label "3V3"
 		(at 135.89 36.83 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -582,7 +581,6 @@
 	)
 	(label "GND"
 		(at 135.89 41.91 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -593,7 +591,6 @@
 	)
 	(label "1V8"
 		(at 36.83 31.75 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -604,7 +601,6 @@
 	)
 	(label "GND"
 		(at 20.32 167.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -615,7 +611,6 @@
 	)
 	(label "GND"
 		(at 93.98 31.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -626,7 +621,6 @@
 	)
 	(label "2V5"
 		(at 36.83 26.67 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -637,7 +631,6 @@
 	)
 	(label "GND"
 		(at 34.29 101.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -648,7 +641,6 @@
 	)
 	(label "1V8"
 		(at 34.29 113.03 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -659,7 +651,6 @@
 	)
 	(label "3V3"
 		(at 93.98 29.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -670,7 +661,6 @@
 	)
 	(label "2V5"
 		(at 34.29 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -681,7 +671,6 @@
 	)
 	(label "GTY_VTT"
 		(at 34.29 115.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -692,7 +681,6 @@
 	)
 	(label "3V3"
 		(at 34.29 110.49 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -703,7 +691,6 @@
 	)
 	(label "GTY_VTT"
 		(at 36.83 34.29 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -714,7 +701,6 @@
 	)
 	(label "3V3"
 		(at 34.29 96.52 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -980,7 +966,7 @@
 			)
 		)
 		(instances
-			(project ""
+			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
 					(reference "M9")
 					(unit 1)
@@ -1239,7 +1225,7 @@
 			)
 		)
 		(instances
-			(project ""
+			(project "switch-engine"
 				(path "/2594b26d-2fe5-4054-81d2-ca5df3747243"
 					(reference "M5")
 					(unit 1)
@@ -1250,6 +1236,10 @@
 	(sheet
 		(at 135.89 20.32)
 		(size 15.24 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1279,73 +1269,73 @@
 		)
 		(pin "3V3" input
 			(at 135.89 36.83 180)
+			(uuid "84f6120e-71e3-4333-9a76-576a0d541f48")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "84f6120e-71e3-4333-9a76-576a0d541f48")
 		)
 		(pin "GTY_VTT" input
 			(at 135.89 39.37 180)
+			(uuid "c5cee3f1-7418-46ea-807f-f3f306d860f5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c5cee3f1-7418-46ea-807f-f3f306d860f5")
 		)
 		(pin "GND" input
 			(at 135.89 41.91 180)
+			(uuid "049ee67c-96f4-4911-9920-7508ff50c5a1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "049ee67c-96f4-4911-9920-7508ff50c5a1")
 		)
 		(pin "I2C0_SDA" bidirectional
 			(at 135.89 21.59 180)
+			(uuid "10139081-4e45-48ed-9eee-7cedd2322dd3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "10139081-4e45-48ed-9eee-7cedd2322dd3")
 		)
 		(pin "I2C1_SDA" bidirectional
 			(at 135.89 29.21 180)
+			(uuid "b4898bb0-5573-4196-a5d2-6b0ba60e4a98")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "b4898bb0-5573-4196-a5d2-6b0ba60e4a98")
 		)
 		(pin "I2C0_SCL" bidirectional
 			(at 135.89 24.13 180)
+			(uuid "ce58d86e-dd9c-4221-84e5-24543503a447")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ce58d86e-dd9c-4221-84e5-24543503a447")
 		)
 		(pin "I2C1_SCL" bidirectional
 			(at 135.89 31.75 180)
+			(uuid "baa84bb1-cbac-433b-84be-3d8214b022e8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "baa84bb1-cbac-433b-84be-3d8214b022e8")
 		)
 		(instances
 			(project "switch-engine"
@@ -1358,6 +1348,10 @@
 	(sheet
 		(at 93.98 20.32)
 		(size 27.94 66.04)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1387,153 +1381,153 @@
 		)
 		(pin "MCU_RST_N" output
 			(at 93.98 59.69 180)
+			(uuid "c7e00670-8543-47fd-a2b9-ab2824378f34")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c7e00670-8543-47fd-a2b9-ab2824378f34")
 		)
 		(pin "3V3_SB" input
 			(at 93.98 24.13 180)
+			(uuid "f294faf3-d7f6-4693-8bf6-f68a8f8be540")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f294faf3-d7f6-4693-8bf6-f68a8f8be540")
 		)
 		(pin "3V3" input
 			(at 93.98 29.21 180)
+			(uuid "4dfaa2a3-f311-4233-9c3c-f61888442b07")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4dfaa2a3-f311-4233-9c3c-f61888442b07")
 		)
 		(pin "GND" input
 			(at 93.98 31.75 180)
+			(uuid "1d6a0c99-01cc-44fe-921c-0388a76d4329")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1d6a0c99-01cc-44fe-921c-0388a76d4329")
 		)
 		(pin "SFP1_SCL" bidirectional
 			(at 121.92 31.75 0)
+			(uuid "4390c3e0-b9ab-4e3e-8c2f-e97ee4a4581a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "4390c3e0-b9ab-4e3e-8c2f-e97ee4a4581a")
 		)
 		(pin "SFP0_SCL" bidirectional
 			(at 121.92 24.13 0)
+			(uuid "76484abb-daea-40cd-8794-919d487af6c0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "76484abb-daea-40cd-8794-919d487af6c0")
 		)
 		(pin "SFP0_SDA" bidirectional
 			(at 121.92 21.59 0)
+			(uuid "40f3be27-d67b-4da2-8fed-1cda522b647e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "40f3be27-d67b-4da2-8fed-1cda522b647e")
 		)
 		(pin "MGMT_I2C_SDA" bidirectional
 			(at 93.98 69.85 180)
+			(uuid "52a84e3d-2510-4d6d-879e-7f8791af2b85")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "52a84e3d-2510-4d6d-879e-7f8791af2b85")
 		)
 		(pin "MGMT_I2C_SCL" bidirectional
 			(at 93.98 67.31 180)
+			(uuid "efbeef33-68a9-4593-a76b-57c1a866f4fc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "efbeef33-68a9-4593-a76b-57c1a866f4fc")
 		)
 		(pin "SFP1_SDA" bidirectional
 			(at 121.92 29.21 0)
+			(uuid "fad71193-21d6-4080-8180-7e85739f9e51")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "fad71193-21d6-4080-8180-7e85739f9e51")
 		)
 		(pin "MCU_READY" output
 			(at 93.98 62.23 180)
+			(uuid "4f311fb5-c793-4eec-b5d1-5660c6982a89")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4f311fb5-c793-4eec-b5d1-5660c6982a89")
 		)
 		(pin "FAN1_TACH" input
 			(at 93.98 74.93 180)
+			(uuid "09065c10-9a40-48d1-887b-dac8fa3299b3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "09065c10-9a40-48d1-887b-dac8fa3299b3")
 		)
 		(pin "FAN2_TACH" input
 			(at 93.98 77.47 180)
+			(uuid "a07b9948-3221-450e-9336-94e3a063f8aa")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "a07b9948-3221-450e-9336-94e3a063f8aa")
 		)
 		(pin "FAN1_PWM" output
 			(at 93.98 82.55 180)
+			(uuid "f1cd775f-b332-45fd-94ba-31f07149eaa8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f1cd775f-b332-45fd-94ba-31f07149eaa8")
 		)
 		(pin "FAN2_PWM" output
 			(at 93.98 85.09 180)
+			(uuid "a946cc94-7d82-438b-a7fe-1c230e8cc537")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "a946cc94-7d82-438b-a7fe-1c230e8cc537")
 		)
 		(instances
 			(project "switch-engine"
@@ -1546,6 +1540,10 @@
 	(sheet
 		(at 16.51 125.73)
 		(size 17.78 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1584,6 +1582,10 @@
 	(sheet
 		(at 48.26 25.4)
 		(size 21.59 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1622,113 +1624,113 @@
 		)
 		(pin "FPGA_INIT_3V3" output
 			(at 48.26 49.53 180)
+			(uuid "c54e2d9c-be98-4cda-b603-ea91430a5c5c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c54e2d9c-be98-4cda-b603-ea91430a5c5c")
 		)
 		(pin "FPGA_DONE_3V3" output
 			(at 48.26 46.99 180)
+			(uuid "abf1d864-1026-4157-8765-d84b84ed7f4c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "abf1d864-1026-4157-8765-d84b84ed7f4c")
 		)
 		(pin "FPGA_RESET_N_3V3" input
 			(at 48.26 54.61 180)
+			(uuid "83a689bc-4081-4b47-bd40-716313415067")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "83a689bc-4081-4b47-bd40-716313415067")
 		)
 		(pin "1V8" input
 			(at 48.26 31.75 180)
+			(uuid "e0c3f0ff-8f2e-4e1f-9759-39e3a5dd5957")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e0c3f0ff-8f2e-4e1f-9759-39e3a5dd5957")
 		)
 		(pin "GTY_VCCAUX" input
 			(at 48.26 29.21 180)
+			(uuid "6a7ad0b2-4dca-4111-a0a2-bfe956484108")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6a7ad0b2-4dca-4111-a0a2-bfe956484108")
 		)
 		(pin "GTY_VTT" input
 			(at 48.26 34.29 180)
+			(uuid "89a917c1-e296-4b82-af73-1658197fc1f6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "89a917c1-e296-4b82-af73-1658197fc1f6")
 		)
 		(pin "VCCINT" input
 			(at 48.26 39.37 180)
+			(uuid "39cdcc22-7d70-4d4c-9b13-49c3ebf6a938")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "39cdcc22-7d70-4d4c-9b13-49c3ebf6a938")
 		)
 		(pin "3V3" input
 			(at 48.26 26.67 180)
+			(uuid "8cddf5e1-9377-4657-83a1-aaaf8682387e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8cddf5e1-9377-4657-83a1-aaaf8682387e")
 		)
 		(pin "GTY_VCC" input
 			(at 48.26 36.83 180)
+			(uuid "3d0982dc-6b64-4a3e-8104-b134220c80ef")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "3d0982dc-6b64-4a3e-8104-b134220c80ef")
 		)
 		(pin "GND" input
 			(at 48.26 41.91 180)
+			(uuid "62d530eb-6c45-4050-aa4e-35981f6a49fc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "62d530eb-6c45-4050-aa4e-35981f6a49fc")
 		)
 		(pin "FPGA_INIT_OE" input
 			(at 48.26 52.07 180)
+			(uuid "84a2c4dc-ccab-49e0-8b01-8730b023e5f6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "84a2c4dc-ccab-49e0-8b01-8730b023e5f6")
 		)
 		(instances
 			(project "switch-engine"
@@ -1741,6 +1743,10 @@
 	(sheet
 		(at 16.51 17.78)
 		(size 17.78 68.58)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -1770,223 +1776,223 @@
 		)
 		(pin "GTY_VCC" output
 			(at 34.29 36.83 0)
+			(uuid "44872658-fcc1-4940-a652-51abdf69573e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "44872658-fcc1-4940-a652-51abdf69573e")
 		)
 		(pin "3V3_SB" output
 			(at 34.29 21.59 0)
+			(uuid "f1e1afb5-f106-45b6-9dfa-01bbcff788c5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "f1e1afb5-f106-45b6-9dfa-01bbcff788c5")
 		)
 		(pin "12V0" output
 			(at 34.29 19.05 0)
+			(uuid "f51af097-e522-4c7c-952a-234de57affab")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "f51af097-e522-4c7c-952a-234de57affab")
 		)
 		(pin "GND" output
 			(at 34.29 41.91 0)
+			(uuid "a20965e2-66c2-4734-b716-23cc465e8101")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a20965e2-66c2-4734-b716-23cc465e8101")
 		)
 		(pin "VCCINT" output
 			(at 34.29 39.37 0)
+			(uuid "2886224d-649e-4ece-95b0-d819d9ec96a0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2886224d-649e-4ece-95b0-d819d9ec96a0")
 		)
 		(pin "GTY_VTT" output
 			(at 34.29 34.29 0)
+			(uuid "ffee938e-c7c9-4bbb-9b0a-d95c4fb095de")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "ffee938e-c7c9-4bbb-9b0a-d95c4fb095de")
 		)
 		(pin "FPGA_INIT" input
 			(at 34.29 49.53 0)
+			(uuid "ad63e243-9380-4395-acef-91ae903b33be")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "ad63e243-9380-4395-acef-91ae903b33be")
 		)
 		(pin "MCU_RST_N" output
 			(at 34.29 59.69 0)
+			(uuid "bab5a775-90e1-4bde-a895-c82ab1d3c7bb")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "bab5a775-90e1-4bde-a895-c82ab1d3c7bb")
 		)
 		(pin "MGMT_I2C_SCL" bidirectional
 			(at 34.29 67.31 0)
+			(uuid "45ce4494-65a9-4da7-8578-dfd4ce6cc266")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "45ce4494-65a9-4da7-8578-dfd4ce6cc266")
 		)
 		(pin "FPGA_RST_N" output
 			(at 34.29 54.61 0)
+			(uuid "0e21aed6-165d-40b7-a0d7-cebe92f37245")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "0e21aed6-165d-40b7-a0d7-cebe92f37245")
 		)
 		(pin "MGMT_I2C_SDA" bidirectional
 			(at 34.29 69.85 0)
+			(uuid "01032023-7bee-4bfa-bdf2-39c6ee022b4c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "01032023-7bee-4bfa-bdf2-39c6ee022b4c")
 		)
 		(pin "FPGA_DONE" input
 			(at 34.29 46.99 0)
+			(uuid "f91cd064-5c7b-4421-a5c0-231431bcd745")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "f91cd064-5c7b-4421-a5c0-231431bcd745")
 		)
 		(pin "MCU_READY" input
 			(at 34.29 62.23 0)
+			(uuid "ce6e1440-9646-443f-894e-48cff07e5f3d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "ce6e1440-9646-443f-894e-48cff07e5f3d")
 		)
 		(pin "1V8" output
 			(at 34.29 31.75 0)
+			(uuid "c4f010b2-f05a-48b3-a841-3b2a2e31fa43")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "c4f010b2-f05a-48b3-a841-3b2a2e31fa43")
 		)
 		(pin "GTY_VCCAUX" output
 			(at 34.29 29.21 0)
+			(uuid "3fb9db01-6bcd-4d08-b45a-8c96de715f43")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "3fb9db01-6bcd-4d08-b45a-8c96de715f43")
 		)
 		(pin "3V3" output
 			(at 34.29 24.13 0)
+			(uuid "681d9134-38c9-4e0c-9ae2-97347715412a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "681d9134-38c9-4e0c-9ae2-97347715412a")
 		)
 		(pin "2V5" output
 			(at 34.29 26.67 0)
+			(uuid "9689aa57-67a1-4fee-8250-e91890ca2b74")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "9689aa57-67a1-4fee-8250-e91890ca2b74")
 		)
 		(pin "FAN2_TACH" output
 			(at 34.29 77.47 0)
+			(uuid "dbcbccfc-674e-4c40-a86b-5911c6f9d96c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "dbcbccfc-674e-4c40-a86b-5911c6f9d96c")
 		)
 		(pin "FAN1_TACH" output
 			(at 34.29 74.93 0)
+			(uuid "3ad12d43-6363-4775-ae1b-15f3f57a97ab")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "3ad12d43-6363-4775-ae1b-15f3f57a97ab")
 		)
 		(pin "FAN1_PWM" input
 			(at 34.29 82.55 0)
+			(uuid "497be182-315a-401e-a5df-86422c5aea8c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "497be182-315a-401e-a5df-86422c5aea8c")
 		)
 		(pin "FAN2_PWM" input
 			(at 34.29 85.09 0)
+			(uuid "afd8ad40-fbd1-4b39-a1a4-dc8e83b05802")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "afd8ad40-fbd1-4b39-a1a4-dc8e83b05802")
 		)
 		(pin "FPGA_INIT_OE" output
 			(at 34.29 52.07 0)
+			(uuid "2f6242b1-116b-4103-bf08-aa221e2c1a23")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2f6242b1-116b-4103-bf08-aa221e2c1a23")
 		)
 		(instances
 			(project "switch-engine"
@@ -1999,6 +2005,10 @@
 	(sheet
 		(at 16.51 95.25)
 		(size 17.78 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2028,33 +2038,33 @@
 		)
 		(pin "GND" input
 			(at 34.29 101.6 0)
+			(uuid "7a162dc7-c7ca-4c6b-9c74-8a99b4bd5281")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "7a162dc7-c7ca-4c6b-9c74-8a99b4bd5281")
 		)
 		(pin "3V3" input
 			(at 34.29 96.52 0)
+			(uuid "69010f65-97e2-44de-a8cb-ac4c51a9c326")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "69010f65-97e2-44de-a8cb-ac4c51a9c326")
 		)
 		(pin "2V5" input
 			(at 34.29 99.06 0)
+			(uuid "eca071c4-a9d6-48a8-9fc5-553e7ed45f14")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "eca071c4-a9d6-48a8-9fc5-553e7ed45f14")
 		)
 		(instances
 			(project "switch-engine"
@@ -2067,6 +2077,10 @@
 	(sheet
 		(at 16.51 109.22)
 		(size 17.78 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2096,43 +2110,43 @@
 		)
 		(pin "GND" input
 			(at 34.29 118.11 0)
+			(uuid "fbe91072-0e53-4e05-988b-4a0f57f8e66d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "fbe91072-0e53-4e05-988b-4a0f57f8e66d")
 		)
 		(pin "1V2" input
 			(at 34.29 115.57 0)
+			(uuid "99949b9a-5797-47b0-a77d-0d1e44baa785")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "99949b9a-5797-47b0-a77d-0d1e44baa785")
 		)
 		(pin "1V8" input
 			(at 34.29 113.03 0)
+			(uuid "0c42dcb8-b899-44e1-9ff2-972595ec7920")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "0c42dcb8-b899-44e1-9ff2-972595ec7920")
 		)
 		(pin "3V3" input
 			(at 34.29 110.49 0)
+			(uuid "b86a6efe-773d-4c9d-b536-c1b1cf531d8d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "b86a6efe-773d-4c9d-b536-c1b1cf531d8d")
 		)
 		(instances
 			(project "switch-engine"
@@ -2147,4 +2161,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

@@ -1,13 +1,13 @@
 waveforms:
-  filt143:
-    timestamp: 1781727836
-    time_fsec: 116993665695190
-    id: 143
+  filt172:
+    timestamp: 1781863373
+    time_fsec: 108217000961303
+    id: 172
     streams:
       s0:
         stream: 0
         timescale: 2000
-        trigphase: 2467169
+        trigphase: 41836
         flags: 0
         format: densev1
   filt144:
@@ -32,6 +32,17 @@ waveforms:
         trigphase: 0
         flags: 0
         format: sparsev1
+  filt143:
+    timestamp: 1781727836
+    time_fsec: 116993665695190
+    id: 143
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 2467169
+        flags: 0
+        format: densev1
   filt146:
     timestamp: 1781727796
     time_fsec: 772468805000000
@@ -63,5 +74,16 @@ waveforms:
         stream: 0
         timescale: 2000
         trigphase: 142301
+        flags: 0
+        format: densev1
+  filt168:
+    timestamp: 1781862049
+    time_fsec: 284612655639648
+    id: 168
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 143543
         flags: 0
         format: densev1

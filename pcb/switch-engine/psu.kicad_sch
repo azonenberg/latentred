@@ -1,12 +1,12 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "8ab06110-02c7-4be6-bc44-07e8c321270e")
 	(paper "A3")
 	(title_block
 		(title "LATENTRED Ethernet Switch - Main Board")
-		(date "2025-06-11")
+		(date "2026-06-17")
 		(rev "0.1")
 		(company "Antikernel Labs")
 		(comment 1 "Andrew D. Zonenberg")
@@ -14,7 +14,9 @@
 	(lib_symbols
 		(symbol "conn:CONN_01X01"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -81,8 +83,8 @@
 			)
 			(symbol "CONN_01X01_0_1"
 				(rectangle
-					(start -1.27 0.127)
-					(end 0.254 -0.127)
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
 					(stroke
 						(width 0)
 						(type default)
@@ -92,8 +94,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -1.27)
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
 					(stroke
 						(width 0)
 						(type default)
@@ -123,10 +125,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "conn:CONN_01X03"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -193,19 +198,8 @@
 			)
 			(symbol "CONN_01X03_0_1"
 				(rectangle
-					(start -1.27 -2.413)
-					(end 0.254 -2.667)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0.254 -0.127)
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
 					(stroke
 						(width 0)
 						(type default)
@@ -226,8 +220,19 @@
 					)
 				)
 				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -3.81)
+					(start -1.27 0.127)
+					(end 0.254 -0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0.254 -2.667)
 					(stroke
 						(width 0)
 						(type default)
@@ -293,10 +298,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "conn:CONN_01X04"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -363,30 +371,8 @@
 			)
 			(symbol "CONN_01X04_0_1"
 				(rectangle
-					(start -1.27 -3.683)
-					(end 0.254 -3.937)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -1.143)
-					(end 0.254 -1.397)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 1.397)
-					(end 0.254 1.143)
+					(start -1.27 5.08)
+					(end 1.27 -5.08)
 					(stroke
 						(width 0)
 						(type default)
@@ -407,8 +393,30 @@
 					)
 				)
 				(rectangle
-					(start -1.27 5.08)
-					(end 1.27 -5.08)
+					(start -1.27 1.397)
+					(end 0.254 1.143)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -1.143)
+					(end 0.254 -1.397)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -3.683)
+					(end 0.254 -3.937)
 					(stroke
 						(width 0)
 						(type default)
@@ -492,10 +500,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "conn:CONN_COAXIAL"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -561,18 +572,6 @@
 				)
 			)
 			(symbol "CONN_COAXIAL_0_1"
-				(arc
-					(start -1.778 -0.508)
-					(mid 0.2311 -1.8066)
-					(end 1.778 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy -1.27 0) (xy -0.508 0)
@@ -585,12 +584,24 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -1.778)
-					)
+				(arc
+					(start 1.778 0)
+					(mid 0.222 -1.8079)
+					(end -1.778 -0.508)
 					(stroke
-						(width 0)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.778 0.508)
+					(mid 0.2221 1.8084)
+					(end 1.778 0)
+					(stroke
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -608,12 +619,12 @@
 						(type none)
 					)
 				)
-				(arc
-					(start 1.778 0)
-					(mid 0.2099 1.8101)
-					(end -1.778 0.508)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -1.778)
+					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -659,9 +670,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "device:C"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -734,7 +748,7 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -746,7 +760,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -795,11 +809,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "device:CP1"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -904,9 +923,9 @@
 					)
 				)
 				(arc
-					(start 2.032 -1.27)
+					(start -2.032 -1.27)
 					(mid 0 -0.5572)
-					(end -2.032 -1.27)
+					(end 2.032 -1.27)
 					(stroke
 						(width 0.508)
 						(type default)
@@ -954,11 +973,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "device:D_TVS"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1026,18 +1050,6 @@
 			(symbol "D_TVS_0_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -2.54 -1.27) (xy 0 0) (xy -2.54 1.27) (xy -2.54 -1.27)
 					)
 					(stroke
@@ -1054,6 +1066,18 @@
 					)
 					(stroke
 						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1111,10 +1135,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "device:LED"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1182,10 +1209,22 @@
 			(symbol "LED_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1206,7 +1245,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy -1.27 -1.27) (xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.2032)
@@ -1218,22 +1257,10 @@
 				)
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
 					)
 					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
@@ -1279,9 +1306,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1400,6 +1430,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "passive-azonenberg:FERRITE_SMALL2"
 			(pin_names
@@ -1500,11 +1531,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "passive-azonenberg:INDUCTOR_PWROUT"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1551,45 +1587,45 @@
 			)
 			(symbol "INDUCTOR_PWROUT_0_1"
 				(arc
-					(start 0.0254 -5.0546)
-					(mid 1.245 -3.7973)
-					(end 0.0254 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.0254 -2.5146)
-					(mid 1.2704 -1.2319)
-					(end 0.0254 0.0508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.0254 0.0254)
-					(mid 1.2704 1.3081)
-					(end 0.0254 2.5908)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.0254 2.5654)
+					(start 0.0254 4.9784)
 					(mid 1.1942 3.7719)
-					(end 0.0254 4.9784)
+					(end 0.0254 2.5654)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.0254 2.5908)
+					(mid 1.2704 1.3081)
+					(end 0.0254 0.0254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.0254 0.0508)
+					(mid 1.2704 -1.2319)
+					(end 0.0254 -2.5146)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.0254 -2.54)
+					(mid 1.245 -3.7973)
+					(end 0.0254 -5.0546)
 					(stroke
 						(width 0)
 						(type default)
@@ -1637,6 +1673,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "passive-azonenberg:SWITCH"
 			(exclude_from_sim no)
@@ -1737,6 +1774,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:ADP1741"
 			(pin_names
@@ -1803,6 +1841,42 @@
 			)
 			(symbol "ADP1741_1_1"
 				(pin power_in line
+					(at -5.08 26.67 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 24.13 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at -5.08 21.59 0)
 					(length 5.08)
 					(name "VIN"
@@ -1813,6 +1887,114 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 19.05 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 16.51 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 11.43 0)
+					(length 5.08)
+					(name "SS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 8.89 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 3.81 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 1.27 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "PAD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1910,89 +2092,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -5.08 24.13 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -5.08 26.67 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -5.08 19.05 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -5.08 16.51 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
-					(at -5.08 8.89 0)
+					(at 24.13 11.43 180)
 					(length 5.08)
-					(name "EN"
+					(name "ADJ"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2018,79 +2128,8 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -5.08 3.81 0)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 11.43 0)
-					(length 5.08)
-					(name "SS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 24.13 11.43 180)
-					(length 5.08)
-					(name "ADJ"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -5.08 1.27 0)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "PAD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:CONN_IBC_MGMT_DEVICE"
 			(exclude_from_sim no)
@@ -2153,53 +2192,17 @@
 				)
 			)
 			(symbol "CONN_IBC_MGMT_DEVICE_1_1"
-				(pin input line
-					(at 3.81 1.27 180)
+				(pin power_out line
+					(at 3.81 11.43 180)
 					(length 3.81)
-					(name "12V0_OUT_EN"
+					(name "3V3_SB"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 3.81 3.81 180)
-					(length 3.81)
-					(name "I2C_SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 3.81 6.35 180)
-					(length 3.81)
-					(name "I2C_SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2225,17 +2228,53 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 3.81 11.43 180)
+				(pin bidirectional line
+					(at 3.81 6.35 180)
 					(length 3.81)
-					(name "3V3_SB"
+					(name "I2C_SDA"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "5"
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 3.81 3.81 180)
+					(length 3.81)
+					(name "I2C_SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 3.81 1.27 180)
+					(length 3.81)
+					(name "12V0_OUT_EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2244,6 +2283,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:CONN_PCIE_PWR_8PIN"
 			(exclude_from_sim no)
@@ -2451,6 +2491,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:FUSE_PWROUT_2"
 			(pin_names
@@ -2563,6 +2604,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:MYMGK00504ERSR"
 			(exclude_from_sim no)
@@ -2644,6 +2686,78 @@
 					)
 				)
 				(pin power_in line
+					(at -2.54 46.99 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 41.91 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 39.37 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 36.83 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at -2.54 34.29 0)
 					(length 2.54)
 					(name "GND"
@@ -2654,42 +2768,6 @@
 						)
 					)
 					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 20.32 34.29 180)
-					(length 2.54)
-					(name "PGOOD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -2.54 1.27 0)
-					(length 2.54)
-					(name "ON/OFF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2824,24 +2902,6 @@
 					)
 				)
 				(pin power_in line
-					(at -2.54 46.99 0)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
 					(at -2.54 13.97 0)
 					(length 2.54)
 					(name "GND"
@@ -2913,53 +2973,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -2.54 41.91 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
-					(at 20.32 39.37 180)
+					(at -2.54 1.27 0)
 					(length 2.54)
-					(name "TRIM"
+					(name "ON/OFF"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 20.32 44.45 180)
-					(length 2.54)
-					(name "SENSE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3003,17 +3027,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -2.54 39.37 0)
+				(pin input line
+					(at 20.32 44.45 180)
 					(length 2.54)
-					(name "GND"
+					(name "SENSE"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "8"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3021,17 +3045,35 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -2.54 36.83 0)
+				(pin input line
+					(at 20.32 39.37 180)
 					(length 2.54)
-					(name "GND"
+					(name "TRIM"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "9"
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 34.29 180)
+					(length 2.54)
+					(name "PGOOD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3040,6 +3082,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power-azonenberg:MYMGK1R812ERSR"
 			(exclude_from_sim no)
@@ -3113,6 +3156,114 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 72.39 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 69.85 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 67.31 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 64.77 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 62.23 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 57.15 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3203,168 +3354,6 @@
 						)
 					)
 					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 25.4 74.93 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 25.4 72.39 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 25.4 69.85 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 25.4 67.31 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 25.4 64.77 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 72.39 0)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 25.4 62.23 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 25.4 57.15 180)
-					(length 2.54)
-					(name "SENSE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 25.4 52.07 180)
-					(length 2.54)
-					(name "TRIM"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3491,24 +3480,6 @@
 						)
 					)
 					(number "29"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 69.85 0)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3660,17 +3631,35 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -2.54 67.31 0)
+				(pin input line
+					(at -2.54 1.27 0)
 					(length 2.54)
-					(name "VIN"
+					(name "EN"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 25.4 74.93 180)
+					(length 2.54)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3679,16 +3668,16 @@
 					)
 				)
 				(pin power_in line
-					(at -2.54 64.77 0)
+					(at 25.4 72.39 180)
 					(length 2.54)
-					(name "VIN"
+					(name "VOUT"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "5"
+					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3697,16 +3686,106 @@
 					)
 				)
 				(pin power_in line
-					(at -2.54 62.23 0)
+					(at 25.4 69.85 180)
 					(length 2.54)
-					(name "VIN"
+					(name "VOUT"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "6"
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 25.4 67.31 180)
+					(length 2.54)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 25.4 64.77 180)
+					(length 2.54)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 25.4 62.23 180)
+					(length 2.54)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 25.4 57.15 180)
+					(length 2.54)
+					(name "SENSE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 25.4 52.07 180)
+					(length 2.54)
+					(name "TRIM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3732,43 +3811,8 @@
 						)
 					)
 				)
-				(pin input line
-					(at -2.54 1.27 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 57.15 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "special-azonenberg:CORTEX_DEBUG_ETM"
 			(exclude_from_sim no)
@@ -3829,204 +3873,6 @@
 						(type background)
 					)
 				)
-				(pin power_in line
-					(at 22.86 29.21 180)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at -2.54 16.51 0)
-					(length 2.54)
-					(name "~{RST}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 16.51 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -2.54 11.43 0)
-					(length 2.54)
-					(name "TRACECLK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 13.97 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -2.54 8.89 0)
-					(length 2.54)
-					(name "TRACED0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 11.43 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -2.54 6.35 0)
-					(length 2.54)
-					(name "TRACED1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 8.89 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -2.54 3.81 0)
-					(length 2.54)
-					(name "TRACED2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 6.35 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
 					(at -2.54 29.21 0)
 					(length 2.54)
@@ -4046,42 +3892,6 @@
 					)
 					(alternate "SWDIO" bidirectional line)
 				)
-				(pin input line
-					(at -2.54 1.27 0)
-					(length 2.54)
-					(name "TRACED3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 22.86 24.13 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
 					(at -2.54 26.67 0)
 					(length 2.54)
@@ -4100,24 +3910,6 @@
 						)
 					)
 					(alternate "SWCLK" output line)
-				)
-				(pin power_in line
-					(at 22.86 21.59 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 				)
 				(pin input line
 					(at -2.54 24.13 0)
@@ -4158,6 +3950,168 @@
 						)
 					)
 				)
+				(pin output line
+					(at -2.54 16.51 0)
+					(length 2.54)
+					(name "~{RST}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 11.43 0)
+					(length 2.54)
+					(name "TRACECLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 8.89 0)
+					(length 2.54)
+					(name "TRACED0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 6.35 0)
+					(length 2.54)
+					(name "TRACED1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 3.81 0)
+					(length 2.54)
+					(name "TRACED2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 1.27 0)
+					(length 2.54)
+					(name "TRACED3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 29.21 180)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 24.13 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 21.59 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin power_in line
 					(at 22.86 19.05 180)
 					(length 2.54)
@@ -4176,7 +4130,98 @@
 						)
 					)
 				)
+				(pin power_in line
+					(at 22.86 16.51 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 13.97 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 11.43 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 8.89 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 22.86 6.35 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "st-azonenberg:STM32L431-QFN48"
 			(exclude_from_sim no)
@@ -4753,169 +4798,6 @@
 					(alternate "RTC_OUT" output line)
 				)
 				(pin bidirectional line
-					(at -3.81 13.97 0)
-					(length 3.81)
-					(name "PB10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "COMP1_OUT" output line)
-					(alternate "EVENTOUT" output line)
-					(alternate "I2C2_SCL" bidirectional line)
-					(alternate "LPUART1_RX" input line)
-					(alternate "QUADSPI_CLK" output line)
-					(alternate "SAI1_SCK_A" bidirectional line)
-					(alternate "SPI2_SCK" bidirectional line)
-					(alternate "TIM2_CH2" bidirectional line)
-					(alternate "TSC_SYNC" bidirectional line)
-					(alternate "USART3_TX" output line)
-				)
-				(pin bidirectional line
-					(at -3.81 11.43 0)
-					(length 3.81)
-					(name "PB11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "COMP2_OUT" output line)
-					(alternate "EVENTOUT" output line)
-					(alternate "I2C2_SDA" bidirectional line)
-					(alternate "LPUART1_TX" output line)
-					(alternate "QUADSPI_BK1_NCS" bidirectional line)
-					(alternate "TIM2_CH4" bidirectional line)
-					(alternate "USART3_RX" input line)
-				)
-				(pin bidirectional line
-					(at -3.81 8.89 0)
-					(length 3.81)
-					(name "PB12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "EVENTOUT" power_in line)
-					(alternate "I2C2_SMBA" power_in line)
-					(alternate "LPUART1_RTS_DE" power_in line)
-					(alternate "SAI1_FS_A" power_in line)
-					(alternate "SPI2_NSS" power_in line)
-					(alternate "SWPMI1_IO" power_in line)
-					(alternate "TIM15_BKIN" power_in line)
-					(alternate "TIM1_BKIN" power_in line)
-					(alternate "TIM1_BKIN_COMP2" power_in line)
-					(alternate "TSC_G1_IO1" power_in line)
-					(alternate "USART3_CK" power_in line)
-				)
-				(pin bidirectional line
-					(at -3.81 6.35 0)
-					(length 3.81)
-					(name "PB13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "EVENTOUT" output line)
-					(alternate "I2C2_SCL" bidirectional line)
-					(alternate "LPUART1_CTS" bidirectional line)
-					(alternate "SAI1_SCK_A" bidirectional line)
-					(alternate "SPI2_SCK" bidirectional line)
-					(alternate "SWPMI1_TX" bidirectional line)
-					(alternate "TIM15_CH1N" bidirectional line)
-					(alternate "TIM1_CH1N" bidirectional line)
-					(alternate "TSC_G1_IO2" bidirectional line)
-					(alternate "USART3_CTS" bidirectional line)
-				)
-				(pin bidirectional line
-					(at -3.81 3.81 0)
-					(length 3.81)
-					(name "PB14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "27"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "EVENTOUT" output line)
-					(alternate "I2C2_SDA" bidirectional line)
-					(alternate "SAI1_MCLK_A" bidirectional line)
-					(alternate "SPI2_MISO" bidirectional line)
-					(alternate "SWPMI1_RX" bidirectional line)
-					(alternate "TIM15_CH1" bidirectional line)
-					(alternate "TIM1_CH2N" bidirectional line)
-					(alternate "TSC_G1_IO3" bidirectional line)
-					(alternate "USART3_RTS_DE" bidirectional line)
-				)
-				(pin bidirectional line
-					(at -3.81 1.27 0)
-					(length 3.81)
-					(name "PB15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "28"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(alternate "EVENTOUT" output line)
-					(alternate "RTC_REFIN" bidirectional line)
-					(alternate "SAI1_SD_A" bidirectional line)
-					(alternate "SPI2_MOSI" bidirectional line)
-					(alternate "SWPMI1_SUSPEND" bidirectional line)
-					(alternate "TIM15_CH2" bidirectional line)
-					(alternate "TIM1_CH3N" bidirectional line)
-					(alternate "TSC_G1_IO4" bidirectional line)
-				)
-				(pin bidirectional line
 					(at -3.81 31.75 0)
 					(length 3.81)
 					(name "PB3"
@@ -5098,6 +4980,169 @@
 					(alternate "SDMMC1_D5" bidirectional line)
 					(alternate "SPI2_NSS" bidirectional line)
 				)
+				(pin bidirectional line
+					(at -3.81 13.97 0)
+					(length 3.81)
+					(name "PB10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "COMP1_OUT" output line)
+					(alternate "EVENTOUT" output line)
+					(alternate "I2C2_SCL" bidirectional line)
+					(alternate "LPUART1_RX" input line)
+					(alternate "QUADSPI_CLK" output line)
+					(alternate "SAI1_SCK_A" bidirectional line)
+					(alternate "SPI2_SCK" bidirectional line)
+					(alternate "TIM2_CH2" bidirectional line)
+					(alternate "TSC_SYNC" bidirectional line)
+					(alternate "USART3_TX" output line)
+				)
+				(pin bidirectional line
+					(at -3.81 11.43 0)
+					(length 3.81)
+					(name "PB11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "COMP2_OUT" output line)
+					(alternate "EVENTOUT" output line)
+					(alternate "I2C2_SDA" bidirectional line)
+					(alternate "LPUART1_TX" output line)
+					(alternate "QUADSPI_BK1_NCS" bidirectional line)
+					(alternate "TIM2_CH4" bidirectional line)
+					(alternate "USART3_RX" input line)
+				)
+				(pin bidirectional line
+					(at -3.81 8.89 0)
+					(length 3.81)
+					(name "PB12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "EVENTOUT" power_in line)
+					(alternate "I2C2_SMBA" power_in line)
+					(alternate "LPUART1_RTS_DE" power_in line)
+					(alternate "SAI1_FS_A" power_in line)
+					(alternate "SPI2_NSS" power_in line)
+					(alternate "SWPMI1_IO" power_in line)
+					(alternate "TIM15_BKIN" power_in line)
+					(alternate "TIM1_BKIN" power_in line)
+					(alternate "TIM1_BKIN_COMP2" power_in line)
+					(alternate "TSC_G1_IO1" power_in line)
+					(alternate "USART3_CK" power_in line)
+				)
+				(pin bidirectional line
+					(at -3.81 6.35 0)
+					(length 3.81)
+					(name "PB13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "EVENTOUT" output line)
+					(alternate "I2C2_SCL" bidirectional line)
+					(alternate "LPUART1_CTS" bidirectional line)
+					(alternate "SAI1_SCK_A" bidirectional line)
+					(alternate "SPI2_SCK" bidirectional line)
+					(alternate "SWPMI1_TX" bidirectional line)
+					(alternate "TIM15_CH1N" bidirectional line)
+					(alternate "TIM1_CH1N" bidirectional line)
+					(alternate "TSC_G1_IO2" bidirectional line)
+					(alternate "USART3_CTS" bidirectional line)
+				)
+				(pin bidirectional line
+					(at -3.81 3.81 0)
+					(length 3.81)
+					(name "PB14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "EVENTOUT" output line)
+					(alternate "I2C2_SDA" bidirectional line)
+					(alternate "SAI1_MCLK_A" bidirectional line)
+					(alternate "SPI2_MISO" bidirectional line)
+					(alternate "SWPMI1_RX" bidirectional line)
+					(alternate "TIM15_CH1" bidirectional line)
+					(alternate "TIM1_CH2N" bidirectional line)
+					(alternate "TSC_G1_IO3" bidirectional line)
+					(alternate "USART3_RTS_DE" bidirectional line)
+				)
+				(pin bidirectional line
+					(at -3.81 1.27 0)
+					(length 3.81)
+					(name "PB15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "EVENTOUT" output line)
+					(alternate "RTC_REFIN" bidirectional line)
+					(alternate "SAI1_SD_A" bidirectional line)
+					(alternate "SPI2_MOSI" bidirectional line)
+					(alternate "SWPMI1_SUSPEND" bidirectional line)
+					(alternate "TIM15_CH2" bidirectional line)
+					(alternate "TIM1_CH3N" bidirectional line)
+					(alternate "TSC_G1_IO4" bidirectional line)
+				)
 			)
 			(symbol "STM32L431-QFN48_3_1"
 				(rectangle
@@ -5206,16 +5251,16 @@
 					)
 				)
 				(pin power_in line
-					(at -3.81 16.51 0)
+					(at -3.81 34.29 0)
 					(length 3.81)
-					(name "GND"
+					(name "VDDA"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "23"
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5242,6 +5287,96 @@
 					)
 				)
 				(pin power_in line
+					(at -3.81 26.67 0)
+					(length 3.81)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 24.13 0)
+					(length 3.81)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "48"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 19.05 0)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "PAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 16.51 0)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -3.81 13.97 0)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "47"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at -3.81 11.43 0)
 					(length 3.81)
 					(name "GND"
@@ -5260,16 +5395,34 @@
 					)
 				)
 				(pin power_in line
-					(at -3.81 26.67 0)
+					(at -3.81 8.89 0)
 					(length 3.81)
-					(name "VDD"
+					(name "VSSA"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "36"
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -3.81 3.81 0)
+					(length 3.81)
+					(name "NRST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5296,114 +5449,6 @@
 					)
 					(alternate "EVENTOUT" output line)
 					(alternate "PH3" bidirectional line)
-				)
-				(pin power_in line
-					(at -3.81 13.97 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "47"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -3.81 24.13 0)
-					(length 3.81)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "48"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -3.81 3.81 0)
-					(length 3.81)
-					(name "NRST"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -3.81 8.89 0)
-					(length 3.81)
-					(name "VSSA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -3.81 34.29 0)
-					(length 3.81)
-					(name "VDDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -3.81 19.05 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "PAD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 				)
 			)
 			(symbol "STM32L431-QFN48_5_1"
@@ -5459,7 +5504,349 @@
 					(alternate "OSC_OUT" output line)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "A = 0.612 + 0.01*(Vout - 0.6)\n= 0.6145\nRtrim = 10A / (Vout-A)\n= 26.0934K\nCan do 24.9k + 1.2k"
+		(exclude_from_sim no)
+		(at 67.31 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "07e02323-ad74-4f74-9544-fa35a7674abb")
+	)
+	(text "2.5V supply"
+		(exclude_from_sim no)
+		(at 13.97 281.94 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "091996ff-a6b9-40c6-a74e-e4707abd940a")
+	)
+	(text "FPGA status lines are 3.3V here\nShifted to 1.8V on other sheet"
+		(exclude_from_sim no)
+		(at 358.14 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0ae6d71a-04b5-4452-8600-b4394d12d26b")
+	)
+	(text "0.85V supply"
+		(exclude_from_sim no)
+		(at 12.7 154.94 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "0cf73fee-4265-4822-8b4c-edcc65999632")
+	)
+	(text "Ground clips"
+		(exclude_from_sim no)
+		(at 135.89 281.94 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "125a66e9-5859-4ecc-80b4-755619b02c98")
+	)
+	(text "Rtrim = 6 / (Vout - 0.6)\n= 6 / (0.9 - 0.6)\n= 20k"
+		(exclude_from_sim no)
+		(at 200.66 224.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "27126e62-7263-486e-aa25-9c955eb90dec")
+	)
+	(text "Supervisor"
+		(exclude_from_sim no)
+		(at 266.7 246.38 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "29baa68d-c597-4416-aabd-e4fcd1f38112")
+	)
+	(text "Test points"
+		(exclude_from_sim no)
+		(at 227.33 64.77 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "29ff4ba9-12ab-43fa-ae96-ffbcdc7de0b1")
+	)
+	(text "Total output C 400 - 3000 uF"
+		(exclude_from_sim no)
+		(at 232.41 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f538444-14f0-48d0-a8f1-63bcf0d7d017")
+	)
+	(text "220 mA @ 1.8V regulated from some other rail\nUse 3V3 for input somewhat arbitrarily"
+		(exclude_from_sim no)
+		(at 342.9 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4191c4f6-7ddc-4673-8d87-3ce2e3779692")
+	)
+	(text "0.90V supply"
+		(exclude_from_sim no)
+		(at 135.89 250.19 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "4cfd6493-2f68-48ee-9c89-5fbbd4c71d07")
+	)
+	(text "850 mV"
+		(exclude_from_sim no)
+		(at 99.06 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50de6f2a-a671-4c6d-8d4b-9f687401d963")
+	)
+	(text "1.8V supply"
+		(exclude_from_sim no)
+		(at 135.89 187.96 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "63656571-549a-4926-a86f-99496d8a01ce")
+	)
+	(text "1.8V for GTY PLLs"
+		(exclude_from_sim no)
+		(at 307.34 64.77 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "71ac390d-a2f4-4de3-9ea2-f03f080dac59")
+	)
+	(text "1.8V Vih\nInternal: 33K pulldown, 100K pullup\nSo should float at ~2.7V if undriven"
+		(exclude_from_sim no)
+		(at 44.45 245.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "77fbcc94-0d70-4289-913b-b38611fdc4de")
+	)
+	(text "3.3V supply"
+		(exclude_from_sim no)
+		(at 135.89 125.73 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "7c527cd6-d6af-4947-8dfa-5ac78ee1e326")
+	)
+	(text "Total output C 660 - 5000 uF"
+		(exclude_from_sim no)
+		(at 76.2 173.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8310e745-d2cc-4cb3-9033-114122fffe6e")
+	)
+	(text "Total output C 660 - 5000 uF"
+		(exclude_from_sim no)
+		(at 74.93 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "858e07d3-ffff-4617-a3e6-cd63cf3d23ec")
+	)
+	(text "Power inputs"
+		(exclude_from_sim no)
+		(at 13.97 64.77 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "8835f32f-807b-44cd-9e4e-c053d67dc194")
+	)
+	(text "PGOOD pin for all MYMGK1R812 rails\n(VCCINT, GTY_VTT) is pulled up to\n5V internally, need to be on 5V tolerant pin.\nOther regs have external pullups to 3V3_SB"
+		(exclude_from_sim no)
+		(at 358.14 107.696 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "89d3733c-bee2-4db6-9ea4-8c1b194834b3")
+	)
+	(text "Trim: Precision metal film 1/10W +/- 0.5%"
+		(exclude_from_sim no)
+		(at 208.28 209.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8d3406ce-01f5-49d1-b04b-c185eb034ba8")
+	)
+	(text "Total output C 400 - 3000 uF"
+		(exclude_from_sim no)
+		(at 232.41 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8ddae309-0a21-4c4e-a961-c19798e29bf1")
+	)
+	(text "2V5 is just used for PHY MDIO"
+		(exclude_from_sim no)
+		(at 69.85 284.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9894f237-8eee-4ffd-8655-bc7ce050424e")
+	)
+	(text "1.8V Vih\nInternal: 33K pulldown, 100K pullup\nSo should float at ~2.7V if undriven"
+		(exclude_from_sim no)
+		(at 43.18 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9fc4efb7-408f-4ec2-8862-4f41737e06f7")
+	)
+	(text "Trim: Precision metal film 1/10W +/- 0.5%"
+		(exclude_from_sim no)
+		(at 208.28 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b4e7d7d1-3fb8-4109-bb46-e1f76033603b")
+	)
+	(text "Chassis fans"
+		(exclude_from_sim no)
+		(at 95.25 64.77 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "c7bc5b78-20df-41bc-b87f-79e28402f4bc")
+	)
+	(text "Trim: Precision metal film 1/10W +/- 0.5%"
+		(exclude_from_sim no)
+		(at 208.28 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d1db98c4-63f7-42de-a879-7bd409ed25d7")
+	)
+	(text "Total output C 400 - 3000 uF"
+		(exclude_from_sim no)
+		(at 229.87 215.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6d83a45-5dd4-412e-83aa-b4ee895e212d")
+	)
+	(text "SUPER_I2C ADDRESS MAP\n* 0x42: IBC MCU\n* 0x44: PDU IO expander\n  for rail enables and PGOOD\n* 0x80: 12V0_LC1 INA230\n* 0x82: 12V0_LC2 INA230\n* 0x84: 12V0_LOGIC INA230\n* 0x90: IBC AT30TS74\n* 0x92: PDU AT30TS74\n\nMGMT_I2C ADDRESS MAP\n* 0x40: Supervisor"
+		(exclude_from_sim no)
+		(at 267.97 266.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "db426e0c-8e5f-4f86-9996-dd289aea6b56")
+	)
+	(text "GTY_VCCAUX has no sequencing requirement\nso safe to regulate from any rail"
+		(exclude_from_sim no)
+		(at 342.9 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2cf30b3-386f-4fe0-a356-4acf63108436")
+	)
+	(text "1.2V supply"
+		(exclude_from_sim no)
+		(at 13.97 242.57 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left)
+		)
+		(uuid "e95ecb98-9b1b-4f94-a1b9-9dc98acea656")
 	)
 	(junction
 		(at 35.56 20.32)
@@ -9467,350 +9854,8 @@
 		)
 		(uuid "fdf5a56d-4510-46ae-b558-c87a3fb565e7")
 	)
-	(text "A = 0.612 + 0.01*(Vout - 0.6)\n= 0.6145\nRtrim = 10A / (Vout-A)\n= 26.0934K\nCan do 24.9k + 1.2k"
-		(exclude_from_sim no)
-		(at 67.31 116.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "07e02323-ad74-4f74-9544-fa35a7674abb")
-	)
-	(text "2.5V supply"
-		(exclude_from_sim no)
-		(at 13.97 281.94 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "091996ff-a6b9-40c6-a74e-e4707abd940a")
-	)
-	(text "FPGA status lines are 3.3V here\nShifted to 1.8V on other sheet"
-		(exclude_from_sim no)
-		(at 358.14 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0ae6d71a-04b5-4452-8600-b4394d12d26b")
-	)
-	(text "0.85V supply"
-		(exclude_from_sim no)
-		(at 12.7 154.94 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "0cf73fee-4265-4822-8b4c-edcc65999632")
-	)
-	(text "Ground clips"
-		(exclude_from_sim no)
-		(at 135.89 281.94 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "125a66e9-5859-4ecc-80b4-755619b02c98")
-	)
-	(text "Rtrim = 6 / (Vout - 0.6)\n= 6 / (0.9 - 0.6)\n= 20k"
-		(exclude_from_sim no)
-		(at 200.66 224.79 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "27126e62-7263-486e-aa25-9c955eb90dec")
-	)
-	(text "Supervisor"
-		(exclude_from_sim no)
-		(at 266.7 246.38 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "29baa68d-c597-4416-aabd-e4fcd1f38112")
-	)
-	(text "Test points"
-		(exclude_from_sim no)
-		(at 227.33 64.77 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "29ff4ba9-12ab-43fa-ae96-ffbcdc7de0b1")
-	)
-	(text "Total output C 400 - 3000 uF"
-		(exclude_from_sim no)
-		(at 232.41 152.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3f538444-14f0-48d0-a8f1-63bcf0d7d017")
-	)
-	(text "220 mA @ 1.8V regulated from some other rail\nUse 3V3 for input somewhat arbitrarily"
-		(exclude_from_sim no)
-		(at 342.9 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4191c4f6-7ddc-4673-8d87-3ce2e3779692")
-	)
-	(text "0.90V supply"
-		(exclude_from_sim no)
-		(at 135.89 250.19 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "4cfd6493-2f68-48ee-9c89-5fbbd4c71d07")
-	)
-	(text "850 mV"
-		(exclude_from_sim no)
-		(at 99.06 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "50de6f2a-a671-4c6d-8d4b-9f687401d963")
-	)
-	(text "1.8V supply"
-		(exclude_from_sim no)
-		(at 135.89 187.96 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "63656571-549a-4926-a86f-99496d8a01ce")
-	)
-	(text "1.8V for GTY PLLs"
-		(exclude_from_sim no)
-		(at 307.34 64.77 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "71ac390d-a2f4-4de3-9ea2-f03f080dac59")
-	)
-	(text "1.8V Vih\nInternal: 33K pulldown, 100K pullup\nSo should float at ~2.7V if undriven"
-		(exclude_from_sim no)
-		(at 44.45 245.11 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "77fbcc94-0d70-4289-913b-b38611fdc4de")
-	)
-	(text "3.3V supply"
-		(exclude_from_sim no)
-		(at 135.89 125.73 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "7c527cd6-d6af-4947-8dfa-5ac78ee1e326")
-	)
-	(text "Total output C 660 - 5000 uF"
-		(exclude_from_sim no)
-		(at 76.2 173.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8310e745-d2cc-4cb3-9033-114122fffe6e")
-	)
-	(text "Total output C 660 - 5000 uF"
-		(exclude_from_sim no)
-		(at 74.93 85.09 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "858e07d3-ffff-4617-a3e6-cd63cf3d23ec")
-	)
-	(text "Power inputs"
-		(exclude_from_sim no)
-		(at 13.97 64.77 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "8835f32f-807b-44cd-9e4e-c053d67dc194")
-	)
-	(text "PGOOD pin for all MYMGK1R812 rails\n(VCCINT, GTY_VTT) is pulled up to\n5V internally, need to be on 5V tolerant pin.\nOther regs have external pullups to 3V3_SB"
-		(exclude_from_sim no)
-		(at 358.14 107.696 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "89d3733c-bee2-4db6-9ea4-8c1b194834b3")
-	)
-	(text "Trim: Precision metal film 1/10W +/- 0.5%"
-		(exclude_from_sim no)
-		(at 208.28 209.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8d3406ce-01f5-49d1-b04b-c185eb034ba8")
-	)
-	(text "Total output C 400 - 3000 uF"
-		(exclude_from_sim no)
-		(at 232.41 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8ddae309-0a21-4c4e-a961-c19798e29bf1")
-	)
-	(text "2V5 is just used for PHY MDIO"
-		(exclude_from_sim no)
-		(at 69.85 284.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9894f237-8eee-4ffd-8655-bc7ce050424e")
-	)
-	(text "1.8V Vih\nInternal: 33K pulldown, 100K pullup\nSo should float at ~2.7V if undriven"
-		(exclude_from_sim no)
-		(at 43.18 156.21 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9fc4efb7-408f-4ec2-8862-4f41737e06f7")
-	)
-	(text "Trim: Precision metal film 1/10W +/- 0.5%"
-		(exclude_from_sim no)
-		(at 208.28 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b4e7d7d1-3fb8-4109-bb46-e1f76033603b")
-	)
-	(text "Chassis fans"
-		(exclude_from_sim no)
-		(at 95.25 64.77 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "c7bc5b78-20df-41bc-b87f-79e28402f4bc")
-	)
-	(text "Trim: Precision metal film 1/10W +/- 0.5%"
-		(exclude_from_sim no)
-		(at 208.28 147.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d1db98c4-63f7-42de-a879-7bd409ed25d7")
-	)
-	(text "Total output C 400 - 3000 uF"
-		(exclude_from_sim no)
-		(at 229.87 215.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d6d83a45-5dd4-412e-83aa-b4ee895e212d")
-	)
-	(text "SUPER_I2C ADDRESS MAP\n* 0x42: IBC MCU\n* 0x44: PDU IO expander\n  for rail enables and PGOOD\n* 0x80: 12V0_LC1 INA230\n* 0x82: 12V0_LC2 INA230\n* 0x84: 12V0_LOGIC INA230\n* 0x90: IBC AT30TS74\n* 0x92: PDU AT30TS74\n\nMGMT_I2C ADDRESS MAP\n* 0x40: Supervisor"
-		(exclude_from_sim no)
-		(at 267.97 266.7 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "db426e0c-8e5f-4f86-9996-dd289aea6b56")
-	)
-	(text "GTY_VCCAUX has no sequencing requirement\nso safe to regulate from any rail"
-		(exclude_from_sim no)
-		(at 342.9 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e2cf30b3-386f-4fe0-a356-4acf63108436")
-	)
-	(text "1.2V supply"
-		(exclude_from_sim no)
-		(at 13.97 242.57 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left)
-		)
-		(uuid "e95ecb98-9b1b-4f94-a1b9-9dc98acea656")
-	)
 	(label "VCCINT_PGOOD"
 		(at 378.46 186.69 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9821,7 +9866,6 @@
 	)
 	(label "GTY_VCC"
 		(at 186.69 203.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9832,7 +9876,6 @@
 	)
 	(label "VCCINT_PGOOD"
 		(at 67.31 102.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9843,7 +9886,6 @@
 	)
 	(label "3V3_PGOOD"
 		(at 378.46 156.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9854,7 +9896,6 @@
 	)
 	(label "VCCINT_SENSE"
 		(at 118.11 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9865,7 +9906,6 @@
 	)
 	(label "GND"
 		(at 274.32 231.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9876,7 +9916,6 @@
 	)
 	(label "SUPER_JTAG_TMS"
 		(at 331.47 151.13 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9887,7 +9926,6 @@
 	)
 	(label "GTY_VCCAUX_EN"
 		(at 287.02 110.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9898,7 +9936,6 @@
 	)
 	(label "12V0"
 		(at 19.05 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9909,7 +9946,6 @@
 	)
 	(label "FAN2_TACH"
 		(at 177.8 52.07 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9920,7 +9956,6 @@
 	)
 	(label "GTY_VTT"
 		(at 267.97 16.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9931,7 +9966,6 @@
 	)
 	(label "SUPER_JTAG_TDO"
 		(at 331.47 156.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9942,7 +9976,6 @@
 	)
 	(label "SUPER_I2C_SDA"
 		(at 330.2 118.11 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9953,7 +9986,6 @@
 	)
 	(label "SUPER_JTAG_TDI"
 		(at 331.47 158.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9964,7 +9996,6 @@
 	)
 	(label "GND"
 		(at 241.3 59.69 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9975,7 +10006,6 @@
 	)
 	(label "SUPER_JTAG_TRST"
 		(at 330.2 110.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9986,7 +10016,6 @@
 	)
 	(label "1V8"
 		(at 186.69 140.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9997,7 +10026,6 @@
 	)
 	(label "GND"
 		(at 110.49 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10008,7 +10036,6 @@
 	)
 	(label "GND"
 		(at 19.05 171.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10019,7 +10046,6 @@
 	)
 	(label "SUPER_I2C_SCL"
 		(at 284.48 49.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10030,7 +10056,6 @@
 	)
 	(label "12V0"
 		(at 144.78 86.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10041,7 +10066,6 @@
 	)
 	(label "GTY_VTT_EN"
 		(at 378.46 204.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10052,7 +10076,6 @@
 	)
 	(label "SUPER_LED0"
 		(at 283.21 153.67 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10063,7 +10086,6 @@
 	)
 	(label "GND"
 		(at 110.49 260.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10074,7 +10096,6 @@
 	)
 	(label "12V0"
 		(at 144.78 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10085,7 +10106,6 @@
 	)
 	(label "GND"
 		(at 144.78 143.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10096,7 +10116,6 @@
 	)
 	(label "GND"
 		(at 175.26 22.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10107,7 +10126,6 @@
 	)
 	(label "12V0_EN"
 		(at 287.02 113.03 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10118,7 +10136,6 @@
 	)
 	(label "SUPER_I2C_SCL"
 		(at 330.2 115.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10129,7 +10146,6 @@
 	)
 	(label "3V3_PGOOD"
 		(at 330.2 133.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10140,7 +10156,6 @@
 	)
 	(label "GND"
 		(at 312.42 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10151,7 +10166,6 @@
 	)
 	(label "GND"
 		(at 140.97 264.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10162,7 +10176,6 @@
 	)
 	(label "GND"
 		(at 334.01 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10173,7 +10186,6 @@
 	)
 	(label "1V8_PGOOD"
 		(at 287.02 128.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10184,7 +10196,6 @@
 	)
 	(label "GND"
 		(at 295.91 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10195,7 +10206,6 @@
 	)
 	(label "GND"
 		(at 171.45 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10206,7 +10216,6 @@
 	)
 	(label "GND"
 		(at 87.63 186.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10217,7 +10226,6 @@
 	)
 	(label "SUPER_JTAG_TCK"
 		(at 331.47 153.67 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10228,7 +10236,6 @@
 	)
 	(label "VCCINT_EN"
 		(at 39.37 148.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10239,7 +10246,6 @@
 	)
 	(label "3V3_SB"
 		(at 313.69 194.31 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10250,7 +10256,6 @@
 	)
 	(label "VCCINT_EN"
 		(at 330.2 113.03 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10261,7 +10266,6 @@
 	)
 	(label "GTY_VCCAUX_EN"
 		(at 337.82 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10272,7 +10276,6 @@
 	)
 	(label "GND"
 		(at 325.12 29.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10283,7 +10286,6 @@
 	)
 	(label "GND"
 		(at 144.78 156.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10294,7 +10296,6 @@
 	)
 	(label "12V0"
 		(at 19.05 163.83 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10305,7 +10306,6 @@
 	)
 	(label "SUPER_RST_N"
 		(at 331.47 163.83 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10316,7 +10316,6 @@
 	)
 	(label "2V5_EN"
 		(at 64.77 270.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10327,7 +10326,6 @@
 	)
 	(label "12V0_EN"
 		(at 378.46 224.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10338,7 +10336,6 @@
 	)
 	(label "FAN1_TACH"
 		(at 116.84 52.07 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10349,7 +10346,6 @@
 	)
 	(label "GND"
 		(at 207.01 143.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10360,7 +10356,6 @@
 	)
 	(label "SUPER_JTAG_TDO"
 		(at 330.2 107.95 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10371,7 +10366,6 @@
 	)
 	(label "3V3_EN"
 		(at 330.2 130.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10382,7 +10376,6 @@
 	)
 	(label "3V3_SB"
 		(at 334.01 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10393,7 +10386,6 @@
 	)
 	(label "12V0"
 		(at 144.78 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10404,7 +10396,6 @@
 	)
 	(label "1V8_EN"
 		(at 378.46 214.63 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10415,7 +10406,6 @@
 	)
 	(label "VCCINT_SENSE"
 		(at 67.31 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10426,7 +10416,6 @@
 	)
 	(label "2V5_PGOOD"
 		(at 93.98 273.05 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10437,7 +10426,6 @@
 	)
 	(label "3V3_SB"
 		(at 328.93 231.14 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10448,7 +10436,6 @@
 	)
 	(label "12V0"
 		(at 241.3 54.61 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10459,7 +10446,6 @@
 	)
 	(label "FAN2_TACH"
 		(at 179.07 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10470,7 +10456,6 @@
 	)
 	(label "1V8_EN"
 		(at 163.83 184.15 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10481,7 +10466,6 @@
 	)
 	(label "SUPER_LED1"
 		(at 330.2 120.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10492,7 +10476,6 @@
 	)
 	(label "SOFT_POWER"
 		(at 334.01 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10503,7 +10486,6 @@
 	)
 	(label "GTY_VCC"
 		(at 288.29 25.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10514,7 +10496,6 @@
 	)
 	(label "12V0"
 		(at 144.78 148.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10525,7 +10506,6 @@
 	)
 	(label "GTY_VCCAUX_PGOOD"
 		(at 287.02 107.95 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10536,7 +10516,6 @@
 	)
 	(label "3V3_EN"
 		(at 378.46 194.31 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10547,7 +10526,6 @@
 	)
 	(label "GND"
 		(at 288.29 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10558,7 +10536,6 @@
 	)
 	(label "1V8_PGOOD"
 		(at 378.46 166.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10569,7 +10546,6 @@
 	)
 	(label "3V3"
 		(at 241.3 25.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10580,7 +10556,6 @@
 	)
 	(label "GND"
 		(at 144.78 205.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10591,7 +10566,6 @@
 	)
 	(label "GND"
 		(at 337.82 44.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10602,7 +10576,6 @@
 	)
 	(label "3V3_SB"
 		(at 386.08 156.21 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10613,7 +10586,6 @@
 	)
 	(label "GND"
 		(at 64.77 275.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10624,7 +10596,6 @@
 	)
 	(label "3V3_SB"
 		(at 313.69 205.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10635,7 +10606,6 @@
 	)
 	(label "GND"
 		(at 74.93 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10646,7 +10616,6 @@
 	)
 	(label "GND"
 		(at 241.3 39.37 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10657,7 +10626,6 @@
 	)
 	(label "GTY_VCCAUX_PGOOD"
 		(at 378.46 176.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10668,7 +10636,6 @@
 	)
 	(label "SUPER_JTAG_TCK"
 		(at 287.02 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10679,7 +10646,6 @@
 	)
 	(label "GTY_VCCAUX_EN"
 		(at 378.46 229.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10690,7 +10656,6 @@
 	)
 	(label "12V0"
 		(at 114.3 25.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10701,7 +10666,6 @@
 	)
 	(label "12V0"
 		(at 290.83 73.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10712,7 +10676,6 @@
 	)
 	(label "SOFT_RESET"
 		(at 312.42 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10723,7 +10686,6 @@
 	)
 	(label "A3V3_SUPER"
 		(at 283.21 190.5 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10734,7 +10696,6 @@
 	)
 	(label "FAN1_TACH"
 		(at 118.11 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10745,7 +10706,6 @@
 	)
 	(label "GND"
 		(at 43.18 275.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10756,7 +10716,6 @@
 	)
 	(label "2V5"
 		(at 267.97 25.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10767,7 +10726,6 @@
 	)
 	(label "SUPER_JTAG_TRST"
 		(at 372.11 88.9 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10778,7 +10736,6 @@
 	)
 	(label "GND"
 		(at 207.01 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10789,7 +10746,6 @@
 	)
 	(label "SUPER_JTAG_TMS"
 		(at 287.02 133.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10800,7 +10756,6 @@
 	)
 	(label "GTY_VTT_EN"
 		(at 330.2 102.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10811,7 +10766,6 @@
 	)
 	(label "3V3_SB"
 		(at 191.77 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10822,7 +10776,6 @@
 	)
 	(label "BOOT0"
 		(at 278.13 223.52 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10833,7 +10786,6 @@
 	)
 	(label "GND"
 		(at 144.78 215.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10844,7 +10796,6 @@
 	)
 	(label "12V0"
 		(at 137.16 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10855,7 +10806,6 @@
 	)
 	(label "GND"
 		(at 144.78 93.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10866,7 +10816,6 @@
 	)
 	(label "SUPER_UART_TX"
 		(at 287.02 123.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10877,7 +10826,6 @@
 	)
 	(label "1V8_PGOOD"
 		(at 186.69 151.13 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10888,7 +10836,6 @@
 	)
 	(label "3V3_SB"
 		(at 364.49 88.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10899,7 +10846,6 @@
 	)
 	(label "GND"
 		(at 383.54 29.21 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10910,7 +10856,6 @@
 	)
 	(label "GTY_VTT_PGOOD"
 		(at 68.58 191.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10921,7 +10866,6 @@
 	)
 	(label "GTY_VTT_EN"
 		(at 40.64 237.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10932,7 +10876,6 @@
 	)
 	(label "3V3"
 		(at 52.07 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10943,7 +10886,6 @@
 	)
 	(label "3V3_SB"
 		(at 283.21 187.96 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10954,7 +10896,6 @@
 	)
 	(label "3V3_EN"
 		(at 163.83 123.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10965,7 +10906,6 @@
 	)
 	(label "SUPER_LED1"
 		(at 283.21 163.83 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10976,7 +10916,6 @@
 	)
 	(label "SUPER_I2C_SDA"
 		(at 35.56 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10987,7 +10926,6 @@
 	)
 	(label "GND"
 		(at 288.29 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10998,7 +10936,6 @@
 	)
 	(label "SUPER_I2C_SCL"
 		(at 35.56 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11009,7 +10946,6 @@
 	)
 	(label "GTY_VCC_PGOOD"
 		(at 330.2 138.43 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11020,7 +10956,6 @@
 	)
 	(label "GND"
 		(at 35.56 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11031,7 +10966,6 @@
 	)
 	(label "GND"
 		(at 313.69 201.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11042,7 +10976,6 @@
 	)
 	(label "SUPER_UART_TX"
 		(at 284.48 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11053,7 +10986,6 @@
 	)
 	(label "3V3_SB"
 		(at 130.81 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11064,7 +10996,6 @@
 	)
 	(label "3V3_SB"
 		(at 356.87 151.13 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11075,7 +11006,6 @@
 	)
 	(label "A3V3_SUPER"
 		(at 341.63 194.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11086,7 +11016,6 @@
 	)
 	(label "SUPER_RST_N"
 		(at 283.21 220.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11097,7 +11026,6 @@
 	)
 	(label "12V0_VMON"
 		(at 287.02 105.41 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11108,7 +11036,6 @@
 	)
 	(label "GND"
 		(at 241.3 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11119,7 +11046,6 @@
 	)
 	(label "GND"
 		(at 198.12 29.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11130,7 +11056,6 @@
 	)
 	(label "GND"
 		(at 86.36 97.79 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11141,7 +11066,6 @@
 	)
 	(label "GND"
 		(at 207.01 205.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11152,7 +11076,6 @@
 	)
 	(label "GTY_VCCAUX"
 		(at 241.3 34.29 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11163,7 +11086,6 @@
 	)
 	(label "3V3"
 		(at 325.12 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11174,7 +11096,6 @@
 	)
 	(label "SUPER_I2C_SDA"
 		(at 284.48 46.99 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11185,7 +11106,6 @@
 	)
 	(label "GND"
 		(at 302.26 163.83 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11196,7 +11116,6 @@
 	)
 	(label "SOFT_POWER"
 		(at 287.02 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11207,7 +11126,6 @@
 	)
 	(label "GND"
 		(at 52.07 260.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11218,7 +11136,6 @@
 	)
 	(label "3V3_PGOOD"
 		(at 186.69 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11229,7 +11146,6 @@
 	)
 	(label "GND"
 		(at 267.97 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11240,7 +11156,6 @@
 	)
 	(label "GTY_VCC_EN"
 		(at 378.46 209.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11251,7 +11166,6 @@
 	)
 	(label "GND"
 		(at 19.05 182.88 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11262,7 +11176,6 @@
 	)
 	(label "GND"
 		(at 144.78 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11273,7 +11186,6 @@
 	)
 	(label "GND"
 		(at 267.97 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11284,7 +11196,6 @@
 	)
 	(label "GND"
 		(at 241.3 49.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11295,7 +11206,6 @@
 	)
 	(label "3V3_SB"
 		(at 283.21 195.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11306,7 +11216,6 @@
 	)
 	(label "12V0"
 		(at 175.26 25.4 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11317,7 +11226,6 @@
 	)
 	(label "GTY_VCC_PGOOD"
 		(at 186.69 213.36 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11328,7 +11236,6 @@
 	)
 	(label "GND"
 		(at 316.23 44.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11339,7 +11246,6 @@
 	)
 	(label "GND"
 		(at 76.2 27.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11350,7 +11256,6 @@
 	)
 	(label "12V0"
 		(at 19.05 175.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11361,7 +11266,6 @@
 	)
 	(label "GTY_VTT_PGOOD"
 		(at 378.46 181.61 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11372,7 +11276,6 @@
 	)
 	(label "12V0"
 		(at 144.78 198.12 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11383,7 +11286,6 @@
 	)
 	(label "2V5_PGOOD"
 		(at 378.46 171.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11394,7 +11296,6 @@
 	)
 	(label "GND"
 		(at 76.2 171.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11405,7 +11306,6 @@
 	)
 	(label "SUPER_UART_RX"
 		(at 287.02 125.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11416,7 +11316,6 @@
 	)
 	(label "1V8_EN"
 		(at 287.02 120.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11427,7 +11326,6 @@
 	)
 	(label "GTY_VTT_PGOOD"
 		(at 330.2 105.41 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11438,7 +11336,6 @@
 	)
 	(label "12V0_EN"
 		(at 35.56 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11449,7 +11346,6 @@
 	)
 	(label "1V8"
 		(at 288.29 16.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11460,7 +11356,6 @@
 	)
 	(label "SUPER_LED0"
 		(at 330.2 123.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11471,7 +11366,6 @@
 	)
 	(label "12V0"
 		(at 198.12 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11482,7 +11376,6 @@
 	)
 	(label "12V0_VMON"
 		(at 290.83 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11493,7 +11386,6 @@
 	)
 	(label "12V0"
 		(at 144.78 208.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11504,7 +11396,6 @@
 	)
 	(label "GND"
 		(at 114.3 22.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11515,7 +11406,6 @@
 	)
 	(label "GND"
 		(at 241.3 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11526,7 +11416,6 @@
 	)
 	(label "VCCINT_EN"
 		(at 378.46 199.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11537,7 +11426,6 @@
 	)
 	(label "GND"
 		(at 39.37 92.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11548,7 +11436,6 @@
 	)
 	(label "3V3_SB"
 		(at 312.42 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11559,7 +11446,6 @@
 	)
 	(label "GND"
 		(at 386.08 194.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11570,7 +11456,6 @@
 	)
 	(label "2V5_EN"
 		(at 330.2 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11581,7 +11466,6 @@
 	)
 	(label "GND"
 		(at 283.21 215.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11592,7 +11476,6 @@
 	)
 	(label "12V0"
 		(at 19.05 87.63 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11603,7 +11486,6 @@
 	)
 	(label "GTY_VCC_PGOOD"
 		(at 378.46 161.29 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11614,7 +11496,6 @@
 	)
 	(label "VCCINT"
 		(at 241.3 16.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11625,7 +11506,6 @@
 	)
 	(label "GTY_VTT_SENSE"
 		(at 119.38 171.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11636,7 +11516,6 @@
 	)
 	(label "GND"
 		(at 313.69 213.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11647,7 +11526,6 @@
 	)
 	(label "GND"
 		(at 328.93 222.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11658,7 +11536,6 @@
 	)
 	(label "GTY_VTT_SENSE"
 		(at 68.58 181.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11669,7 +11546,6 @@
 	)
 	(label "3V3_SB"
 		(at 241.3 44.45 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11680,7 +11556,6 @@
 	)
 	(label "GND"
 		(at 40.64 181.61 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11691,7 +11566,6 @@
 	)
 	(label "FAN2_PWM"
 		(at 201.93 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11702,7 +11576,6 @@
 	)
 	(label "GND"
 		(at 19.05 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11713,7 +11586,6 @@
 	)
 	(label "SOFT_RESET"
 		(at 375.92 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11724,7 +11596,6 @@
 	)
 	(label "GND"
 		(at 284.48 52.07 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11735,7 +11606,6 @@
 	)
 	(label "SUPER_UART_RX"
 		(at 284.48 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11746,7 +11616,6 @@
 	)
 	(label "2V5_EN"
 		(at 378.46 219.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11757,7 +11626,6 @@
 	)
 	(label "3V3"
 		(at 186.69 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11768,7 +11636,6 @@
 	)
 	(label "GND"
 		(at 284.48 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11779,7 +11646,6 @@
 	)
 	(label "GND"
 		(at 356.87 156.21 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11790,7 +11656,6 @@
 	)
 	(label "GND"
 		(at 19.05 95.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11801,7 +11666,6 @@
 	)
 	(label "SUPER_JTAG_TDI"
 		(at 287.02 138.43 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11812,7 +11676,6 @@
 	)
 	(label "GTY_VCCAUX_PGOOD"
 		(at 367.03 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11823,7 +11686,6 @@
 	)
 	(label "2V5_PGOOD"
 		(at 287.02 118.11 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11834,7 +11696,6 @@
 	)
 	(label "GND"
 		(at 302.26 153.67 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11845,7 +11706,6 @@
 	)
 	(label "GND"
 		(at 137.16 29.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11856,7 +11716,6 @@
 	)
 	(label "GTY_VCC_EN"
 		(at 163.83 246.38 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11867,7 +11726,6 @@
 	)
 	(label "SUPER_RST_N"
 		(at 321.31 222.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11878,7 +11736,6 @@
 	)
 	(label "FAN1_PWM"
 		(at 140.97 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11889,7 +11746,6 @@
 	)
 	(label "GTY_VCC_EN"
 		(at 330.2 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11900,7 +11756,6 @@
 	)
 	(label "VCCINT_PGOOD"
 		(at 287.02 130.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11912,7 +11767,6 @@
 	(hierarchical_label "GTY_VCC"
 		(shape output)
 		(at 240.03 198.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11924,7 +11778,6 @@
 	(hierarchical_label "FPGA_INIT"
 		(shape input)
 		(at 375.92 135.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11936,7 +11789,6 @@
 	(hierarchical_label "MGMT_I2C_SCL"
 		(shape bidirectional)
 		(at 330.2 125.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11948,7 +11800,6 @@
 	(hierarchical_label "2V5"
 		(shape output)
 		(at 105.41 252.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11960,7 +11811,6 @@
 	(hierarchical_label "1V8"
 		(shape output)
 		(at 240.03 135.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11972,7 +11822,6 @@
 	(hierarchical_label "3V3_SB"
 		(shape output)
 		(at 40.64 49.53 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11984,7 +11833,6 @@
 	(hierarchical_label "GTY_VCCAUX"
 		(shape output)
 		(at 378.46 21.59 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11996,7 +11844,6 @@
 	(hierarchical_label "FAN1_PWM"
 		(shape input)
 		(at 114.3 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12008,7 +11855,6 @@
 	(hierarchical_label "12V0"
 		(shape output)
 		(at 76.2 20.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12020,7 +11866,6 @@
 	(hierarchical_label "3V3"
 		(shape output)
 		(at 250.19 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12032,7 +11877,6 @@
 	(hierarchical_label "FAN2_TACH"
 		(shape output)
 		(at 175.26 27.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12044,7 +11888,6 @@
 	(hierarchical_label "GTY_VTT"
 		(shape output)
 		(at 119.38 163.83 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12056,7 +11899,6 @@
 	(hierarchical_label "MGMT_I2C_SDA"
 		(shape bidirectional)
 		(at 330.2 128.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12068,7 +11910,6 @@
 	(hierarchical_label "FAN2_PWM"
 		(shape input)
 		(at 175.26 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12080,7 +11921,6 @@
 	(hierarchical_label "FPGA_DONE"
 		(shape input)
 		(at 375.92 138.43 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12092,7 +11932,6 @@
 	(hierarchical_label "VCCINT"
 		(shape output)
 		(at 118.11 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12104,7 +11943,6 @@
 	(hierarchical_label "MCU_RST_N"
 		(shape output)
 		(at 287.02 102.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12116,7 +11954,6 @@
 	(hierarchical_label "FAN1_TACH"
 		(shape output)
 		(at 114.3 27.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12128,7 +11965,6 @@
 	(hierarchical_label "FPGA_RST_N"
 		(shape output)
 		(at 375.92 121.92 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12140,7 +11976,6 @@
 	(hierarchical_label "GND"
 		(shape output)
 		(at 35.56 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12152,7 +11987,6 @@
 	(hierarchical_label "MCU_READY"
 		(shape input)
 		(at 287.02 115.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12164,7 +11998,6 @@
 	(hierarchical_label "FPGA_INIT_OE"
 		(shape output)
 		(at 375.92 133.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
