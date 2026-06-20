@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SonnetProject Version="21" Type="GEO" xmlns="https://www.sonnetsoftware.com/schema/project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sonnetsoftware.com/schema/project https://www.sonnetsoftware.com/schema/project/sonnet_project_file-1.0.xsd">
+    <GlobalTemperature Tnom="25.000"/>
+    <Header>
+        <Created Program="xgeom" Version="18.52">
+            <Date>11/18/2021 20:28:07</Date>
+        </Created>
+        <Modified Program="sonnet" Version="19.52.2026.294">
+            <License>antikernel2.1.85703</License>
+            <Date>06/20/2026 03:57:32</Date>
+            <Change Importance="MEDIUM">
+                <Date>06/20/2026 00:50:25</Date>
+            </Change>
+            <Change Importance="HIGH">
+                <Date>06/20/2026 00:50:25</Date>
+            </Change>
+        </Modified>
+        <Comment>
+            <Line>Created by dxfgeo, Sonnet Software Inc.</Line>
+        </Comment>
+    </Header>
+    <Units>
+        <Angle>DEG</Angle>
+        <Capacitance>PF</Capacitance>
+        <Conductance>/OH</Conductance>
+        <Conductivity>SM</Conductivity>
+        <Frequency>GHZ</Frequency>
+        <Inductance>NH</Inductance>
+        <Length>MM</Length>
+        <Roughness>UM</Roughness>
+        <Resistance>OH</Resistance>
+        <Resistivity>OHCM</Resistivity>
+        <SheetRes>OHSQ</SheetRes>
+    </Units>
+    <Control>
+        <SweepType>VARSWP</SweepType>
+        <DeEmbed On="TRUE"/>
+        <Currents On="TRUE"/>
+        <Precision>DOUBLE</Precision>
+        <SpeedControl>MAX_ACCURACY</SpeedControl>
+        <ABSCacheLevel>MULTI_SWEEP</ABSCacheLevel>
+    </Control>
+    <Geometry YDirection="Negative">
+        <Dielectric MacroID="Air" Name="Air" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="1.0"/>
+            <Tan Value="0.0"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricB" Name="Soldermask" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.5"/>
+            <Tan Value="0.025"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricC" Name="TU-872_SLK" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="3.9"/>
+            <Tan Value="0.008"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Dielectric MacroID="dielectricD" Name="Shengyi_S1000-2M" LossType="CONDUCTIVITY" Anisotropic="FALSE">
+            <FrequencyModel ModelType="None" RefFreq="0.0" ValidRef="FALSE"/>
+            <Conductivity Value="0.0"/>
+            <Eps Value="4.49"/>
+            <Tan Value="0.016"/>
+            <MuRel Value="1.0"/>
+            <MagLossTan Value="0.0"/>
+        </Dielectric>
+        <Conductor MacroID="PerfectConductor" Name="Perfect Conductor" Conductivity="INF" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorB" Name="Copper_1oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorC" Name="Copper_1oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorD" Name="Copper_1oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorE" Name="Copper_0.5oz_thin" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorF" Name="Copper_0.5oz_thick" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Conductor MacroID="conductorG" Name="Copper_0.5oz_thick_down" Conductivity="5.8e7" LossType="CONDUCTIVITY"/>
+        <Box>
+            <BoxCover MacroID="top_cover" Type="TOP" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <BoxCover MacroID="bot_cover" Type="BOTTOM" MaterialType="FREE_SPACE" Roughness="0.0" Thickness="0.0"/>
+            <Size X="8.777889423076925" Y="9.32" Z="11.36"/>
+            <NumCells X="439" Y="466"/>
+            <LocalOrigin X="0" Y="49.7"/>
+            <Symmetry On="FALSE"/>
+            <RefPlane Type="FIXED" Side="LEFT" RefLength="0.43"/>
+        </Box>
+        <Level MacroID="diel_layerA" MaterialName="Air" Number="0">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <Level MacroID="diel_layerB" MaterialName="Soldermask" Number="1">
+            <DielectricMaterialModel Thickness="0.04"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLA" Name="F.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLB" Name="F.Cu_thick" MaterialName="Copper_1oz_thick">
+                    <ImportExportMapping CADLayerPurposes="F.Cu_thick:drawing" DXFName="L1D0"/>
+                    <ColorPattern Color="#a52a2a" Pattern="hatch"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonM" Id="54" UserData="FromImport">
+                            <Points>(6.525980769,8.309) (6.523980769,8.301) (6.522980769,8.298) (6.521980769,8.294) (6.519980769,8.291)</Points>
+                            <Points>(6.517980769,8.287) (6.428980769,8.198) (6.428980769,7.964) (6.509980769,7.883) (6.512980769,7.881)</Points>
+                            <Points>(6.514980769,7.878) (6.517980769,7.875) (6.519980769,7.872) (6.521980769,7.868) (6.522980769,7.865)</Points>
+                            <Points>(6.522980769,7.864) (6.523980769,7.861) (6.525980769,7.853) (6.525980769,7.611) (6.523980769,7.605)</Points>
+                            <Points>(6.523980769,7.603) (6.521980769,7.568) (6.521980769,7.566) (6.520980769,7.562) (6.520980769,7.556)</Points>
+                            <Points>(6.510980769,7.518) (6.508980769,7.509) (6.507980769,7.505) (6.506980769,7.503) (6.505980769,7.502)</Points>
+                            <Points>(6.490980769,7.464) (6.489980769,7.461) (6.487980769,7.457) (6.486980769,7.456) (6.484980769,7.452)</Points>
+                            <Points>(6.463980769,7.418) (6.461980769,7.414) (6.457980769,7.41) (6.456980769,7.408) (6.453980769,7.406)</Points>
+                            <Points>(6.453980769,7.405) (6.435980769,7.383) (6.434980769,7.383) (6.434980769,7.382) (6.433980769,7.378)</Points>
+                            <Points>(6.431980769,7.375) (6.429980769,7.371) (6.421980769,7.363) (6.419980769,7.362) (6.240980769,7.182)</Points>
+                            <Points>(6.232980769,7.174) (6.228980769,7.172) (6.225980769,7.17) (6.221980769,7.169) (6.218980769,7.168)</Points>
+                            <Points>(6.210980769,7.166) (6.135980769,7.166) (5.970980769,7.001) (5.970980769,6.931) (5.969980769,6.927)</Points>
+                            <Points>(5.968980769,6.924) (5.968980769,6.923) (5.967980769,6.92) (5.966980769,6.916) (5.964980769,6.913)</Points>
+                            <Points>(5.962980769,6.909) (5.959980769,6.907) (5.957980769,6.904) (5.954980769,6.902) (1.855980769,2.802)</Points>
+                            <Points>(1.819980769,2.759) (1.794980769,2.713) (1.779980769,2.663) (1.775980769,2.617) (1.775980769,0)</Points>
+                            <Points>(1.695980769,0) (1.695980769,2.616) (1.697980769,2.622) (1.697980769,2.624) (1.701980769,2.67)</Points>
+                            <Points>(1.701980769,2.675) (1.703980769,2.683) (1.704980769,2.686) (1.705980769,2.69) (1.706980769,2.691)</Points>
+                            <Points>(1.719980769,2.735) (1.719980769,2.737) (1.720980769,2.739) (1.721980769,2.742) (1.722980769,2.746)</Points>
+                            <Points>(1.724980769,2.749) (1.726980769,2.753) (1.727980769,2.754) (1.748980769,2.793) (1.748980769,2.794)</Points>
+                            <Points>(1.749980769,2.796) (1.750980769,2.797) (1.754980769,2.805) (1.762980769,2.813) (1.792980769,2.851)</Points>
+                            <Points>(5.890980769,6.949) (5.890980769,7.002) (5.885980769,7.009) (5.882980769,7.014) (5.880980769,7.018)</Points>
+                            <Points>(5.879980769,7.023) (5.878980769,7.029) (5.877980769,7.034) (5.877980769,7.039) (5.880980769,7.054)</Points>
+                            <Points>(5.882980769,7.059) (5.885980769,7.064) (5.891980769,7.072) (6.068980769,7.249) (6.073980769,7.252)</Points>
+                            <Points>(6.077980769,7.254) (6.082980769,7.256) (6.097980769,7.259) (6.103980769,7.259) (6.118980769,7.256)</Points>
+                            <Points>(6.123980769,7.254) (6.127980769,7.252) (6.132980769,7.249) (6.135980769,7.246) (6.192980769,7.246)</Points>
+                            <Points>(6.360980769,7.413) (6.360980769,7.414) (6.361980769,7.417) (6.363980769,7.421) (6.365980769,7.424)</Points>
+                            <Points>(6.368980769,7.427) (6.370980769,7.43) (6.372980769,7.432) (6.373980769,7.432) (6.393980769,7.455)</Points>
+                            <Points>(6.395980769,7.459) (6.415980769,7.489) (6.416980769,7.492) (6.431980769,7.527) (6.441980769,7.567)</Points>
+                            <Points>(6.441980769,7.569) (6.445980769,7.618) (6.445980769,7.835) (6.372980769,7.908) (6.357980769,7.911)</Points>
+                            <Points>(6.352980769,7.913) (6.348980769,7.915) (6.343980769,7.918) (6.332980769,7.929) (6.329980769,7.934)</Points>
+                            <Points>(6.327980769,7.938) (6.325980769,7.943) (6.322980769,7.958) (6.322980769,8.204) (6.325980769,8.219)</Points>
+                            <Points>(6.327980769,8.224) (6.329980769,8.228) (6.332980769,8.233) (6.343980769,8.244) (6.348980769,8.247)</Points>
+                            <Points>(6.352980769,8.249) (6.357980769,8.251) (6.372980769,8.254) (6.445980769,8.327) (6.445980769,9.32)</Points>
+                            <Points>(6.525980769,9.32)</Points>
+                            <Objects>
+                                <Port MacroID="portK" Number="1" Vertex="74">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(1.735980769,0)</Center>
+                                </Port>
+                                <Port MacroID="portM" Number="3" Vertex="164">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(6.485980769,9.32)</Center>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                        <PlanarPolygon MacroID="polygonN" Id="55" UserData="FromImport">
+                            <Points>(6.705980769,7.536) (6.703980769,7.53) (6.703980769,7.528) (6.699980769,7.482) (6.699980769,7.477)</Points>
+                            <Points>(6.697980769,7.469) (6.696980769,7.466) (6.695980769,7.462) (6.694980769,7.461) (6.681980769,7.417)</Points>
+                            <Points>(6.680980769,7.415) (6.680980769,7.413) (6.679980769,7.41) (6.678980769,7.406) (6.676980769,7.403)</Points>
+                            <Points>(6.674980769,7.399) (6.673980769,7.398) (6.652980769,7.359) (6.652980769,7.358) (6.651980769,7.356)</Points>
+                            <Points>(6.650980769,7.355) (6.646980769,7.347) (6.638980769,7.339) (6.608980769,7.301) (6.601980769,7.294)</Points>
+                            <Points>(2.034980769,2.728) (2.028980769,2.722) (2.027980769,2.72) (2.007980769,2.697) (2.005980769,2.694)</Points>
+                            <Points>(1.983980769,2.658) (1.969980769,2.624) (1.957980769,2.576) (1.957980769,2.575) (1.955980769,2.542)</Points>
+                            <Points>(1.955980769,2.352) (2.058980769,2.249) (2.073980769,2.246) (2.078980769,2.244) (2.082980769,2.242)</Points>
+                            <Points>(2.087980769,2.239) (2.098980769,2.228) (2.101980769,2.223) (2.103980769,2.219) (2.105980769,2.214)</Points>
+                            <Points>(2.108980769,2.199) (2.108980769,1.953) (2.105980769,1.938) (2.103980769,1.933) (2.101980769,1.929)</Points>
+                            <Points>(2.098980769,1.924) (2.087980769,1.913) (2.082980769,1.91) (2.078980769,1.908) (2.073980769,1.906)</Points>
+                            <Points>(2.058980769,1.903) (1.955980769,1.8) (1.955980769,0) (1.875980769,0) (1.875980769,1.818)</Points>
+                            <Points>(1.877980769,1.826) (1.878980769,1.829) (1.879980769,1.833) (1.881980769,1.836) (1.883980769,1.84)</Points>
+                            <Points>(2.002980769,1.959) (2.002980769,2.193) (1.883980769,2.312) (1.881980769,2.316) (1.879980769,2.319)</Points>
+                            <Points>(1.878980769,2.323) (1.877980769,2.326) (1.875980769,2.334) (1.875980769,2.541) (1.879980769,2.586)</Points>
+                            <Points>(1.879980769,2.591) (1.881980769,2.599) (1.882980769,2.6) (1.890980769,2.634) (1.892980769,2.642)</Points>
+                            <Points>(1.892980769,2.643) (1.893980769,2.647) (1.895980769,2.65) (1.909980769,2.684) (1.909980769,2.686)</Points>
+                            <Points>(1.910980769,2.688) (1.911980769,2.689) (1.912980769,2.691) (1.912980769,2.693) (1.913980769,2.695)</Points>
+                            <Points>(1.914980769,2.696) (1.916980769,2.699) (1.935980769,2.73) (1.937980769,2.734) (1.938980769,2.737)</Points>
+                            <Points>(1.941980769,2.74) (1.942980769,2.742) (1.944980769,2.743) (1.945980769,2.744) (1.970980769,2.775)</Points>
+                            <Points>(6.545980769,7.35) (6.581980769,7.393) (6.606980769,7.439) (6.621980769,7.489) (6.625980769,7.535)</Points>
+                            <Points>(6.625980769,9.32) (6.705980769,9.32)</Points>
+                            <Objects>
+                                <Port MacroID="portL" Number="2" Vertex="57">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(1.915980769,0)</Center>
+                                </Port>
+                                <Port MacroID="portN" Number="4" Vertex="105">
+                                    <Type Type="BOX"/>
+                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Center>(6.665980769,9.32)</Center>
+                                </Port>
+                            </Objects>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerC" MaterialName="TU-872_SLK" Number="2">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLC" Name="In1.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In1.Cu:drawing" DXFName="L2D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                    <Objects>
+                        <PlanarPolygon MacroID="polygonU" Id="83">
+                            <Points>(8.777889423,0) (0,0) (0,9.32) (8.777889423,9.32)</Points>
+                        </PlanarPolygon>
+                    </Objects>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerD" MaterialName="TU-872_SLK" Number="3">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLD" Name="In2.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLE" Name="In2.Cu_thick" MaterialName="Copper_0.5oz_thick">
+                    <ImportExportMapping CADLayerPurposes="In2.Cu_thick:drawing" DXFName="L3D0"/>
+                    <ColorPattern Color="#ff00ff" Pattern="grey3"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="UP" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerE" MaterialName="TU-872_SLK" Number="4">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLF" Name="In3.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In3.Cu:drawing" DXFName="L4D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerF" MaterialName="Shengyi_S1000-2M" Number="5">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLG" Name="In4.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In4.Cu:drawing" DXFName="L5D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerG" MaterialName="Shengyi_S1000-2M" Number="6">
+            <DielectricMaterialModel Thickness="0.5"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLH" Name="In5.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L6D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerH" MaterialName="Shengyi_S1000-2M" Number="7">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLI" Name="In6.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping DXFName="L7D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerI" MaterialName="TU-872_SLK" Number="8">
+            <DielectricMaterialModel Thickness="0.119"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLJ" Name="In7.Cu_thin" MaterialName="Copper_0.5oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu:drawing"/>
+                    <ColorPattern Color="#ff0000" Pattern="rangrey"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLK" Name="In7.Cu_thick" MaterialName="Copper_0.5oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="In5.Cu_thick:drawing" DXFName="L8D0"/>
+                    <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.017"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerJ" MaterialName="TU-872_SLK" Number="9">
+            <DielectricMaterialModel Thickness="0.1"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLL" Name="In8.Cu" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="In6.Cu:drawing" DXFName="L9D0"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerK" MaterialName="TU-872_SLK" Number="10">
+            <DielectricMaterialModel Thickness="0.071"/>
+            <Objects>
+                <PlanarTechLayer MacroID="planarTLM" Name="B.Cu_thin" MaterialName="Copper_1oz_thin">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thin:drawing"/>
+                    <ColorPattern Color="#32cd32" Pattern="dwndiag"/>
+                    <PlanarMaterialModel CurrentRatio="0.5" ModelType="THIN_METAL" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+                <PlanarTechLayer MacroID="planarTLN" Name="B.Cu_thick" MaterialName="Copper_1oz_thick_down">
+                    <ImportExportMapping CADLayerPurposes="B.Cu_thick:drawing" DXFName="L10D0"/>
+                    <ColorPattern Color="#da70d6" Pattern="ltgrey"/>
+                    <PlanarMaterialModel ModelType="THICK_METAL" NumSheets="2.0" SheetsMode="BOUNDARIES" ThickDirection="DOWN" Thickness="0.035"/>
+                    <RoughnessModel RoughnessOn="FALSE"/>
+                    <PlanarMeshing EnableMesh="TRUE" FillType="RECTANGULAR"/>
+                    <SubsectionMeshing XMin="1" XMax="100" YMin="1" YMax="100" EdgeMeshed="TRUE" DiagonalEdges="FALSE" AnisotropicType="X_AND_Y"/>
+                    <GLGMeshing GLG="FALSE"/>
+                </PlanarTechLayer>
+            </Objects>
+        </Level>
+        <Level MacroID="diel_layerL" MaterialName="Soldermask" Number="11">
+            <DielectricMaterialModel Thickness="0.04"/>
+        </Level>
+        <Level MacroID="diel_layerM" MaterialName="Air" Number="12">
+            <DielectricMaterialModel Thickness="5.0"/>
+        </Level>
+        <ViaTechLayer MacroID="viaTLA" Name="Via1" MaterialName="Perfect Conductor">
+            <ImportExportMapping CADLayerPurposes="Via1:drawing" DXFName="L11D0"/>
+            <ColorPattern Color="#a0522d" Pattern="dotdash"/>
+            <ViaMaterialModel ModelType="VOLUME" Solid="TRUE"/>
+            <ViaMeshing AutoHeight="FALSE" EnableMesh="TRUE" FillType="RING" HasPads="FALSE"/>
+            <GLGMeshing GLG="FALSE"/>
+            <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
+        </ViaTechLayer>
+    </Geometry>
+    <Subdivision MainName="$BASENAME_net.sonx" ReferencePlane="REF_SUBDIV_AUTO" ReferenceLength="0"/>
+    <Sweeps SweepVariables="FALSE">
+        <Set MacroID="sweepsetA" On="TRUE">
+            <Frequencies>
+                <Sweep MacroID="freq_sweepB" Type="SWEEP" On="TRUE" Adaptive="FALSE" Start="5" Stop="35" Step="5"/>
+                <Sweep MacroID="freq_sweepA" Type="ABS_ENTRY" On="TRUE" Adaptive="TRUE" Start="0.1" Stop="35" Target="300"/>
+                <Sweep MacroID="freq_sweepC" Type="STEP" On="TRUE" Adaptive="FALSE" Start="0.01"/>
+            </Frequencies>
+        </Set>
+    </Sweeps>
+    <OutputFiles Folder="ZNJSRx"/>
+    <LayerMaps>
+        <LayerMap Name="B.Cu_thick" DXFName="L10D0" LevelNumber="10" MappedDXF="TRUE" MaterialName="Copper_1oz_thick_down" Purpose="PLANAR" TechLayerName="B.Cu_thick" TechLayerType="PLANAR"/>
+        <LayerMap Name="B.Cu_thin" LevelNumber="10" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="B.Cu_thin" TechLayerType="PLANAR"/>
+        <LayerMap Name="F.Cu_thick" DXFName="L1D0" LevelNumber="1" MappedDXF="TRUE" MaterialName="Copper_1oz_thick" Purpose="PLANAR" TechLayerName="F.Cu_thick" TechLayerType="PLANAR"/>
+        <LayerMap Name="F.Cu_thin" LevelNumber="1" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="F.Cu_thin" TechLayerType="PLANAR"/>
+        <LayerMap Name="In1.Cu" DXFName="L2D0" LevelNumber="2" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In1.Cu" TechLayerType="PLANAR"/>
+        <LayerMap Name="In2.Cu_thick" DXFName="L3D0" LevelNumber="3" MappedDXF="TRUE" MaterialName="Copper_0.5oz_thick" Purpose="PLANAR" TechLayerName="In2.Cu_thick" TechLayerType="PLANAR"/>
+        <LayerMap Name="In2.Cu" CADLayerName="In2.Cu" CADPurposeName="drawing" LevelNumber="3" MappedCAD="TRUE" MaterialName="Copper_0.5oz_thin" Purpose="PLANAR" TechLayerName="In2.Cu_thin" TechLayerType="PLANAR"/>
+        <LayerMap Name="In3.Cu" DXFName="L4D0" LevelNumber="4" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In3.Cu" TechLayerType="PLANAR"/>
+        <LayerMap Name="In4.Cu" DXFName="L5D0" LevelNumber="5" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In4.Cu" TechLayerType="PLANAR"/>
+        <LayerMap Name="In5.Cu_L6D0DXF" DXFName="L6D0" LevelNumber="6" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In5.Cu" TechLayerType="PLANAR"/>
+        <LayerMap Name="In6.Cu_L7D0DXF" DXFName="L7D0" LevelNumber="7" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In6.Cu" TechLayerType="PLANAR"/>
+        <LayerMap Name="In5.Cu_thick" DXFName="L8D0" LevelNumber="8" MappedDXF="TRUE" MaterialName="Copper_0.5oz_thick_down" Purpose="PLANAR" TechLayerName="In7.Cu_thick" TechLayerType="PLANAR"/>
+        <LayerMap Name="In5.Cu" CADLayerName="In5.Cu" CADPurposeName="drawing" LevelNumber="8" MappedCAD="TRUE" MaterialName="Copper_0.5oz_thin" Purpose="PLANAR" TechLayerName="In7.Cu_thin" TechLayerType="PLANAR"/>
+        <LayerMap Name="Via1" DXFName="L11D0" MappedDXF="TRUE" MaterialName="Perfect Conductor" Purpose="VIA" TechLayerName="Via1" TechLayerType="VIA">
+            <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
+        </LayerMap>
+        <LayerMap Name="In6.Cu" DXFName="L9D0" LevelNumber="9" MappedDXF="TRUE" MaterialName="Copper_1oz_thin" Purpose="PLANAR" TechLayerName="In8.Cu" TechLayerType="PLANAR"/>
+    </LayerMaps>
+    <Translator>
+        <DXFIMPORT ImportUnits="mm" OpenBoxSizeAdjust="FALSE">
+            <Template UsePresentProject="TRUE" KeepPolygons="TRUE"/>
+            <Box BoxType="Circuit" PlacementType="Center" CellCalcType="Manual" CellSizeX="0.01999519230769231" CellSizeY="0.02" BoxSizeX="8.777889423076925" BoxSizeY="9.32"/>
+            <Margins MarginType="Relative" AddMargins="FALSE" TopMargin="0" LeftMargin="0" RightMargin="0" BottomMargin="0"/>
+            <Advanced MergePlanar="FALSE" CleanGeo="FALSE" AdditionalOptions="" ViasRectangular="FALSE" AddViaPads="FALSE" AdditionalViaOptions="" Flatten="FALSE"/>
+            <ViaSimplification SimplifyViaArrays="FALSE" MinViasInArray="5" DistanceToSizeRatio="8" SizeRatio="1.5" MaxExpansionCoeff="7" MergePlanarVias="FALSE"/>
+            <BarVias IdentifyBarVias="FALSE" BarViaRatio="1.01"/>
+            <DXFOnly DxfArc="1" DxfTolerance="0" DxfMiter="FALSE"/>
+        </DXFIMPORT>
+    </Translator>
+    <Options3D>
+        <Global Multiplier="1"/>
+        <All Entries="13" Value="1"/>
+    </Options3D>
+</SonnetProject>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SonnetProject Version="21" Type="NET" xmlns="https://www.sonnetsoftware.com/schema/project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sonnetsoftware.com/schema/project https://www.sonnetsoftware.com/schema/project/sonnet_project_file-1.0.xsd">
+    <GlobalTemperature Tnom="25.000"/>
+    <Header>
+        <Created Program="sonnet" Version="19.52.2026.294">
+            <Date>06/20/2026 03:43:01</Date>
+        </Created>
+        <Modified Program="sonnet" Version="19.52.2026.294">
+            <License>antikernel2.1.85703</License>
+            <Date>06/20/2026 04:08:38</Date>
+            <Change Importance="MEDIUM">
+                <Date>06/20/2026 03:48:52</Date>
+            </Change>
+            <Change Importance="HIGH">
+                <Date>06/20/2026 03:48:52</Date>
+            </Change>
+        </Modified>
+    </Header>
+    <Units>
+        <Angle>DEG</Angle>
+        <Capacitance>PF</Capacitance>
+        <Conductance>/OH</Conductance>
+        <Conductivity>SM</Conductivity>
+        <Frequency>GHZ</Frequency>
+        <Inductance>NH</Inductance>
+        <Length>MM</Length>
+        <Roughness>UM</Roughness>
+        <Resistance>OH</Resistance>
+        <Resistivity>OHCM</Resistivity>
+        <SheetRes>OHSQ</SheetRes>
+    </Units>
+    <Control>
+        <SweepType>VARSWP</SweepType>
+        <DeEmbed On="TRUE"/>
+        <Precision>DOUBLE</Precision>
+        <Push On="TRUE"/>
+        <SpeedControl>MAX_ACCURACY</SpeedControl>
+        <ABSCacheLevel>MULTI_SWEEP</ABSCacheLevel>
+        <ABSTarget>300</ABSTarget>
+    </Control>
+    <Netlist>
+        <Elements>
+            <ElementData Type="S3P">
+                <Data Tag="">../../../../../../../../../tmp/sfp28-tx0-part1.snp</Data>
+            </ElementData>
+            <ElementData Type="S4P">
+                <Data Tag="">../../../../../../../../../tmp/sfp28-tx0-part2.snp</Data>
+            </ElementData>
+            <ElementData Type="S4P">
+                <Data Tag="">../../../../../../../../../tmp/sfp28-tx0-part3.snp</Data>
+            </ElementData>
+            <ElementData Type="S3P">
+                <Data Tag="">../../../../../../../../../tmp/sfp28-tx0-part4.snp</Data>
+            </ElementData>
+        </Elements>
+        <Networks>
+            <Network Name="Net">
+                <Ports Number="2">
+                    <Port Number="1" Node="1"/>
+                    <Port Number="2" Node="2"/>
+                </Ports>
+                <Elements>
+                    <Element Type="S3P" CircuitIndex="0">
+                        <Ports Number="2">
+                            <Port Number="1" Node="1"/>
+                            <Port Number="2" Node="4"/>
+                            <Port Number="3" Node="3"/>
+                        </Ports>
+                    </Element>
+                    <Element Type="S3P" CircuitIndex="3">
+                        <Ports Number="2">
+                            <Port Number="1" Node="8"/>
+                            <Port Number="2" Node="7"/>
+                            <Port Number="3" Node="2"/>
+                        </Ports>
+                    </Element>
+                    <Element Type="S4P" CircuitIndex="1">
+                        <Ports Number="2">
+                            <Port Number="1" Node="3"/>
+                            <Port Number="2" Node="4"/>
+                            <Port Number="3" Node="5"/>
+                            <Port Number="4" Node="6"/>
+                        </Ports>
+                    </Element>
+                    <Element Type="S4P" CircuitIndex="2">
+                        <Ports Number="2">
+                            <Port Number="1" Node="5"/>
+                            <Port Number="2" Node="6"/>
+                            <Port Number="3" Node="8"/>
+                            <Port Number="4" Node="7"/>
+                        </Ports>
+                    </Element>
+                </Elements>
+            </Network>
+        </Networks>
+        <Terminations Type="STD" Single="TRUE">
+            <Port Rp="100" Xp="0" Lp="0" Cp="0"/>
+        </Terminations>
+    </Netlist>
+    <Sweeps SweepVariables="FALSE">
+        <Set On="TRUE">
+            <Frequencies>
+                <Sweep Type="ABS_ENTRY" On="TRUE" Adaptive="TRUE" Start="0.01" Stop="35" Target="300"/>
+            </Frequencies>
+        </Set>
+    </Sweeps>
+</SonnetProject>

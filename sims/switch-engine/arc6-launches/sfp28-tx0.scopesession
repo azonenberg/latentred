@@ -2,42 +2,41 @@ version: 2
 metadata:
   appver: ngscopeclient v0.1.1-589-gcceaaec97
   appdate: Jun 17 2026 20:55:54
-  created: 2026-06-20 03:30:27
+  created: 2026-06-20 04:09:29
 instruments: ~
 triggergroups: ~
 decodes:
-  filter172:
+  filter175:
     inputs:
-      din: 69/0
-    parameters: ~
-    id: 172
-    protocol: Memory
-    color: "#d000ff"
-    nick: BiggerCutout
-    name: Memory_9
+      in: 43/0
+    parameters:
+      Filter Type:
+        type: unitless (linear)
+        value: High pass
+      Frequency High:
+        type: Hz
+        value: 0.0000000 mHz
+      Frequency Low:
+        type: Hz
+        value: 150.0000 MHz
+      Length:
+        type: sa
+        value: 0 mS
+      Stopband Attenuation:
+        type: dB
+        value: 60.00000 dB
+    id: 175
+    protocol: FIR Filter
+    color: "#b15928"
+    nick: HPF(ChannelEmulation_2, 150 MHz)
+    name: HPF(ChannelEmulation_2, 150 MHz)
     xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
-  filter144:
-    inputs:
-      din: 5/4
-    parameters: ~
-    id: 144
-    protocol: Memory
-    color: "#00c0ff"
-    nick: OldFanout
-    name: Memory_13
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 9.16921902
-        offset: 4.29261732
-        yunit: dB
+        vrange: 0.878115714
+        offset: -0
+        yunit: V
   filter53:
     inputs:
       din: 2/1
@@ -57,38 +56,6 @@ decodes:
     nick: Jitter_1
     name: Jitter_1
     xunit: fs
-  filter145:
-    inputs:
-      din: 5/4
-    parameters: ~
-    id: 145
-    protocol: Memory
-    color: "#008000"
-    nick: NoCutouts
-    name: Memory_11
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 9.16921902
-        offset: 4.29261732
-        yunit: dB
-  filter143:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 143
-    protocol: Memory
-    color: "#008000"
-    nick: NoCutouts
-    name: Memory_12
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
   filter65:
     inputs: ~
     parameters:
@@ -153,38 +120,38 @@ decodes:
     parameters:
       Touchstone File:
         type: unitless (linear)
-        value: /tmp/arc6-frontside7-meanderfix-500um-bgacut.s2p
+        value: /tmp/sfp28-tx0-cascade.s2p
     id: 5
     protocol: Touchstone Import
     color: "#fff900"
-    nick: arc6-frontside7-meanderfix-500um-bgacut.s2p
-    name: arc6-frontside7-meanderfix-500um-bgacut.s2p
+    nick: sfp28-tx0-cascade.s2p
+    name: sfp28-tx0-cascade.s2p
     xunit: Hz
     streams:
       stream0:
         index: 0
-        vrange: 36.9970665
-        offset: 31.4007282
+        vrange: 38.7695045
+        offset: 33.8341675
         yunit: dB
       stream1:
         index: 1
-        vrange: 181.259857
-        offset: -33.8424072
+        vrange: 377.16153
+        offset: -0.285308838
         yunit: °
       stream2:
         index: 2
-        vrange: 3.55234313
-        offset: 1.74881315
+        vrange: 5.63967657
+        offset: 2.71853828
         yunit: dB
       stream3:
         index: 3
-        vrange: 332.067566
-        offset: -12.4319229
+        vrange: 376.865936
+        offset: 0.365615845
         yunit: °
       stream4:
         index: 4
-        vrange: 9.16921902
-        offset: 4.29261732
+        vrange: 6.68436098
+        offset: 3.1469295
         yunit: dB
       stream5:
         index: 5
@@ -229,23 +196,6 @@ decodes:
         vrange: 55.7424469
         offset: -95.8047562
         yunit: Ω
-  filter157:
-    inputs:
-      IN+: 145/0
-      IN-: 146/0
-    parameters: ~
-    id: 157
-    protocol: Subtract
-    color: "#e3c01a"
-    nick: CutoutDelta
-    name: Subtract_1
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 4.14976025
-        offset: 1.9756
-        yunit: dB
   filter66:
     inputs:
       signal: 65/0
@@ -398,8 +348,8 @@ decodes:
     id: 43
     protocol: Channel Emulation
     color: "#e31a1c"
-    nick: ChannelEmulation_1
-    name: ChannelEmulation_1
+    nick: ChannelEmulation_2
+    name: ChannelEmulation_2
     xunit: fs
     streams:
       stream0:
@@ -426,70 +376,6 @@ decodes:
         vrange: 0.466666698
         offset: -0
         yunit: V
-  filter146:
-    inputs:
-      din: 5/4
-    parameters: ~
-    id: 146
-    protocol: Memory
-    color: "#ff0000"
-    nick: final
-    name: Memory_15
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 9.16921902
-        offset: 4.29261732
-        yunit: dB
-  filter147:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 147
-    protocol: Memory
-    color: "#00c0ff"
-    nick: OldFanout
-    name: Memory_14
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
-  filter148:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 148
-    protocol: Memory
-    color: "#ff0000"
-    nick: Final
-    name: Memory_16
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
-  filter168:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 168
-    protocol: Memory
-    color: "#fcff00"
-    nick: Original
-    name: Memory_7
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
 ui_config:
   window:
     height: 1147
@@ -522,21 +408,6 @@ ui_config:
           channel: 5
           stream: 4
           colorRamp: eye-gradient-viridis
-        stream1:
-          persistence: false
-          channel: 145
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream2:
-          persistence: false
-          channel: 144
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream3:
-          persistence: false
-          channel: 146
-          stream: 0
-          colorRamp: eye-gradient-viridis
     area163:
       id: 163
       ycursors:
@@ -561,84 +432,23 @@ ui_config:
           channel: 69
           stream: 0
           colorRamp: eye-gradient-viridis
-        stream1:
-          persistence: false
-          channel: 143
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream2:
-          persistence: false
-          channel: 147
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream3:
-          persistence: false
-          channel: 148
-          stream: 0
-          colorRamp: eye-gradient-viridis
-    area167:
-      id: 167
-      ycursors:
-        mode: none
-        pos0: 0
-        pos1: 0
-      streams:
-        stream0:
-          persistence: false
-          channel: 157
-          stream: 0
-          colorRamp: eye-gradient-viridis
-    area171:
-      id: 171
-      ycursors:
-        mode: none
-        pos0: 0
-        pos1: 0
-      streams:
-        stream0:
-          persistence: false
-          channel: 168
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream1:
-          persistence: false
-          channel: 172
-          stream: 0
-          colorRamp: eye-gradient-viridis
-    area174:
-      id: 174
-      ycursors:
-        mode: none
-        pos0: 0
-        pos1: 0
-      streams:
-        stream0:
-          persistence: false
-          channel: 172
-          stream: 0
-          colorRamp: eye-gradient-viridis
-        stream1:
-          persistence: false
-          channel: 143
-          stream: 0
-          colorRamp: eye-gradient-viridis
   groups:
     group158:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.000569531345
-      xAxisOffset: 7641718
+      pixelsPerXUnit: 1.7127438e-07
+      xAxisOffset: 81376640
       name: Waveform Group 1
       id: Waveform Group 1
       cursorConfig: none
-      xcursor0: 0
-      xcursor1: 0
+      xcursor0: 35837810
+      xcursor1: 82919054
       areas:
         area159:
           id: 159
     group160:
       timebaseResolution: fs
       pixelsPerXUnit: 3.38319737e-08
-      xAxisOffset: -9270404642
+      xAxisOffset: -9093058560
       name: s-params
       id: Waveform Group 2
       cursorConfig: none
@@ -649,8 +459,8 @@ ui_config:
           id: 161
     group162:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.010593527
-      xAxisOffset: -38750
+      pixelsPerXUnit: 0.0105820652
+      xAxisOffset: -38792
       name: Waveform Group 3
       id: Waveform Group 3
       cursorConfig: none
@@ -661,8 +471,8 @@ ui_config:
           id: 163
     group164:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.00128144538
-      xAxisOffset: 99840660
+      pixelsPerXUnit: 0.000569531287
+      xAxisOffset: 99631992
       name: Waveform Group 4
       id: Waveform Group 4
       cursorConfig: none
@@ -671,42 +481,6 @@ ui_config:
       areas:
         area165:
           id: 165
-    group166:
-      timebaseResolution: fs
-      pixelsPerXUnit: 3.38319737e-08
-      xAxisOffset: -3567878144
-      name: Waveform Group 5
-      id: Waveform Group 5
-      cursorConfig: none
-      xcursor0: 34945986560
-      xcursor1: 0
-      areas:
-        area167:
-          id: 167
-    group170:
-      timebaseResolution: fs
-      pixelsPerXUnit: 0.00192216807
-      xAxisOffset: 99874928
-      name: Waveform Group 6
-      id: Waveform Group 6
-      cursorConfig: none
-      xcursor0: 0
-      xcursor1: 0
-      areas:
-        area171:
-          id: 171
-    group173:
-      timebaseResolution: fs
-      pixelsPerXUnit: 0.000854296901
-      xAxisOffset: 99759064
-      name: Waveform Group 7
-      id: Waveform Group 7
-      cursorConfig: none
-      xcursor0: 0
-      xcursor1: 0
-      areas:
-        area174:
-          id: 174
   markers: ~
   dialogs:
     streambrowser: true

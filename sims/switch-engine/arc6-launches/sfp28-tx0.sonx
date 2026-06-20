@@ -7,12 +7,12 @@
         </Created>
         <Modified Program="sonnet" Version="19.52.2026.294">
             <License>antikernel2.1.85703</License>
-            <Date>06/20/2026 00:42:10</Date>
+            <Date>06/20/2026 04:12:45</Date>
             <Change Importance="MEDIUM">
-                <Date>06/20/2026 00:42:10</Date>
+                <Date>06/20/2026 04:12:45</Date>
             </Change>
             <Change Importance="HIGH">
-                <Date>06/20/2026 00:42:10</Date>
+                <Date>06/20/2026 04:12:45</Date>
             </Change>
         </Modified>
         <Comment>
@@ -679,6 +679,7 @@
             <ViaLevels FromLevel="1" FromType="LEVEL" ToLevel="10" ToType="LEVEL"/>
         </ViaTechLayer>
     </Geometry>
+    <Subdivision MainName="$BASENAME_net.sonx" ReferencePlane="REF_SUBDIV_AUTO" ReferenceLength="0"/>
     <Sweeps SweepVariables="FALSE">
         <Set MacroID="sweepsetA" On="TRUE">
             <Frequencies>
