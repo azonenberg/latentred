@@ -7,12 +7,12 @@
         </Created>
         <Modified Program="sonnet" Version="19.52.2026.294">
             <License>antikernel2.1.85703</License>
-            <Date>06/20/2026 03:57:12</Date>
+            <Date>06/21/2026 02:06:37</Date>
             <Change Importance="MEDIUM">
-                <Date>06/20/2026 00:49:59</Date>
+                <Date>06/21/2026 02:06:37</Date>
             </Change>
             <Change Importance="HIGH">
-                <Date>06/20/2026 00:49:59</Date>
+                <Date>06/21/2026 02:06:37</Date>
             </Change>
         </Modified>
         <Comment>
@@ -118,7 +118,7 @@
                             <Objects>
                                 <Port MacroID="portG" Number="1" Vertex="3">
                                     <Type Type="BOX"/>
-                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
                                     <Center>(0,1.44)</Center>
                                 </Port>
                             </Objects>
@@ -128,7 +128,7 @@
                             <Objects>
                                 <Port MacroID="portH" Number="-1" Vertex="3">
                                     <Type Type="BOX"/>
-                                    <Impedance Resistance="50" Reactance="0" Inductance="0" Capacitance="0"/>
+                                    <Impedance Resistance="100" Reactance="0" Inductance="0" Capacitance="0"/>
                                     <Center>(0,2.42)</Center>
                                 </Port>
                             </Objects>

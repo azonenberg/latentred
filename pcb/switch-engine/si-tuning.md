@@ -4,11 +4,12 @@
 
 * Redo BGA escapes with new meander geometry
 * Enlarge BGA land cutouts from 0.45 to 0.5 mm (done)
+* Check if we need cutouts on lower layers with full stack modeling
 
 ## J21 (SFP28 uplinks ARF6)
 
-* TX0: xxx
-* TX1: step1
+* TX0: Done
+* TX1: Done
 
 * RX0: TBD
 * RX1: TBD

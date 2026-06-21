@@ -10,28 +10,6 @@ waveforms:
         trigphase: 41836
         flags: 0
         format: densev1
-  filt144:
-    timestamp: 1781728044
-    time_fsec: 43589432000000
-    id: 144
-    streams:
-      s0:
-        stream: 0
-        timescale: 1
-        trigphase: 0
-        flags: 0
-        format: sparsev1
-  filt145:
-    timestamp: 1781727821
-    time_fsec: 96381700000000
-    id: 145
-    streams:
-      s0:
-        stream: 0
-        timescale: 1
-        trigphase: 0
-        flags: 0
-        format: sparsev1
   filt143:
     timestamp: 1781727836
     time_fsec: 116993665695190
@@ -43,10 +21,32 @@ waveforms:
         trigphase: 2467169
         flags: 0
         format: densev1
-  filt146:
-    timestamp: 1781727796
-    time_fsec: 772468805000000
-    id: 146
+  filt144:
+    timestamp: 1781728044
+    time_fsec: 43589432000000
+    id: 144
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt168:
+    timestamp: 1781862049
+    time_fsec: 284612655639648
+    id: 168
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 143543
+        flags: 0
+        format: densev1
+  filt145:
+    timestamp: 1781727821
+    time_fsec: 96381700000000
+    id: 145
     streams:
       s0:
         stream: 0
@@ -65,6 +65,17 @@ waveforms:
         trigphase: 111007
         flags: 0
         format: densev1
+  filt146:
+    timestamp: 1781727796
+    time_fsec: 772468805000000
+    id: 146
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
   filt148:
     timestamp: 1781728744
     time_fsec: 699476003646850
@@ -74,16 +85,5 @@ waveforms:
         stream: 0
         timescale: 2000
         trigphase: 142301
-        flags: 0
-        format: densev1
-  filt168:
-    timestamp: 1781862049
-    time_fsec: 284612655639648
-    id: 168
-    streams:
-      s0:
-        stream: 0
-        timescale: 2000
-        trigphase: 143543
         flags: 0
         format: densev1

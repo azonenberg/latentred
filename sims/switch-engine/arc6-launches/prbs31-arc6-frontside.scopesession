@@ -2,7 +2,7 @@ version: 2
 metadata:
   appver: ngscopeclient v0.1.1-589-gcceaaec97
   appdate: Jun 17 2026 20:55:54
-  created: 2026-06-20 03:30:27
+  created: 2026-06-21 02:12:40
 instruments: ~
 triggergroups: ~
 decodes:
@@ -22,22 +22,22 @@ decodes:
         vrange: 55.7424469
         offset: -95.8047562
         yunit: Ω
-  filter144:
+  filter143:
     inputs:
-      din: 5/4
+      din: 69/0
     parameters: ~
-    id: 144
+    id: 143
     protocol: Memory
-    color: "#00c0ff"
-    nick: OldFanout
-    name: Memory_13
-    xunit: Hz
+    color: "#008000"
+    nick: NoCutouts
+    name: Memory_12
+    xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 9.16921902
-        offset: 4.29261732
-        yunit: dB
+        vrange: 55.7424469
+        offset: -95.8047562
+        yunit: Ω
   filter53:
     inputs:
       din: 2/1
@@ -57,15 +57,15 @@ decodes:
     nick: Jitter_1
     name: Jitter_1
     xunit: fs
-  filter145:
+  filter144:
     inputs:
       din: 5/4
     parameters: ~
-    id: 145
+    id: 144
     protocol: Memory
-    color: "#008000"
-    nick: NoCutouts
-    name: Memory_11
+    color: "#00c0ff"
+    nick: OldFanout
+    name: Memory_13
     xunit: Hz
     streams:
       stream0:
@@ -73,22 +73,6 @@ decodes:
         vrange: 9.16921902
         offset: 4.29261732
         yunit: dB
-  filter143:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 143
-    protocol: Memory
-    color: "#008000"
-    nick: NoCutouts
-    name: Memory_12
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
   filter65:
     inputs: ~
     parameters:
@@ -229,68 +213,6 @@ decodes:
         vrange: 55.7424469
         offset: -95.8047562
         yunit: Ω
-  filter157:
-    inputs:
-      IN+: 145/0
-      IN-: 146/0
-    parameters: ~
-    id: 157
-    protocol: Subtract
-    color: "#e3c01a"
-    nick: CutoutDelta
-    name: Subtract_1
-    xunit: Hz
-    streams:
-      stream0:
-        index: 0
-        vrange: 4.14976025
-        offset: 1.9756
-        yunit: dB
-  filter66:
-    inputs:
-      signal: 65/0
-      mag: 5/0
-      angle: 5/1
-    parameters:
-      Group Delay Truncation:
-        type: fs
-        value: 0 fs
-      Group Delay Truncation Mode:
-        type: unitless (linear)
-        value: Auto
-      Max Gain:
-        type: dB
-        value: 20.00000 dB
-    id: 66
-    protocol: Channel Emulation
-    color: "#6a3d9a"
-    nick: ChannelEmulation_2
-    name: ChannelEmulation_2
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 0.576131761
-        offset: -0
-        yunit: V
-  filter2:
-    inputs: ~
-    parameters:
-      Data Rate:
-        type: b/s
-        value: 25.78125 Gbps
-      Depth:
-        type: sa
-        value: 1 MS
-      Polynomial:
-        type: unitless (linear)
-        value: PRBS-31
-    id: 2
-    protocol: PRBS
-    color: "#a6cee3"
-    nick: PRBS31(25.78125 Gbps)
-    name: PRBS31(25.78125 Gbps)
-    xunit: fs
   filter25:
     inputs:
       IN: 43/0
@@ -315,6 +237,66 @@ decodes:
     streams:
       stream1:
         index: 1
+        vrange: 0.878115714
+        offset: -0
+        yunit: V
+  filter157:
+    inputs:
+      IN+: 145/0
+      IN-: 146/0
+    parameters: ~
+    id: 157
+    protocol: Subtract
+    color: "#e3c01a"
+    nick: CutoutDelta
+    name: Subtract_1
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 4.14976025
+        offset: 1.9756
+        yunit: dB
+  filter168:
+    inputs:
+      din: 69/0
+    parameters: ~
+    id: 168
+    protocol: Memory
+    color: "#fcff00"
+    nick: Original
+    name: Memory_7
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
+        vrange: 55.7424469
+        offset: -95.8047562
+        yunit: Ω
+  filter43:
+    inputs:
+      signal: 58/0
+      mag: 5/4
+      angle: 5/5
+    parameters:
+      Group Delay Truncation:
+        type: fs
+        value: 0 fs
+      Group Delay Truncation Mode:
+        type: unitless (linear)
+        value: Auto
+      Max Gain:
+        type: dB
+        value: 20.00000 dB
+    id: 43
+    protocol: Channel Emulation
+    color: "#e31a1c"
+    nick: ChannelEmulation_1
+    name: ChannelEmulation_1
+    xunit: fs
+    streams:
+      stream0:
+        index: 0
         vrange: 0.878115714
         offset: -0
         yunit: V
@@ -380,11 +362,11 @@ decodes:
         vrange: 0.878115714
         offset: -0
         yunit: sa
-  filter43:
+  filter66:
     inputs:
-      signal: 58/0
-      mag: 5/4
-      angle: 5/5
+      signal: 65/0
+      mag: 5/0
+      angle: 5/1
     parameters:
       Group Delay Truncation:
         type: fs
@@ -395,16 +377,16 @@ decodes:
       Max Gain:
         type: dB
         value: 20.00000 dB
-    id: 43
+    id: 66
     protocol: Channel Emulation
-    color: "#e31a1c"
-    nick: ChannelEmulation_1
-    name: ChannelEmulation_1
+    color: "#6a3d9a"
+    nick: ChannelEmulation_2
+    name: ChannelEmulation_2
     xunit: fs
     streams:
       stream0:
         index: 0
-        vrange: 0.878115714
+        vrange: 0.576131761
         offset: -0
         yunit: V
   filter58:
@@ -426,15 +408,33 @@ decodes:
         vrange: 0.466666698
         offset: -0
         yunit: V
-  filter146:
+  filter2:
+    inputs: ~
+    parameters:
+      Data Rate:
+        type: b/s
+        value: 25.78125 Gbps
+      Depth:
+        type: sa
+        value: 1 MS
+      Polynomial:
+        type: unitless (linear)
+        value: PRBS-31
+    id: 2
+    protocol: PRBS
+    color: "#a6cee3"
+    nick: PRBS31(25.78125 Gbps)
+    name: PRBS31(25.78125 Gbps)
+    xunit: fs
+  filter145:
     inputs:
       din: 5/4
     parameters: ~
-    id: 146
+    id: 145
     protocol: Memory
-    color: "#ff0000"
-    nick: final
-    name: Memory_15
+    color: "#008000"
+    nick: NoCutouts
+    name: Memory_11
     xunit: Hz
     streams:
       stream0:
@@ -458,6 +458,22 @@ decodes:
         vrange: 55.7424469
         offset: -95.8047562
         yunit: Ω
+  filter146:
+    inputs:
+      din: 5/4
+    parameters: ~
+    id: 146
+    protocol: Memory
+    color: "#ff0000"
+    nick: final
+    name: Memory_15
+    xunit: Hz
+    streams:
+      stream0:
+        index: 0
+        vrange: 9.16921902
+        offset: 4.29261732
+        yunit: dB
   filter148:
     inputs:
       din: 69/0
@@ -474,22 +490,6 @@ decodes:
         vrange: 55.7424469
         offset: -95.8047562
         yunit: Ω
-  filter168:
-    inputs:
-      din: 69/0
-    parameters: ~
-    id: 168
-    protocol: Memory
-    color: "#fcff00"
-    nick: Original
-    name: Memory_7
-    xunit: fs
-    streams:
-      stream0:
-        index: 0
-        vrange: 55.7424469
-        offset: -95.8047562
-        yunit: Ω
 ui_config:
   window:
     height: 1147
@@ -498,8 +498,8 @@ ui_config:
     traceAlpha: 0.75
     persistenceDecay: 0.800000012
   areas:
-    area159:
-      id: 159
+    area174:
+      id: 174
       ycursors:
         mode: none
         pos0: 0
@@ -510,8 +510,8 @@ ui_config:
           channel: 43
           stream: 0
           colorRamp: eye-gradient-viridis
-    area161:
-      id: 161
+    area176:
+      id: 176
       ycursors:
         mode: none
         pos0: 0
@@ -537,8 +537,8 @@ ui_config:
           channel: 146
           stream: 0
           colorRamp: eye-gradient-viridis
-    area163:
-      id: 163
+    area178:
+      id: 178
       ycursors:
         mode: none
         pos0: 0
@@ -549,8 +549,8 @@ ui_config:
           channel: 32
           stream: 0
           colorRamp: eye-gradient-viridis
-    area165:
-      id: 165
+    area180:
+      id: 180
       ycursors:
         mode: none
         pos0: 0
@@ -576,8 +576,8 @@ ui_config:
           channel: 148
           stream: 0
           colorRamp: eye-gradient-viridis
-    area167:
-      id: 167
+    area182:
+      id: 182
       ycursors:
         mode: none
         pos0: 0
@@ -588,8 +588,8 @@ ui_config:
           channel: 157
           stream: 0
           colorRamp: eye-gradient-viridis
-    area171:
-      id: 171
+    area184:
+      id: 184
       ycursors:
         mode: none
         pos0: 0
@@ -605,8 +605,8 @@ ui_config:
           channel: 172
           stream: 0
           colorRamp: eye-gradient-viridis
-    area174:
-      id: 174
+    area186:
+      id: 186
       ycursors:
         mode: none
         pos0: 0
@@ -623,7 +623,7 @@ ui_config:
           stream: 0
           colorRamp: eye-gradient-viridis
   groups:
-    group158:
+    group173:
       timebaseResolution: fs
       pixelsPerXUnit: 0.000569531345
       xAxisOffset: 7641718
@@ -633,9 +633,9 @@ ui_config:
       xcursor0: 0
       xcursor1: 0
       areas:
-        area159:
-          id: 159
-    group160:
+        area174:
+          id: 174
+    group175:
       timebaseResolution: fs
       pixelsPerXUnit: 3.38319737e-08
       xAxisOffset: -9270404642
@@ -645,21 +645,21 @@ ui_config:
       xcursor0: 26258115038
       xcursor1: 0
       areas:
-        area161:
-          id: 161
-    group162:
+        area176:
+          id: 176
+    group177:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.010593527
-      xAxisOffset: -38750
+      pixelsPerXUnit: 0.0105836373
+      xAxisOffset: -38786
       name: Waveform Group 3
       id: Waveform Group 3
       cursorConfig: none
       xcursor0: 0
       xcursor1: 0
       areas:
-        area163:
-          id: 163
-    group164:
+        area178:
+          id: 178
+    group179:
       timebaseResolution: fs
       pixelsPerXUnit: 0.00128144538
       xAxisOffset: 99840660
@@ -669,9 +669,9 @@ ui_config:
       xcursor0: 100116909
       xcursor1: 100116909
       areas:
-        area165:
-          id: 165
-    group166:
+        area180:
+          id: 180
+    group181:
       timebaseResolution: fs
       pixelsPerXUnit: 3.38319737e-08
       xAxisOffset: -3567878144
@@ -681,9 +681,9 @@ ui_config:
       xcursor0: 34945986560
       xcursor1: 0
       areas:
-        area167:
-          id: 167
-    group170:
+        area182:
+          id: 182
+    group183:
       timebaseResolution: fs
       pixelsPerXUnit: 0.00192216807
       xAxisOffset: 99874928
@@ -693,9 +693,9 @@ ui_config:
       xcursor0: 0
       xcursor1: 0
       areas:
-        area171:
-          id: 171
-    group173:
+        area184:
+          id: 184
+    group185:
       timebaseResolution: fs
       pixelsPerXUnit: 0.000854296901
       xAxisOffset: 99759064
@@ -705,8 +705,8 @@ ui_config:
       xcursor0: 0
       xcursor1: 0
       areas:
-        area174:
-          id: 174
+        area186:
+          id: 186
   markers: ~
   dialogs:
     streambrowser: true
