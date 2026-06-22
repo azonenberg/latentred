@@ -1,0 +1,45 @@
+waveforms:
+  filt184:
+    timestamp: 1782109407
+    time_fsec: 254045724868774
+    id: 184
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 513584
+        flags: 0
+        format: densev1
+  filt186:
+    timestamp: 1782109353
+    time_fsec: 489856619000000
+    id: 186
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt185:
+    timestamp: 1782109346
+    time_fsec: 149878173000000
+    id: 185
+    streams:
+      s0:
+        stream: 0
+        timescale: 1
+        trigphase: 0
+        flags: 0
+        format: sparsev1
+  filt187:
+    timestamp: 1782109443
+    time_fsec: 958108663558960
+    id: 187
+    streams:
+      s0:
+        stream: 0
+        timescale: 2000
+        trigphase: 3048581
+        flags: 0
+        format: densev1

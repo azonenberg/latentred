@@ -2,7 +2,7 @@ version: 2
 metadata:
   appver: ngscopeclient v0.1.1-589-gcceaaec97
   appdate: Jun 17 2026 20:55:54
-  created: 2026-06-21 23:21:36
+  created: 2026-06-21 23:27:14
 instruments: ~
 triggergroups: ~
 decodes:
@@ -62,8 +62,8 @@ decodes:
     streams:
       stream0:
         index: 0
-        vrange: 12.7520857
-        offset: -100.732979
+        vrange: 19.4361916
+        offset: -102.712585
         yunit: Ω
   filter65:
     inputs: ~
@@ -129,38 +129,38 @@ decodes:
     parameters:
       Touchstone File:
         type: unitless (linear)
-        value: /tmp/sfp28-tx0-part1-differential-groundl4.s2p
+        value: /tmp/sfp28-tx0-part4-differential-groundl4.s2p
     id: 5
     protocol: Touchstone Import
     color: "#fff900"
-    nick: sfp28-tx0-part1-differential-groundl4.s2p
-    name: sfp28-tx0-part1-differential-groundl4.s2p
+    nick: sfp28-tx0-part4-differential-groundl4.s2p
+    name: sfp28-tx0-part4-differential-groundl4.s2p
     xunit: Hz
     streams:
       stream0:
         index: 0
-        vrange: 32.1701126
-        offset: 35.9406357
+        vrange: 41.8428383
+        offset: 36.7869186
         yunit: dB
       stream1:
         index: 1
-        vrange: 375.162354
-        offset: 0.678497314
+        vrange: 375.747925
+        offset: -0.887443542
         yunit: °
       stream2:
         index: 2
-        vrange: 1.06481671
-        offset: 0.525427163
+        vrange: 2.55764771
+        offset: 1.22973537
         yunit: dB
       stream3:
         index: 3
-        vrange: 375.910248
-        offset: 0.0263748169
+        vrange: 374.27182
+        offset: -1.18916321
         yunit: °
       stream4:
         index: 4
-        vrange: 1.52916741
-        offset: 0.658224165
+        vrange: 3.19710898
+        offset: 1.33908951
         yunit: dB
       stream5:
         index: 5
@@ -281,8 +281,8 @@ decodes:
     streams:
       stream0:
         index: 0
-        vrange: 12.7520857
-        offset: -100.732979
+        vrange: 19.4361916
+        offset: -102.712585
         yunit: Ω
   filter66:
     inputs:
@@ -386,8 +386,8 @@ decodes:
     streams:
       stream0:
         index: 0
-        vrange: 1.52916741
-        offset: 0.658224165
+        vrange: 3.19710898
+        offset: 1.33908951
         yunit: dB
   filter58:
     inputs:
@@ -421,8 +421,8 @@ decodes:
     streams:
       stream0:
         index: 0
-        vrange: 1.52916741
-        offset: 0.658224165
+        vrange: 3.19710898
+        offset: 1.33908951
         yunit: dB
   filter187:
     inputs:
@@ -437,8 +437,8 @@ decodes:
     streams:
       stream0:
         index: 0
-        vrange: 12.7520857
-        offset: -100.732979
+        vrange: 19.4361916
+        offset: -102.712585
         yunit: Ω
 ui_config:
   window:
@@ -543,7 +543,7 @@ ui_config:
           id: 179
     group180:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.0105833057
+      pixelsPerXUnit: 0.0105834184
       xAxisOffset: -38787
       name: Waveform Group 3
       id: Waveform Group 3
@@ -555,8 +555,8 @@ ui_config:
           id: 181
     group182:
       timebaseResolution: fs
-      pixelsPerXUnit: 0.00432487857
-      xAxisOffset: 99949680
+      pixelsPerXUnit: 0.0019221683
+      xAxisOffset: 99927536
       name: Waveform Group 4
       id: Waveform Group 4
       cursorConfig: none
